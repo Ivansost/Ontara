@@ -13,7 +13,6 @@ export type Draft = {
   caseId?: string;
   caseVersion?: number;
   savedFingerprint?: string;
-  voiceSessionIds?: string[];
 };
 export const emptyDraft = (issueId: string): Draft => ({ issueId, location: { municipalityId: '', incidentAddress: '', confirmed: false }, answers: {}, reporter: { name: '', email: '', contactConsent: false } });
 const Context = createContext<{ draft: Draft | null; setDraft: Dispatch<SetStateAction<Draft | null>> } | null>(null);

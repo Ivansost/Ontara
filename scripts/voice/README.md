@@ -1,4 +1,12 @@
-# Ontara browser voice
+# Ontara voice foundation and historical browser proof
+
+**Current direction — November 14:** the team requested removing voice from the
+website and reserving ElevenLabs for future call-in intake. Browser microphone
+controls, browser session linking and the browser SDK dependency are removed.
+The API/provider foundation and private historical transcripts are retained;
+no telephone number or call-in integration is configured. The browser behavior
+and checks below document the earlier qualified extension, not a currently
+available webpage feature.
 
 Voice fills in the active report's existing authored questions. The resident
 stops voice, checks the written report and named recipient, and uses the existing
@@ -19,10 +27,10 @@ single-use signed URL with a reserved conversation ID. The SDK receives that
 capability, never the workspace key. The intake buffer expires after ten minutes;
 the configured provider conversation has a separate 180-second duration limit.
 
-The project uses `@elevenlabs/react` 1.22.1 (client SDK 1.36.1). The Next webpack
-configuration resolves LiveKit's official CommonJS distribution because this
-project's existing Next/Babel pipeline rejects two ESM named imports. Astryx,
-StyleX, React, Next and the existing Babel configuration remain in place.
+The historical browser build used `@elevenlabs/react` 1.22.1 (client SDK 1.36.1)
+and a LiveKit CommonJS webpack alias. Both the browser dependency and its alias
+have been removed. Astryx, StyleX, React, Next and the existing Babel
+configuration remain in place.
 
 The private ElevenLabs agent uses its **managed** `gemini-3.5-flash-lite` option,
 not a custom LLM or a Google API key. Its English voice uses `eleven_flash_v2`.
@@ -128,11 +136,12 @@ node scripts/voice/text_smoke.mjs
 
 `services/api/tests/test_voice.py` covers question/branch guards, urgent handoff,
 replay/limits, owner privacy, expiry, exact case linking, provider authenticity,
-recording/capability checks, and transcript catch-up after restart. The frontend
-`voice-intake.spec.ts` uses intercepted APIs and synthetic permission outcomes to
-check consent, denied/pending microphone fallback, inactive isolation, retained
-manual approval, and bounded transcript work. No browser test may use the user's
-real microphone without their browser permission.
+recording/capability checks, and transcript catch-up after restart. The removed
+frontend `voice-intake.spec.ts` previously checked consent, denied/pending
+microphone fallback, inactive isolation, retained manual approval, and bounded
+transcript work. Current web checks verify written reporting and the absence of
+microphone/provider calls. No browser test may use the user's real microphone
+without their browser permission.
 
 Official references: [onboarding/authentication](https://elevenlabs.io/docs/api-reference/authentication),
 [React SDK](https://elevenlabs.io/docs/eleven-agents/libraries/react),
