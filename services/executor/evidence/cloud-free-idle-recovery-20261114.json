@@ -1,0 +1,52 @@
+{
+  "verifiedAt": "2026-11-14T17:18:23.819759+00:00",
+  "caseAlias": "Hosted Roads rehearsal",
+  "outcome": "The existing approved update completed automatically after the Free executor woke; no new approval or operation was created.",
+  "observedTimelineUtc": {
+    "priorGenuineInspectionLedgerCompletedAt": "2026-11-14T16:53:42Z",
+    "executorGracefulShutdownAt": "2026-11-14T17:08:37.222800544Z",
+    "executorShutdownCompleteAt": "2026-11-14T17:08:37.693925193Z",
+    "updateApprovedAndQueuedAt": "2026-11-14T17:09:31.012000+00:00",
+    "newExecutorInstanceStartedAt": "2026-11-14T17:13:30.720180050Z",
+    "updateWorkerLeaseAt": "2026-11-14T17:14:01.815000+00:00",
+    "formObservedAt": "2026-11-14T17:14:04.149Z",
+    "nativeRetrievalRecordedAt": "2026-11-14T17:14:04.880Z",
+    "modelMappingValidatedAt": "2026-11-14T17:14:06.653Z",
+    "dispatchStartedAt": "2026-11-14T17:14:06.887000+00:00",
+    "receivingAcceptanceAt": "2026-11-14T17:14:10.280000+00:00"
+  },
+  "durableQueueEvidence": {
+    "queuedUpdateHadNoLeaseOrExecutionEventsDuringDelay": true,
+    "dispatchAttemptsObservedBeforeWake": 8,
+    "approvedVersionPreserved": 2,
+    "oneUpdateOperation": true,
+    "firstWorkerAttempt": 1,
+    "newInstanceWorkerProcessId": 7
+  },
+  "timingSeconds": {
+    "approvalToWorkerLease": 270.803,
+    "workerLeaseToReceivingAcceptance": 8.465,
+    "dispatchToReceivingAcceptance": 3.393
+  },
+  "diagnosis": {
+    "observed": "Normal graceful Free-service shutdown after an approximately 15-minute idle gap, followed by a cold new instance. The queued update had not reached generation or the browser during the delay.",
+    "inference": "This matches Render Free idle spin-down/wake behavior; the long UI-fix gap allowed the executor to sleep. Queue/notification/wake time caused the observed delay, rather than generation latency.",
+    "noSpeculativeRuntimeChange": true,
+    "noPaidUpgrade": true,
+    "macExecutionUsed": false
+  },
+  "resourceObservations": {
+    "largestFetchedInitialRunMemorySampleBytes": 366944260,
+    "fetchedMemoryLimitBytes": 536870900,
+    "shutdownLogsWereGraceful": true,
+    "noOomObservedInFetchedLogs": true
+  },
+  "requiredDemoPreparation": [
+    "Request authenticated executor browser readiness and web/API/portal readiness immediately before the live demo.",
+    "After any 15-minute pause or long build gap, warm readiness again before approving or continuing the same case.",
+    "Keep durable state in Atlas; do not rely on Free instance memory or filesystem surviving idle restart.",
+    "Allow an actual cold wake to complete; do not repeat resident approval or create a replacement operation."
+  ],
+  "officialReference": "https://render.com/docs/free#spinning-down-on-idle",
+  "publicEvidencePolicy": "Case/run/operation and receiving lookup identifiers omitted; timestamps, process ID, counts and match booleans only."
+}

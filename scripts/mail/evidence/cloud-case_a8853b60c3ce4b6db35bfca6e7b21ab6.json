@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": "1.0",
+  "environment": "hosted-render",
+  "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+  "observerRequests": "authenticated GET only",
+  "controlledDemo": true,
+  "sanitization": {
+    "messageBodiesIncluded": false,
+    "capabilityOrSessionUrlsIncluded": false,
+    "tokensIncluded": false,
+    "rawReceivingRunIdsIncluded": false,
+    "rawOperationReferencesIncluded": false,
+    "payloadDigestsIncluded": false,
+    "comparisonsComputedBeforeRedaction": true
+  },
+  "hostedMailServiceRestartVerified": true,
+  "observations": [
+    {
+      "label": "draft_hold_barrier",
+      "observedAtUtc": "2026-11-14T16:38:06.391476+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 1,
+        "stage": "draft",
+        "approvedVersion": null,
+        "cancelled": false,
+        "receipt": {},
+        "pendingQuestionIds": [],
+        "currentOperationAlias": null,
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": true,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": null,
+        "nextCreateFaultArmed": true,
+        "authorityOutbox": {},
+        "portalConfirmation": {}
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 0,
+        "outbox": []
+      },
+      "operations": [],
+      "executionEvents": [],
+      "counts": {
+        "outbox": 0,
+        "updateOperations": 0
+      }
+    },
+    {
+      "label": "approval_progress",
+      "observedAtUtc": "2026-11-14T16:44:46.587053+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 1,
+        "stage": "draft",
+        "approvedVersion": null,
+        "cancelled": false,
+        "receipt": {},
+        "pendingQuestionIds": [],
+        "currentOperationAlias": null,
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": true,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": null,
+        "nextCreateFaultArmed": true,
+        "authorityOutbox": {},
+        "portalConfirmation": {}
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 0,
+        "outbox": []
+      },
+      "operations": [],
+      "executionEvents": [],
+      "barriers": {
+        "verifiedInitialReceiptWithHeldZeroAttempts": false
+      },
+      "counts": {
+        "outbox": 0,
+        "updateOperations": 0
+      }
+    },
+    {
+      "label": "receipt_held_before_restart",
+      "observedAtUtc": "2026-11-14T16:45:48.775137+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 1,
+        "stage": "report_acknowledged",
+        "approvedVersion": 1,
+        "cancelled": false,
+        "receipt": {
+          "ticketId": "RDS-810FBCB61392",
+          "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+          "portalId": "roads",
+          "action": "create",
+          "runMatchesCase": true,
+          "clientReferenceMatchesOperation": true
+        },
+        "pendingQuestionIds": [],
+        "currentOperationAlias": "create-v1",
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": true,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": null,
+        "nextCreateFaultArmed": false,
+        "authorityOutbox": {
+          "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+          "state": "HELD",
+          "attemptCount": 0
+        },
+        "portalConfirmation": {}
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 0,
+        "outbox": [
+          {
+            "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_QUESTION",
+            "state": "HELD",
+            "deliveryState": "UNVERIFIED",
+            "attemptCount": 0,
+            "holdReason": "presenter",
+            "updatedAt": "2026-11-14T16:45:34.483000Z",
+            "receivingEvidence": {},
+            "operationAlias": "create-v1"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "action": "create",
+          "state": "receipt_verified",
+          "caseVersion": 1,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+            "portalId": "roads",
+            "action": "create",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "operationAlias": "create-v1",
+          "runMatchesCase": true
+        }
+      ],
+      "executionEvents": [
+        {
+          "id": "event_5c2fc9d90d36411193eb8bd9ba375e02",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:07.749000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_9771a228d7dc45028dc2f97c9dab2530",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T16:45:10.738000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_f3a466350f3a4bd3a8f367de48ab74dc",
+          "kind": "worker_process_exited",
+          "createdAt": "2026-11-14T16:45:15.266000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "exitCode": -9
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_cf2b71b9b68e4a86ba4623a39bc829e0",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:32.012000+00:00",
+          "data": {
+            "attempt": 2,
+            "fence": 2,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_377a0c7fa03d406e820e8660228775cf",
+          "kind": "reconciling",
+          "createdAt": "2026-11-14T16:45:32.404000+00:00",
+          "data": {
+            "attemptId": "attempt-30e824e1662d4455b6e9428027a9493a",
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        }
+      ],
+      "barriers": {
+        "verifiedInitialReceiptWithHeldZeroAttempts": true
+      },
+      "counts": {
+        "outbox": 1,
+        "updateOperations": 0
+      }
+    },
+    {
+      "label": "receipt_held_after_restart",
+      "observedAtUtc": "2026-11-14T16:47:36.907646+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 1,
+        "stage": "report_acknowledged",
+        "approvedVersion": 1,
+        "cancelled": false,
+        "receipt": {
+          "ticketId": "RDS-810FBCB61392",
+          "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+          "portalId": "roads",
+          "action": "create",
+          "runMatchesCase": true,
+          "clientReferenceMatchesOperation": true
+        },
+        "pendingQuestionIds": [],
+        "currentOperationAlias": "create-v1",
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": true,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": null,
+        "nextCreateFaultArmed": false,
+        "authorityOutbox": {
+          "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+          "state": "HELD",
+          "attemptCount": 0
+        },
+        "portalConfirmation": {}
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 0,
+        "outbox": [
+          {
+            "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_QUESTION",
+            "state": "HELD",
+            "deliveryState": "UNVERIFIED",
+            "attemptCount": 0,
+            "holdReason": "presenter",
+            "updatedAt": "2026-11-14T16:45:34.483000Z",
+            "receivingEvidence": {},
+            "operationAlias": "create-v1"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "action": "create",
+          "state": "receipt_verified",
+          "caseVersion": 1,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+            "portalId": "roads",
+            "action": "create",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "operationAlias": "create-v1",
+          "runMatchesCase": true
+        }
+      ],
+      "executionEvents": [
+        {
+          "id": "event_5c2fc9d90d36411193eb8bd9ba375e02",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:07.749000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_9771a228d7dc45028dc2f97c9dab2530",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T16:45:10.738000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_f3a466350f3a4bd3a8f367de48ab74dc",
+          "kind": "worker_process_exited",
+          "createdAt": "2026-11-14T16:45:15.266000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "exitCode": -9
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_cf2b71b9b68e4a86ba4623a39bc829e0",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:32.012000+00:00",
+          "data": {
+            "attempt": 2,
+            "fence": 2,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_377a0c7fa03d406e820e8660228775cf",
+          "kind": "reconciling",
+          "createdAt": "2026-11-14T16:45:32.404000+00:00",
+          "data": {
+            "attemptId": "attempt-30e824e1662d4455b6e9428027a9493a",
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        }
+      ],
+      "barriers": {
+        "verifiedInitialReceiptWithHeldZeroAttempts": true
+      },
+      "counts": {
+        "outbox": 1,
+        "updateOperations": 0
+      }
+    },
+    {
+      "label": "negative_memory_held",
+      "observedAtUtc": "2026-11-14T16:51:56.185900+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 1,
+        "stage": "needs_assistance",
+        "approvedVersion": 1,
+        "cancelled": false,
+        "receipt": {
+          "ticketId": "RDS-810FBCB61392",
+          "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+          "portalId": "roads",
+          "action": "create",
+          "runMatchesCase": true,
+          "clientReferenceMatchesOperation": true
+        },
+        "pendingQuestionIds": [],
+        "currentOperationAlias": "create-v1",
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": true,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": null,
+        "nextCreateFaultArmed": false,
+        "authorityOutbox": {
+          "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+          "state": "HELD",
+          "attemptCount": 0
+        },
+        "portalConfirmation": {}
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 0,
+        "outbox": [
+          {
+            "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_QUESTION",
+            "state": "HELD",
+            "deliveryState": "UNVERIFIED",
+            "attemptCount": 0,
+            "holdReason": "presenter",
+            "updatedAt": "2026-11-14T16:45:34.483000Z",
+            "receivingEvidence": {},
+            "operationAlias": "create-v1"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "action": "create",
+          "state": "receipt_verified",
+          "caseVersion": 1,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+            "portalId": "roads",
+            "action": "create",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "exactReceiptMatch": {
+            "caseMatches": true,
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true,
+            "payloadDigestMatches": true
+          },
+          "operationAlias": "create-v1",
+          "runMatchesCase": true
+        }
+      ],
+      "executionEvents": [
+        {
+          "id": "event_5c2fc9d90d36411193eb8bd9ba375e02",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:07.749000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_9771a228d7dc45028dc2f97c9dab2530",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T16:45:10.738000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_f3a466350f3a4bd3a8f367de48ab74dc",
+          "kind": "worker_process_exited",
+          "createdAt": "2026-11-14T16:45:15.266000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "exitCode": -9
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_cf2b71b9b68e4a86ba4623a39bc829e0",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:32.012000+00:00",
+          "data": {
+            "attempt": 2,
+            "fence": 2,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_377a0c7fa03d406e820e8660228775cf",
+          "kind": "reconciling",
+          "createdAt": "2026-11-14T16:45:32.404000+00:00",
+          "data": {
+            "attemptId": "attempt-30e824e1662d4455b6e9428027a9493a",
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_ecfedeb45d364668940ab9af2402b708",
+          "kind": "diagnostic_inspection_requested",
+          "createdAt": "2026-11-14T16:50:50.006000+00:00",
+          "data": {
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f",
+            "inspectionJobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "diagnostic": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_e17781a883a54382926bbabf17a480ec",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:51:07.145000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_3ba318c26dde490fb2c590200b26048f",
+          "kind": "form_inspected",
+          "createdAt": "2026-11-14T16:51:10.334000+00:00",
+          "data": {
+            "attemptId": "attempt-3f4c0b4678cc4961abe5aead712f7408",
+            "processId": 172,
+            "inspectionStatus": "needs_assistance",
+            "jobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f"
+          },
+          "operationAlias": "create-v1"
+        }
+      ],
+      "barriers": {
+        "verifiedInitialReceiptWithHeldZeroAttempts": true
+      },
+      "counts": {
+        "outbox": 1,
+        "updateOperations": 0
+      }
+    },
+    {
+      "label": "released_flow_observation",
+      "observedAtUtc": "2026-11-14T16:55:36.259963+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 1,
+        "stage": "more_information_needed",
+        "approvedVersion": 1,
+        "cancelled": false,
+        "receipt": {
+          "ticketId": "RDS-810FBCB61392",
+          "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+          "portalId": "roads",
+          "action": "create",
+          "runMatchesCase": true,
+          "clientReferenceMatchesOperation": true
+        },
+        "pendingQuestionIds": [
+          "nearestLandmark"
+        ],
+        "currentOperationAlias": "create-v1",
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": false,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": "2026-11-14T16:53:16.921000Z",
+        "nextCreateFaultArmed": false,
+        "authorityOutbox": {
+          "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+          "state": "SENT",
+          "attemptCount": 1
+        },
+        "portalConfirmation": {
+          "portalId": "roads",
+          "action": "update",
+          "formVersion": 2,
+          "verifiedAt": "2026-11-14T16:53:16.882000Z",
+          "runMatchesCase": true,
+          "hasSnapshotDigest": true
+        }
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 2,
+        "outbox": [
+          {
+            "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_QUESTION",
+            "state": "SENT",
+            "deliveryState": "RECEIVED",
+            "attemptCount": 1,
+            "holdReason": null,
+            "providerMessageId": "<010001a1dafa478f-3061ec3d-2b3b-4c40-ba2a-e7940a81c448-000000@email.amazonses.com>",
+            "providerThreadId": "3b5bab0c-fd2a-40f8-80f4-347b569331c9",
+            "updatedAt": "2026-11-14T16:53:18.982000Z",
+            "receivingEvidence": {
+              "inboxId": "ontara@agentmail.to",
+              "providerMessageId": "<010001a1dafa478f-3061ec3d-2b3b-4c40-ba2a-e7940a81c448-000000@email.amazonses.com>",
+              "providerThreadId": "58268746-f629-4eee-ae6a-ef56e91ed214",
+              "observedAt": "2026-11-14T16:53:18.982000Z",
+              "evidence": "message_read_from_controlled_receiving_inbox"
+            },
+            "operationAlias": "create-v1"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "action": "create",
+          "state": "receipt_verified",
+          "caseVersion": 1,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+            "portalId": "roads",
+            "action": "create",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "exactReceiptMatch": {
+            "caseMatches": true,
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true,
+            "payloadDigestMatches": true
+          },
+          "operationAlias": "create-v1",
+          "runMatchesCase": true
+        }
+      ],
+      "executionEvents": [
+        {
+          "id": "event_5c2fc9d90d36411193eb8bd9ba375e02",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:07.749000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_9771a228d7dc45028dc2f97c9dab2530",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T16:45:10.738000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_f3a466350f3a4bd3a8f367de48ab74dc",
+          "kind": "worker_process_exited",
+          "createdAt": "2026-11-14T16:45:15.266000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "exitCode": -9
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_cf2b71b9b68e4a86ba4623a39bc829e0",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:32.012000+00:00",
+          "data": {
+            "attempt": 2,
+            "fence": 2,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_377a0c7fa03d406e820e8660228775cf",
+          "kind": "reconciling",
+          "createdAt": "2026-11-14T16:45:32.404000+00:00",
+          "data": {
+            "attemptId": "attempt-30e824e1662d4455b6e9428027a9493a",
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_ecfedeb45d364668940ab9af2402b708",
+          "kind": "diagnostic_inspection_requested",
+          "createdAt": "2026-11-14T16:50:50.006000+00:00",
+          "data": {
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f",
+            "inspectionJobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "diagnostic": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_e17781a883a54382926bbabf17a480ec",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:51:07.145000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_3ba318c26dde490fb2c590200b26048f",
+          "kind": "form_inspected",
+          "createdAt": "2026-11-14T16:51:10.334000+00:00",
+          "data": {
+            "attemptId": "attempt-3f4c0b4678cc4961abe5aead712f7408",
+            "processId": 172,
+            "inspectionStatus": "needs_assistance",
+            "jobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f"
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_d6500047f7b44a779fcc4eca755d22a6",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:53:37.473000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_14f8bf343a96454b87bbbe45620c1167",
+          "kind": "form_inspected",
+          "createdAt": "2026-11-14T16:53:42.425000+00:00",
+          "data": {
+            "attemptId": "attempt-7851e7dc29a34d46b9f0f89869659c41",
+            "processId": 198,
+            "inspectionStatus": "needs_input",
+            "jobId": "inspection_b45faa0ae4b691966f55389e6ffc41c4",
+            "sourceEventId": "received:8d36ca9d63b7965ca34fea3916920911147c3848e638c9855d1fd4e2d2f5d3e8"
+          },
+          "operationAlias": "create-v1"
+        }
+      ],
+      "barriers": {
+        "verifiedInitialReceiptWithHeldZeroAttempts": false
+      },
+      "counts": {
+        "outbox": 1,
+        "updateOperations": 0
+      }
+    },
+    {
+      "label": "final_mail_before_duplicate",
+      "observedAtUtc": "2026-11-14T17:15:02.621280+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 2,
+        "stage": "report_acknowledged",
+        "approvedVersion": 2,
+        "cancelled": false,
+        "receipt": {
+          "ticketId": "RDS-810FBCB61392",
+          "receiptId": "RCP-37AC5401835A65DA897BCBBB",
+          "portalId": "roads",
+          "action": "update",
+          "runMatchesCase": true,
+          "clientReferenceMatchesOperation": true
+        },
+        "pendingQuestionIds": [],
+        "currentOperationAlias": "update-v2",
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": false,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": "2026-11-14T16:53:16.921000Z",
+        "nextCreateFaultArmed": false,
+        "authorityOutbox": {
+          "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+          "state": "SENT",
+          "attemptCount": 1
+        },
+        "portalConfirmation": {
+          "portalId": "roads",
+          "action": "update",
+          "formVersion": 2,
+          "verifiedAt": "2026-11-14T16:53:16.882000Z",
+          "runMatchesCase": true,
+          "hasSnapshotDigest": true
+        }
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 6,
+        "outbox": [
+          {
+            "id": "mail_329583dbb19bdf3ed33d095e46b3b982",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_RESPONSE",
+            "state": "SENT",
+            "deliveryState": "RECEIVED",
+            "attemptCount": 1,
+            "holdReason": null,
+            "providerMessageId": "<010001a1db0d771a-4866d86b-256a-4789-95ce-ad2fdf03cc5d-000000@email.amazonses.com>",
+            "providerThreadId": "f90feda7-fe44-45ee-a63c-72ad53980977",
+            "updatedAt": "2026-11-14T17:14:17.785000Z",
+            "receivingEvidence": {
+              "inboxId": "ontara-authority-demo@agentmail.to",
+              "providerMessageId": "<010001a1db0d771a-4866d86b-256a-4789-95ce-ad2fdf03cc5d-000000@email.amazonses.com>",
+              "providerThreadId": "3b5bab0c-fd2a-40f8-80f4-347b569331c9",
+              "observedAt": "2026-11-14T17:14:17.785000Z",
+              "evidence": "message_read_from_controlled_receiving_inbox"
+            },
+            "operationAlias": "update-v2"
+          },
+          {
+            "id": "mail_d77f1a4934260faf169b205fe3b795b4",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "RESIDENT_NOTIFICATION",
+            "state": "SENT",
+            "deliveryState": "RECEIVED",
+            "attemptCount": 1,
+            "holdReason": null,
+            "providerMessageId": "<010001a1db0d7a0f-9648a38e-143c-411b-bb78-63d7eaca5c71-000000@email.amazonses.com>",
+            "providerThreadId": "2c212f04-2d01-44c7-8dd0-5b9d63e25125",
+            "updatedAt": "2026-11-14T17:14:18.345000Z",
+            "receivingEvidence": {
+              "inboxId": "ontara-resident-demo@agentmail.to",
+              "providerMessageId": "<010001a1db0d7a0f-9648a38e-143c-411b-bb78-63d7eaca5c71-000000@email.amazonses.com>",
+              "providerThreadId": "d107f457-8935-4f25-abe1-161a03189737",
+              "observedAt": "2026-11-14T17:14:18.345000Z",
+              "evidence": "message_read_from_controlled_receiving_inbox"
+            },
+            "operationAlias": "update-v2"
+          },
+          {
+            "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_QUESTION",
+            "state": "SENT",
+            "deliveryState": "RECEIVED",
+            "attemptCount": 1,
+            "holdReason": null,
+            "providerMessageId": "<010001a1dafa478f-3061ec3d-2b3b-4c40-ba2a-e7940a81c448-000000@email.amazonses.com>",
+            "providerThreadId": "3b5bab0c-fd2a-40f8-80f4-347b569331c9",
+            "updatedAt": "2026-11-14T16:53:18.982000Z",
+            "receivingEvidence": {
+              "inboxId": "ontara@agentmail.to",
+              "providerMessageId": "<010001a1dafa478f-3061ec3d-2b3b-4c40-ba2a-e7940a81c448-000000@email.amazonses.com>",
+              "providerThreadId": "58268746-f629-4eee-ae6a-ef56e91ed214",
+              "observedAt": "2026-11-14T16:53:18.982000Z",
+              "evidence": "message_read_from_controlled_receiving_inbox"
+            },
+            "operationAlias": "create-v1"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "action": "create",
+          "state": "receipt_verified",
+          "caseVersion": 1,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+            "portalId": "roads",
+            "action": "create",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "exactReceiptMatch": {
+            "caseMatches": true,
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true,
+            "payloadDigestMatches": true
+          },
+          "operationAlias": "create-v1",
+          "runMatchesCase": true
+        },
+        {
+          "action": "update",
+          "state": "receipt_verified",
+          "caseVersion": 2,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-37AC5401835A65DA897BCBBB",
+            "portalId": "roads",
+            "action": "update",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "exactReceiptMatch": {
+            "caseMatches": true,
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true,
+            "payloadDigestMatches": true
+          },
+          "operationAlias": "update-v2",
+          "runMatchesCase": true
+        }
+      ],
+      "executionEvents": [
+        {
+          "id": "event_5c2fc9d90d36411193eb8bd9ba375e02",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:07.749000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_9771a228d7dc45028dc2f97c9dab2530",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T16:45:10.738000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_f3a466350f3a4bd3a8f367de48ab74dc",
+          "kind": "worker_process_exited",
+          "createdAt": "2026-11-14T16:45:15.266000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "exitCode": -9
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_cf2b71b9b68e4a86ba4623a39bc829e0",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:32.012000+00:00",
+          "data": {
+            "attempt": 2,
+            "fence": 2,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_377a0c7fa03d406e820e8660228775cf",
+          "kind": "reconciling",
+          "createdAt": "2026-11-14T16:45:32.404000+00:00",
+          "data": {
+            "attemptId": "attempt-30e824e1662d4455b6e9428027a9493a",
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_ecfedeb45d364668940ab9af2402b708",
+          "kind": "diagnostic_inspection_requested",
+          "createdAt": "2026-11-14T16:50:50.006000+00:00",
+          "data": {
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f",
+            "inspectionJobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "diagnostic": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_e17781a883a54382926bbabf17a480ec",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:51:07.145000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_3ba318c26dde490fb2c590200b26048f",
+          "kind": "form_inspected",
+          "createdAt": "2026-11-14T16:51:10.334000+00:00",
+          "data": {
+            "attemptId": "attempt-3f4c0b4678cc4961abe5aead712f7408",
+            "processId": 172,
+            "inspectionStatus": "needs_assistance",
+            "jobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f"
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_d6500047f7b44a779fcc4eca755d22a6",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:53:37.473000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_14f8bf343a96454b87bbbe45620c1167",
+          "kind": "form_inspected",
+          "createdAt": "2026-11-14T16:53:42.425000+00:00",
+          "data": {
+            "attemptId": "attempt-7851e7dc29a34d46b9f0f89869659c41",
+            "processId": 198,
+            "inspectionStatus": "needs_input",
+            "jobId": "inspection_b45faa0ae4b691966f55389e6ffc41c4",
+            "sourceEventId": "received:8d36ca9d63b7965ca34fea3916920911147c3848e638c9855d1fd4e2d2f5d3e8"
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_7fdfb2bca5d7463385a490919a61a7be",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T17:14:01.815000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "update-v2"
+        },
+        {
+          "id": "event_3dd7b1d391114550875f35454a7c082a",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T17:14:06.930000+00:00",
+          "data": {
+            "attemptId": "attempt-be4dd3fd6c6a41f5b7d12f66d7960dee",
+            "processId": 7,
+            "runMatchesCase": true
+          },
+          "operationAlias": "update-v2"
+        }
+      ],
+      "barriers": {
+        "verifiedInitialReceiptWithHeldZeroAttempts": false
+      },
+      "counts": {
+        "outbox": 3,
+        "updateOperations": 1
+      }
+    },
+    {
+      "label": "final_mail_after_duplicate",
+      "observedAtUtc": "2026-11-14T17:18:52.463930+00:00",
+      "case": {
+        "id": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "version": 2,
+        "stage": "report_acknowledged",
+        "approvedVersion": 2,
+        "cancelled": false,
+        "receipt": {
+          "ticketId": "RDS-810FBCB61392",
+          "receiptId": "RCP-37AC5401835A65DA897BCBBB",
+          "portalId": "roads",
+          "action": "update",
+          "runMatchesCase": true,
+          "clientReferenceMatchesOperation": true
+        },
+        "pendingQuestionIds": [],
+        "currentOperationAlias": "update-v2",
+        "hasRunId": true
+      },
+      "hold": {
+        "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+        "held": false,
+        "heldAt": "2026-11-14T16:36:53.672000Z",
+        "releasedAt": "2026-11-14T16:53:16.921000Z",
+        "nextCreateFaultArmed": false,
+        "authorityOutbox": {
+          "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+          "state": "SENT",
+          "attemptCount": 1
+        },
+        "portalConfirmation": {
+          "portalId": "roads",
+          "action": "update",
+          "formVersion": 2,
+          "verifiedAt": "2026-11-14T16:53:16.882000Z",
+          "runMatchesCase": true,
+          "hasSnapshotDigest": true
+        }
+      },
+      "mail": {
+        "enabled": true,
+        "workerRunning": true,
+        "messagesStored": 6,
+        "outbox": [
+          {
+            "id": "mail_329583dbb19bdf3ed33d095e46b3b982",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_RESPONSE",
+            "state": "SENT",
+            "deliveryState": "RECEIVED",
+            "attemptCount": 1,
+            "holdReason": null,
+            "providerMessageId": "<010001a1db0d771a-4866d86b-256a-4789-95ce-ad2fdf03cc5d-000000@email.amazonses.com>",
+            "providerThreadId": "f90feda7-fe44-45ee-a63c-72ad53980977",
+            "updatedAt": "2026-11-14T17:14:17.785000Z",
+            "receivingEvidence": {
+              "inboxId": "ontara-authority-demo@agentmail.to",
+              "providerMessageId": "<010001a1db0d771a-4866d86b-256a-4789-95ce-ad2fdf03cc5d-000000@email.amazonses.com>",
+              "providerThreadId": "3b5bab0c-fd2a-40f8-80f4-347b569331c9",
+              "observedAt": "2026-11-14T17:14:17.785000Z",
+              "evidence": "message_read_from_controlled_receiving_inbox"
+            },
+            "operationAlias": "update-v2"
+          },
+          {
+            "id": "mail_d77f1a4934260faf169b205fe3b795b4",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "RESIDENT_NOTIFICATION",
+            "state": "SENT",
+            "deliveryState": "RECEIVED",
+            "attemptCount": 1,
+            "holdReason": null,
+            "providerMessageId": "<010001a1db0d7a0f-9648a38e-143c-411b-bb78-63d7eaca5c71-000000@email.amazonses.com>",
+            "providerThreadId": "2c212f04-2d01-44c7-8dd0-5b9d63e25125",
+            "updatedAt": "2026-11-14T17:14:18.345000Z",
+            "receivingEvidence": {
+              "inboxId": "ontara-resident-demo@agentmail.to",
+              "providerMessageId": "<010001a1db0d7a0f-9648a38e-143c-411b-bb78-63d7eaca5c71-000000@email.amazonses.com>",
+              "providerThreadId": "d107f457-8935-4f25-abe1-161a03189737",
+              "observedAt": "2026-11-14T17:14:18.345000Z",
+              "evidence": "message_read_from_controlled_receiving_inbox"
+            },
+            "operationAlias": "update-v2"
+          },
+          {
+            "id": "mail_fcb868c0454ab16c0650e73813739cb1",
+            "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+            "purpose": "AUTHORITY_QUESTION",
+            "state": "SENT",
+            "deliveryState": "RECEIVED",
+            "attemptCount": 1,
+            "holdReason": null,
+            "providerMessageId": "<010001a1dafa478f-3061ec3d-2b3b-4c40-ba2a-e7940a81c448-000000@email.amazonses.com>",
+            "providerThreadId": "3b5bab0c-fd2a-40f8-80f4-347b569331c9",
+            "updatedAt": "2026-11-14T16:53:18.982000Z",
+            "receivingEvidence": {
+              "inboxId": "ontara@agentmail.to",
+              "providerMessageId": "<010001a1dafa478f-3061ec3d-2b3b-4c40-ba2a-e7940a81c448-000000@email.amazonses.com>",
+              "providerThreadId": "58268746-f629-4eee-ae6a-ef56e91ed214",
+              "observedAt": "2026-11-14T16:53:18.982000Z",
+              "evidence": "message_read_from_controlled_receiving_inbox"
+            },
+            "operationAlias": "create-v1"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "action": "create",
+          "state": "receipt_verified",
+          "caseVersion": 1,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+            "portalId": "roads",
+            "action": "create",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "exactReceiptMatch": {
+            "caseMatches": true,
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true,
+            "payloadDigestMatches": true
+          },
+          "operationAlias": "create-v1",
+          "runMatchesCase": true
+        },
+        {
+          "action": "update",
+          "state": "receipt_verified",
+          "caseVersion": 2,
+          "receipt": {
+            "ticketId": "RDS-810FBCB61392",
+            "receiptId": "RCP-37AC5401835A65DA897BCBBB",
+            "portalId": "roads",
+            "action": "update",
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true
+          },
+          "exactReceiptMatch": {
+            "caseMatches": true,
+            "runMatchesCase": true,
+            "clientReferenceMatchesOperation": true,
+            "payloadDigestMatches": true
+          },
+          "operationAlias": "update-v2",
+          "runMatchesCase": true
+        }
+      ],
+      "executionEvents": [
+        {
+          "id": "event_5c2fc9d90d36411193eb8bd9ba375e02",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:07.749000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_9771a228d7dc45028dc2f97c9dab2530",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T16:45:10.738000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_f3a466350f3a4bd3a8f367de48ab74dc",
+          "kind": "worker_process_exited",
+          "createdAt": "2026-11-14T16:45:15.266000+00:00",
+          "data": {
+            "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+            "processId": 110,
+            "exitCode": -9
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_cf2b71b9b68e4a86ba4623a39bc829e0",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:45:32.012000+00:00",
+          "data": {
+            "attempt": 2,
+            "fence": 2,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_377a0c7fa03d406e820e8660228775cf",
+          "kind": "reconciling",
+          "createdAt": "2026-11-14T16:45:32.404000+00:00",
+          "data": {
+            "attemptId": "attempt-30e824e1662d4455b6e9428027a9493a",
+            "runMatchesCase": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_ecfedeb45d364668940ab9af2402b708",
+          "kind": "diagnostic_inspection_requested",
+          "createdAt": "2026-11-14T16:50:50.006000+00:00",
+          "data": {
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f",
+            "inspectionJobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "diagnostic": true
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_e17781a883a54382926bbabf17a480ec",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:51:07.145000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_3ba318c26dde490fb2c590200b26048f",
+          "kind": "form_inspected",
+          "createdAt": "2026-11-14T16:51:10.334000+00:00",
+          "data": {
+            "attemptId": "attempt-3f4c0b4678cc4961abe5aead712f7408",
+            "processId": 172,
+            "inspectionStatus": "needs_assistance",
+            "jobId": "inspection_a07c296c1d549701d9b9470b5a7fce9f",
+            "sourceEventId": "presenter-withheld-35f87a401da1fad95fba952f"
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_d6500047f7b44a779fcc4eca755d22a6",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T16:53:37.473000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_14f8bf343a96454b87bbbe45620c1167",
+          "kind": "form_inspected",
+          "createdAt": "2026-11-14T16:53:42.425000+00:00",
+          "data": {
+            "attemptId": "attempt-7851e7dc29a34d46b9f0f89869659c41",
+            "processId": 198,
+            "inspectionStatus": "needs_input",
+            "jobId": "inspection_b45faa0ae4b691966f55389e6ffc41c4",
+            "sourceEventId": "received:8d36ca9d63b7965ca34fea3916920911147c3848e638c9855d1fd4e2d2f5d3e8"
+          },
+          "operationAlias": "create-v1"
+        },
+        {
+          "id": "event_7fdfb2bca5d7463385a490919a61a7be",
+          "kind": "worker_leased",
+          "createdAt": "2026-11-14T17:14:01.815000+00:00",
+          "data": {
+            "attempt": 1,
+            "fence": 1,
+            "faultAfterAcceptance": false
+          },
+          "operationAlias": "update-v2"
+        },
+        {
+          "id": "event_3dd7b1d391114550875f35454a7c082a",
+          "kind": "dispatch_started",
+          "createdAt": "2026-11-14T17:14:06.930000+00:00",
+          "data": {
+            "attemptId": "attempt-be4dd3fd6c6a41f5b7d12f66d7960dee",
+            "processId": 7,
+            "runMatchesCase": true
+          },
+          "operationAlias": "update-v2"
+        }
+      ],
+      "barriers": {
+        "verifiedInitialReceiptWithHeldZeroAttempts": false
+      },
+      "counts": {
+        "outbox": 3,
+        "updateOperations": 1
+      }
+    }
+  ],
+  "hostedMailServiceRestartEvidence": {
+    "deploymentLiveConfirmedByCoordinator": true,
+    "afterDeploymentId": "dep-dbs90jmc6qcc738h96q0",
+    "afterRevision": "6b273f04",
+    "checks": {
+      "sameCase": true,
+      "sameRun": true,
+      "sameVerifiedReceipt": true,
+      "sameOutboxId": true,
+      "heldBeforeAndAfter": true,
+      "zeroAttemptsBeforeAndAfter": true,
+      "zeroMessagesBeforeAndAfter": true,
+      "mailWorkerRunningAfter": true
+    }
+  },
+  "fullHostedMailLoopVerified": true,
+  "fullHostedMailLoopChecks": {
+    "caseVersionTwoApproved": true,
+    "oneCreateOneUpdateVerified": true,
+    "sameTicket": true,
+    "allThreeGenuinelyReceived": true,
+    "oneSendAttemptEach": true,
+    "sixMessageCopiesStored": true,
+    "correctOperationCorrelation": true,
+    "exactReceivingMessageIdentity": true,
+    "authorityResponseRetainedOriginalThread": true,
+    "controlledReceivingRolesMatch": true
+  },
+  "completedGenuineInspectionJobsFromEvents": 1,
+  "separateDiagnosticInspectionJobs": 1,
+  "hostedDuplicateReplayVerified": true,
+  "hostedDuplicateReplayChecks": {
+    "caseVersionAndApprovalStable": true,
+    "exactReceiptStable": true,
+    "outboxAndProviderIdentitiesStable": true,
+    "oneAttemptEachBeforeAndAfter": true,
+    "sixCopiesBeforeAndAfter": true,
+    "oneUpdateBeforeAndAfter": true,
+    "oneGenuineInspectionBeforeAndAfter": true,
+    "allThreeStillGenuinelyReceived": true
+  },
+  "authorizedDriverReplayObservation": {
+    "performedBy": "frontend staged driver",
+    "reportedAtUtc": "2026-11-14T17:18:30Z",
+    "receiptReplay": {
+      "scheduled": 0,
+      "pending": 0
+    },
+    "outbox": {
+      "sent": 0,
+      "reconciled": 0,
+      "unknown": 0,
+      "failed": 0
+    },
+    "poll": {
+      "processed": 0,
+      "duplicate": 2,
+      "ignored": 0,
+      "unrelated": 0,
+      "pending": 0,
+      "needs_assistance": 0,
+      "errors": 0
+    },
+    "observerActions": "authenticated GET only before and after"
+  },
+  "verificationSummary": {
+    "fullHostedMailLoopVerified": true,
+    "actualHostedApiRestartPreservedHeldZeroAttemptState": true,
+    "guardedReleaseAfterSameRunV2Verified": true,
+    "threeMessagesGenuinelyReceived": true,
+    "sendAttemptsEach": 1,
+    "actualMessageCopiesStored": 6,
+    "sameTicketUpdateVerified": true,
+    "genuineCompletedInspectionCount": 1,
+    "updateOperationCount": 1,
+    "authorizedDuplicateReplayVerified": true,
+    "issueRepairVerified": false
+  }
+}
