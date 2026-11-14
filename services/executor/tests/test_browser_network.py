@@ -19,17 +19,20 @@ pytestmark = pytest.mark.skipif(os.environ.get("ONTARA_RUN_BROWSER_TESTS") != "1
 def receiver():
     class Handler(BaseHTTPRequestHandler):
         posts = []
+        mode = "safe"
         def log_message(self, *args):
             pass
         def do_GET(self):
             query = parse_qs(urlsplit(self.path).query)
             hidden = "".join(f'<input type="hidden" name="{name}" value="{query.get(name, ["test"])[0]}">' for name in ("runId", "clientReference", "payloadDigest"))
+            extra = '<input name="unapprovedExtra" value="Unapproved page default">' if Handler.mode == "extra" else ""
+            swap = "<script>document.querySelector('#location').addEventListener('input',()=>document.querySelector('form').action='/portals/roads/unapproved-action')</script>" if Handler.mode == "swap" else ""
             body = ("<html><head><title>Untrusted form</title></head><body>"
                     "<script>fetch('/portals/roads/tickets',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'location=unapproved-script-write'}).catch(()=>{}).finally(()=>window.attemptComplete=true)</script>"
                     f'<form method="post" action="/portals/roads/tickets">{hidden}<input type="hidden" name="formVersion" value="1">'
                     '<label for="location">Location</label><input id="location" name="location" required>'
                     '<label for="description">Description</label><textarea id="description" name="description" required></textarea>'
-                    '<button type="submit">Submit</button></form></body></html>').encode()
+                    '<button type="submit">Submit</button>' + extra + '</form>' + swap + '</body></html>').encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/html")
             self.end_headers()
@@ -47,14 +50,14 @@ def receiver():
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
-    yield f"http://127.0.0.1:{server.server_port}", Handler.posts
+    yield f"http://127.0.0.1:{server.server_port}", Handler.posts, Handler
     server.shutdown()
     server.server_close()
     thread.join(timeout=2)
 
 
 async def test_inspection_blocks_actual_page_script_post(receiver, monkeypatch):
-    origin, posts = receiver
+    origin, posts, _ = receiver
     monkeypatch.setenv("ONTARA_ALLOW_LOCAL_HTTP", "1")
     tools = BrowserTools(TargetPolicy(origin, {"127.0.0.1"}))
     try:
@@ -67,7 +70,7 @@ async def test_inspection_blocks_actual_page_script_post(receiver, monkeypatch):
 
 
 async def test_submit_permits_only_validated_native_form_post(receiver, monkeypatch):
-    origin, posts = receiver
+    origin, posts, _ = receiver
     monkeypatch.setenv("ONTARA_ALLOW_LOCAL_HTTP", "1")
     tools = BrowserTools(TargetPolicy(origin, {"127.0.0.1"}))
     context = BrowserContext(operation_id="test-operation", case_id="test-case", run_id="test-run", attempt_id="test-attempt", portal_id="roads", client_reference="test-operation", payload_digest="a" * 64, action="create")
@@ -79,5 +82,36 @@ async def test_submit_permits_only_validated_native_form_post(receiver, monkeypa
         assert len(posts) == 1
         assert posts[0]["location"] == ["Approved synthetic road"]
         assert posts[0]["clientReference"] == ["test-operation"]
+    finally:
+        await tools.close()
+
+
+@pytest.mark.parametrize("mode", ["extra", "swap"])
+async def test_page_defaults_or_late_action_changes_never_become_write_authority(receiver, monkeypatch, mode):
+    origin, posts, handler = receiver
+    handler.mode = mode
+    monkeypatch.setenv("ONTARA_ALLOW_LOCAL_HTTP", "1")
+    tools = BrowserTools(TargetPolicy(origin, {"127.0.0.1"}))
+    context = BrowserContext(operation_id="test-operation", case_id="test-case", run_id="test-run", attempt_id="test-attempt", portal_id="roads", client_reference="test-operation", payload_digest="a" * 64, action="create")
+    try:
+        observation = (await tools.inspect(context)).observation
+        with pytest.raises(ValueError):
+            await tools.submit(SubmitRequest(**context.model_dump(), form_fingerprint=observation.fingerprint, values={"location": "Approved synthetic road", "description": "Approved synthetic description"}))
+        assert posts == []
+    finally:
+        await tools.close()
+
+
+async def test_multiline_approved_text_is_preserved_by_native_submission(receiver, monkeypatch):
+    origin, posts, _ = receiver
+    monkeypatch.setenv("ONTARA_ALLOW_LOCAL_HTTP", "1")
+    tools = BrowserTools(TargetPolicy(origin, {"127.0.0.1"}))
+    context = BrowserContext(operation_id="test-operation", case_id="test-case", run_id="test-run", attempt_id="test-attempt", portal_id="roads", client_reference="test-operation", payload_digest="a" * 64, action="create")
+    approved = "Approved first line\nApproved second line"
+    try:
+        observation = (await tools.inspect(context)).observation
+        result = await tools.submit(SubmitRequest(**context.model_dump(), form_fingerprint=observation.fingerprint, values={"location": "Approved synthetic road", "description": approved}))
+        assert result.accepted and len(posts) == 1
+        assert posts[0]["description"][0].replace("\r\n", "\n") == approved
     finally:
         await tools.close()

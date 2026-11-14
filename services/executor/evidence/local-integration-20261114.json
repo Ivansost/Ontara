@@ -19,21 +19,21 @@
   },
   "processStarts": [
     {
-      "attemptId": null,
+      "attemptId": "attempt-daa120cdf19641d08b0d0c13c1245aef",
       "processId": 12164,
       "processBirthId": "b3b6025edf1548f18c82a69bf3ec8add",
       "jobAttempt": 1,
       "runtimeMode": "fallback"
     },
     {
-      "attemptId": null,
+      "attemptId": "attempt-2f3ba5fe9b2e4d68a1a4a135df0edd94",
       "processId": 12203,
       "processBirthId": "c218275cb027425c95b565f36436f686",
       "jobAttempt": 2,
       "runtimeMode": "fallback"
     },
     {
-      "attemptId": null,
+      "attemptId": "attempt-8628ced61d17475da0b5e44aa42111ce",
       "processId": 13330,
       "processBirthId": "8f0cd853cedd4ed18243f90b89cd78da",
       "jobAttempt": 3,
@@ -86,5 +86,7 @@
     "This file is a sanitized supplemental evidence snapshot; authoritative case/operation/events/receipts remain in Atlas.",
     "Receiver counts are presenter evidence only; execution acceptance used the actual receiving HTML lookup.",
     "A verified reporting receipt does not mean the real-world problem was repaired."
-  ]
+  ],
+  "metadataCorrectedAt": "2026-11-14T16:28:01.931025+00:00",
+  "attemptIdSource": "Authoritative Atlas execution event.data.attemptId read through the hosted case API."
 }
