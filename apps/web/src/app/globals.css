@@ -1,0 +1,9 @@
+/* Self-host the exact Figtree family selected by Astryx Neutral. */
+@import '@fontsource/figtree/latin-400.css';
+@import '@fontsource/figtree/latin-500.css';
+@import '@fontsource/figtree/latin-600.css';
+@import '@fontsource/figtree/latin-700.css';
+@import '@astryxdesign/core/reset.css';
+@import '@astryxdesign/core/astryx.css';
+
+@stylex;

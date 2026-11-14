@@ -1,0 +1,29 @@
+{
+  "status": "valid_structured_output",
+  "nativeLessonIds": [
+    "roads-follow-up-v2-seeded-calibration-20261114"
+  ],
+  "model": "gemini-3.5-flash-lite",
+  "usage": {
+    "input_tokens": 1121,
+    "output_tokens": 183,
+    "total_tokens": 1304,
+    "input_token_details": {
+      "cache_read": 0
+    }
+  },
+  "missingQuestionIds": [
+    "nearestLandmark"
+  ],
+  "mappedFieldNames": [
+    "roadIntersection",
+    "roadPosition",
+    "travelDirection"
+  ],
+  "mappedFactIds": [
+    "location",
+    "travelDirection",
+    "roadPosition"
+  ],
+  "latencySeconds": 13.68
+}
