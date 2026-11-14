@@ -4,6 +4,10 @@ Report a local problem once. Approve the recipient and facts, then follow verifi
 
 Ivan and Faaris built Ontara for **Agents in Context Toronto, Track 3: Finish the Job**, on November 14, 2026. The demonstration uses two labelled, team-controlled municipal portals and three controlled AgentMail inboxes. A verified receipt means the reporting action was acknowledged; it does not mean the physical problem was repaired.
 
+## Demo video
+
+[Watch the Ontara demo on Google Drive](https://drive.google.com/file/d/1FWU3HwDMdgfFo0D0nJGzSBS1KMerW0Vd/view?usp=sharing)
+
 ## Demo status
 
 | Deliverable | Verified state |
