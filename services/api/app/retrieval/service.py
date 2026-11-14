@@ -222,14 +222,14 @@ def retrieve_procedures(
 
 def retrieve_lessons(
     db: Any, query: str, authority_id: str, issue_id: str, *, portal_id: str,
-    form_family: str, form_version: str, workflow_kind: str = "ticket_update",
+    form_family: str, form_version: str | int, workflow_kind: str = "ticket_update",
     category_id: str = "roads", limit: int = 3,
     withhold_lesson_ids: list[str] | None = None,
 ) -> dict[str, Any]:
-    if portal_id not in {"roads", "graffiti"} or not form_family or not form_version or workflow_kind != "ticket_update":
+    if portal_id not in {"roads", "graffiti"} or not form_family or not form_version or isinstance(form_version, bool) or workflow_kind != "ticket_update":
         raise ValueError("Explicit allowed portal and form/workflow scope are required")
     filters = _scope(authority_id, issue_id, category_id)
-    filters.update({"portalId": portal_id, "workflowKind": workflow_kind, "formFamily": form_family, "formVersions": form_version})
+    filters.update({"portalId": portal_id, "workflowKind": workflow_kind, "formFamily": form_family, "formVersions": str(form_version)})
     return _retrieve(db, "procedural_lessons", query, filters, limit=limit, withhold_lesson_ids=withhold_lesson_ids)
 
 

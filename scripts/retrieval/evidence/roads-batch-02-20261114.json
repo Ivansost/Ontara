@@ -1,0 +1,2723 @@
+{
+  "batchId": "roads-batch-02-20261114",
+  "checkedAt": "2026-11-14T15:55:58.420505+00:00",
+  "procedures": [
+    {
+      "status": "ready",
+      "id": "niagara-region-regional-pothole",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "28d87281a682dc94",
+        "retrievalTextHash": "3ca94ac88e3c7b432ff1e0294ad0bedc2530bd4530e57746b5e92013ca26772d",
+        "verifiedAt": "2026-11-14 15:56:00.653865+00:00",
+        "queryText": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "niagara-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "niagara-region-regional-pothole",
+                "sourceVersion": "28d87281a682dc94"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8882386684417725
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "simcoe-county-county-maintenance",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "70cdab2523193f59",
+        "retrievalTextHash": "01af2279c9609b05264750ee401ff7dee50f36080ebe5e39a7a192110efe4144",
+        "verifiedAt": "2026-11-14 15:56:05.069810+00:00",
+        "queryText": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "simcoe-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "simcoe-county-county-maintenance",
+                "sourceVersion": "70cdab2523193f59"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8832745552062988
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "essex-county-county-road-issue",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "9af571c763ac1464",
+        "retrievalTextHash": "514fea6db55cf854fbd7bf8d4ab825e3d91224895244b207af3846319c7664c1",
+        "verifiedAt": "2026-11-14 15:56:07.593251+00:00",
+        "queryText": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "essex-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "essex-county-county-road-issue",
+                "sourceVersion": "9af571c763ac1464"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8653574585914612
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "lambton-county-public-works-owner-handoff",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "9efad03c5bd7fd4a",
+        "retrievalTextHash": "8571ff6d40780bbc6fb8699478ead111cb62a9755c73c26078cc4613d3d21785",
+        "verifiedAt": "2026-11-14 15:56:10.241360+00:00",
+        "queryText": "Lambton County\u2019s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Lambton County\u2019s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "lambton-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "lambton-county-public-works-owner-handoff",
+                "sourceVersion": "9efad03c5bd7fd4a"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.878963828086853
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "oxford-county-county-pothole-cracks",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "f28c713a38377a2f",
+        "retrievalTextHash": "b1e8313f1d72e475f9079d6b402973159198c0d6de9eb6885cf884b871a610d8",
+        "verifiedAt": "2026-11-14 15:56:12.360299+00:00",
+        "queryText": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "oxford-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "oxford-county-county-pothole-cracks",
+                "sourceVersion": "f28c713a38377a2f"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8801413774490356
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    }
+  ],
+  "authorities": [
+    {
+      "authorityId": "niagara-region",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "niagara-region-regional-pothole",
+          "authorityId": "niagara-region",
+          "issueIds": [
+            "roads-pothole"
+          ],
+          "categoryId": "roads",
+          "title": "Niagara Region: Regional-road pothole form and phone handoff",
+          "retrievalText": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted.",
+          "sourceVersion": "28d87281a682dc94",
+          "sourceIds": [
+            "niagara-roads",
+            "niagara-pothole-form"
+          ],
+          "responsibilityRules": [
+            "Confirm the defect is on a Niagara Regional road; local streets go to the relevant local municipality.",
+            "This procedure covers potholes; do not reuse the damage-claim form or a traffic-signal phone number for other defects without verification."
+          ],
+          "requiredFacts": [
+            "Observed form fields: City/town; location details (closest intersection, address, landmark); position and size. These are observed labels, not an assertion all are mandatory."
+          ],
+          "steps": [
+            "Confirm exact incident road and local municipality.",
+            "Use the officially linked pothole form or call 905-980-6000 ext.3690.",
+            "Provide the actual known location/position/size; do not invent measurements."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://forms.niagararegion.ca/Roads-and-transportation/Report-a-pothole",
+          "contactEmail": null,
+          "contactPhone": "+1-905-980-6000 ext. 3690",
+          "formSnapshotIds": [
+            "niagara-pothole-form-20261114"
+          ],
+          "artifactIds": [
+            "niagara-roads-b6f0fce7e5dfca98",
+            "niagara-pothole-form-f2b0369cb025d181"
+          ],
+          "coverage": {
+            "roads-pothole": "verified_procedure"
+          },
+          "gaps": [
+            "The captured field labels have no visible required markers; validation behavior and any conditional contact fields have not been tested.",
+            "No report confirmation, receipt/tracking lookup, follow-up target or fixed repair deadline was verified."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:48:55.829000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "28d87281a682dc94",
+            "retrievalTextHash": "3ca94ac88e3c7b432ff1e0294ad0bedc2530bd4530e57746b5e92013ca26772d",
+            "verifiedAt": "2026-11-14 15:56:00.653000+00:00",
+            "queryText": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "niagara-region",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "niagara-region-regional-pothole",
+                    "sourceVersion": "28d87281a682dc94"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8882386684417725
+          },
+          "score": 0.8882386684417725,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "niagara-region",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "niagara-region-regional-pothole",
+                        "sourceVersion": "28d87281a682dc94"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:56:02.214316+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "niagara-region-regional-pothole",
+            "sourceVersion": "28d87281a682dc94"
+          }
+        ],
+        "returnedIds": [
+          "niagara-region-regional-pothole"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "niagara-region-regional-pothole"
+        ],
+        "elapsedMs": 2148
+      }
+    },
+    {
+      "authorityId": "simcoe-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "simcoe-county-county-maintenance",
+          "authorityId": "simcoe-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Simcoe County: County-road maintenance portal and contact handoff",
+          "retrievalText": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources.",
+          "sourceVersion": "70cdab2523193f59",
+          "sourceIds": [
+            "simcoe-roads",
+            "simcoe-maintenance",
+            "simcoe-resident-portal"
+          ],
+          "responsibilityRules": [
+            "Use only for a verified County road/asset; municipal roads require their local municipality.",
+            "A road-safety concern is a request to assess; technical warrants and authority decisions control any change."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm the County road and asset.",
+            "Open the officially linked maintenance/construction Resident Portal or use published customer service to obtain the appropriate handoff.",
+            "Inspect current fields and ownership before a future supported report."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://service.simcoe.ca/s/topic/0TOJQ0000004o6H4AQ/roads-maintenance-construction",
+          "contactEmail": null,
+          "contactPhone": "+1-705-735-6901 or +1-800-263-3199",
+          "formSnapshotIds": [
+            "simcoe-roads-portal-shell-20261114"
+          ],
+          "artifactIds": [
+            "simcoe-roads-f747f90095c03cf3",
+            "simcoe-maintenance-24c67354eb41a882",
+            "simcoe-resident-portal-2f7acba8742ca1da"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+            "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:48:55.829000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "70cdab2523193f59",
+            "retrievalTextHash": "01af2279c9609b05264750ee401ff7dee50f36080ebe5e39a7a192110efe4144",
+            "verifiedAt": "2026-11-14 15:56:05.069000+00:00",
+            "queryText": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "simcoe-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "simcoe-county-county-maintenance",
+                    "sourceVersion": "70cdab2523193f59"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8832745552062988
+          },
+          "score": 0.8829077482223511,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "simcoe-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "simcoe-county-county-maintenance",
+                        "sourceVersion": "70cdab2523193f59"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:56:05.180870+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "simcoe-county-county-maintenance",
+            "sourceVersion": "70cdab2523193f59"
+          }
+        ],
+        "returnedIds": [
+          "simcoe-county-county-maintenance"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "simcoe-county-county-maintenance"
+        ],
+        "elapsedMs": 1914
+      }
+    },
+    {
+      "authorityId": "essex-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "essex-county-county-road-issue",
+          "authorityId": "essex-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Essex County: road-problem portal and 24-hour line",
+          "retrievalText": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified.",
+          "sourceVersion": "9af571c763ac1464",
+          "sourceIds": [
+            "essex-roads",
+            "essex-report"
+          ],
+          "responsibilityRules": [
+            "Confirm the exact County-owned road/asset using the official road list; neither an Essex address nor Windsor proximity establishes County jurisdiction.",
+            "Local roads and provincial highways require the listed responsible authority."
+          ],
+          "requiredFacts": [
+            "Published steps request contact details, address/map or No address, request type and brief description; attachment is optional; final review and I Agree are described."
+          ],
+          "steps": [
+            "Open the reporting portal linked from the official County page.",
+            "Use guest mode or an account; select County of Essex and create a new service request.",
+            "Provide the published contact, location, type and description steps; review summary and agreement before any future authorized submission."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [
+            "The official page states a logged-in account permits status tracking; guest tracking/receipts are not established."
+          ],
+          "officialFormUrl": "https://citywideportal.com/?client=County%20of%20Essex",
+          "contactEmail": null,
+          "contactPhone": "+1-519-326-8691 (24 hours)",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "essex-roads-5b5d12dfa7189e26",
+            "essex-report-5c3f9d7a9b0f2745"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+            "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:48:55.829000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "9af571c763ac1464",
+            "retrievalTextHash": "514fea6db55cf854fbd7bf8d4ab825e3d91224895244b207af3846319c7664c1",
+            "verifiedAt": "2026-11-14 15:56:07.593000+00:00",
+            "queryText": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "essex-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "essex-county-county-road-issue",
+                    "sourceVersion": "9af571c763ac1464"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8653574585914612
+          },
+          "score": 0.8653574585914612,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "essex-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "essex-county-county-road-issue",
+                        "sourceVersion": "9af571c763ac1464"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:56:07.690322+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "essex-county-county-road-issue",
+            "sourceVersion": "9af571c763ac1464"
+          }
+        ],
+        "returnedIds": [
+          "essex-county-county-road-issue"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "essex-county-county-road-issue"
+        ],
+        "elapsedMs": 1754
+      }
+    },
+    {
+      "authorityId": "lambton-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "lambton-county-public-works-owner-handoff",
+          "authorityId": "lambton-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Lambton County: Public Works handoff to verify County-road maintenance responsibility",
+          "retrievalText": "Lambton County\u2019s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source.",
+          "sourceVersion": "9efad03c5bd7fd4a",
+          "sourceIds": [
+            "lambton-roads-current",
+            "lambton-contacts"
+          ],
+          "responsibilityRules": [
+            "Confirm the road is part of Lambton County\u2019s network; do not infer responsibility for local, provincial or private roads from the county name.",
+            "The published Public Works contact is a verification handoff; issue-specific accepted-report procedures remain unverified."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm the incident segment/asset.",
+            "Contact Public Works using the official directory to establish jurisdiction and current reporting requirements.",
+            "Pause automatic dispatch until a supported procedure and resident approval exist."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": null,
+          "contactEmail": null,
+          "contactPhone": "+1-519-845-0801; toll-free +1-866-324-6912",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "lambton-roads-current-ae362477eb0e2d02",
+            "lambton-contacts-36ec7b584c6a252f"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+            "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:50:41.300000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "9efad03c5bd7fd4a",
+            "retrievalTextHash": "8571ff6d40780bbc6fb8699478ead111cb62a9755c73c26078cc4613d3d21785",
+            "verifiedAt": "2026-11-14 15:56:10.241000+00:00",
+            "queryText": "Lambton County\u2019s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Lambton County\u2019s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "lambton-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "lambton-county-public-works-owner-handoff",
+                    "sourceVersion": "9efad03c5bd7fd4a"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.878963828086853
+          },
+          "score": 0.8807039260864258,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Lambton County\u2019s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Lambton County\u2019s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "lambton-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "lambton-county-public-works-owner-handoff",
+                        "sourceVersion": "9efad03c5bd7fd4a"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:56:10.408046+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "lambton-county-public-works-owner-handoff",
+            "sourceVersion": "9efad03c5bd7fd4a"
+          }
+        ],
+        "returnedIds": [
+          "lambton-county-public-works-owner-handoff"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "lambton-county-public-works-owner-handoff"
+        ],
+        "elapsedMs": 1077
+      }
+    },
+    {
+      "authorityId": "oxford-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "oxford-county-county-pothole-cracks",
+          "authorityId": "oxford-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement"
+          ],
+          "categoryId": "roads",
+          "title": "Oxford County: publish street, lane and approximate pothole size through Service Oxford",
+          "retrievalText": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted.",
+          "sourceVersion": "f28c713a38377a2f",
+          "sourceIds": [
+            "oxford-roads",
+            "oxford-report-potholes",
+            "oxford-pothole-portal"
+          ],
+          "responsibilityRules": [
+            "The procedure is specifically for cracks and potholes on Oxford County roads.",
+            "Confirm exact ownership; do not treat all streets within Oxford as County roads."
+          ],
+          "requiredFacts": [
+            "Street name",
+            "Which lane (e.g. northbound/southbound)",
+            "Approximate size (e.g. small/medium/large)"
+          ],
+          "steps": [
+            "Use the pothole link on the official Roads page to open Service Oxford.",
+            "Supply the actual street name, lane and approximate size requested by the official notice.",
+            "Choose whether to request an update; inspect current form and review before future authorized submission."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [
+            "The public notice says residents may choose to receive an update from Public Works; no response target or tracking lookup is promised."
+          ],
+          "officialFormUrl": "https://service.oxfordcounty.ca/s/article/Report-a-pothole-on-a-County-road",
+          "contactEmail": null,
+          "contactPhone": null,
+          "formSnapshotIds": [
+            "oxford-pothole-portal-shell-20261114"
+          ],
+          "artifactIds": [
+            "oxford-roads-6c93102f285c436f",
+            "oxford-report-potholes-2f5876ae7fa4670d",
+            "oxford-pothole-portal-f0b2c67d6199f0b2"
+          ],
+          "coverage": {
+            "roads-pothole": "verified_procedure",
+            "roads-pavement": "verified_procedure"
+          },
+          "gaps": [
+            "Current portal questionnaire, mandatory validation, authentication/CAPTCHA and receipt/tracking behavior were not observed in the JavaScript shell.",
+            "The cited maintenance standards depend on conditions; no universal repair deadline is established."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:48:55.828000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "f28c713a38377a2f",
+            "retrievalTextHash": "b1e8313f1d72e475f9079d6b402973159198c0d6de9eb6885cf884b871a610d8",
+            "verifiedAt": "2026-11-14 15:56:12.360000+00:00",
+            "queryText": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "oxford-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "oxford-county-county-pothole-cracks",
+                    "sourceVersion": "f28c713a38377a2f"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8801413774490356
+          },
+          "score": 0.8801413774490356,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "oxford-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "oxford-county-county-pothole-cracks",
+                        "sourceVersion": "f28c713a38377a2f"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:56:12.480020+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "oxford-county-county-pothole-cracks",
+            "sourceVersion": "f28c713a38377a2f"
+          }
+        ],
+        "returnedIds": [
+          "oxford-county-county-pothole-cracks"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "oxford-county-county-pothole-cracks"
+        ],
+        "elapsedMs": 1020
+      }
+    }
+  ],
+  "counts": {
+    "authoritiesChecked": 5,
+    "proceduresChecked": 5,
+    "searchableRecords": 5,
+    "excludedRecords": 0
+  },
+  "status": "ready"
+}
