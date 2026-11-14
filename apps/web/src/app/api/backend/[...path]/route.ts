@@ -12,7 +12,8 @@ async function forward(request: NextRequest, context: { params: Promise<{ path: 
   // Paths are encoded independently; the destination always remains the configured API.
   const destination = new URL(path.map(encodeURIComponent).join('/') + request.nextUrl.search, configured.replace(/\/?$/, '/'));
   const headers = new Headers({ accept: 'application/json' });
-  for (const name of ['content-type', 'cookie', 'x-csrf-token']) {
+  // Keep browser origin metadata intact so the API can enforce its write allowlist.
+  for (const name of ['content-type', 'cookie', 'x-csrf-token', 'origin', 'sec-fetch-site']) {
     const value = request.headers.get(name);
     if (value) headers.set(name, value);
   }

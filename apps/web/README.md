@@ -28,7 +28,7 @@ npm run astryx -- doctor --built .
 
 The sync command also accepts a source directory: `npm run sync-contracts -- /absolute/path/to/contracts`. It requires the backend-owned `catalogue.json`, `questions.json` and `openapi.json`.
 
-Browser tests use an installed Google Chrome. `navigation.spec.ts` exercises every inactive leaf without API requests or intake. `reporting.spec.ts` uses explicit browser-contract fixtures to check editing, fresh approval and same-case follow-up; these tests do not establish a live mailbox, execution worker or portal integration. A separate live browser smoke must verify those services after integration.
+Browser tests use an installed Google Chrome. `navigation.spec.ts` exercises every inactive leaf without API requests or intake. `reporting.spec.ts` uses explicit browser-contract fixtures to check editing, fresh approval and same-case follow-up; these tests do not establish a live mailbox, execution worker or portal integration. A separate live browser smoke must verify those services after integration. To test the actual proxy and API origin checks without creating a case, run `ONTARA_LIVE_API_TESTS=1 npm run test:ui -- tests/proxy.spec.ts`. These tests disable request traces and assert cookie flags without logging cookie values. Set `ONTARA_TEST_BASE_URL` to the public HTTPS web origin to run the same checks after deployment; no local server is started in that mode.
 
 ## Render Free web service
 
@@ -42,7 +42,9 @@ The coordinator creates the service in the confirmed Render workspace:
 - Required environment: `ONTARA_API_URL` set to the deployed case API's HTTPS origin. It is server-only.
 - Use a Node version meeting `engines.node`; Render supplies `PORT`, and the start script binds `0.0.0.0`.
 
-The API must set its session cookie with `Path=/`, HttpOnly, SameSite=Lax and Secure on the hosted HTTPS deployment. Local HTTP uses Secure=false. This app forwards Set-Cookie without exposing its value to browser JavaScript.
+The API must set its session cookie with `Path=/`, HttpOnly, SameSite=Lax and Secure on the hosted HTTPS deployment. Local HTTP uses Secure=false. The API's `ALLOWED_ORIGINS` must include the exact web origin. The proxy preserves `Origin` and `Sec-Fetch-Site` so the API's write-origin policy applies to browser writes. This app forwards Set-Cookie without rewriting its attributes or exposing its value to browser JavaScript. The cookie omits Domain, so a response through the web proxy belongs to the web host.
+
+The coordinated Blueprint resolves `ONTARA_API_URL` from the API service's `RENDER_EXTERNAL_URL`, resolves API `ALLOWED_ORIGINS` from the web service's `RENDER_EXTERNAL_URL`, and sets API `SESSION_COOKIE_SECURE=true`. After deployment, verify the resolved origins and run the opt-in live proxy checks against the actual HTTPS web URL.
 
 ## Design and scope
 
