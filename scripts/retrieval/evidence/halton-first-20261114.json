@@ -1,0 +1,907 @@
+{
+  "batchId": "halton-first-20261114",
+  "checkedAt": "2026-11-14T15:52:16.531946+00:00",
+  "versionVerification": {
+    "status": "ready",
+    "id": "halton-region-regional-road-problem-phone",
+    "evidence": {
+      "nativeQuery": true,
+      "model": "voyage-4-large",
+      "indexName": "service_procedures_autoembed_v1",
+      "sourceVersion": "8d2f6c64ed934f68",
+      "retrievalTextHash": "d4ab615d015ac9a54a37c01ad3b3511c4c4436178d8d9a5af01e26865a007222",
+      "verifiedAt": "2026-11-14 15:52:19.484342+00:00",
+      "queryText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+      "queryTruncated": false,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "service_procedures_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara."
+            },
+            "exact": true,
+            "limit": 1,
+            "filter": {
+              "authorityId": "halton-region",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "verified",
+              "id": "halton-region-regional-road-problem-phone",
+              "sourceVersion": "8d2f6c64ed934f68"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "score": 0.889045238494873
+    },
+    "index": {
+      "indexName": "service_procedures_autoembed_v1",
+      "type": "vectorSearch",
+      "status": "READY",
+      "queryable": true,
+      "configurationMatches": true,
+      "definitionVersion": {
+        "version": 0,
+        "createdAt": "2026-11-14 15:42:09.421000"
+      },
+      "definition": {
+        "fields": [
+          {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          {
+            "type": "filter",
+            "path": "authorityId"
+          },
+          {
+            "type": "filter",
+            "path": "issueIds"
+          },
+          {
+            "type": "filter",
+            "path": "categoryId"
+          },
+          {
+            "type": "filter",
+            "path": "visibility"
+          },
+          {
+            "type": "filter",
+            "path": "current"
+          },
+          {
+            "type": "filter",
+            "path": "verificationStatus"
+          },
+          {
+            "type": "filter",
+            "path": "validUntil"
+          },
+          {
+            "type": "filter",
+            "path": "sourceVersion"
+          },
+          {
+            "type": "filter",
+            "path": "knowledgeKind"
+          },
+          {
+            "type": "filter",
+            "path": "id"
+          }
+        ]
+      },
+      "model": "voyage-4-large",
+      "reportedSettings": {},
+      "effectiveNodeSettings": [
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        }
+      ],
+      "documentedDefaults": {
+        "numDimensions": 1024,
+        "quantization": "scalar",
+        "indexingMethod": "hnsw"
+      },
+      "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+    }
+  },
+  "haltonQuery": {
+    "status": "ready",
+    "reason": "Eligible native search candidates require structured validation before execution",
+    "candidates": [
+      {
+        "id": "halton-region-regional-road-problem-phone",
+        "authorityId": "halton-region",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "categoryId": "roads",
+        "title": "Halton Region: published telephone handoff for a confirmed Regional-road problem",
+        "retrievalText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+        "sourceVersion": "8d2f6c64ed934f68",
+        "sourceIds": [
+          "halton-roads",
+          "halton-safety"
+        ],
+        "responsibilityRules": [
+          "Confirm the incident road belongs to Halton's Regional network using the linked official map; residence in Halton alone does not prove ownership.",
+          "Local streets and many sidewalks generally belong to Burlington, Halton Hills, Milton or Oakville; verify the particular asset.",
+          "Provincial highways such as 401 and QEW belong to MTO; no private-road maintenance responsibility is established by these pages.",
+          "Police handle traffic-law enforcement; a request for engineering investigation is distinct from approval to install a sign."
+        ],
+        "requiredFacts": [],
+        "steps": [
+          "Confirm incident location and Regional-road ownership using the official map.",
+          "For a Regional road problem, use the published telephone route: 311 or 1-866-442-5866.",
+          "For a local street, follow Halton's linked local municipality page instead."
+        ],
+        "constraints": [
+          "Research only. Live municipal submissions, emails and calls are not authorized by this import.",
+          "The official reporting page publishes a general telephone route; it does not specify a distinct intake form for each Roads leaf.",
+          "Automated demo execution remains on the separately allowlisted halton-roads-demo portal."
+        ],
+        "followUpInstructions": [],
+        "officialFormUrl": null,
+        "contactEmail": null,
+        "contactPhone": "311 or +1-866-442-5866",
+        "formSnapshotIds": [],
+        "artifactIds": [
+          "halton-roads-ff72795c7085bfd0",
+          "halton-safety-4701417917565a14"
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+          "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+        ],
+        "visibility": "public",
+        "current": true,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-11-14 15:42:09.641000+00:00",
+        "validUntil": null,
+        "researchStatus": "verified",
+        "searchStatus": "ready",
+        "integrationStatus": "research_only",
+        "searchVerification": {
+          "nativeQuery": true,
+          "model": "voyage-4-large",
+          "indexName": "service_procedures_autoembed_v1",
+          "sourceVersion": "8d2f6c64ed934f68",
+          "retrievalTextHash": "d4ab615d015ac9a54a37c01ad3b3511c4c4436178d8d9a5af01e26865a007222",
+          "verifiedAt": "2026-11-14 15:52:19.484000+00:00",
+          "queryText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+          "queryTruncated": false,
+          "pipeline": [
+            {
+              "$vectorSearch": {
+                "index": "service_procedures_autoembed_v1",
+                "path": "retrievalText",
+                "query": {
+                  "text": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara."
+                },
+                "exact": true,
+                "limit": 1,
+                "filter": {
+                  "authorityId": "halton-region",
+                  "issueIds": "roads-pothole",
+                  "categoryId": "roads",
+                  "visibility": "public",
+                  "current": true,
+                  "verificationStatus": "verified",
+                  "id": "halton-region-regional-road-problem-phone",
+                  "sourceVersion": "8d2f6c64ed934f68"
+                }
+              }
+            },
+            {
+              "$project": {
+                "_id": 0,
+                "id": 1,
+                "authorityId": 1,
+                "issueIds": 1,
+                "categoryId": 1,
+                "title": 1,
+                "retrievalText": 1,
+                "sourceVersion": 1,
+                "sourceIds": 1,
+                "responsibilityRules": 1,
+                "requiredFacts": 1,
+                "steps": 1,
+                "constraints": 1,
+                "followUpInstructions": 1,
+                "officialFormUrl": 1,
+                "contactEmail": 1,
+                "contactPhone": 1,
+                "formSnapshotIds": 1,
+                "artifactIds": 1,
+                "coverage": 1,
+                "gaps": 1,
+                "visibility": 1,
+                "current": 1,
+                "verificationStatus": 1,
+                "verifiedAt": 1,
+                "validUntil": 1,
+                "researchStatus": 1,
+                "searchStatus": 1,
+                "integrationStatus": 1,
+                "portalId": 1,
+                "workflowKind": 1,
+                "formFamily": 1,
+                "formVersions": 1,
+                "problem": 1,
+                "procedure": 1,
+                "evidenceRefs": 1,
+                "knowledgeKind": 1,
+                "searchVerification": 1,
+                "score": {
+                  "$meta": "vectorSearchScore"
+                }
+              }
+            }
+          ],
+          "score": 0.889045238494873
+        },
+        "score": 0.8341898918151855,
+        "verified": true
+      }
+    ],
+    "evidence": {
+      "collection": "service_procedures",
+      "indexName": "service_procedures_autoembed_v1",
+      "model": "voyage-4-large",
+      "queryText": "How can a resident report a pothole on a Halton regional road?",
+      "nativeQuery": true,
+      "queryExecuted": true,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "service_procedures_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "How can a resident report a pothole on a Halton regional road?"
+            },
+            "exact": true,
+            "limit": 10,
+            "filter": {
+              "authorityId": "halton-region",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "verified"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "reranking": {
+        "ran": false,
+        "reason": "Optional reranking not enabled"
+      },
+      "checkedAt": "2026-11-14T15:52:19.625440+00:00",
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      },
+      "returnedIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "rejected": [],
+      "selectedIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "elapsedMs": 2909
+    }
+  },
+  "partialSidewalkExclusion": {
+    "status": "assistance_required",
+    "reason": "No applicable current verified knowledge was retrieved; execution must pause",
+    "candidates": [],
+    "evidence": {
+      "collection": "service_procedures",
+      "indexName": "service_procedures_autoembed_v1",
+      "model": "voyage-4-large",
+      "queryText": "Who should receive a damaged sidewalk report in Halton?",
+      "nativeQuery": true,
+      "queryExecuted": true,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "service_procedures_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "Who should receive a damaged sidewalk report in Halton?"
+            },
+            "exact": true,
+            "limit": 10,
+            "filter": {
+              "authorityId": "halton-region",
+              "issueIds": "roads-sidewalk",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "verified"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "reranking": {
+        "ran": false,
+        "reason": "Optional reranking not enabled"
+      },
+      "checkedAt": "2026-11-14T15:52:22.534494+00:00",
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      },
+      "returnedIds": [],
+      "rejected": [],
+      "selectedIds": [],
+      "elapsedMs": 1016
+    }
+  },
+  "crossAuthorityExclusion": {
+    "status": "assistance_required",
+    "reason": "No applicable current verified knowledge was retrieved; execution must pause",
+    "candidates": [],
+    "evidence": {
+      "collection": "service_procedures",
+      "indexName": "service_procedures_autoembed_v1",
+      "model": "voyage-4-large",
+      "queryText": "How can a resident report a pothole on a Halton regional road?",
+      "nativeQuery": true,
+      "queryExecuted": true,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "service_procedures_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "How can a resident report a pothole on a Halton regional road?"
+            },
+            "exact": true,
+            "limit": 10,
+            "filter": {
+              "authorityId": "peel-region",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "verified"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "reranking": {
+        "ran": false,
+        "reason": "Optional reranking not enabled"
+      },
+      "checkedAt": "2026-11-14T15:52:23.550135+00:00",
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      },
+      "returnedIds": [],
+      "rejected": [],
+      "selectedIds": [],
+      "elapsedMs": 681
+    }
+  }
+}

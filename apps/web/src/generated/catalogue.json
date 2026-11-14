@@ -1,0 +1,1047 @@
+{
+  "version": "2026-11-14.2",
+  "categories": [
+    {
+      "id": "roads",
+      "slug": "roads",
+      "label": "Roads, Sidewalks & Traffic",
+      "description": "",
+      "kind": "category",
+      "available": true,
+      "disabledReason": null,
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "roads-road-surface",
+          "slug": "road-surface",
+          "label": "Road surface",
+          "description": "",
+          "kind": "group",
+          "available": true,
+          "disabledReason": null,
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "roads-pothole",
+              "slug": "pothole",
+              "label": "Pothole",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "roads-pothole",
+              "children": []
+            },
+            {
+              "id": "roads-pavement",
+              "slug": "pavement",
+              "label": "Broken or uneven pavement",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "roads-pavement",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "roads-obstructions",
+          "slug": "obstructions",
+          "label": "Obstructions & debris",
+          "description": "",
+          "kind": "group",
+          "available": true,
+          "disabledReason": null,
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "roads-debris",
+              "slug": "debris",
+              "label": "Debris",
+              "description": "",
+              "kind": "group",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": null,
+              "children": [
+                {
+                  "id": "roads-debris-loose",
+                  "slug": "loose-material",
+                  "label": "Loose material",
+                  "description": "",
+                  "kind": "issue",
+                  "available": true,
+                  "disabledReason": null,
+                  "questionSchemaId": "roads-debris-loose",
+                  "children": []
+                },
+                {
+                  "id": "roads-debris-object",
+                  "slug": "larger-object",
+                  "label": "Larger object",
+                  "description": "",
+                  "kind": "issue",
+                  "available": true,
+                  "disabledReason": null,
+                  "questionSchemaId": "roads-debris-object",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "roads-sidewalks-curbs",
+          "slug": "sidewalks-curbs",
+          "label": "Sidewalks & curbs",
+          "description": "",
+          "kind": "group",
+          "available": true,
+          "disabledReason": null,
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "roads-sidewalk",
+              "slug": "sidewalk",
+              "label": "Cracked or uneven sidewalk",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "roads-sidewalk",
+              "children": []
+            },
+            {
+              "id": "roads-curb",
+              "slug": "curb",
+              "label": "Damaged curb",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "roads-curb",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "roads-signs-safety",
+          "slug": "signs-safety",
+          "label": "Signs & road safety",
+          "description": "",
+          "kind": "group",
+          "available": true,
+          "disabledReason": null,
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "roads-sign",
+              "slug": "sign",
+              "label": "Damaged or missing sign",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "roads-sign",
+              "children": []
+            },
+            {
+              "id": "roads-safety",
+              "slug": "safety",
+              "label": "Unsafe intersection or crossing",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "roads-safety",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "graffiti",
+      "slug": "graffiti",
+      "label": "Graffiti",
+      "description": "",
+      "kind": "category",
+      "available": true,
+      "disabledReason": null,
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "graffiti-public-structures",
+          "slug": "public-structures",
+          "label": "Public structures",
+          "description": "",
+          "kind": "group",
+          "available": true,
+          "disabledReason": null,
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "graffiti-wall",
+              "slug": "wall",
+              "label": "Wall or underpass",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "graffiti-wall",
+              "children": []
+            },
+            {
+              "id": "graffiti-building",
+              "slug": "building",
+              "label": "Public building",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "graffiti-building",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "graffiti-street-furniture",
+          "slug": "street-furniture",
+          "label": "Street furniture",
+          "description": "",
+          "kind": "group",
+          "available": true,
+          "disabledReason": null,
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "graffiti-bench-bin",
+              "slug": "bench-bin",
+              "label": "Bench or public bin",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "graffiti-bench-bin",
+              "children": []
+            },
+            {
+              "id": "graffiti-shelter",
+              "slug": "shelter",
+              "label": "Shelter or other public fixture",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "graffiti-shelter",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "graffiti-private-property",
+          "slug": "private-property",
+          "label": "Private property",
+          "description": "",
+          "kind": "group",
+          "available": true,
+          "disabledReason": null,
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "graffiti-private-wall",
+              "slug": "building-wall",
+              "label": "Building or wall",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "graffiti-private-wall",
+              "children": []
+            },
+            {
+              "id": "graffiti-fence",
+              "slug": "fence",
+              "label": "Fence",
+              "description": "",
+              "kind": "issue",
+              "available": true,
+              "disabledReason": null,
+              "questionSchemaId": "graffiti-fence",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "waste",
+      "slug": "waste",
+      "label": "Waste, Bins & Litter",
+      "description": "",
+      "kind": "category",
+      "available": false,
+      "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "waste-collection",
+          "slug": "collection",
+          "label": "Collection",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "waste-missed-collection",
+              "slug": "missed-collection",
+              "label": "Missed collection",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "waste-collection-concern",
+              "slug": "collection-concern",
+              "label": "Collection-related concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "waste-bins",
+          "slug": "bins",
+          "label": "Bins",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "waste-damaged-bin",
+              "slug": "damaged-bin",
+              "label": "Damaged bin",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "waste-overflowing-bin",
+              "slug": "overflowing-bin",
+              "label": "Overflowing public bin",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "waste-litter-dumping",
+          "slug": "litter-dumping",
+          "label": "Litter & dumping",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "waste-litter",
+              "slug": "litter",
+              "label": "Litter",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "waste-dumped-items",
+              "slug": "dumped-items",
+              "label": "Illegally dumped items",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trees",
+      "slug": "trees",
+      "label": "Trees & Vegetation",
+      "description": "",
+      "kind": "category",
+      "available": false,
+      "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "trees-fallen-material",
+          "slug": "fallen-material",
+          "label": "Fallen material",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "trees-fallen-branch",
+              "slug": "fallen-branch",
+              "label": "Fallen branch",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "trees-fallen-tree",
+              "slug": "fallen-tree",
+              "label": "Fallen tree",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "trees-condition",
+          "slug": "condition",
+          "label": "Tree condition",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "trees-damaged-tree",
+              "slug": "damaged-tree",
+              "label": "Damaged tree",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "trees-tree-health",
+              "slug": "tree-health",
+              "label": "Tree health concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "trees-vegetation",
+          "slug": "vegetation",
+          "label": "Vegetation",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "trees-overgrowth",
+              "slug": "overgrowth",
+              "label": "Overgrowth",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "trees-obstructing-branches",
+              "slug": "obstructing-branches",
+              "label": "Obstructing branches",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "slug": "water",
+      "label": "Water, Sewers & Spills",
+      "description": "",
+      "kind": "category",
+      "available": false,
+      "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "water-water",
+          "slug": "water",
+          "label": "Water",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "water-visible-leak",
+              "slug": "visible-leak",
+              "label": "Visible leak",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "water-no-water",
+              "slug": "no-water",
+              "label": "No-water concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "water-drainage",
+          "slug": "drainage",
+          "label": "Sewers & drainage",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "water-blocked-catch-basin",
+              "slug": "blocked-catch-basin",
+              "label": "Blocked catch basin",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "water-sewer-backup",
+              "slug": "sewer-backup",
+              "label": "Sewer backup",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "water-spills",
+          "slug": "spills",
+          "label": "Spills",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "water-roadway-spill",
+              "slug": "roadway-spill",
+              "label": "Roadway spill",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "water-waterway-spill",
+              "slug": "waterway-spill",
+              "label": "Waterway spill",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parks",
+      "slug": "parks",
+      "label": "Parks & Public Facilities",
+      "description": "",
+      "kind": "category",
+      "available": false,
+      "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "parks-playgrounds-sports",
+          "slug": "playgrounds-sports",
+          "label": "Playgrounds & sports",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "parks-damaged-equipment",
+              "slug": "damaged-equipment",
+              "label": "Damaged equipment",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "parks-damaged-court-field",
+              "slug": "damaged-court-field",
+              "label": "Damaged court or field",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "parks-amenities",
+          "slug": "amenities",
+          "label": "Buildings & amenities",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "parks-washroom",
+              "slug": "washroom",
+              "label": "Washroom issue",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "parks-damaged-fixture",
+              "slug": "damaged-fixture",
+              "label": "Damaged park fixture",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snow",
+      "slug": "snow",
+      "label": "Snow & Ice",
+      "description": "",
+      "kind": "category",
+      "available": false,
+      "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "snow-roads",
+          "slug": "roads",
+          "label": "Roads",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "snow-snow-clearing",
+              "slug": "snow-clearing",
+              "label": "Snow-clearing concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "snow-icy-road",
+              "slug": "icy-road",
+              "label": "Icy roadway",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "snow-paths",
+          "slug": "paths",
+          "label": "Sidewalks & paths",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "snow-uncleared-sidewalk",
+              "slug": "uncleared-sidewalk",
+              "label": "Uncleared sidewalk",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "snow-icy-path",
+              "slug": "icy-path",
+              "label": "Icy path",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bylaws",
+      "slug": "bylaws",
+      "label": "Noise, Bylaws & Property",
+      "description": "",
+      "kind": "category",
+      "available": false,
+      "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "bylaws-noise",
+          "slug": "noise",
+          "label": "Noise",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "bylaws-construction-noise",
+              "slug": "construction-noise",
+              "label": "Construction",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "bylaws-amplified-sound",
+              "slug": "amplified-sound",
+              "label": "Amplified sound",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "bylaws-other-noise",
+              "slug": "other-noise",
+              "label": "Other non-urgent noise",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bylaws-property",
+          "slug": "property",
+          "label": "Property conditions",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "bylaws-maintenance",
+              "slug": "maintenance",
+              "label": "Maintenance concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "bylaws-obstruction",
+              "slug": "obstruction",
+              "label": "Obstruction",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bylaws-parking",
+          "slug": "parking",
+          "label": "Parking concerns",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "bylaws-parking-violation",
+              "slug": "parking-violation",
+              "label": "Suspected parking violation",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "bylaws-blocked-access",
+              "slug": "blocked-access",
+              "label": "Blocked access",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals",
+      "slug": "animals",
+      "label": "Animals & Pests",
+      "description": "",
+      "kind": "category",
+      "available": false,
+      "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+      "questionSchemaId": null,
+      "children": [
+        {
+          "id": "animals-animals",
+          "slug": "animals",
+          "label": "Animals",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "animals-dead-animal",
+              "slug": "dead-animal",
+              "label": "Dead animal",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "animals-animal-concern",
+              "slug": "animal-concern",
+              "label": "Non-urgent animal concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "animals-dogs-pets",
+          "slug": "dogs-pets",
+          "label": "Dogs & pets",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "animals-off-leash",
+              "slug": "off-leash",
+              "label": "Off-leash concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "animals-animal-nuisance",
+              "slug": "animal-nuisance",
+              "label": "Animal-related nuisance",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "animals-pests",
+          "slug": "pests",
+          "label": "Pests",
+          "description": "",
+          "kind": "group",
+          "available": false,
+          "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+          "questionSchemaId": null,
+          "children": [
+            {
+              "id": "animals-pest-concern",
+              "slug": "pest-concern",
+              "label": "Pest concern",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            },
+            {
+              "id": "animals-tree-insects",
+              "slug": "tree-insects",
+              "label": "Tree-related insects",
+              "description": "",
+              "kind": "issue",
+              "available": false,
+              "disabledReason": "Not available in this demo. You can browse this service, but reports and personal details are not collected.",
+              "questionSchemaId": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "demoLocations": [
+    {
+      "id": "halton-regional-road",
+      "fixtureId": "halton-regional-road",
+      "label": "Halton regional road — synthetic demo location",
+      "municipalityId": "milton-town",
+      "municipalityName": "Milton",
+      "upperTierId": "halton-region",
+      "upperTierName": "Halton Region",
+      "incidentAddress": "Regional Road 25 at Louis St. Laurent Avenue, Milton",
+      "categoryId": "roads",
+      "demo": true
+    },
+    {
+      "id": "milton-public-wall",
+      "fixtureId": "milton-public-wall",
+      "label": "Milton public wall — synthetic demo location",
+      "municipalityId": "milton-town",
+      "municipalityName": "Milton",
+      "upperTierId": "halton-region",
+      "upperTierName": "Halton Region",
+      "incidentAddress": "Synthetic municipal public wall, Milton",
+      "categoryId": "graffiti",
+      "demo": true
+    }
+  ],
+  "disclaimer": "Two controlled demo portals. Researched municipal procedures do not establish live submission support."
+}

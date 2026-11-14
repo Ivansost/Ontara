@@ -1,0 +1,289 @@
+{
+  "checkedAt": "2026-11-14T15:55:18.612706+00:00",
+  "runtimeDriver": true,
+  "readOnly": true,
+  "collections": {
+    "service_procedures": {
+      "oldVersionCount": 0,
+      "currentVersionCount": 1,
+      "currentId": "native-diagnostic-service_procedures-20261114",
+      "currentSourceVersion": "native-probe-v2",
+      "currentScore": 0.9231612682342529,
+      "oldVersionPipeline": [
+        {
+          "$vectorSearch": {
+            "index": "service_procedures_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal."
+            },
+            "exact": true,
+            "limit": 3,
+            "filter": {
+              "authorityId": "__native_diagnostic_only__",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v1"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "currentPipeline": [
+        {
+          "$vectorSearch": {
+            "index": "service_procedures_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement."
+            },
+            "exact": true,
+            "limit": 3,
+            "filter": {
+              "authorityId": "__native_diagnostic_only__",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v2"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ]
+    },
+    "procedural_lessons": {
+      "oldVersionCount": 0,
+      "currentVersionCount": 1,
+      "currentId": "native-diagnostic-procedural_lessons-20261114",
+      "currentSourceVersion": "native-probe-v2",
+      "currentScore": 0.9231612682342529,
+      "oldVersionPipeline": [
+        {
+          "$vectorSearch": {
+            "index": "procedural_lessons_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal."
+            },
+            "exact": true,
+            "limit": 3,
+            "filter": {
+              "authorityId": "__native_diagnostic_only__",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v1"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "currentPipeline": [
+        {
+          "$vectorSearch": {
+            "index": "procedural_lessons_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement."
+            },
+            "exact": true,
+            "limit": 3,
+            "filter": {
+              "authorityId": "__native_diagnostic_only__",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v2"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
