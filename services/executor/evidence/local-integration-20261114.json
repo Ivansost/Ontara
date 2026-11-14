@@ -4,8 +4,6 @@
   "runtimeMode": "explicit local fallback test",
   "browser": "isolated installed Chrome channel; pinned Linux Chromium is a separate deployment gate",
   "storage": "Real event Atlas through app API and independent receiving portal",
-  "runId": "run_c7e4cfcb00b949afb881498a7a1cb6b4",
-  "caseId": "case_83f582192bd2496b93e22a9b65ccc8ad",
   "realProcessFault": {
     "signal": "SIGKILL",
     "exitCode": -9,
@@ -42,24 +40,20 @@
   ],
   "operations": [
     {
-      "operationId": "op_d69815f6d3ffcc768e499b7ca83d670c",
       "action": "create",
       "state": "receipt_verified",
-      "clientReference": "op_d69815f6d3ffcc768e499b7ca83d670c",
-      "payloadDigest": "d0aad3e0a44e6a5013d4c7e1960b2c273bfbc996213ea52fc6b41176dbd30223",
       "receiptId": "RCP-A1CCA60628064000F50B7B33",
       "ticketId": "RDS-0E668AE771AF",
-      "receiptFormVersion": 1
+      "receiptFormVersion": 1,
+      "approvedReferenceAndDigestMatched": true
     },
     {
-      "operationId": "op_b627d33c08f6b30dcb8d16921d479e43",
       "action": "update",
       "state": "receipt_verified",
-      "clientReference": "op_b627d33c08f6b30dcb8d16921d479e43",
-      "payloadDigest": "71591664433bc358446e5519a35fda11378d31ba18573e8becff064583689354",
       "receiptId": "RCP-336CAC563C4CA73F08192204",
       "ticketId": "RDS-0E668AE771AF",
-      "receiptFormVersion": 2
+      "receiptFormVersion": 2,
+      "approvedReferenceAndDigestMatched": true
     }
   ],
   "receivingCounts": {
@@ -71,7 +65,6 @@
   },
   "calibration": {
     "knowledgeKind": "seeded_demo",
-    "operationId": "op_b627d33c08f6b30dcb8d16921d479e43",
     "disclosure": "Developer supplied a generic external fieldName to approvedFactId mapping for the synthetic calibration; this was not runtime memory-guided adaptation.",
     "lessonId": "roads-follow-up-v2-seeded-calibration-20261114",
     "sourceVersion": "seeded-calibration-20261114-v1"
@@ -88,5 +81,7 @@
     "A verified reporting receipt does not mean the real-world problem was repaired."
   ],
   "metadataCorrectedAt": "2026-11-14T16:28:01.931025+00:00",
-  "attemptIdSource": "Authoritative Atlas execution event.data.attemptId read through the hosted case API."
+  "attemptIdSource": "Authoritative Atlas execution event.data.attemptId read through the hosted case API.",
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof."
 }

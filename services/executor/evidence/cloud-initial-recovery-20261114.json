@@ -1,0 +1,44 @@
+{
+  "verifiedAt": "2026-11-14T16:45:36.887059+00:00",
+  "executionLocation": "Actual Render Free Linux cloud executor; Mac local execution services stopped.",
+  "executorSourceCommit": "fd572d12",
+  "executorDeploymentId": "dep-dbs8s9afngtc73c2en1g",
+  "operationState": "receipt_verified",
+  "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+  "ticketId": "RDS-810FBCB61392",
+  "receiptFormVersion": 1,
+  "killedProcess": {
+    "processId": 110,
+    "processBirthId": "1a898ddc8529447cba695482ea22cfd0",
+    "attemptId": "attempt-a5f1c3d6ec13440cb6d7416e9f8e43bd",
+    "jobAttempt": 1,
+    "runtimeMode": "fallback",
+    "workerId": "executor-srv-dbs8lqbm8hqs73c2khi0-hibernate-dccc4f459-zv75z-110-1a898ddc8529"
+  },
+  "recoveredProcess": {
+    "processId": 150,
+    "processBirthId": "4747048de0c347f689aa19ceb77c46dc",
+    "attemptId": "attempt-30e824e1662d4455b6e9428027a9493a",
+    "jobAttempt": 2,
+    "runtimeMode": "fallback",
+    "workerId": "executor-srv-dbs8lqbm8hqs73c2khi0-hibernate-dccc4f459-zv75z-150-4747048de0c3"
+  },
+  "actualExitCode": -9,
+  "receivingLookupVerified": true,
+  "receivingCounts": {
+    "createRequestCount": 1,
+    "ticketCount": 1,
+    "lookupRequestCount": 1,
+    "updateRequestCount": 0,
+    "acceptedUpdateCount": 0
+  },
+  "followUpFormVersionAfterRecovery": 1,
+  "heldAfterRecovery": true,
+  "authorityOutboxState": "HELD",
+  "authorityOutboxAttempts": 0,
+  "scope": "Initial actual OS-crash and fresh-process receiving reconciliation only. No follow-up mutation, diagnostic comparison, mail release or update approval yet.",
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof.",
+  "approvedReferenceAndDigestMatched": true,
+  "receivingRunMatched": true
+}

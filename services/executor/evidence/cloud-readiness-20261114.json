@@ -20,5 +20,7 @@
     "runtimeMode": "fallback"
   },
   "latencySeconds": 9.24,
-  "scope": "Authenticated browser launch only; no case, portal ticket, generation or mail mutation."
+  "scope": "Authenticated browser launch only; no case, portal ticket, generation or mail mutation.",
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof."
 }
