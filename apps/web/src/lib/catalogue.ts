@@ -49,7 +49,7 @@ export function validateQuestions(questions: Question[], answers: Answers): Reco
     if (question.required && !value) errors[question.id] = 'Please answer this question.';
     else if (value && question.minLength && value.length < question.minLength) errors[question.id] = `Please enter at least ${question.minLength} characters.`;
     else if (question.maxLength && value.length > question.maxLength) errors[question.id] = `Please use ${question.maxLength} characters or fewer.`;
-    else if (value && question.options && !question.options.some(option => option.value === value)) errors[question.id] = 'Choose one of the available options.';
+    else if (value && question.type === 'select' && !question.options?.some(option => option.value === value)) errors[question.id] = 'Choose one of the available options.';
   }
   return errors;
 }
