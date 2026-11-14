@@ -25,5 +25,7 @@
     "travelDirection",
     "roadPosition"
   ],
-  "latencySeconds": 13.68
+  "latencySeconds": 13.68,
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof."
 }

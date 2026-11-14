@@ -1,15 +1,11 @@
 {
   "recordedAt": "2026-11-14T16:15:42.589308+00:00",
   "qualification": "Local actual Atlas + Playwright + native Voyage/Vector Search + Gemini + AgentMail integration. Hosted qualification remains separate.",
-  "caseId": "case_edf099cb47c54a4eaa56c17c5b5785ed",
-  "runId": "run_8d670bd74e6040aabfb94d724e1137ce",
   "caseStage": "report_acknowledged",
   "approvedVersion": 2,
   "initialCrash": {
     "taskId": "run-64b8e6b43c7c4e78944ed0638a3b50e6",
     "status": "receipt_verified",
-    "jobId": "job_op_ba4bfd69594a16570cdd36a5a4a5eb30",
-    "caseId": "case_edf099cb47c54a4eaa56c17c5b5785ed",
     "supervisorProcessId": 15028,
     "startedAt": "2026-11-14T16:05:48.209710+00:00",
     "attempts": [
@@ -25,7 +21,7 @@
         "exitCode": 0,
         "actualProcessCrash": false,
         "status": "receipt_verified",
-        "operation_id": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+        "operation_id": "[private rehearsal identifier]",
         "attempt_id": "attempt-e5cb7ba1ef7143258739ee763ed17e34",
         "process_id": 15216
       }
@@ -33,13 +29,11 @@
   },
   "inspectionResults": [
     {
-      "jobId": "inspection_4d87af29143ad79d806a102396668c5a",
       "status": "needs_assistance",
       "readOnly": true,
       "sourceEventId": "rehearsal-withheld-of-received-fd9bf2fa9fe8344af14082dbb4244eee"
     },
     {
-      "jobId": "inspection_3101d7eed2f06462040d85d15a4ba34a",
       "status": "needs_input",
       "readOnly": true,
       "sourceEventId": "received:fd9bf2fa9fe8344af14082dbb4244eee46d2aff2c160ae8823987dc2c31645be"
@@ -229,24 +223,20 @@
   ],
   "operations": [
     {
-      "operationId": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
       "action": "create",
       "state": "receipt_verified",
-      "clientReference": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
-      "payloadDigest": "54fcf88bd6b1681fb6d9a5509aef4f11b7526093c91a4c7ebbea83158df8eeef",
       "ticketId": "RDS-A6F3F3D7E435",
       "receiptId": "RCP-0AC703D61F91D5741524E3DA",
-      "formVersion": 1
+      "formVersion": 1,
+      "approvedReferenceAndDigestMatched": true
     },
     {
-      "operationId": "op_615c33158b9efa696256724a86f9a161",
       "action": "update",
       "state": "receipt_verified",
-      "clientReference": "op_615c33158b9efa696256724a86f9a161",
-      "payloadDigest": "5365a062e3c7136a5914bf45777c24ae5659e5b5ad84bdb075c2b12afc7205c4",
       "ticketId": "RDS-A6F3F3D7E435",
       "receiptId": "RCP-1975CF64438CD905F9943233",
-      "formVersion": 2
+      "formVersion": 2,
+      "approvedReferenceAndDigestMatched": true
     }
   ],
   "sameTicket": true,
@@ -265,5 +255,7 @@
     "Receiver counters are presenter evidence only; the execution worker obtained acceptance through receiving HTML interfaces."
   ],
   "metadataCorrectedAt": "2026-11-14T16:28:02.253445+00:00",
-  "attemptIdSource": "Authoritative Atlas execution event.data.attemptId read through the hosted case API."
+  "attemptIdSource": "Authoritative Atlas execution event.data.attemptId read through the hosted case API.",
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof."
 }
