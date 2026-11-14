@@ -11,7 +11,6 @@ import { Text } from '@astryxdesign/core/Text';
 import { Button } from '@astryxdesign/core/Button';
 import { Banner } from '@astryxdesign/core/Banner';
 import { FormLayout } from '@astryxdesign/core/FormLayout';
-import { CheckboxInput } from '@astryxdesign/core/CheckboxInput';
 import { List, ListItem } from '@astryxdesign/core/List';
 import { Timestamp } from '@astryxdesign/core/Timestamp';
 import { MetadataList, MetadataListItem } from '@astryxdesign/core/MetadataList';
@@ -27,13 +26,14 @@ import { draftFingerprint, type CaseView, type TimelineView, type TimelineEvent 
 import { PageState } from './PageState';
 import { QuestionField } from './QuestionField';
 import { useReporting } from './ReportingContext';
+import { NotificationStatus } from './NotificationStatus';
 
 type EvidenceView = { events?: TimelineEvent[]; [key: string]: unknown };
 const STATUS: Record<string, { label: string; description: string }> = {
-  draft: { label: 'Review needed', description: 'Your report is saved. Approval is needed before it can be sent.' },
-  preparing_report: { label: 'Preparing report', description: 'Ontara is preparing the approved report for the controlled demo portal.' },
-  checking_submission: { label: 'Checking submission', description: 'Ontara is checking the receiving portal for evidence of acceptance.' },
-  report_acknowledged: { label: 'Report acknowledged', description: 'A receipt has been verified. The responsible organization decides what happens next.' },
+  draft: { label: 'Draft saved', description: 'Check the details and recipient, then send your report.' },
+  preparing_report: { label: 'Sending report', description: 'Ontara is sending the details you approved.' },
+  checking_submission: { label: 'Checking for a receipt', description: 'The receiving system has not yet been verified. Ontara is checking the original submission.' },
+  report_acknowledged: { label: 'Report filed', description: 'The demo portal received your report. Its receipt is verified below.' },
   more_information_needed: { label: 'More information needed', description: 'A reporting step needs a fact only you can provide. Review the question below.' },
   needs_assistance: { label: 'Assistance needed', description: 'The reporting process has paused. Ontara will not invent a fact or repeat an uncertain action.' },
   cancelled: { label: 'Future actions stopped', description: 'Ontara will stop future actions after cancellation is observed. An accepted report cannot be retracted here.' },
@@ -60,7 +60,6 @@ export default function CasePage({ caseId }: { caseId: string }) {
   const [busy, setBusy] = useState(false);
   const [followUpAnswers, setFollowUpAnswers] = useState<Answers>({});
   const [followUpErrors, setFollowUpErrors] = useState<Record<string, string>>({});
-  const [updateApproved, setUpdateApproved] = useState(false);
   const [savedUpdate, setSavedUpdate] = useState<CaseView | null>(null);
   const [stopOpen, setStopOpen] = useState(false);
   const [evidence, setEvidence] = useState<EvidenceView | null>(null);
@@ -106,9 +105,7 @@ export default function CasePage({ caseId }: { caseId: string }) {
     return () => { controller.abort(); clearTimeout(timer); };
   }, [load]);
 
-  useEffect(() => { setUpdateApproved(false); }, [JSON.stringify(followUpAnswers), caseData?.version]);
-
-  async function saveFollowUp() {
+  async function sendUpdate() {
     if (!caseData || requestGuard.current) return;
     const found = validateQuestions(caseData.pendingQuestions, followUpAnswers);
     setFollowUpErrors(found);
@@ -119,21 +116,19 @@ export default function CasePage({ caseId }: { caseId: string }) {
     requestGuard.current = true; setBusy(true); setError('');
     try {
       const saved = await api<CaseView>(`/v1/cases/${encodeURIComponent(caseId)}/follow-up`, { method: 'POST', body: { expectedVersion: caseData.version, answers: followUpAnswers } });
-      setSavedUpdate(saved); setCaseData(saved); setUpdateApproved(false);
-      announce('Update saved. Review and approve it before sending.');
-    } catch (problem) { setError(errorText(problem)); }
-    finally { requestGuard.current = false; setBusy(false); }
-  }
-
-  async function approveUpdate() {
-    if (!savedUpdate || !updateApproved || requestGuard.current) return;
-    requestGuard.current = true; setBusy(true); setError('');
-    try {
-      const approvedCase = await api<CaseView>(`/v1/cases/${encodeURIComponent(caseId)}/approve`, { method: 'POST', body: { version: savedUpdate.version } });
-      setCaseData(approvedCase); setSavedUpdate(null); setFollowUpAnswers({}); setUpdateApproved(false);
-      announce('Update approved. Ontara is checking the reporting process.');
+      setSavedUpdate(saved); setCaseData(saved);
+      const sameRecipient = (['id', 'name', 'portalId', 'portalUrl'] as const).every(key => saved.route.recipient[key] === caseData.route.recipient[key]) && saved.route.id === caseData.route.id && saved.route.authorityId === caseData.route.authorityId;
+      const sameFacts = Object.entries({ ...caseData.answers, ...followUpAnswers }).every(([id, value]) => saved.answers[id] === value) && JSON.stringify(saved.location) === JSON.stringify(caseData.location);
+      if (!sameRecipient || !sameFacts) {
+        setFollowUpAnswers(Object.fromEntries(saved.pendingQuestions.map(question => [question.id, saved.answers[question.id] || ''])));
+        setError('The saved update changed. Check the details and recipient below before sending.');
+        return;
+      }
+      const approvedCase = await api<CaseView>(`/v1/cases/${encodeURIComponent(caseId)}/approve`, { method: 'POST', body: { version: saved.version } });
+      setCaseData(approvedCase); setSavedUpdate(null); setFollowUpAnswers({});
+      announce('Update approved. Checking for its receipt.');
       await load();
-    } catch (problem) { setError(errorText(problem)); }
+    } catch (problem) { setError(errorText(problem)); await load(); }
     finally { requestGuard.current = false; setBusy(false); }
   }
 
@@ -153,9 +148,9 @@ export default function CasePage({ caseId }: { caseId: string }) {
     if (!caseData) return;
     const path = issuePath(caseData.issueId);
     if (!path) return;
-    const draft = { issueId: caseData.issueId, location: caseData.location, answers: caseData.answers, reporter: caseData.reporter || { name: '', email: '', contactConsent: false }, caseId: caseData.id, caseVersion: caseData.version };
+    const draft = { issueId: caseData.issueId, location: caseData.location, answers: caseData.answers, reporter: caseData.reporter || { name: '', email: '', contactConsent: false }, notifications: caseData.notifications || null, notificationSettingsLocked: caseData.notificationSettingsLocked, caseId: caseData.id, caseVersion: caseData.version };
     setDraft({ ...draft, savedFingerprint: draftFingerprint(draft) });
-    router.push(`${path}/details`);
+    router.push(path);
   }
 
   async function loadEvidence(open: boolean) {
@@ -168,7 +163,7 @@ export default function CasePage({ caseId }: { caseId: string }) {
 
   if (fatal) return <PageState title="This private case is unavailable" message="Open the case in the browser session that created it. A case reference alone does not grant access." retry={() => { setFatal(false); void load(); }} />;
   if (!caseData) return <PageState title="Your private case" loading={!error && !pollError} message={error || pollError || undefined} retry={error || pollError ? () => void load() : undefined} />;
-  const status = STATUS[caseData.stage] || { label: 'Reporting in progress', description: 'Ontara is checking the next reporting step.' };
+  const status = STATUS[caseData.stage === 'report_acknowledged' && !caseData.receipt ? 'checking_submission' : caseData.stage] || { label: 'Reporting in progress', description: 'Ontara is checking the next reporting step.' };
   const questionnaire = questionnaires[caseData.issueId];
   const issueLabel = questionnaire ? caseData.issueId.startsWith('roads-') ? 'Roads report' : 'Graffiti report' : 'Local problem report';
   const receipt = caseData.receipt;
@@ -189,7 +184,7 @@ export default function CasePage({ caseId }: { caseId: string }) {
     {ticketUrl ? <Link href={ticketUrl} isExternalLink>View demo portal ticket</Link> : null}
     {receiptUrl ? <Link href={receiptUrl} isExternalLink>View verified demo receipt</Link> : null}
     {caseData.stage === 'draft' && !savedUpdate ? <HStack><Button label="Review saved report" onClick={edit} /></HStack> : null}
-    <Text type="supporting" color="secondary">This case is private to this browser session. The two receiving portals are controlled demonstrations.</Text>
+    <Text type="supporting" color="secondary">Open this private case in the browser that created it.</Text>
   </VStack>;
 
   return <Layout height="auto" contentWidth={1000} defaultHasDividers
@@ -201,24 +196,18 @@ export default function CasePage({ caseId }: { caseId: string }) {
     </VStack></LayoutHeader>}
     content={<LayoutContent padding={4}><VStack gap={6}>
       {error || pollError ? <Banner status="error" title="This step needs attention" description={error || pollError} endContent={<Button label="Check again" onClick={() => void load()} size="sm" />} /> : null}
-      {receipt ? <Banner status="success" title="Receipt verified" description="The demo portal acknowledged the report. This confirms acceptance of the reporting step; it does not confirm an inspection or repair." /> : null}
+      {receipt ? <Banner status="success" title="Receipt verified" description="The demo portal received this reporting step. Inspection or repair has not been verified." /> : null}
+      <NotificationStatus notifications={caseData.notifications} progress={caseData.notificationProgress || []} />
 
-      {!cancelled && caseData.pendingQuestions.length > 0 && !savedUpdate ? <VStack gap={5}>
-        <Heading level={2}>A little more information</Heading>
-        <Text>The receiving process needs the following detail. Your earlier answers stay with the same case.</Text>
+      {!cancelled && caseData.pendingQuestions.length > 0 ? <VStack gap={4}>
+        <Heading level={2}>One more detail</Heading>
+        <Text>Add the requested information to the same report.</Text>
         <FormLayout defaultOptionality="optional">
-          {caseData.pendingQuestions.map(question => <QuestionField key={question.id} question={question} value={followUpAnswers[question.id]} onChange={value => setFollowUpAnswers(current => ({ ...current, [question.id]: value }))} error={followUpErrors[question.id]} />)}
+          {caseData.pendingQuestions.map(question => <QuestionField key={question.id} question={question} value={followUpAnswers[question.id]} onChange={value => { setSavedUpdate(null); setFollowUpAnswers(current => ({ ...current, [question.id]: value })); }} error={followUpErrors[question.id]} isDisabled={busy} />)}
         </FormLayout>
-        <HStack><Button label="Review update" variant="primary" onClick={saveFollowUp} isLoading={busy} /></HStack>
-        <Divider />
-      </VStack> : null}
-
-      {!cancelled && savedUpdate ? <VStack gap={5}>
-        <Heading level={2}>Review this update</Heading>
-        <Text>This information will update the existing report at {recipientName}.</Text>
-        <MetadataList orientation="vertical">{Object.entries(followUpAnswers).map(([id, value]) => <MetadataListItem key={id} label={caseData.pendingQuestions.find(question => question.id === id)?.label || followUpQuestions[id]?.label || id}>{value}</MetadataListItem>)}</MetadataList>
-        <CheckboxInput label={`I approve sending this update to ${recipientName}`} value={updateApproved} onChange={setUpdateApproved} isRequired />
-        <HStack gap={3} wrap="wrap"><Button label="Back to answer" onClick={() => setSavedUpdate(null)} /><Button label="Approve and send update" variant="primary" onClick={approveUpdate} isLoading={busy} isDisabled={!updateApproved} /></HStack>
+        {Object.values(followUpAnswers).some(Boolean) ? <MetadataList orientation="vertical">{Object.entries(followUpAnswers).filter(([, value]) => value).map(([id, value]) => <MetadataListItem key={id} label={caseData.pendingQuestions.find(question => question.id === id)?.label || followUpQuestions[id]?.label || id}>{value}</MetadataListItem>)}</MetadataList> : null}
+        <Text type="supporting">By selecting Send update, you approve the information above being sent to {recipientName} for the existing report{caseData.notifications ? `, with progress emailed to ${caseData.notifications.email}` : ''}.</Text>
+        <HStack><Button label="Send update" variant="primary" onClick={sendUpdate} isLoading={busy} /></HStack>
         <Divider />
       </VStack> : null}
 

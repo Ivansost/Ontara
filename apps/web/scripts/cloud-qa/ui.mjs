@@ -49,7 +49,7 @@ export async function fillAuthoredQuestions(page, questionnaire, answers) {
 }
 
 /** Create a fresh draft through category cards and form buttons; never approve. */
-export async function prepareDraftThroughUi(page, webOrigin, issueId, answers) {
+export async function prepareDraftThroughUi(page, webOrigin, issueId, answers, { notificationEmail } = {}) {
   await page.goto(webOrigin + '/report');
   const catalogue = await readResidentJson(page, '/v1/catalogue');
   const trail = catalogueTrail(catalogue.categories, issueId);
@@ -62,25 +62,26 @@ export async function prepareDraftThroughUi(page, webOrigin, issueId, answers) {
   const fixture = page.getByRole('button', { name: 'Use synthetic demo location', exact: true });
   assert.equal(await fixture.count(), 1, 'The configured demo fixture is ambiguous.');
   await fixture.click();
-  await page.getByRole('checkbox', { name: /^I confirm this is the incident location/ }).check();
-  await page.getByRole('button', { name: 'Continue', exact: true }).click();
-  await page.waitForURL(/\/details$/);
   const questionnaire = await readResidentJson(page, '/v1/questions/' + encodeURIComponent(issueId));
-  await fillAuthoredQuestions(page, questionnaire, answers);
   const responsePromise = page.waitForResponse(response => new URL(response.url()).pathname === '/api/backend/v1/cases' && response.request().method() === 'POST');
-  await page.getByRole('button', { name: 'Review report', exact: true }).click();
+  await fillAuthoredQuestions(page, questionnaire, answers);
+  if (notificationEmail) await page.getByRole('textbox', { name: /^Email for updates/ }).fill(notificationEmail);
   const response = await responsePromise;
   assert.equal(response.status(), 201, 'Creating a real draft must return HTTP 201.');
   const saved = await response.json();
-  await page.waitForURL(/\/review$/);
-  await page.getByRole('heading', { name: 'Review and approve', exact: true }).waitFor();
-  const approval = page.getByRole('checkbox', { name: /^I approve this report/ });
-  assert.equal(await approval.isChecked(), false, 'The resident has not approved the draft.');
+  await page.getByRole('heading', { name: 'Review and send', exact: true }).waitFor();
+  await page.getByRole('button', { name: 'Send report', exact: true }).waitFor({ state: 'visible' });
+  await page.waitForFunction(() => {
+    const button = Array.from(document.querySelectorAll('button')).find(item => item.textContent?.trim() === 'Send report');
+    return button && !button.disabled && button.getAttribute('aria-disabled') !== 'true';
+  });
+  await page.getByText(/^By selecting Send report, you confirm this location/).waitFor();
   const current = await readResidentJson(page, '/v1/cases/' + encodeURIComponent(saved.id));
   assert.equal(current.stage, 'draft');
   assert.equal(current.approvedVersion, null);
   assert.equal(current.currentOperationId, null);
   assert.ok(current.route.demo && current.route.recipient.name.includes('DEMO'));
+  assert.ok((current.notifications?.email || null) === (notificationEmail || null), 'Notification choice must be saved before final approval.');
   return { caseData: current, catalogueVersion: catalogue.version, questionnaireVersion: questionnaire.version };
 }
 
@@ -93,19 +94,15 @@ export async function reopenDraftReview(page, webOrigin, caseId) {
   assert.equal(current.currentOperationId, null);
   assert.equal(current.receipt, null);
   await page.getByRole('button', { name: 'Review saved report', exact: true }).click();
-  await page.waitForURL(/\/details$/);
-  await page.getByRole('button', { name: 'Review report', exact: true }).click();
-  await page.waitForURL(/\/review$/);
-  await page.getByRole('heading', { name: 'Review and approve', exact: true }).waitFor();
+  await page.getByRole('heading', { name: 'Review and send', exact: true }).waitFor();
+  await page.getByText(/^By selecting Send report, you confirm this location/).waitFor();
   return readResidentJson(page, '/v1/cases/' + encodeURIComponent(caseId));
 }
 
 export async function approveReviewedReportThroughUi(page, caseId) {
-  const checkbox = page.getByRole('checkbox', { name: /^I approve this report/ });
-  assert.equal(await checkbox.isChecked(), false, 'Fresh review approval must start unchecked.');
-  await checkbox.check();
+  await page.getByText(/^By selecting Send report, you confirm this location/).waitFor();
   const responsePromise = page.waitForResponse(response => new URL(response.url()).pathname === `/api/backend/v1/cases/${caseId}/approve` && response.request().method() === 'POST');
-  await page.getByRole('button', { name: 'Approve and send report', exact: true }).click();
+  await page.getByRole('button', { name: 'Send report', exact: true }).click();
   const response = await responsePromise;
   assert.equal(response.status(), 200, `The reviewed report was not approved (HTTP ${response.status()}).`);
   await page.waitForURL(new RegExp('/cases/' + escaped(caseId) + '$'));
@@ -116,15 +113,11 @@ export async function answerAndApproveLandmarkThroughUi(page, caseId, pendingQue
   assert.equal(pendingQuestion.id, 'nearestLandmark');
   await page.getByRole('textbox', { name: named(pendingQuestion.label) }).fill(landmark);
   const savePromise = page.waitForResponse(response => new URL(response.url()).pathname === `/api/backend/v1/cases/${caseId}/follow-up` && response.request().method() === 'POST');
-  await page.getByRole('button', { name: 'Review update', exact: true }).click();
+  const approvePromise = page.waitForResponse(response => new URL(response.url()).pathname === `/api/backend/v1/cases/${caseId}/approve` && response.request().method() === 'POST');
+  await page.getByText(/^By selecting Send update, you approve/).waitFor();
+  await page.getByRole('button', { name: 'Send update', exact: true }).click();
   const saved = await savePromise;
   assert.equal(saved.status(), 200, 'The resident follow-up answer was not saved.');
-  await page.getByRole('heading', { name: 'Review this update', exact: true }).waitFor();
-  const checkbox = page.getByRole('checkbox', { name: /^I approve sending this update/ });
-  assert.equal(await checkbox.isChecked(), false, 'A new fact requires fresh update approval.');
-  await checkbox.check();
-  const approvePromise = page.waitForResponse(response => new URL(response.url()).pathname === `/api/backend/v1/cases/${caseId}/approve` && response.request().method() === 'POST');
-  await page.getByRole('button', { name: 'Approve and send update', exact: true }).click();
   const approved = await approvePromise;
   assert.equal(approved.status(), 200, 'The reviewed update was not approved.');
   return approved.json();

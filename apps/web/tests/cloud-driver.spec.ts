@@ -37,7 +37,8 @@ for (const example of [
     expect(prepared.caseData.stage).toBe('draft');
     expect(prepared.caseData.approvedVersion).toBe(null);
     expect(prepared.caseData.currentOperationId).toBe(null);
-    await expect(page.getByRole('checkbox', { name: /^I approve this report/ })).not.toBeChecked();
+    await expect(page.getByRole('button', { name: 'Send report', exact: true })).toBeEnabled();
+    await expect(page.getByRole('checkbox', { name: /^I approve this report/ })).toHaveCount(0);
   });
 }
 

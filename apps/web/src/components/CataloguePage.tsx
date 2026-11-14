@@ -59,7 +59,7 @@ export function CataloguePage({ trail = [], step }: { trail?: CatalogueNode[]; s
   const isHome = !current;
   const isPreview = current?.kind === 'issue' && !current.available;
   const base = '/report' + (trail.length ? '/' + trail.map(node => node.slug).join('/') : '');
-  if (current?.kind === 'issue' && current.available) return <ReportJourney issue={current} trail={trail} step={step} />;
+  if (current?.kind === 'issue' && current.available) return <ReportJourney key={current.id} issue={current} trail={trail} step={step} />;
   if (step && !isPreview) return <PageState title="This report isn’t available" message="Return to the issue choices to continue." />;
   const nodes = current ? current.children : catalogue.categories;
   return (
@@ -114,15 +114,15 @@ export function CataloguePage({ trail = [], step }: { trail?: CatalogueNode[]; s
             <Grid columns={{ minWidth: 240, max: 3 }} gap={6}>
               <VStack gap={2}>
                 <Heading level={3}>Choose an issue and location</Heading>
-                <Text color="secondary">Pick the category that fits, confirm where the problem is, and answer the questions.</Text>
+                <Text color="secondary">Pick the category that fits, enter the location, and answer the questions on one form.</Text>
               </VStack>
               <VStack gap={2}>
                 <Heading level={3}>Review before sending</Heading>
-                <Text color="secondary">Check the report and its named recipient. You decide when to approve and send it.</Text>
+                <Text color="secondary">Check the details and recipient, add your email for updates, then send the report.</Text>
               </VStack>
               <VStack gap={2}>
                 <Heading level={3}>Follow the same case</Heading>
-                <Text color="secondary">View the receipt and requests for more information in one private case. Add requested details there and approve each update.</Text>
+                <Text color="secondary">Get reporting updates by email and view the receipt in your private case. If a detail is needed, add it there and send the update.</Text>
               </VStack>
             </Grid>
           </VStack> : null}

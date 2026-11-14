@@ -408,6 +408,41 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/internal/v1/cases/{case_id}/fault-next-create": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Fault Next Create */
+        post: operations["fault_next_create_internal_v1_cases__case_id__fault_next_create_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/internal/v1/cases/{case_id}/follow-up-hold": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Follow Up Hold */
+        get: operations["get_follow_up_hold_internal_v1_cases__case_id__follow_up_hold_get"];
+        put?: never;
+        /** Set Follow Up Hold */
+        post: operations["set_follow_up_hold_internal_v1_cases__case_id__follow_up_hold_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/internal/v1/cases/{case_id}/events": {
         parameters: {
             query?: never;
@@ -663,6 +698,125 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/voice/availability": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Availability */
+        get: operations["availability_v1_voice_availability_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/voice/sessions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Start */
+        post: operations["start_v1_voice_sessions_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/voice/sessions/{session_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Read */
+        get: operations["read_v1_voice_sessions__session_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/voice/sessions/{session_id}/answers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Answer */
+        post: operations["answer_v1_voice_sessions__session_id__answers_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/voice/sessions/{session_id}/bind": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Bind */
+        post: operations["bind_v1_voice_sessions__session_id__bind_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/voice/sessions/{session_id}/finish": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Finish */
+        post: operations["finish_v1_voice_sessions__session_id__finish_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/voice/cases/{case_id}/history": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** History */
+        get: operations["history_v1_voice_cases__case_id__history_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -735,6 +889,7 @@ export interface components {
                 [key: string]: unknown;
             };
             reporter?: components["schemas"]["Reporter"] | null;
+            notifications?: components["schemas"]["ResidentNotifications"] | null;
         };
         /** CaseEventInput */
         CaseEventInput: {
@@ -769,6 +924,7 @@ export interface components {
                 [key: string]: unknown;
             } | null;
             reporter?: components["schemas"]["Reporter"] | null;
+            notifications?: components["schemas"]["ResidentNotifications"] | null;
         };
         /** CaseView */
         CaseView: {
@@ -784,6 +940,14 @@ export interface components {
                 [key: string]: unknown;
             };
             reporter?: components["schemas"]["Reporter"] | null;
+            notifications?: components["schemas"]["ResidentNotifications"] | null;
+            /**
+             * Notificationsettingslocked
+             * @default false
+             */
+            notificationSettingsLocked: boolean;
+            /** Notificationprogress */
+            notificationProgress?: components["schemas"]["NotificationProgress"][];
             /** Stage */
             stage: string;
             /** Route */
@@ -883,6 +1047,32 @@ export interface components {
             answers: {
                 [key: string]: unknown;
             };
+        };
+        /** FollowUpHoldRequest */
+        FollowUpHoldRequest: {
+            /** Held */
+            held: boolean;
+        };
+        /** FollowUpHoldView */
+        FollowUpHoldView: {
+            /** Caseid */
+            caseId: string;
+            /** Held */
+            held: boolean;
+            /** Nextcreatefaultarmed */
+            nextCreateFaultArmed: boolean;
+            /** Heldat */
+            heldAt?: string | null;
+            /** Releasedat */
+            releasedAt?: string | null;
+            /** Portalconfirmation */
+            portalConfirmation?: {
+                [key: string]: unknown;
+            } | null;
+            /** Authorityoutbox */
+            authorityOutbox?: {
+                [key: string]: unknown;
+            } | null;
         };
         /** FollowUpInspectionRequest */
         FollowUpInspectionRequest: {
@@ -1098,6 +1288,32 @@ export interface components {
                 [key: string]: unknown;
             } | null;
         };
+        /** NotificationProgress */
+        NotificationProgress: {
+            /** Id */
+            id: string;
+            /**
+             * Purpose
+             * @enum {string}
+             */
+            purpose: "RESIDENT_REPORT_FILED" | "RESIDENT_INFORMATION_NEEDED" | "RESIDENT_NOTIFICATION" | "RESIDENT_NEEDS_ASSISTANCE";
+            /**
+             * State
+             * @enum {string}
+             */
+            state: "QUEUED" | "SENDING" | "SENT" | "OUTCOME_UNKNOWN" | "NEEDS_ASSISTANCE" | "CANCELLED";
+            /**
+             * Deliverystate
+             * @default UNVERIFIED
+             * @enum {string}
+             */
+            deliveryState: "UNVERIFIED" | "RECEIVED";
+            /**
+             * Updatedat
+             * Format: date-time
+             */
+            updatedAt: string;
+        };
         /** OperationTransition */
         OperationTransition: {
             /** Workerid */
@@ -1281,6 +1497,16 @@ export interface components {
             }[];
             /** Gaps */
             gaps?: string[];
+        };
+        /** ResidentNotifications */
+        ResidentNotifications: {
+            /** Email */
+            email: string;
+            /**
+             * Consent
+             * @constant
+             */
+            consent: true;
         };
         /** RetrievalRequest */
         RetrievalRequest: {
@@ -1504,6 +1730,50 @@ export interface components {
             questionId: string;
             /** Equals */
             equals: unknown;
+        };
+        /** VoiceAnswer */
+        VoiceAnswer: {
+            /** Expectedrevision */
+            expectedRevision: number;
+            /** Questionid */
+            questionId: string;
+            /** Value */
+            value?: string | null;
+        };
+        /** VoiceBind */
+        VoiceBind: {
+            /** Caseid */
+            caseId: string;
+            /** Caseversion */
+            caseVersion: number;
+        };
+        /** VoiceStart */
+        VoiceStart: {
+            /** Requestid */
+            requestId: string;
+            /** Issueid */
+            issueId: string;
+            location: components["schemas"]["IncidentLocation"];
+            /** Answers */
+            answers?: {
+                [key: string]: string;
+            };
+            /**
+             * Voiceconsent
+             * @constant
+             */
+            voiceConsent: true;
+            /**
+             * Consentversion
+             * @constant
+             */
+            consentVersion: "2026-11-14.1";
+            /**
+             * Mode
+             * @default voice
+             * @enum {string}
+             */
+            mode: "voice" | "text";
         };
     };
     responses: never;
@@ -2294,6 +2564,107 @@ export interface operations {
             };
         };
     };
+    fault_next_create_internal_v1_cases__case_id__fault_next_create_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                case_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["FaultRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_follow_up_hold_internal_v1_cases__case_id__follow_up_hold_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                case_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["FollowUpHoldView"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    set_follow_up_hold_internal_v1_cases__case_id__follow_up_hold_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                case_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["FollowUpHoldRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["FollowUpHoldView"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     event_internal_v1_cases__case_id__events_post: {
         parameters: {
             query?: never;
@@ -2774,6 +3145,222 @@ export interface operations {
                     "application/json": {
                         [key: string]: unknown;
                     };
+                };
+            };
+        };
+    };
+    availability_v1_voice_availability_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    start_v1_voice_sessions_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["VoiceStart"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    read_v1_voice_sessions__session_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    answer_v1_voice_sessions__session_id__answers_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["VoiceAnswer"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    bind_v1_voice_sessions__session_id__bind_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["VoiceBind"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    finish_v1_voice_sessions__session_id__finish_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    history_v1_voice_cases__case_id__history_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                case_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

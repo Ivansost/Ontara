@@ -70,20 +70,33 @@ export function receivedMail(status, purpose, operationId) {
   };
 }
 
+export function sentMail(status, purpose, operationId) {
+  const item = status.outbox?.find(item => item.purpose === purpose && item.operationId === operationId && item.state === 'SENT');
+  if (!item) return null;
+  return { id: item.id, caseId: item.caseId, operationId: item.operationId, purpose: item.purpose, state: item.state, deliveryState: item.deliveryState || 'UNVERIFIED' };
+}
+
 export function duplicateMailSnapshot(evidence, status) {
   assert.equal(evidence.case.stage, 'report_acknowledged');
   assert.equal(evidence.case.approvedVersion, evidence.case.version);
   assert.equal(evidence.operations.filter(item => item.action === 'create').length, 1);
   assert.equal(evidence.operations.filter(item => item.action === 'update').length, 1);
   assert.ok(evidence.operations.every(item => item.state === 'receipt_verified'));
-  assert.equal(status.messagesStored, 6, 'Three genuine messages must retain exactly six stored sender/receiver copies.');
-  assert.equal(status.outbox.length, 3);
+  const optedIn = Boolean(evidence.case.notifications?.consent);
+  const required = ['AUTHORITY_QUESTION', 'AUTHORITY_RESPONSE', 'RESIDENT_NOTIFICATION', ...(optedIn ? ['RESIDENT_REPORT_FILED', 'RESIDENT_INFORMATION_NEEDED'] : [])];
+  const allowed = new Set([...required, 'RESIDENT_NEEDS_ASSISTANCE']);
+  assert.ok(status.outbox.every(item => allowed.has(item.purpose)), 'Only expected case-mail purposes belong to this proof.');
+  if (!optedIn) {
+    assert.equal(status.messagesStored, 6, 'Historical blank-email runs retain exactly six stored sender/receiver copies.');
+    assert.equal(status.outbox.length, 3);
+  }
+  assert.ok(required.every(purpose => status.outbox.some(item => item.purpose === purpose)), 'The completed run must retain every applicable mail purpose.');
   const outbox = status.outbox.map(item => {
     assert.equal(item.attemptCount, 1, 'Repeating existing mail work must not attempt another send.');
-    assert.ok(receivedMail(status, item.purpose, item.operationId));
+    assert.ok(optedIn && item.purpose.startsWith('RESIDENT_') ? sentMail(status, item.purpose, item.operationId) : receivedMail(status, item.purpose, item.operationId));
     return { id: item.id, purpose: item.purpose, operationId: item.operationId, providerMessageId: item.providerMessageId, receivingEvidence: item.receivingEvidence, attemptCount: item.attemptCount };
   }).sort((a, b) => a.purpose.localeCompare(b.purpose));
-  assert.deepEqual(outbox.map(item => item.purpose), ['AUTHORITY_QUESTION', 'AUTHORITY_RESPONSE', 'RESIDENT_NOTIFICATION']);
+  if (!optedIn) assert.deepEqual(outbox.map(item => item.purpose), required);
   const inspections = evidence.events.filter(item => item.kind === 'form_inspected' && item.data?.sourceEventId?.startsWith('received:'));
   assert.equal(inspections.length, 1, 'Duplicate provider processing must retain one genuine authority-mail inspection.');
   return { version: evidence.case.version, approvedVersion: evidence.case.approvedVersion, receipt: receiptSummary(evidence.case.receipt), operationIds: evidence.operations.map(item => item.id).sort(), outbox, inspectionIds: inspections.map(item => item.id), messagesStored: status.messagesStored };

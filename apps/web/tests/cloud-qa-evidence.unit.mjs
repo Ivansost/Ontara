@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { controlClient } from '../scripts/cloud-qa.mjs';
-import { assertCreateRecovery, assertChangedFormEvidence, receiptSummary, receivedMail, duplicateMailSnapshot } from '../scripts/cloud-qa/evidence.mjs';
+import { controlClient, privateNotificationEmail } from '../scripts/cloud-qa.mjs';
+import { assertCreateRecovery, assertChangedFormEvidence, receiptSummary, receivedMail, sentMail, duplicateMailSnapshot } from '../scripts/cloud-qa/evidence.mjs';
 
 function recoveryFixture() {
   const receipt = { ticketId: 'ticket_fixture', receiptId: 'receipt_fixture', clientReference: 'op_create_fixture', payloadDigest: 'digest_fixture', action: 'create', receiptSignature: 'private-capability-fixture', updateUrl: 'private-update-capability-fixture' };
@@ -65,7 +65,14 @@ test('mail requires exact operation correlation and receiving-inbox evidence', (
   assert.equal(receivedMail({ outbox: [item] }, 'RESIDENT_NOTIFICATION', 'op_create_fixture'), null);
   item.deliveryState = 'PENDING';
   assert.equal(receivedMail({ outbox: [item] }, 'RESIDENT_NOTIFICATION', 'op_update_fixture'), null);
+  assert.equal(sentMail({ outbox: [item] }, 'RESIDENT_NOTIFICATION', 'op_update_fixture').state, 'SENT');
   assert.ok(!('receiptSignature' in receiptSummary({ ticketId: 'ticket', receiptSignature: 'capability' })));
+});
+
+test('notification recipient is optional and read privately without a CLI address argument', async () => {
+  assert.equal(await privateNotificationEmail(new Map(), {}), undefined);
+  assert.ok(await privateNotificationEmail(new Map(), { ONTARA_QA_NOTIFICATION_EMAIL: 'controlled-fixture@example.invalid' }));
+  await assert.rejects(() => privateNotificationEmail(new Map(), { ONTARA_QA_NOTIFICATION_EMAIL: 'bad\nrecipient' }), /valid email/);
 });
 
 
@@ -90,6 +97,9 @@ test('duplicate check requires one genuine inspection and exactly one send per p
   };
   const status = { messagesStored: 6, outbox: ['AUTHORITY_QUESTION', 'AUTHORITY_RESPONSE', 'RESIDENT_NOTIFICATION'].map((purpose, index) => ({ id: 'mail_fixture_' + index, purpose, operationId: index ? 'update_fixture' : 'create_fixture', attemptCount: 1, state: 'SENT', deliveryState: 'RECEIVED', receivingEvidence: { inboxId: 'inbox_fixture', providerMessageId: 'message_fixture_' + index, providerThreadId: 'thread_fixture', evidence: 'message_read_from_controlled_receiving_inbox' } })) };
   assert.equal(duplicateMailSnapshot(evidence, status).inspectionIds.length, 1);
+  const optedInEvidence = { ...evidence, case: { ...evidence.case, notifications: { email: 'private-fixture@example.invalid', consent: true } } };
+  const optedInStatus = { messagesStored: 8, outbox: [...status.outbox, ...['RESIDENT_REPORT_FILED', 'RESIDENT_INFORMATION_NEEDED'].map((purpose, index) => ({ id: 'opted_mail_' + index, purpose, operationId: 'create_fixture', attemptCount: 1, state: 'SENT', deliveryState: 'UNVERIFIED' }))] };
+  assert.equal(duplicateMailSnapshot(optedInEvidence, optedInStatus).outbox.length, 5);
   status.outbox[0].attemptCount = 2;
   assert.throws(() => duplicateMailSnapshot(evidence, status), /another send/);
   status.outbox[0].attemptCount = 1;

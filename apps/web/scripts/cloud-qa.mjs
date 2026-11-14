@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { chromium } from '@playwright/test';
 import { prepareDraftThroughUi, reopenDraftReview, approveReviewedReportThroughUi, answerAndApproveLandmarkThroughUi, cancelUnusedDraftThroughUi, readResidentJson } from './cloud-qa/ui.mjs';
-import { receiptSummary, assertCreateRecovery, assertChangedFormEvidence, receivedMail, duplicateMailSnapshot } from './cloud-qa/evidence.mjs';
+import { receiptSummary, assertCreateRecovery, assertChangedFormEvidence, receivedMail, sentMail, duplicateMailSnapshot } from './cloud-qa/evidence.mjs';
 
 const sourceRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..');
 const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -18,7 +18,7 @@ const out = (event, details = {}) => process.stdout.write(JSON.stringify({ event
 function options(argv) {
   const action = argv.shift() || 'help';
   const flags = new Map();
-  const booleans = new Set(['headed', 'record', 'allow-local', 'recovery-ready', 'recovery-reviewed']);
+  const booleans = new Set(['headed', 'record', 'allow-local', 'recovery-ready', 'recovery-reviewed', 'require-email-receipt']);
   for (let i = 0; i < argv.length; i++) {
     assert.ok(argv[i].startsWith('--'), 'Use named CLI options.');
     const key = argv[i].slice(2);
@@ -86,6 +86,27 @@ async function internalToken(flags) {
   return value;
 }
 
+/** A supplied address stays in private process/session state, never CLI output. */
+export async function privateNotificationEmail(flags, environment = process.env) {
+  let email = environment.ONTARA_QA_NOTIFICATION_EMAIL;
+  if (flags.has('notifications-env')) {
+    const path = await realpath(resolve(flags.get('notifications-env')));
+    const inside = relative(sourceRoot, path);
+    assert.ok(inside.startsWith('..') || isAbsolute(inside), 'Notification configuration must stay outside the repository.');
+    assert.equal((await stat(path)).mode & 0o077, 0, 'Notification configuration must be owner-only.');
+    const input = await readFile(path, 'utf8');
+    const match = input.match(/^\s*(?:export\s+)?(?:ONTARA_QA_NOTIFICATION_EMAIL|ONTARA_MAIL_RESIDENT_INBOX_ID)\s*=\s*(.*?)\s*$/m);
+    assert.ok(match, 'Private notification configuration has no supported recipient key.');
+    email = match[1];
+    if (email.startsWith('"')) { try { email = JSON.parse(email); } catch { throw new Error('Private notification configuration could not be parsed.'); } }
+    else if (email.startsWith("'")) { assert.ok(email.endsWith("'"), 'Private notification configuration could not be parsed.'); email = email.slice(1, -1); }
+    else email = email.replace(/\s+#.*$/, '').trim();
+  }
+  if (!email) return undefined;
+  assert.ok(typeof email === 'string' && email.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 'Private notification configuration needs a valid email address.');
+  return email;
+}
+
 export function controlClient(apiOrigin, token, send = fetch) {
   return async (path, method = 'GET', body) => {
     assert.match(path, /^\/internal\/v1\//, 'Control requests must use internal API paths.');
@@ -143,17 +164,64 @@ function caseSummary(caseData) {
   return { id: caseData.id, runId: caseData.runId, issueId: caseData.issueId, version: caseData.version, stage: caseData.stage, approvedVersion: caseData.approvedVersion, operationId: caseData.currentOperationId, ...(caseData.receipt ? { receipt: receiptSummary(caseData.receipt) } : {}) };
 }
 
+const publicMailSummary = item => item ? { id: item.id, operationId: item.operationId, purpose: item.purpose, state: item.state, deliveryState: item.deliveryState, receivingEvidenceVerified: Boolean(item.receivingEvidence?.evidence === 'message_read_from_controlled_receiving_inbox') } : null;
+
 async function prepareRoads(run, flags, webOrigin, apiOrigin) {
   try { await stat(run.manifestPath); throw new Error('This run already exists; use its exact continuation stage instead of creating another draft.'); } catch (error) { if (error.code !== 'ENOENT') throw error; }
   await readiness(webOrigin, apiOrigin);
   const session = await browserSession(run, flags, false);
   try {
-    const prepared = await prepareDraftThroughUi(session.page, webOrigin, 'roads-pothole', roadsFacts);
-    const manifest = { schemaVersion: 1, runId: run.runId, webOrigin, apiOrigin, phase: 'roads_draft_prepared', preparedAt: new Date().toISOString(), catalogueVersion: prepared.catalogueVersion, questionnaireVersion: prepared.questionnaireVersion, roads: caseSummary(prepared.caseData) };
+    const notificationEmail = await privateNotificationEmail(flags);
+    const prepared = await prepareDraftThroughUi(session.page, webOrigin, 'roads-pothole', roadsFacts, { notificationEmail });
+    const manifest = { schemaVersion: 1, runId: run.runId, webOrigin, apiOrigin, notificationOptIn: Boolean(notificationEmail), phase: 'roads_draft_prepared', preparedAt: new Date().toISOString(), catalogueVersion: prepared.catalogueVersion, questionnaireVersion: prepared.questionnaireVersion, roads: caseSummary(prepared.caseData) };
     await session.screenshot('roads-unapproved-review'); await session.save(); await writePrivateJson(run.manifestPath, manifest);
     out('roads_draft_prepared', { run: run.runId, ...manifest.roads, approvalSent: false });
     out('coordination_required', { next: 'Parent/Sol2 arm the next-create fault and the deterministic mail hold; Sol4 confirms cloud executor readiness before approve-roads.' });
   } finally { await session.close(); }
+}
+
+async function submitNormalRoads(run, flags, webOrigin, apiOrigin, timeout) {
+  try { await stat(run.manifestPath); throw new Error('This run already exists; collect its original case instead of creating another.'); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+  await readiness(webOrigin, apiOrigin);
+  const notificationEmail = await privateNotificationEmail(flags);
+  const control = controlClient(apiOrigin, await internalToken(flags));
+  const session = await browserSession(run, flags, false);
+  try {
+    const prepared = await prepareDraftThroughUi(session.page, webOrigin, 'roads-pothole', roadsFacts, { notificationEmail });
+    const manifest = { schemaVersion: 1, runId: run.runId, webOrigin, apiOrigin, phase: 'normal_roads_prepared', notificationOptIn: Boolean(notificationEmail), roads: caseSummary(prepared.caseData), preparedAt: new Date().toISOString() };
+    await session.save(); await writePrivateJson(run.manifestPath, manifest);
+    const approved = await approveReviewedReportThroughUi(session.page, prepared.caseData.id);
+    manifest.roads = caseSummary(approved); manifest.phase = 'normal_roads_approved';
+    await session.save(); await writePrivateJson(run.manifestPath, manifest);
+    await collectNormalRoads(run, flags, manifest, control, timeout, session);
+  } finally { await session.close(); }
+}
+
+async function collectNormalRoads(run, flags, manifest, control, timeout, existingSession) {
+  assert.ok(['normal_roads_prepared', 'normal_roads_approved', 'normal_roads_complete'].includes(manifest.phase), 'Collect only the existing ordinary Roads test.');
+  const session = existingSession || await browserSession(run, flags, true);
+  try {
+    if (!existingSession) await session.page.goto(manifest.webOrigin + '/cases/' + manifest.roads.id);
+    const live = await readResidentJson(session.page, `/v1/cases/${manifest.roads.id}`);
+    assert.ok(live.approvedVersion !== null && live.currentOperationId, 'No approval is recorded; collection never approves a report.');
+    const acknowledged = await until('the ordinary Roads receipt', timeout, async () => {
+      const current = await readResidentJson(session.page, `/v1/cases/${manifest.roads.id}`);
+      return current.receipt?.action === 'create' ? current : null;
+    });
+    const evidence = await control(`/internal/v1/cases/${manifest.roads.id}/evidence`);
+    assert.equal(evidence.operations.length, 1, 'An ordinary test must retain one create operation.');
+    assert.equal(evidence.operations[0].action, 'create');
+    assert.equal(acknowledged.pendingQuestions.length, 0, 'Ordinary Roads does not stage a synthetic authority question.');
+    let notification = null;
+    if (manifest.notificationOptIn) notification = await until('the filing email', timeout, async () => {
+      const status = await control(`/internal/v1/mail/status?case_id=${encodeURIComponent(manifest.roads.id)}`);
+      assert.ok(!status.outbox.some(item => item.purpose === 'AUTHORITY_QUESTION'), 'Ordinary filing must not opt into the advanced authority story.');
+      return flags.has('require-email-receipt') ? receivedMail(status, 'RESIDENT_REPORT_FILED', acknowledged.currentOperationId) : sentMail(status, 'RESIDENT_REPORT_FILED', acknowledged.currentOperationId);
+    });
+    manifest.roads = caseSummary(acknowledged); manifest.notification = notification; manifest.phase = 'normal_roads_complete'; manifest.completedAt = new Date().toISOString();
+    await session.screenshot('normal-roads-receipt'); await session.save(); await writePrivateJson(run.manifestPath, manifest);
+    out('normal_roads_complete', { run: run.runId, ...manifest.roads, notification: publicMailSummary(notification) });
+  } finally { if (!existingSession) await session.close(); }
 }
 
 async function approveRoads(run, flags, manifest, control, timeout) {
@@ -271,14 +339,14 @@ async function collectUpdatedReceipt(run, flags, manifest, control, timeout, exi
     const finalMail = await until('genuine update response and resident notification delivery', timeout, async () => {
       const status = await control(`/internal/v1/mail/status?case_id=${encodeURIComponent(manifest.roads.id)}`);
       const authority = receivedMail(status, 'AUTHORITY_RESPONSE', manifest.updateOperationId);
-      const resident = receivedMail(status, 'RESIDENT_NOTIFICATION', manifest.updateOperationId);
+      const resident = manifest.notificationOptIn && !flags.has('require-email-receipt') ? sentMail(status, 'RESIDENT_NOTIFICATION', manifest.updateOperationId) : receivedMail(status, 'RESIDENT_NOTIFICATION', manifest.updateOperationId);
       if (authority && resident) return { authority, resident };
       await control('/internal/v1/mail/poll', 'POST');
       return null;
     });
     manifest.finalMail = finalMail; manifest.roads = caseSummary(updated); manifest.phase = 'roads_complete'; manifest.completedAt = new Date().toISOString();
     await session.screenshot('roads-same-ticket-updated'); await session.save(); await writePrivateJson(run.manifestPath, manifest);
-    out('roads_complete', { run: run.runId, ...manifest.roads, createOperationId: manifest.createRecovery.operationId, updateOperationId: manifest.updateOperationId, authorityQuestion: manifest.authorityQuestion, finalMail });
+    out('roads_complete', { run: run.runId, ...manifest.roads, createOperationId: manifest.createRecovery.operationId, updateOperationId: manifest.updateOperationId, authorityQuestion: publicMailSummary(manifest.authorityQuestion), finalMail: { authority: publicMailSummary(finalMail.authority), resident: publicMailSummary(finalMail.resident) } });
   } finally { if (!existingSession) await session.close(); }
 }
 
@@ -316,7 +384,7 @@ async function collectGraffitiReceipt(run, flags, manifest, control, timeout, ex
     assert.equal(acknowledged.receipt.portalId, 'graffiti');
     const evidence = await control(`/internal/v1/cases/${manifest.graffiti.id}/evidence`);
     assert.equal(evidence.operations.filter(operation => operation.action === 'create').length, 1);
-    await session.page.getByRole('heading', { level: 1, name: 'Report acknowledged', exact: true }).waitFor();
+    await session.page.getByRole('heading', { level: 1, name: 'Report filed', exact: true }).waitFor();
     manifest.graffiti = caseSummary(acknowledged); await session.screenshot('graffiti-receipt'); await session.save(); await writePrivateJson(run.manifestPath, manifest);
     out('graffiti_complete', { run: run.runId, ...manifest.graffiti });
   } finally { if (!existingSession) await session.close(); }
@@ -399,20 +467,22 @@ async function assertMailHold(control, caseId) {
 export async function main(argv = process.argv.slice(2)) {
   const { action, flags } = options(argv);
   if (action === 'help') {
-    process.stdout.write('Ontara staged cloud UI QA\n\nprepare-roads --web HTTPS_ORIGIN --api HTTPS_ORIGIN [--run ID]\napprove-roads --run ID --recovery-ready\ncollect-roads --run ID\nfollow-up-roads --run ID --recovery-reviewed --landmark KNOWN_SYNTHETIC_FACT\ncollect-update --run ID\nsubmit-graffiti --run ID\ncollect-graffiti --run ID\ncancel-draft --run ID\nduplicate-mail --run ID\nsmoke --run ID\ninspect --run ID\n\nPrivate state stays outside the repository. Internal credentials are read process-side from --private-env or ~/.config/ontara/cloud.env; no secrets enter the browser or traces. Read scripts/cloud-qa/RUNBOOK.md before an execution stage.\n');
+    process.stdout.write('Ontara cloud UI QA\n\nsubmit-roads --web HTTPS_ORIGIN --api HTTPS_ORIGIN [--run ID] [--notifications-env PRIVATE_FILE] [--require-email-receipt]\ncollect-normal-roads --run ID [--require-email-receipt]\nprepare-roads --web HTTPS_ORIGIN --api HTTPS_ORIGIN [--run ID] [--notifications-env PRIVATE_FILE]\napprove-roads --run ID --recovery-ready\ncollect-roads --run ID\nfollow-up-roads --run ID --recovery-reviewed --landmark KNOWN_SYNTHETIC_FACT\ncollect-update --run ID\nsubmit-graffiti --run ID\ncollect-graffiti --run ID\ncancel-draft --run ID\nduplicate-mail --run ID\nsmoke --run ID\ninspect --run ID\n\nPrivate state stays outside the repository. Notification addresses are loaded privately and never printed. Internal credentials stay process-side. Read scripts/cloud-qa/RUNBOOK.md before an execution stage.\n');
     return;
   }
-  const preparing = action === 'prepare-roads';
+  const requestedTimeout = Number(flags.get('timeout-seconds') || 300);
+  assert.ok(Number.isFinite(requestedTimeout) && requestedTimeout > 0, 'The timeout must be a positive number of seconds.');
+  const timeout = Math.min(900, Math.max(30, requestedTimeout)) * 1000;
+  const preparing = ['prepare-roads', 'submit-roads'].includes(action);
   const run = await runDirectory(flags, preparing);
-  if (preparing) return prepareRoads(run, flags, origin(flags.get('web'), flags.has('allow-local')), origin(flags.get('api'), flags.has('allow-local')));
+  if (action === 'prepare-roads') return prepareRoads(run, flags, origin(flags.get('web'), flags.has('allow-local')), origin(flags.get('api'), flags.has('allow-local')));
+  if (action === 'submit-roads') return submitNormalRoads(run, flags, origin(flags.get('web'), flags.has('allow-local')), origin(flags.get('api'), flags.has('allow-local')), timeout);
   const manifest = await readManifest(run);
   manifest.webOrigin = origin(manifest.webOrigin, flags.has('allow-local')); manifest.apiOrigin = origin(manifest.apiOrigin, flags.has('allow-local'));
   await readiness(manifest.webOrigin, manifest.apiOrigin);
   if (action === 'smoke') return smoke(run, flags, manifest);
   const control = controlClient(manifest.apiOrigin, await internalToken(flags));
-  const requestedTimeout = Number(flags.get('timeout-seconds') || 300);
-  assert.ok(Number.isFinite(requestedTimeout) && requestedTimeout > 0, 'The timeout must be a positive number of seconds.');
-  const timeout = Math.min(900, Math.max(30, requestedTimeout)) * 1000;
+  if (action === 'collect-normal-roads') return collectNormalRoads(run, flags, manifest, control, timeout);
   if (action === 'approve-roads') return approveRoads(run, flags, manifest, control, timeout);
   if (action === 'collect-roads') return collectInitialReceipt(run, flags, manifest, control, timeout);
   if (action === 'collect-update') return collectUpdatedReceipt(run, flags, manifest, control, timeout);

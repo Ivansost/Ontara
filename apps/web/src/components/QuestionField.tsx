@@ -6,11 +6,12 @@ import type { ISODateString } from '@astryxdesign/core/Calendar';
 import { DateInput } from '@astryxdesign/core/DateInput';
 import type { Question } from '@/lib/catalogue';
 
-export function QuestionField({ question, value, onChange, error }: { question: Question; value?: string; onChange: (value: string) => void; error?: string }) {
+export function QuestionField({ question, value, onChange, error, isDisabled }: { question: Question; value?: string; onChange: (value: string) => void; error?: string; isDisabled?: boolean }) {
   const common = {
     label: question.label,
     description: question.description || undefined,
     isRequired: question.required,
+    isDisabled,
     status: error ? { type: 'error' as const, message: error } : undefined,
   };
   if (question.type === 'select' && question.options) return <RadioList {...common} value={value || ''} onChange={onChange}>

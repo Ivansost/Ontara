@@ -9,8 +9,8 @@ Ivan and Faaris built Ontara for **Agents in Context Toronto, Track 3: Finish th
 | Deliverable | Verified state |
 | --- | --- |
 | Receiving portals | Public on [Render](https://ontara-portals-35iy.onrender.com); the [MongoDB health check](https://ontara-portals-35iy.onrender.com/healthz) passed |
-| Case API | [Public API](https://ontara-api-35iy.onrender.com) is live at `a331330f`, including private voice intake and transcript storage; the recorded core flow proved draft hold/release and API restart persistence |
-| Resident web | [Public web app](https://ontara-web-35iy.onrender.com) uses written reporting controls, compact category tiles and a plain-language journey explanation. Browser voice has been removed at the team's request; the recorded core journey and earlier qualification checks remain separately identified below |
+| Case API | [Public API](https://ontara-api-35iy.onrender.com) persists approved versions, verified receipts and opted-in resident notifications; the recorded core flow proved draft hold/release and API restart persistence |
+| Resident web | [Public web app](https://ontara-web-35iy.onrender.com) has compact category tiles, one report form, a searchable 444-municipality selector and inline Send report / Send update approval. Browser voice has been removed; earlier qualification records remain separately identified below |
 | Executor | `fd572d12` is live on Render Free Linux with pinned Chromium `159.0.8154.6`; actual process crash and fresh-process receipt recovery passed |
 | Hosted Roads proof | Complete: crash/recovery with one create and one ticket, held-mail restart, actual v2 form, withheld lesson, native/model mapping, new resident approval, same-ticket update and three received emails |
 | Graffiti and resident controls | Separate hosted Graffiti intake/approval/receipt and unused-draft cancellation rejection passed; mobile, session isolation, cookie and origin checks passed |
@@ -29,7 +29,11 @@ The interface uses buttons, authored questions and ordinary inputs. The homepage
 
 The Regional Roads Portal (DEMO) receives the synthetic Halton pothole. The Local Municipality Portal (DEMO) receives synthetic public-wall graffiti in Milton. Location and asset responsibility determine the recipient. Research about a municipality never enables live submission to it.
 
-A resident reviews the source-backed route, the named demo recipient and the report version before approving. Material edits invalidate approval. Later questions appear on the private case page and require another approval before an update. Case IDs alone grant no access; the API uses a browser-session cookie for ownership.
+Valid drafts save in the background while the resident fills one compact report form. The inline review shows the exact saved facts, source-backed route and named demo recipient. One **Send report** approves that version. Material edits invalidate readiness until the current version is saved. Later requests use one focused missing-detail panel and **Send update** approval. Case IDs alone grant no access; the API uses a browser-session cookie for ownership.
+
+A separate optional email field opts the approved case into generic filing, information-needed, update and assistance notifications. This address is not added to the portal contact payload and is locked after the first approved operation. Filing/update messages require verified receipts; other notifications require genuine case events. Provider acceptance is **SENT**, while **RECEIVED** requires evidence from a configured controlled receiving inbox. The email link requires the original owner browser; it is not a magic sign-in link. Historical cases are not backfilled, and no resolved/repair notification or arbitrary email-reply parser is claimed.
+
+Ordinary Roads reporting stops at its verified filing receipt. The advanced changed-form story is enabled only by the private operator's preapproval follow-up hold. Residents do not switch on a demo mode.
 
 The website uses written forms. Browser microphone controls and the ElevenLabs browser SDK have been removed at the team's request. The backend/provider foundation and previously stored private transcripts remain available for future call-in work; no telephone number or integration is configured.
 
@@ -70,7 +74,9 @@ Atlas Automated Embedding with **`voyage-4-large`** is the required retrieval pa
 
 Authority, issue, visibility, verification and exact current record versions constrain retrieval. Lessons also require matching portal, workflow and form scope. A generally queryable index does not establish that a new record version is searchable; bounded text/version probes record that evidence separately. [Native setup and verification](scripts/retrieval/README.md), [text/update proof](scripts/retrieval/evidence/native-preflight-20261114.json).
 
-The directory covers **20 upper-tier municipalities** selected by their actual member municipalities' 2021 Census populations. Halton was imported first. Four batches produced 22 verified, native-searchable procedure or handoff records; one partial record stays excluded. These are published facts and handoffs, all labelled `research_only`.
+The location selector includes **all 444 official Ontario municipalities**: 241 lower tier, 173 single tier and 30 upper tier. Milton is explicitly paired with Halton Region, and all 207 existing IDs remain stable. The [canonical directory and source validation](data/municipal/MUNICIPALITY_OPTIONS.md) are selection metadata only; listing a municipality does not enable reporting there.
+
+The separate procedural research directory covers **20 upper-tier municipalities** selected by their actual member municipalities' 2021 Census populations. Halton was imported first. Four batches produced 22 verified, native-searchable procedure or handoff records; one partial record stays excluded. These are published facts and handoffs, all labelled `research_only`.
 
 The 20-by-8 matrix has **160 cells: 3 detailed published procedures, 112 general or responsibility handoffs, and 45 explicit gaps**. The handoff count includes 111 verified cells and one partial cell. General contact details do not establish asset ownership, accepted intake fields or a live integration. See the [coverage matrix](data/municipal/coverage_matrix.md), [research and source limitations](data/municipal/README.md), and [independent native search summary](scripts/retrieval/evidence/twenty-area-search-summary-20261114.json).
 
@@ -109,7 +115,7 @@ Unit and browser-contract tests do not establish hosted integration. Native retr
 
 ## Three-minute presentation runbook
 
-The hosted run passed this sequence. Warm the services, check native procedure/lesson readiness, open the resident and redacted presenter views, and prepare fresh synthetic inputs. Keep administrative controls and private URLs off the projected screen.
+The earlier hosted run passed the advanced sequence below. The current presentation is Roads-only. Warm the services, check native procedure/lesson readiness, open the resident and redacted presenter views, and prepare fresh synthetic inputs. Keep administrative controls and private URLs off the projected screen. Ordinary reports stop at filing; only the privately staged advanced case continues through the synthetic authority question.
 
 1. On an unused supported Roads draft, before resident approval, use internal Bearer authentication for `POST /internal/v1/cases/{id}/fault-next-create` with `{"kind":"kill_after_acceptance","armed":true}` and `POST /internal/v1/cases/{id}/follow-up-hold` with `{"held":true}`. `GET` on the hold path must show `held:true` and `nextCreateFaultArmed:true`. Approval atomically arms the one-shot create fault before dispatch. When the initial receipt queues the authority question, it stays durably `HELD`, with zero send attempts and inspection delayed.
 2. After the fresh worker verifies the recovered initial v1 receipt, change that same run's actual Roads update form from v1 to v2 through the receiving portal's [presenter control](services/portals/README.md#presenter-controls). Run the separate, read-only withheld-lesson diagnostic while mail remains held: it must pause with zero model calls and zero writes.
@@ -121,9 +127,9 @@ The hosted run passed this sequence. Warm the services, check native procedure/l
 | 0:40-1:15 | The prearmed create runs after approval. The portal accepts; the real worker process dies; a fresh process looks up the same operation and records its receipt |
 | 1:15-1:35 | Redacted receiving counters: one create request, one ticket; show the different process/attempt IDs. Change the same run's update form to v2, show the read-only withheld-lesson pause, then release the mail hold |
 | 1:35-2:35 | A genuine simulated-authority email schedules the positive read-only inspection. Show the changed DOM and native lesson/model evidence. Answer the authored landmark question, approve, and verify an update to the same ticket |
-| 2:35-3:00 | Controlled authority response and resident notification, the separate Graffiti route, mobile homepage and scope limits |
+| 2:35-3:00 | Same-ticket acknowledgement, observed notification status, native Atlas/Voyage evidence and scope limits |
 
-The verified initial receipt queues the controlled authority question; the draft hold keeps it unsent until the recovered receipt and actual form change are ready. The [mail runbook](scripts/mail/README.md) explains polling, duplicate handling and the authenticated [existing-case helper](scripts/mail/trigger_followup.py). Receiving email never authorizes a portal write. The loop uses Ontara, simulated-authority and test-resident inbox roles; the accelerated wait and simulated authority are disclosed. The [hosted mail summary](scripts/mail/evidence/cloud-mail-summary.json) verifies all three messages received once, six stored copies, restart persistence and stable counts after duplicate delivery.
+For an explicitly staged case, the verified initial receipt queues the controlled authority question; the draft hold keeps it unsent until the recovered receipt and actual form change are ready. The [mail runbook](scripts/mail/README.md) explains polling, duplicate handling and the authenticated [existing-case helper](scripts/mail/trigger_followup.py). Receiving email never authorizes a portal write. The loop uses Ontara, simulated-authority and test-resident inbox roles; the accelerated wait and simulated authority are disclosed. The [hosted mail summary](scripts/mail/evidence/cloud-mail-summary.json) records the earlier three-message/six-copy proof, restart persistence and stable counts after duplicate delivery. New opt-in filing/information notifications have their own purpose-specific counts and require fresh hosted qualification; historical totals do not prove the new path.
 
 Use the [recorded hosted proof](services/executor/evidence/cloud-final-hosted-proof-20261114.json) to review the sequence and start a fresh synthetic run for presentation. The Mac displays the demo; execution runs on Render's Linux service.
 
