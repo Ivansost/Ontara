@@ -196,35 +196,35 @@
       "processBirthId": "394e1598f7394d979aabf202af6a163f",
       "jobAttempt": 1,
       "runtimeMode": "fallback",
-      "attemptId": null
+      "attemptId": "attempt-7dbd2946566046168c383d2ae8dc82fd"
     },
     {
       "processId": 15216,
       "processBirthId": "9282b609262e4d0cba3ab43b4d02b43f",
       "jobAttempt": 2,
       "runtimeMode": "fallback",
-      "attemptId": null
+      "attemptId": "attempt-e5cb7ba1ef7143258739ee763ed17e34"
     },
     {
       "processId": 16147,
       "processBirthId": "e5d5422fb1f045e1a0f91759d925f2cb",
       "jobAttempt": 1,
       "runtimeMode": "fallback",
-      "attemptId": null
+      "attemptId": "attempt-649e63e2d1514a59ac6fe63d74b6fcd4"
     },
     {
       "processId": 16628,
       "processBirthId": "64a644a0a6c84fb5b4d1b02a9c163cf2",
       "jobAttempt": 1,
       "runtimeMode": "fallback",
-      "attemptId": null
+      "attemptId": "attempt-4081df078bf74e73b45f64197d474f18"
     },
     {
       "processId": 17496,
       "processBirthId": "e30c4726502a45a0b0ac31dfd163d93c",
       "jobAttempt": 1,
       "runtimeMode": "fallback",
-      "attemptId": null
+      "attemptId": "attempt-96bd1e3da3fb425db3649c14993b8c93"
     }
   ],
   "operations": [
@@ -263,5 +263,7 @@
     "Manual seeded-demo calibration is a separate disclosed run; this run used native retrieved lesson plus model-derived mappings.",
     "Update receipt was authoritative before a late child heartbeat/completion race; that process-status defect is being fixed before cloud release.",
     "Receiver counters are presenter evidence only; the execution worker obtained acceptance through receiving HTML interfaces."
-  ]
+  ],
+  "metadataCorrectedAt": "2026-11-14T16:28:02.253445+00:00",
+  "attemptIdSource": "Authoritative Atlas execution event.data.attemptId read through the hosted case API."
 }
