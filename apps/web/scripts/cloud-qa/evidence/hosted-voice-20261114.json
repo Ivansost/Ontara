@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "sourceCommits": {
+    "web": "a331330f",
+    "api": "a331330f"
+  },
+  "productionBuildPassed": true,
+  "frontendFixtureTestsPassed": 11,
+  "providerSessions": 1,
+  "fakeDeviceOnly": true,
+  "actualMicrophoneUsed": false,
+  "traces": false,
+  "har": false,
+  "credentialHeadersObserved": false,
+  "audio": {
+    "userAudioFrames": 468,
+    "providerTtsFrames": 9,
+    "userTranscriptFrames": 1,
+    "clientToolCalls": 2,
+    "clientToolResults": 2,
+    "outputWorkletRenderStarts": 2,
+    "outputWorkletChunkStarts": 4,
+    "outputSampleRate": 16000,
+    "canonicalSyntheticAnswerSaved": true,
+    "ttsBuffersQueued": 8,
+    "ttsBytesQueued": 416346,
+    "nonSilentTtsBuffersQueued": 8
+  },
+  "stop": {
+    "microphoneAcquisitions": 3,
+    "microphoneTracks": 3,
+    "allTracksSynthetic": true,
+    "allTracksEnded": true,
+    "socketsOpened": 1,
+    "socketsClosed": 1
+  },
+  "draft": {
+    "created": 1,
+    "manualReviewReached": true,
+    "approvalChecked": false,
+    "approvalCalls": 0,
+    "operations": 0,
+    "submitted": false
+  },
+  "history": {
+    "linked": true,
+    "saved": true,
+    "userTurns": 1,
+    "agentTurns": 2,
+    "private": true,
+    "recordingEnabled": false
+  },
+  "finalReadOnly": {
+    "mobileWidths": [
+      390,
+      320
+    ],
+    "desktopCategories": 9,
+    "homepageVoiceAbsent": true,
+    "inactiveVoiceAbsent": true,
+    "inactiveFieldsEmpty": true,
+    "inactiveFieldsDisabled": true,
+    "submitDisabled": true,
+    "horizontalOverflow": false,
+    "backendRequests": 0,
+    "microphoneCalls": 0,
+    "providerSessions": 0,
+    "caseCreates": 0
+  }
+}
