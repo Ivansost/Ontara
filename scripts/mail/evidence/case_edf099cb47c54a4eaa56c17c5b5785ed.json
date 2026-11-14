@@ -12,14 +12,14 @@
   },
   "portalReceipts": [
     {
-      "operationId": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+      "operationAlias": "create-operation",
       "action": "create",
       "state": "receipt_verified",
       "ticketId": "RDS-A6F3F3D7E435",
       "receiptId": "RCP-0AC703D61F91D5741524E3DA"
     },
     {
-      "operationId": "op_615c33158b9efa696256724a86f9a161",
+      "operationAlias": "update-operation",
       "action": "update",
       "state": "receipt_verified",
       "ticketId": "RDS-A6F3F3D7E435",
@@ -31,7 +31,7 @@
     {
       "outboxId": "mail_7d1eeca8d68890168fa239488583d69f",
       "purpose": "AUTHORITY_QUESTION",
-      "operationId": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+      "operationAlias": "create-operation",
       "senderInboxId": "ontara-authority-demo@agentmail.to",
       "recipientInboxIds": [
         "ontara@agentmail.to"
@@ -48,7 +48,7 @@
     {
       "outboxId": "mail_e2afb30daa91e75de8300618b8c7033c",
       "purpose": "AUTHORITY_RESPONSE",
-      "operationId": "op_615c33158b9efa696256724a86f9a161",
+      "operationAlias": "update-operation",
       "senderInboxId": "ontara@agentmail.to",
       "recipientInboxIds": [
         "ontara-authority-demo@agentmail.to"
@@ -65,7 +65,7 @@
     {
       "outboxId": "mail_487e5e5179429ffab53b306326b371d8",
       "purpose": "RESIDENT_NOTIFICATION",
-      "operationId": "op_615c33158b9efa696256724a86f9a161",
+      "operationAlias": "update-operation",
       "senderInboxId": "ontara@agentmail.to",
       "recipientInboxIds": [
         "ontara-resident-demo@agentmail.to"

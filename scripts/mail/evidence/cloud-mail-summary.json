@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "environment": "hosted-render",
+  "caseId": "case_a8853b60c3ce4b6db35bfca6e7b21ab6",
+  "verificationSummary": {
+    "fullHostedMailLoopVerified": true,
+    "actualHostedApiRestartPreservedHeldZeroAttemptState": true,
+    "guardedReleaseAfterSameRunV2Verified": true,
+    "threeMessagesGenuinelyReceived": true,
+    "sendAttemptsEach": 1,
+    "actualMessageCopiesStored": 6,
+    "sameTicketUpdateVerified": true,
+    "genuineCompletedInspectionCount": 1,
+    "updateOperationCount": 1,
+    "authorizedDuplicateReplayVerified": true,
+    "issueRepairVerified": false
+  },
+  "fullLoopChecks": {
+    "caseVersionTwoApproved": true,
+    "oneCreateOneUpdateVerified": true,
+    "sameTicket": true,
+    "allThreeGenuinelyReceived": true,
+    "oneSendAttemptEach": true,
+    "sixMessageCopiesStored": true,
+    "correctOperationCorrelation": true,
+    "exactReceivingMessageIdentity": true,
+    "authorityResponseRetainedOriginalThread": true,
+    "controlledReceivingRolesMatch": true
+  },
+  "restartChecks": {
+    "sameCase": true,
+    "sameRun": true,
+    "sameVerifiedReceipt": true,
+    "sameOutboxId": true,
+    "heldBeforeAndAfter": true,
+    "zeroAttemptsBeforeAndAfter": true,
+    "zeroMessagesBeforeAndAfter": true,
+    "mailWorkerRunningAfter": true
+  },
+  "duplicateChecks": {
+    "caseVersionAndApprovalStable": true,
+    "exactReceiptStable": true,
+    "outboxAndProviderIdentitiesStable": true,
+    "oneAttemptEachBeforeAndAfter": true,
+    "sixCopiesBeforeAndAfter": true,
+    "oneUpdateBeforeAndAfter": true,
+    "oneGenuineInspectionBeforeAndAfter": true,
+    "allThreeStillGenuinelyReceived": true
+  },
+  "duplicateDriverCounters": {
+    "performedBy": "frontend staged driver",
+    "reportedAtUtc": "2026-11-14T17:18:30Z",
+    "receiptReplay": {
+      "scheduled": 0,
+      "pending": 0
+    },
+    "outbox": {
+      "sent": 0,
+      "reconciled": 0,
+      "unknown": 0,
+      "failed": 0
+    },
+    "poll": {
+      "processed": 0,
+      "duplicate": 2,
+      "ignored": 0,
+      "unrelated": 0,
+      "pending": 0,
+      "needs_assistance": 0,
+      "errors": 0
+    },
+    "observerActions": "authenticated GET only before and after"
+  },
+  "sanitization": {
+    "messageBodiesIncluded": false,
+    "capabilityOrSessionUrlsIncluded": false,
+    "tokensIncluded": false,
+    "rawReceivingRunIdsIncluded": false,
+    "rawOperationReferencesIncluded": false,
+    "payloadDigestsIncluded": false,
+    "comparisonsComputedBeforeRedaction": true
+  }
+}

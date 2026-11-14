@@ -159,8 +159,12 @@ the script performs provider catch-up but never sends mail or creates a receipt.
 
 ## Hosted demo: existing-case follow-up
 
-The complete local integration is verified. The hosted web/API/executor round trip
-must be verified after deployment; this runbook does not claim that deployment passed.
+One controlled hosted Roads case completed this sequence through the real web UI,
+receiving portal, Atlas state and AgentMail. The [compact cloud summary](evidence/cloud-mail-summary.json)
+records the full loop, actual API-restart persistence and authorized duplicate replay.
+The [sanitized timeline](evidence/cloud-case_a8853b60c3ce4b6db35bfca6e7b21ab6.json)
+contains independent GET observations at the stage barriers. Coverage remains the
+configured synthetic demo; issue repair is unverified.
 
 1. The API server has the private AgentMail variables above, its internal token, Atlas
    access, and the executor dispatch configuration. Use the same three controlled inbox
@@ -222,8 +226,29 @@ must be verified after deployment; this runbook does not claim that deployment p
    controlled authority response and test-resident notification.
 7. Inspect internal mail status for three `SENT`/`RECEIVED` records and their provider
    receiving evidence. Repeat the helper safely: stable outbox/message/event identities
-   prevent another send or inspection. For Atlas counts and sanitized evidence, use
-   `case_probe.py` / `capture_evidence.py` with the already-existing case as above.
+   prevent another send or inspection. Hosted read-only evidence capture uses:
+
+   ```sh
+   PYTHONPATH=services/api python scripts/mail/capture_cloud_evidence.py \
+     --api-url https://ACTUAL-API-HOST.onrender.com \
+     --case-id case_EXISTING_VERIFIED_CASE_ID --label demo_observation
+   ```
+
+   This observer makes authenticated GET requests only. It saves full receiving
+   observations under the owner's private `~/.config/ontara/evidence` directory
+   (0700, files 0600). Public artifacts replace raw receiving run/operation/client
+   references and digests with aliases and exact-match booleans. Message bodies,
+   session/capability URLs and tokens are excluded.
+
+The hosted evidence verifies a durable draft hold, actual crash and receipt recovery,
+an actual API redeploy while the authority outbox stayed `HELD` at zero attempts,
+the same run's v1→v2 change and separately labelled withheld-lesson comparison,
+then guarded release and the genuine mail-driven positive flow. The resident answered
+and approved version 2 in the ordinary UI; the same ticket acknowledged one update.
+All three emails have genuine receiving-inbox evidence, one attempt each and six
+stored message copies. One authorized repeat-release/mail-catch-up exercise returned
+zero sends/new processing and two duplicate events; the independent after observation
+preserved the same provider/outbox identities, one real inspection and one update.
 
 The complete local mail proof above predates this deterministic presenter extension.
 Hold/release guards and restart behavior pass the automated tests; the complete hosted
