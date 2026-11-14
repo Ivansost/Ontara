@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import catalogue from '../src/generated/catalogue.json';
 import questionBank from '../src/generated/questions.json';
+import { validateQuestions, type Question } from '../src/lib/catalogue';
 import type { CaseView, RouteRecord, TimelineEvent } from '../src/lib/contracts';
 
 // These are explicit browser-contract fixtures. They exercise UI state and
@@ -69,7 +70,7 @@ test('report edits require fresh approval and follow-up stays on the same case',
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Preparing report');
   expect(approvals).toBe(1);
 
-  record = { ...record!, stage: 'more_information_needed', receipt: { ticketId: 'DEMO-BROWSER-001', receiptId: 'receipt_fixture' }, pendingQuestions: [questionBank.followUp.nearestLandmark as CaseView['pendingQuestions'][number]] };
+  record = { ...record!, stage: 'more_information_needed', receipt: { ticketId: 'DEMO-BROWSER-001', receiptId: 'receipt_fixture' }, pendingQuestions: [{ ...questionBank.followUp.nearestLandmark, options: [], visibleWhen: null } as CaseView['pendingQuestions'][number]] };
   await expect(page.getByRole('textbox', { name: /^What is the nearest landmark/ })).toBeVisible();
   await page.getByRole('textbox', { name: /^What is the nearest landmark/ }).fill('The community centre sign');
   await page.getByRole('button', { name: 'Review update', exact: true }).click();
@@ -108,4 +109,18 @@ test('authored critical-control choices stop ordinary intake immediately', async
   await expect(page.getByRole('textbox', { name: /^What did you notice/ })).toHaveCount(0);
   await expect(page.getByRole('textbox', { name: /^Email/ })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Review report', exact: true })).toBeDisabled();
+});
+
+
+test('API-serialized empty options do not turn text, textarea or date answers into enums', () => {
+  const common = { description: '', required: true, options: [], visibleWhen: null };
+  const questions: Question[] = [
+    { ...common, id: 'landmark', type: 'text', label: 'Landmark', minLength: 2, maxLength: 300 },
+    { ...common, id: 'observation', type: 'textarea', label: 'Observation', minLength: 10 },
+    { ...common, id: 'noticed', type: 'date', label: 'Noticed', required: false },
+    { ...common, id: 'position', type: 'select', label: 'Position', options: [{ value: 'In travel lane', label: 'In travel lane', urgentHandoff: false }] },
+  ];
+  const answers = { landmark: 'Known synthetic sign', observation: 'A known synthetic observation.', noticed: '2026-11-14', position: 'In travel lane' };
+  expect(validateQuestions(questions, answers)).toEqual({});
+  expect(validateQuestions(questions, { ...answers, position: 'Not an authored option' })).toHaveProperty('position');
 });
