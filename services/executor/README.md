@@ -46,6 +46,8 @@ docker build -f services/executor/Dockerfile -t ontara-executor .
 
 The image pins Python 3.12, Playwright 1.65.2 and its matching Chromium revision;
 `playwright install --with-deps chromium` installs Linux system dependencies.
+The slim Debian bootstrap installs `libatomic1` before the Playwright driver runs;
+its Node binary requires that library even to launch the dependency installer.
 Use the root build context and exclude private `.env` files from the Docker
 context. Render configuration is a **Free web service**, one Uvicorn process,
 health path `/healthz`, no persistent disk. The coordinator provisions/deploys it.
