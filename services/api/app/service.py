@@ -213,6 +213,8 @@ class CaseService:
                 raise DomainError(409, "This case has been cancelled")
             if case["version"] != request.version:
                 raise DomainError(409, "The report changed. Review the current version before approving it.")
+            if self._unresolved_operation(case_id, kw):
+                raise DomainError(409, "An earlier submission outcome is uncertain. Reconcile it before approving further work.")
             if case.get("approvedVersion") == request.version and case.get("currentOperationId"):
                 return self._view(case)
             action = "update" if case.get("receipt") else "create"
@@ -236,21 +238,32 @@ class CaseService:
             payload_digest = digest_json(payload)
             operation_id = "op_" + hashlib.sha256(f"{case_id}:{case['version']}:{action}:{case['route']['recipient']['id']}".encode()).hexdigest()[:32]
             stamp = now()
+            pending_fault = case.get("pendingCreateFault") or {}
+            transfer_fault = action == "create" and pending_fault.get("armed") is True and not pending_fault.get("consumedAt")
+            if transfer_fault and case["route"].get("demo") is not True:
+                raise DomainError(409, "A presenter fault is restricted to a supported controlled demo case")
             operation = {"id": operation_id, "clientReference": operation_id, "caseId": case_id,
                          "caseVersion": case["version"], "runId": case["runId"], "action": action,
                          "portalId": case["route"]["portalId"], "recipientId": case["route"]["recipient"]["id"],
                          "route": case["route"], "payload": payload, "payloadDigest": payload_digest,
                          "state": "prepared", "receipt": None, "createdAt": stamp, "updatedAt": stamp,
                          "externalTicketId": (case.get("receipt") or {}).get("ticketId"),
-                         "updateUrl": (case.get("receipt") or {}).get("updateUrl"), "faultPlan": None}
+                         "updateUrl": (case.get("receipt") or {}).get("updateUrl"), "faultPlan": {
+                             "kind": "kill_after_acceptance", "armed": True, "armedAt": pending_fault.get("armedAt"),
+                             "scope": "case_next_create", "caseId": case_id,
+                         } if transfer_fault else None}
             self.db.operations.insert_one(operation, **kw)
             self.db.jobs.insert_one({"id": f"job_{operation_id}", "operationId": operation_id, "caseId": case_id,
                                      "kind": "execute_operation", "readOnly": False, "state": "queued", "attempt": 0, "fence": 0, "createdAt": stamp,
                                      "updatedAt": stamp, "leaseUntil": stamp}, **kw)
-            result = self.db.cases.update_one({"id": case_id, "version": case["version"], "cancelledAt": None}, {"$set": {
+            case_updates = {
                 "approvedVersion": case["version"], "currentOperationId": operation_id, "stage": "preparing_report",
                 "updatedAt": stamp, "pendingQuestionIds": [],
-            }}, **kw)
+            }
+            if transfer_fault:
+                case_updates.update({"pendingCreateFault.armed": False, "pendingCreateFault.consumedAt": stamp,
+                                     "pendingCreateFault.operationId": operation_id})
+            result = self.db.cases.update_one({"id": case_id, "version": case["version"], "cancelledAt": None}, {"$set": case_updates}, **kw)
             if result.modified_count != 1:
                 raise DomainError(409, "The report changed during approval")
             self._event(case_id, "report_approved", "You approved this report version and its named recipient.", operation_id=operation_id, data={"version": case["version"], "action": action}, kw=kw)
@@ -332,11 +345,15 @@ class CaseService:
             case = self._owned(case_id, owner, kw)
             if case["cancelledAt"]:
                 return self._view(case)
+            unresolved = self._unresolved_operation(case_id, kw)
             stamp = now()
             self.db.cases.update_one({"id": case_id}, {"$set": {"cancelledAt": stamp, "stage": "cancelled", "approvedVersion": None, "updatedAt": stamp}}, **kw)
             self.db.jobs.update_many({"caseId": case_id, "state": {"$in": ["queued", "leased"]}}, {"$set": {"state": "cancelled", "updatedAt": stamp}}, **kw)
             self.db.operations.update_many({"caseId": case_id, "state": "prepared"}, {"$set": {"state": "stopped", "updatedAt": stamp}}, **kw)
-            self._event(case_id, "case_cancelled", "Future actions stopped. Cancellation cannot undo a report already accepted by the receiving portal.", data={"reason": reason}, kw=kw)
+            message = ("Future actions stopped. An earlier submission attempt remains unverified; cancellation does not establish that it was not accepted."
+                       if unresolved else "Future actions stopped. Cancellation cannot undo a report already accepted by the receiving portal.")
+            self._event(case_id, "case_cancelled", message, data={"reason": reason, "outcomeUncertain": bool(unresolved),
+                        "unresolvedOperationId": unresolved["id"] if unresolved else None}, kw=kw)
             return self._view(self.db.cases.find_one({"id": case_id}, **kw))
 
     def timeline(self, case_id: str, owner: str) -> dict:
@@ -408,7 +425,15 @@ class CaseService:
                 raise DomainError(422, "Invalid operation transition; a verified receipt uses the receipt endpoint")
             if request.state == "prepared" and not request.evidence.get("safeNonApplicationEvidence"):
                 raise DomainError(422, "Authoritative non-application evidence is required before retry")
-            self.db.operations.update_one({"id": operation_id, "state": request.expected_state}, {"$set": {"state": request.state, "updatedAt": now(), "lastAttemptId": request.attempt_id, "lastRunId": request.run_id}}, **kw)
+            stamp = now()
+            updates = {"state": request.state, "updatedAt": stamp, "lastAttemptId": request.attempt_id, "lastRunId": request.run_id}
+            if request.state == "dispatch_started":
+                updates.update({"dispatchStartedAt": operation.get("dispatchStartedAt") or stamp,
+                                "lastDispatchStartedAt": stamp, "outcomeUncertain": True})
+            elif request.state == "prepared":
+                updates.update({"outcomeUncertain": False, "nonApplicationEstablishedAt": stamp,
+                                "safeNonApplicationEvidence": redact(request.evidence["safeNonApplicationEvidence"])})
+            self.db.operations.update_one({"id": operation_id, "state": request.expected_state}, {"$set": updates}, **kw)
             stage = "checking_submission" if request.state in {"dispatch_started", "outcome_unknown", "reconciling"} else "needs_assistance" if request.state == "needs_assistance" else "preparing_report"
             if request.state == "needs_assistance" and case.get("pendingQuestionIds"):
                 stage = "more_information_needed"
@@ -437,7 +462,7 @@ class CaseService:
                 raise DomainError(409, "Dispatch or reconciliation must precede receipt recording")
             if operation.get("receipt") and operation["receipt"] != receipt:
                 raise DomainError(409, "A different receipt is already attached")
-            self.db.operations.update_one({"id": operation_id}, {"$set": {"state": "receipt_verified", "receipt": receipt, "updatedAt": now()}}, **kw)
+            self.db.operations.update_one({"id": operation_id}, {"$set": {"state": "receipt_verified", "receipt": receipt, "outcomeUncertain": False, "outcomeResolvedAt": now(), "updatedAt": now()}}, **kw)
             self.db.jobs.update_one({"id": job["id"]}, {"$set": {"state": "completed", "updatedAt": now()}}, **kw)
             self.db.cases.update_one({"id": case["id"]}, {"$set": {"receipt": receipt, "stage": "report_acknowledged", "updatedAt": now()}}, **kw)
             self._event(case["id"], "receipt_verified", "Report acknowledged by the controlled demo portal." if operation["action"] == "create" else "Follow-up received by the same controlled demo ticket.",
@@ -445,13 +470,48 @@ class CaseService:
             return {"case": self._view(self.db.cases.find_one({"id": case["id"]}, **kw)), "operation": document(self.db.operations.find_one({"id": operation_id}, **kw)), "receipt": receipt}
 
     def arm_fault(self, operation_id: str, armed: bool) -> dict:
-        operation = self.get_operation_internal(operation_id)
-        if operation["state"] != "prepared" or not operation["route"].get("demo"):
-            raise DomainError(409, "A fault can only be armed for a prepared controlled-demo operation")
-        if (operation.get("faultPlan") or {}).get("consumedAt"):
-            raise DomainError(409, "This operation's one-shot fault has already been consumed")
-        self.db.operations.update_one({"id": operation_id, "state": "prepared"}, {"$set": {"faultPlan": {"kind": "kill_after_acceptance", "armed": armed}, "updatedAt": now()}})
-        return {"operationId": operation_id, "armed": armed}
+        with self.store.atomic() as kw:
+            operation = self.db.operations.find_one({"id": operation_id}, **kw)
+            if not operation:
+                raise DomainError(404, "Operation not found")
+            if operation["state"] != "prepared" or operation["action"] != "create" or operation["route"].get("demo") is not True:
+                raise DomainError(409, "A fault can only be armed for a prepared controlled-demo create operation")
+            if (operation.get("faultPlan") or {}).get("consumedAt"):
+                raise DomainError(409, "This operation's one-shot fault has already been consumed")
+            if self.db.jobs.find_one({"operationId": operation_id, "state": "leased", "leaseUntil": {"$gt": now()}}, **kw):
+                raise DomainError(409, "This operation is already leased; arm the draft before approval")
+            plan = {**(operation.get("faultPlan") or {}), "armed": armed, "kind": "kill_after_acceptance"}
+            result = self.db.operations.update_one({"id": operation_id, "state": "prepared", "faultPlan.consumedAt": {"$exists": False}},
+                {"$set": {"faultPlan": plan, "updatedAt": now()}}, **kw)
+            if not result.matched_count:
+                raise DomainError(409, "The fault state changed before it could be armed")
+            return {"operationId": operation_id, "armed": armed}
+
+    def arm_next_create_fault(self, case_id: str, armed: bool) -> dict:
+        with self.store.atomic() as kw:
+            case = self.db.cases.find_one({"id": case_id}, **kw)
+            if not case:
+                raise DomainError(404, "Case not found")
+            if (case.get("pendingCreateFault") or {}).get("consumedAt"):
+                raise DomainError(409, "This case's one-shot create fault has already been consumed")
+            if case.get("cancelledAt") or case.get("receipt") or case["stage"] != "draft" or case.get("approvedVersion") is not None or case.get("currentOperationId"):
+                raise DomainError(409, "Arm the next create fault only while the case is an unapproved draft")
+            if case["route"].get("demo") is not True or self.db.operations.find_one({"caseId": case_id}, **kw):
+                raise DomainError(409, "Fault arming is restricted to an unused supported controlled demo case")
+            decision = self.route_preview(case["issueId"], IncidentLocation.model_validate(case["location"]), case["answers"])
+            if not decision["supported"] or decision["route"].get("demo") is not True:
+                raise DomainError(409, "This case has no supported controlled demo route")
+            plan = {"kind": "kill_after_acceptance", "armed": armed,
+                    "armedAt": (case.get("pendingCreateFault") or {}).get("armedAt") or now()}
+            result = self.db.cases.update_one({"id": case_id, "version": case["version"], "approvedVersion": None, "currentOperationId": None,
+                                              "cancelledAt": None, "stage": "draft", "pendingCreateFault.consumedAt": {"$exists": False}},
+                                             {"$set": {"pendingCreateFault": plan}}, **kw)
+            if not result.matched_count:
+                raise DomainError(409, "The draft changed before the fault could be armed")
+            self._event(case_id, "presenter_fault_armed" if armed else "presenter_fault_disarmed",
+                        "Presenter one-shot crash control configured for the next approved create operation.",
+                        data={"kind": plan["kind"], "armed": armed}, visibility="presenter", kw=kw)
+            return {"caseId": case_id, "kind": plan["kind"], "armed": armed, "appliesTo": "next_create"}
 
     def add_event(self, case_id: str, event: CaseEventInput) -> dict:
         self.get_case_internal(case_id)
@@ -489,9 +549,22 @@ class CaseService:
             raise DomainError(409, "This case has been cancelled")
         if case["version"] != version:
             raise DomainError(409, "The report changed. Reload before editing.")
-        active = self.db.operations.find_one({"caseId": case["id"], "state": {"$in": ["dispatch_started", "outcome_unknown", "reconciling"]}}, **kw)
-        if active:
+        if self._unresolved_operation(case["id"], kw):
             raise DomainError(409, "The current submission must be reconciled before its facts can be edited")
+
+    def _unresolved_operation(self, case_id: str, kw: dict) -> dict | None:
+        active = self.db.operations.find_one({"caseId": case_id, "state": {"$in": ["dispatch_started", "outcome_unknown", "reconciling"]}}, **kw)
+        if active:
+            return active
+        for operation in self.db.operations.find({"caseId": case_id, "state": "needs_assistance"}, **kw):
+            if operation.get("outcomeUncertain") is True:
+                return operation
+            if "outcomeUncertain" not in operation:
+                # Preserve the guard for operations created before explicit uncertainty metadata.
+                dispatched = operation.get("dispatchStartedAt") or self.db.case_events.find_one({"operationId": operation["id"], "kind": "dispatch_started"}, **kw)
+                if dispatched:
+                    return operation
+        return None
 
     def _replace_case(self, old: dict, updated: dict, kw: dict) -> None:
         result = self.db.cases.replace_one({"id": old["id"], "version": old["version"], "cancelledAt": None}, updated, **kw)
@@ -521,6 +594,7 @@ class CaseService:
         result.pop("ownerKey", None)
         result["pendingQuestions"] = [deepcopy(FOLLOW_UP_QUESTIONS[q]) for q in case.get("pendingQuestionIds", [])]
         result.pop("pendingQuestionIds", None)
+        result.pop("pendingCreateFault", None)
         # Signed update URLs and receipt signatures are execution capabilities, not resident data.
         if result.get("receipt"):
             result["receipt"] = {k: v for k, v in result["receipt"].items() if k not in {"updateUrl", "receiptSignature"}}

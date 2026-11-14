@@ -119,7 +119,89 @@ This uses actual saved receipts, never creates or approves a case, and never wri
 to a portal. It can send receipt-authorized controlled mail, poll the real receiving
 inboxes and repeat provider delivery to verify that inspection-job counts do not change.
 Run it again after the real approved update completes to verify authority response
-and test-resident notification. The integrated portal round trip remains a separate check.
+and test-resident notification.
+
+### Integrated real-mail evidence — November 14
+
+The integrated synthetic case `case_edf099cb47c54a4eaa56c17c5b5785ed` completed
+the genuine controlled mail round trip. Both portal receipts refer to the same
+ticket `RDS-A6F3F3D7E435`; the verified update receipt is
+`RCP-1975CF64438CD905F9943233`. The mail module did not create a case, approve facts,
+lease an inspection or dispatch a portal action during verification.
+
+- Authority question, authority response and test-resident notification each have
+  `state=SENT`, `deliveryState=RECEIVED`, and `attemptCount=1`.
+- Six actual message copies, with actual text/participants/provider IDs, are retained
+  in Atlas. The authority response arrived on the original authority thread
+  `eedecc93-a270-43d3-b6d4-8979c625e527`; the resident notification was read from
+  the controlled test-resident inbox.
+- The genuine mail event created exactly one read-only inspection job. A separate,
+  explicitly labelled withheld-lesson inspection accounts for the second inspection
+  record; it is not a duplicate email event. One approved portal-update operation exists.
+- A fresh mail-service process performed full provider catch-up and a repeated poll:
+  six duplicate messages, zero newly processed events, zero pending/errors, and
+  unchanged inspection-job counts. No extra send or portal operation was created.
+
+This evidence verifies controlled mail and the persisted case links. Portal acceptance
+comes from the separate verified receiving-system receipts, and repair remains unverified.
+
+The compact sanitized [evidence JSON](evidence/case_edf099cb47c54a4eaa56c17c5b5785ed.json)
+contains provider IDs, receiving-inbox proof, same-ticket receipt IDs and restart/dedup
+counts. It contains no message bodies, capability/session URLs or tokens. Regenerate
+an artifact for an existing synthetic case with `capture_evidence.py --case-id CASE_ID`;
+the script performs provider catch-up but never sends mail or creates a receipt.
+
+## Hosted demo: existing-case follow-up
+
+The complete local integration is verified. The hosted web/API/executor round trip
+must be verified after deployment; this runbook does not claim that deployment passed.
+
+1. The API server has the private AgentMail variables above, its internal token, Atlas
+   access, and the executor dispatch configuration. Use the same three controlled inbox
+   roles. A browser session creates and approves the synthetic Roads report normally.
+2. Before its initial receipt, the presenter/executor owner prepares follow-up form
+   version 2 and the applicable verified native retrieval lesson. Mail is automatically
+   queued by a saved initial receipt, so the changed form must be ready before its
+   read-only inspection can start.
+3. After the existing synthetic case has a verified portal receipt, the developer can
+   safely resume the mail loop using the actual HTTPS API origin and existing case ID:
+
+   ```sh
+   PYTHONPATH=services/api python scripts/mail/trigger_followup.py \
+     --api-url https://ACTUAL-API-HOST.onrender.com \
+     --case-id case_EXISTING_VERIFIED_CASE_ID \
+     --runtime-env /Users/ivan/.config/ontara/runtime.env
+   ```
+
+   Substitute the actual `case_` identifier with its 32 hexadecimal characters. The
+   helper reads `ONTARA_INTERNAL_TOKEN` from the private file or process environment;
+   it never accepts a token in command-line arguments or prints it. The file is parsed
+   as data. A loopback origin is also accepted for development; hosted origins require
+   HTTPS on Render. HTTP redirects are not followed with the token.
+
+4. The helper authenticates `GET /internal/v1/cases/{case_id}` and
+   `GET /internal/v1/operations/{currentOperationId}`. It refuses an absent receipt,
+   unmatched operation, unverified state, live route or cancelled case **before** a
+   polling POST. It then invokes `POST /internal/v1/mail/poll` and reads
+   `GET /internal/v1/mail/status?case_id=...` until the authority email has genuine
+   `deliveryState=RECEIVED`. The polling endpoint runs the existing mail replay/send
+   loop for configured controlled inboxes; it is not a generic email send endpoint.
+5. The receiving event schedules the existing case's read-only inspection. The hosted
+   executor observes the form, retrieves the native lesson, and asks the authored
+   missing landmark in the same private browser session. The resident answers, reviews
+   and explicitly approves the new version. Only then does the existing execution
+   workflow update the same ticket and verify its receipt. That receipt queues the
+   controlled authority response and test-resident notification.
+6. Inspect internal mail status for three `SENT`/`RECEIVED` records and their provider
+   receiving evidence. Repeat the helper safely: stable outbox/message/event identities
+   prevent another send or inspection. For Atlas counts and sanitized evidence, use
+   `case_probe.py` / `capture_evidence.py` with the already-existing case as above.
+
+The helper never creates a case, fabricates a receipt, edits an answer, grants approval,
+leases an inspection or dispatches a portal action. If a read-only job remains queued,
+the executor owner resumes the configured workflow; do not create a question directly
+to skip the inspection. The completed local rehearsal cases were subsequently cancelled;
+the helper correctly refused them without posting or sending another email.
 
 Provider integration follows the official [send](https://docs.agentmail.to/api-reference/inboxes/messages/send),
 [message read](https://docs.agentmail.to/api-reference/inboxes/messages/get),

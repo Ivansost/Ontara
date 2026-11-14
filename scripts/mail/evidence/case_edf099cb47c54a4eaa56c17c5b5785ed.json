@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "1.0",
+  "capturedAtUtc": "2026-11-14T16:17:41.152894+00:00",
+  "environment": "development-integration",
+  "controlledDemo": true,
+  "caseId": "case_edf099cb47c54a4eaa56c17c5b5785ed",
+  "caseCancelledAtCapture": true,
+  "sanitization": {
+    "messageBodiesIncluded": false,
+    "capabilityOrSessionUrlsIncluded": false,
+    "tokensIncluded": false
+  },
+  "portalReceipts": [
+    {
+      "operationId": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+      "action": "create",
+      "state": "receipt_verified",
+      "ticketId": "RDS-A6F3F3D7E435",
+      "receiptId": "RCP-0AC703D61F91D5741524E3DA"
+    },
+    {
+      "operationId": "op_615c33158b9efa696256724a86f9a161",
+      "action": "update",
+      "state": "receipt_verified",
+      "ticketId": "RDS-A6F3F3D7E435",
+      "receiptId": "RCP-1975CF64438CD905F9943233"
+    }
+  ],
+  "sameTicketAcrossReceipts": true,
+  "mail": [
+    {
+      "outboxId": "mail_7d1eeca8d68890168fa239488583d69f",
+      "purpose": "AUTHORITY_QUESTION",
+      "operationId": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+      "senderInboxId": "ontara-authority-demo@agentmail.to",
+      "recipientInboxIds": [
+        "ontara@agentmail.to"
+      ],
+      "state": "SENT",
+      "deliveryState": "RECEIVED",
+      "attemptCount": 1,
+      "providerMessageId": "<010001a1dacf208f-3888dd6c-eaaf-4b46-b756-c5d16f584322-000000@email.amazonses.com>",
+      "sourceThreadId": "eedecc93-a270-43d3-b6d4-8979c625e527",
+      "receivingInboxId": "ontara@agentmail.to",
+      "receivingThreadId": "0a94c04a-604c-4d84-992a-e899c9b35d38",
+      "receivingEvidence": "message_read_from_controlled_receiving_inbox"
+    },
+    {
+      "outboxId": "mail_e2afb30daa91e75de8300618b8c7033c",
+      "purpose": "AUTHORITY_RESPONSE",
+      "operationId": "op_615c33158b9efa696256724a86f9a161",
+      "senderInboxId": "ontara@agentmail.to",
+      "recipientInboxIds": [
+        "ontara-authority-demo@agentmail.to"
+      ],
+      "state": "SENT",
+      "deliveryState": "RECEIVED",
+      "attemptCount": 1,
+      "providerMessageId": "<010001a1dad4b2d9-87bc98b6-f4ff-42d0-b99c-b12eb3304427-000000@email.amazonses.com>",
+      "sourceThreadId": "9e10f59d-fcce-4296-8ddf-020e81b2e321",
+      "receivingInboxId": "ontara-authority-demo@agentmail.to",
+      "receivingThreadId": "eedecc93-a270-43d3-b6d4-8979c625e527",
+      "receivingEvidence": "message_read_from_controlled_receiving_inbox"
+    },
+    {
+      "outboxId": "mail_487e5e5179429ffab53b306326b371d8",
+      "purpose": "RESIDENT_NOTIFICATION",
+      "operationId": "op_615c33158b9efa696256724a86f9a161",
+      "senderInboxId": "ontara@agentmail.to",
+      "recipientInboxIds": [
+        "ontara-resident-demo@agentmail.to"
+      ],
+      "state": "SENT",
+      "deliveryState": "RECEIVED",
+      "attemptCount": 1,
+      "providerMessageId": "<010001a1dad4bc48-59cce862-3884-4208-9c58-d48e4a18e8e8-000000@email.amazonses.com>",
+      "sourceThreadId": "964517f8-af82-449b-8de6-e8ebc37cc896",
+      "receivingInboxId": "ontara-resident-demo@agentmail.to",
+      "receivingThreadId": "10bbbe99-739a-497a-a1cc-ff48a28cc6f8",
+      "receivingEvidence": "message_read_from_controlled_receiving_inbox"
+    }
+  ],
+  "actualMessageCopiesStored": 6,
+  "actualMessageCopiesWithTextStored": 6,
+  "genuineMailInspectionJobs": [
+    {
+      "id": "inspection_3101d7eed2f06462040d85d15a4ba34a",
+      "state": "completed",
+      "readOnly": true,
+      "inspectionStatus": "needs_input",
+      "sourceEventId": "received:fd9bf2fa9fe8344af14082dbb4244eee46d2aff2c160ae8823987dc2c31645be"
+    }
+  ],
+  "separateInspectionJobCount": 1,
+  "separateInspectionExplanation": "Separate inspection records are excluded from the genuine mail-source count.",
+  "restartDedup": {
+    "freshMailServiceProcessId": 18980,
+    "pollScope": "configured controlled inboxes",
+    "fullProviderCatchup": true,
+    "countsBefore": {
+      "outbox": 3,
+      "inspectionJobs": 2,
+      "updateOperations": 1
+    },
+    "countsAfter": {
+      "outbox": 3,
+      "inspectionJobs": 2,
+      "updateOperations": 1
+    },
+    "noAdditionalOutboxInspectionOrUpdate": true,
+    "pollResults": {
+      "processed": 0,
+      "duplicate": 6,
+      "ignored": 0,
+      "unrelated": 2,
+      "pending": 0,
+      "needs_assistance": 0,
+      "errors": 0
+    }
+  },
+  "claims": {
+    "providerAcceptanceIsMunicipalAcceptance": false,
+    "issueRepairVerified": false
+  }
+}
