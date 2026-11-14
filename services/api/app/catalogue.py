@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 
-CATALOGUE_VERSION = "2026-11-14.1"
+CATALOGUE_VERSION = "2026-11-14.2"
 INACTIVE_REASON = "Not available in this demo. You can browse this service, but reports and personal details are not collected."
 
 
@@ -131,6 +131,10 @@ for questionnaire in QUESTIONS.values():
     for question in questionnaire["questions"]:
         if question["id"] != "immediateDanger":
             question["visibleWhen"] = {"questionId": "immediateDanger", "equals": "No"}
+        for option in question.get("options", []):
+            option["urgentHandoff"] = (
+                question["id"] == "immediateDanger" and option["value"] in {"Yes", "Not sure"}
+            ) or (questionnaire["issueId"] == "roads-sign" and question["id"] == "signType" and option["value"] in {"Stop sign", "Yield sign"})
 
 DEMO_LOCATIONS = [
     {"id": "halton-regional-road", "fixtureId": "halton-regional-road", "label": "Halton regional road — synthetic demo location",

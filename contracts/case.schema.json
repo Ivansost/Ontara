@@ -184,6 +184,11 @@
         "label": {
           "title": "Label",
           "type": "string"
+        },
+        "urgentHandoff": {
+          "default": false,
+          "title": "Urgenthandoff",
+          "type": "boolean"
         }
       },
       "required": [
@@ -362,6 +367,18 @@
     "runId": {
       "title": "Runid",
       "type": "string"
+    },
+    "questionnaireVersion": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Questionnaireversion"
     }
   },
   "required": [

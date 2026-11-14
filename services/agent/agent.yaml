@@ -1,0 +1,39 @@
+name: ontara-execution
+description: Approved demo reporting, exact receipt reconciliation and bounded changed-form recovery.
+version: 0.1.0
+framework: langgraph
+language: python
+entrypoint: ontara_agent.engine:app
+features:
+  memory: false
+  guardrails: false
+network:
+  egress_mode: deny_all
+scaling:
+  replicas: 1
+  agent_idle_ttl_seconds: 60
+  tool_idle_ttl_seconds: 60
+sandboxes:
+  agent:
+    secrets:
+      - BACKEND_BASE_URL
+      - EXECUTOR_BASE_URL
+      - ONTARA_INTERNAL_TOKEN
+      - GENERATION_PROVIDER
+      - GENERATION_MODEL
+      - GOOGLE_API_KEY
+      - OPENAI_API_KEY
+      - GENERATION_BASE_URL
+      - CHECKPOINT_DB_NAME
+      - MONGODB_URI
+      - ONTARA_RUNTIME_MODE
+      - ONTARA_ENABLE_DEMO_FAULTS
+    tools:
+      - ontara_browser
+  tool:
+    secrets:
+      - GOOGLE_API_KEY
+      - OPENAI_API_KEY
+      - GENERATION_BASE_URL
+    tools:
+      - invoke_llm
