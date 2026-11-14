@@ -57,7 +57,7 @@ class MailService:
 
     def _enqueue(self, *, case_id: str, operation: dict[str, Any], purpose: str,
                  sender: str, recipients: list[str], subject: str, text: str,
-                 receipt_id: str, in_reply_to: str | None = None) -> dict[str, Any]:
+                 receipt_id: str, in_reply_to: str | None = None, held: bool = False) -> dict[str, Any]:
         if not self.settings.enabled:
             return {"state": "DISABLED", "purpose": purpose}
         if (operation.get("receipt") or {}).get("receiptId") != receipt_id:
@@ -75,7 +75,8 @@ class MailService:
         item = {"_id": outbox_id, "id": outbox_id, "kind": "email", "provider": "agentmail",
                 **immutable, "payloadDigest": stable_id(json.dumps(immutable, sort_keys=True)),
                 "correlationToken": token, "providerLabel": "ontara-" + token,
-                "state": "QUEUED", "deliveryState": "UNVERIFIED", "attemptCount": 0,
+                "state": "HELD" if held else "QUEUED", "holdReason": "presenter" if held else None,
+                "deliveryState": "UNVERIFIED", "attemptCount": 0,
                 "nextAttemptAt": now, "createdAt": now, "updatedAt": now,
                 "caseVersion": operation.get("caseVersion"), "visibility": "case", "controlledDemo": True}
         return self.store.enqueue(item)
@@ -91,11 +92,92 @@ class MailService:
             case_id=case_id, operation=operation, purpose="AUTHORITY_QUESTION",
             sender=self.settings.authority_inbox_id, recipients=[self.settings.ontara_inbox_id],
             subject=f"Simulated authority requests a landmark — {ticket}", receipt_id=receipt_id,
+            held=self.store.authority_followup_held(case_id),
             text=(f"SIMULATED AUTHORITY — compressed waiting period for this demonstration.\n"
                   f"Regarding acknowledged demo ticket {ticket}: please provide the nearest landmark "
                   "so the road location can be confirmed. Ontara must ask the resident and receive "
                   "approval before updating the existing ticket."),
         )
+
+    def _controlled_hold_case(self, case_id: str) -> dict[str, Any]:
+        case = self.store.control_case(case_id)
+        if not case:
+            raise ValueError("Existing synthetic case not found")
+        route = case.get("route") or {}
+        if (route.get("demo") is not True or route.get("id") != "halton-roads-demo"
+                or route.get("portalId") != "roads" or (route.get("recipient") or {}).get("id") != "halton-region"
+                or (case.get("location") or {}).get("fixtureId") != "halton-regional-road"):
+            raise ValueError("Presenter mail hold is limited to the controlled Roads fixture")
+        if case.get("cancelledAt") or case.get("stage") == "cancelled":
+            raise ValueError("This case has been cancelled")
+        return case
+
+    def get_authority_followup_hold(self, case_id: str) -> dict[str, Any]:
+        case = self._controlled_hold_case(case_id)
+        controls = case.get("demoControls") or {}
+        outbox = self.store.for_case_purpose(case_id, "AUTHORITY_QUESTION")
+        return {"caseId": case_id, "held": controls.get("holdAuthorityFollowUp") is True,
+                "heldAt": controls.get("authorityFollowUpHeldAt"),
+                "releasedAt": controls.get("authorityFollowUpReleasedAt"),
+                "portalConfirmation": controls.get("authorityFollowUpPortalConfirmation"),
+                "authorityOutbox": {"id": outbox["id"], "state": outbox["state"],
+                                     "attemptCount": outbox.get("attemptCount", 0)} if outbox else None}
+
+    def set_authority_followup_hold(self, case_id: str, held: bool, *,
+                                    portal_confirmation: dict[str, Any] | None = None) -> dict[str, Any]:
+        """Private presenter control; never changes resident authorization or report facts.
+
+        The API owns authentication and obtains v2 confirmation from its configured
+        portal origin. This method validates the saved case/receipt and persists only
+        the private control subtree through an atomic conditional update.
+        """
+        if not isinstance(held, bool):
+            raise ValueError("held must be a boolean")
+        case = self._controlled_hold_case(case_id)
+        controls = case.get("demoControls") or {}
+        if held:
+            if (case.get("stage") != "draft" or case.get("approvedVersion") is not None
+                    or case.get("currentOperationId") or case.get("receipt")
+                    or self.store.db.operations.find_one({"caseId": case_id}, {"_id": 1})):
+                raise ValueError("Hold must be set on an unused unapproved Roads draft before approval")
+            if controls.get("holdAuthorityFollowUp") is not True and not self.store.set_control_hold(case, True):
+                raise ValueError("Case changed while setting the mail hold; reload before continuing")
+        else:
+            operation = self.store.db.operations.find_one({"caseId": case_id, "action": "create", "state": "receipt_verified",
+                "portalId": "roads", "recipientId": "halton-region", "runId": case.get("runId")})
+            receipt = (operation or {}).get("receipt") or {}
+            if (not operation or receipt.get("runId") != case.get("runId") or not receipt.get("ticketId")
+                    or receipt.get("ticketId") != (case.get("receipt") or {}).get("ticketId")):
+                raise ValueError("Release requires this run's saved verified initial receipt")
+            proof = portal_confirmation or {}
+            if (proof.get("runId") != case.get("runId") or proof.get("portalId") != "roads"
+                    or proof.get("action") != "update" or proof.get("formVersion") != 2
+                    or not isinstance(proof.get("snapshotDigest"), str)
+                    or not re.fullmatch(r"[a-fA-F0-9]{64}", proof["snapshotDigest"])
+                    or not proof.get("verifiedAt")):
+                raise ValueError("Release requires configured-portal confirmation of this run's v2 follow-up form")
+            safe_proof = {key: proof[key] for key in ("runId", "portalId", "action", "formVersion", "snapshotDigest", "verifiedAt")}
+            if controls.get("holdAuthorityFollowUp") is True and not self.store.set_control_hold(case, False, safe_proof):
+                latest = self._controlled_hold_case(case_id)
+                if (latest.get("demoControls") or {}).get("holdAuthorityFollowUp") is True:
+                    raise ValueError("Case changed while releasing the mail hold; reload before continuing")
+            self.release_authority_followup(case_id)
+        return self.get_authority_followup_hold(case_id)
+
+    def release_authority_followup(self, case_id: str) -> int:
+        """Repair a released case's pending outbox; clearing the durable flag is required."""
+        self._controlled_hold_case(case_id)
+        if self.store.authority_followup_held(case_id):
+            return 0
+        return self.refresh_authority_holds(case_id)
+
+    def refresh_authority_holds(self, case_id: str | None = None) -> int:
+        changed = 0
+        for item in self.store.hold_candidates(case_id):
+            held = self.store.authority_followup_held(item["caseId"])
+            if held or item["state"] == "HELD":
+                changed += int(self.store.transition_hold(item, held))
+        return changed
 
     def enqueue_authority_response(self, case_id: str, operation_id: str, receipt_id: str) -> dict[str, Any]:
         _, operation = self._context(case_id, operation_id, action="update")
@@ -221,6 +303,7 @@ class MailService:
             return counts
         now = utcnow()
         self.store.recover_stale_sends(now)
+        self.refresh_authority_holds()
         for candidate in self.store.due(now, limit):
             state = candidate["state"]
             item = self.store.claim(candidate["_id"], state, self.worker_id, self.settings.lease_seconds)
@@ -229,6 +312,9 @@ class MailService:
             try:
                 self.settings.require_participants(item["senderInboxId"], item["recipients"])
                 self._context(item["caseId"], item["operationId"])
+                if item["purpose"] == "AUTHORITY_QUESTION" and self.store.authority_followup_held(item["caseId"]):
+                    self.store.patch(item["_id"], {"state": "HELD", "holdReason": "presenter"}, owner=self.worker_id)
+                    continue
                 if state == "OUTCOME_UNKNOWN":
                     message = self._find_reconciled_sent(item)
                     if message:
@@ -336,6 +422,14 @@ class MailService:
                 self.store.finish_received_event(event["_id"], self.worker_id, "IGNORED", reason="participant_or_payload_mismatch")
                 return "ignored"
             self._context(item["caseId"], item["operationId"])
+            if item["purpose"] == "AUTHORITY_QUESTION" and self.store.authority_followup_held(item["caseId"]):
+                # Preserve the genuine message but do not schedule inspection before
+                # the presenter barrier. Unexpected receiving evidence also prevents
+                # a later release from blindly sending another copy.
+                self.store.patch(item["_id"], {"state": "HELD", "holdReason": "presenter",
+                                 "observedDuringHold": True}, release=False)
+                self.store.finish_received_event(event["_id"], self.worker_id, "PENDING", lastError="presenter_mail_hold")
+                return "pending"
             self._store_attachments(message, item, stored_id)
             evidence = {"inboxId": message["inbox_id"], "providerMessageId": message["message_id"],
                         "providerThreadId": message["thread_id"], "observedAt": utcnow(),
