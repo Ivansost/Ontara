@@ -1,0 +1,2623 @@
+{
+  "batchId": "roads-batch-01-20261114",
+  "checkedAt": "2026-11-14T15:54:02.251907+00:00",
+  "procedures": [
+    {
+      "status": "ready",
+      "id": "halton-region-regional-road-problem-phone",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "8d2f6c64ed934f68",
+        "retrievalTextHash": "d4ab615d015ac9a54a37c01ad3b3511c4c4436178d8d9a5af01e26865a007222",
+        "verifiedAt": "2026-11-14 15:54:05.788609+00:00",
+        "queryText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "halton-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "halton-region-regional-road-problem-phone",
+                "sourceVersion": "8d2f6c64ed934f68"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.889045238494873
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "id": "halton-region-sidewalk-curb-responsibility-handoff",
+      "status": "excluded",
+      "reason": "Not current verified public knowledge"
+    },
+    {
+      "status": "ready",
+      "id": "peel-region-regional-road-maintenance",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "cbd83362f6f67e74",
+        "retrievalTextHash": "36a61081aa75f73bf8dfb96a25fb399779dad55b6ff0236adc688f98325cd23f",
+        "verifiedAt": "2026-11-14 15:54:08.615590+00:00",
+        "queryText": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "peel-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "peel-region-regional-road-maintenance",
+                "sourceVersion": "cbd83362f6f67e74"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8816347718238831
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "york-region-regional-road-maintenance",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "f5e5ae824241d8ff",
+        "retrievalTextHash": "edc61a635611b53fdfd0c1c219fdc681a675fa52df597520845f26879fa3c7c5",
+        "verifiedAt": "2026-11-14 15:54:10.599698+00:00",
+        "queryText": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "york-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "york-region-regional-road-maintenance",
+                "sourceVersion": "f5e5ae824241d8ff"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8811296224594116
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "durham-region-regional-pothole-sign-depot",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "e78bdb56c741bfd1",
+        "retrievalTextHash": "f27497455424dfda9647550a06efe8f6cabf94636e69bb8553974e6b9880398d",
+        "verifiedAt": "2026-11-14 15:54:12.765499+00:00",
+        "queryText": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "durham-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "durham-region-regional-pothole-sign-depot",
+                "sourceVersion": "e78bdb56c741bfd1"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8846084475517273
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "waterloo-region-road-maintenance-handoff",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "49523825479fa125",
+        "retrievalTextHash": "0e52c7c02f973d6f39831a167717f7c5ba72b9e58223da18174bfdc738d08c65",
+        "verifiedAt": "2026-11-14 15:54:15.812672+00:00",
+        "queryText": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region\u2019s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region\u2019s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "waterloo-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "waterloo-region-road-maintenance-handoff",
+                "sourceVersion": "49523825479fa125"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.913758397102356
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    }
+  ],
+  "authorities": [
+    {
+      "authorityId": "halton-region",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "halton-region-regional-road-problem-phone",
+          "authorityId": "halton-region",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Halton Region: published telephone handoff for a confirmed Regional-road problem",
+          "retrievalText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+          "sourceVersion": "8d2f6c64ed934f68",
+          "sourceIds": [
+            "halton-roads",
+            "halton-safety"
+          ],
+          "responsibilityRules": [
+            "Confirm the incident road belongs to Halton's Regional network using the linked official map; residence in Halton alone does not prove ownership.",
+            "Local streets and many sidewalks generally belong to Burlington, Halton Hills, Milton or Oakville; verify the particular asset.",
+            "Provincial highways such as 401 and QEW belong to MTO; no private-road maintenance responsibility is established by these pages.",
+            "Police handle traffic-law enforcement; a request for engineering investigation is distinct from approval to install a sign."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm incident location and Regional-road ownership using the official map.",
+            "For a Regional road problem, use the published telephone route: 311 or 1-866-442-5866.",
+            "For a local street, follow Halton's linked local municipality page instead."
+          ],
+          "constraints": [
+            "Research only. Live municipal submissions, emails and calls are not authorized by this import.",
+            "The official reporting page publishes a general telephone route; it does not specify a distinct intake form for each Roads leaf.",
+            "Automated demo execution remains on the separately allowlisted halton-roads-demo portal."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": null,
+          "contactEmail": null,
+          "contactPhone": "311 or +1-866-442-5866",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "halton-roads-ff72795c7085bfd0",
+            "halton-safety-4701417917565a14"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+            "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:42:09.641000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "8d2f6c64ed934f68",
+            "retrievalTextHash": "d4ab615d015ac9a54a37c01ad3b3511c4c4436178d8d9a5af01e26865a007222",
+            "verifiedAt": "2026-11-14 15:54:05.788000+00:00",
+            "queryText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "halton-region",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "halton-region-regional-road-problem-phone",
+                    "sourceVersion": "8d2f6c64ed934f68"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.889045238494873
+          },
+          "score": 0.8905129432678223,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "authorityId": "halton-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:54:05.935846+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "returnedIds": [
+          "halton-region-regional-road-problem-phone"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "halton-region-regional-road-problem-phone"
+        ],
+        "elapsedMs": 1872
+      }
+    },
+    {
+      "authorityId": "peel-region",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "peel-region-regional-road-maintenance",
+          "authorityId": "peel-region",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign"
+          ],
+          "categoryId": "roads",
+          "title": "Peel: report Regional-road potholes, debris, damaged signs and curbs",
+          "retrievalText": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence.",
+          "sourceVersion": "cbd83362f6f67e74",
+          "sourceIds": [
+            "peel-roads",
+            "peel-road-ownership"
+          ],
+          "responsibilityRules": [
+            "Peel maintenance applies to the Regional-road network; verify road number/name and segment, not just municipality.",
+            "This source does not establish sidewalk responsibility or private-road maintenance."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Check the Regional roads list and exact incident segment.",
+            "Call 311 or 905-791-7800 option 4 for the listed maintenance concerns.",
+            "Use the published urgent after-hours service for urgent road issues; questions can use the same general phone contact."
+          ],
+          "constraints": [
+            "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": null,
+          "contactEmail": null,
+          "contactPhone": "311 or +1-905-791-7800 option 4",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "peel-roads-6f5f99e4af1ea276",
+            "peel-road-ownership-b99f0d117e66d164"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff"
+          },
+          "gaps": [
+            "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:45:46.091000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "cbd83362f6f67e74",
+            "retrievalTextHash": "36a61081aa75f73bf8dfb96a25fb399779dad55b6ff0236adc688f98325cd23f",
+            "verifiedAt": "2026-11-14 15:54:08.615000+00:00",
+            "queryText": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "peel-region",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "peel-region-regional-road-maintenance",
+                    "sourceVersion": "cbd83362f6f67e74"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8816347718238831
+          },
+          "score": 0.8814116716384888,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "authorityId": "peel-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:54:08.726728+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "returnedIds": [
+          "peel-region-regional-road-maintenance"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "peel-region-regional-road-maintenance"
+        ],
+        "elapsedMs": 1180
+      }
+    },
+    {
+      "authorityId": "york-region",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "york-region-regional-road-maintenance",
+          "authorityId": "york-region",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-sign"
+          ],
+          "categoryId": "roads",
+          "title": "York: Regional-road condition, debris and sign reporting",
+          "retrievalText": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested.",
+          "sourceVersion": "f5e5ae824241d8ff",
+          "sourceIds": [
+            "york-roads",
+            "york-maintenance"
+          ],
+          "responsibilityRules": [
+            "Use this procedure only after confirming a Regional road and relevant asset.",
+            "York explicitly maintains road signs on Regional roads; local/provincial/private road responsibility must be established separately.",
+            "Do not treat an email-opening link as a verified form or automatic integration."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm the Regional road/asset.",
+            "Use the published email or general Public Works phone for nonurgent condition/debris/sign concerns.",
+            "For urgent road-user safety matters after hours call 1-877-464-9675 ext. 75200."
+          ],
+          "constraints": [
+            "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": null,
+          "contactEmail": "transportation@york.ca",
+          "contactPhone": "+1-877-464-9675 ext. 75000; after-hours urgent ext. 75200",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "york-roads-265f6346ba46e8c5",
+            "york-maintenance-ddd5a0bfb067afa3"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-sign": "sourced_handoff"
+          },
+          "gaps": [
+            "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:46:12.532000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "f5e5ae824241d8ff",
+            "retrievalTextHash": "edc61a635611b53fdfd0c1c219fdc681a675fa52df597520845f26879fa3c7c5",
+            "verifiedAt": "2026-11-14 15:54:10.599000+00:00",
+            "queryText": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "york-region",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "york-region-regional-road-maintenance",
+                    "sourceVersion": "f5e5ae824241d8ff"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8811296224594116
+          },
+          "score": 0.8811296224594116,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "authorityId": "york-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:54:10.734406+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "returnedIds": [
+          "york-region-regional-road-maintenance"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "york-region-regional-road-maintenance"
+        ],
+        "elapsedMs": 1256
+      }
+    },
+    {
+      "authorityId": "durham-region",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "durham-region-regional-pothole-sign-depot",
+          "authorityId": "durham-region",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-sign"
+          ],
+          "categoryId": "roads",
+          "title": "Durham: Regional-road potholes and downed signs go to the appropriate Works depot",
+          "retrievalText": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot.",
+          "sourceVersion": "e78bdb56c741bfd1",
+          "sourceIds": [
+            "durham-roads",
+            "durham-pothole",
+            "durham-sign"
+          ],
+          "responsibilityRules": [
+            "Roads may belong to MTO, Durham or a local municipality.",
+            "Pothole procedure excludes residential, commercial and driveway entrances.",
+            "Signs must be on a Regional road; this is maintenance, not approval for a new sign."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm the incident is on a Regional road.",
+            "Follow the official Works depot link on the pothole/sign issue page and select the appropriate depot.",
+            "Contact that depot; use Region general contact for assistance identifying it."
+          ],
+          "constraints": [
+            "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": null,
+          "contactEmail": null,
+          "contactPhone": "311 or +1-905-668-7711; toll-free +1-800-372-1102",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "durham-roads-6e71cf0a799fe466",
+            "durham-pothole-c30c8e4b3026fede",
+            "durham-sign-5beb2e5469fbbded"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-sign": "sourced_handoff"
+          },
+          "gaps": [
+            "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+            "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:46:12.532000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "e78bdb56c741bfd1",
+            "retrievalTextHash": "f27497455424dfda9647550a06efe8f6cabf94636e69bb8553974e6b9880398d",
+            "verifiedAt": "2026-11-14 15:54:12.765000+00:00",
+            "queryText": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "durham-region",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "durham-region-regional-pothole-sign-depot",
+                    "sourceVersion": "e78bdb56c741bfd1"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8846084475517273
+          },
+          "score": 0.8820906281471252,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "authorityId": "durham-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:54:12.862279+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "returnedIds": [
+          "durham-region-regional-pothole-sign-depot"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "durham-region-regional-pothole-sign-depot"
+        ],
+        "elapsedMs": 2002
+      }
+    },
+    {
+      "authorityId": "waterloo-region",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "waterloo-region-road-maintenance-handoff",
+          "authorityId": "waterloo-region",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement"
+          ],
+          "categoryId": "roads",
+          "title": "Waterloo Region: published road-maintenance and pothole handoff",
+          "retrievalText": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region\u2019s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources.",
+          "sourceVersion": "49523825479fa125",
+          "sourceIds": [
+            "waterloo-roads",
+            "waterloo-report-form"
+          ],
+          "responsibilityRules": [
+            "Regional/local maintenance cooperation does not establish ownership for an arbitrary road.",
+            "Check the exact road/asset; provincial and private-road responsibility is not established by this maintenance page."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm the incident road and responsible municipality.",
+            "Call 519-575-4400 or open the officially linked Verint complaint form.",
+            "Inspect the current form and required report fields before any future supported submission."
+          ],
+          "constraints": [
+            "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://waterloo.form.ca.empro.verintcloudservices.com/form/auto/hrc_generalcomplain",
+          "contactEmail": null,
+          "contactPhone": "+1-519-575-4400",
+          "formSnapshotIds": [
+            "waterloo-maintenance-form-shell-20261114"
+          ],
+          "artifactIds": [
+            "waterloo-roads-3919c47666b116c4",
+            "waterloo-report-form-0c6cd53192ca558e"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff"
+          },
+          "gaps": [
+            "The current report questionnaire, mandatory fields, CAPTCHA/account constraints and acknowledgement/tracking behavior were not observable in the fetched JavaScript form shell.",
+            "The service page labels its link email us but the actual destination is a web form; no report email address is inferred from the footer.",
+            "No repair deadline or report-specific follow-up route is stated."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:45:46.091000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "49523825479fa125",
+            "retrievalTextHash": "0e52c7c02f973d6f39831a167717f7c5ba72b9e58223da18174bfdc738d08c65",
+            "verifiedAt": "2026-11-14 15:54:15.812000+00:00",
+            "queryText": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region\u2019s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region\u2019s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "waterloo-region",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "waterloo-region-road-maintenance-handoff",
+                    "sourceVersion": "49523825479fa125"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.913758397102356
+          },
+          "score": 0.913758397102356,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region\u2019s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region\u2019s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "authorityId": "waterloo-region",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:54:16.092505+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "returnedIds": [
+          "waterloo-region-road-maintenance-handoff"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "waterloo-region-road-maintenance-handoff"
+        ],
+        "elapsedMs": 1843
+      }
+    }
+  ],
+  "counts": {
+    "authoritiesChecked": 5,
+    "proceduresChecked": 5,
+    "searchableRecords": 5,
+    "excludedRecords": 1
+  },
+  "status": "ready"
+}
