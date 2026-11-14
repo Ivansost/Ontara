@@ -1,0 +1,784 @@
+{
+  "id": "roads-batch-04-20261114",
+  "contentHash": "e29b2c657a44e687eb9fd45adad11b8d92da82b8e11f263633d045d01f5fc6a1",
+  "coverage": [
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "middlesex-roads",
+        "middlesex-faqs",
+        "middlesex-request-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "leeds-roads",
+        "leeds-concern-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "bruce-roads",
+        "bruce-concerns"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "sdg-roads",
+        "sdg-concerns",
+        "sdg-contacts"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "lanark-roads",
+        "lanark-speed-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-speed-management-request"
+      ],
+      "sourceIds": [
+        "lanark-roads",
+        "lanark-speed-form"
+      ],
+      "notes": [
+        "The form requires JavaScript; dynamic behavior, anti-spam acceptance and any further server validation were not tested.",
+        "This speed-management route does not establish every unsafe-intersection or sign-installation procedure. No receipt, response deadline or approved intervention is claimed."
+      ]
+    }
+  ],
+  "gaps": [],
+  "municipalityIds": [
+    "middlesex-county",
+    "adelaide-metcalfe-township",
+    "lucan-biddulph-township",
+    "middlesex-centre-municipality",
+    "newbury-village",
+    "north-middlesex-municipality",
+    "southwest-middlesex-municipality",
+    "strathroy-caradoc-municipality",
+    "thames-centre-municipality",
+    "leeds-grenville-counties",
+    "athens-township",
+    "augusta-township",
+    "edwardsburgh-cardinal-township",
+    "elizabethtown-kitley-township",
+    "front-of-yonge-township",
+    "leeds-and-the-thousand-islands-township",
+    "merrickville-wolford-village",
+    "north-grenville-municipality",
+    "rideau-lakes-township",
+    "westport-village",
+    "bruce-county",
+    "arran-elderslie-municipality",
+    "brockton-municipality",
+    "huron-kinloss-township",
+    "kincardine-municipality",
+    "northern-bruce-peninsula-municipality",
+    "saugeen-shores-town",
+    "south-bruce-municipality",
+    "south-bruce-peninsula-town",
+    "stormont-dundas-glengarry-counties",
+    "north-dundas-township",
+    "north-glengarry-township",
+    "north-stormont-township",
+    "south-dundas-municipality",
+    "south-glengarry-township",
+    "south-stormont-township",
+    "lanark-county",
+    "beckwith-township",
+    "carleton-place-town",
+    "drummond-north-elmsley-township",
+    "lanark-highlands-township",
+    "mississippi-mills-municipality",
+    "montague-township",
+    "perth-town",
+    "tay-valley-township"
+  ],
+  "procedureIds": [
+    "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+    "middlesex-county-county-road-maintenance",
+    "leeds-grenville-counties-county-road-concern",
+    "lanark-county-speed-management-request",
+    "bruce-county-transportation-road-service",
+    "lanark-county-county-road-concern"
+  ],
+  "schemaVersion": "1.0",
+  "searchStatus": "pending",
+  "sourceIds": [
+    "bruce-concerns",
+    "leeds-roads",
+    "leeds-concern-portal",
+    "sdg-contacts",
+    "middlesex-faqs",
+    "lanark-speed-form",
+    "sdg-roads",
+    "middlesex-roads",
+    "lanark-roads",
+    "bruce-roads",
+    "middlesex-request-form",
+    "sdg-concerns"
+  ],
+  "startedAt": "2026-11-14 16:00:43.161000+00:00",
+  "status": "completed",
+  "completedAt": "2026-11-14 16:02:01.825000+00:00",
+  "counts": {
+    "municipalities": 45,
+    "sources": 12,
+    "procedures": 6,
+    "formSnapshots": 3,
+    "artifacts": 12
+  }
+}

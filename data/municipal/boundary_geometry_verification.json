@@ -1,0 +1,70 @@
+{
+  "scope": "Geometry consistency checks using synthetic representative interior points, not address resolution or road-owner validation.",
+  "allFinalGeometriesValid": true,
+  "lowerTierChecks": 173,
+  "lowerTierFailures": [],
+  "separatedSingleTierChecks": [
+    {
+      "id": "barrie-city",
+      "separateFrom": "simcoe-county",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "orillia-city",
+      "separateFrom": "simcoe-county",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "pelee-township",
+      "separateFrom": "essex-county",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "windsor-city",
+      "separateFrom": "essex-county",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "guelph-city",
+      "separateFrom": "wellington-county",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "pembroke-city",
+      "separateFrom": "renfrew-county",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "london-city",
+      "separateFrom": "middlesex-county",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "brockville-city",
+      "separateFrom": "leeds-grenville-counties",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "gananoque-town",
+      "separateFrom": "leeds-grenville-counties",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "prescott-town",
+      "separateFrom": "leeds-grenville-counties",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "cornwall-city",
+      "separateFrom": "stormont-dundas-glengarry-counties",
+      "upperCoversSingleTierInteriorPoint": false
+    },
+    {
+      "id": "smiths-falls-town",
+      "separateFrom": "lanark-county",
+      "upperCoversSingleTierInteriorPoint": false
+    }
+  ],
+  "allSingleTierParentsNull": true,
+  "maximumMunicipalityJsonBytes": 279423
+}
