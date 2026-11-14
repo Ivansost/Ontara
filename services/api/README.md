@@ -4,6 +4,11 @@ FastAPI and PyMongo provide the authoritative private case ledger, immutable ver
 explicit approval, durable jobs with expiring fenced leases, and Atlas evidence storage.
 All external writes use a stable operation reference and approved-payload digest.
 Uncertain dispatches require receiving-system reconciliation before retry.
+Dispatch intent records `dispatchStartedAt` and an unresolved-outcome flag. Moving to
+Needs assistance does not clear that uncertainty: edits and further approval stay
+blocked until a verified receipt or authoritative non-application evidence resolves it.
+Pre-dispatch missing-fact pauses remain editable. Cancellation stops future actions
+and explicitly retains an earlier uncertain attempt in the case timeline.
 
 ## Run
 
@@ -57,6 +62,15 @@ heartbeats, transitions and receipts. A new lease fences expired workers. Persis
 `dispatch_started` before browser writes; reconcile it after a process exit. The
 `abandon` endpoint requeues without resetting the operation. Presenter fault arming is
 one-shot and restricted to prepared controlled-demo operations.
+
+For a live crash demonstration with automatic dispatch enabled, the presenter first
+calls the Bearer-only `POST /internal/v1/cases/{id}/fault-next-create` with
+`{"kind":"kill_after_acceptance","armed":true}` while the case is an unapproved
+draft. Ordinary resident approval atomically transfers and consumes that case control
+into its first create operation before its durable job becomes runnable. Public case
+requests cannot set this control. It cannot arm updates, used cases, non-demo routes or
+an already-consumed one-shot. The existing operation-level control remains available
+only for prepared create operations that have not been leased or consumed.
 
 Authority email schedules a `follow_up_inspection` job with `readOnly=true`. The worker
 inspects the current form and retrieves an applicable verified lesson before asking an
