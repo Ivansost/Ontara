@@ -2,7 +2,7 @@
 
 Project-specific guidance for AI coding agents.
 
-Follow the repository's root hackathon instructions as well as the generated blocks below. Ontara uses the official Astryx Neutral theme; preserve its standard tokens and components. The backend owns the catalogue, authored questions, validation and approvals. Regenerate `src/generated` from `contracts` rather than editing its copies. Seven inactive categories stop before intake. Keep secrets and internal credentials outside this web app; its server-only API origin is `ONTARA_API_URL`.
+Follow the repository's root hackathon instructions as well as the generated blocks below. Ontara uses the official Astryx Neutral theme; preserve its standard tokens and components. The backend owns the catalogue, authored questions, validation and approvals. Regenerate `src/generated` from `contracts` rather than editing its copies. All nine categories navigate to their issue choices. Inactive issues show a disabled form preview with no draft, personal-data collection or API calls; keep backend availability enforcement. The controlled recipient remains explicit at the approval boundary. Keep secrets and internal credentials outside this web app; its server-only API origin is `ONTARA_API_URL`.
 
 <!-- ASTRYX:START -->
 Astryx v0.7.16 · 174 components
