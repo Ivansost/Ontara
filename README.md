@@ -10,7 +10,7 @@ Ivan and Faaris built Ontara for **Agents in Context Toronto, Track 3: Finish th
 | --- | --- |
 | Receiving portals | Public on [Render](https://ontara-portals-35iy.onrender.com); the [MongoDB health check](https://ontara-portals-35iy.onrender.com/healthz) passed |
 | Case API | [Public API](https://ontara-api-35iy.onrender.com) is live at `a331330f`, including private voice intake and transcript storage; the recorded core flow proved draft hold/release and API restart persistence |
-| Resident web | [Public web app](https://ontara-web-35iy.onrender.com) is live at `a331330f`, including opt-in browser voice. The recorded core journey and category-cleanup checks remain separately identified below |
+| Resident web | [Public web app](https://ontara-web-35iy.onrender.com) is live at `18dd8ac`, with compact category tiles and a plain-language journey explanation. Browser voice was separately qualified at `a331330f`; the recorded core journey and category-cleanup checks remain separately identified below |
 | Executor | `fd572d12` is live on Render Free Linux with pinned Chromium `159.0.8154.6`; actual process crash and fresh-process receipt recovery passed |
 | Hosted Roads proof | Complete: crash/recovery with one create and one ticket, held-mail restart, actual v2 form, withheld lesson, native/model mapping, new resident approval, same-ticket update and three received emails |
 | Graffiti and resident controls | Separate hosted Graffiti intake/approval/receipt and unused-draft cancellation rejection passed; mobile, session isolation, cookie and origin checks passed |
@@ -25,7 +25,7 @@ The [hosted execution proof](services/executor/evidence/cloud-final-hosted-proof
 
 ## The resident journey
 
-The interface uses buttons, authored questions and ordinary inputs. All nine categories have ordinary navigation buttons and nested routes. Roads, Sidewalks & Traffic and Graffiti support configured synthetic demo routes. The other seven lead to empty, disabled form previews with disabled submission. All 39 inactive leaves and their location/details/review deep links collect no data, create no drafts and make no backend requests. The server also rejects inactive-service writes.
+The interface uses buttons, authored questions and ordinary inputs. The homepage groups the nine categories in a compact desktop 3×3 grid, with a simple explanation of reporting, approval and follow-up below. On phones it uses two columns with full category labels. All nine categories have ordinary navigation buttons and nested routes. Roads, Sidewalks & Traffic and Graffiti support configured synthetic demo routes. The other seven lead to empty, disabled form previews with disabled submission. All 39 inactive leaves and their location/details/review deep links collect no data, create no drafts and make no backend requests. The server also rejects inactive-service writes.
 
 The Regional Roads Portal (DEMO) receives the synthetic Halton pothole. The Local Municipality Portal (DEMO) receives synthetic public-wall graffiti in Milton. Location and asset responsibility determine the recipient. Research about a municipality never enables live submission to it.
 
