@@ -87,6 +87,8 @@ Graffiti uses a new case and the Public wall procedure through its distinct auth
 
 The cancellation stage creates one separate unused synthetic Roads draft, cancels through the normal case UI, verifies the cancelled state and hidden approval action, and sends one same-session approval probe that must return 409 with zero operations. It never approves that draft and preserves the successful Roads/Graffiti cases for review.
 
+After the coordinator authorizes it and Sol 6 captures the completed mail state, `duplicate-mail --run hosted_roads_demo` repeats only the existing completed Roads hold release and durable mail catch-up. It requires unchanged case approval/version/receipt/operation and provider identities, one actual authority-mail inspection, one update, six stored sender/receiver copies and one send attempt for each of the three purposes. Its output includes only safe counters. It creates no case, approval, follow-up request or receiving write.
+
 The smoke stage verifies nine category headings and zero horizontal overflow at 390 and 320 pixels; an HttpOnly/SameSite=Lax/Path=/ session cookie with Secure on HTTPS; denial from a fresh browser session; and proxy write-origin responses 403, 403 and 422. The 422 payload is intentionally incomplete and creates no case or operation.
 
 ## Interrupted checks

@@ -69,3 +69,22 @@ export function receivedMail(status, purpose, operationId) {
     receivingEvidence: { inboxId: item.receivingEvidence.inboxId, providerMessageId: item.receivingEvidence.providerMessageId, providerThreadId: item.receivingEvidence.providerThreadId, evidence: item.receivingEvidence.evidence },
   };
 }
+
+export function duplicateMailSnapshot(evidence, status) {
+  assert.equal(evidence.case.stage, 'report_acknowledged');
+  assert.equal(evidence.case.approvedVersion, evidence.case.version);
+  assert.equal(evidence.operations.filter(item => item.action === 'create').length, 1);
+  assert.equal(evidence.operations.filter(item => item.action === 'update').length, 1);
+  assert.ok(evidence.operations.every(item => item.state === 'receipt_verified'));
+  assert.equal(status.messagesStored, 6, 'Three genuine messages must retain exactly six stored sender/receiver copies.');
+  assert.equal(status.outbox.length, 3);
+  const outbox = status.outbox.map(item => {
+    assert.equal(item.attemptCount, 1, 'Repeating existing mail work must not attempt another send.');
+    assert.ok(receivedMail(status, item.purpose, item.operationId));
+    return { id: item.id, purpose: item.purpose, operationId: item.operationId, providerMessageId: item.providerMessageId, receivingEvidence: item.receivingEvidence, attemptCount: item.attemptCount };
+  }).sort((a, b) => a.purpose.localeCompare(b.purpose));
+  assert.deepEqual(outbox.map(item => item.purpose), ['AUTHORITY_QUESTION', 'AUTHORITY_RESPONSE', 'RESIDENT_NOTIFICATION']);
+  const inspections = evidence.events.filter(item => item.kind === 'form_inspected' && item.data?.sourceEventId?.startsWith('received:'));
+  assert.equal(inspections.length, 1, 'Duplicate provider processing must retain one genuine authority-mail inspection.');
+  return { version: evidence.case.version, approvedVersion: evidence.case.approvedVersion, receipt: receiptSummary(evidence.case.receipt), operationIds: evidence.operations.map(item => item.id).sort(), outbox, inspectionIds: inspections.map(item => item.id), messagesStored: status.messagesStored };
+}

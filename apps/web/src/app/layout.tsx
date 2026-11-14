@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: { default: 'Ontara — Report a local problem', template: '%s · Ontara' },
-  description: 'Report a non-emergency local problem, review where it goes, and follow the next steps. A controlled municipal reporting demonstration.',
+  description: 'Report a non-emergency local problem, review where it goes, and follow the next steps.',
   robots: { index: false, follow: false },
 };
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };

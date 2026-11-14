@@ -13,7 +13,6 @@ import { Layout, LayoutContent } from '@astryxdesign/core/Layout';
 import { Grid } from '@astryxdesign/core/Grid';
 import { CatalogueBreadcrumbs } from './CatalogueBreadcrumbs';
 import { Icon } from '@astryxdesign/core/Icon';
-import { Banner } from '@astryxdesign/core/Banner';
 import {
   WrenchScrewdriverIcon, PaintBrushIcon, TrashIcon, GlobeAltIcon,
   BeakerIcon, BuildingLibraryIcon, CloudIcon, SpeakerWaveIcon, BugAntIcon,
@@ -21,6 +20,7 @@ import {
 import { catalogue, type CatalogueNode } from '@/lib/catalogue';
 import { PageState } from './PageState';
 import ReportJourney from './ReportJourney';
+import { InactiveReportPreview } from './InactiveReportPreview';
 
 const categoryIcons = { roads: WrenchScrewdriverIcon, graffiti: PaintBrushIcon, waste: TrashIcon, trees: GlobeAltIcon, water: BeakerIcon, parks: BuildingLibraryIcon, snow: CloudIcon, bylaws: SpeakerWaveIcon, animals: BugAntIcon };
 const styles = stylex.create({
@@ -33,9 +33,10 @@ const styles = stylex.create({
 export function CataloguePage({ trail = [], step }: { trail?: CatalogueNode[]; step?: string }) {
   const current = trail.at(-1);
   const isHome = !current;
+  const isPreview = current?.kind === 'issue' && !current.available;
   const base = '/report' + (trail.length ? '/' + trail.map(node => node.slug).join('/') : '');
   if (current?.kind === 'issue' && current.available) return <ReportJourney issue={current} trail={trail} step={step} />;
-  if (step) return <PageState title="This report isn’t available" message="Return to the issue choices to continue." />;
+  if (step && !isPreview) return <PageState title="This report isn’t available" message="Return to the issue choices to continue." />;
   const nodes = current ? current.children : catalogue.categories;
   return (
     <Layout height="auto" contentWidth={1200} content={
@@ -45,11 +46,10 @@ export function CataloguePage({ trail = [], step }: { trail?: CatalogueNode[]; s
             {current ? <CatalogueBreadcrumbs trail={trail} /> : null}
             <VStack gap={3} xstyle={styles.intro}>
               <Heading level={1}>{isHome ? 'What needs attention?' : current.label}</Heading>
-              <Text type="large" color="secondary">
-                {isHome ? 'Report a non-emergency local problem and follow the next steps.' : current.kind === 'issue' ? 'This issue is not available for reporting in the demo.' : 'Choose the option that best describes the problem.'}
-              </Text>
+              {!isPreview ? <Text type="large" color="secondary">
+                {isHome ? 'Report a non-emergency local problem and follow the next steps.' : 'Choose the option that best describes the problem.'}
+              </Text> : null}
             </VStack>
-            {isHome ? <Banner status="info" title="Municipal reporting demo" description="Roads and Graffiti use controlled demo locations and portals. The other seven categories are available to browse." /> : null}
           </VStack>
 
           {nodes.length ? (
@@ -65,23 +65,20 @@ export function CataloguePage({ trail = [], step }: { trail?: CatalogueNode[]; s
                         <Icon icon="chevronRight" color="secondary" size="sm" />
                       </HStack>
                       <Text color="secondary">{node.description || node.children.slice(0, 3).map(child => child.label).join(', ') || 'View this issue'}</Text>
-                      {isHome ? <Text type="supporting">{node.available ? 'Reporting at demo locations' : 'Browse only'}</Text> : null}
                     </VStack>
                   </ClickableCard>
                 );
               })}
             </Grid>
           ) : (
-            <VStack gap={5}>
-              <Banner status="info" title="Not available in this demo" description={current?.disabledReason || 'You can browse this category, but reporting has not been connected. No report or personal information is collected here.'} />
-              <HStack><Button label="Not available in this demo" variant="primary" isDisabled /></HStack>
+            <VStack gap={5} xstyle={styles.intro}>
+              <InactiveReportPreview />
             </VStack>
           )}
 
           <VStack gap={4} xstyle={styles.bottom}>
             {current ? <HStack><Button label="Back" href={trail.length > 1 ? '/report/' + trail.slice(0, -1).map(node => node.slug).join('/') : '/report'} variant="secondary" icon={<Icon icon="chevronLeft" />} /></HStack> : null}
             <Text type="supporting" color="secondary">For an immediate danger, use the appropriate emergency or urgent service. An ordinary report cannot provide immediate assistance.</Text>
-            {isHome ? <Text type="supporting" color="secondary">Ontara helps complete the reporting process. The responsible organization decides what action or repair follows.</Text> : null}
           </VStack>
         </VStack>
       </LayoutContent>
