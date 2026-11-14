@@ -1,0 +1,38 @@
+{
+  "verifiedAt": "2026-11-14T17:04:10.679625Z",
+  "operation": "Token-only reversible fixture maintenance for two retired local synthetic tickets",
+  "result": "passed",
+  "tickets": [
+    {
+      "ticketId": "RDS-0E668AE771AF",
+      "cancelledCaseConfirmed": true,
+      "queuedOrLeasedJobs": 0,
+      "onlyAccessTokenChanged": true,
+      "oldTicketReadStatus": 404,
+      "oldUpdateFormStatus": 404,
+      "immutableReceiptEvidenceUnchanged": true
+    },
+    {
+      "ticketId": "RDS-A6F3F3D7E435",
+      "cancelledCaseConfirmed": true,
+      "queuedOrLeasedJobs": 0,
+      "onlyAccessTokenChanged": true,
+      "oldTicketReadStatus": 404,
+      "oldUpdateFormStatus": 404,
+      "immutableReceiptEvidenceUnchanged": true
+    }
+  ],
+  "retiredRequestRecordsAndCountersUnchanged": true,
+  "retiredRunFormVersionsUnchanged": true,
+  "allFormSnapshotsUnchanged": true,
+  "allObservedActiveTicketDocumentsUnchanged": true,
+  "activeTicketDocumentsObserved": 1,
+  "appCasesJobsOperationsAndLessonRecordsNotMutated": true,
+  "seededLessonDependencyCheckedByOwner": true,
+  "immutableReceiptMetadataRemainsDisclosed": true,
+  "limitation": "Original receiver lookup metadata and stale historical URLs remain readable; old ticket read/update capabilities are revoked. No history rewrite.",
+  "rollbackBackupDirectory": "/Users/ivan/.config/ontara/evidence/retired-receiver-token-maintenance-20261114T170408",
+  "backupMode": "directory0700/files0600",
+  "httpWritesPerformed": false,
+  "tokenValuesInPublicProof": false
+}
