@@ -66,6 +66,14 @@ class MongoMailStore:
         case = self.control_case(case_id)
         return bool(case and (case.get("demoControls") or {}).get("holdAuthorityFollowUp") is True)
 
+    def authority_followup_staged(self, case_id: str) -> bool:
+        case = self.control_case(case_id)
+        controls = (case or {}).get("demoControls") or {}
+        # Existing queued/held historical intents remain usable. New cases need
+        # an authenticated preapproval hold to opt into the advanced story.
+        return bool(controls.get("authorityFollowUpStaged") is True or controls.get("holdAuthorityFollowUp") is True
+                    or self.for_case_purpose(case_id, "AUTHORITY_QUESTION"))
+
     def set_control_hold(self, case: dict[str, Any], held: bool, confirmation: dict[str, Any] | None = None) -> bool:
         """CAS one private case subtree; report facts/version/authorization remain untouched."""
         now = utcnow()
@@ -78,6 +86,7 @@ class MongoMailStore:
                           "currentOperationId": None, "receipt": None,
                           "demoControls.holdAuthorityFollowUp": {"$ne": True}})
             values["demoControls.authorityFollowUpHeldAt"] = now
+            values["demoControls.authorityFollowUpStaged"] = True
         else:
             query.update({"runId": case["runId"], "demoControls.holdAuthorityFollowUp": True})
             values.update({"demoControls.authorityFollowUpReleasedAt": now,

@@ -11,7 +11,7 @@ from app.storage import Store
 from .test_mail import Provider, env
 
 
-def test_real_backend_schedules_one_read_only_inspection_without_question(env, monkeypatch):
+def test_explicitly_staged_backend_schedules_one_read_only_inspection_without_question(env, monkeypatch):
     settings = env[-1]
     db = mongomock.MongoClient(tz_aware=True).ontara
     store = Store(db, transactions=False)
@@ -34,6 +34,11 @@ def test_real_backend_schedules_one_read_only_inspection_without_question(env, m
         answers={"immediateDanger": "No", "roadPosition": "In travel lane", "travelDirection": "Northbound",
                  "description": "A synthetic pothole for a test."},
     ))
+    mail_store = MongoMailStore(db)
+    mail_store.ensure_indexes()
+    provider = Provider()
+    mail = MailService(mail_store, provider, cases, settings)
+    mail.set_authority_followup_hold(case["id"], True)
     approved = cases.approve(case["id"], "synthetic-test-session", ApprovalRequest(version=1))
     lease = cases.lease_job(LeaseRequest(worker_id="test-executor", case_id=case["id"]))
     operation, job = lease["operation"], lease["job"]
@@ -44,11 +49,12 @@ def test_real_backend_schedules_one_read_only_inspection_without_question(env, m
                       action="create", acceptedAt=utcnow(), receiptUrl="http://test.invalid/receipt", ticketUrl="http://test.invalid/ticket")
     result = cases.record_receipt(operation["id"], ReceiptRecord(worker_id="test-executor", lease_token=job["leaseToken"],
                                  job_id=job["id"], receipt=receipt))
-    mail_store = MongoMailStore(db)
-    mail_store.ensure_indexes()
-    provider = Provider()
-    mail = MailService(mail_store, provider, cases, settings)
     mail.on_receipt_verified(case["id"], result["operation"], result["receipt"])
+    assert mail.process_outbox_once()["sent"] == 0
+    mail.set_authority_followup_hold(case["id"], False, portal_confirmation={
+        "runId": case["runId"], "portalId": "roads", "action": "update", "formVersion": 2,
+        "snapshotDigest": "a" * 64, "verifiedAt": utcnow().isoformat(),
+    })
     mail.process_outbox_once()
     mail.poll_once()
     restarted = MailService(MongoMailStore(db), provider, cases, settings)

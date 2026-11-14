@@ -55,6 +55,17 @@ approval. `/approve` authorizes the exact version, facts and recipient and creat
 stable operation plus durable job. Repeated approval cannot create extra work.
 Cancellation revokes future actions without claiming to undo an accepted report.
 
+Optional `notifications: {email, consent: true}` is a case-owned notification preference,
+separate from `reporter.email` and its sharing consent. Draft preferences send nothing.
+The approved case-version snapshot freezes this destination outside the portal payload;
+it cannot change after the first approval. The owner-only case response exposes
+`notificationSettingsLocked` and `notificationProgress` (queued/send/uncertainty states,
+with actual controlled receiving evidence distinguished from provider acceptance).
+Verified create/update receipts and actual authored-question/assistance events drive
+notifications. There is no historical opt-in/backfill or resolved/repair email. Configure
+`ONTARA_WEB_BASE_URL` with the hosted web origin; private case links require the original
+owning browser session. See `scripts/mail/README.md` for notification and recipient guards.
+
 ## Runtime, mail and retrieval integration
 
 Workers lease `/internal/v1/jobs/lease` and use the returned worker/token guard for
@@ -74,7 +85,9 @@ only for prepared create operations that have not been leased or consumed.
 
 The separate Bearer-only `POST /internal/v1/cases/{id}/follow-up-hold` accepts
 `{"held":true}` on an unused supported Roads draft before approval. Mail retains the
-initial authority question as durable HELD work without a provider send. After the
+initial authority question as durable HELD work without a provider send and records
+explicit advanced-demo staging. Ordinary Roads cases finish at their filing receipt
+without generating a mock authority question. After the
 initial receipt is verified and the presenter changes that run's Roads update form,
 `{"held":false}` reads the configured receiving portal's same-run schema and requires
 version 2 with its actual snapshot digest before releasing the existing outbox. Caller

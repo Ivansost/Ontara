@@ -16,7 +16,7 @@ def draft(env):
                       "currentOperationId": None, "receipt": None, "cancelledAt": None,
                       "route": {"id": "halton-roads-demo", "demo": True, "portalId": "roads", "recipient": {"id": "halton-region"}},
                       "location": {"fixtureId": "halton-regional-road"}})
-    store.db.cases.insert_one(deepcopy(cases.case))
+    store.db.cases.replace_one({"id": "case_demo"}, deepcopy(cases.case), upsert=True)
     return env
 
 
@@ -150,11 +150,16 @@ def test_unexpected_inbound_while_held_cannot_bypass_presenter_barrier_or_cause_
     assert len(cases.requests) == 1
 
 
-def test_hold_is_per_case_and_normal_case_has_no_global_delay(env):
+def test_hold_is_per_case_and_ordinary_case_does_not_start_advanced_loop(env):
     service, store, provider, cases, _ = draft(env)
     service.set_authority_followup_hold("case_demo", True)
-    # A different case's explicit control cannot apply to this normal verified case.
+    # A different case's explicit control cannot stage this ordinary verified case.
     store.db.cases.update_one({"id": "case_demo"}, {"$set": {"id": "another_held_case"}})
+    assert initial(service)["state"] == "NOT_APPLICABLE"
+    service.process_outbox_once()
+    assert provider.send_count == 0
+    # A separately staged case need not inherit another case's hold.
+    store.db.cases.insert_one({"id": "case_demo", "demoControls": {"authorityFollowUpStaged": True}})
     initial(service)
     service.process_outbox_once()
     assert provider.send_count == 1

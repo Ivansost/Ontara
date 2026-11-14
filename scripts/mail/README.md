@@ -1,9 +1,44 @@
-# Controlled AgentMail loop
+# Resident notifications and controlled AgentMail loop
 
 The API owns one `MailService` with the same application Atlas database as `CaseService`.
 No mailbox credential is exposed to the browser or execution worker. The three roles
 are Ontara, simulated authority, and test resident, all on the controlled provider domain.
-No real municipality or resident receives a demo email.
+Authority correspondence remains confined to these controlled roles. New reports may
+separately opt into resident notifications at their approved email address. No real
+municipality receives a report or authority email.
+
+## Ordinary resident notifications
+
+`CaseCreate`/`CasePatch` accept optional `notifications: {email, consent: true}` separately
+from `reporter`. Draft preferences never authorize a send. Final version approval freezes
+notification consent in the immutable case-version record, outside the portal payload.
+The destination cannot be changed or cleared after the first approval. Omitting the
+field in a patch preserves it; `null` clears it only before approval. `reporter.email`
+continues to mean contact information shared with the named demo recipient, not email
+notification consent.
+
+New opted-in cases receive `RESIDENT_REPORT_FILED` only after the create receipt is
+verified, `RESIDENT_INFORMATION_NEEDED` from a real authored question event, and
+`RESIDENT_NOTIFICATION` only after a verified update receipt. An actual persisted
+assistance event may generate one `RESIDENT_NEEDS_ASSISTANCE` notification per operation.
+Each event/operation has stable outbox identity; replay does not resend it. Historical
+cases are not opted in or backfilled. A normal Roads filing ends at its verified receipt
+without a fabricated authority question or automatic follow-up inspection.
+
+External recipients are permitted only for these resident purposes and only when the
+recipient exactly matches the approved case-version preference. Authority send guards
+still require the original controlled-role allowlist. There is no raw send endpoint.
+Personal templates contain generic progress and a link to `/cases/{caseId}` on the
+server-configured Ontara origin. They contain no incident facts, authority body, ticket
+capabilities or receiving URLs. The link requires the original owning browser session;
+it is not a magic login link. Missing facts still require an answer and new approval in
+the app. Arbitrary later email replies and confirmed resolution remain outside this slice.
+
+The private case exposes `notificationSettingsLocked` and an address/body-free
+`notificationProgress` projection, plus idempotent queued/send/uncertainty/assistance
+timeline events. `SENT` means provider acceptance. External inboxes are not polled, so
+their delivery stays `UNVERIFIED`; only actual configured receiving-inbox evidence can
+set `RECEIVED`. Neither state proves a human read the email or a physical repair.
 
 ## Integration
 
@@ -24,7 +59,10 @@ After successfully persisting a verified portal receipt, invoke
 The module also reads verified operations after restart and idempotently reconstructs
 any missing outbox entries. A provider failure cannot invalidate a saved portal receipt.
 
-The first Roads receipt queues a real simulated-authority email. A receiving-inbox
+Only the advanced presenter flow queues a simulated-authority email. Set the existing
+authenticated preapproval `follow-up-hold` to true on an unused Roads draft; this also
+durably opts that case into the advanced story. Existing historical queued/held messages
+remain valid without rewriting their payload or counts. A receiving-inbox
 read verifies participants, exact subject/body/correlation and provider labels. It then
 calls `CaseService.request_follow_up_inspection(case_id, FollowUpInspectionRequest)`
 using the stable mail event ID. This schedules read-only inspection of the existing
@@ -47,6 +85,7 @@ provider send acknowledgement authorizes a portal write.
 | `ONTARA_MAIL_AUTHORITY_INBOX_ID` | Simulated-authority controlled inbox |
 | `ONTARA_MAIL_RESIDENT_INBOX_ID` | Test-resident controlled inbox |
 | `ONTARA_MAIL_ALLOWED_INBOX_IDS` | Comma-separated list containing exactly those three inboxes |
+| `ONTARA_WEB_BASE_URL` | HTTPS Ontara web origin for private case return links; explicit hosted value recommended; otherwise derives from the first configured `ALLOWED_ORIGINS` entry |
 | `ONTARA_MAIL_POLL_SECONDS` | Poll interval, default 8; minimum 3 seconds |
 | `ONTARA_MAIL_DAILY_SEND_BUDGET` | App-local cap, default 60; maximum 90 sends per UTC day |
 
@@ -75,7 +114,7 @@ adds `deliveryState=RECEIVED`. Neither state is a municipal portal receipt or pr
 The private presenter control can hold one synthetic Roads case's authority question
 in `HELD` with zero send attempts. Its durable flag and bounded audit live on that
 case, separate from resident facts, version and authorization. Normal cases have no
-hold. The worker rechecks the flag before sending and before scheduling an inbound
+advanced staging or authority question. The worker rechecks the flag before sending and before scheduling an inbound
 inspection. A restart preserves the hold; a committed release with interrupted outbox
 repair is recovered by the next poll. Other cases continue normally.
 Expired sending leases become `OUTCOME_UNKNOWN`. The module searches the source inbox
@@ -251,8 +290,10 @@ zero sends/new processing and two duplicate events; the independent after observ
 preserved the same provider/outbox identities, one real inspection and one update.
 
 The complete local mail proof above predates this deterministic presenter extension.
-Hold/release guards and restart behavior pass the automated tests; the complete hosted
-hold → crash/reconcile → actual v2 mutation → release sequence remains to be verified.
+The existing hosted hold → crash/reconcile → actual v2 mutation → release proof is
+complete in the linked sanitized artifacts. The later optional personal-recipient
+notification changes require a fresh authorized hosted delivery observation; local
+provider-double tests do not qualify that new destination behavior.
 
 The helper never creates a case, fabricates a receipt, edits an answer, grants approval,
 leases an inspection or dispatches a portal action. If a read-only job remains queued,

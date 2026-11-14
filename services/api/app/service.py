@@ -146,6 +146,8 @@ class CaseService:
         case = {"id": case_id, "ownerKey": owner, "version": 1, "issueId": request.issue_id,
                 "location": request.location.model_dump(by_alias=True), "answers": request.answers,
                 "reporter": request.reporter.model_dump(by_alias=True) if request.reporter else None,
+                "notifications": request.notifications.model_dump(by_alias=True) if request.notifications else None,
+                "notificationPolicyVersion": 1,
                 "route": route["route"], "stage": "draft", "approvedVersion": None,
                 "currentOperationId": None, "pendingQuestionIds": [], "receipt": None,
                 "createdAt": stamp, "updatedAt": stamp, "cancelledAt": None, "runId": identifier("run")}
@@ -192,12 +194,19 @@ class CaseService:
                 updated["answers"] = request.answers
             if request.reporter is not None:
                 updated["reporter"] = request.reporter.model_dump(by_alias=True)
+            if "notifications" in request.model_fields_set:
+                notifications = request.notifications.model_dump(by_alias=True) if request.notifications else None
+                if notifications != case.get("notifications"):
+                    if self.db.operations.find_one({"caseId": case_id}, {"_id": 1}, **kw):
+                        raise DomainError(409, "The email updates destination is fixed after the first approval")
+                    updated["notifications"] = notifications
+                    updated["notificationPolicyVersion"] = 1
             decision = self.route_preview(case["issueId"], IncidentLocation.model_validate(updated["location"]), updated["answers"])
             if not decision["supported"]:
                 raise DomainError(422, decision["reason"])
             updated["route"] = decision["route"]
             updated["questionnaireVersion"] = CATALOGUE_VERSION
-            if self._payload(updated) == self._payload(case):
+            if self._payload(updated) == self._payload(case) and updated.get("notifications") == case.get("notifications"):
                 return self._view(case)
             updated.update(version=case["version"] + 1, approvedVersion=None, stage="draft", updatedAt=now(), currentOperationId=None)
             self._replace_case(case, updated, kw)
@@ -252,13 +261,17 @@ class CaseService:
                              "kind": "kill_after_acceptance", "armed": True, "armedAt": pending_fault.get("armedAt"),
                              "scope": "case_next_create", "caseId": case_id,
                          } if transfer_fault else None}
+            # Notification consent is approved with this exact version, separately
+            # from the payload delivered to the receiving portal.
+            if case.get("notificationPolicyVersion") == 1:
+                operation["notificationPolicyVersion"] = 1
             self.db.operations.insert_one(operation, **kw)
             self.db.jobs.insert_one({"id": f"job_{operation_id}", "operationId": operation_id, "caseId": case_id,
                                      "kind": "execute_operation", "readOnly": False, "state": "queued", "attempt": 0, "fence": 0, "createdAt": stamp,
                                      "updatedAt": stamp, "leaseUntil": stamp}, **kw)
             case_updates = {
                 "approvedVersion": case["version"], "currentOperationId": operation_id, "stage": "preparing_report",
-                "updatedAt": stamp, "pendingQuestionIds": [],
+                "updatedAt": stamp, "pendingQuestionIds": [], "notificationSettingsLocked": True,
             }
             if transfer_fault:
                 case_updates.update({"pendingCreateFault.armed": False, "pendingCreateFault.consumedAt": stamp,
@@ -343,6 +356,9 @@ class CaseService:
             self.db.jobs.update_one({"id": job_id, "leaseToken": token}, {"$set": {"state": "paused" if status == "needs_assistance" else "completed", "inspectionStatus": status, "updatedAt": now()}}, **kw)
             if status == "needs_assistance":
                 self.db.cases.update_one({"id": case["id"]}, {"$set": {"stage": "needs_assistance", "updatedAt": now()}}, **kw)
+                if not job.get("withholdLessonIds"):
+                    self._event(case["id"], "assistance_needed", "The reporting process paused and needs assistance. No repair has been confirmed.",
+                                operation_id=job["operationId"], dedupe_key=f"assistance:{job_id}", kw=kw)
             self._event(case["id"], "form_inspected", reason, operation_id=job["operationId"], visibility="presenter", data={**evidence, "inspectionStatus": status, "jobId": job_id}, kw=kw)
             return {"jobId": job_id, "status": status, "readOnly": True}
 
@@ -366,6 +382,31 @@ class CaseService:
         self._owned(case_id, owner)
         events = self.db.case_events.find({"caseId": case_id, "visibility": "resident"}).sort("createdAt", 1)
         return {"events": [document(e) for e in events]}
+
+    def record_notification_progress(self, outbox_id: str) -> None:
+        """Project observed, case-owned mail states without copying addresses or bodies."""
+        item = self.db.outbox.find_one({"id": outbox_id, "kind": "email", "notificationPolicyVersion": 1})
+        if not item or not item.get("purpose", "").startswith("RESIDENT_"):
+            return
+        state = item.get("state")
+        transitions = [("QUEUED", "Email update queued.", item["createdAt"])]
+        messages = {
+            "SENT": "The email provider accepted your update. Inbox delivery has not been verified.",
+            "OUTCOME_UNKNOWN": "Ontara is checking an uncertain email send and will not resend it blindly.",
+            "NEEDS_ASSISTANCE": "The email update needs assistance. Your report progress is saved in this private case.",
+            "CANCELLED": "A queued email update was stopped before another send attempt.",
+        }
+        if state in messages:
+            transitions.append((state, messages[state], item.get("sentAt") or item["updatedAt"]))
+        if state == "SENT" and item.get("deliveryState") == "RECEIVED":
+            transitions.append(("RECEIVED", "The update was observed in the configured controlled receiving inbox.", item.get("receivedAt") or item["updatedAt"]))
+        for status, message, stamp in transitions:
+            key = f"notification:{item['id']}:{status}"
+            self.db.case_events.update_one({"dedupeKey": key}, {"$setOnInsert": {
+                "id": identifier("event"), "caseId": item["caseId"], "kind": "notification_" + status.lower(),
+                "message": message, "operationId": item["operationId"], "visibility": "resident", "createdAt": stamp,
+                "dedupeKey": key, "data": {"notificationId": item["id"], "purpose": item["purpose"], "state": status},
+            }}, upsert=True)
 
     def presenter_evidence(self, case_id: str) -> dict:
         return {"case": self.get_case_internal(case_id),
@@ -446,6 +487,10 @@ class CaseService:
             self.db.cases.update_one({"id": case["id"]}, {"$set": {"stage": stage, "updatedAt": now()}}, **kw)
             if request.state == "needs_assistance":
                 self.db.jobs.update_one({"id": job["id"]}, {"$set": {"state": "paused", "updatedAt": now()}}, **kw)
+                if stage == "needs_assistance":
+                    if not self.db.case_events.find_one({"dedupeKey": f"assistance:{operation_id}"}, **kw):
+                        self._event(case["id"], "assistance_needed", "The reporting process paused and needs assistance. An uncertain submission will not be repeated automatically.",
+                                    operation_id=operation_id, dedupe_key=f"assistance:{operation_id}", kw=kw)
             self._event(case["id"], request.state, "Checking receiving-system evidence." if stage == "checking_submission" else "Execution state updated.", operation_id=operation_id,
                         data={**request.evidence, "runId": request.run_id, "attemptId": request.attempt_id}, visibility="presenter", kw=kw)
             return document(self.db.operations.find_one({"id": operation_id}, **kw))
@@ -593,7 +638,9 @@ class CaseService:
         questionnaire = deepcopy(QUESTIONS[case["issueId"]])
         questionnaire["questions"] += [deepcopy(FOLLOW_UP_QUESTIONS[q]) for q in case.get("pendingQuestionIds", [])]
         self.db.case_versions.insert_one({"id": f"{case['id']}:{case['version']}", "caseId": case["id"], "version": case["version"],
-                                          "payload": payload, "payloadDigest": digest_json(payload), "questionnaire": questionnaire, "createdAt": now()}, **kw)
+                                          "payload": payload, "payloadDigest": digest_json(payload), "questionnaire": questionnaire,
+                                          "notifications": deepcopy(case.get("notifications")),
+                                          "notificationPolicyVersion": case.get("notificationPolicyVersion"), "createdAt": now()}, **kw)
 
     def _view(self, case: dict) -> dict:
         result = document(case)
@@ -602,6 +649,13 @@ class CaseService:
         result.pop("pendingQuestionIds", None)
         result.pop("pendingCreateFault", None)
         result.pop("demoControls", None)
+        result.pop("notificationPolicyVersion", None)
+        result["notificationSettingsLocked"] = bool(case.get("notificationSettingsLocked") or case.get("currentOperationId")
+            or self.db.operations.find_one({"caseId": case["id"]}, {"_id": 1}))
+        result["notificationProgress"] = [document(item) for item in self.db.outbox.find(
+            {"kind": "email", "caseId": case["id"], "purpose": {"$in": ["RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE"]}},
+            {"_id": 0, "id": 1, "purpose": 1, "state": 1, "deliveryState": 1, "updatedAt": 1},
+        ).sort("createdAt", 1).limit(100)]
         # Signed update URLs and receipt signatures are execution capabilities, not resident data.
         if result.get("receipt"):
             result["receipt"] = {k: v for k, v in result["receipt"].items() if k not in {"updateUrl", "receiptSignature"}}

@@ -84,6 +84,9 @@ def env():
                             allowed_inbox_ids=frozenset({"ontara@agentmail.to", "authority@agentmail.to", "resident@agentmail.to"}))
     settings.validate()
     db = mongomock.MongoClient(tz_aware=True).ontara
+    # This fixture represents the explicit advanced/historical demo loop.
+    # Ordinary resident receipt behavior is covered with the real backend below.
+    db.cases.insert_one({"id": "case_demo", "demoControls": {"authorityFollowUpStaged": True}})
     store, provider, cases = MongoMailStore(db), Provider(), Cases()
     store.ensure_indexes()
     service = MailService(store, provider, cases, settings)

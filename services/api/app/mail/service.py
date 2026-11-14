@@ -9,6 +9,7 @@ import re
 import threading
 from datetime import datetime, timedelta, timezone
 from typing import Any
+from urllib.parse import quote
 from uuid import uuid4
 
 from .config import MailSettings, address
@@ -18,6 +19,7 @@ from .store import MongoMailStore, stable_id, utcnow
 TOKEN = re.compile(r"\[Ontara DEMO ([a-f0-9]{32})\]")
 BAD_LABELS = {"spam", "trash", "blocked", "unauthenticated"}
 CONTROLLED_ROUTES = {"halton-region", "milton-town"}
+RESIDENT_PURPOSES = {"RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE"}
 
 
 def as_dict(value: Any) -> dict[str, Any]:
@@ -39,10 +41,14 @@ class MailService:
         self.stop_event = threading.Event()
         self.thread: threading.Thread | None = None
 
-    def _context(self, case_id: str, operation_id: str, *, action: str | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
+    def _context(self, case_id: str, operation_id: str, *, action: str | None = None,
+                 purpose: str | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
         case = as_dict(self.case_service.get_case_internal(case_id))
         operation = as_dict(self.case_service.get_operation_internal(operation_id))
-        if operation.get("caseId") != case_id or operation.get("state") != "receipt_verified":
+        allowed_states = {"receipt_verified", "needs_assistance"} if purpose == "RESIDENT_NEEDS_ASSISTANCE" else {"receipt_verified"}
+        if purpose == "RESIDENT_INFORMATION_NEEDED":
+            allowed_states = {"receipt_verified", "prepared", "needs_assistance"}
+        if operation.get("caseId") != case_id or operation.get("state") not in allowed_states:
             raise ValueError("Mail requires this case's verified portal operation")
         if action and operation.get("action") != action:
             raise ValueError("Mail purpose does not match the verified portal operation")
@@ -53,24 +59,106 @@ class MailService:
             raise ValueError("Mail requires an explicitly labelled controlled demo route")
         if case.get("cancelledAt") or case.get("status") in {"cancelled", "stopped"}:
             raise ValueError("The resident cancelled this case")
+        if purpose == "RESIDENT_INFORMATION_NEEDED" and operation.get("state") != "receipt_verified":
+            if operation.get("action") != "update" or not self._verified_case_receipt(case_id, case.get("receipt") or {}):
+                raise ValueError("Information-needed mail requires an acknowledged existing ticket")
         return case, operation
+
+    def _verified_case_receipt(self, case_id: str, receipt: dict[str, Any]) -> bool:
+        return bool(receipt.get("receiptId") and receipt.get("ticketId") and self.store.db.operations.find_one({
+            "caseId": case_id, "state": "receipt_verified", "receipt.receiptId": receipt["receiptId"],
+            "receipt.ticketId": receipt["ticketId"],
+        }, {"_id": 1}))
+
+    def _resident_preferences(self, case_id: str, operation: dict[str, Any]) -> dict[str, Any] | None:
+        if operation.get("notificationPolicyVersion") != 1:
+            return None
+        version = as_dict(self.case_service.get_version_internal(case_id, operation["caseVersion"]))
+        if version.get("caseId") != case_id or version.get("version") != operation["caseVersion"]:
+            raise ValueError("Notification consent must belong to this approved case version")
+        if version.get("notificationPolicyVersion") != 1 or not version.get("notifications"):
+            return None
+        from app.models import ResidentNotifications
+        return ResidentNotifications.model_validate(version["notifications"]).model_dump(by_alias=True)
+
+    def _require_participants(self, item: dict[str, Any], case: dict[str, Any], operation: dict[str, Any], *, actionable: bool = True) -> None:
+        if item.get("notificationPolicyVersion") == 1:
+            if item["purpose"] not in RESIDENT_PURPOSES:
+                raise ValueError("A case email address is restricted to resident notifications")
+            preferences = self._resident_preferences(item["caseId"], operation)
+            if not preferences:
+                raise ValueError("This approved report did not opt into email updates")
+            self.settings.require_resident_participants(item["senderInboxId"], item["recipients"], preferences["email"])
+            if item["purpose"] in {"RESIDENT_INFORMATION_NEEDED", "RESIDENT_NEEDS_ASSISTANCE"}:
+                kind = "more_information_requested" if item["purpose"] == "RESIDENT_INFORMATION_NEEDED" else "assistance_needed"
+                event = self.store.db.case_events.find_one({"id": item.get("sourceCaseEventId"), "caseId": item["caseId"], "kind": kind, "visibility": "resident"})
+                if not event:
+                    raise ValueError("A resident notification requires its real case event")
+                if event.get("operationId") and event["operationId"] != operation["id"]:
+                    raise ValueError("The notification event belongs to a different approved operation")
+                if actionable and kind == "more_information_requested" and not case.get("pendingQuestions"):
+                    raise ValueError("The requested information no longer needs a resident response")
+                if actionable and kind == "assistance_needed" and case.get("stage") != "needs_assistance":
+                    raise ValueError("The case no longer needs assistance")
+        else:
+            if item["purpose"] not in {"AUTHORITY_QUESTION", "AUTHORITY_RESPONSE", "RESIDENT_NOTIFICATION"}:
+                raise ValueError("Unrecognised controlled mail purpose")
+            self.settings.require_participants(item["senderInboxId"], item["recipients"])
+
+    def _case_link(self, case_id: str) -> str:
+        self.settings.validate()
+        return self.settings.web_base_url.rstrip("/") + "/cases/" + quote(case_id, safe="")
+
+    def _resident_text(self, case_id: str, message: str) -> str:
+        # No incident facts, authority correspondence or receiving capabilities
+        # are emailed to an address whose ownership has not been verified.
+        return (message + "\n\nThis is a fictional report to a controlled DEMO portal. No real municipality was contacted. "
+                "Reporting progress does not confirm that an issue was repaired.\n\n"
+                f"View your private case: {self._case_link(case_id)}\n"
+                "Open the link in the same browser you used to send the report. "
+                "Your original private browser session is required; the email link does not grant access.\n"
+                "This inbox is for updates; reply details and approval belong in the private case page.")
+
+    def _record_progress(self, outbox_id: str) -> None:
+        callback = getattr(self.case_service, "record_notification_progress", None)
+        if callback:
+            try:
+                callback(outbox_id)
+            except Exception:
+                # The outbox remains authoritative; a later tick repairs the
+                # timeline without repeating an external send.
+                pass
+
+    def sync_notification_progress(self) -> None:
+        for item in self.store.outbox.find({"kind": "email", "notificationPolicyVersion": 1}, {"id": 1}):
+            self._record_progress(item["id"])
 
     def _enqueue(self, *, case_id: str, operation: dict[str, Any], purpose: str,
                  sender: str, recipients: list[str], subject: str, text: str,
-                 receipt_id: str, in_reply_to: str | None = None, held: bool = False) -> dict[str, Any]:
+                 receipt_id: str | None, in_reply_to: str | None = None, held: bool = False,
+                 source_case_event_id: str | None = None, personal: bool = False) -> dict[str, Any]:
         if not self.settings.enabled:
             return {"state": "DISABLED", "purpose": purpose}
-        if (operation.get("receipt") or {}).get("receiptId") != receipt_id:
-            raise ValueError("Mail receipt reference must match the saved verified portal receipt")
-        self.settings.require_participants(sender, recipients)
         operation_id = operation.get("id", operation.get("_id"))
-        outbox_id = "mail_" + stable_id(case_id, operation_id, purpose)[:32]
+        case, current_operation = self._context(case_id, operation_id, purpose=purpose)
+        if purpose == "RESIDENT_INFORMATION_NEEDED":
+            if receipt_id != (case.get("receipt") or {}).get("receiptId") or not self._verified_case_receipt(case_id, case.get("receipt") or {}):
+                raise ValueError("Information-needed mail requires the saved existing-ticket receipt")
+        elif purpose != "RESIDENT_NEEDS_ASSISTANCE" and (not receipt_id or (operation.get("receipt") or {}).get("receiptId") != receipt_id):
+            raise ValueError("Mail receipt reference must match the saved verified portal receipt")
+        identity = (case_id, operation_id, purpose, source_case_event_id) if source_case_event_id and purpose != "RESIDENT_NEEDS_ASSISTANCE" else (case_id, operation_id, purpose)
+        outbox_id = "mail_" + stable_id(*identity)[:32]
         token = stable_id(outbox_id, "correlation")[:32]
         subject = f"[Ontara DEMO {token}] {subject}"
         text = text + f"\n\nControlled Ontara demonstration. No real municipality was contacted.\nCorrelation: {token}\n"
         immutable = {"senderInboxId": sender, "recipients": recipients, "subject": subject, "text": text,
                      "caseId": case_id, "operationId": operation_id, "purpose": purpose,
                      "receiptId": receipt_id, "inReplyTo": in_reply_to}
+        if source_case_event_id:
+            immutable["sourceCaseEventId"] = source_case_event_id
+        if personal:
+            immutable["notificationPolicyVersion"] = 1
+        self._require_participants(immutable, case, current_operation)
         now = utcnow()
         item = {"_id": outbox_id, "id": outbox_id, "kind": "email", "provider": "agentmail",
                 **immutable, "payloadDigest": stable_id(json.dumps(immutable, sort_keys=True)),
@@ -79,11 +167,13 @@ class MailService:
                 "deliveryState": "UNVERIFIED", "attemptCount": 0,
                 "nextAttemptAt": now, "createdAt": now, "updatedAt": now,
                 "caseVersion": operation.get("caseVersion"), "visibility": "case", "controlledDemo": True}
-        return self.store.enqueue(item)
+        result = self.store.enqueue(item)
+        self._record_progress(result["id"])
+        return result
 
     def enqueue_authority_question(self, case_id: str, operation_id: str, receipt_id: str) -> dict[str, Any]:
         _, operation = self._context(case_id, operation_id, action="create")
-        if operation.get("portalId") != "roads":
+        if operation.get("portalId") != "roads" or not self.store.authority_followup_staged(case_id):
             return {"state": "NOT_APPLICABLE", "purpose": "AUTHORITY_QUESTION"}
         ticket = operation.get("externalTicketId") or (operation.get("receipt") or {}).get("ticketId")
         if not ticket:
@@ -202,6 +292,20 @@ class MailService:
         _, operation = self._context(case_id, operation_id)
         ticket = operation.get("externalTicketId") or (operation.get("receipt") or {}).get("ticketId")
         action = operation.get("action")
+        preferences = self._resident_preferences(case_id, operation)
+        if preferences:
+            return self._enqueue(
+                case_id=case_id, operation=operation, purpose="RESIDENT_REPORT_FILED" if action == "create" else "RESIDENT_NOTIFICATION",
+                sender=self.settings.ontara_inbox_id, recipients=[preferences["email"]],
+                subject="Demo report filed" if action == "create" else "Demo follow-up acknowledged", receipt_id=receipt_id,
+                personal=True, text=self._resident_text(case_id,
+                    "The controlled demo portal acknowledged your report. Your report has been filed in the demonstration."
+                    if action == "create" else "The controlled demo portal acknowledged your approved follow-up update to the existing report."),
+            )
+        # Preserve an existing staged demonstration's controlled resident message.
+        # Historical cases are never opted into personal email by callback replay.
+        if action == "create" or not self.store.authority_followup_staged(case_id):
+            return {"state": "NOT_APPLICABLE", "purpose": "RESIDENT_NOTIFICATION"}
         return self._enqueue(
             case_id=case_id, operation=operation, purpose="RESIDENT_NOTIFICATION",
             sender=self.settings.ontara_inbox_id, recipients=[self.settings.resident_inbox_id],
@@ -210,6 +314,33 @@ class MailService:
                   f"Ticket: {ticket}\nVerified receipt: {receipt_id}\n"
                   "This confirms reporting progress. Repair of the issue has not been verified.\n"
                   "This notification goes only to the controlled test resident inbox."),
+        )
+
+    def enqueue_case_event_notification(self, event: dict[str, Any], operation: dict[str, Any]) -> dict[str, Any] | None:
+        case_id = event["caseId"]
+        purpose = "RESIDENT_INFORMATION_NEEDED" if event["kind"] == "more_information_requested" else "RESIDENT_NEEDS_ASSISTANCE"
+        case, operation = self._context(case_id, operation["id"], purpose=purpose)
+        preferences = self._resident_preferences(case_id, operation)
+        if not preferences:
+            return None
+        if purpose == "RESIDENT_INFORMATION_NEEDED" and not case.get("pendingQuestions"):
+            return None
+        if purpose == "RESIDENT_NEEDS_ASSISTANCE":
+            if case.get("stage") != "needs_assistance":
+                return None
+            existing = self.store.outbox.find_one({"kind": "email", "caseId": case_id, "operationId": operation["id"], "purpose": purpose})
+            if existing:
+                return existing
+        return self._enqueue(
+            case_id=case_id, operation=operation, purpose=purpose,
+            sender=self.settings.ontara_inbox_id, recipients=[preferences["email"]], personal=True,
+            subject="Your demo report needs information" if purpose == "RESIDENT_INFORMATION_NEEDED" else "Your demo report needs assistance",
+            receipt_id=((case.get("receipt") or {}).get("receiptId") if purpose == "RESIDENT_INFORMATION_NEEDED"
+                        else (operation.get("receipt") or {}).get("receiptId")), source_case_event_id=event["id"],
+            text=self._resident_text(case_id,
+                "A reporting step needs a detail or approval from you. Open your private case to review the request, add the requested information and approve the update. Nothing new is sent to the portal without approval."
+                if purpose == "RESIDENT_INFORMATION_NEEDED" else
+                "The reporting process has paused and needs assistance. Check your private case for its current progress. An uncertain submission will not be repeated automatically."),
         )
 
     def on_receipt_verified(self, case_id: str, operation: dict[str, Any], receipt: dict[str, Any]) -> list[dict[str, Any]]:
@@ -221,12 +352,47 @@ class MailService:
         if not operation_id or not receipt_id:
             raise ValueError("Verified mail callbacks require operation and receipt identifiers")
         if operation.get("action") == "create":
-            return [self.enqueue_authority_question(case_id, operation_id, receipt_id)]
-        if operation.get("portalId") != "roads":
-            return [self.enqueue_resident_notification(case_id, operation_id, receipt_id)]
+            result = [self.enqueue_resident_notification(case_id, operation_id, receipt_id)]
+            if self.store.authority_followup_staged(case_id):
+                result.append(self.enqueue_authority_question(case_id, operation_id, receipt_id))
+            return [item for item in result if item.get("state") != "NOT_APPLICABLE"]
         # Follow-up mail is an acknowledgement of a verified portal update, not the action itself.
-        result = [self.enqueue_authority_response(case_id, operation_id, receipt_id)]
-        result.append(self.enqueue_resident_notification(case_id, operation_id, receipt_id))
+        result = [self.enqueue_resident_notification(case_id, operation_id, receipt_id)]
+        if operation.get("portalId") == "roads" and self.store.authority_followup_staged(case_id):
+            result.append(self.enqueue_authority_response(case_id, operation_id, receipt_id))
+        return [item for item in result if item.get("state") != "NOT_APPLICABLE"]
+
+    def reconcile_case_event_outbox(self, limit: int = 20) -> dict[str, int]:
+        """Recover notifications from real authored-question/assistance events."""
+        result = {"scheduled": 0, "pending": 0}
+        if not self.settings.enabled:
+            return result
+        for event in self.store.db.case_events.find({"kind": {"$in": ["more_information_requested", "assistance_needed"]}, "visibility": "resident"}).sort("createdAt", 1):
+            hook_id = "case-event-hook:" + event["id"]
+            if self.store.events.find_one({"_id": hook_id, "processingState": "PROCESSED"}):
+                continue
+            case = self.store.db.cases.find_one({"id": event["caseId"], "notificationPolicyVersion": 1, "notifications.consent": True})
+            if not case or case.get("cancelledAt"):
+                continue
+            query: dict[str, Any] = {"caseId": event["caseId"], "notificationPolicyVersion": 1}
+            if event.get("operationId"):
+                query["id"] = event["operationId"]
+            elif case.get("receipt"):
+                query["receipt.receiptId"] = case["receipt"]["receiptId"]
+            else:
+                continue
+            operation = self.store.db.operations.find_one(query, sort=[("createdAt", -1)])
+            if not operation:
+                continue
+            try:
+                item = self.enqueue_case_event_notification(event, operation)
+                self.store.event(hook_id, {"kind": "mail_case_event_hook", "processingState": "PROCESSED", "caseId": event["caseId"],
+                    "operationId": operation["id"], "sourceCaseEventId": event["id"], "outboxId": (item or {}).get("id")})
+                result["scheduled"] += int(item is not None)
+            except Exception:
+                result["pending"] += 1
+            if result["scheduled"] + result["pending"] >= limit:
+                break
         return result
 
     def reconcile_receipt_outbox(self, limit: int = 20) -> dict[str, int]:
@@ -268,11 +434,12 @@ class MailService:
         if address(message.get("from", "")) != item["senderInboxId"]:
             return False
         participants = [address(value) for key in ("to", "cc", "bcc") for value in message.get(key, [])]
-        if set(participants) != set(item["recipients"]):
+        if set(participants) != {address(value) for value in item["recipients"]}:
             return False
         if set(message.get("labels", [])) & BAD_LABELS:
             return False
-        if received and ("received" not in message.get("labels", []) or message.get("inbox_id") not in item["recipients"]):
+        if received and ("received" not in message.get("labels", []) or address(message.get("inbox_id", "")) not in {address(value) for value in item["recipients"]}
+                         or address(message.get("inbox_id", "")) not in self.settings.role_inboxes):
             return False
         if not received and ("sent" not in message.get("labels", []) or message.get("inbox_id") != item["senderInboxId"]):
             return False
@@ -296,6 +463,7 @@ class MailService:
                 "outboxId": item["_id"], "caseId": item["caseId"], "operationId": item["operationId"],
                 "providerMessageId": result["message_id"], "reconciled": reconciled})
         # A provider send result is SENT only. Receiving-inbox proof is recorded independently.
+        self._record_progress(item["id"])
 
     def process_outbox_once(self, limit: int = 10) -> dict[str, int]:
         counts = {"sent": 0, "reconciled": 0, "unknown": 0, "failed": 0}
@@ -310,8 +478,8 @@ class MailService:
             if not item:
                 continue
             try:
-                self.settings.require_participants(item["senderInboxId"], item["recipients"])
-                self._context(item["caseId"], item["operationId"])
+                case, operation = self._context(item["caseId"], item["operationId"], purpose=item["purpose"])
+                self._require_participants(item, case, operation, actionable=state != "OUTCOME_UNKNOWN")
                 if item["purpose"] == "AUTHORITY_QUESTION" and self.store.authority_followup_held(item["caseId"]):
                     self.store.patch(item["_id"], {"state": "HELD", "holdReason": "presenter"}, owner=self.worker_id)
                     continue
@@ -372,6 +540,8 @@ class MailService:
                 self.store.patch(item["_id"], {"state": "CANCELLED", "lastError": "case_or_scope_no_longer_authorized"},
                                  owner=self.worker_id)
                 counts["failed"] += 1
+            finally:
+                self._record_progress(item["id"])
         return counts
 
     def _correlate(self, message: dict[str, Any]) -> dict[str, Any] | None:
@@ -421,7 +591,8 @@ class MailService:
             if not self._matches(item, message, received=True):
                 self.store.finish_received_event(event["_id"], self.worker_id, "IGNORED", reason="participant_or_payload_mismatch")
                 return "ignored"
-            self._context(item["caseId"], item["operationId"])
+            case, operation = self._context(item["caseId"], item["operationId"], purpose=item["purpose"])
+            self._require_participants(item, case, operation, actionable=False)
             if item["purpose"] == "AUTHORITY_QUESTION" and self.store.authority_followup_held(item["caseId"]):
                 # Preserve the genuine message but do not schedule inspection before
                 # the presenter barrier. Unexpected receiving evidence also prevents
@@ -438,6 +609,7 @@ class MailService:
             self.store.patch(item["_id"], {"state": "SENT", "deliveryState": "RECEIVED",
                              "providerMessageId": message["message_id"], "receivingEvidence": evidence,
                              "receivedAt": utcnow()}, release=False)
+            self._record_progress(item["id"])
             if item["purpose"] == "AUTHORITY_QUESTION":
                 from app.models import FollowUpInspectionRequest
                 operation = as_dict(self.case_service.get_operation_internal(item["operationId"]))
@@ -498,7 +670,10 @@ class MailService:
         return counts
 
     def tick(self) -> dict[str, Any]:
-        return {"receiptReplay": self.reconcile_receipt_outbox(), "outbox": self.process_outbox_once(), "poll": self.poll_once()}
+        result = {"receiptReplay": self.reconcile_receipt_outbox(), "caseEventReplay": self.reconcile_case_event_outbox(),
+                  "outbox": self.process_outbox_once(), "poll": self.poll_once()}
+        self.sync_notification_progress()
+        return result
 
     def start(self) -> None:
         if not self.settings.enabled or (self.thread and self.thread.is_alive()):
@@ -509,8 +684,10 @@ class MailService:
             while not self.stop_event.is_set():
                 try:
                     self.reconcile_receipt_outbox()
+                    self.reconcile_case_event_outbox()
                     self.process_outbox_once()
                     self.poll_once(full_catchup=first)
+                    self.sync_notification_progress()
                     first = False
                 except Exception as error:
                     self.store.event("worker-error:" + uuid4().hex, {"kind": "mail_worker_error", "errorClass": type(error).__name__})
