@@ -9,7 +9,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from playwright.async_api import Browser, BrowserContext as PlaywrightContext, Page, async_playwright
 from .contracts import BrowserContext, BrowserResult, FieldObservation, FormObservation, SubmitRequest
-from .security import NetworkScope, TargetPolicy, redact_url, stable_hash
+from .security import NetworkScope, TargetPolicy, normalized_form_values, redact_url, stable_hash
 
 
 def now() -> str:
@@ -152,7 +152,7 @@ class BrowserTools:
                     raise ValueError("The approved update capability is missing")
                 hidden["accessToken"] = token
             for name, value in hidden.items():
-                if name not in controls or controls[name].type != "hidden":
+                if name not in controls or controls[name].type != "hidden" or controls[name].disabled:
                     raise ValueError("Receiving form is missing operation binding")
                 existing = await page.locator("form").first.locator(f'[name="{name}"]').input_value()
                 if existing != value:
@@ -175,12 +175,34 @@ class BrowserTools:
             for field in observation.fields:
                 if field.required and not field.disabled and field.type != "hidden" and not request.values.get(field.name):
                     raise ValueError("A required receiving field has no approved value")
+            expected_values = dict(hidden)
+            for field in observation.fields:
+                if field.disabled:
+                    continue
+                if field.type == "hidden":
+                    if field.name not in hidden:
+                        raise ValueError("An unrecognized hidden receiving field requires assistance")
+                    continue
+                if field.name in request.values:
+                    expected_values[field.name] = request.values[field.name]
+                else:
+                    # An optional page default is not resident authorization.
+                    existing = await page.locator("form").first.locator(f'[name="{field.name}"]').input_value()
+                    if existing:
+                        raise ValueError("A prefilled receiving value has not been approved")
+                    expected_values[field.name] = ""
             form = page.locator("form").first
             post_url = await form.evaluate("form => form.action")
+            expected_path = f"/portals/{request.portal_id}/tickets" + (f"/{request.ticket_id}/update" if request.action == "update" else "")
+            self.policy.validate(post_url, portal_id=request.portal_id)
+            if urlsplit(post_url).path != expected_path or urlsplit(post_url).query or await form.evaluate("form => form.method.toUpperCase()") != "POST":
+                raise ValueError("Receiving action changed after the approved form was inspected")
             actual_values = await form.evaluate("form => Object.fromEntries(Array.from(new FormData(form).entries()).map(([k,v]) => [k, String(v)]))")
+            if normalized_form_values(actual_values) != normalized_form_values(expected_values):
+                raise ValueError("Receiving form values changed after approved facts were filled")
             # No HTTP write was permitted while loading/inspecting/filling. The
             # single permitted POST is now bound to the exact validated form.
-            write_scope.arm_form_post(post_url, actual_values)
+            write_scope.arm_form_post(post_url, expected_values)
             async with page.expect_navigation(wait_until="domcontentloaded"):
                 await page.locator('form button[type="submit"], form input[type="submit"]').first.click()
             # This is actual browser navigation after the portal commit. The agent

@@ -14,6 +14,12 @@ def stable_hash(value: object) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
 
 
+def normalized_form_values(values: dict[str, str]) -> dict[str, str]:
+    # Native HTML form submission encodes textarea line endings as CRLF. This
+    # transport normalization does not authorize any different field or text.
+    return {name: value.replace("\r\n", "\n").replace("\r", "\n") for name, value in values.items()}
+
+
 def redact_url(url: str) -> str:
     parts = urlsplit(url)
     query = [(k, "[redacted]" if any(t in k.lower() for t in ("token", "secret", "key", "auth")) else v) for k, v in parse_qsl(parts.query)]
@@ -61,7 +67,7 @@ class NetworkScope:
         self.policy.validate(url)
         if self._post_url is not None or self._used or not values:
             raise ValueError("A browser context can authorize one form POST only")
-        self._post_url, self._post_values = url, dict(values)
+        self._post_url, self._post_values = url, normalized_form_values(values)
 
     def permits(self, method: str, url: str, *, content_type: str = "", post_data: str | None = None) -> bool:
         try:
@@ -78,7 +84,7 @@ class NetworkScope:
             pairs = parse_qsl(post_data, keep_blank_values=True, strict_parsing=True)
         except ValueError:
             return False
-        if len(pairs) != len(dict(pairs)) or dict(pairs) != self._post_values:
+        if len(pairs) != len(dict(pairs)) or normalized_form_values(dict(pairs)) != self._post_values:
             return False
         self._used = True
         return True

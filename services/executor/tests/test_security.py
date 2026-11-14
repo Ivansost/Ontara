@@ -36,3 +36,10 @@ def test_submit_scope_allows_only_one_exact_validated_form_post():
     assert not scope.permits("POST", url, content_type="application/x-www-form-urlencoded", post_data=good + "&location=unapproved")
     assert scope.permits("POST", url, content_type="application/x-www-form-urlencoded; charset=UTF-8", post_data=good)
     assert not scope.permits("POST", url, content_type="application/x-www-form-urlencoded", post_data=good)
+
+
+def test_native_form_crlf_is_transport_equivalent_to_approved_textarea_lines():
+    scope = NetworkScope(TargetPolicy("https://portals.example.invalid", {"portals.example.invalid"}))
+    url = "https://portals.example.invalid/portals/roads/tickets"
+    scope.arm_form_post(url, {"description": "Approved first line\nApproved second line"})
+    assert scope.permits("POST", url, content_type="application/x-www-form-urlencoded", post_data="description=Approved+first+line%0D%0AApproved+second+line")

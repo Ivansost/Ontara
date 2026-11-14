@@ -35,6 +35,10 @@ observed `formFingerprint` and approved string `values`. The caller is the
 authenticated bounded workflow. User/page/model text cannot select an arbitrary
 host or action. Redirects and asset requests outside the configured origin are
 blocked. Private capability query parameters are redacted from observations.
+Read-only contexts permit GET/HEAD only. Submission arms one exact native POST
+from verified operation bindings and approved values; unapproved page defaults,
+late action changes and extra fields stop the write. Standard textarea CRLF
+transport is preserved, and outbound WebSocket connections are blocked.
 
 ## Build and configure
 
