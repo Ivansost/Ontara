@@ -1,1 +1,1 @@
-Generated from the backend-owned contracts/catalogue.json, contracts/questions.json and contracts/openapi.json. Run npm run sync-contracts from apps/web after updating the shared contracts. Do not edit generated files here.
+Generated from canonical contracts/catalogue.json, contracts/questions.json, contracts/municipalities.json and contracts/openapi.json. Run npm run sync-contracts from apps/web after updating the shared contracts. Do not edit generated files here.

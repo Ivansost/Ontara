@@ -44,43 +44,39 @@ test('report edits require fresh approval and follow-up stays on the same case',
   await page.goto('/report/roads/road-surface/pothole');
   await page.getByRole('button', { name: 'Use synthetic demo location', exact: true }).click();
   await expect(page.getByRole('textbox', { name: /^Incident address or intersection/ })).toHaveValue(fixture.incidentAddress);
-  await page.getByRole('checkbox', { name: /^I confirm this is the incident location/ }).check();
-  await page.getByRole('button', { name: 'Continue', exact: true }).click();
-  await expect(page).toHaveURL(/\/details$/);
+  await expect(page).toHaveURL(/\/pothole$/);
   await expect(page.getByRole('radio', { name: 'In travel lane', exact: true })).toHaveCount(0);
   await page.getByRole('radio', { name: 'No', exact: true }).check();
   await page.getByRole('radio', { name: 'In travel lane', exact: true }).check();
   await page.getByRole('radio', { name: 'Northbound', exact: true }).check();
   await page.getByRole('textbox', { name: /^What did you notice/ }).fill('A pothole in the northbound lane near the intersection.');
-  await page.getByRole('textbox', { name: /^Name/ }).fill('Demo Resident');
-  await page.getByRole('checkbox', { name: /^Share these contact details with the named demo recipient/ }).check();
-  await page.getByRole('button', { name: 'Review report', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Review and approve', exact: true })).toBeVisible();
-  await page.getByRole('button', { name: 'Approve and send report', exact: true }).click();
+  await page.getByRole('textbox', { name: /^Email for updates/ }).fill('resident-fixture@example.invalid');
+  await expect(page.getByRole('button', { name: 'Send report', exact: true })).toBeEnabled();
+  await expect(page.getByRole('heading', { name: 'Review and send', exact: true })).toBeVisible();
   expect(approvals).toBe(0);
-  await expect(page.getByRole('checkbox', { name: /^I approve this report/ })).toHaveAttribute('aria-invalid', 'true');
-  await page.getByRole('checkbox', { name: /^I approve this report/ }).check();
-  await page.getByRole('button', { name: 'Edit details or contact', exact: true }).click();
   await page.getByRole('textbox', { name: /^What did you notice/ }).fill('An updated observation of the pothole near the intersection.');
-  await page.getByRole('button', { name: 'Review report', exact: true }).click();
-  await expect(page.getByRole('checkbox', { name: /^I approve this report/ })).not.toBeChecked();
-  await page.getByRole('checkbox', { name: /^I approve this report/ }).check();
-  await page.getByRole('button', { name: 'Approve and send report', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Send report', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Send report', exact: true })).toBeEnabled();
+  expect(approvals).toBe(0);
+  expect(record!.notifications?.email).toBe('resident-fixture@example.invalid');
+  expect(record!.reporter?.email).toBe('');
+  await page.getByRole('button', { name: 'Send report', exact: true }).click();
   await expect(page).toHaveURL(/\/cases\/case_browser_fixture$/);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Preparing report');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Sending report');
+  await expect(page.getByText('Receipt verified', { exact: true })).toHaveCount(0);
   expect(approvals).toBe(1);
 
-  record = { ...record!, stage: 'more_information_needed', receipt: { ticketId: 'DEMO-BROWSER-001', receiptId: 'receipt_fixture' }, pendingQuestions: [{ ...questionBank.followUp.nearestLandmark, options: [], visibleWhen: null } as CaseView['pendingQuestions'][number]] };
+  record = { ...record!, stage: 'more_information_needed', receipt: { ticketId: 'DEMO-BROWSER-001', receiptId: 'receipt_fixture' }, notificationProgress: [{ id: 'filing_email', purpose: 'RESIDENT_REPORT_FILED', state: 'SENT', deliveryState: 'UNVERIFIED', updatedAt: stamp }], pendingQuestions: [{ ...questionBank.followUp.nearestLandmark, options: [], visibleWhen: null } as CaseView['pendingQuestions'][number]] };
   await expect(page.getByRole('textbox', { name: /^What is the nearest landmark/ })).toBeVisible();
   await page.getByRole('textbox', { name: /^What is the nearest landmark/ }).fill('The community centre sign');
-  await page.getByRole('button', { name: 'Review update', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Review this update', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Approve and send update', exact: true })).toBeDisabled();
-  await page.getByRole('checkbox', { name: /^I approve sending this update/ }).check();
-  await page.getByRole('button', { name: 'Approve and send update', exact: true }).click();
+  await expect(page.getByText('Email sent — inbox delivery unverified', { exact: true })).toBeVisible();
+  await expect(page.getByText(/^By selecting Send update, you approve/)).toContainText(route.recipient.name);
+  expect(approvals).toBe(1);
+  await page.getByRole('button', { name: 'Send update', exact: true }).click();
+  await expect.poll(() => approvals).toBe(2);
   expect(approvals).toBe(2);
   expect(record!.id).toBe('case_browser_fixture');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Preparing report');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Sending report');
 });
 
 test('device location is requested only by pressing its button', async ({ page }) => {
@@ -101,14 +97,12 @@ test('authored critical-control choices stop ordinary intake immediately', async
   await page.route('**/api/backend/v1/routes/preview', route => route.fulfill({ json: { supported: true, route: { id: 'fixture' }, reason: 'Controlled fixture', missingAnswers: [], urgentHandoff: false, demo: true } }));
   await page.goto('/report/roads/signs-safety/sign');
   await page.getByRole('button', { name: 'Use synthetic demo location', exact: true }).click();
-  await page.getByRole('checkbox', { name: /^I confirm this is the incident location/ }).check();
-  await page.getByRole('button', { name: 'Continue', exact: true }).click();
   await page.getByRole('radio', { name: 'No', exact: true }).check();
   await page.getByRole('radio', { name: 'Stop sign', exact: true }).check();
   await expect(page.getByText('This may need urgent assistance', { exact: true })).toBeVisible();
   await expect(page.getByRole('textbox', { name: /^What did you notice/ })).toHaveCount(0);
   await expect(page.getByRole('textbox', { name: /^Email/ })).toHaveCount(0);
-  await expect(page.getByRole('button', { name: 'Review report', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Send report', exact: true })).toBeDisabled();
 });
 
 

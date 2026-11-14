@@ -15,6 +15,25 @@ Run from `apps/web`. The driver uses the installed Google Chrome. It stores brow
 
 Treat the entire run manifest and session directory as private. Earlier captures may contain the exact receiving lookup tuple (run ID + operation/client reference + payload digest), which is a receiving capability. Never copy that tuple, raw JSON, lookup/ticket/update URLs or signatures into public media. Future driver summaries retain exact-match booleans rather than raw client-reference/digest values. Public media inputs are the resident page-only captures with Presenter evidence collapsed and the executor owner's separately sanitized proof. The driver omits signed update URLs, receipt signatures, raw operations, authorization headers and proposal explanations.
 
+## Ordinary Roads filing and email
+
+There is no resident demo-mode switch. The ordinary site uses the configured synthetic Roads fixture. A normal run stops at its verified create receipt; it does not stage an authority question, crash or changed form. After reviewed deployments, the coordinator can run one bounded check:
+
+```sh
+node scripts/cloud-qa.mjs submit-roads \
+  --web https://ontara-web-35iy.onrender.com \
+  --api https://ontara-api-35iy.onrender.com \
+  --run fresh_normal_roads \
+  --notifications-env /Users/ivan/.config/ontara/agentmail.env \
+  --require-email-receipt
+```
+
+`--notifications-env` must be an owner-only file outside the repository, containing `ONTARA_QA_NOTIFICATION_EMAIL` or the controlled test-resident `ONTARA_MAIL_RESIDENT_INBOX_ID`. An owner-set process environment `ONTARA_QA_NOTIFICATION_EMAIL` is also accepted. The address is entered in the real UI, stored only in private case/session state and omitted from CLI output. Do not put an address directly in the command or commit the private file. Screenshots/video remain private and may show the entered address.
+
+`--require-email-receipt` is appropriate for a known controlled inbox that the mail worker can read: success requires actual receiving-inbox evidence. Without it, an opted-in run requires provider `SENT` and reports inbox delivery as unverified. No human-read or repair claim follows. If interrupted, use `collect-normal-roads --run fresh_normal_roads [--require-email-receipt]`; it observes the same known approved case and never creates or approves another. Keep any pending run intact.
+
+The advanced stages below preserve the original crash/form-change story. Leave both notification configuration and `ONTARA_QA_NOTIFICATION_EMAIL` unset to reproduce its historical blank-email, three-message expectations. A new opted-in advanced run legitimately adds filing/information-needed notifications; it must not be forced into the old total.
+
 ## 1. Prepare a fresh unapproved Roads draft
 
 Use only URLs confirmed by the coordinator; these are explicit arguments, with no local API fallback:
@@ -26,9 +45,9 @@ node scripts/cloud-qa.mjs prepare-roads \
   --run hosted_roads_demo
 ```
 
-The driver navigates category cards → Road surface → Pothole, uses the labelled synthetic location, confirms the incident location, answers authored questions, and presses **Review report**. It stops before checking approval or creating an operation. It prints the actual fresh case ID, case run ID and version. Share those IDs with Sol 2, Sol 4 and Sol 6. Do not reuse earlier local smoke cases.
+The driver navigates category cards → Road surface → Pothole, chooses the labelled synthetic location (which confirms that exact fixture), and answers authored questions on one page. The valid draft saves in the background. It stops at **Review and send**, before **Send report** or any operation. It prints the actual fresh case ID, case run ID and version. Share those IDs with the coordinator/execution/mail owners. Do not reuse earlier cases. An optional `--notifications-env PRIVATE_FILE` applies the same separately disclosed email opt-in as ordinary filing.
 
-The browser may close between stages; its private session persists. Reopening review uses **Review saved report → Details → Review report** through the real UI. Same-data PATCH is idempotent, and a material change still requires review of the actual resulting version.
+The browser may close between stages; its private session persists. Reopening uses the private case’s **Review saved report** button and returns to the one-page form. Same-data PATCH is idempotent, and a material change disables Send until its actual new version is saved and shown.
 
 ## 2. Arm the deterministic controls before approval
 
@@ -46,7 +65,7 @@ After Sol 4's go:
 node scripts/cloud-qa.mjs approve-roads --run hosted_roads_demo --recovery-ready
 ```
 
-The driver confirms the persisted fault and hold, checks the real review checkbox, and clicks **Approve and send report**. The backend atomically transfers the fault to the first create operation before dispatch. The driver waits for a saved create receipt and joins recorded attempts: an actual `worker_process_exited` with exit code -9, its matching process start, and a later `receiving_lookup` from a distinct process birth/attempt. An unrelated read-only inspection start cannot satisfy recovery.
+The driver confirms the persisted fault and hold, reads the inline recipient/facts/email disclosure, and clicks **Send report** once. That is the explicit approval. The backend atomically transfers the fault to the first create operation before dispatch. The driver waits for a saved create receipt and joins recorded attempts: an actual `worker_process_exited` with exit code -9, its matching process start, and a later `receiving_lookup` from a distinct process birth/attempt. An unrelated read-only inspection start cannot satisfy recovery.
 
 This stage stops after the initial reconciled receipt. It does not change the form or release mail.
 
@@ -71,7 +90,7 @@ This stage calls `POST /internal/v1/cases/{caseId}/follow-up-hold` with `{ "held
 
 The driver polls existing durable mail work, requiring `AUTHORITY_QUESTION` for the initial create operation to be `SENT` and `RECEIVED`, with exact provider inbox/message/thread IDs and `evidence: message_read_from_controlled_receiving_inbox`. It does not manufacture a request or receipt.
 
-The real case must then display the authored `nearestLandmark` question, backed by a positive validated mapping with selected lesson IDs and actual generation usage. A withheld diagnostic alone cannot satisfy this barrier. The driver fills only that known fact, presses **Review update**, checks fresh update approval, and clicks **Approve and send update**. It requires a new verified update receipt on the original ticket, native Voyage text-query/lesson evidence, actual generation usage, a recorded missing-landmark mapping followed by a complete approved mapping, and genuine `AUTHORITY_RESPONSE` plus `RESIDENT_NOTIFICATION` receiving evidence correlated to the update operation ID.
+The real case must display **One more detail** and the authored `nearestLandmark` question, backed by a positive validated mapping with selected lesson IDs and actual generation usage. A withheld diagnostic alone cannot satisfy this barrier. The driver fills only that known fact, reads its inline summary/recipient and clicks **Send update** once. Saving and approving that exact version happen behind this explicit action; a changed canonical answer or recipient stops before approval. It requires a verified update to the original ticket, native retrieval, actual generation usage, missing/complete mappings and the correlated authority response. Blank-email historical runs also require controlled resident receiving evidence; opted-in external destinations can establish provider acceptance only unless `--require-email-receipt` is supplied for a known controlled inbox.
 
 ## 4. Separate Graffiti submission and responsive/security checks
 
@@ -87,7 +106,7 @@ Graffiti uses a new case and the Public wall procedure through its distinct auth
 
 The cancellation stage creates one separate unused synthetic Roads draft, cancels through the normal case UI, verifies the cancelled state and hidden approval action, and sends one same-session approval probe that must return 409 with zero operations. It never approves that draft and preserves the successful Roads/Graffiti cases for review.
 
-After the coordinator authorizes it and Sol 6 captures the completed mail state, `duplicate-mail --run hosted_roads_demo` repeats only the existing completed Roads hold release and durable mail catch-up. It requires unchanged case approval/version/receipt/operation and provider identities, one actual authority-mail inspection, one update, six stored sender/receiver copies and one send attempt for each of the three purposes. Its output includes only safe counters. It creates no case, approval, follow-up request or receiving write.
+After the coordinator authorizes it and the mail owner captures the completed state, `duplicate-mail --run hosted_roads_demo` repeats only the existing completed Roads hold release and durable mail catch-up. It requires unchanged case/operation/provider identities, one genuine authority-mail inspection and one update. Historical blank-email runs retain exactly three purposes and six stored copies. New opted-in runs require the applicable extra purposes without hardcoding an old total, with one attempt per outbox item. Output contains safe counters. This creates no case, approval, follow-up request or receiving write.
 
 The smoke stage verifies nine category headings and zero horizontal overflow at 390 and 320 pixels; an HttpOnly/SameSite=Lax/Path=/ session cookie with Secure on HTTPS; denial from a fresh browser session; and proxy write-origin responses 403, 403 and 422. The 422 payload is intentionally incomplete and creates no case or operation.
 
