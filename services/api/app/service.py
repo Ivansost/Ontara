@@ -319,8 +319,14 @@ class CaseService:
                    "externalTicketId": request.external_ticket_id, "state": "queued", "attempt": 0, "fence": 0,
                    "createdAt": stamp, "updatedAt": stamp, "leaseUntil": stamp}
             self.db.jobs.insert_one(job, **kw)
-            self._event(case_id, "follow_up_received", "The simulated authority requested more information. Ontara is checking the current receiving form.",
-                        operation_id=operation["id"], data={"sourceEventId": request.source_event_id, "inspectionJobId": job_id},
+            diagnostic = bool(request.withhold_lesson_ids)
+            data = {"sourceEventId": request.source_event_id, "inspectionJobId": job_id}
+            if diagnostic:
+                data.update({"diagnostic": True, "withholdLessonIds": request.withhold_lesson_ids})
+            self._event(case_id, "diagnostic_inspection_requested" if diagnostic else "follow_up_received",
+                        "Presenter requested a controlled read-only comparison with selected procedural memory withheld. This diagnostic records no new authority email and authorizes no portal write."
+                        if diagnostic else "The simulated authority requested more information. Ontara is checking the current receiving form.",
+                        operation_id=operation["id"], data=data, visibility="presenter" if diagnostic else "resident",
                         dedupe_key=f"inspection:{case_id}:{request.source_event_id}", kw=kw)
             return document(job)
 
