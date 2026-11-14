@@ -1017,6 +1017,92 @@
         }
       }
     },
+    "/internal/v1/cases/{case_id}/follow-up-hold": {
+      "get": {
+        "summary": "Get Follow Up Hold",
+        "operationId": "get_follow_up_hold_internal_v1_cases__case_id__follow_up_hold_get",
+        "parameters": [
+          {
+            "name": "case_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Case Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpHoldView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Set Follow Up Hold",
+        "operationId": "set_follow_up_hold_internal_v1_cases__case_id__follow_up_hold_post",
+        "parameters": [
+          {
+            "name": "case_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Case Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FollowUpHoldRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpHoldView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/internal/v1/cases/{case_id}/events": {
       "post": {
         "summary": "Event",
@@ -2256,6 +2342,92 @@
           "answers"
         ],
         "title": "FollowUpAnswer"
+      },
+      "FollowUpHoldRequest": {
+        "properties": {
+          "held": {
+            "type": "boolean",
+            "title": "Held"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "held"
+        ],
+        "title": "FollowUpHoldRequest"
+      },
+      "FollowUpHoldView": {
+        "properties": {
+          "caseId": {
+            "type": "string",
+            "title": "Caseid"
+          },
+          "held": {
+            "type": "boolean",
+            "title": "Held"
+          },
+          "nextCreateFaultArmed": {
+            "type": "boolean",
+            "title": "Nextcreatefaultarmed"
+          },
+          "heldAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heldat"
+          },
+          "releasedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Releasedat"
+          },
+          "portalConfirmation": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Portalconfirmation"
+          },
+          "authorityOutbox": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authorityoutbox"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "caseId",
+          "held",
+          "nextCreateFaultArmed"
+        ],
+        "title": "FollowUpHoldView"
       },
       "FollowUpInspectionRequest": {
         "properties": {

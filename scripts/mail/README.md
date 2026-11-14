@@ -72,6 +72,12 @@ URLs are not retained as substitutes for bytes. Private correspondence is not ve
 
 Provider acceptance changes a message to `SENT`. Only reading the real receiving inbox
 adds `deliveryState=RECEIVED`. Neither state is a municipal portal receipt or proof of repair.
+The private presenter control can hold one synthetic Roads case's authority question
+in `HELD` with zero send attempts. Its durable flag and bounded audit live on that
+case, separate from resident facts, version and authorization. Normal cases have no
+hold. The worker rechecks the flag before sending and before scheduling an inbound
+inspection. A restart preserves the hold; a committed release with interrupted outbox
+repair is recovered by the next poll. Other cases continue normally.
 Expired sending leases become `OUTCOME_UNKNOWN`. The module searches the source inbox
 by its unique provider label and exact payload before marking a reconciled send.
 An absent candidate never triggers an automatic resend. Definitive rate-limit
@@ -158,19 +164,16 @@ must be verified after deployment; this runbook does not claim that deployment p
 
 1. The API server has the private AgentMail variables above, its internal token, Atlas
    access, and the executor dispatch configuration. Use the same three controlled inbox
-   roles. A browser session creates and approves the synthetic Roads report normally.
-2. Before its initial receipt, the presenter/executor owner prepares follow-up form
-   version 2 and the applicable verified native retrieval lesson. Mail is automatically
-   queued by a saved initial receipt, so the changed form must be ready before its
-   read-only inspection can start.
-3. After the existing synthetic case has a verified portal receipt, the developer can
-   safely resume the mail loop using the actual HTTPS API origin and existing case ID:
+   roles. The presenter prepares the applicable verified native lesson and the run's
+   original follow-up form version 1. A browser session creates the synthetic Roads
+   draft, then stops before approval.
+2. Set the private durable hold on that existing draft before UI approval:
 
    ```sh
    PYTHONPATH=services/api python scripts/mail/trigger_followup.py \
      --api-url https://ACTUAL-API-HOST.onrender.com \
-     --case-id case_EXISTING_VERIFIED_CASE_ID \
-     --runtime-env /Users/ivan/.config/ontara/runtime.env
+     --case-id case_EXISTING_DRAFT_CASE_ID \
+     --runtime-env /Users/ivan/.config/ontara/runtime.env --hold
    ```
 
    Substitute the actual `case_` identifier with its 32 hexadecimal characters. The
@@ -179,23 +182,52 @@ must be verified after deployment; this runbook does not claim that deployment p
    as data. A loopback origin is also accepted for development; hosted origins require
    HTTPS on Render. HTTP redirects are not followed with the token.
 
-4. The helper authenticates `GET /internal/v1/cases/{case_id}` and
-   `GET /internal/v1/operations/{currentOperationId}`. It refuses an absent receipt,
-   unmatched operation, unverified state, live route or cancelled case **before** a
-   polling POST. It then invokes `POST /internal/v1/mail/poll` and reads
+   This uses Bearer-only `POST /internal/v1/cases/{case_id}/follow-up-hold` with
+   `{"held":true}`. Read back `GET` on the same path and require `held:true`; the backend
+   also returns `nextCreateFaultArmed` for the separately armed presenter crash control.
+   Neither control nor token appears in the public browser flow.
+3. The resident explicitly approves the report in the UI. The executor submits against
+   the original version 1 workflow, genuinely crashes after acceptance, then reconciles
+   the saved initial receipt. The authority email remains durably `HELD` with
+   `attemptCount:0`; no timed delay or incoming-mail inspection can bypass that barrier.
+4. After receipt reconciliation, the presenter changes this **same run's** follow-up
+   form from version 1 to version 2 through the portal owner's authenticated mutation
+   control. Then release this case:
+
+   ```sh
+   PYTHONPATH=services/api python scripts/mail/trigger_followup.py \
+     --api-url https://ACTUAL-API-HOST.onrender.com \
+     --case-id case_EXISTING_VERIFIED_CASE_ID \
+     --runtime-env /Users/ivan/.config/ontara/runtime.env --release-hold
+   ```
+
+   The API accepts only `{"held":false}`. It verifies this run's saved initial
+   `receipt_verified` operation and fetches the update-form schema from its configured
+   portal origin, requiring the same run, Roads/update, form version 2 and snapshot
+   digest. The caller cannot provide an arbitrary URL or claimed mutation evidence.
+   The release updates only private control metadata and queues that case's one
+   authority message; repeats are safe. It changes no report facts, version or approval.
+5. The helper authenticates `GET /internal/v1/cases/{case_id}` and
+   `GET /internal/v1/operations/{currentOperationId}` before ordinary mail polling.
+   It refuses an absent receipt, unmatched operation, unverified state, live route,
+   cancelled case or still-active hold. It invokes `POST /internal/v1/mail/poll` and reads
    `GET /internal/v1/mail/status?case_id=...` until the authority email has genuine
    `deliveryState=RECEIVED`. The polling endpoint runs the existing mail replay/send
    loop for configured controlled inboxes; it is not a generic email send endpoint.
-5. The receiving event schedules the existing case's read-only inspection. The hosted
+6. The receiving event schedules the existing case's read-only inspection. The hosted
    executor observes the form, retrieves the native lesson, and asks the authored
    missing landmark in the same private browser session. The resident answers, reviews
    and explicitly approves the new version. Only then does the existing execution
    workflow update the same ticket and verify its receipt. That receipt queues the
    controlled authority response and test-resident notification.
-6. Inspect internal mail status for three `SENT`/`RECEIVED` records and their provider
+7. Inspect internal mail status for three `SENT`/`RECEIVED` records and their provider
    receiving evidence. Repeat the helper safely: stable outbox/message/event identities
    prevent another send or inspection. For Atlas counts and sanitized evidence, use
    `case_probe.py` / `capture_evidence.py` with the already-existing case as above.
+
+The complete local mail proof above predates this deterministic presenter extension.
+Hold/release guards and restart behavior pass the automated tests; the complete hosted
+hold → crash/reconcile → actual v2 mutation → release sequence remains to be verified.
 
 The helper never creates a case, fabricates a receipt, edits an answer, grants approval,
 leases an inspection or dispatches a portal action. If a read-only job remains queued,
