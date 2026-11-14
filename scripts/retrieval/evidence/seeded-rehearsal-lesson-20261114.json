@@ -1,0 +1,1012 @@
+{
+  "checkedAt": "2026-11-14T16:02:14.087073+00:00",
+  "runtimeDriver": true,
+  "readOnly": true,
+  "disclosure": "This is an actual verified developer calibration with seeded procedural knowledge. It is not a prior autonomous runtime success.",
+  "lesson": {
+    "id": "roads-follow-up-v2-seeded-calibration-20261114",
+    "authorityId": "halton-region",
+    "issueIds": [
+      "roads-pothole"
+    ],
+    "sourceVersion": "seeded-calibration-20261114-v1",
+    "knowledgeKind": "seeded_demo",
+    "evidenceRefs": [
+      "op_b627d33c08f6b30dcb8d16921d479e43"
+    ],
+    "verifiedAt": "2026-11-14 16:00:27.475000+00:00",
+    "searchStatus": "ready"
+  },
+  "normal": {
+    "status": "ready",
+    "reason": "Eligible native search candidates require structured validation before execution",
+    "candidates": [
+      {
+        "id": "roads-follow-up-v2-seeded-calibration-20261114",
+        "authorityId": "halton-region",
+        "issueIds": [
+          "roads-pothole"
+        ],
+        "categoryId": "roads",
+        "title": "Verified seeded calibration of a split-location follow-up form",
+        "retrievalText": "Inspect the current municipal follow-up form before updating an existing ticket. A previously combined incident location can be split into separate road or intersection, travel direction and road position controls. Map each observed semantic field only to exact approved facts. When a required nearest landmark is absent, ask the resident the authored nearest-landmark question and obtain renewed approval. Update the existing ticket and verify the receiving acknowledgement. This is explicitly seeded demo knowledge verified during an event-day browser calibration.",
+        "sourceVersion": "seeded-calibration-20261114-v1",
+        "visibility": "public",
+        "current": true,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-11-14 16:00:27.475000+00:00",
+        "validUntil": null,
+        "searchStatus": "ready",
+        "portalId": "roads",
+        "workflowKind": "ticket_update",
+        "formFamily": "roads-follow-up",
+        "formVersions": [
+          "2"
+        ],
+        "problem": "The follow-up form split a combined location field and added a required landmark.",
+        "procedure": [
+          "Inspect current labels, required controls and options.",
+          "Map only exact immutable approved facts to compatible fields.",
+          "Request the authored nearest landmark when absent and wait for explicit resident approval.",
+          "Update the existing verified ticket through its authorized receiving form.",
+          "Verify the exact receiving acknowledgement before marking reporting progress."
+        ],
+        "evidenceRefs": [
+          "op_b627d33c08f6b30dcb8d16921d479e43"
+        ],
+        "knowledgeKind": "seeded_demo",
+        "searchVerification": {
+          "nativeQuery": true,
+          "model": "voyage-4-large",
+          "indexName": "procedural_lessons_autoembed_v1",
+          "sourceVersion": "seeded-calibration-20261114-v1",
+          "retrievalTextHash": "8b102daad03bb8bf0697ffeb52d49a596d140e89f74d01ef88fcf6078771845c",
+          "verifiedAt": "2026-11-14 16:01:01.544000+00:00",
+          "queryText": "Inspect the current municipal follow-up form before updating an existing ticket. A previously combined incident location can be split into separate road or intersection, travel direction and road position controls. Map each observed semantic field only to exact approved facts. When a required nearest landmark is absent, ask the resident the authored nearest-landmark question and obtain renewed approval. Update the existing ticket and verify the receiving acknowledgement. This is explicitly seeded demo knowledge verified during an event-day browser calibration.",
+          "queryTruncated": false,
+          "pipeline": [
+            {
+              "$vectorSearch": {
+                "index": "procedural_lessons_autoembed_v1",
+                "path": "retrievalText",
+                "query": {
+                  "text": "Inspect the current municipal follow-up form before updating an existing ticket. A previously combined incident location can be split into separate road or intersection, travel direction and road position controls. Map each observed semantic field only to exact approved facts. When a required nearest landmark is absent, ask the resident the authored nearest-landmark question and obtain renewed approval. Update the existing ticket and verify the receiving acknowledgement. This is explicitly seeded demo knowledge verified during an event-day browser calibration."
+                },
+                "exact": true,
+                "limit": 1,
+                "filter": {
+                  "authorityId": "halton-region",
+                  "issueIds": "roads-pothole",
+                  "categoryId": "roads",
+                  "visibility": "public",
+                  "current": true,
+                  "verificationStatus": "verified",
+                  "id": "roads-follow-up-v2-seeded-calibration-20261114",
+                  "sourceVersion": "seeded-calibration-20261114-v1"
+                }
+              }
+            },
+            {
+              "$project": {
+                "_id": 0,
+                "id": 1,
+                "authorityId": 1,
+                "issueIds": 1,
+                "categoryId": 1,
+                "title": 1,
+                "retrievalText": 1,
+                "sourceVersion": 1,
+                "sourceIds": 1,
+                "responsibilityRules": 1,
+                "requiredFacts": 1,
+                "steps": 1,
+                "constraints": 1,
+                "followUpInstructions": 1,
+                "officialFormUrl": 1,
+                "contactEmail": 1,
+                "contactPhone": 1,
+                "formSnapshotIds": 1,
+                "artifactIds": 1,
+                "coverage": 1,
+                "gaps": 1,
+                "visibility": 1,
+                "current": 1,
+                "verificationStatus": 1,
+                "verifiedAt": 1,
+                "validUntil": 1,
+                "researchStatus": 1,
+                "searchStatus": 1,
+                "integrationStatus": 1,
+                "portalId": 1,
+                "workflowKind": 1,
+                "formFamily": 1,
+                "formVersions": 1,
+                "problem": 1,
+                "procedure": 1,
+                "evidenceRefs": 1,
+                "knowledgeKind": 1,
+                "searchVerification": 1,
+                "score": {
+                  "$meta": "vectorSearchScore"
+                }
+              }
+            }
+          ],
+          "score": 0.9492721557617188
+        },
+        "score": 0.8735129833221436,
+        "verified": true
+      }
+    ],
+    "evidence": {
+      "collection": "procedural_lessons",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "model": "voyage-4-large",
+      "queryText": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?",
+      "nativeQuery": true,
+      "queryExecuted": true,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "procedural_lessons_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?"
+            },
+            "exact": true,
+            "limit": 10,
+            "filter": {
+              "$and": [
+                {
+                  "authorityId": "halton-region",
+                  "issueIds": "roads-pothole",
+                  "categoryId": "roads",
+                  "visibility": "public",
+                  "current": true,
+                  "verificationStatus": "verified",
+                  "portalId": "roads",
+                  "workflowKind": "ticket_update",
+                  "formFamily": "roads-follow-up",
+                  "formVersions": "2"
+                },
+                {
+                  "$or": [
+                    {
+                      "id": "roads-follow-up-v2-seeded-calibration-20261114",
+                      "sourceVersion": "seeded-calibration-20261114-v1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "reranking": {
+        "ran": false,
+        "reason": "Optional reranking not enabled"
+      },
+      "checkedAt": "2026-11-14T16:02:15.353818+00:00",
+      "index": {
+        "indexName": "procedural_lessons_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:26.602000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            },
+            {
+              "type": "filter",
+              "path": "portalId"
+            },
+            {
+              "type": "filter",
+              "path": "workflowKind"
+            },
+            {
+              "type": "filter",
+              "path": "formFamily"
+            },
+            {
+              "type": "filter",
+              "path": "formVersions"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      },
+      "scopedVersions": [
+        {
+          "id": "roads-follow-up-v2-seeded-calibration-20261114",
+          "sourceVersion": "seeded-calibration-20261114-v1"
+        }
+      ],
+      "returnedIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ],
+      "rejected": [],
+      "selectedIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ],
+      "elapsedMs": 640
+    }
+  },
+  "withheld": {
+    "status": "assistance_required",
+    "reason": "No applicable current verified knowledge was retrieved; execution must pause",
+    "candidates": [],
+    "evidence": {
+      "collection": "procedural_lessons",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "model": "voyage-4-large",
+      "queryText": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?",
+      "nativeQuery": true,
+      "queryExecuted": true,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "procedural_lessons_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?"
+            },
+            "exact": true,
+            "limit": 10,
+            "filter": {
+              "$and": [
+                {
+                  "authorityId": "halton-region",
+                  "issueIds": "roads-pothole",
+                  "categoryId": "roads",
+                  "visibility": "public",
+                  "current": true,
+                  "verificationStatus": "verified",
+                  "portalId": "roads",
+                  "workflowKind": "ticket_update",
+                  "formFamily": "roads-follow-up",
+                  "formVersions": "2"
+                },
+                {
+                  "$or": [
+                    {
+                      "id": "roads-follow-up-v2-seeded-calibration-20261114",
+                      "sourceVersion": "seeded-calibration-20261114-v1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "reranking": {
+        "ran": false,
+        "reason": "Optional reranking not enabled"
+      },
+      "checkedAt": "2026-11-14T16:02:15.993481+00:00",
+      "index": {
+        "indexName": "procedural_lessons_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:26.602000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            },
+            {
+              "type": "filter",
+              "path": "portalId"
+            },
+            {
+              "type": "filter",
+              "path": "workflowKind"
+            },
+            {
+              "type": "filter",
+              "path": "formFamily"
+            },
+            {
+              "type": "filter",
+              "path": "formVersions"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      },
+      "scopedVersions": [
+        {
+          "id": "roads-follow-up-v2-seeded-calibration-20261114",
+          "sourceVersion": "seeded-calibration-20261114-v1"
+        }
+      ],
+      "returnedIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ],
+      "rejected": [
+        {
+          "id": "roads-follow-up-v2-seeded-calibration-20261114",
+          "reason": "withheld_for_policy_comparison"
+        }
+      ],
+      "selectedIds": [],
+      "elapsedMs": 715
+    }
+  },
+  "wrongFormVersion": {
+    "status": "assistance_required",
+    "reason": "No current verified knowledge exists in the requested scope",
+    "candidates": [],
+    "evidence": {
+      "collection": "procedural_lessons",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "model": "voyage-4-large",
+      "queryText": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?",
+      "nativeQuery": true,
+      "queryExecuted": false,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "procedural_lessons_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?"
+            },
+            "exact": true,
+            "limit": 10,
+            "filter": {
+              "authorityId": "halton-region",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "verified",
+              "portalId": "roads",
+              "workflowKind": "ticket_update",
+              "formFamily": "roads-follow-up",
+              "formVersions": "1"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "reranking": {
+        "ran": false,
+        "reason": "Optional reranking not enabled"
+      },
+      "checkedAt": "2026-11-14T16:02:16.708317+00:00",
+      "index": {
+        "indexName": "procedural_lessons_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:26.602000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            },
+            {
+              "type": "filter",
+              "path": "portalId"
+            },
+            {
+              "type": "filter",
+              "path": "workflowKind"
+            },
+            {
+              "type": "filter",
+              "path": "formFamily"
+            },
+            {
+              "type": "filter",
+              "path": "formVersions"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    }
+  },
+  "wrongAuthority": {
+    "status": "assistance_required",
+    "reason": "No current verified knowledge exists in the requested scope",
+    "candidates": [],
+    "evidence": {
+      "collection": "procedural_lessons",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "model": "voyage-4-large",
+      "queryText": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?",
+      "nativeQuery": true,
+      "queryExecuted": false,
+      "pipeline": [
+        {
+          "$vectorSearch": {
+            "index": "procedural_lessons_autoembed_v1",
+            "path": "retrievalText",
+            "query": {
+              "text": "The current follow-up form split road location into road or intersection, travel direction and position, and now requires a nearest landmark. How should an approved existing-ticket update proceed?"
+            },
+            "exact": true,
+            "limit": 10,
+            "filter": {
+              "authorityId": "peel-region",
+              "issueIds": "roads-pothole",
+              "categoryId": "roads",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "verified",
+              "portalId": "roads",
+              "workflowKind": "ticket_update",
+              "formFamily": "roads-follow-up",
+              "formVersions": "2"
+            }
+          }
+        },
+        {
+          "$project": {
+            "_id": 0,
+            "id": 1,
+            "authorityId": 1,
+            "issueIds": 1,
+            "categoryId": 1,
+            "title": 1,
+            "retrievalText": 1,
+            "sourceVersion": 1,
+            "sourceIds": 1,
+            "responsibilityRules": 1,
+            "requiredFacts": 1,
+            "steps": 1,
+            "constraints": 1,
+            "followUpInstructions": 1,
+            "officialFormUrl": 1,
+            "contactEmail": 1,
+            "contactPhone": 1,
+            "formSnapshotIds": 1,
+            "artifactIds": 1,
+            "coverage": 1,
+            "gaps": 1,
+            "visibility": 1,
+            "current": 1,
+            "verificationStatus": 1,
+            "verifiedAt": 1,
+            "validUntil": 1,
+            "researchStatus": 1,
+            "searchStatus": 1,
+            "integrationStatus": 1,
+            "portalId": 1,
+            "workflowKind": 1,
+            "formFamily": 1,
+            "formVersions": 1,
+            "problem": 1,
+            "procedure": 1,
+            "evidenceRefs": 1,
+            "knowledgeKind": 1,
+            "searchVerification": 1,
+            "score": {
+              "$meta": "vectorSearchScore"
+            }
+          }
+        }
+      ],
+      "reranking": {
+        "ran": false,
+        "reason": "Optional reranking not enabled"
+      },
+      "checkedAt": "2026-11-14T16:02:17.162949+00:00",
+      "index": {
+        "indexName": "procedural_lessons_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:26.602000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            },
+            {
+              "type": "filter",
+              "path": "portalId"
+            },
+            {
+              "type": "filter",
+              "path": "workflowKind"
+            },
+            {
+              "type": "filter",
+              "path": "formFamily"
+            },
+            {
+              "type": "filter",
+              "path": "formVersions"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    }
+  }
+}

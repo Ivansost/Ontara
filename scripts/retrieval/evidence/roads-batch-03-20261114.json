@@ -1,0 +1,2919 @@
+{
+  "batchId": "roads-batch-03-20261114",
+  "checkedAt": "2026-11-14T15:59:25.035783+00:00",
+  "procedures": [
+    {
+      "status": "ready",
+      "id": "grey-county-county-road-issues",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "a28bf0a2ef4b21d2",
+        "retrievalTextHash": "f3f8f24e5b78f8568c4e8abd62ad02646f3c8e958706e1724b7442b93f6154a6",
+        "verifiedAt": "2026-11-14 15:59:27.577334+00:00",
+        "queryText": "Grey County\u2019s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Grey County\u2019s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "grey-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "grey-county-county-road-issues",
+                "sourceVersion": "a28bf0a2ef4b21d2"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8685457706451416
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "wellington-county-county-road-maintenance-form",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "dfd92905b2ed9d2c",
+        "retrievalTextHash": "838f39ef46387fabdb236d876125030f8d1b5dfda7826d2dc42a8f4ab3666807",
+        "verifiedAt": "2026-11-14 15:59:30.010363+00:00",
+        "queryText": "Wellington\u2019s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Wellington\u2019s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "wellington-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "wellington-county-county-road-maintenance-form",
+                "sourceVersion": "dfd92905b2ed9d2c"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8692446947097778
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "wellington-county-county-speed-concern-form",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "56c686f8cae9c48c",
+        "retrievalTextHash": "170c3e6ab8d9345c2a731f0c68074f50b691151583784fa80fcf3ed0c4526a7d",
+        "verifiedAt": "2026-11-14 15:59:31.746185+00:00",
+        "queryText": "Wellington County\u2019s Report Speed Concerns form is for speed concerns on County roads. It may not receive a direct response and does not direct OPP enforcement or action. Individual vehicle issues belong to OPP. Local township/town-road speed concerns go to that municipality; provincial-highway speed concerns go to OPP 1-888-310-1122. The form states that if a road is not in its dropdown it is not County-maintained. Observed required fields are name, email, municipality, road, from street, to street and more details. This covers speed-related safety investigations only; another unsafe-intersection request needs responsibility/procedure confirmation. Reporting a concern does not authorize a new stop sign or guarantee an intervention.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Wellington County\u2019s Report Speed Concerns form is for speed concerns on County roads. It may not receive a direct response and does not direct OPP enforcement or action. Individual vehicle issues belong to OPP. Local township/town-road speed concerns go to that municipality; provincial-highway speed concerns go to OPP 1-888-310-1122. The form states that if a road is not in its dropdown it is not County-maintained. Observed required fields are name, email, municipality, road, from street, to street and more details. This covers speed-related safety investigations only; another unsafe-intersection request needs responsibility/procedure confirmation. Reporting a concern does not authorize a new stop sign or guarantee an intervention."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "wellington-county",
+                "issueIds": "roads-safety",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "wellington-county-county-speed-concern-form",
+                "sourceVersion": "56c686f8cae9c48c"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8776963949203491
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "prescott-russell-counties-county-road-maintenance-handoff",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "3eec6b3819201c12",
+        "retrievalTextHash": "c052ec16b72931d0ff39428b0977f3bded38882ea80c94b91ce89793df6662d8",
+        "verifiedAt": "2026-11-14 15:59:32.706604+00:00",
+        "queryText": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page\u2019s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page\u2019s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "prescott-russell-counties",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "prescott-russell-counties-county-road-maintenance-handoff",
+                "sourceVersion": "3eec6b3819201c12"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.868614912033081
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "renfrew-county-county-road-concern-form-handoff",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "477f33c293aee594",
+        "retrievalTextHash": "5b47bd8fda613bda877b5b5127451ceeb7954bade417b489017becabb2f286be",
+        "verifiedAt": "2026-11-14 15:59:34.215898+00:00",
+        "queryText": "Renfrew County\u2019s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Renfrew County\u2019s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "renfrew-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "renfrew-county-county-road-concern-form-handoff",
+                "sourceVersion": "477f33c293aee594"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8853194713592529
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "northumberland-county-county-road-hotline-handoff",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "f622d4fa94a86575",
+        "retrievalTextHash": "987bbb26cfc06de395731dc3ea8ed0b8b0c1abf8f841b7ec4b7cfa729e273049",
+        "verifiedAt": "2026-11-14 15:59:35.597300+00:00",
+        "queryText": "Northumberland County\u2019s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Northumberland County\u2019s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "northumberland-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "northumberland-county-county-road-hotline-handoff",
+                "sourceVersion": "f622d4fa94a86575"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8963860869407654
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    }
+  ],
+  "authorities": [
+    {
+      "authorityId": "grey-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "grey-county-county-road-issues",
+          "authorityId": "grey-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Grey County: road-issue form, urgent phone and ownership handoffs",
+          "retrievalText": "Grey County\u2019s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified.",
+          "sourceVersion": "a28bf0a2ef4b21d2",
+          "sourceIds": [
+            "grey-roads",
+            "grey-conditions",
+            "grey-issue-form"
+          ],
+          "responsibilityRules": [
+            "Verify the road and asset using Grey GIS; the County name or road appearance alone is insufficient.",
+            "Provincial, local and private roads have different owners; the reporting phone is not the road-conditions hotline."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Use the official map and ownership guidance to identify the asset.",
+            "Call 519-376-7337 for urgent County-road issues; otherwise use the linked issue form or published departmental question contact.",
+            "For a non-County road follow the official provincial/local/private handoff."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://form.foreaction.cloud/submit/grey-county",
+          "contactEmail": "roads@grey.ca",
+          "contactPhone": "+1-519-376-7337 (urgent County-road issues)",
+          "formSnapshotIds": [
+            "grey-road-form-shell-20261114"
+          ],
+          "artifactIds": [
+            "grey-roads-9963fc96ac6463d0",
+            "grey-conditions-5abd4bb715139964",
+            "grey-issue-form-b427aaae87ce4e2e"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+            "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+            "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:54:27.591000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "a28bf0a2ef4b21d2",
+            "retrievalTextHash": "f3f8f24e5b78f8568c4e8abd62ad02646f3c8e958706e1724b7442b93f6154a6",
+            "verifiedAt": "2026-11-14 15:59:27.577000+00:00",
+            "queryText": "Grey County\u2019s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Grey County\u2019s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "grey-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "grey-county-county-road-issues",
+                    "sourceVersion": "a28bf0a2ef4b21d2"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8685457706451416
+          },
+          "score": 0.8685457706451416,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Grey County\u2019s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Grey County\u2019s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "grey-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "grey-county-county-road-issues",
+                        "sourceVersion": "a28bf0a2ef4b21d2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:59:27.681605+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "grey-county-county-road-issues",
+            "sourceVersion": "a28bf0a2ef4b21d2"
+          }
+        ],
+        "returnedIds": [
+          "grey-county-county-road-issues"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "grey-county-county-road-issues"
+        ],
+        "elapsedMs": 1581
+      }
+    },
+    {
+      "authorityId": "wellington-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "wellington-county-county-road-maintenance-form",
+          "authorityId": "wellington-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign"
+          ],
+          "categoryId": "roads",
+          "title": "Wellington County: County-road maintenance form with observed required fields",
+          "retrievalText": "Wellington\u2019s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific.",
+          "sourceVersion": "dfd92905b2ed9d2c",
+          "sourceIds": [
+            "wellington-concerns"
+          ],
+          "responsibilityRules": [
+            "Only County-maintained roadways are considered; verify the map and asset.",
+            "The broad maintenance form does not establish County ownership of every curb or sidewalk."
+          ],
+          "requiredFacts": [
+            "Full Name",
+            "Phone Number",
+            "Email Address",
+            "Issue type",
+            "Road/Location of Issue",
+            "Nearest address (fire number) or crossroad",
+            "Description of Issue"
+          ],
+          "steps": [
+            "Verify the County-maintained road.",
+            "Complete the observed contact, type, road/location, nearest address/crossroad and description fields using actual facts.",
+            "Review and approve before any future supported submission."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [
+            "Reviewed during business hours; the page states no direct response unless clarification is needed."
+          ],
+          "officialFormUrl": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-road-concerns",
+          "contactEmail": null,
+          "contactPhone": null,
+          "formSnapshotIds": [
+            "wellington-road-maintenance-form-20261114"
+          ],
+          "artifactIds": [
+            "wellington-concerns-16b2e8613d62632c"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff"
+          },
+          "gaps": [
+            "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+            "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:50:41.300000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "dfd92905b2ed9d2c",
+            "retrievalTextHash": "838f39ef46387fabdb236d876125030f8d1b5dfda7826d2dc42a8f4ab3666807",
+            "verifiedAt": "2026-11-14 15:59:30.010000+00:00",
+            "queryText": "Wellington\u2019s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Wellington\u2019s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "wellington-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "wellington-county-county-road-maintenance-form",
+                    "sourceVersion": "dfd92905b2ed9d2c"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8692446947097778
+          },
+          "score": 0.8692446947097778,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Wellington\u2019s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Wellington\u2019s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "wellington-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "wellington-county-county-road-maintenance-form",
+                        "sourceVersion": "dfd92905b2ed9d2c"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:59:30.109502+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "wellington-county-county-road-maintenance-form",
+            "sourceVersion": "dfd92905b2ed9d2c"
+          }
+        ],
+        "returnedIds": [
+          "wellington-county-county-road-maintenance-form"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "wellington-county-county-road-maintenance-form"
+        ],
+        "elapsedMs": 913
+      }
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "prescott-russell-counties-county-road-maintenance-handoff",
+          "authorityId": "prescott-russell-counties",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Prescott and Russell: Public Works road-maintenance reporting contact",
+          "retrievalText": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page\u2019s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page.",
+          "sourceVersion": "3eec6b3819201c12",
+          "sourceIds": [
+            "prescott-roads"
+          ],
+          "responsibilityRules": [
+            "Use for the verified County road/asset; local/provincial/private responsibility is not established by a location label.",
+            "The local sidewalk/shoulder exception is expressly about snow removal and must not be generalized to structural defects."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Verify road and asset responsibility.",
+            "Use the published Road Maintenance phone or email to report an issue or confirm the required process.",
+            "Pause if the incident is a sidewalk, curb or unverified asset."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": null,
+          "contactEmail": "TravauxPublics@prescott-russell.on.ca",
+          "contactPhone": "+1-613-675-4661; toll-free +1-800-667-6307",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "prescott-roads-cbd7a1d476fcd5da"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+            "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:48:17.254000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "3eec6b3819201c12",
+            "retrievalTextHash": "c052ec16b72931d0ff39428b0977f3bded38882ea80c94b91ce89793df6662d8",
+            "verifiedAt": "2026-11-14 15:59:32.706000+00:00",
+            "queryText": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page\u2019s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page\u2019s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "prescott-russell-counties",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "prescott-russell-counties-county-road-maintenance-handoff",
+                    "sourceVersion": "3eec6b3819201c12"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.868614912033081
+          },
+          "score": 0.868614912033081,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page\u2019s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page\u2019s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "prescott-russell-counties",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "prescott-russell-counties-county-road-maintenance-handoff",
+                        "sourceVersion": "3eec6b3819201c12"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:59:32.797409+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "prescott-russell-counties-county-road-maintenance-handoff",
+            "sourceVersion": "3eec6b3819201c12"
+          }
+        ],
+        "returnedIds": [
+          "prescott-russell-counties-county-road-maintenance-handoff"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "prescott-russell-counties-county-road-maintenance-handoff"
+        ],
+        "elapsedMs": 772
+      }
+    },
+    {
+      "authorityId": "renfrew-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "renfrew-county-county-road-concern-form-handoff",
+          "authorityId": "renfrew-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Renfrew County: official County-road concern form link, fields unavailable",
+          "retrievalText": "Renfrew County\u2019s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number.",
+          "sourceVersion": "477f33c293aee594",
+          "sourceIds": [
+            "renfrew-roads"
+          ],
+          "responsibilityRules": [
+            "Confirm exact County-road and asset responsibility before using the concern link.",
+            "The official Roads page supplies the link; the form itself could not be inspected."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Verify the road/asset.",
+            "Open the concern link from the official Roads page; obtain assistance if access is blocked.",
+            "Do not infer hidden fields or claim a submission/receipt from the blocked request."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern",
+          "contactEmail": null,
+          "contactPhone": "+1-613-735-2081 (general County contact)",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "renfrew-roads-2ca61a89872362b1"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+            "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:48:17.254000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "477f33c293aee594",
+            "retrievalTextHash": "5b47bd8fda613bda877b5b5127451ceeb7954bade417b489017becabb2f286be",
+            "verifiedAt": "2026-11-14 15:59:34.215000+00:00",
+            "queryText": "Renfrew County\u2019s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Renfrew County\u2019s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "renfrew-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "renfrew-county-county-road-concern-form-handoff",
+                    "sourceVersion": "477f33c293aee594"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8853194713592529
+          },
+          "score": 0.8853194713592529,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Renfrew County\u2019s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Renfrew County\u2019s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "renfrew-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "renfrew-county-county-road-concern-form-handoff",
+                        "sourceVersion": "477f33c293aee594"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:59:34.318006+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "renfrew-county-county-road-concern-form-handoff",
+            "sourceVersion": "477f33c293aee594"
+          }
+        ],
+        "returnedIds": [
+          "renfrew-county-county-road-concern-form-handoff"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "renfrew-county-county-road-concern-form-handoff"
+        ],
+        "elapsedMs": 694
+      }
+    },
+    {
+      "authorityId": "northumberland-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "northumberland-county-county-road-hotline-handoff",
+          "authorityId": "northumberland-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Northumberland County: Roads Hotline and linked problem form",
+          "retrievalText": "Northumberland County\u2019s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made.",
+          "sourceVersion": "f622d4fa94a86575",
+          "sourceIds": [
+            "northumberland-roads",
+            "northumberland-report-form"
+          ],
+          "responsibilityRules": [
+            "Only County roads/bridges are within the published maintenance scope; municipal roads go to the local municipality.",
+            "Confirm every sidewalk, curb, private or provincial asset separately."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Identify the road and relevant asset.",
+            "Use the official Roads Hotline or linked Report a problem form for the appropriate County concern.",
+            "Use the published after-hours toll-free line when an after-hours County-road handoff is required."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://reportaproblem.paperform.co/",
+          "contactEmail": null,
+          "contactPhone": "+1-905-372-3329; +1-800-354-7050; after-hours +1-866-856-3251",
+          "formSnapshotIds": [
+            "northumberland-problem-form-shell-20261114"
+          ],
+          "artifactIds": [
+            "northumberland-roads-ffe53b13b2376a5a",
+            "northumberland-report-form-f828c7a5d6504ee2"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+            "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+            "No fixed repair or follow-up target is stated."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:54:27.591000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "f622d4fa94a86575",
+            "retrievalTextHash": "987bbb26cfc06de395731dc3ea8ed0b8b0c1abf8f841b7ec4b7cfa729e273049",
+            "verifiedAt": "2026-11-14 15:59:35.597000+00:00",
+            "queryText": "Northumberland County\u2019s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Northumberland County\u2019s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "northumberland-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "northumberland-county-county-road-hotline-handoff",
+                    "sourceVersion": "f622d4fa94a86575"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8963860869407654
+          },
+          "score": 0.8963860869407654,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Northumberland County\u2019s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Northumberland County\u2019s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "northumberland-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "northumberland-county-county-road-hotline-handoff",
+                        "sourceVersion": "f622d4fa94a86575"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T15:59:35.739209+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "northumberland-county-county-road-hotline-handoff",
+            "sourceVersion": "f622d4fa94a86575"
+          }
+        ],
+        "returnedIds": [
+          "northumberland-county-county-road-hotline-handoff"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "northumberland-county-county-road-hotline-handoff"
+        ],
+        "elapsedMs": 820
+      }
+    }
+  ],
+  "counts": {
+    "authoritiesChecked": 5,
+    "proceduresChecked": 6,
+    "searchableRecords": 6,
+    "excludedRecords": 0
+  },
+  "status": "ready"
+}
