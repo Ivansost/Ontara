@@ -1,0 +1,404 @@
+{
+  "schemaVersion": "1.0",
+  "batchId": "halton-first-20261114",
+  "municipalities": [
+    {
+      "id": "halton-region",
+      "name": "Halton, Regional Municipality of",
+      "type": "upper-tier",
+      "memberIds": [
+        "burlington-city",
+        "halton-hills-town",
+        "milton-town",
+        "oakville-town"
+      ],
+      "officialUrl": "http://www.halton.ca/",
+      "population": 596637,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 4,
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "burlington-city",
+      "name": "Burlington, City of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "https://www.burlington.ca/en/index.aspx",
+      "population": 186948,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "halton-hills-town",
+      "name": "Halton Hills, Town of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "http://www.haltonhills.ca/",
+      "population": 62951,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "milton-town",
+      "name": "Milton, Town of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "http://www.milton.ca/",
+      "population": 132979,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "oakville-town",
+      "name": "Oakville, Town of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "http://www.oakville.ca/",
+      "population": 213759,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    }
+  ],
+  "procedures": [
+    {
+      "title": "Halton Region: published telephone handoff for a confirmed Regional-road problem",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "retrievalText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+      "responsibilityRules": [
+        "Confirm the incident road belongs to Halton's Regional network using the linked official map; residence in Halton alone does not prove ownership.",
+        "Local streets and many sidewalks generally belong to Burlington, Halton Hills, Milton or Oakville; verify the particular asset.",
+        "Provincial highways such as 401 and QEW belong to MTO; no private-road maintenance responsibility is established by these pages.",
+        "Police handle traffic-law enforcement; a request for engineering investigation is distinct from approval to install a sign."
+      ],
+      "steps": [
+        "Confirm incident location and Regional-road ownership using the official map.",
+        "For a Regional road problem, use the published telephone route: 311 or 1-866-442-5866.",
+        "For a local street, follow Halton's linked local municipality page instead."
+      ],
+      "contactPhone": "311 or +1-866-442-5866",
+      "constraints": [
+        "Research only. Live municipal submissions, emails and calls are not authorized by this import.",
+        "The official reporting page publishes a general telephone route; it does not specify a distinct intake form for each Roads leaf.",
+        "Automated demo execution remains on the separately allowlisted halton-roads-demo portal."
+      ],
+      "gaps": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "id": "halton-region-regional-road-problem-phone",
+      "authorityId": "halton-region",
+      "categoryId": "roads",
+      "sourceVersion": "8d2f6c64ed934f68",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:42:09.641995+00:00",
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "artifactIds": [
+        "halton-roads-ff72795c7085bfd0",
+        "halton-safety-4701417917565a14"
+      ]
+    },
+    {
+      "title": "Halton sidewalks and curbs: verify local responsibility and Regional exceptions",
+      "issueIds": [
+        "roads-sidewalk",
+        "roads-curb"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "retrievalText": "Halton's official Regional Roads page says Burlington, Halton Hills, Milton and Oakville generally manage local streets, sidewalks and related infrastructure. It explicitly says many sidewalks, not all sidewalks, are local, and also lists sidewalk assets in the Regional active-transportation network. A damaged sidewalk within Halton must therefore be routed by the particular asset and local municipality, not by the upper-tier name alone. Halton links its four local road-service pages. Curbs are not specifically allocated in the observed source. For unclear Regional assets use Halton's published 311 or 1-866-442-5866 handoff to establish responsibility. Required defect-report fields and a curb-specific channel remain unverified. This is research-only handoff guidance, not a tested live integration.",
+      "responsibilityRules": [
+        "Local municipalities are generally responsible for local streets, sidewalks and related infrastructure, with exceptions requiring verification.",
+        "Do not infer curb ownership or every sidewalk's maintainer from the Region label."
+      ],
+      "steps": [
+        "Identify the exact sidewalk or curb and local municipality.",
+        "Use the local-service links on Halton's Regional Roads page; ask the owner to confirm responsibility where uncertain."
+      ],
+      "constraints": [
+        "Do not automatically dispatch a real sidewalk or curb report based on this partial ownership evidence."
+      ],
+      "verificationStatus": "partial",
+      "researchStatus": "partial",
+      "coverage": {
+        "roads-sidewalk": "sourced_handoff",
+        "roads-curb": "unresolved_gap"
+      },
+      "gaps": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ],
+      "id": "halton-region-sidewalk-curb-responsibility-handoff",
+      "authorityId": "halton-region",
+      "categoryId": "roads",
+      "sourceVersion": "e028ca5d483ab7db",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:42:00.099655+00:00",
+      "artifactIds": [
+        "halton-roads-ff72795c7085bfd0"
+      ]
+    }
+  ],
+  "formSnapshots": [],
+  "coverage": [
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sidewalk",
+      "status": "partial",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    }
+  ],
+  "gaps": [],
+  "sources": [
+    {
+      "id": "halton-roads",
+      "authorityId": "halton-region",
+      "url": "https://www.halton.ca/for-residents/regional-roads",
+      "title": "Halton - Regional Roads",
+      "retrievedAt": "2026-11-14T15:42:00.099655+00:00",
+      "verifiedAt": "2026-11-14T15:42:00.099655+00:00",
+      "contentHash": "2e26dc16221f8d1c8e077a07f5af2d353c4cb46941b4e3f63e06e24fd4be07ac",
+      "sourceVersion": "ff72795c7085bfd0",
+      "artifactIds": [
+        "halton-roads-ff72795c7085bfd0"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "halton-safety",
+      "authorityId": "halton-region",
+      "url": "https://www.halton.ca/for-residents/regional-roads/road-safety",
+      "title": "Halton - Road Safety",
+      "retrievedAt": "2026-11-14T15:42:09.641995+00:00",
+      "verifiedAt": "2026-11-14T15:42:09.641995+00:00",
+      "contentHash": "977691aa707ad57869d034f6d11c9497fe296f336b4da43c7173b9dc2c66e814",
+      "sourceVersion": "4701417917565a14",
+      "artifactIds": [
+        "halton-safety-4701417917565a14"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "ontario-municipal-registry-2026",
+      "authorityId": "ontario",
+      "url": "https://data.ontario.ca/dataset/62e83cbc-0731-4d66-abdc-2f2b31bcd76c/resource/6783a586-6b05-4a73-9663-e60a6963c91e/download/municipalities_-_en_2026-0526.csv",
+      "title": "Ontario Ministry of Municipal Affairs and Housing: municipalities registry, June 2026",
+      "retrievedAt": "2026-11-14T15:42:59.884105+00:00",
+      "verifiedAt": "2026-11-14T15:42:59.884105+00:00",
+      "contentHash": "8cda6d0215ede06f2b0f834218b5c8a8666485da3c7996c893ba5f99e5680ca0",
+      "sourceVersion": "5370b4e1b3804d10",
+      "artifactIds": [
+        "ontario-municipal-registry-2026-5370b4e1b3804d10"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "statcan-2021-csd-population",
+      "authorityId": "ontario",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000401",
+      "title": "Statistics Canada table 98-10-0004-01: 2021 Population and dwelling counts, entire-table CSV",
+      "retrievedAt": "2026-11-14T15:43:30.409122+00:00",
+      "verifiedAt": "2026-11-14T15:43:30.409122+00:00",
+      "contentHash": "184dadc79608b07f13b30f19a76cd862339f61d53dba507416a8f23d791a41de",
+      "sourceVersion": "40631095c8601def",
+      "artifactIds": [
+        "statcan-2021-csd-population-40631095c8601def"
+      ],
+      "verificationStatus": "verified",
+      "gaps": []
+    }
+  ]
+}

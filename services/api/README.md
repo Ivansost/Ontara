@@ -72,6 +72,17 @@ requests cannot set this control. It cannot arm updates, used cases, non-demo ro
 an already-consumed one-shot. The existing operation-level control remains available
 only for prepared create operations that have not been leased or consumed.
 
+The separate Bearer-only `POST /internal/v1/cases/{id}/follow-up-hold` accepts
+`{"held":true}` on an unused supported Roads draft before approval. Mail retains the
+initial authority question as durable HELD work without a provider send. After the
+initial receipt is verified and the presenter changes that run's Roads update form,
+`{"held":false}` reads the configured receiving portal's same-run schema and requires
+version 2 with its actual snapshot digest before releasing the existing outbox. Caller
+URLs or claimed form evidence are not accepted. Repeated release and interrupted
+callbacks reconcile through the mail module. Authenticated GET at the same path reads
+the persisted hold and `nextCreateFaultArmed`; presenter controls remain outside public
+case data and do not change resident approval, case facts or receipts.
+
 Authority email schedules a `follow_up_inspection` job with `readOnly=true`. The worker
 inspects the current form and retrieves an applicable verified lesson before asking an
 authored missing-fact question. Email never grants write approval. Resident answers

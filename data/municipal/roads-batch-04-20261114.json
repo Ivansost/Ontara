@@ -1,0 +1,2212 @@
+{
+  "schemaVersion": "1.0",
+  "batchId": "roads-batch-04-20261114",
+  "municipalities": [
+    {
+      "id": "middlesex-county",
+      "name": "Middlesex, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "adelaide-metcalfe-township",
+        "lucan-biddulph-township",
+        "middlesex-centre-municipality",
+        "newbury-village",
+        "north-middlesex-municipality",
+        "southwest-middlesex-municipality",
+        "strathroy-caradoc-municipality",
+        "thames-centre-municipality"
+      ],
+      "officialUrl": "http://www.middlesex.ca/",
+      "population": 78110,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 16,
+      "sourceIds": [
+        "middlesex-roads",
+        "middlesex-faqs",
+        "middlesex-request-form"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "adelaide-metcalfe-township",
+      "name": "Adelaide-Metcalfe, Township of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "https://adelaidemetcalfe.on.ca/",
+      "population": 3011,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lucan-biddulph-township",
+      "name": "Lucan Biddulph, Township of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "http://www.lucanbiddulph.on.ca/",
+      "population": 5680,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "middlesex-centre-municipality",
+      "name": "Middlesex Centre, Municipality of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "http://www.middlesexcentre.on.ca/",
+      "population": 18928,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "newbury-village",
+      "name": "Newbury, Village of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "http://www.newbury.ca/",
+      "population": 440,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "north-middlesex-municipality",
+      "name": "North Middlesex, Municipality of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "http://www.northmiddlesex.on.ca/",
+      "population": 6307,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "southwest-middlesex-municipality",
+      "name": "Southwest Middlesex, Municipality of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "http://www.southwestmiddlesex.ca/",
+      "population": 5893,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "strathroy-caradoc-municipality",
+      "name": "Strathroy-Caradoc, Municipality of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "http://www.strathroy-caradoc.ca/",
+      "population": 23871,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "thames-centre-municipality",
+      "name": "Thames Centre, Municipality of",
+      "type": "lower-tier",
+      "parentId": "middlesex-county",
+      "officialUrl": "http://www.thamescentre.on.ca/",
+      "population": 13980,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "leeds-grenville-counties",
+      "name": "Leeds and Grenville, United Counties of",
+      "type": "upper-tier",
+      "memberIds": [
+        "athens-township",
+        "augusta-township",
+        "edwardsburgh-cardinal-township",
+        "elizabethtown-kitley-township",
+        "front-of-yonge-township",
+        "leeds-and-the-thousand-islands-township",
+        "merrickville-wolford-village",
+        "north-grenville-municipality",
+        "rideau-lakes-township",
+        "westport-village"
+      ],
+      "officialUrl": "https://www.leedsgrenville.com/en/index.aspx",
+      "population": 72493,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 17,
+      "sourceIds": [
+        "leeds-roads",
+        "leeds-concern-portal"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "athens-township",
+      "name": "Athens, Township of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.athenstownship.ca/",
+      "population": 3042,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "augusta-township",
+      "name": "Augusta, Township of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.augusta.ca/",
+      "population": 7386,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "edwardsburgh-cardinal-township",
+      "name": "Edwardsburgh/Cardinal, Township of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.edwardsburghcardinal.ca/",
+      "population": 7505,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "elizabethtown-kitley-township",
+      "name": "Elizabethtown-Kitley, Township of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.elizabethtown-kitley.on.ca/",
+      "population": 9545,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "front-of-yonge-township",
+      "name": "Front of Yonge, Township of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "https://mallorytown.ca/",
+      "population": 2595,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "leeds-and-the-thousand-islands-township",
+      "name": "Leeds and the Thousand Islands, Township of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "https://www.leeds1000islands.ca/",
+      "population": 9804,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "merrickville-wolford-village",
+      "name": "Merrickville-Wolford, Village of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.merrickville-wolford.ca/",
+      "population": 3135,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "north-grenville-municipality",
+      "name": "North Grenville, Municipality of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.northgrenville.ca/",
+      "population": 17964,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "rideau-lakes-township",
+      "name": "Rideau Lakes, Township of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.twprideaulakes.on.ca/",
+      "population": 10883,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "westport-village",
+      "name": "Westport, Village of",
+      "type": "lower-tier",
+      "parentId": "leeds-grenville-counties",
+      "officialUrl": "http://www.village.westport.on.ca/",
+      "population": 634,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "bruce-county",
+      "name": "Bruce, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "arran-elderslie-municipality",
+        "brockton-municipality",
+        "huron-kinloss-township",
+        "kincardine-municipality",
+        "northern-bruce-peninsula-municipality",
+        "saugeen-shores-town",
+        "south-bruce-municipality",
+        "south-bruce-peninsula-town"
+      ],
+      "officialUrl": "http://www.brucecounty.on.ca/",
+      "population": 72017,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 18,
+      "sourceIds": [
+        "bruce-roads",
+        "bruce-concerns"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "arran-elderslie-municipality",
+      "name": "Arran-Elderslie, Municipality of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "http://www.arran-elderslie.com/",
+      "population": 6913,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "brockton-municipality",
+      "name": "Brockton, Municipality of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "http://www.brockton.ca/",
+      "population": 9784,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "huron-kinloss-township",
+      "name": "Huron-Kinloss, Township of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "http://www.huronkinloss.com/",
+      "population": 7723,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "kincardine-municipality",
+      "name": "Kincardine, Municipality of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "https://www.kincardine.ca/en/index.aspx",
+      "population": 12268,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "northern-bruce-peninsula-municipality",
+      "name": "Northern Bruce Peninsula, Municipality of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "http://www.northbrucepeninsula.ca/",
+      "population": 4404,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "saugeen-shores-town",
+      "name": "Saugeen Shores, Town of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "http://www.saugeenshores.ca/",
+      "population": 15908,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "south-bruce-municipality",
+      "name": "South Bruce, Municipality of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "http://www.town.southbruce.on.ca/",
+      "population": 5880,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "south-bruce-peninsula-town",
+      "name": "South Bruce Peninsula, Town of",
+      "type": "lower-tier",
+      "parentId": "bruce-county",
+      "officialUrl": "http://www.southbrucepeninsula.com/",
+      "population": 9137,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "stormont-dundas-glengarry-counties",
+      "name": "Stormont, Dundas and Glengarry, United Counties of",
+      "type": "upper-tier",
+      "memberIds": [
+        "north-dundas-township",
+        "north-glengarry-township",
+        "north-stormont-township",
+        "south-dundas-municipality",
+        "south-glengarry-township",
+        "south-stormont-township"
+      ],
+      "officialUrl": "http://www.sdg.on.ca/",
+      "population": 66792,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 19,
+      "sourceIds": [
+        "sdg-roads",
+        "sdg-concerns",
+        "sdg-contacts"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "north-dundas-township",
+      "name": "North Dundas, Township of",
+      "type": "lower-tier",
+      "parentId": "stormont-dundas-glengarry-counties",
+      "officialUrl": "http://www.northdundas.com/",
+      "population": 11304,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "north-glengarry-township",
+      "name": "North Glengarry, Township of",
+      "type": "lower-tier",
+      "parentId": "stormont-dundas-glengarry-counties",
+      "officialUrl": "http://www.northglengarry.ca/",
+      "population": 10144,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "north-stormont-township",
+      "name": "North Stormont, Township of",
+      "type": "lower-tier",
+      "parentId": "stormont-dundas-glengarry-counties",
+      "officialUrl": "http://www.northstormont.ca/",
+      "population": 7400,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "south-dundas-municipality",
+      "name": "South Dundas, Municipality of",
+      "type": "lower-tier",
+      "parentId": "stormont-dundas-glengarry-counties",
+      "officialUrl": "http://www.southdundas.com/",
+      "population": 11044,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "south-glengarry-township",
+      "name": "South Glengarry, Township of",
+      "type": "lower-tier",
+      "parentId": "stormont-dundas-glengarry-counties",
+      "officialUrl": "http://southglengarry.com/",
+      "population": 13330,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "south-stormont-township",
+      "name": "South Stormont, Township of",
+      "type": "lower-tier",
+      "parentId": "stormont-dundas-glengarry-counties",
+      "officialUrl": "http://southstormont.ca/",
+      "population": 13570,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lanark-county",
+      "name": "Lanark, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "beckwith-township",
+        "carleton-place-town",
+        "drummond-north-elmsley-township",
+        "lanark-highlands-township",
+        "mississippi-mills-municipality",
+        "montague-township",
+        "perth-town",
+        "tay-valley-township"
+      ],
+      "officialUrl": "https://www.lanarkcounty.ca/en/index.aspx",
+      "population": 66506,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 20,
+      "sourceIds": [
+        "lanark-roads",
+        "lanark-speed-form"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "beckwith-township",
+      "name": "Beckwith, Township of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "http://www.twp.beckwith.on.ca/",
+      "population": 9021,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "carleton-place-town",
+      "name": "Carleton Place, Town of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "http://www.carletonplace.ca/",
+      "population": 12517,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "drummond-north-elmsley-township",
+      "name": "Drummond/North Elmsley, Township of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "https://www.dnetownship.ca/",
+      "population": 8183,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lanark-highlands-township",
+      "name": "Lanark Highlands, Township of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "http://www.lanarkhighlands.ca/",
+      "population": 5737,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "mississippi-mills-municipality",
+      "name": "Mississippi Mills, Municipality of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "http://www.mississippimills.ca/",
+      "population": 14740,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "montague-township",
+      "name": "Montague, Township of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "http://www.township.montague.on.ca/",
+      "population": 3914,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "perth-town",
+      "name": "Perth, Town of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "http://www.perth.ca/en/index.aspx",
+      "population": 6469,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "tay-valley-township",
+      "name": "Tay Valley, Township of",
+      "type": "lower-tier",
+      "parentId": "lanark-county",
+      "officialUrl": "http://www.tayvalleytwp.ca/",
+      "population": 5925,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    }
+  ],
+  "procedures": [
+    {
+      "title": "Middlesex County: Primary Operations Centre and Citizen Request Portal",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "middlesex-roads",
+        "middlesex-faqs",
+        "middlesex-request-form"
+      ],
+      "retrievalText": "Middlesex County’s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance.",
+      "responsibilityRules": [
+        "Verify the numbered County road/asset using the official road map; local, provincial and private assets must not be assumed County-owned.",
+        "The published Primary Operations Centre covers road maintenance/hazard conditions; individual asset jurisdiction and report type still need confirmation."
+      ],
+      "steps": [
+        "Confirm road number, segment and owner.",
+        "Call519-471-2020 or open the officially linked Citizen Request Portal.",
+        "Provide the actual location; inspect any current questionnaire before a future supported report."
+      ],
+      "requiredFacts": [
+        "Location is expressly requested in the FAQs for the listed maintenance concerns. A complete pothole/curb/sign questionnaire is not published in these sources."
+      ],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-519-471-2020",
+      "officialFormUrl": "https://www.middlesex.ca/request-service",
+      "id": "middlesex-county-county-road-maintenance",
+      "authorityId": "middlesex-county",
+      "categoryId": "roads",
+      "sourceVersion": "0b47fff1d2914ac9",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:58:14.044271+00:00",
+      "artifactIds": [
+        "middlesex-roads-28e9a5d828a32c62",
+        "middlesex-faqs-a629146100eb91e6",
+        "middlesex-request-form-f14c6b052ac732ca"
+      ],
+      "formSnapshotIds": [
+        "middlesex-request-form-shell-20261114"
+      ]
+    },
+    {
+      "title": "Leeds and Grenville: County-road concern portal, Roads contact and after-hours line",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "leeds-roads",
+        "leeds-concern-portal"
+      ],
+      "retrievalText": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified.",
+      "responsibilityRules": [
+        "Confirm the exact County-maintained road and asset.",
+        "A former provincial route may now be County-owned, so route by current owner rather than historic highway name.",
+        "Brockville,Gananoque andPrescott are separate single-tier municipalities; the Counties label does not establish their road ownership."
+      ],
+      "steps": [
+        "Use the official Roads and Bridges page to verify scope and open the concern portal.",
+        "Use the Roads departmental email/phone for the appropriate maintenance handoff.",
+        "For an after-hours road emergency use the separately published extension2601."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-613-342-3840 ext.2425; after-hours +1-613-342-3840 or +1-800-267-8146 ext.2601",
+      "contactEmail": "roads@uclg.on.ca",
+      "officialFormUrl": "https://citywideportal.com/?client=United%20Counties%20of%20Leeds%20and%20Grenville",
+      "id": "leeds-grenville-counties-county-road-concern",
+      "authorityId": "leeds-grenville-counties",
+      "categoryId": "roads",
+      "sourceVersion": "87476dc42018bf8c",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:58:14.044669+00:00",
+      "artifactIds": [
+        "leeds-roads-0c78ede9cf1f1f11",
+        "leeds-concern-portal-379329f433a08d42"
+      ],
+      "formSnapshotIds": [
+        "leeds-road-portal-shell-20261114"
+      ]
+    },
+    {
+      "title": "Bruce County: designated road-service email and telephone",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "bruce-roads",
+        "bruce-concerns"
+      ],
+      "retrievalText": "Bruce County’s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page’s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department’s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made.",
+      "responsibilityRules": [
+        "Use the designated Transportation service-request route for a confirmed County road/asset.",
+        "Generic complaints and compensation claims are distinct from reporting a road defect.",
+        "Sidewalk and curb responsibility need asset confirmation."
+      ],
+      "steps": [
+        "Confirm County-road/asset responsibility.",
+        "Send the approved future request through the published Transportation email or phone handoff when a supported integration exists.",
+        "If following up on dissatisfaction, consult the separate official formal-complaint instructions."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [
+        "The official page offers a separate formal-complaint process if dissatisfied with the response; no road-repair or response deadline is promised."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-519-881-2400",
+      "contactEmail": "transportationinfo@brucecounty.on.ca",
+      "id": "bruce-county-transportation-road-service",
+      "authorityId": "bruce-county",
+      "categoryId": "roads",
+      "sourceVersion": "234e63dbd397887a",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:50:41.300881+00:00",
+      "artifactIds": [
+        "bruce-roads-f20687f9b8a73e00",
+        "bruce-concerns-f784e96ff41f5462"
+      ]
+    },
+    {
+      "title": "SDG Counties: County-road responsibility and published nonanonymous feedback handoff",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "sdg-roads",
+        "sdg-concerns",
+        "sdg-contacts"
+      ],
+      "retrievalText": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier.",
+      "responsibilityRules": [
+        "Verify the road and particular asset belong to the Counties network, not the province, a local municipality, a private owner or separate Cornwall.",
+        "The Clerk feedback route is general, not a verified urgent road-dispatch or issue-specific intake."
+      ],
+      "steps": [
+        "Confirm County-road responsibility with Transportation assistance if uncertain.",
+        "If using the published feedback process, provide the named nonanonymous contact facts to the Clerk through an accepted listed method.",
+        "Keep acknowledgement distinct from an authority performing a repair."
+      ],
+      "requiredFacts": [
+        "Name",
+        "Date",
+        "Email",
+        "Address",
+        "Phone number"
+      ],
+      "followUpInstructions": [
+        "The published general feedback process states the Clerk will acknowledge receipt and set out the action to be taken. No time target is stated."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-613-932-1515 ext.1208 (Transportation assistance); feedback ext.203",
+      "contactEmail": "info@sdgcounties.ca",
+      "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "categoryId": "roads",
+      "sourceVersion": "f9a4c0160fdb0a2a",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:58:14.044798+00:00",
+      "artifactIds": [
+        "sdg-roads-424b31d91c6407ea",
+        "sdg-concerns-d783e97976ec43ae",
+        "sdg-contacts-bb7fc93b06ebe37a"
+      ]
+    },
+    {
+      "title": "Lanark County: Roads email and 24-hour road-emergency phone",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "retrievalText": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent.",
+      "responsibilityRules": [
+        "Confirm the County road/asset before using Public Works.",
+        "Do not reuse permit requirements, fees or permit-processing deadlines for ordinary road-defect reporting."
+      ],
+      "steps": [
+        "Confirm the County road and incident location.",
+        "Use the published Roads email for the appropriate concern.",
+        "For a road emergency call613-267-1353 and follow the prompts."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff"
+      },
+      "gaps": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-613-267-1353 (24-hour road emergencies)",
+      "contactEmail": "roads@lanarkcounty.ca",
+      "id": "lanark-county-county-road-concern",
+      "authorityId": "lanark-county",
+      "categoryId": "roads",
+      "sourceVersion": "7a57665ae47b0bf5",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:19.441364+00:00",
+      "artifactIds": [
+        "lanark-roads-5563cb8a2c9fd46f"
+      ]
+    },
+    {
+      "title": "Lanark County: speed-management request form with observed requirements",
+      "issueIds": [
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "lanark-roads",
+        "lanark-speed-form"
+      ],
+      "retrievalText": "Lanark County’s Roads page links a Request for Speed Management Measures form. The observed required fields ask where the measures are requested with road name/limits, the requester’s relationship to the street, time of day speeding is an issue, other traffic concerns, name,email,phone,date and preferred contact method. Optional Other explanations and additional comments are present. The page says JavaScript is needed to complete the form; hidden time/antispam values are redacted from the stored snapshot. This is a request for County assessment, not approval for a sign or immediate enforcement. Other unsafe-intersection or non-County issues require responsibility/procedure confirmation. No form was submitted, and no acknowledgement or repair target is established.",
+      "responsibilityRules": [
+        "Use for a speed-management assessment on an appropriately confirmed County roadway.",
+        "A resident request does not approve a traffic-control change or direct police enforcement."
+      ],
+      "steps": [
+        "Confirm the relevant County road and limits.",
+        "Provide the observed required questions and contact details using true resident facts.",
+        "Review/approve before a future supported submission; use Public Works if scope is unclear."
+      ],
+      "requiredFacts": [
+        "Road name and limits/location",
+        "Relationship to the street",
+        "Time of day speeding occurs",
+        "Other traffic concerns",
+        "Name",
+        "Email",
+        "Phone",
+        "Date",
+        "Preferred method of contact"
+      ],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The form requires JavaScript; dynamic behavior, anti-spam acceptance and any further server validation were not tested.",
+        "This speed-management route does not establish every unsafe-intersection or sign-installation procedure. No receipt, response deadline or approved intervention is claimed."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "officialFormUrl": "https://www.lanarkcounty.ca/request-for-speed-management-measures/",
+      "id": "lanark-county-speed-management-request",
+      "authorityId": "lanark-county",
+      "categoryId": "roads",
+      "sourceVersion": "3a002e9751a4e75e",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:50:41.300943+00:00",
+      "artifactIds": [
+        "lanark-roads-5563cb8a2c9fd46f",
+        "lanark-speed-form-fa0f0bc438b92e89"
+      ],
+      "formSnapshotIds": [
+        "lanark-speed-management-form-20261114"
+      ]
+    }
+  ],
+  "formSnapshots": [
+    {
+      "id": "middlesex-request-form-shell-20261114",
+      "fields": [],
+      "gaps": [
+        "Outer page title only; no incident questionnaire or acceptance test."
+      ],
+      "authorityId": "middlesex-county",
+      "procedureId": "middlesex-county-county-road-maintenance",
+      "url": "https://www.middlesex.ca/request-service",
+      "observedAt": "2026-11-14T15:58:14.044271+00:00",
+      "sourceVersion": "f14c6b052ac732ca",
+      "artifactIds": [
+        "middlesex-request-form-f14c6b052ac732ca"
+      ],
+      "sourceIds": [
+        "middlesex-request-form"
+      ]
+    },
+    {
+      "id": "leeds-road-portal-shell-20261114",
+      "fields": [],
+      "gaps": [
+        "JavaScript shell only; no incident form or submission observed."
+      ],
+      "authorityId": "leeds-grenville-counties",
+      "procedureId": "leeds-grenville-counties-county-road-concern",
+      "url": "https://citywideportal.com/?client=United%20Counties%20of%20Leeds%20and%20Grenville",
+      "observedAt": "2026-11-14T15:58:14.044669+00:00",
+      "sourceVersion": "379329f433a08d42",
+      "artifactIds": [
+        "leeds-concern-portal-379329f433a08d42"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal"
+      ]
+    },
+    {
+      "id": "lanark-speed-management-form-20261114",
+      "fields": [
+        {
+          "id": "wpforms-2325-field_1",
+          "label": "Where are you requesting speed management measures for (be as specific as possible with road name and limits)?",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_2",
+          "label": "Which of the following applies to you (select at least one)?",
+          "type": "radio",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_4",
+          "label": "Is there a specific time of day when speeding is an issue?",
+          "type": "radio",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_6",
+          "label": "Are there any other traffic issues concerning you about the street in question?",
+          "type": "radio",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_8",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_9",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_10",
+          "label": "Phone",
+          "type": "tel",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_11",
+          "label": "Date",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "wpforms-2325-field_13",
+          "label": "Preferred Method of Contact",
+          "type": "select",
+          "required": true
+        }
+      ],
+      "gaps": [
+        "Field group IDs identify the observed question groups; individual radio inputs have option suffixes. Conditional Other inputs and optional comments omitted from required list. Hidden antispam/time values redacted. No form submitted."
+      ],
+      "authorityId": "lanark-county",
+      "procedureId": "lanark-county-speed-management-request",
+      "url": "https://www.lanarkcounty.ca/request-for-speed-management-measures/",
+      "observedAt": "2026-11-14T15:50:41.300943+00:00",
+      "sourceVersion": "fa0f0bc438b92e89",
+      "artifactIds": [
+        "lanark-speed-form-fa0f0bc438b92e89"
+      ],
+      "sourceIds": [
+        "lanark-speed-form"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "middlesex-roads",
+        "middlesex-faqs",
+        "middlesex-request-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "middlesex-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "middlesex-county-county-road-maintenance"
+      ],
+      "sourceIds": [
+        "middlesex-faqs",
+        "middlesex-request-form",
+        "middlesex-roads"
+      ],
+      "notes": [
+        "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+        "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "leeds-roads",
+        "leeds-concern-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "leeds-grenville-counties-county-road-concern"
+      ],
+      "sourceIds": [
+        "leeds-concern-portal",
+        "leeds-roads"
+      ],
+      "notes": [
+        "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+        "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+        "No repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "bruce-roads",
+        "bruce-concerns"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "bruce-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "bruce-county-transportation-road-service"
+      ],
+      "sourceIds": [
+        "bruce-concerns",
+        "bruce-roads"
+      ],
+      "notes": [
+        "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+        "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+        "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "sdg-roads",
+        "sdg-concerns",
+        "sdg-contacts"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+      ],
+      "sourceIds": [
+        "sdg-concerns",
+        "sdg-contacts",
+        "sdg-roads"
+      ],
+      "notes": [
+        "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+        "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+        "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "lanark-roads",
+        "lanark-speed-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-county-road-concern"
+      ],
+      "sourceIds": [
+        "lanark-roads"
+      ],
+      "notes": [
+        "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+        "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lanark-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lanark-county-speed-management-request"
+      ],
+      "sourceIds": [
+        "lanark-roads",
+        "lanark-speed-form"
+      ],
+      "notes": [
+        "The form requires JavaScript; dynamic behavior, anti-spam acceptance and any further server validation were not tested.",
+        "This speed-management route does not establish every unsafe-intersection or sign-installation procedure. No receipt, response deadline or approved intervention is claimed."
+      ]
+    }
+  ],
+  "gaps": [],
+  "sources": [
+    {
+      "id": "middlesex-roads",
+      "authorityId": "middlesex-county",
+      "url": "https://www.middlesex.ca/departments/roads",
+      "title": "Roads | Middlesex County",
+      "retrievedAt": "2026-11-14T15:48:17.254594+00:00",
+      "verifiedAt": "2026-11-14T15:48:17.254594+00:00",
+      "contentHash": "0f694dda12f3a0ac5600817e13649dc8e5987c2d8e1ca39b40e1696b04218526",
+      "sourceVersion": "28e9a5d828a32c62",
+      "artifactIds": [
+        "middlesex-roads-28e9a5d828a32c62"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "middlesex-faqs",
+      "authorityId": "middlesex-county",
+      "url": "https://www.middlesex.ca/departments/roads/faqs",
+      "title": "FAQs | Middlesex County",
+      "retrievedAt": "2026-11-14T15:50:41.300641+00:00",
+      "verifiedAt": "2026-11-14T15:50:41.300641+00:00",
+      "contentHash": "89be414241e4c478a53ead11935b571c54d19b05b8a1d4790ef965ac4c737051",
+      "sourceVersion": "a629146100eb91e6",
+      "artifactIds": [
+        "middlesex-faqs-a629146100eb91e6"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "middlesex-request-form",
+      "authorityId": "middlesex-county",
+      "url": "https://www.middlesex.ca/request-service",
+      "title": "Submit a Service Request | Middlesex County",
+      "retrievedAt": "2026-11-14T15:58:14.044271+00:00",
+      "verifiedAt": "2026-11-14T15:58:14.044271+00:00",
+      "contentHash": "b3443dcdad2a1d3627deaeca8cb5c5c579a22398c91ada7678b8bd8fd4bccb90",
+      "sourceVersion": "f14c6b052ac732ca",
+      "artifactIds": [
+        "middlesex-request-form-f14c6b052ac732ca"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "leeds-roads",
+      "authorityId": "leeds-grenville-counties",
+      "url": "https://www.leedsgrenville.com/roads-public-works/roads-and-bridges/",
+      "title": "Roads and Bridges | United Counties of Leeds and Grenville",
+      "retrievedAt": "2026-11-14T15:48:18.543115+00:00",
+      "verifiedAt": "2026-11-14T15:48:18.543115+00:00",
+      "contentHash": "3bb8a829ab9e0a336d8f850fe72edbc2caf767e5a36500d1e869fb89877f8f0f",
+      "sourceVersion": "0c78ede9cf1f1f11",
+      "artifactIds": [
+        "leeds-roads-0c78ede9cf1f1f11"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "leeds-concern-portal",
+      "authorityId": "leeds-grenville-counties",
+      "url": "https://citywideportal.com/?client=United%20Counties%20of%20Leeds%20and%20Grenville",
+      "title": "Citywide Portal",
+      "retrievedAt": "2026-11-14T15:58:14.044669+00:00",
+      "verifiedAt": "2026-11-14T15:58:14.044669+00:00",
+      "contentHash": "2b4dc816d7229ca464840505a7491c136217be7d6c92b2f3a4202107cef41404",
+      "sourceVersion": "379329f433a08d42",
+      "artifactIds": [
+        "leeds-concern-portal-379329f433a08d42"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "bruce-roads",
+      "authorityId": "bruce-county",
+      "url": "https://www.brucecounty.on.ca/services/transportation-and-environmental-services/road-construction-and-maintenance",
+      "title": "Road Construction and Maintenance | Bruce County",
+      "retrievedAt": "2026-11-14T15:48:18.545011+00:00",
+      "verifiedAt": "2026-11-14T15:48:18.545011+00:00",
+      "contentHash": "c8fa9642395df36ce04b93624a7bdc3510e61bb9211d4bdead1b1da3fc0df9ef",
+      "sourceVersion": "f20687f9b8a73e00",
+      "artifactIds": [
+        "bruce-roads-f20687f9b8a73e00"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "bruce-concerns",
+      "authorityId": "bruce-county",
+      "url": "https://www.brucecounty.on.ca/tell-us-your-concerns",
+      "title": "Inquiries, Complaints and Concerns | Bruce County",
+      "retrievedAt": "2026-11-14T15:50:41.300881+00:00",
+      "verifiedAt": "2026-11-14T15:50:41.300881+00:00",
+      "contentHash": "e89a02626c717e97f48bd60cb5d7e5d55739d156e6f3a23b5cc0624e8667e100",
+      "sourceVersion": "f784e96ff41f5462",
+      "artifactIds": [
+        "bruce-concerns-f784e96ff41f5462"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "sdg-roads",
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "url": "https://www.sdgcounties.ca/services/transportation",
+      "title": "Transportation Services | SDG Counties",
+      "retrievedAt": "2026-11-14T15:48:19.369894+00:00",
+      "verifiedAt": "2026-11-14T15:48:19.369894+00:00",
+      "contentHash": "cbb7d8fd3c7792e0c316d66698f6ddbc860e6f4dc78afff01f6f06c6ce5344ec",
+      "sourceVersion": "424b31d91c6407ea",
+      "artifactIds": [
+        "sdg-roads-424b31d91c6407ea"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "sdg-concerns",
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "url": "https://www.sdgcounties.ca/government-bylaws/our-council-committees/report-concern",
+      "title": "Report a Concern | SDG Counties",
+      "retrievedAt": "2026-11-14T15:50:41.301000+00:00",
+      "verifiedAt": "2026-11-14T15:50:41.301000+00:00",
+      "contentHash": "b5f035980f2fe8adbcde5379aba888a6c2c66532cc18db9758dc456b6d79923b",
+      "sourceVersion": "d783e97976ec43ae",
+      "artifactIds": [
+        "sdg-concerns-d783e97976ec43ae"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "sdg-contacts",
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "url": "https://www.sdgcounties.ca/contact-us",
+      "title": "Contact Us | SDG Counties",
+      "retrievedAt": "2026-11-14T15:58:14.044798+00:00",
+      "verifiedAt": "2026-11-14T15:58:14.044798+00:00",
+      "contentHash": "be262c0e4d4b3dec16ee154ad74e75004c9014031a873b451aff43ce7ff37483",
+      "sourceVersion": "bb7fc93b06ebe37a",
+      "artifactIds": [
+        "sdg-contacts-bb7fc93b06ebe37a"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "lanark-roads",
+      "authorityId": "lanark-county",
+      "url": "https://www.lanarkcounty.ca/government/roads-trails-transit/",
+      "title": "Roads, Trails and Transit - Lanark",
+      "retrievedAt": "2026-11-14T15:48:19.441364+00:00",
+      "verifiedAt": "2026-11-14T15:48:19.441364+00:00",
+      "contentHash": "4d51948cbadfc2301fd48847b505524450ea2259f3ce81382cfb42b29c43f9a1",
+      "sourceVersion": "5563cb8a2c9fd46f",
+      "artifactIds": [
+        "lanark-roads-5563cb8a2c9fd46f"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "lanark-speed-form",
+      "authorityId": "lanark-county",
+      "url": "https://www.lanarkcounty.ca/request-for-speed-management-measures/",
+      "title": "Request for Speed Management Measures - Lanark",
+      "retrievedAt": "2026-11-14T15:50:41.300943+00:00",
+      "verifiedAt": "2026-11-14T15:50:41.300943+00:00",
+      "contentHash": "a6395be7f6feb63558e5cc848f5af85aafeaa2e38c8739fef82677c84c515445",
+      "sourceVersion": "fa0f0bc438b92e89",
+      "artifactIds": [
+        "lanark-speed-form-fa0f0bc438b92e89"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    }
+  ]
+}

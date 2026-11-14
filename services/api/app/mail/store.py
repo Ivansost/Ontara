@@ -56,6 +56,62 @@ class MongoMailStore:
     def for_case_purpose(self, case_id: str, purpose: str) -> dict[str, Any] | None:
         return self.outbox.find_one({"kind": "email", "caseId": case_id, "purpose": purpose}, sort=[("createdAt", -1)])
 
+    def control_case(self, case_id: str) -> dict[str, Any] | None:
+        """Read only the fields needed for private presenter controls, never owner tokens."""
+        return self.db.cases.find_one({"id": case_id}, {"_id": 0, "id": 1, "runId": 1, "route": 1,
+            "location": 1, "stage": 1, "version": 1, "approvedVersion": 1, "currentOperationId": 1,
+            "receipt": 1, "cancelledAt": 1, "demoControls": 1})
+
+    def authority_followup_held(self, case_id: str) -> bool:
+        case = self.control_case(case_id)
+        return bool(case and (case.get("demoControls") or {}).get("holdAuthorityFollowUp") is True)
+
+    def set_control_hold(self, case: dict[str, Any], held: bool, confirmation: dict[str, Any] | None = None) -> bool:
+        """CAS one private case subtree; report facts/version/authorization remain untouched."""
+        now = utcnow()
+        event = {"id": "authority-followup:" + ("held:" if held else "released:") + case["id"],
+                 "held": held, "at": now}
+        query: dict[str, Any] = {"id": case["id"], "cancelledAt": None}
+        values: dict[str, Any] = {"demoControls.holdAuthorityFollowUp": held}
+        if held:
+            query.update({"version": case["version"], "stage": "draft", "approvedVersion": None,
+                          "currentOperationId": None, "receipt": None,
+                          "demoControls.holdAuthorityFollowUp": {"$ne": True}})
+            values["demoControls.authorityFollowUpHeldAt"] = now
+        else:
+            query.update({"runId": case["runId"], "demoControls.holdAuthorityFollowUp": True})
+            values.update({"demoControls.authorityFollowUpReleasedAt": now,
+                           "demoControls.authorityFollowUpPortalConfirmation": confirmation})
+            event["portalConfirmation"] = confirmation
+        result = self.db.cases.update_one(query, {"$set": values,
+            "$push": {"demoControls.authorityFollowUpAudit": {"$each": [event], "$slice": -2}}})
+        if result.modified_count:
+            # The embedded audit was committed atomically with the flag. This separate
+            # event is an idempotent operational index, not the authoritative control.
+            self.event(event["id"], {"kind": "mail_presenter_control", "caseId": case["id"],
+                                     "held": held, "portalConfirmation": confirmation})
+        return bool(result.modified_count)
+
+    def hold_candidates(self, case_id: str | None = None) -> list[dict[str, Any]]:
+        query: dict[str, Any] = {"kind": "email", "purpose": "AUTHORITY_QUESTION",
+                                 "state": {"$in": ["QUEUED", "HELD", "OUTCOME_UNKNOWN"]}}
+        if case_id:
+            query["caseId"] = case_id
+        return list(self.outbox.find(query))
+
+    def transition_hold(self, item: dict[str, Any], held: bool) -> bool:
+        """Conditional state change never overrides an active sending lease."""
+        now = utcnow()
+        target = "HELD" if held else ("OUTCOME_UNKNOWN" if item.get("observedDuringHold") else "QUEUED")
+        if item["state"] == target:
+            return False
+        return bool(self.outbox.update_one(
+            {"_id": item["_id"], "state": item["state"], "purpose": "AUTHORITY_QUESTION",
+             "$or": [{"leaseUntil": {"$exists": False}}, {"leaseUntil": {"$lte": now}}]},
+            {"$set": {"state": target, "holdReason": "presenter" if held else None,
+                      "nextAttemptAt": now, "updatedAt": now}},
+        ).modified_count)
+
     def recover_stale_sends(self, now: datetime) -> int:
         return self.outbox.update_many(
             {"kind": "email", "state": "SENDING", "leaseUntil": {"$lte": now}},
@@ -168,6 +224,7 @@ class MongoMailStore:
             query["caseId"] = case_id
         records = list(self.outbox.find(query, {"_id": 0, "id": 1, "caseId": 1, "operationId": 1,
                         "purpose": 1, "state": 1, "deliveryState": 1, "providerMessageId": 1,
-                        "providerThreadId": 1, "receivingEvidence": 1, "lastError": 1, "updatedAt": 1}).limit(100))
+                        "providerThreadId": 1, "receivingEvidence": 1, "lastError": 1, "updatedAt": 1,
+                        "holdReason": 1, "attemptCount": 1}).limit(100))
         return {"provider": "agentmail", "controlledDemo": True, "outbox": records,
                 "messagesStored": self.messages.count_documents({"caseId": case_id} if case_id else {})}

@@ -1,0 +1,2326 @@
+{
+  "schemaVersion": "1.0",
+  "batchId": "roads-batch-03-20261114",
+  "municipalities": [
+    {
+      "id": "grey-county",
+      "name": "Grey, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "chatsworth-township",
+        "georgian-bluffs-township",
+        "grey-highlands-municipality",
+        "hanover-town",
+        "meaford-municipality",
+        "owen-sound-city",
+        "southgate-township",
+        "the-blue-mountains-town",
+        "west-grey-municipality"
+      ],
+      "officialUrl": "http://www.grey.ca/",
+      "population": 100905,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 11,
+      "sourceIds": [
+        "grey-roads",
+        "grey-conditions",
+        "grey-issue-form"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "chatsworth-township",
+      "name": "Chatsworth, Township of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "http://www.chatsworth.ca/",
+      "population": 7080,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "georgian-bluffs-township",
+      "name": "Georgian Bluffs, Township of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "https://www.georgianbluffs.ca/en/index.aspx",
+      "population": 11100,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "grey-highlands-municipality",
+      "name": "Grey Highlands, Municipality of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "http://www.greyhighlands.ca/",
+      "population": 10424,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "hanover-town",
+      "name": "Hanover, Town of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "http://www.hanover.ca/",
+      "population": 7967,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "meaford-municipality",
+      "name": "Meaford, Municipality of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "http://meaford.ca/",
+      "population": 11485,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "owen-sound-city",
+      "name": "Owen Sound, City of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "http://www.owensound.ca/",
+      "population": 21612,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "southgate-township",
+      "name": "Southgate, Township of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "https://www.southgate.ca/en/index.aspx",
+      "population": 8716,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "the-blue-mountains-town",
+      "name": "The Blue Mountains, Town of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "http://www.thebluemountains.ca/",
+      "population": 9390,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "west-grey-municipality",
+      "name": "West Grey, Municipality of",
+      "type": "lower-tier",
+      "parentId": "grey-county",
+      "officialUrl": "http://www.westgrey.com/",
+      "population": 13131,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "wellington-county",
+      "name": "Wellington, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "centre-wellington-township",
+        "erin-town",
+        "guelph-eramosa-township",
+        "mapleton-township",
+        "minto-town",
+        "puslinch-township",
+        "wellington-north-township"
+      ],
+      "officialUrl": "http://www.wellington.ca/",
+      "population": 97286,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 12,
+      "sourceIds": [
+        "wellington-concerns",
+        "wellington-safety"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "centre-wellington-township",
+      "name": "Centre Wellington, Township of",
+      "type": "lower-tier",
+      "parentId": "wellington-county",
+      "officialUrl": "https://www.centrewellington.ca/en/index.aspx",
+      "population": 31093,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "erin-town",
+      "name": "Erin, Town of",
+      "type": "lower-tier",
+      "parentId": "wellington-county",
+      "officialUrl": "http://www.erin.ca/",
+      "population": 11981,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "guelph-eramosa-township",
+      "name": "Guelph/Eramosa, Township of",
+      "type": "lower-tier",
+      "parentId": "wellington-county",
+      "officialUrl": "http://www.get.on.ca/",
+      "population": 13904,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "mapleton-township",
+      "name": "Mapleton, Township of",
+      "type": "lower-tier",
+      "parentId": "wellington-county",
+      "officialUrl": "http://www.mapleton.ca/",
+      "population": 10839,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "minto-town",
+      "name": "Minto, Town of",
+      "type": "lower-tier",
+      "parentId": "wellington-county",
+      "officialUrl": "http://www.town.minto.on.ca/",
+      "population": 9094,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "puslinch-township",
+      "name": "Puslinch, Township of",
+      "type": "lower-tier",
+      "parentId": "wellington-county",
+      "officialUrl": "https://puslinch.ca/",
+      "population": 7944,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "wellington-north-township",
+      "name": "Wellington North, Township of",
+      "type": "lower-tier",
+      "parentId": "wellington-county",
+      "officialUrl": "http://www.wellington-north.com/",
+      "population": 12431,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "prescott-russell-counties",
+      "name": "Prescott and Russell, United Counties of",
+      "type": "upper-tier",
+      "memberIds": [
+        "alfred-and-plantagenet-township",
+        "casselman-municipality",
+        "champlain-township",
+        "clarence-rockland-city",
+        "east-hawkesbury-township",
+        "hawkesbury-town",
+        "russell-township",
+        "the-nation-municipality-municipality"
+      ],
+      "officialUrl": "http://www.prescott-russell.on.ca/",
+      "population": 95639,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 13,
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "alfred-and-plantagenet-township",
+      "name": "Alfred and Plantagenet, Township of",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "https://www.alfred-plantagenet.com/en/index.aspx",
+      "population": 9949,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "casselman-municipality",
+      "name": "Casselman, Municipality of",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "http://www.en.casselman.ca/",
+      "population": 3960,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "champlain-township",
+      "name": "Champlain, Township of",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "http://www.champlain.ca/en/index.aspx",
+      "population": 8665,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "clarence-rockland-city",
+      "name": "Clarence-Rockland, City of",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "http://www.clarence-rockland.com/",
+      "population": 26505,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "east-hawkesbury-township",
+      "name": "East Hawkesbury, Township of",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "http://www.easthawkesbury.ca/",
+      "population": 3418,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "hawkesbury-town",
+      "name": "Hawkesbury, Town of",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "http://www.hawkesbury.ca/en/",
+      "population": 10194,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "russell-township",
+      "name": "Russell, Township of",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "http://www.russell.ca/",
+      "population": 19598,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "the-nation-municipality-municipality",
+      "name": "The Nation Municipality",
+      "type": "lower-tier",
+      "parentId": "prescott-russell-counties",
+      "officialUrl": "http://www.nationmun.ca/",
+      "population": 13350,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "renfrew-county",
+      "name": "Renfrew, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "admaston-bromley-township",
+        "arnprior-town",
+        "bonnechere-valley-township",
+        "brudenell-lyndoch-and-raglan-township",
+        "deep-river-town",
+        "greater-madawaska-township",
+        "head-clara-and-maria-township",
+        "horton-township",
+        "killaloe-hagarty-and-richards-township",
+        "laurentian-hills-town",
+        "laurentian-valley-township",
+        "madawaska-valley-township",
+        "mcnab-braeside-township",
+        "north-algona-wilberforce-township",
+        "petawawa-town",
+        "renfrew-town",
+        "whitewater-region-township"
+      ],
+      "officialUrl": "http://www.countyofrenfrew.on.ca/",
+      "population": 91511,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 14,
+      "sourceIds": [
+        "renfrew-roads",
+        "renfrew-concern-form"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "admaston-bromley-township",
+      "name": "Admaston/Bromley, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.admastonbromley.com/",
+      "population": 2995,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "arnprior-town",
+      "name": "Arnprior, Town of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.arnprior.ca/",
+      "population": 9629,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "bonnechere-valley-township",
+      "name": "Bonnechere Valley, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.bonnecherevalleytwp.com/",
+      "population": 3898,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "brudenell-lyndoch-and-raglan-township",
+      "name": "Brudenell, Lyndoch and Raglan, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.blrtownship.ca/",
+      "population": 1552,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "deep-river-town",
+      "name": "Deep River, Town of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.deepriver.ca/",
+      "population": 4175,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "greater-madawaska-township",
+      "name": "Greater Madawaska, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.greatermadawaska.com/",
+      "population": 2864,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "head-clara-and-maria-township",
+      "name": "Head, Clara and Maria, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://townshipsofheadclaramaria.ca/",
+      "population": 267,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "horton-township",
+      "name": "Horton, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.hortontownship.ca/",
+      "population": 3182,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "killaloe-hagarty-and-richards-township",
+      "name": "Killaloe, Hagarty and Richards, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.killaloe-hagarty-richards.ca/",
+      "population": 2410,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "laurentian-hills-town",
+      "name": "Laurentian Hills, Town of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.laurentianhills.ca/",
+      "population": 2885,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "laurentian-valley-township",
+      "name": "Laurentian Valley, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.laurentianvalleytwsp.on.ca/",
+      "population": 9450,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "madawaska-valley-township",
+      "name": "Madawaska Valley, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.madawaskavalley.ca/",
+      "population": 3927,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "mcnab-braeside-township",
+      "name": "McNab/Braeside, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://mcnabbraeside.com/",
+      "population": 7591,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "north-algona-wilberforce-township",
+      "name": "North Algona Wilberforce, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.nalgonawil.com/",
+      "population": 3111,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "petawawa-town",
+      "name": "Petawawa, Town of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.petawawa.ca/",
+      "population": 18160,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "renfrew-town",
+      "name": "Renfrew, Town of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.renfrewontario.com/",
+      "population": 8190,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "whitewater-region-township",
+      "name": "Whitewater Region, Township of",
+      "type": "lower-tier",
+      "parentId": "renfrew-county",
+      "officialUrl": "http://www.whitewaterregion.ca/",
+      "population": 7225,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "northumberland-county",
+      "name": "Northumberland, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "alnwick-haldimand-township",
+        "brighton-municipality",
+        "cobourg-town",
+        "cramahe-township",
+        "hamilton-township",
+        "port-hope-municipality",
+        "trent-hills-municipality"
+      ],
+      "officialUrl": "http://northumberland.ca/",
+      "population": 88823,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 15,
+      "sourceIds": [
+        "northumberland-roads",
+        "northumberland-report-form"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "alnwick-haldimand-township",
+      "name": "Alnwick/Haldimand, Township of",
+      "type": "lower-tier",
+      "parentId": "northumberland-county",
+      "officialUrl": "http://www.alnwickhaldimand.ca/",
+      "population": 7473,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "brighton-municipality",
+      "name": "Brighton, Municipality of",
+      "type": "lower-tier",
+      "parentId": "northumberland-county",
+      "officialUrl": "http://www.brighton.ca/",
+      "population": 12108,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "cobourg-town",
+      "name": "Cobourg, Town of",
+      "type": "lower-tier",
+      "parentId": "northumberland-county",
+      "officialUrl": "http://www.cobourg.ca/",
+      "population": 20519,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "cramahe-township",
+      "name": "Cramahe, Township of",
+      "type": "lower-tier",
+      "parentId": "northumberland-county",
+      "officialUrl": "http://www.visitcramahe.ca/",
+      "population": 6509,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "hamilton-township",
+      "name": "Hamilton, Township of",
+      "type": "lower-tier",
+      "parentId": "northumberland-county",
+      "officialUrl": "http://www.hamiltontownship.ca/",
+      "population": 11059,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "port-hope-municipality",
+      "name": "Port Hope, Municipality of",
+      "type": "lower-tier",
+      "parentId": "northumberland-county",
+      "officialUrl": "http://www.porthope.ca/",
+      "population": 17294,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "trent-hills-municipality",
+      "name": "Trent Hills, Municipality of",
+      "type": "lower-tier",
+      "parentId": "northumberland-county",
+      "officialUrl": "http://www.trenthills.ca/",
+      "population": 13861,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    }
+  ],
+  "procedures": [
+    {
+      "title": "Grey County: road-issue form, urgent phone and ownership handoffs",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "grey-roads",
+        "grey-conditions",
+        "grey-issue-form"
+      ],
+      "retrievalText": "Grey County’s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified.",
+      "responsibilityRules": [
+        "Verify the road and asset using Grey GIS; the County name or road appearance alone is insufficient.",
+        "Provincial, local and private roads have different owners; the reporting phone is not the road-conditions hotline."
+      ],
+      "steps": [
+        "Use the official map and ownership guidance to identify the asset.",
+        "Call 519-376-7337 for urgent County-road issues; otherwise use the linked issue form or published departmental question contact.",
+        "For a non-County road follow the official provincial/local/private handoff."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-519-376-7337 (urgent County-road issues)",
+      "contactEmail": "roads@grey.ca",
+      "officialFormUrl": "https://form.foreaction.cloud/submit/grey-county",
+      "id": "grey-county-county-road-issues",
+      "authorityId": "grey-county",
+      "categoryId": "roads",
+      "sourceVersion": "a28bf0a2ef4b21d2",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:54:27.591445+00:00",
+      "artifactIds": [
+        "grey-roads-9963fc96ac6463d0",
+        "grey-conditions-5abd4bb715139964",
+        "grey-issue-form-b427aaae87ce4e2e"
+      ],
+      "formSnapshotIds": [
+        "grey-road-form-shell-20261114"
+      ]
+    },
+    {
+      "title": "Wellington County: County-road maintenance form with observed required fields",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "retrievalText": "Wellington’s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific.",
+      "responsibilityRules": [
+        "Only County-maintained roadways are considered; verify the map and asset.",
+        "The broad maintenance form does not establish County ownership of every curb or sidewalk."
+      ],
+      "steps": [
+        "Verify the County-maintained road.",
+        "Complete the observed contact, type, road/location, nearest address/crossroad and description fields using actual facts.",
+        "Review and approve before any future supported submission."
+      ],
+      "requiredFacts": [
+        "Full Name",
+        "Phone Number",
+        "Email Address",
+        "Issue type",
+        "Road/Location of Issue",
+        "Nearest address (fire number) or crossroad",
+        "Description of Issue"
+      ],
+      "followUpInstructions": [
+        "Reviewed during business hours; the page states no direct response unless clarification is needed."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff"
+      },
+      "gaps": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "officialFormUrl": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-road-concerns",
+      "id": "wellington-county-county-road-maintenance-form",
+      "authorityId": "wellington-county",
+      "categoryId": "roads",
+      "sourceVersion": "dfd92905b2ed9d2c",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:50:41.300686+00:00",
+      "artifactIds": [
+        "wellington-concerns-16b2e8613d62632c"
+      ],
+      "formSnapshotIds": [
+        "wellington-road-maintenance-form-20261114"
+      ]
+    },
+    {
+      "title": "Wellington County: speed-related safety concern, separate from individual enforcement",
+      "issueIds": [
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "wellington-safety"
+      ],
+      "retrievalText": "Wellington County’s Report Speed Concerns form is for speed concerns on County roads. It may not receive a direct response and does not direct OPP enforcement or action. Individual vehicle issues belong to OPP. Local township/town-road speed concerns go to that municipality; provincial-highway speed concerns go to OPP 1-888-310-1122. The form states that if a road is not in its dropdown it is not County-maintained. Observed required fields are name, email, municipality, road, from street, to street and more details. This covers speed-related safety investigations only; another unsafe-intersection request needs responsibility/procedure confirmation. Reporting a concern does not authorize a new stop sign or guarantee an intervention.",
+      "responsibilityRules": [
+        "Limit to speed concerns on a County-maintained road listed in the form.",
+        "Individual vehicle enforcement is OPP responsibility; the form does not direct police action."
+      ],
+      "steps": [
+        "Check the County-road dropdown/map.",
+        "Use the required contact, municipality, road, from/to street and details fields.",
+        "Use the separate published local/provincial handoff where applicable."
+      ],
+      "requiredFacts": [
+        "Full Name",
+        "Email Address",
+        "Muncipality",
+        "County road of concern",
+        "From Street",
+        "To Street",
+        "More Details"
+      ],
+      "followUpInstructions": [
+        "The official page warns submissions may not receive a direct response."
+      ],
+      "coverage": {
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "This speed-concern route does not establish the procedure for every unsafe intersection or new traffic-control request.",
+        "No response/repair target or acknowledgement lookup is published."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "officialFormUrl": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-speed-concerns",
+      "id": "wellington-county-county-speed-concern-form",
+      "authorityId": "wellington-county",
+      "categoryId": "roads",
+      "sourceVersion": "56c686f8cae9c48c",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:17.254320+00:00",
+      "artifactIds": [
+        "wellington-safety-85a89aed62b8d25f"
+      ],
+      "formSnapshotIds": [
+        "wellington-speed-form-20261114"
+      ]
+    },
+    {
+      "title": "Prescott and Russell: Public Works road-maintenance reporting contact",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "retrievalText": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page’s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page.",
+      "responsibilityRules": [
+        "Use for the verified County road/asset; local/provincial/private responsibility is not established by a location label.",
+        "The local sidewalk/shoulder exception is expressly about snow removal and must not be generalized to structural defects."
+      ],
+      "steps": [
+        "Verify road and asset responsibility.",
+        "Use the published Road Maintenance phone or email to report an issue or confirm the required process.",
+        "Pause if the incident is a sidewalk, curb or unverified asset."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-613-675-4661; toll-free +1-800-667-6307",
+      "contactEmail": "TravauxPublics@prescott-russell.on.ca",
+      "id": "prescott-russell-counties-county-road-maintenance-handoff",
+      "authorityId": "prescott-russell-counties",
+      "categoryId": "roads",
+      "sourceVersion": "3eec6b3819201c12",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:17.254414+00:00",
+      "artifactIds": [
+        "prescott-roads-cbd7a1d476fcd5da"
+      ]
+    },
+    {
+      "title": "Renfrew County: official County-road concern form link, fields unavailable",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "retrievalText": "Renfrew County’s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number.",
+      "responsibilityRules": [
+        "Confirm exact County-road and asset responsibility before using the concern link.",
+        "The official Roads page supplies the link; the form itself could not be inspected."
+      ],
+      "steps": [
+        "Verify the road/asset.",
+        "Open the concern link from the official Roads page; obtain assistance if access is blocked.",
+        "Do not infer hidden fields or claim a submission/receipt from the blocked request."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-613-735-2081 (general County contact)",
+      "officialFormUrl": "https://forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern",
+      "id": "renfrew-county-county-road-concern-form-handoff",
+      "authorityId": "renfrew-county",
+      "categoryId": "roads",
+      "sourceVersion": "477f33c293aee594",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:17.254491+00:00",
+      "artifactIds": [
+        "renfrew-roads-2ca61a89872362b1"
+      ]
+    },
+    {
+      "title": "Northumberland County: Roads Hotline and linked problem form",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "northumberland-roads",
+        "northumberland-report-form"
+      ],
+      "retrievalText": "Northumberland County’s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made.",
+      "responsibilityRules": [
+        "Only County roads/bridges are within the published maintenance scope; municipal roads go to the local municipality.",
+        "Confirm every sidewalk, curb, private or provincial asset separately."
+      ],
+      "steps": [
+        "Identify the road and relevant asset.",
+        "Use the official Roads Hotline or linked Report a problem form for the appropriate County concern.",
+        "Use the published after-hours toll-free line when an after-hours County-road handoff is required."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-905-372-3329; +1-800-354-7050; after-hours +1-866-856-3251",
+      "officialFormUrl": "https://reportaproblem.paperform.co/",
+      "id": "northumberland-county-county-road-hotline-handoff",
+      "authorityId": "northumberland-county",
+      "categoryId": "roads",
+      "sourceVersion": "f622d4fa94a86575",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:54:27.591505+00:00",
+      "artifactIds": [
+        "northumberland-roads-ffe53b13b2376a5a",
+        "northumberland-report-form-f828c7a5d6504ee2"
+      ],
+      "formSnapshotIds": [
+        "northumberland-problem-form-shell-20261114"
+      ]
+    }
+  ],
+  "formSnapshots": [
+    {
+      "id": "grey-road-form-shell-20261114",
+      "fields": [],
+      "gaps": [
+        "JavaScript shell only; no incident questionnaire or acceptance test."
+      ],
+      "authorityId": "grey-county",
+      "procedureId": "grey-county-county-road-issues",
+      "url": "https://form.foreaction.cloud/submit/grey-county",
+      "observedAt": "2026-11-14T15:54:27.591445+00:00",
+      "sourceVersion": "b427aaae87ce4e2e",
+      "artifactIds": [
+        "grey-issue-form-b427aaae87ce4e2e"
+      ],
+      "sourceIds": [
+        "grey-issue-form"
+      ]
+    },
+    {
+      "id": "wellington-road-maintenance-form-20261114",
+      "fields": [
+        {
+          "id": "edit-full-name",
+          "label": "Full Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-phone-number",
+          "label": "Phone Number",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-email-address",
+          "label": "Email Address",
+          "type": "email",
+          "required": true
+        },
+        {
+          "id": "edit-select-the-type-of-road-issue-you-wish-to-report-select",
+          "label": "Select the type of road issue you wish to report",
+          "type": "select",
+          "required": true
+        },
+        {
+          "id": "edit-road-location-of-issue",
+          "label": "Road/Location of Issue",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-nearest-address-fire-number-or-crossroad-to-issue-location",
+          "label": "Nearest address (fire number) or crossroad to issue location",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-description-of-issue",
+          "label": "Description of Issue",
+          "type": "textarea",
+          "required": true
+        }
+      ],
+      "gaps": [
+        "Conditional Other details were not exercised. Hidden values redacted; no form submitted."
+      ],
+      "authorityId": "wellington-county",
+      "procedureId": "wellington-county-county-road-maintenance-form",
+      "url": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-road-concerns",
+      "observedAt": "2026-11-14T15:50:41.300686+00:00",
+      "sourceVersion": "16b2e8613d62632c",
+      "artifactIds": [
+        "wellington-concerns-16b2e8613d62632c"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ]
+    },
+    {
+      "id": "wellington-speed-form-20261114",
+      "fields": [
+        {
+          "id": "edit-full-name",
+          "label": "Full Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-email-address",
+          "label": "Email Address",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-muncipality",
+          "label": "Muncipality",
+          "type": "select",
+          "required": true
+        },
+        {
+          "id": "edit-please-select-the-road-of-concern-select",
+          "label": "Please select the road of concern",
+          "type": "select",
+          "required": true
+        },
+        {
+          "id": "edit-from-street",
+          "label": "From Street",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-to-street",
+          "label": "To Street",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "edit-more-details",
+          "label": "More Details",
+          "type": "textarea",
+          "required": true
+        }
+      ],
+      "gaps": [
+        "Dropdown labels preserve the source spelling. No form submitted."
+      ],
+      "authorityId": "wellington-county",
+      "procedureId": "wellington-county-county-speed-concern-form",
+      "url": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-speed-concerns",
+      "observedAt": "2026-11-14T15:48:17.254320+00:00",
+      "sourceVersion": "85a89aed62b8d25f",
+      "artifactIds": [
+        "wellington-safety-85a89aed62b8d25f"
+      ],
+      "sourceIds": [
+        "wellington-safety"
+      ]
+    },
+    {
+      "id": "northumberland-problem-form-shell-20261114",
+      "fields": [],
+      "gaps": [
+        "Fetched page title only; incident fields were not observable. No report submitted."
+      ],
+      "authorityId": "northumberland-county",
+      "procedureId": "northumberland-county-county-road-hotline-handoff",
+      "url": "https://reportaproblem.paperform.co/",
+      "observedAt": "2026-11-14T15:54:27.591505+00:00",
+      "sourceVersion": "f828c7a5d6504ee2",
+      "artifactIds": [
+        "northumberland-report-form-f828c7a5d6504ee2"
+      ],
+      "sourceIds": [
+        "northumberland-report-form"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "grey-roads",
+        "grey-conditions",
+        "grey-issue-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "wellington-concerns",
+        "wellington-safety"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-speed-concern-form"
+      ],
+      "sourceIds": [
+        "wellington-safety"
+      ],
+      "notes": [
+        "This speed-concern route does not establish the procedure for every unsafe intersection or new traffic-control request.",
+        "No response/repair target or acknowledgement lookup is published."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "renfrew-roads",
+        "renfrew-concern-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "northumberland-roads",
+        "northumberland-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    }
+  ],
+  "gaps": [],
+  "sources": [
+    {
+      "id": "grey-roads",
+      "authorityId": "grey-county",
+      "url": "https://www.grey.ca/roads",
+      "title": "County Roads | Grey County",
+      "retrievedAt": "2026-11-14T15:48:17.254159+00:00",
+      "verifiedAt": "2026-11-14T15:48:17.254159+00:00",
+      "contentHash": "60d0e1cd2293ff4986acd2e0f1f497cf79c628bfe157c232668255c3ca5feba6",
+      "sourceVersion": "9963fc96ac6463d0",
+      "artifactIds": [
+        "grey-roads-9963fc96ac6463d0"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "grey-conditions",
+      "authorityId": "grey-county",
+      "url": "https://www.grey.ca/resident-services/county-roads/road-conditions-closures-cameras",
+      "title": "Road Conditions, Closures, Cameras | Grey County",
+      "retrievedAt": "2026-11-14T15:54:27.591039+00:00",
+      "verifiedAt": "2026-11-14T15:54:27.591039+00:00",
+      "contentHash": "33c66d1c3018a0c0dc37efc246cdc6ba412de6cbb966fe5d28f6201fee720845",
+      "sourceVersion": "5abd4bb715139964",
+      "artifactIds": [
+        "grey-conditions-5abd4bb715139964"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "grey-issue-form",
+      "authorityId": "grey-county",
+      "url": "https://form.foreaction.cloud/submit/grey-county",
+      "title": "Submit Request",
+      "retrievedAt": "2026-11-14T15:54:27.591445+00:00",
+      "verifiedAt": "2026-11-14T15:54:27.591445+00:00",
+      "contentHash": "cffa014c614cc8f3ddce87ffc86981ed59daca11d284c46528ec711c53b57e38",
+      "sourceVersion": "b427aaae87ce4e2e",
+      "artifactIds": [
+        "grey-issue-form-b427aaae87ce4e2e"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "wellington-concerns",
+      "authorityId": "wellington-county",
+      "url": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-road-concerns",
+      "title": "Road Concerns | Wellington County",
+      "retrievedAt": "2026-11-14T15:50:41.300686+00:00",
+      "verifiedAt": "2026-11-14T15:50:41.300686+00:00",
+      "contentHash": "b71896a7b7ab3724461c8f19b391c5ec8d51d5c3e3797d169ee301d57ea56658",
+      "sourceVersion": "16b2e8613d62632c",
+      "artifactIds": [
+        "wellington-concerns-16b2e8613d62632c"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "wellington-safety",
+      "authorityId": "wellington-county",
+      "url": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-speed-concerns",
+      "title": "Report Speed Concerns | Wellington County",
+      "retrievedAt": "2026-11-14T15:48:17.254320+00:00",
+      "verifiedAt": "2026-11-14T15:48:17.254320+00:00",
+      "contentHash": "38ad5433aba9bfd637188c270d1e422686ecb79d16039009890a2462cf69def7",
+      "sourceVersion": "85a89aed62b8d25f",
+      "artifactIds": [
+        "wellington-safety-85a89aed62b8d25f"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "prescott-roads",
+      "authorityId": "prescott-russell-counties",
+      "url": "https://www.en.prescott-russell.on.ca/stay/public_works/road_maintenance",
+      "title": "Road Maintenance - United Counties of Prescott and Russell",
+      "retrievedAt": "2026-11-14T15:48:17.254414+00:00",
+      "verifiedAt": "2026-11-14T15:48:17.254414+00:00",
+      "contentHash": "2a2cd81ccc6aad76637a2df4c798faeddc5ab03cc25be8345083a463246267c9",
+      "sourceVersion": "cbd7a1d476fcd5da",
+      "artifactIds": [
+        "prescott-roads-cbd7a1d476fcd5da"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "renfrew-roads",
+      "authorityId": "renfrew-county",
+      "url": "https://www.countyofrenfrew.on.ca/living-here/roads/",
+      "title": "Roads | County of Renfrew",
+      "retrievedAt": "2026-11-14T15:48:17.254491+00:00",
+      "verifiedAt": "2026-11-14T15:48:17.254491+00:00",
+      "contentHash": "f12fcd8eaf88eb94212185026ab2399bfa68902261d61b7d0af17c175870664d",
+      "sourceVersion": "2ca61a89872362b1",
+      "artifactIds": [
+        "renfrew-roads-2ca61a89872362b1"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "renfrew-concern-form",
+      "authorityId": "renfrew-county",
+      "url": "https://forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern",
+      "title": "Renfrew published concern form: HTTP403 content unavailable",
+      "retrievedAt": "2026-11-14T15:56:41.664391+00:00",
+      "verifiedAt": null,
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceVersion": "4eacfe388dfc5c8b",
+      "artifactIds": [],
+      "gaps": [
+        "HTTP 403; source/form content was not obtainable. No successful snapshot is claimed."
+      ],
+      "verificationStatus": "unavailable"
+    },
+    {
+      "id": "northumberland-roads",
+      "authorityId": "northumberland-county",
+      "url": "https://northumberland.ca/services/roads-and-bridges/",
+      "title": "Roads and Bridges - Northumberland County",
+      "retrievedAt": "2026-11-14T15:48:17.254564+00:00",
+      "verifiedAt": "2026-11-14T15:48:17.254564+00:00",
+      "contentHash": "e101f13a8093a4a4111b52770f485168659dc1ccd1f7550865020826b5c34252",
+      "sourceVersion": "ffe53b13b2376a5a",
+      "artifactIds": [
+        "northumberland-roads-ffe53b13b2376a5a"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "northumberland-report-form",
+      "authorityId": "northumberland-county",
+      "url": "https://reportaproblem.paperform.co/",
+      "title": "Report a problem",
+      "retrievedAt": "2026-11-14T15:54:27.591505+00:00",
+      "verifiedAt": "2026-11-14T15:54:27.591505+00:00",
+      "contentHash": "0ae1845efa8f202ab9178bdb084d8dfe1b3e5ae70690c82400743b8f3a27cafe",
+      "sourceVersion": "f828c7a5d6504ee2",
+      "artifactIds": [
+        "northumberland-report-form-f828c7a5d6504ee2"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    }
+  ]
+}
