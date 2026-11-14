@@ -194,8 +194,9 @@ class MailService:
         identity = (case_id, operation_id, purpose, source_case_event_id) if source_case_event_id and purpose != "RESIDENT_NEEDS_ASSISTANCE" else (case_id, operation_id, purpose)
         outbox_id = "mail_" + stable_id(*identity)[:32]
         token = stable_id(outbox_id, "correlation")[:32]
-        subject = f"{subject} [Ontara DEMO {token}]" if purpose in SCRIPTED_PURPOSES else f"[Ontara DEMO {token}] {subject}"
-        text = text + f"\n\nControlled Ontara demonstration. No real municipality was contacted.\nCorrelation: {token}\n"
+        if purpose not in SCRIPTED_PURPOSES:
+            subject = f"[Ontara DEMO {token}] {subject}"
+            text = text + f"\n\nControlled Ontara demonstration. No real municipality was contacted.\nCorrelation: {token}\n"
         immutable = {"senderInboxId": sender, "recipients": recipients, "subject": subject, "text": text,
                      "caseId": case_id, "operationId": operation_id, "purpose": purpose,
                      "receiptId": receipt_id, "inReplyTo": in_reply_to}
@@ -233,17 +234,17 @@ class MailService:
                 if not preferences:
                     raise ValueError("The approved demo has no notification opt-in")
                 for purpose, subject, message in (
-                    ("RESIDENT_SCRIPTED_SUBMITTED", "[Demo] Your report has been submitted",
-                     "Simulated city update: your report is shown as submitted for this scripted demonstration. This email is not evidence of actual city acceptance."),
-                    ("RESIDENT_SCRIPTED_RESOLVED", "[Demo] Your issue has been resolved",
-                     "Simulated city update: your issue is shown as resolved for this scripted demonstration. No real city response or physical repair has been verified."),
+                    ("RESIDENT_SCRIPTED_SUBMITTED", "[Demo] Your report has been submitted - Ontara",
+                     "Your report has been submitted to the municipality.\n\nOntara will monitor for updates and keep you informed by email. If more information is needed, we’ll let you know.\n\nThank you for helping improve your community.\n\nThe Ontara team"),
+                    ("RESIDENT_SCRIPTED_RESOLVED", "[Demo] Your issue has been resolved - Ontara",
+                     "Good news — the municipality has resolved the issue you reported.\n\nThank you for helping improve your community.\n\nThe Ontara team"),
                 ):
                     due = self._scripted_due(operation, purpose)
                     if due is None:
                         break
                     self._enqueue(case_id=case["id"], operation=operation, purpose=purpose, personal=True,
                         sender=self.settings.ontara_inbox_id, recipients=[preferences["email"]], subject=subject,
-                        text=self._resident_text(case["id"], message), receipt_id=None, not_before=due)
+                        text=message, receipt_id=None, not_before=due)
                 second = self.store.outbox.find_one({"operationId": operation["id"], "purpose": "RESIDENT_SCRIPTED_RESOLVED", "state": "SENT"})
                 if second:
                     self.store.event(hook_id, {"kind": "mail_scripted_hook", "processingState": "PROCESSED", "caseId": case["id"], "operationId": operation["id"]})
