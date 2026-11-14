@@ -595,6 +595,7 @@ class CaseService:
         result["pendingQuestions"] = [deepcopy(FOLLOW_UP_QUESTIONS[q]) for q in case.get("pendingQuestionIds", [])]
         result.pop("pendingQuestionIds", None)
         result.pop("pendingCreateFault", None)
+        result.pop("demoControls", None)
         # Signed update URLs and receipt signatures are execution capabilities, not resident data.
         if result.get("receipt"):
             result["receipt"] = {k: v for k, v in result["receipt"].items() if k not in {"updateUrl", "receiptSignature"}}

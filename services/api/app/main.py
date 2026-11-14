@@ -6,7 +6,10 @@ import logging
 import re
 import secrets
 from contextlib import asynccontextmanager
+from datetime import datetime
 from typing import Any, Literal
+
+import httpx
 
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from fastapi.encoders import jsonable_encoder
@@ -20,12 +23,12 @@ from .catalogue import DEMO_LOCATIONS, get_catalogue, get_questions
 from .config import Settings
 from .models import (ApprovalRequest, ArtifactUpload, Cancellation, CaseCreate, CaseEventInput,
                      CasePatch, CaseView, CatalogueView, Contract, Coordinates, FollowUpAnswer,
-                     FollowUpInspectionRequest, FollowUpRequest, HeartbeatRequest, LeaseGuard, LeaseRequest,
+                     FollowUpInspectionRequest, FollowUpRequest, HeartbeatRequest, IncidentLocation, LeaseGuard, LeaseRequest,
                      OperationTransition, Questionnaire, ReceiptRecord, ResearchBatch, RouteDecision,
                      RoutePreview, TimelineView)
 from .research import ResearchImporter
 from .service import CaseService, DomainError
-from .storage import ArtifactStore, Store, document, redact
+from .storage import ArtifactStore, Store, document, now, redact
 
 LOGGER = logging.getLogger("ontara.api")
 COOKIE = "ontara_session"
@@ -35,6 +38,20 @@ SESSION_PATTERN = re.compile(r"^[A-Za-z0-9_-]{43}$")
 class FaultRequest(Contract):
     kind: Literal["kill_after_acceptance"] = "kill_after_acceptance"
     armed: bool = True
+
+
+class FollowUpHoldRequest(Contract):
+    held: bool
+
+
+class FollowUpHoldView(Contract):
+    case_id: str
+    held: bool
+    next_create_fault_armed: bool
+    held_at: datetime | None = None
+    released_at: datetime | None = None
+    portal_confirmation: dict[str, Any] | None = None
+    authority_outbox: dict[str, Any] | None = None
 
 
 class AbandonRequest(LeaseGuard):
@@ -292,6 +309,75 @@ def create_app(settings: Settings | None = None, store: Store | None = None) -> 
     @app.post("/internal/v1/cases/{case_id}/fault-next-create", dependencies=internal_auth)
     def fault_next_create(case_id: str, request: FaultRequest):
         return service().arm_next_create_fault(case_id, request.armed)
+
+    def controlled_roads_case(case_id: str) -> dict:
+        case = service().get_case_internal(case_id)
+        route = case.get("route") or {}
+        if route.get("demo") is not True or route.get("id") != "halton-roads-demo" or route.get("portalId") != "roads":
+            raise DomainError(409, "This presenter control is restricted to the supported synthetic Roads demo")
+        if case.get("cancelledAt"):
+            raise DomainError(409, "This case has been cancelled")
+        return case
+
+    def hold_service():
+        target = getattr(app.state, "mail_service", None)
+        if target is None or not callable(getattr(target, "set_authority_followup_hold", None)) or not callable(getattr(target, "get_authority_followup_hold", None)):
+            raise HTTPException(503, "Durable authority-mail controls are not ready")
+        return target
+
+    def hold_view(case_id: str) -> dict:
+        raw = app.state.db.cases.find_one({"id": case_id}, {"_id": 0, "pendingCreateFault": 1}) or {}
+        pending = raw.get("pendingCreateFault") or {}
+        try:
+            result = hold_service().get_authority_followup_hold(case_id)
+        except ValueError as exc:
+            raise DomainError(409, "Authority follow-up controls are unavailable in the current case state") from exc
+        return {"caseId": case_id, "held": result["held"], "heldAt": result.get("heldAt"), "releasedAt": result.get("releasedAt"),
+                "portalConfirmation": result.get("portalConfirmation"), "authorityOutbox": result.get("authorityOutbox"),
+                "nextCreateFaultArmed": pending.get("armed") is True and not pending.get("consumedAt")}
+
+    @app.get("/internal/v1/cases/{case_id}/follow-up-hold", dependencies=internal_auth, response_model=FollowUpHoldView)
+    def get_follow_up_hold(case_id: str):
+        controlled_roads_case(case_id)
+        return hold_view(case_id)
+
+    @app.post("/internal/v1/cases/{case_id}/follow-up-hold", dependencies=internal_auth, response_model=FollowUpHoldView)
+    def set_follow_up_hold(case_id: str, request: FollowUpHoldRequest):
+        case = controlled_roads_case(case_id)
+        target = hold_service()
+        confirmation = None
+        if request.held:
+            if case["stage"] != "draft" or case.get("approvedVersion") is not None or case.get("currentOperationId") or case.get("receipt") or app.state.db.operations.find_one({"caseId": case_id}):
+                raise DomainError(409, "Hold authority follow-up only on an unused unapproved Roads draft")
+            decision = service().route_preview(case["issueId"], IncidentLocation.model_validate(case["location"]), case["answers"])
+            if not decision["supported"] or (decision.get("route") or {}).get("id") != "halton-roads-demo":
+                raise DomainError(409, "The draft no longer has a supported synthetic Roads route")
+        else:
+            operation = app.state.db.operations.find_one({"caseId": case_id, "action": "create", "state": "receipt_verified",
+                "runId": case["runId"], "portalId": "roads", "route.id": "halton-roads-demo", "route.demo": True})
+            receipt = (operation or {}).get("receipt") or {}
+            if not operation or any(receipt.get(key) != value for key, value in {
+                "clientReference": operation["id"], "payloadDigest": operation["payloadDigest"], "runId": case["runId"],
+                "portalId": "roads", "action": "create",
+            }.items()):
+                raise DomainError(409, "A matching verified initial portal receipt is required before releasing authority follow-up")
+            source_url = f"{settings.portal_base_url}/v1/portals/roads/form"
+            try:
+                with httpx.Client(timeout=20, follow_redirects=False) as client:
+                    response = client.get(source_url, params={"runId": case["runId"], "action": "update"})
+                    response.raise_for_status()
+                    form = response.json()
+            except (httpx.HTTPError, ValueError) as exc:
+                raise HTTPException(503, "The receiving portal's current update form could not be verified") from exc
+            if not isinstance(form, dict) or form.get("portalId") != "roads" or form.get("action") != "update" or form.get("formVersion") != 2 or not isinstance(form.get("snapshotDigest"), str) or not re.fullmatch(r"[a-fA-F0-9]{64}", form["snapshotDigest"]):
+                raise DomainError(409, "The same-run Roads update form must be changed to version 2 before releasing authority follow-up")
+            confirmation = {"runId": case["runId"], "portalId": "roads", "action": "update", "formVersion": 2,
+                            "snapshotDigest": form["snapshotDigest"], "verifiedAt": now()}
+        try:
+            target.set_authority_followup_hold(case_id, request.held, portal_confirmation=confirmation)
+        except ValueError as exc:
+            raise DomainError(409, "Authority follow-up control could not be changed in the current case state") from exc
+        return hold_view(case_id)
 
     @app.post("/internal/v1/cases/{case_id}/events", dependencies=internal_auth)
     def event(case_id: str, request: CaseEventInput):
