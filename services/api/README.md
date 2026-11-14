@@ -68,6 +68,17 @@ owning browser session. See `scripts/mail/README.md` for notification and recipi
 
 ## Runtime, mail and retrieval integration
 
+The optional server flag `ONTARA_SCRIPTED_EMAIL_DEMO_ENABLED=true` admits only newly
+created synthetic Roads cases to a simple two-email presentation. Final opted-in create
+approval freezes the scripted operation: one simulated city-submission email is due
+after five seconds, then one simulated city-resolution email five seconds after the
+first confirmed `SENT` observation. Both are explicitly fictional city updates, independent
+of real receiving receipts, and neither changes the actual case stage or invents repair.
+Regular resident notifications are suppressed only for these presentation cases.
+Older drafts/operations and advanced held/fault cases are excluded. The safe public
+`scriptedEmailDemo` field supports disclosure; clients cannot choose admission. See
+`scripts/mail/README.md` and its GET-only `observe_scripted_demo.py` helper.
+
 Workers lease `/internal/v1/jobs/lease` and use the returned worker/token guard for
 heartbeats, transitions and receipts. A new lease fences expired workers. Persist
 `dispatch_started` before browser writes; reconcile it after a process exit. The

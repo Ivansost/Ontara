@@ -72,7 +72,7 @@ class ResidentNotifications(Contract):
 
 class NotificationProgress(Contract):
     id: str
-    purpose: Literal["RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE"]
+    purpose: Literal["RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE", "RESIDENT_SCRIPTED_SUBMITTED", "RESIDENT_SCRIPTED_RESOLVED"]
     state: Literal["QUEUED", "SENDING", "SENT", "OUTCOME_UNKNOWN", "NEEDS_ASSISTANCE", "CANCELLED"]
     delivery_state: Literal["UNVERIFIED", "RECEIVED"] = "UNVERIFIED"
     updated_at: datetime
@@ -397,6 +397,7 @@ class CaseView(Contract):
     notifications: ResidentNotifications | None = None
     notification_settings_locked: bool = False
     notification_progress: list[NotificationProgress] = Field(default_factory=list)
+    scripted_email_demo: bool = False
     stage: str
     route: dict[str, Any]
     pending_questions: list[Question] = Field(default_factory=list)

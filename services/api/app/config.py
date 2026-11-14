@@ -35,6 +35,7 @@ class Settings:
     portal_base_url: str = "http://localhost:8001"
     dispatch_url: str = ""
     max_artifact_bytes: int = 20 * 1024 * 1024
+    scripted_email_demo_enabled: bool = False
 
     @classmethod
     def load(cls, env_file: str | None = None) -> Settings:
@@ -52,4 +53,5 @@ class Settings:
             allowed_origins=tuple(x.strip() for x in value("ALLOWED_ORIGINS", "http://localhost:3000").split(",") if x.strip()),
             portal_base_url=value("DEMO_PORTAL_BASE_URL", "http://localhost:8001").rstrip("/"),
             dispatch_url=resolve_dispatch_url(value("ONTARA_AGENT_DISPATCH_URL"), value("ONTARA_EXECUTOR_BASE_URL")),
+            scripted_email_demo_enabled=value("ONTARA_SCRIPTED_EMAIL_DEMO_ENABLED", "false").lower() in {"true", "1", "yes"},
         )

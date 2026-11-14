@@ -1,5 +1,61 @@
 # Resident notifications and controlled AgentMail loop
 
+## Two-email scripted presentation mode
+
+Set server-only `ONTARA_SCRIPTED_EMAIL_DEMO_ENABLED=true` before creating a new
+synthetic Roads case. The API captures admission at case creation, even before an
+email address is entered. The final opted-in create approval captures the operation's
+scripted flag and `approvedAt`; an older draft/approval is never enrolled by changing
+the global flag. Private advanced hold/fault staging excludes this mode. The public
+`scriptedEmailDemo` boolean lets the UI disclose the selected presentation behavior.
+
+Exactly two resident purposes are used for an admitted presentation case:
+
+1. `RESIDENT_SCRIPTED_SUBMITTED`: due at approvedAt + 5 seconds. Subject starts
+   **[Demo] Your report has been submitted**.
+2. `RESIDENT_SCRIPTED_RESOLVED`: due 5 seconds after the first message's first
+   verified `SENT` observation. Subject starts **[Demo] Your issue has been resolved**.
+
+The opaque Ontara correlation marker follows each natural subject. Both bodies begin
+**Simulated city update** and explicitly explain that the city submission/resolution
+is scripted; no actual city acceptance, response or physical repair is established by
+these emails. They use the exact approved notification address, not report contact
+details. Actual case stages, receiving receipts, execution jobs and approved versions
+continue normally and are never changed by either timer. The regular filing, question,
+update and assistance emails are suppressed for these presentation cases; ordinary
+and advanced cases keep their existing behavior.
+
+The five-second times are durable lower bounds, with cloud/provider scheduling delay.
+A one-second timer consumer is independent of slow inbound inbox polling, and shares
+the existing outbox leases and budget. An unknown/failed first send cannot schedule the
+second message. A genuine sent/receiving reconciliation can establish `SENT`; its first
+timestamp is frozen so later observations cannot move an already queued second deadline.
+Cancellation or a changed/stale approval stops remaining sends. Restart/replay cannot
+produce another sequence. `SENT` still means provider acceptance/verified send evidence;
+`RECEIVED` still requires a real configured receiving-inbox observation.
+
+After one UI **Send report**, use the saved case/session manifest and observe that same
+case without approving again:
+
+```sh
+python3 scripts/mail/observe_scripted_demo.py --case-id CASE_ID \
+  --output /Users/ivan/.config/ontara/notification-qa/scripted-two-email-20261114.json \
+  --wait-seconds 60
+```
+
+This standard-library helper reads owner-only `cloud.env`, uses authenticated GETs
+only, and never calls a mail poll, send or approval endpoint. `--cloud-env` can select
+another owner-only config file. Its compact 0600 output contains approvedAt, each
+sentAt/send-evidence type, receiving-observation times, exact-two/recipient-match
+booleans and actual case stage/receipt presence. It omits addresses, message bodies,
+capability URLs and the raw receiving lookup tuple. Re-run with the same case ID to
+resume observation. A controlled resident inbox is required to prove `RECEIVED`;
+personal external inbox delivery is not invented from provider acceptance.
+
+Local mocked tests cover this mode. Hosted timing and actual delivery require the
+coordinator's separately authorised new-case run; earlier receipt-driven proofs do not
+qualify a scripted email sequence.
+
 The API owns one `MailService` with the same application Atlas database as `CaseService`.
 No mailbox credential is exposed to the browser or execution worker. The three roles
 are Ontara, simulated authority, and test resident, all on the controlled provider domain.

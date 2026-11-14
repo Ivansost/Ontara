@@ -148,6 +148,8 @@ class CaseService:
                 "reporter": request.reporter.model_dump(by_alias=True) if request.reporter else None,
                 "notifications": request.notifications.model_dump(by_alias=True) if request.notifications else None,
                 "notificationPolicyVersion": 1,
+                "scriptedEmailDemoAdmission": bool(self.settings.scripted_email_demo_enabled and route["route"].get("id") == "halton-roads-demo"
+                    and request.location.fixture_id == "halton-regional-road"),
                 "route": route["route"], "stage": "draft", "approvedVersion": None,
                 "currentOperationId": None, "pendingQuestionIds": [], "receipt": None,
                 "createdAt": stamp, "updatedAt": stamp, "cancelledAt": None, "runId": identifier("run")}
@@ -265,6 +267,10 @@ class CaseService:
             # from the payload delivered to the receiving portal.
             if case.get("notificationPolicyVersion") == 1:
                 operation["notificationPolicyVersion"] = 1
+            scripted = action == "create" and self._scripted_email_eligible(case)
+            if scripted:
+                operation["scriptedEmailDemo"] = {"enabled": True, "simulated": True, "approvedAt": stamp,
+                    "firstDelaySeconds": 5, "secondDelaySeconds": 5}
             self.db.operations.insert_one(operation, **kw)
             self.db.jobs.insert_one({"id": f"job_{operation_id}", "operationId": operation_id, "caseId": case_id,
                                      "kind": "execute_operation", "readOnly": False, "state": "queued", "attempt": 0, "fence": 0, "createdAt": stamp,
@@ -273,6 +279,8 @@ class CaseService:
                 "approvedVersion": case["version"], "currentOperationId": operation_id, "stage": "preparing_report",
                 "updatedAt": stamp, "pendingQuestionIds": [], "notificationSettingsLocked": True,
             }
+            if scripted:
+                case_updates["scriptedEmailDemoOperationId"] = operation_id
             if transfer_fault:
                 case_updates.update({"pendingCreateFault.armed": False, "pendingCreateFault.consumedAt": stamp,
                                      "pendingCreateFault.operationId": operation_id})
@@ -525,6 +533,8 @@ class CaseService:
             operation = self.db.operations.find_one({"id": operation_id}, **kw)
             if not operation:
                 raise DomainError(404, "Operation not found")
+            if (operation.get("scriptedEmailDemo") or {}).get("enabled") is True:
+                raise DomainError(409, "Stage an advanced fault on the unused draft before approving a scripted email demo")
             if operation["state"] != "prepared" or operation["action"] != "create" or operation["route"].get("demo") is not True:
                 raise DomainError(409, "A fault can only be armed for a prepared controlled-demo create operation")
             if (operation.get("faultPlan") or {}).get("consumedAt"):
@@ -633,6 +643,15 @@ class CaseService:
         payload["questionnaireVersion"] = case.get("questionnaireVersion")
         return payload
 
+    @staticmethod
+    def _scripted_email_eligible(case: dict) -> bool:
+        controls = case.get("demoControls") or {}
+        return bool(case.get("scriptedEmailDemoAdmission") is True and (case.get("notifications") or {}).get("consent") is True
+            and (case.get("route") or {}).get("id") == "halton-roads-demo" and (case.get("route") or {}).get("demo") is True
+            and (case.get("location") or {}).get("fixtureId") == "halton-regional-road"
+            and not controls.get("authorityFollowUpStaged") and not controls.get("holdAuthorityFollowUp")
+            and not (case.get("pendingCreateFault") or {}).get("armed"))
+
     def _save_version(self, case: dict, kw: dict) -> None:
         payload = self._payload(case)
         questionnaire = deepcopy(QUESTIONS[case["issueId"]])
@@ -640,6 +659,7 @@ class CaseService:
         self.db.case_versions.insert_one({"id": f"{case['id']}:{case['version']}", "caseId": case["id"], "version": case["version"],
                                           "payload": payload, "payloadDigest": digest_json(payload), "questionnaire": questionnaire,
                                           "notifications": deepcopy(case.get("notifications")),
+                                          "scriptedEmailDemoAdmission": case.get("scriptedEmailDemoAdmission") is True,
                                           "notificationPolicyVersion": case.get("notificationPolicyVersion"), "createdAt": now()}, **kw)
 
     def _view(self, case: dict) -> dict:
@@ -650,10 +670,13 @@ class CaseService:
         result.pop("pendingCreateFault", None)
         result.pop("demoControls", None)
         result.pop("notificationPolicyVersion", None)
+        result.pop("scriptedEmailDemoAdmission", None)
+        result.pop("scriptedEmailDemoOperationId", None)
         result["notificationSettingsLocked"] = bool(case.get("notificationSettingsLocked") or case.get("currentOperationId")
             or self.db.operations.find_one({"caseId": case["id"]}, {"_id": 1}))
+        result["scriptedEmailDemo"] = bool(case.get("scriptedEmailDemoOperationId")) if result["notificationSettingsLocked"] else self._scripted_email_eligible(case)
         result["notificationProgress"] = [document(item) for item in self.db.outbox.find(
-            {"kind": "email", "caseId": case["id"], "purpose": {"$in": ["RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE"]}},
+            {"kind": "email", "caseId": case["id"], "purpose": {"$in": ["RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE", "RESIDENT_SCRIPTED_SUBMITTED", "RESIDENT_SCRIPTED_RESOLVED"]}},
             {"_id": 0, "id": 1, "purpose": 1, "state": 1, "deliveryState": 1, "updatedAt": 1},
         ).sort("createdAt", 1).limit(100)]
         # Signed update URLs and receipt signatures are execution capabilities, not resident data.

@@ -19,7 +19,8 @@ from .store import MongoMailStore, stable_id, utcnow
 TOKEN = re.compile(r"\[Ontara DEMO ([a-f0-9]{32})\]")
 BAD_LABELS = {"spam", "trash", "blocked", "unauthenticated"}
 CONTROLLED_ROUTES = {"halton-region", "milton-town"}
-RESIDENT_PURPOSES = {"RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE"}
+SCRIPTED_PURPOSES = {"RESIDENT_SCRIPTED_SUBMITTED", "RESIDENT_SCRIPTED_RESOLVED"}
+RESIDENT_PURPOSES = {"RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE"} | SCRIPTED_PURPOSES
 
 
 def as_dict(value: Any) -> dict[str, Any]:
@@ -40,6 +41,7 @@ class MailService:
         self.worker_id = "mail-" + uuid4().hex
         self.stop_event = threading.Event()
         self.thread: threading.Thread | None = None
+        self.timer_thread: threading.Thread | None = None
 
     def _context(self, case_id: str, operation_id: str, *, action: str | None = None,
                  purpose: str | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
@@ -48,6 +50,8 @@ class MailService:
         allowed_states = {"receipt_verified", "needs_assistance"} if purpose == "RESIDENT_NEEDS_ASSISTANCE" else {"receipt_verified"}
         if purpose == "RESIDENT_INFORMATION_NEEDED":
             allowed_states = {"receipt_verified", "prepared", "needs_assistance"}
+        if purpose in SCRIPTED_PURPOSES:
+            allowed_states = {"prepared", "dispatch_started", "outcome_unknown", "reconciling", "receipt_verified", "needs_assistance"}
         if operation.get("caseId") != case_id or operation.get("state") not in allowed_states:
             raise ValueError("Mail requires this case's verified portal operation")
         if action and operation.get("action") != action:
@@ -59,10 +63,42 @@ class MailService:
             raise ValueError("Mail requires an explicitly labelled controlled demo route")
         if case.get("cancelledAt") or case.get("status") in {"cancelled", "stopped"}:
             raise ValueError("The resident cancelled this case")
+        if purpose in SCRIPTED_PURPOSES:
+            self._scripted_metadata(case, operation)
         if purpose == "RESIDENT_INFORMATION_NEEDED" and operation.get("state") != "receipt_verified":
             if operation.get("action") != "update" or not self._verified_case_receipt(case_id, case.get("receipt") or {}):
                 raise ValueError("Information-needed mail requires an acknowledged existing ticket")
         return case, operation
+
+    def _scripted_case(self, case_id: str) -> bool:
+        case = self.store.db.cases.find_one({"id": case_id}, {"scriptedEmailDemoOperationId": 1}) or {}
+        operation_id = case.get("scriptedEmailDemoOperationId")
+        return bool(operation_id and self.store.db.operations.find_one({"id": operation_id, "caseId": case_id, "scriptedEmailDemo.enabled": True}))
+
+    def _scripted_metadata(self, case: dict[str, Any], operation: dict[str, Any]) -> dict[str, Any]:
+        metadata = operation.get("scriptedEmailDemo") or {}
+        raw = self.store.db.cases.find_one({"id": case["id"], "scriptedEmailDemoAdmission": True,
+            "scriptedEmailDemoOperationId": operation["id"]})
+        version = as_dict(self.case_service.get_version_internal(case["id"], operation["caseVersion"]))
+        if (not raw or version.get("scriptedEmailDemoAdmission") is not True or metadata.get("enabled") is not True
+                or metadata.get("simulated") is not True or metadata.get("firstDelaySeconds") != 5 or metadata.get("secondDelaySeconds") != 5
+                or not isinstance(metadata.get("approvedAt"), datetime) or operation.get("action") != "create"
+                or operation.get("portalId") != "roads" or (operation.get("route") or {}).get("id") != "halton-roads-demo"
+                or (raw.get("location") or {}).get("fixtureId") != "halton-regional-road"
+                or case.get("approvedVersion") != operation["caseVersion"] or case.get("version") != operation["caseVersion"]
+                or operation.get("faultPlan") or self.store.authority_followup_staged(case["id"])):
+            raise ValueError("Scripted messages require this newly admitted, opted-in, unstaged approved demo operation")
+        return metadata
+
+    def _scripted_due(self, operation: dict[str, Any], purpose: str) -> datetime | None:
+        metadata = operation["scriptedEmailDemo"]
+        if purpose == "RESIDENT_SCRIPTED_SUBMITTED":
+            return metadata["approvedAt"] + timedelta(seconds=5)
+        first = self.store.outbox.find_one({"kind": "email", "operationId": operation["id"],
+            "purpose": "RESIDENT_SCRIPTED_SUBMITTED", "state": "SENT"})
+        if not first or not isinstance(first.get("sentAt"), datetime):
+            return None
+        return first["sentAt"] + timedelta(seconds=5)
 
     def _verified_case_receipt(self, case_id: str, receipt: dict[str, Any]) -> bool:
         return bool(receipt.get("receiptId") and receipt.get("ticketId") and self.store.db.operations.find_one({
@@ -89,6 +125,11 @@ class MailService:
             if not preferences:
                 raise ValueError("This approved report did not opt into email updates")
             self.settings.require_resident_participants(item["senderInboxId"], item["recipients"], preferences["email"])
+            if item["purpose"] in SCRIPTED_PURPOSES:
+                self._scripted_metadata(case, operation)
+                due = self._scripted_due(operation, item["purpose"])
+                if item.get("scriptedDemo") is not True or due is None or item.get("scriptedDueAt") != iso(due):
+                    raise ValueError("The scripted email has no matching durable approval/send timing evidence")
             if item["purpose"] in {"RESIDENT_INFORMATION_NEEDED", "RESIDENT_NEEDS_ASSISTANCE"}:
                 kind = "more_information_requested" if item["purpose"] == "RESIDENT_INFORMATION_NEEDED" else "assistance_needed"
                 event = self.store.db.case_events.find_one({"id": item.get("sourceCaseEventId"), "caseId": item["caseId"], "kind": kind, "visibility": "resident"})
@@ -136,12 +177,16 @@ class MailService:
     def _enqueue(self, *, case_id: str, operation: dict[str, Any], purpose: str,
                  sender: str, recipients: list[str], subject: str, text: str,
                  receipt_id: str | None, in_reply_to: str | None = None, held: bool = False,
-                 source_case_event_id: str | None = None, personal: bool = False) -> dict[str, Any]:
+                 source_case_event_id: str | None = None, personal: bool = False,
+                 not_before: datetime | None = None) -> dict[str, Any]:
         if not self.settings.enabled:
             return {"state": "DISABLED", "purpose": purpose}
         operation_id = operation.get("id", operation.get("_id"))
         case, current_operation = self._context(case_id, operation_id, purpose=purpose)
-        if purpose == "RESIDENT_INFORMATION_NEEDED":
+        if purpose in SCRIPTED_PURPOSES:
+            if receipt_id is not None or not_before is None or not_before != self._scripted_due(current_operation, purpose):
+                raise ValueError("Scripted emails use their timed demo intent, never a fabricated portal receipt")
+        elif purpose == "RESIDENT_INFORMATION_NEEDED":
             if receipt_id != (case.get("receipt") or {}).get("receiptId") or not self._verified_case_receipt(case_id, case.get("receipt") or {}):
                 raise ValueError("Information-needed mail requires the saved existing-ticket receipt")
         elif purpose != "RESIDENT_NEEDS_ASSISTANCE" and (not receipt_id or (operation.get("receipt") or {}).get("receiptId") != receipt_id):
@@ -149,7 +194,7 @@ class MailService:
         identity = (case_id, operation_id, purpose, source_case_event_id) if source_case_event_id and purpose != "RESIDENT_NEEDS_ASSISTANCE" else (case_id, operation_id, purpose)
         outbox_id = "mail_" + stable_id(*identity)[:32]
         token = stable_id(outbox_id, "correlation")[:32]
-        subject = f"[Ontara DEMO {token}] {subject}"
+        subject = f"{subject} [Ontara DEMO {token}]" if purpose in SCRIPTED_PURPOSES else f"[Ontara DEMO {token}] {subject}"
         text = text + f"\n\nControlled Ontara demonstration. No real municipality was contacted.\nCorrelation: {token}\n"
         immutable = {"senderInboxId": sender, "recipients": recipients, "subject": subject, "text": text,
                      "caseId": case_id, "operationId": operation_id, "purpose": purpose,
@@ -158,6 +203,8 @@ class MailService:
             immutable["sourceCaseEventId"] = source_case_event_id
         if personal:
             immutable["notificationPolicyVersion"] = 1
+        if purpose in SCRIPTED_PURPOSES:
+            immutable.update({"scriptedDemo": True, "scriptedDueAt": iso(not_before)})
         self._require_participants(immutable, case, current_operation)
         now = utcnow()
         item = {"_id": outbox_id, "id": outbox_id, "kind": "email", "provider": "agentmail",
@@ -165,13 +212,53 @@ class MailService:
                 "correlationToken": token, "providerLabel": "ontara-" + token,
                 "state": "HELD" if held else "QUEUED", "holdReason": "presenter" if held else None,
                 "deliveryState": "UNVERIFIED", "attemptCount": 0,
-                "nextAttemptAt": now, "createdAt": now, "updatedAt": now,
+                "nextAttemptAt": not_before or now, "createdAt": now, "updatedAt": now,
                 "caseVersion": operation.get("caseVersion"), "visibility": "case", "controlledDemo": True}
         result = self.store.enqueue(item)
         self._record_progress(result["id"])
         return result
 
+    def reconcile_scripted_outbox(self, limit: int = 20) -> dict[str, int]:
+        """Two explicitly fictional updates, admitted only by a new approval flag."""
+        result = {"scheduled": 0, "pending": 0}
+        if not self.settings.enabled:
+            return result
+        for operation in self.store.db.operations.find({"scriptedEmailDemo.enabled": True}).sort("createdAt", 1):
+            hook_id = "scripted-hook:" + operation["id"]
+            if self.store.events.find_one({"_id": hook_id, "processingState": {"$in": ["PROCESSED", "CANCELLED"]}}):
+                continue
+            try:
+                case, operation = self._context(operation["caseId"], operation["id"], purpose="RESIDENT_SCRIPTED_SUBMITTED")
+                preferences = self._resident_preferences(case["id"], operation)
+                if not preferences:
+                    raise ValueError("The approved demo has no notification opt-in")
+                for purpose, subject, message in (
+                    ("RESIDENT_SCRIPTED_SUBMITTED", "[Demo] Your report has been submitted",
+                     "Simulated city update: your report is shown as submitted for this scripted demonstration. This email is not evidence of actual city acceptance."),
+                    ("RESIDENT_SCRIPTED_RESOLVED", "[Demo] Your issue has been resolved",
+                     "Simulated city update: your issue is shown as resolved for this scripted demonstration. No real city response or physical repair has been verified."),
+                ):
+                    due = self._scripted_due(operation, purpose)
+                    if due is None:
+                        break
+                    self._enqueue(case_id=case["id"], operation=operation, purpose=purpose, personal=True,
+                        sender=self.settings.ontara_inbox_id, recipients=[preferences["email"]], subject=subject,
+                        text=self._resident_text(case["id"], message), receipt_id=None, not_before=due)
+                second = self.store.outbox.find_one({"operationId": operation["id"], "purpose": "RESIDENT_SCRIPTED_RESOLVED", "state": "SENT"})
+                if second:
+                    self.store.event(hook_id, {"kind": "mail_scripted_hook", "processingState": "PROCESSED", "caseId": case["id"], "operationId": operation["id"]})
+                result["scheduled"] += 1
+            except ValueError:
+                self.store.event(hook_id, {"kind": "mail_scripted_hook", "processingState": "CANCELLED", "caseId": operation["caseId"], "operationId": operation["id"]})
+            except Exception:
+                result["pending"] += 1
+            if result["scheduled"] + result["pending"] >= limit:
+                break
+        return result
+
     def enqueue_authority_question(self, case_id: str, operation_id: str, receipt_id: str) -> dict[str, Any]:
+        if self._scripted_case(case_id):
+            return {"state": "NOT_APPLICABLE", "purpose": "AUTHORITY_QUESTION"}
         _, operation = self._context(case_id, operation_id, action="create")
         if operation.get("portalId") != "roads" or not self.store.authority_followup_staged(case_id):
             return {"state": "NOT_APPLICABLE", "purpose": "AUTHORITY_QUESTION"}
@@ -289,6 +376,8 @@ class MailService:
         )
 
     def enqueue_resident_notification(self, case_id: str, operation_id: str, receipt_id: str) -> dict[str, Any]:
+        if self._scripted_case(case_id):
+            return {"state": "NOT_APPLICABLE", "purpose": "RESIDENT_NOTIFICATION"}
         _, operation = self._context(case_id, operation_id)
         ticket = operation.get("externalTicketId") or (operation.get("receipt") or {}).get("ticketId")
         action = operation.get("action")
@@ -318,6 +407,8 @@ class MailService:
 
     def enqueue_case_event_notification(self, event: dict[str, Any], operation: dict[str, Any]) -> dict[str, Any] | None:
         case_id = event["caseId"]
+        if self._scripted_case(case_id):
+            return None
         purpose = "RESIDENT_INFORMATION_NEEDED" if event["kind"] == "more_information_requested" else "RESIDENT_NEEDS_ASSISTANCE"
         case, operation = self._context(case_id, operation["id"], purpose=purpose)
         preferences = self._resident_preferences(case_id, operation)
@@ -345,6 +436,8 @@ class MailService:
 
     def on_receipt_verified(self, case_id: str, operation: dict[str, Any], receipt: dict[str, Any]) -> list[dict[str, Any]]:
         if not self.settings.enabled:
+            return []
+        if self._scripted_case(case_id):
             return []
         operation, receipt = as_dict(operation), as_dict(receipt)
         operation_id = operation.get("id", operation.get("_id"))
@@ -450,9 +543,14 @@ class MailService:
         return item["text"].strip() in (message.get("text") or "").strip()
 
     def _mark_sent(self, item: dict[str, Any], result: dict[str, Any], *, reconciled: bool = False) -> None:
-        self.store.patch(item["_id"], {"state": "SENT", "providerMessageId": result["message_id"],
-                         "providerThreadId": result["thread_id"], "sentAt": utcnow(), "reconciled": reconciled,
-                         "lastError": None}, owner=self.worker_id)
+        sent_values = {"state": "SENT", "providerMessageId": result["message_id"],
+                       "providerThreadId": result["thread_id"], "reconciled": reconciled, "lastError": None}
+        evidence = "source_inbox_reconciled" if reconciled else "provider_send_accepted"
+        if item["purpose"] in SCRIPTED_PURPOSES:
+            self.store.freeze_sent_time(item["_id"], utcnow(), evidence)
+        else:
+            sent_values.update({"sentAt": utcnow(), "sentEvidence": evidence})
+        self.store.patch(item["_id"], sent_values, owner=self.worker_id)
         self.store.event("sent:" + item["_id"], {"kind": "mail_sent", "caseId": item["caseId"],
                          "operationId": item["operationId"], "outboxId": item["_id"],
                          "providerMessageId": result["message_id"], "providerThreadId": result["thread_id"],
@@ -465,14 +563,15 @@ class MailService:
         # A provider send result is SENT only. Receiving-inbox proof is recorded independently.
         self._record_progress(item["id"])
 
-    def process_outbox_once(self, limit: int = 10) -> dict[str, int]:
+    def process_outbox_once(self, limit: int = 10, *, purposes: set[str] | None = None) -> dict[str, int]:
         counts = {"sent": 0, "reconciled": 0, "unknown": 0, "failed": 0}
         if not self.settings.enabled:
             return counts
         now = utcnow()
         self.store.recover_stale_sends(now)
         self.refresh_authority_holds()
-        for candidate in self.store.due(now, limit):
+        now = utcnow()
+        for candidate in self.store.due(now, limit, purposes=purposes):
             state = candidate["state"]
             item = self.store.claim(candidate["_id"], state, self.worker_id, self.settings.lease_seconds)
             if not item:
@@ -480,6 +579,11 @@ class MailService:
             try:
                 case, operation = self._context(item["caseId"], item["operationId"], purpose=item["purpose"])
                 self._require_participants(item, case, operation, actionable=state != "OUTCOME_UNKNOWN")
+                if state != "OUTCOME_UNKNOWN" and item["purpose"] in SCRIPTED_PURPOSES:
+                    due = self._scripted_due(operation, item["purpose"])
+                    if due and utcnow() < due:
+                        self.store.patch(item["_id"], {"state": "QUEUED", "nextAttemptAt": due + timedelta(milliseconds=1)}, owner=self.worker_id)
+                        continue
                 if item["purpose"] == "AUTHORITY_QUESTION" and self.store.authority_followup_held(item["caseId"]):
                     self.store.patch(item["_id"], {"state": "HELD", "holdReason": "presenter"}, owner=self.worker_id)
                     continue
@@ -606,9 +710,13 @@ class MailService:
                         "providerThreadId": message["thread_id"], "observedAt": utcnow(),
                         "evidence": "message_read_from_controlled_receiving_inbox"}
             # Receiving proof can close the send-acknowledgement gap after a sending process died.
-            self.store.patch(item["_id"], {"state": "SENT", "deliveryState": "RECEIVED",
+            observed = utcnow()
+            received_values = {"state": "SENT", "deliveryState": "RECEIVED",
                              "providerMessageId": message["message_id"], "receivingEvidence": evidence,
-                             "receivedAt": utcnow()}, release=False)
+                             "receivedAt": observed}
+            if item["purpose"] in SCRIPTED_PURPOSES and not item.get("sentAt"):
+                self.store.freeze_sent_time(item["_id"], observed, "receiving_inbox_observation")
+            self.store.patch(item["_id"], received_values, release=False)
             self._record_progress(item["id"])
             if item["purpose"] == "AUTHORITY_QUESTION":
                 from app.models import FollowUpInspectionRequest
@@ -671,7 +779,8 @@ class MailService:
 
     def tick(self) -> dict[str, Any]:
         result = {"receiptReplay": self.reconcile_receipt_outbox(), "caseEventReplay": self.reconcile_case_event_outbox(),
-                  "outbox": self.process_outbox_once(), "poll": self.poll_once()}
+                  "scriptedReplay": self.reconcile_scripted_outbox(), "outbox": self.process_outbox_once(), "poll": self.poll_once()}
+        self.reconcile_scripted_outbox()
         self.sync_notification_progress()
         return result
 
@@ -694,13 +803,30 @@ class MailService:
                 self.stop_event.wait(self.settings.poll_seconds)
         self.thread = threading.Thread(target=work, name="ontara-mail", daemon=True)
         self.thread.start()
+        # A slow inbound provider read must not delay the two presentation timers.
+        # Both consumers share the existing atomic leases and send budget.
+        def timers() -> None:
+            while not self.stop_event.is_set():
+                try:
+                    self.reconcile_scripted_outbox()
+                    self.process_outbox_once(purposes=SCRIPTED_PURPOSES)
+                    self.reconcile_scripted_outbox()
+                    self.sync_notification_progress()
+                except Exception as error:
+                    self.store.event("timer-error:" + uuid4().hex, {"kind": "mail_timer_error", "errorClass": type(error).__name__})
+                self.stop_event.wait(1)
+        self.timer_thread = threading.Thread(target=timers, name="ontara-mail-timers", daemon=True)
+        self.timer_thread.start()
 
     def close(self) -> None:
         self.stop_event.set()
         if self.thread:
             self.thread.join(timeout=30)
+        if self.timer_thread:
+            self.timer_thread.join(timeout=30)
         self.provider.close()
 
     def status(self, case_id: str | None = None) -> dict[str, Any]:
         return {"enabled": self.settings.enabled, "controlledDemo": True,
-                "workerRunning": bool(self.thread and self.thread.is_alive()), **self.store.summary(case_id)}
+                "workerRunning": bool(self.thread and self.thread.is_alive()),
+                "scriptedTimerRunning": bool(self.timer_thread and self.timer_thread.is_alive()), **self.store.summary(case_id)}
