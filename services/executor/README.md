@@ -5,9 +5,11 @@ against the two configured **DEMO** portals. Browser writes use normal HTML form
 recovery obtains exact receipts through the receiver's lookup interface. It never
 reads the receiving database or contacts a real municipality.
 
-`services/agent` contains the bounded LangGraph workflow. Engine is the selected
-runtime. If the coordinator explicitly selects the documented cloud fallback,
-this service runs that graph in a separate, killable child process and survives
+`services/agent` contains the bounded LangGraph workflow. The coordinator selected
+the documented **Free Render fallback for the first hosted proof** because free
+or event-covered Engine entitlement is not established. Engine code remains
+available for qualification. In the fallback this service runs the same graph in
+a separate, killable child process and survives
 the child's actual `SIGKILL`. In either mode the case API's Atlas operation ledger
 controls authorization, leases, dispatch state and verified receipts.
 

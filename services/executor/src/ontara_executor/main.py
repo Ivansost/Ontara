@@ -66,7 +66,7 @@ async def ready(request: Request):
     async with request.app.state.browser.page() as page:
         await page.set_content("<title>Ontara browser readiness</title>")
         title = await page.title()
-    return {"status": "ready", "chromium": title == "Ontara browser readiness", "maxActiveBrowserTasks": 1, "runtimeMode": os.environ.get("ONTARA_RUNTIME_MODE", "engine")}
+    return {"status": "ready", "chromium": title == "Ontara browser readiness", "browserVersion": request.app.state.browser._browser.version, "browserChannel": os.environ.get("ONTARA_LOCAL_BROWSER_CHANNEL", "pinned-chromium"), "maxActiveBrowserTasks": 1, "runtimeMode": os.environ.get("ONTARA_RUNTIME_MODE", "engine")}
 
 
 @app.post("/internal/v1/browser/inspect", response_model=BrowserResult, dependencies=[Depends(authorize)])

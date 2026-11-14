@@ -5,19 +5,23 @@ import json
 from agent_engine_sdk_langgraph import App
 from .clients import BackendClient, BrowserClient
 from .mapping import MappingError, StructuredMapper, build_model
+from .receipt_channel import persist_before_traced_return
 from .workflow import ExecutionWorkflow, build_graph
 
 app = App(app_name="Ontara execution", app_version="0.1.0")
 
 
-@app.tool(is_local=True, redact_fields=["request"], timeout=120)
-async def ontara_browser(action: str, request: dict) -> dict:
+@app.tool(is_local=True, redact_fields=["request", "lease_context"], timeout=120)
+async def ontara_browser(action: str, request: dict, lease_context: dict) -> dict:
     """Run an authenticated, origin-restricted browser action for an approved case."""
     client = BrowserClient.from_env()
+    backend = BackendClient.from_env()
     try:
-        return await client.call(action, request)
+        result = await client.call(action, request)
+        return await persist_before_traced_return(result, request, lease_context, backend)
     finally:
         await client.close()
+        await backend.close()
 
 
 @app.prepare_agent_input
@@ -40,8 +44,8 @@ def build_agent():
     except MappingError:
         mapper = None
     tool = next(t for t in app.get_tools() if t.name == "ontara_browser")
-    async def browser(action, request):
-        result = await tool.ainvoke({"action": action, "request": request})
+    async def browser(action, request, lease_context):
+        result = await tool.ainvoke({"action": action, "request": request, "lease_context": lease_context})
         return json.loads(result) if isinstance(result, str) else result
     workflow = ExecutionWorkflow(BackendClient.from_env(), browser, mapper)
     return build_graph(workflow, checkpointer=app.checkpointer(), finish=app.finish_session)

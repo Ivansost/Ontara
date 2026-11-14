@@ -9,7 +9,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from playwright.async_api import Browser, BrowserContext as PlaywrightContext, Page, async_playwright
 from .contracts import BrowserContext, BrowserResult, FieldObservation, FormObservation, SubmitRequest
-from .security import TargetPolicy, UnsafeTarget, redact_url, stable_hash
+from .security import NetworkScope, TargetPolicy, redact_url, stable_hash
 
 
 def now() -> str:
@@ -39,19 +39,22 @@ class BrowserTools:
             await self._playwright.stop()
 
     @asynccontextmanager
-    async def page(self):
+    async def page(self, write_scope: NetworkScope | None = None):
         async with self._lock:
             if not self._browser or not self._browser.is_connected():
                 await self.start()
             context: PlaywrightContext = await self._browser.new_context(service_workers="block", accept_downloads=False)
+            scope = write_scope or NetworkScope(self.policy)
             async def route_request(route):
-                try:
-                    self.policy.validate(route.request.url)
-                except UnsafeTarget:
+                request = route.request
+                if not scope.permits(request.method, request.url, content_type=request.headers.get("content-type", ""), post_data=request.post_data):
                     await route.abort("blockedbyclient")
                 else:
                     await route.continue_()
             await context.route("**/*", route_request)
+            async def block_socket(socket):
+                await socket.close(code=1008, reason="Browser tools do not authorize WebSocket connections")
+            await context.route_web_socket("**/*", block_socket)
             page = await context.new_page()
             page.set_default_timeout(20000)
             try:
@@ -135,13 +138,19 @@ class BrowserTools:
             return BrowserResult(status="accepted", accepted=True, receipt=receipt, response_status=status, evidence={"tool": "playwright.lookup", "checkedAt": now(), "receiptId": receipt["receiptId"], "ticketId": receipt["ticketId"]})
 
     async def submit(self, request: SubmitRequest) -> BrowserResult:
-        async with self.page() as page:
+        write_scope = NetworkScope(self.policy)
+        async with self.page(write_scope) as page:
             await page.goto(self.url(request), wait_until="domcontentloaded")
             observation = await self.observe(page, request)
             if observation.fingerprint != request.form_fingerprint:
                 return BrowserResult(status="rejected", observation=observation, evidence={"reason": "form_changed_before_dispatch"})
             controls = {f.name: f for f in observation.fields}
             hidden = {"runId": request.run_id, "clientReference": request.client_reference, "payloadDigest": request.payload_digest, "formVersion": observation.form_version}
+            if request.action == "update":
+                token = dict(parse_qsl(urlsplit(request.update_url).query)).get("accessToken")
+                if not token:
+                    raise ValueError("The approved update capability is missing")
+                hidden["accessToken"] = token
             for name, value in hidden.items():
                 if name not in controls or controls[name].type != "hidden":
                     raise ValueError("Receiving form is missing operation binding")
@@ -166,6 +175,12 @@ class BrowserTools:
             for field in observation.fields:
                 if field.required and not field.disabled and field.type != "hidden" and not request.values.get(field.name):
                     raise ValueError("A required receiving field has no approved value")
+            form = page.locator("form").first
+            post_url = await form.evaluate("form => form.action")
+            actual_values = await form.evaluate("form => Object.fromEntries(Array.from(new FormData(form).entries()).map(([k,v]) => [k, String(v)]))")
+            # No HTTP write was permitted while loading/inspecting/filling. The
+            # single permitted POST is now bound to the exact validated form.
+            write_scope.arm_form_post(post_url, actual_values)
             async with page.expect_navigation(wait_until="domcontentloaded"):
                 await page.locator('form button[type="submit"], form input[type="submit"]').first.click()
             # This is actual browser navigation after the portal commit. The agent

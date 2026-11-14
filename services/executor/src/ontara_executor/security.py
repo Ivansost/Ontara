@@ -46,3 +46,39 @@ class TargetPolicy:
         if portal_id and not p.path.startswith("/portals/" + portal_id + "/"):
             raise UnsafeTarget("Browser destination does not match the approved portal")
         return url
+
+
+class NetworkScope:
+    """Read-only by default; one exact form POST can be armed after validation."""
+
+    def __init__(self, policy: TargetPolicy):
+        self.policy = policy
+        self._post_url: str | None = None
+        self._post_values: dict[str, str] | None = None
+        self._used = False
+
+    def arm_form_post(self, url: str, values: dict[str, str]):
+        self.policy.validate(url)
+        if self._post_url is not None or self._used or not values:
+            raise ValueError("A browser context can authorize one form POST only")
+        self._post_url, self._post_values = url, dict(values)
+
+    def permits(self, method: str, url: str, *, content_type: str = "", post_data: str | None = None) -> bool:
+        try:
+            self.policy.validate(url)
+        except UnsafeTarget:
+            return False
+        if method in {"GET", "HEAD"}:
+            return True
+        if method != "POST" or self._used or url != self._post_url or self._post_values is None:
+            return False
+        if content_type.split(";", 1)[0].strip().lower() != "application/x-www-form-urlencoded" or post_data is None:
+            return False
+        try:
+            pairs = parse_qsl(post_data, keep_blank_values=True, strict_parsing=True)
+        except ValueError:
+            return False
+        if len(pairs) != len(dict(pairs)) or dict(pairs) != self._post_values:
+            return False
+        self._used = True
+        return True

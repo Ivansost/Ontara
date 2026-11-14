@@ -38,9 +38,10 @@ class ExecutionWorkflow:
             await asyncio.sleep(max(3, int(os.environ.get("ONTARA_LEASE_SECONDS", "15")) // 3))
             await self.backend.heartbeat(job)
 
-    async def _browser_call(self, action, body):
+    async def _browser_call(self, action, body, job=None):
         if callable(self.browser):
-            return await self.browser(action, body)
+            guard = self.backend.guard(job) | {"jobId": job["id"]} if job else {}
+            return await self.browser(action, body, guard)
         return await self.browser.call(action, body)
 
     async def _assistance(self, job, op, attempt_id, reason):
@@ -67,7 +68,28 @@ class ExecutionWorkflow:
         work = asyncio.create_task(self._run_leased(job, op, case, envelope.get("approvedVersion") or {}, attempt_id))
         try:
             done, _ = await asyncio.wait({heartbeat, work}, return_when=asyncio.FIRST_COMPLETED)
+            if work in done:
+                try:
+                    return await work
+                except Exception:
+                    if not job.get("readOnly"):
+                        with contextlib.suppress(Exception):
+                            current = await self.backend.request("GET", f"/internal/v1/operations/{op['id']}")
+                            if current.get("state") == "receipt_verified":
+                                return {"status": "receipt_verified", "operation_id": op["id"], "attempt_id": attempt_id, "process_id": os.getpid()}
+                    raise
             if heartbeat in done:
+                # A receipt commit completes its job before the HTTP response
+                # and final checkpoint finish. A concurrent heartbeat can then
+                # correctly return 409; the verified ledger result wins.
+                if not job.get("readOnly"):
+                    with contextlib.suppress(Exception):
+                        current = await self.backend.request("GET", f"/internal/v1/operations/{op['id']}")
+                        if current.get("state") == "receipt_verified":
+                            work.cancel()
+                            with contextlib.suppress(asyncio.CancelledError, Exception):
+                                await work
+                            return {"status": "receipt_verified", "operation_id": op["id"], "attempt_id": attempt_id, "process_id": os.getpid()}
                 # Losing a lease prevents this process from taking further steps.
                 work.cancel()
                 with contextlib.suppress(asyncio.CancelledError):
@@ -77,7 +99,7 @@ class ExecutionWorkflow:
             return await work
         finally:
             heartbeat.cancel()
-            with contextlib.suppress(asyncio.CancelledError):
+            with contextlib.suppress(asyncio.CancelledError, Exception):
                 await heartbeat
 
     async def _run_leased(self, job, op, case, approved, attempt_id):
@@ -94,14 +116,15 @@ class ExecutionWorkflow:
             # The application ledger wins over graph replay/checkpoint position.
             if op["state"] != "reconciling":
                 await self.backend.transition(job, op, "reconciling", attempt_id=attempt_id, evidence={"reason": "unresolved_operation_on_fresh_attempt"})
-            result = await self._browser_call("reconcile", context)
+            result = await self._browser_call("reconcile", context, job)
             await self.backend.event(case["id"], "receiving_lookup", "Checked the receiving portal using the original operation reference.", op=op, attempt_id=attempt_id, data=result.get("evidence", {}) | {"status": result["status"]})
             if result.get("accepted") and result.get("receipt"):
-                await self.backend.receipt(job, op, result["receipt"], attempt_id)
+                if not result.get("receiptRecorded"):
+                    await self.backend.receipt(job, op, result["receipt"], attempt_id)
                 return {"status": "receipt_verified", "operation_id": op["id"], "attempt_id": attempt_id, "process_id": os.getpid()}
             return await self._assistance(job, op, attempt_id, "receiving_outcome_could_not_be_established_no_retry")
         try:
-            inspection = await self._browser_call("inspect", context)
+            inspection = await self._browser_call("inspect", context, job)
             observation = inspection.get("observation")
             if inspection["status"] != "observed" or not observation:
                 return await self._assistance(job, op, attempt_id, "receiving_form_unavailable")
@@ -121,14 +144,15 @@ class ExecutionWorkflow:
             # Refresh the live lease immediately before the external side effect.
             await self.backend.heartbeat(job)
             await self.backend.transition(job, op, "dispatch_started", attempt_id=attempt_id, evidence={"processId": os.getpid(), "processBirthId": self.process_birth_id, "formFingerprint": observation["fingerprint"], "mappedFieldNames": sorted(values), "mapping": mapping_evidence, "faultIntentConsumed": bool(job.get("faultAfterAcceptance"))})
-            result = await self._browser_call("submit", context | {"formFingerprint": observation["fingerprint"], "values": values, "returnReceipt": not bool(job.get("faultAfterAcceptance"))})
+            result = await self._browser_call("submit", context | {"formFingerprint": observation["fingerprint"], "values": values, "returnReceipt": not bool(job.get("faultAfterAcceptance"))}, job)
             if result.get("accepted") and job.get("faultAfterAcceptance"):
                 # Actual OS process death. No receipt is parsed or recorded in the
                 # fault path. HTTP cancellation/tab closure is never used as proof.
                 os.kill(os.getpid(), signal.SIGKILL)
                 raise RuntimeError("SIGKILL unexpectedly returned")
             if result.get("accepted") and result.get("receipt"):
-                await self.backend.receipt(job, op, result["receipt"], attempt_id)
+                if not result.get("receiptRecorded"):
+                    await self.backend.receipt(job, op, result["receipt"], attempt_id)
                 return {"status": "receipt_verified", "operation_id": op["id"], "attempt_id": attempt_id, "process_id": os.getpid()}
             await self.backend.transition(job, op, "outcome_unknown", attempt_id=attempt_id, evidence={"reason": "external_result_unverified", "toolStatus": result.get("status")})
             return {"status": "outcome_unknown", "operation_id": op["id"], "attempt_id": attempt_id, "process_id": os.getpid()}
@@ -157,7 +181,13 @@ class ExecutionWorkflow:
             raise MappingError("applicable_verified_lesson_unavailable")
         if not self.mapper:
             raise MappingError("generation_provider_unavailable")
-        proposal, model_evidence = await self.mapper.propose(observation, facts, lessons)
+        try:
+            proposal, model_evidence = await self.mapper.propose(observation, facts, lessons)
+        except MappingError:
+            raise
+        except Exception as error:
+            await self.backend.event(case["id"], "generation_mapping_unavailable", "The configured generation provider could not return a validated field mapping. No form was submitted.", op=op, attempt_id=attempt_id, data={"provider": os.environ.get("GENERATION_PROVIDER"), "model": os.environ.get("GENERATION_MODEL"), "errorType": type(error).__name__, "providerCode": getattr(error, "code", None)})
+            raise MappingError("generation_provider_temporarily_unavailable") from None
         values, missing = validate_proposal(proposal, observation, facts, lessons)
         mapping_evidence = model_evidence | {"kind": "model_mapping", "formFingerprint": observation["fingerprint"], "selectedLessonIds": proposal.lessonIds, "mappedFactIds": [m.factId for m in proposal.mappings], "missingQuestionIds": missing}
         await self.backend.event(case["id"], "changed_form_mapping_validated", "Validated the proposed field mapping against approved facts and the current form.", op=op, attempt_id=attempt_id, data=mapping_evidence)
@@ -170,7 +200,7 @@ class ExecutionWorkflow:
         try:
             if op["state"] != "receipt_verified" or not context["ticketId"] or not context["updateUrl"]:
                 raise MappingError("Original verified ticket is required for follow-up inspection")
-            inspection = await self._browser_call("inspect", context)
+            inspection = await self._browser_call("inspect", context, job)
             observation = inspection.get("observation")
             if inspection.get("status") != "observed" or not observation:
                 raise MappingError("receiving_form_unavailable")

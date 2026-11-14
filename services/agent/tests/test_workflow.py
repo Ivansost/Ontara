@@ -1,4 +1,5 @@
 from copy import deepcopy
+import asyncio
 import pytest
 from ontara_agent.workflow import ExecutionWorkflow
 
@@ -117,3 +118,26 @@ async def test_mail_inspection_requests_missing_fact_without_write_authorization
     assert ledger.operation["state"] == "receipt_verified"
     assert questions[0][1]["source_event_id"] == "received-mail-1"
     assert results[0][0] == "needs_input"
+
+
+async def test_completed_receipt_wins_over_concurrent_heartbeat_revocation():
+    ledger, tools = Ledger(), Tools()
+    committed = asyncio.Event()
+    async def receipt(job, op, value, attempt_id):
+        ledger.receipts.append(value)
+        ledger.operation["state"] = "receipt_verified"
+        committed.set()
+        await asyncio.sleep(0.05)  # API mail hook can finish after its job commit.
+    async def read(method, path):
+        assert method == "GET" and path.endswith("op-test")
+        return ledger.operation
+    async def heartbeat(job):
+        await committed.wait()
+        raise RuntimeError("Job is complete, so its old heartbeat guard is revoked")
+    ledger.receipt, ledger.request = receipt, read
+    workflow = ExecutionWorkflow(ledger, tools, None)
+    workflow._heartbeat = heartbeat
+    result = await workflow.run({"job_id": "job-test"})
+    assert result["status"] == "receipt_verified"
+    assert tools.calls == ["inspect", "submit"]
+    assert len(ledger.receipts) == 1

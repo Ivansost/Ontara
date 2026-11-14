@@ -36,10 +36,11 @@ class ChildSupervisor:
 
     async def _run(self, task_id, job_id, case_id, recover):
         task = self.tasks[task_id]
+        thread_id = job_id or case_id
         for number in range(2 if recover else 1):
             read_fd, write_fd = os.pipe()
             env = dict(os.environ, ONTARA_SUPERVISOR_CONTROL_FD=str(write_fd))
-            command = [sys.executable, "-m", "ontara_agent.child"]
+            command = [sys.executable, "-m", "ontara_agent.child", "--thread-id", thread_id]
             if job_id:
                 command.extend(["--job-id", job_id])
             if case_id:
@@ -67,9 +68,14 @@ class ChildSupervisor:
                 os.close(read_fd)
             attempt["exitCode"] = process.returncode
             attempt["actualProcessCrash"] = process.returncode == -signal.SIGKILL
+            parsed = {}
+            with contextlib.suppress(ValueError, IndexError):
+                parsed = json.loads(stdout.decode().splitlines()[-1])
+            if process.returncode and parsed.get("errorType"):
+                attempt["errorType"] = parsed["errorType"]
             if process.returncode == 0:
                 try:
-                    last = json.loads(stdout.decode().splitlines()[-1])
+                    last = parsed
                     attempt.update({k: last[k] for k in ("status", "operation_id", "attempt_id", "process_id") if k in last})
                     task["status"] = last.get("status", "completed")
                 except (ValueError, IndexError):

@@ -4,6 +4,10 @@ Engine entrypoint: `ontara_agent.engine:app`. Compatible tested package set:
 Engine SDK/runner 0.11.14, LangGraph 1.2.22, Google adapter 4.5.0 and OpenAI adapter
 1.8.0. No Deep Agents or separately configured LangSmith service is used.
 
+The first hosted proof uses the coordinator-selected Free Render child-process
+fallback because free/event Engine entitlement remains unverified. The native
+Engine implementation is retained; no paid Engine resources were provisioned.
+
 The Engine graph uses **only `app.checkpointer()`**, with the native session mode
 and `CHECKPOINT_DB_NAME=ontara`. The direct saver is reserved for the explicitly
 selected supervised cloud fallback. Its transitive package is not a second
@@ -38,7 +42,7 @@ rejects stale/unverified/absent memory and pauses on unknown requirements. With
 the applicable lesson withheld it does not call the model or submit.
 
 Model configuration is `GENERATION_PROVIDER=google`,
-`GENERATION_MODEL=gemini-3.8-flash`, and `GOOGLE_API_KEY` (or `GEMINI_API_KEY`).
+`GENERATION_MODEL=gemini-3.5-flash-lite`, and `GOOGLE_API_KEY` (or `GEMINI_API_KEY`).
 An OpenAI-compatible adapter is available when explicitly configured; no paid or
 unconfigured model is silently selected. Provider/model/usage, input digest,
 fact IDs, proposal, retrieval and action evidence are saved through the case API.
