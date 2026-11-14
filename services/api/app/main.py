@@ -289,6 +289,10 @@ def create_app(settings: Settings | None = None, store: Store | None = None) -> 
     def fault(operation_id: str, request: FaultRequest):
         return service().arm_fault(operation_id, request.armed)
 
+    @app.post("/internal/v1/cases/{case_id}/fault-next-create", dependencies=internal_auth)
+    def fault_next_create(case_id: str, request: FaultRequest):
+        return service().arm_next_create_fault(case_id, request.armed)
+
     @app.post("/internal/v1/cases/{case_id}/events", dependencies=internal_auth)
     def event(case_id: str, request: CaseEventInput):
         return service().add_event(case_id, request)
