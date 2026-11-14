@@ -9,15 +9,15 @@ Ivan and Faaris built Ontara for **Agents in Context Toronto, Track 3: Finish th
 | Deliverable | Verified state |
 | --- | --- |
 | Receiving portals | Public on [Render](https://ontara-portals-35iy.onrender.com); the [MongoDB health check](https://ontara-portals-35iy.onrender.com/healthz) passed |
-| Case API | [Public API](https://ontara-api-35iy.onrender.com) is live at `6b273f04`; draft hold/release and API restart persistence passed in the hosted flow |
-| Resident web | [Public web app](https://ontara-web-35iy.onrender.com) is live at `ae1e0e46`; all nine categories, disabled inactive previews and desktop/390/320 layouts passed hosted checks. The full Roads journey passed on the recorded core run |
+| Case API | [Public API](https://ontara-api-35iy.onrender.com) is live at `a331330f`, including private voice intake and transcript storage; the recorded core flow proved draft hold/release and API restart persistence |
+| Resident web | [Public web app](https://ontara-web-35iy.onrender.com) is live at `a331330f`, including opt-in browser voice. The recorded core journey and category-cleanup checks remain separately identified below |
 | Executor | `fd572d12` is live on Render Free Linux with pinned Chromium `159.0.8154.6`; actual process crash and fresh-process receipt recovery passed |
 | Hosted Roads proof | Complete: crash/recovery with one create and one ticket, held-mail restart, actual v2 form, withheld lesson, native/model mapping, new resident approval, same-ticket update and three received emails |
 | Graffiti and resident controls | Separate hosted Graffiti intake/approval/receipt and unused-draft cancellation rejection passed; mobile, session isolation, cookie and origin checks passed |
 | Local integrated rehearsal | Real Atlas, Playwright, native Voyage retrieval, Gemini and AgentMail passed the main Roads journey |
 | Agent Engine | Integration code exists; free/event entitlement and hosted persistence/recovery remain unqualified |
-| Browser voice | ElevenLabs extension in progress; provider access and private agent configuration verified, application integration and qualification pending |
-| Review package | Hosted web demo available; one-minute video and concise project text preparation/user review pending. Ivan and Faaris approve the deliverables and submit manually |
+| Browser voice | Hosted synthetic-microphone test passed: real speech recognition, decoded provider speech, authored answer, stopped tracks/socket and private transcript linked to an unapproved draft. Full authored-question intake also passed a separate real-provider text test |
+| Review package | Hosted demo available; exact one-minute audio/video and concise project text prepared for Ivan and Faaris to review. They approve the deliverables and submit manually; no agent upload or submission |
 
 The hosted Roads run used web `056c192d`, API `6b273f04`, executor `fd572d12` and portal `e749693`. A real `SIGKILL` ended the first Linux child; a fresh child reconciled the same receipt with **one create request and one ticket**. An actual API restart preserved the verified receipt and authority outbox at zero send attempts. After the same run's update form changed to v2, a withheld-lesson inspection made zero model calls and zero writes. A real email from the simulated authority then drove native Voyage retrieval, a Gemini mapping and the authored landmark question. Ordinary UI save/review/new approval produced a v2 acknowledgement on the same ticket, followed by received authority-response and resident-notification emails.
 
@@ -31,7 +31,9 @@ The Regional Roads Portal (DEMO) receives the synthetic Halton pothole. The Loca
 
 A resident reviews the source-backed route, the named demo recipient and the report version before approving. Material edits invalidate approval. Later questions appear on the private case page and require another approval before an update. Case IDs alone grant no access; the API uses a browser-session cookie for ownership.
 
-ElevenLabs browser voice is an active extension with verified provider access. Application integration and end-to-end qualification are pending. Its intake is planned to reuse the same authored questions, validation, case authorization and approval backend. The verified core flow uses the web forms and Gemini 3.5 Flash Lite.
+ElevenLabs browser voice is available on supported report details. Explicit consent and Start are required; voice fills the same authored questions and uses the same server validation. The resident stops voice, checks the written answers and named recipient, then approves through the existing web controls. Voice has no approval or submission tool, and inactive previews never start voice requests. Actual provider transcripts are stored privately with the same case in Atlas; audio recording is disabled and telephone integration is not configured.
+
+The [hosted browser check](apps/web/scripts/cloud-qa/evidence/hosted-voice-20261114.json) used one synthetic microphone session: provider speech was decoded, the spoken answer populated the canonical field, and Stop ended every test microphone track and the provider socket. Manual completion saved one unapproved draft. The [independent observer](scripts/voice/evidence/hosted-voice-observer-20261114.json) verified the actual provider transcript, private owner/case linkage, fresh-session denial and zero approval, operation or job. A separate real-provider text test completed the full authored-question sequence. These bounded checks do not claim real-user microphone or telephone testing. [Voice setup and boundaries](scripts/voice/README.md).
 
 ## How the work survives interruption
 
@@ -62,7 +64,7 @@ The applicable lesson is labelled `seeded_demo`: a developer supplied its initia
 
 ## MongoDB and the Roads directory
 
-The event Atlas Sandbox holds exact private case state, approved versions, durable jobs, correspondence, execution events and receipts. GridFS retains obtained documents, form snapshots and other evidence. Public published procedures and verified execution lessons have separate collections; private case histories and mail are excluded from shared vector memory.
+The event Atlas Sandbox holds exact private case state, approved versions, durable jobs, correspondence, execution events, receipts and actual private voice transcripts. GridFS retains obtained documents, form snapshots and other evidence. Public published procedures and verified execution lessons have separate collections; private case, mail and voice histories are excluded from shared vector memory.
 
 Atlas Automated Embedding with **`voyage-4-large`** is the required retrieval path. Both `service_procedures_autoembed_v1` and `procedural_lessons_autoembed_v1` index curated `retrievalText` with `autoEmbed`. The app supplies text and scoped `$vectorSearch.query.text` queries. Atlas generates document and query embeddings and refreshes them after text changes. The observed native configuration is 1024 dimensions, scalar quantization and cosine similarity. Optional reranking is disabled.
 
@@ -126,6 +128,8 @@ The verified initial receipt queues the controlled authority question; the draft
 Use the [recorded hosted proof](services/executor/evidence/cloud-final-hosted-proof-20261114.json) to review the sequence and start a fresh synthetic run for presentation. The Mac displays the demo; execution runs on Render's Linux service.
 
 Warm every service before starting the presentation clock. The [observed Free Render idle-recovery run](services/executor/evidence/cloud-free-idle-recovery-20261114.json) recorded 270.8 seconds from approval to worker lease after idle, then 8.5 seconds from that lease to receiving acceptance. An HTTP health response alone does not establish that the entire service chain is warm.
+
+Run the read-only [cloud warm-up helper](services/executor/scripts/warm_cloud.py) with the team's private cloud configuration. It checks all four verified origins, including authenticated Chromium readiness, without creating a case, job, message or model request.
 
 ## Event work and attribution
 

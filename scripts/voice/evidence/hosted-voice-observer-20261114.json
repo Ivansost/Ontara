@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-14T17:57:47.694762+00:00",
+  "status": "passed",
+  "sourceCommit": "a331330f",
+  "method": "Independent read-only Atlas, provider and authenticated/fresh-session HTTP checks. No new conversation or processing write.",
+  "browserEvidence": "apps/web/scripts/cloud-qa/evidence/hosted-voice-20261114.json",
+  "realMicrophoneUsed": false,
+  "syntheticInputOnly": true,
+  "audioRecordingEnabled": false,
+  "atlas": {
+    "status": "passed",
+    "checks": {
+      "sessionCaseMatch": true,
+      "sessionProviderMatch": true,
+      "recordCaseMatch": true,
+      "recordProviderMatch": true,
+      "privateOwnerMatch": true,
+      "caseVersionMatch": true,
+      "routeMatch": true,
+      "voiceMode": true,
+      "canonicalNoSaved": true,
+      "privateHistory": true,
+      "transcriptSaved": true,
+      "actualUserTurn": true,
+      "actualAgentTurn": true,
+      "recordingDisabled": true,
+      "providerStoredAudioAbsent": true,
+      "residentConsentRecorded": true,
+      "unapprovedDraft": true,
+      "immutableCaseVersionExists": true,
+      "singleConversationRecord": true,
+      "noOperations": true,
+      "noJobs": true,
+      "noAudioArtifacts": true
+    },
+    "transcriptTurns": 3,
+    "sessionRevision": 2,
+    "caseVersion": 1
+  },
+  "provider": {
+    "conversationHttpStatus": 200,
+    "agentHttpStatus": 200,
+    "subscriptionHttpStatus": 200,
+    "conversationDone": true,
+    "correctPrivateAgent": true,
+    "recordingDisabled": true,
+    "providerStoredAudioAbsent": true,
+    "actualProviderUserAndAgentTurns": true,
+    "providerTranscriptTurns": 3,
+    "managedModel": "gemini-3.5-flash-lite",
+    "customModelConfigured": false
+  },
+  "authorization": {
+    "ownerHistoryHttpStatus": 200,
+    "freshSessionHistoryHttpStatus": 404,
+    "historyMatchesReservedConversation": true,
+    "privateHistoryCount": 1
+  },
+  "reportActions": {
+    "unapprovedDraftsCreated": 1,
+    "approvalCalls": 0,
+    "operationsCreated": 0,
+    "jobsCreated": 0,
+    "actualSubmission": false
+  },
+  "accountVerification": {
+    "authenticated": true,
+    "freeTierVerified": true,
+    "paidUpgradePerformed": false,
+    "exactUsageKeptOwnerOnly": true
+  },
+  "limits": {
+    "maxDurationSeconds": 180,
+    "agentConcurrency": 2,
+    "agentDailyConversations": 12,
+    "browserOwnerDailySessions": 3
+  },
+  "privacy": {
+    "actualTranscriptPrivate": true,
+    "recordingReferenceAbsent": true,
+    "privateHistoryExcludedFromSharedVectorMemory": true,
+    "identifiersAndCookiesKeptOwnerOnly": true
+  },
+  "processingProvenance": {
+    "localVoiceAPIAndTranscriptWorkerStoppedBeforeCloudRun": true,
+    "cloudAPIStoredActualTranscript": true,
+    "independentObserverReadOnly": true
+  }
+}

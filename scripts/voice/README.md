@@ -79,9 +79,10 @@ are retained through judging; this integration adds no automatic deletion.
 The requested `npx -y @elevenlabs/cli@latest onboard init` completed with the
 privately supplied environment key. Authenticated account, subscription, model,
 Agents and workspace-settings reads passed; private-agent creation, update and
-single-use signed-session issuance also passed. The account initially reported
-Free, 0 of 10,000 credits used. This does not establish Creator coupon redemption
-or an exhaustive API-key scope inventory. Recheck the current balance after tests.
+single-use signed-session issuance also passed. The account was verified on the
+Free tier; exact subscription usage is kept in the owner-only proof and handoff.
+This does not establish Creator coupon redemption or an exhaustive API-key scope
+inventory. Recheck the current balance after tests.
 
 The controlled `text_smoke.mjs` uses real ElevenLabs model/tool responses and the
 actual Atlas-backed case API. It answers the canonical questions, skips the
@@ -91,6 +92,31 @@ denial and no approved version/operation/submission. It uses no microphone and
 produces no audio. Sanitized counts/booleans are in `evidence/`; full receiving IDs
 and credentials stay outside Git. Text success does **not** establish audio or
 microphone success.
+
+The public build `a331330f` subsequently passed **one hosted browser audio test**
+on November 14. Chrome used a synthetic audio device, not a real microphone.
+The browser streamed the synthetic input, decoded/rendered non-silent provider
+speech, saved the canonical `immediateDanger = No` answer, then stopped all input
+tracks and its socket. The remaining form fields were completed manually and
+saved as one unapproved review draft. No approval, operation, job or submission
+was created by this test.
+
+Independent read-only checks confirmed that the hosted API stored the actual
+three-turn provider transcript in Atlas under the same private owner, incident,
+case version and reserved conversation ID. The correct browser session read its
+history with HTTP 200; a fresh session received HTTP 404. Recording remained off,
+its reference was absent, and no audio artifact was stored. The local voice API
+and transcript worker were stopped before this cloud test, so local processing
+could not fill a missing hosted transcript.
+
+See [browser audio evidence](../../../apps/web/scripts/cloud-qa/evidence/hosted-voice-20261114.json)
+and [independent observer evidence](evidence/hosted-voice-observer-20261114.json).
+The account remained on the Free tier at the timestamp in the observer evidence;
+its exact usage was rechecked privately after the audio test. No paid upgrade or
+credit redemption was performed. This is an observed check, not a future usage or
+availability guarantee. The production build and all eleven combined browser
+checks passed, including four voice guards; the combined API suite passed 153
+tests. The public app remains at [Ontara](https://ontara-web-35iy.onrender.com).
 
 For a loopback-only integration test, run `dev_api.py` using the existing API
 environment. It explicitly disables mail and dispatch, listens on port 8027,
