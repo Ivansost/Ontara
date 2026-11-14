@@ -1,0 +1,26 @@
+{
+  "verifiedAt": "2026-11-14T16:32:36.121814+00:00",
+  "executionLocation": "Actual deployed Render Free Linux service; local executor8003 and localAPI8001 stopped.",
+  "serviceUrl": "https://ontara-executor-35iy.onrender.com",
+  "deploymentId": "dep-dbs8nfm1egvs73d5rr10",
+  "sourceCommit": "62c6edf",
+  "healthHttpStatus": 200,
+  "health": {
+    "status": "ok",
+    "service": "ontara-executor",
+    "runtimeMode": "fallback"
+  },
+  "browserReadinessHttpStatus": 200,
+  "browserReadiness": {
+    "status": "ready",
+    "chromium": true,
+    "browserVersion": "159.0.8154.6",
+    "browserChannel": "pinned-chromium",
+    "maxActiveBrowserTasks": 1,
+    "runtimeMode": "fallback"
+  },
+  "latencySeconds": 9.24,
+  "scope": "Authenticated browser launch only; no case, portal ticket, generation or mail mutation.",
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof."
+}

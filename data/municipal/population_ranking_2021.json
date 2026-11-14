@@ -1,0 +1,3216 @@
+{
+  "method": "Sum 2021 Census population counts from Statistics Canada table 98-10-0004-01 for the lower-tier members listed in Ontario municipal registry (validated June 2026). Use only Lower Tier rows; all Single Tier rows are excluded even when their geographic area names match a county. Census-division totals and designated places are never added. 2021 boundaries/counts used consistently; registry membership is current and matched by normalized CSD name, with one explicit bilingual alias for The Nation / La Nation.",
+  "populationYear": 2021,
+  "registryUrl": "https://data.ontario.ca/dataset/62e83cbc-0731-4d66-abdc-2f2b31bcd76c/resource/6783a586-6b05-4a73-9663-e60a6963c91e/download/municipalities_-_en_2026-0526.csv",
+  "populationUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000401",
+  "populationDownloadUrl": "https://www150.statcan.gc.ca/n1/tbl/csv/98100004-eng.zip",
+  "verifiedAt": "2026-11-14T15:43:30.409122+00:00",
+  "upperTiers": [
+    {
+      "name": "Peel",
+      "fullName": "Peel, Regional Municipality of",
+      "type": "Upper Tier",
+      "area": "Peel",
+      "officialUrl": "http://www.peelregion.ca/",
+      "id": "peel-region",
+      "members": [
+        {
+          "name": "Brampton",
+          "fullName": "Brampton, City of",
+          "type": "Lower Tier",
+          "area": "Peel",
+          "officialUrl": "http://www.brampton.ca/en/pages/welcome.aspx",
+          "id": "brampton-city",
+          "population2021": 656480,
+          "csdName": "Brampton",
+          "csdDguid": "2021A00053521010"
+        },
+        {
+          "name": "Caledon",
+          "fullName": "Caledon, Town of",
+          "type": "Lower Tier",
+          "area": "Peel",
+          "officialUrl": "http://www.town.caledon.on.ca/",
+          "id": "caledon-town",
+          "population2021": 76581,
+          "csdName": "Caledon",
+          "csdDguid": "2021A00053521024"
+        },
+        {
+          "name": "Mississauga",
+          "fullName": "Mississauga, City of",
+          "type": "Lower Tier",
+          "area": "Peel",
+          "officialUrl": "http://www.mississauga.ca/",
+          "id": "mississauga-city",
+          "population2021": 717961,
+          "csdName": "Mississauga",
+          "csdDguid": "2021A00053521005"
+        }
+      ],
+      "population2021": 1451022,
+      "excludedSingleTier": [],
+      "rank": 1
+    },
+    {
+      "name": "York",
+      "fullName": "York, Regional Municipality of",
+      "type": "Upper Tier",
+      "area": "York",
+      "officialUrl": "http://www.york.ca/",
+      "id": "york-region",
+      "members": [
+        {
+          "name": "Aurora",
+          "fullName": "Aurora, Town of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "https://www.aurora.ca/en/index.aspx",
+          "id": "aurora-town",
+          "population2021": 62057,
+          "csdName": "Aurora",
+          "csdDguid": "2021A00053519046"
+        },
+        {
+          "name": "East Gwillimbury",
+          "fullName": "East Gwillimbury, Town of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.eastgwillimbury.ca/",
+          "id": "east-gwillimbury-town",
+          "population2021": 34637,
+          "csdName": "East Gwillimbury",
+          "csdDguid": "2021A00053519054"
+        },
+        {
+          "name": "Georgina",
+          "fullName": "Georgina, Town of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.georgina.ca/",
+          "id": "georgina-town",
+          "population2021": 47642,
+          "csdName": "Georgina",
+          "csdDguid": "2021A00053519070"
+        },
+        {
+          "name": "King",
+          "fullName": "King, Township of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.king.ca/",
+          "id": "king-township",
+          "population2021": 27333,
+          "csdName": "King",
+          "csdDguid": "2021A00053519049"
+        },
+        {
+          "name": "Markham",
+          "fullName": "Markham, City of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.markham.ca/",
+          "id": "markham-city",
+          "population2021": 338503,
+          "csdName": "Markham",
+          "csdDguid": "2021A00053519036"
+        },
+        {
+          "name": "Newmarket",
+          "fullName": "Newmarket, Town of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.newmarket.ca/",
+          "id": "newmarket-town",
+          "population2021": 87942,
+          "csdName": "Newmarket",
+          "csdDguid": "2021A00053519048"
+        },
+        {
+          "name": "Richmond Hill",
+          "fullName": "Richmond Hill, City of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.richmondhill.ca/",
+          "id": "richmond-hill-city",
+          "population2021": 202022,
+          "csdName": "Richmond Hill",
+          "csdDguid": "2021A00053519038"
+        },
+        {
+          "name": "Vaughan",
+          "fullName": "Vaughan, City of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.city.vaughan.on.ca/",
+          "id": "vaughan-city",
+          "population2021": 323103,
+          "csdName": "Vaughan",
+          "csdDguid": "2021A00053519028"
+        },
+        {
+          "name": "Whitchurch-Stouffville",
+          "fullName": "Whitchurch-Stouffville, Town of",
+          "type": "Lower Tier",
+          "area": "York",
+          "officialUrl": "http://www.townofws.com/",
+          "id": "whitchurch-stouffville-town",
+          "population2021": 49864,
+          "csdName": "Whitchurch-Stouffville",
+          "csdDguid": "2021A00053519044"
+        }
+      ],
+      "population2021": 1173103,
+      "excludedSingleTier": [],
+      "rank": 2
+    },
+    {
+      "name": "Durham",
+      "fullName": "Durham, Regional Municipality of",
+      "type": "Upper Tier",
+      "area": "Durham",
+      "officialUrl": "http://www.durham.ca/",
+      "id": "durham-region",
+      "members": [
+        {
+          "name": "Ajax",
+          "fullName": "Ajax, Town of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "http://www.ajax.ca/en/",
+          "id": "ajax-town",
+          "population2021": 126666,
+          "csdName": "Ajax",
+          "csdDguid": "2021A00053518005"
+        },
+        {
+          "name": "Brock",
+          "fullName": "Brock, Township of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "http://townshipofbrock.ca/",
+          "id": "brock-township",
+          "population2021": 12567,
+          "csdName": "Brock",
+          "csdDguid": "2021A00053518039"
+        },
+        {
+          "name": "Clarington",
+          "fullName": "Clarington, Municipality of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "http://www.clarington.net/",
+          "id": "clarington-municipality",
+          "population2021": 101427,
+          "csdName": "Clarington",
+          "csdDguid": "2021A00053518017"
+        },
+        {
+          "name": "Oshawa",
+          "fullName": "Oshawa, City of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "https://www.oshawa.ca/en/index.aspx",
+          "id": "oshawa-city",
+          "population2021": 175383,
+          "csdName": "Oshawa",
+          "csdDguid": "2021A00053518013"
+        },
+        {
+          "name": "Pickering",
+          "fullName": "Pickering, City of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "https://www.pickering.ca/en/index.aspx",
+          "id": "pickering-city",
+          "population2021": 99186,
+          "csdName": "Pickering",
+          "csdDguid": "2021A00053518001"
+        },
+        {
+          "name": "Scugog",
+          "fullName": "Scugog, Township of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "https://www.scugog.ca/en/index.aspx",
+          "id": "scugog-township",
+          "population2021": 21581,
+          "csdName": "Scugog",
+          "csdDguid": "2021A00053518020"
+        },
+        {
+          "name": "Uxbridge",
+          "fullName": "Uxbridge, Township of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "http://www.town.uxbridge.on.ca/",
+          "id": "uxbridge-township",
+          "population2021": 21556,
+          "csdName": "Uxbridge",
+          "csdDguid": "2021A00053518029"
+        },
+        {
+          "name": "Whitby",
+          "fullName": "Whitby, Town of",
+          "type": "Lower Tier",
+          "area": "Durham",
+          "officialUrl": "http://www.whitby.ca/en/",
+          "id": "whitby-town",
+          "population2021": 138501,
+          "csdName": "Whitby",
+          "csdDguid": "2021A00053518009"
+        }
+      ],
+      "population2021": 696867,
+      "excludedSingleTier": [],
+      "rank": 3
+    },
+    {
+      "name": "Halton",
+      "fullName": "Halton, Regional Municipality of",
+      "type": "Upper Tier",
+      "area": "Halton",
+      "officialUrl": "http://www.halton.ca/",
+      "id": "halton-region",
+      "members": [
+        {
+          "name": "Burlington",
+          "fullName": "Burlington, City of",
+          "type": "Lower Tier",
+          "area": "Halton",
+          "officialUrl": "https://www.burlington.ca/en/index.aspx",
+          "id": "burlington-city",
+          "population2021": 186948,
+          "csdName": "Burlington",
+          "csdDguid": "2021A00053524002"
+        },
+        {
+          "name": "Halton Hills",
+          "fullName": "Halton Hills, Town of",
+          "type": "Lower Tier",
+          "area": "Halton",
+          "officialUrl": "http://www.haltonhills.ca/",
+          "id": "halton-hills-town",
+          "population2021": 62951,
+          "csdName": "Halton Hills",
+          "csdDguid": "2021A00053524015"
+        },
+        {
+          "name": "Milton",
+          "fullName": "Milton, Town of",
+          "type": "Lower Tier",
+          "area": "Halton",
+          "officialUrl": "http://www.milton.ca/",
+          "id": "milton-town",
+          "population2021": 132979,
+          "csdName": "Milton",
+          "csdDguid": "2021A00053524009"
+        },
+        {
+          "name": "Oakville",
+          "fullName": "Oakville, Town of",
+          "type": "Lower Tier",
+          "area": "Halton",
+          "officialUrl": "http://www.oakville.ca/",
+          "id": "oakville-town",
+          "population2021": 213759,
+          "csdName": "Oakville",
+          "csdDguid": "2021A00053524001"
+        }
+      ],
+      "population2021": 596637,
+      "excludedSingleTier": [],
+      "rank": 4
+    },
+    {
+      "name": "Waterloo",
+      "fullName": "Waterloo, Regional Municipality of",
+      "type": "Upper Tier",
+      "area": "Waterloo",
+      "officialUrl": "http://www.region.waterloo.on.ca/",
+      "id": "waterloo-region",
+      "members": [
+        {
+          "name": "Cambridge",
+          "fullName": "Cambridge, City of",
+          "type": "Lower Tier",
+          "area": "Waterloo",
+          "officialUrl": "http://www.cambridge.ca/",
+          "id": "cambridge-city",
+          "population2021": 138479,
+          "csdName": "Cambridge",
+          "csdDguid": "2021A00053530010"
+        },
+        {
+          "name": "Kitchener",
+          "fullName": "Kitchener, City of",
+          "type": "Lower Tier",
+          "area": "Waterloo",
+          "officialUrl": "http://www.kitchener.ca/",
+          "id": "kitchener-city",
+          "population2021": 256885,
+          "csdName": "Kitchener",
+          "csdDguid": "2021A00053530013"
+        },
+        {
+          "name": "North Dumfries",
+          "fullName": "North Dumfries, Township of",
+          "type": "Lower Tier",
+          "area": "Waterloo",
+          "officialUrl": "http://www.northdumfries.ca/",
+          "id": "north-dumfries-township",
+          "population2021": 10619,
+          "csdName": "North Dumfries",
+          "csdDguid": "2021A00053530004"
+        },
+        {
+          "name": "Waterloo",
+          "fullName": "Waterloo, City of",
+          "type": "Lower Tier",
+          "area": "Waterloo",
+          "officialUrl": "http://www.city.waterloo.on.ca/",
+          "id": "waterloo-city",
+          "population2021": 121436,
+          "csdName": "Waterloo",
+          "csdDguid": "2021A00053530016"
+        },
+        {
+          "name": "Wellesley",
+          "fullName": "Wellesley, Township of",
+          "type": "Lower Tier",
+          "area": "Waterloo",
+          "officialUrl": "https://www.wellesley.ca/en/index.aspx",
+          "id": "wellesley-township",
+          "population2021": 11318,
+          "csdName": "Wellesley",
+          "csdDguid": "2021A00053530027"
+        },
+        {
+          "name": "Wilmot",
+          "fullName": "Wilmot, Township of",
+          "type": "Lower Tier",
+          "area": "Waterloo",
+          "officialUrl": "http://www.wilmot.ca/",
+          "id": "wilmot-township",
+          "population2021": 21429,
+          "csdName": "Wilmot",
+          "csdDguid": "2021A00053530020"
+        },
+        {
+          "name": "Woolwich",
+          "fullName": "Woolwich, Township of",
+          "type": "Lower Tier",
+          "area": "Waterloo",
+          "officialUrl": "http://www.woolwich.ca/",
+          "id": "woolwich-township",
+          "population2021": 26999,
+          "csdName": "Woolwich",
+          "csdDguid": "2021A00053530035"
+        }
+      ],
+      "population2021": 587165,
+      "excludedSingleTier": [],
+      "rank": 5
+    },
+    {
+      "name": "Niagara",
+      "fullName": "Niagara, Regional Municipality of",
+      "type": "Upper Tier",
+      "area": "Niagara",
+      "officialUrl": "http://www.niagararegion.ca/",
+      "id": "niagara-region",
+      "members": [
+        {
+          "name": "Fort Erie",
+          "fullName": "Fort Erie, Town of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "https://www.forterie.ca/",
+          "id": "fort-erie-town",
+          "population2021": 32901,
+          "csdName": "Fort Erie",
+          "csdDguid": "2021A00053526003"
+        },
+        {
+          "name": "Grimsby",
+          "fullName": "Grimsby, Town of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.town.grimsby.on.ca/",
+          "id": "grimsby-town",
+          "population2021": 28883,
+          "csdName": "Grimsby",
+          "csdDguid": "2021A00053526065"
+        },
+        {
+          "name": "Lincoln",
+          "fullName": "Lincoln, Town of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.lincoln.ca/",
+          "id": "lincoln-town",
+          "population2021": 25719,
+          "csdName": "Lincoln",
+          "csdDguid": "2021A00053526057"
+        },
+        {
+          "name": "Niagara Falls",
+          "fullName": "Niagara Falls, City of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.niagarafalls.ca/",
+          "id": "niagara-falls-city",
+          "population2021": 94415,
+          "csdName": "Niagara Falls",
+          "csdDguid": "2021A00053526043"
+        },
+        {
+          "name": "Niagara-on-the-Lake",
+          "fullName": "Niagara-on-the-Lake, Town of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.notl.org/",
+          "id": "niagara-on-the-lake-town",
+          "population2021": 19088,
+          "csdName": "Niagara-on-the-Lake",
+          "csdDguid": "2021A00053526047"
+        },
+        {
+          "name": "Pelham",
+          "fullName": "Pelham, Town of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.pelham.ca/",
+          "id": "pelham-town",
+          "population2021": 18192,
+          "csdName": "Pelham",
+          "csdDguid": "2021A00053526028"
+        },
+        {
+          "name": "Port Colborne",
+          "fullName": "Port Colborne, City of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.portcolborne.ca/",
+          "id": "port-colborne-city",
+          "population2021": 20033,
+          "csdName": "Port Colborne",
+          "csdDguid": "2021A00053526011"
+        },
+        {
+          "name": "St. Catharines",
+          "fullName": "St. Catharines, City of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.stcatharines.ca/",
+          "id": "st-catharines-city",
+          "population2021": 136803,
+          "csdName": "St. Catharines",
+          "csdDguid": "2021A00053526053"
+        },
+        {
+          "name": "Thorold",
+          "fullName": "Thorold, City of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.thorold.com/",
+          "id": "thorold-city",
+          "population2021": 23816,
+          "csdName": "Thorold",
+          "csdDguid": "2021A00053526037"
+        },
+        {
+          "name": "Wainfleet",
+          "fullName": "Wainfleet, Township of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.wainfleet.ca/",
+          "id": "wainfleet-township",
+          "population2021": 6887,
+          "csdName": "Wainfleet",
+          "csdDguid": "2021A00053526014"
+        },
+        {
+          "name": "Welland",
+          "fullName": "Welland, City of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.welland.ca/",
+          "id": "welland-city",
+          "population2021": 55750,
+          "csdName": "Welland",
+          "csdDguid": "2021A00053526032"
+        },
+        {
+          "name": "West Lincoln",
+          "fullName": "West Lincoln, Township of",
+          "type": "Lower Tier",
+          "area": "Niagara",
+          "officialUrl": "http://www.westlincoln.ca/",
+          "id": "west-lincoln-township",
+          "population2021": 15454,
+          "csdName": "West Lincoln",
+          "csdDguid": "2021A00053526021"
+        }
+      ],
+      "population2021": 477941,
+      "excludedSingleTier": [],
+      "rank": 6
+    },
+    {
+      "name": "Simcoe",
+      "fullName": "Simcoe, County of",
+      "type": "Upper Tier",
+      "area": "Simcoe",
+      "officialUrl": "http://www.simcoe.ca/",
+      "id": "simcoe-county",
+      "members": [
+        {
+          "name": "Adjala-Tosorontio",
+          "fullName": "Adjala-Tosorontio, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "https://www.adjtos.ca/en/index.aspx",
+          "id": "adjala-tosorontio-township",
+          "population2021": 10989,
+          "csdName": "Adjala-Tosorontio",
+          "csdDguid": "2021A00053543003"
+        },
+        {
+          "name": "Bradford West Gwillimbury",
+          "fullName": "Bradford West Gwillimbury, Town of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "https://www.townofbwg.com/",
+          "id": "bradford-west-gwillimbury-town",
+          "population2021": 42880,
+          "csdName": "Bradford West Gwillimbury",
+          "csdDguid": "2021A00053543014"
+        },
+        {
+          "name": "Clearview",
+          "fullName": "Clearview, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.clearview.ca/",
+          "id": "clearview-township",
+          "population2021": 14814,
+          "csdName": "Clearview",
+          "csdDguid": "2021A00053543005"
+        },
+        {
+          "name": "Collingwood",
+          "fullName": "Collingwood, Town of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.collingwood.ca/",
+          "id": "collingwood-town",
+          "population2021": 24811,
+          "csdName": "Collingwood",
+          "csdDguid": "2021A00053543031"
+        },
+        {
+          "name": "Essa",
+          "fullName": "Essa, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.essatownship.on.ca/",
+          "id": "essa-township",
+          "population2021": 22970,
+          "csdName": "Essa",
+          "csdDguid": "2021A00053543021"
+        },
+        {
+          "name": "Innisfil",
+          "fullName": "Innisfil, Town of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "https://innisfil.ca/",
+          "id": "innisfil-town",
+          "population2021": 43326,
+          "csdName": "Innisfil",
+          "csdDguid": "2021A00053543017"
+        },
+        {
+          "name": "Midland",
+          "fullName": "Midland, Town of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.midland.ca/",
+          "id": "midland-town",
+          "population2021": 17817,
+          "csdName": "Midland",
+          "csdDguid": "2021A00053543074"
+        },
+        {
+          "name": "New Tecumseth",
+          "fullName": "New Tecumseth, Town of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.town.newtecumseth.on.ca/",
+          "id": "new-tecumseth-town",
+          "population2021": 43948,
+          "csdName": "New Tecumseth",
+          "csdDguid": "2021A00053543007"
+        },
+        {
+          "name": "Oro-Medonte",
+          "fullName": "Oro-Medonte, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.oro-medonte.ca/",
+          "id": "oro-medonte-township",
+          "population2021": 23017,
+          "csdName": "Oro-Medonte",
+          "csdDguid": "2021A00053543023"
+        },
+        {
+          "name": "Penetanguishene",
+          "fullName": "Penetanguishene, Town of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.penetanguishene.ca/",
+          "id": "penetanguishene-town",
+          "population2021": 10077,
+          "csdName": "Penetanguishene",
+          "csdDguid": "2021A00053543072"
+        },
+        {
+          "name": "Ramara",
+          "fullName": "Ramara, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.ramara.ca/",
+          "id": "ramara-township",
+          "population2021": 10377,
+          "csdName": "Ramara",
+          "csdDguid": "2021A00053543019"
+        },
+        {
+          "name": "Severn",
+          "fullName": "Severn, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.townshipofsevern.com/",
+          "id": "severn-township",
+          "population2021": 14576,
+          "csdName": "Severn",
+          "csdDguid": "2021A00053543015"
+        },
+        {
+          "name": "Springwater",
+          "fullName": "Springwater, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.springwater.ca/",
+          "id": "springwater-township",
+          "population2021": 21701,
+          "csdName": "Springwater",
+          "csdDguid": "2021A00053543009"
+        },
+        {
+          "name": "Tay",
+          "fullName": "Tay, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.tay.ca/",
+          "id": "tay-township",
+          "population2021": 11091,
+          "csdName": "Tay",
+          "csdDguid": "2021A00053543071"
+        },
+        {
+          "name": "Tiny",
+          "fullName": "Tiny, Township of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "https://www.tiny.ca/",
+          "id": "tiny-township",
+          "population2021": 12966,
+          "csdName": "Tiny",
+          "csdDguid": "2021A00053543068"
+        },
+        {
+          "name": "Wasaga Beach",
+          "fullName": "Wasaga Beach, Town of",
+          "type": "Lower Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.wasagabeach.com/",
+          "id": "wasaga-beach-town",
+          "population2021": 24862,
+          "csdName": "Wasaga Beach",
+          "csdDguid": "2021A00053543064"
+        }
+      ],
+      "population2021": 350222,
+      "excludedSingleTier": [
+        {
+          "name": "Barrie",
+          "fullName": "Barrie, City of",
+          "type": "Single Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.barrie.ca/Pages/default.aspx",
+          "id": "barrie-city"
+        },
+        {
+          "name": "Orillia",
+          "fullName": "Orillia, City of",
+          "type": "Single Tier",
+          "area": "Simcoe",
+          "officialUrl": "http://www.orillia.ca/",
+          "id": "orillia-city"
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "name": "Essex",
+      "fullName": "Essex, County of",
+      "type": "Upper Tier",
+      "area": "Essex",
+      "officialUrl": "https://www.countyofessex.ca/en/index.aspx",
+      "id": "essex-county",
+      "members": [
+        {
+          "name": "Amherstburg",
+          "fullName": "Amherstburg, Town of",
+          "type": "Lower Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.amherstburg.ca/",
+          "id": "amherstburg-town",
+          "population2021": 23524,
+          "csdName": "Amherstburg",
+          "csdDguid": "2021A00053537028"
+        },
+        {
+          "name": "Essex",
+          "fullName": "Essex, Town of",
+          "type": "Lower Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.townofessex.on.ca/",
+          "id": "essex-town",
+          "population2021": 21216,
+          "csdName": "Essex",
+          "csdDguid": "2021A00053537016"
+        },
+        {
+          "name": "Kingsville",
+          "fullName": "Kingsville, Town of",
+          "type": "Lower Tier",
+          "area": "Essex",
+          "officialUrl": "https://www.kingsville.ca/en/index.aspx",
+          "id": "kingsville-town",
+          "population2021": 22119,
+          "csdName": "Kingsville",
+          "csdDguid": "2021A00053537013"
+        },
+        {
+          "name": "LaSalle",
+          "fullName": "LaSalle, Town of",
+          "type": "Lower Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.town.lasalle.on.ca/",
+          "id": "lasalle-town",
+          "population2021": 32721,
+          "csdName": "LaSalle",
+          "csdDguid": "2021A00053537034"
+        },
+        {
+          "name": "Lakeshore",
+          "fullName": "Lakeshore, Municipality of",
+          "type": "Lower Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.townoflakeshore.on.ca/",
+          "id": "lakeshore-municipality",
+          "population2021": 40410,
+          "csdName": "Lakeshore",
+          "csdDguid": "2021A00053537064"
+        },
+        {
+          "name": "Leamington",
+          "fullName": "Leamington, Municipality of",
+          "type": "Lower Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.leamington.ca/",
+          "id": "leamington-municipality",
+          "population2021": 29680,
+          "csdName": "Leamington",
+          "csdDguid": "2021A00053537003"
+        },
+        {
+          "name": "Tecumseh",
+          "fullName": "Tecumseh, Town of",
+          "type": "Lower Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.tecumseh.ca/",
+          "id": "tecumseh-town",
+          "population2021": 23300,
+          "csdName": "Tecumseh",
+          "csdDguid": "2021A00053537048"
+        }
+      ],
+      "population2021": 192970,
+      "excludedSingleTier": [
+        {
+          "name": "Pelee",
+          "fullName": "Pelee, Township of",
+          "type": "Single Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.pelee.org/",
+          "id": "pelee-township"
+        },
+        {
+          "name": "Windsor",
+          "fullName": "Windsor, City of",
+          "type": "Single Tier",
+          "area": "Essex",
+          "officialUrl": "http://www.citywindsor.ca/",
+          "id": "windsor-city"
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "name": "Lambton",
+      "fullName": "Lambton, County of",
+      "type": "Upper Tier",
+      "area": "Lambton",
+      "officialUrl": "http://www.lambtononline.ca/",
+      "id": "lambton-county",
+      "members": [
+        {
+          "name": "Brooke-Alvinston",
+          "fullName": "Brooke-Alvinston, Municipality of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://brookealvinston.com/home/",
+          "id": "brooke-alvinston-municipality",
+          "population2021": 2359,
+          "csdName": "Brooke-Alvinston",
+          "csdDguid": "2021A00053538015"
+        },
+        {
+          "name": "Dawn-Euphemia",
+          "fullName": "Dawn-Euphemia, Township of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "https://dawneuphemia.ca/",
+          "id": "dawn-euphemia-township",
+          "population2021": 1968,
+          "csdName": "Dawn-Euphemia",
+          "csdDguid": "2021A00053538007"
+        },
+        {
+          "name": "Enniskillen",
+          "fullName": "Enniskillen, Township of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://www.enniskillen.ca/",
+          "id": "enniskillen-township",
+          "population2021": 2825,
+          "csdName": "Enniskillen",
+          "csdDguid": "2021A00053538016"
+        },
+        {
+          "name": "Lambton Shores",
+          "fullName": "Lambton Shores, Municipality of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://www.lambtonshores.ca/",
+          "id": "lambton-shores-municipality",
+          "population2021": 11876,
+          "csdName": "Lambton Shores",
+          "csdDguid": "2021A00053538040"
+        },
+        {
+          "name": "Oil Springs",
+          "fullName": "Oil Springs, Village of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://www.oilsprings.ca/",
+          "id": "oil-springs-village",
+          "population2021": 647,
+          "csdName": "Oil Springs",
+          "csdDguid": "2021A00053538018"
+        },
+        {
+          "name": "Petrolia",
+          "fullName": "Petrolia, Town of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://town.petrolia.on.ca/",
+          "id": "petrolia-town",
+          "population2021": 6013,
+          "csdName": "Petrolia",
+          "csdDguid": "2021A00053538019"
+        },
+        {
+          "name": "Plympton-Wyoming",
+          "fullName": "Plympton-Wyoming, Town of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://plympton-wyoming.com/",
+          "id": "plympton-wyoming-town",
+          "population2021": 8308,
+          "csdName": "Plympton-Wyoming",
+          "csdDguid": "2021A00053538035"
+        },
+        {
+          "name": "Point Edward",
+          "fullName": "Point Edward, Village of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://www.villageofpointedward.com/",
+          "id": "point-edward-village",
+          "population2021": 1930,
+          "csdName": "Point Edward",
+          "csdDguid": "2021A00053538031"
+        },
+        {
+          "name": "Sarnia",
+          "fullName": "Sarnia, City of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://www.sarnia.ca/",
+          "id": "sarnia-city",
+          "population2021": 72047,
+          "csdName": "Sarnia",
+          "csdDguid": "2021A00053538030"
+        },
+        {
+          "name": "St. Clair",
+          "fullName": "St. Clair, Township of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://www.twp.stclair.on.ca/",
+          "id": "st-clair-township",
+          "population2021": 14659,
+          "csdName": "St. Clair",
+          "csdDguid": "2021A00053538003"
+        },
+        {
+          "name": "Warwick",
+          "fullName": "Warwick, Township of",
+          "type": "Lower Tier",
+          "area": "Lambton",
+          "officialUrl": "http://www.warwicktownship.ca/",
+          "id": "warwick-township",
+          "population2021": 3641,
+          "csdName": "Warwick",
+          "csdDguid": "2021A00053538043"
+        }
+      ],
+      "population2021": 126273,
+      "excludedSingleTier": [],
+      "rank": 9
+    },
+    {
+      "name": "Oxford",
+      "fullName": "Oxford, County of",
+      "type": "Upper Tier",
+      "area": "Oxford",
+      "officialUrl": "http://www.oxfordcounty.ca/",
+      "id": "oxford-county",
+      "members": [
+        {
+          "name": "Blandford-Blenheim",
+          "fullName": "Blandford-Blenheim, Township of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "http://www.blandfordblenheim.ca/",
+          "id": "blandford-blenheim-township",
+          "population2021": 7565,
+          "csdName": "Blandford-Blenheim",
+          "csdDguid": "2021A00053532045"
+        },
+        {
+          "name": "East Zorra-Tavistock",
+          "fullName": "East Zorra-Tavistock, Township of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "https://www.ezt.ca/en/index.aspx",
+          "id": "east-zorra-tavistock-township",
+          "population2021": 7841,
+          "csdName": "East Zorra-Tavistock",
+          "csdDguid": "2021A00053532038"
+        },
+        {
+          "name": "Ingersoll",
+          "fullName": "Ingersoll, Town of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "http://www.ingersoll.ca/",
+          "id": "ingersoll-town",
+          "population2021": 13693,
+          "csdName": "Ingersoll",
+          "csdDguid": "2021A00053532018"
+        },
+        {
+          "name": "Norwich",
+          "fullName": "Norwich, Township of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "http://www.twp.norwich.on.ca/",
+          "id": "norwich-township",
+          "population2021": 11151,
+          "csdName": "Norwich",
+          "csdDguid": "2021A00053532002"
+        },
+        {
+          "name": "South-West Oxford",
+          "fullName": "South-West Oxford, Township of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "http://www.swox.org/",
+          "id": "south-west-oxford-township",
+          "population2021": 7583,
+          "csdName": "South-West Oxford",
+          "csdDguid": "2021A00053532012"
+        },
+        {
+          "name": "Tillsonburg",
+          "fullName": "Tillsonburg, Town of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "http://www.town.tillsonburg.on.ca/",
+          "id": "tillsonburg-town",
+          "population2021": 18615,
+          "csdName": "Tillsonburg",
+          "csdDguid": "2021A00053532004"
+        },
+        {
+          "name": "Woodstock",
+          "fullName": "Woodstock, City of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "https://www.cityofwoodstock.ca/en/index.aspx",
+          "id": "woodstock-city",
+          "population2021": 46705,
+          "csdName": "Woodstock",
+          "csdDguid": "2021A00053532042"
+        },
+        {
+          "name": "Zorra",
+          "fullName": "Zorra, Township of",
+          "type": "Lower Tier",
+          "area": "Oxford",
+          "officialUrl": "http://www.zorra.on.ca/",
+          "id": "zorra-township",
+          "population2021": 8628,
+          "csdName": "Zorra",
+          "csdDguid": "2021A00053532027"
+        }
+      ],
+      "population2021": 121781,
+      "excludedSingleTier": [],
+      "rank": 10
+    },
+    {
+      "name": "Grey",
+      "fullName": "Grey, County of",
+      "type": "Upper Tier",
+      "area": "Grey",
+      "officialUrl": "http://www.grey.ca/",
+      "id": "grey-county",
+      "members": [
+        {
+          "name": "Chatsworth",
+          "fullName": "Chatsworth, Township of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "http://www.chatsworth.ca/",
+          "id": "chatsworth-township",
+          "population2021": 7080,
+          "csdName": "Chatsworth",
+          "csdDguid": "2021A00053542037"
+        },
+        {
+          "name": "Georgian Bluffs",
+          "fullName": "Georgian Bluffs, Township of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "https://www.georgianbluffs.ca/en/index.aspx",
+          "id": "georgian-bluffs-township",
+          "population2021": 11100,
+          "csdName": "Georgian Bluffs",
+          "csdDguid": "2021A00053542053"
+        },
+        {
+          "name": "Grey Highlands",
+          "fullName": "Grey Highlands, Municipality of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "http://www.greyhighlands.ca/",
+          "id": "grey-highlands-municipality",
+          "population2021": 10424,
+          "csdName": "Grey Highlands",
+          "csdDguid": "2021A00053542015"
+        },
+        {
+          "name": "Hanover",
+          "fullName": "Hanover, Town of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "http://www.hanover.ca/",
+          "id": "hanover-town",
+          "population2021": 7967,
+          "csdName": "Hanover",
+          "csdDguid": "2021A00053542029"
+        },
+        {
+          "name": "Meaford",
+          "fullName": "Meaford, Municipality of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "http://meaford.ca/",
+          "id": "meaford-municipality",
+          "population2021": 11485,
+          "csdName": "Meaford",
+          "csdDguid": "2021A00053542047"
+        },
+        {
+          "name": "Owen Sound",
+          "fullName": "Owen Sound, City of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "http://www.owensound.ca/",
+          "id": "owen-sound-city",
+          "population2021": 21612,
+          "csdName": "Owen Sound",
+          "csdDguid": "2021A00053542059"
+        },
+        {
+          "name": "Southgate",
+          "fullName": "Southgate, Township of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "https://www.southgate.ca/en/index.aspx",
+          "id": "southgate-township",
+          "population2021": 8716,
+          "csdName": "Southgate",
+          "csdDguid": "2021A00053542005"
+        },
+        {
+          "name": "The Blue Mountains",
+          "fullName": "The Blue Mountains, Town of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "http://www.thebluemountains.ca/",
+          "id": "the-blue-mountains-town",
+          "population2021": 9390,
+          "csdName": "The Blue Mountains",
+          "csdDguid": "2021A00053542045"
+        },
+        {
+          "name": "West Grey",
+          "fullName": "West Grey, Municipality of",
+          "type": "Lower Tier",
+          "area": "Grey",
+          "officialUrl": "http://www.westgrey.com/",
+          "id": "west-grey-municipality",
+          "population2021": 13131,
+          "csdName": "West Grey",
+          "csdDguid": "2021A00053542004"
+        }
+      ],
+      "population2021": 100905,
+      "excludedSingleTier": [],
+      "rank": 11
+    },
+    {
+      "name": "Wellington",
+      "fullName": "Wellington, County of",
+      "type": "Upper Tier",
+      "area": "Wellington",
+      "officialUrl": "http://www.wellington.ca/",
+      "id": "wellington-county",
+      "members": [
+        {
+          "name": "Centre Wellington",
+          "fullName": "Centre Wellington, Township of",
+          "type": "Lower Tier",
+          "area": "Wellington",
+          "officialUrl": "https://www.centrewellington.ca/en/index.aspx",
+          "id": "centre-wellington-township",
+          "population2021": 31093,
+          "csdName": "Centre Wellington",
+          "csdDguid": "2021A00053523025"
+        },
+        {
+          "name": "Erin",
+          "fullName": "Erin, Town of",
+          "type": "Lower Tier",
+          "area": "Wellington",
+          "officialUrl": "http://www.erin.ca/",
+          "id": "erin-town",
+          "population2021": 11981,
+          "csdName": "Erin",
+          "csdDguid": "2021A00053523017"
+        },
+        {
+          "name": "Guelph/Eramosa",
+          "fullName": "Guelph/Eramosa, Township of",
+          "type": "Lower Tier",
+          "area": "Wellington",
+          "officialUrl": "http://www.get.on.ca/",
+          "id": "guelph-eramosa-township",
+          "population2021": 13904,
+          "csdName": "Guelph/Eramosa",
+          "csdDguid": "2021A00053523009"
+        },
+        {
+          "name": "Mapleton",
+          "fullName": "Mapleton, Township of",
+          "type": "Lower Tier",
+          "area": "Wellington",
+          "officialUrl": "http://www.mapleton.ca/",
+          "id": "mapleton-township",
+          "population2021": 10839,
+          "csdName": "Mapleton",
+          "csdDguid": "2021A00053523033"
+        },
+        {
+          "name": "Minto",
+          "fullName": "Minto, Town of",
+          "type": "Lower Tier",
+          "area": "Wellington",
+          "officialUrl": "http://www.town.minto.on.ca/",
+          "id": "minto-town",
+          "population2021": 9094,
+          "csdName": "Minto",
+          "csdDguid": "2021A00053523043"
+        },
+        {
+          "name": "Puslinch",
+          "fullName": "Puslinch, Township of",
+          "type": "Lower Tier",
+          "area": "Wellington",
+          "officialUrl": "https://puslinch.ca/",
+          "id": "puslinch-township",
+          "population2021": 7944,
+          "csdName": "Puslinch",
+          "csdDguid": "2021A00053523001"
+        },
+        {
+          "name": "Wellington North",
+          "fullName": "Wellington North, Township of",
+          "type": "Lower Tier",
+          "area": "Wellington",
+          "officialUrl": "http://www.wellington-north.com/",
+          "id": "wellington-north-township",
+          "population2021": 12431,
+          "csdName": "Wellington North",
+          "csdDguid": "2021A00053523050"
+        }
+      ],
+      "population2021": 97286,
+      "excludedSingleTier": [
+        {
+          "name": "Guelph",
+          "fullName": "Guelph, City of",
+          "type": "Single Tier",
+          "area": "Wellington",
+          "officialUrl": "http://www.guelph.ca/",
+          "id": "guelph-city"
+        }
+      ],
+      "rank": 12
+    },
+    {
+      "name": "Prescott and Russell",
+      "fullName": "Prescott and Russell, United Counties of",
+      "type": "Upper Tier",
+      "area": "Prescott and Russell",
+      "officialUrl": "http://www.prescott-russell.on.ca/",
+      "id": "prescott-russell-counties",
+      "members": [
+        {
+          "name": "Alfred and Plantagenet",
+          "fullName": "Alfred and Plantagenet, Township of",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "https://www.alfred-plantagenet.com/en/index.aspx",
+          "id": "alfred-and-plantagenet-township",
+          "population2021": 9949,
+          "csdName": "Alfred and Plantagenet",
+          "csdDguid": "2021A00053502023"
+        },
+        {
+          "name": "Casselman",
+          "fullName": "Casselman, Municipality of",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "http://www.en.casselman.ca/",
+          "id": "casselman-municipality",
+          "population2021": 3960,
+          "csdName": "Casselman",
+          "csdDguid": "2021A00053502044"
+        },
+        {
+          "name": "Champlain",
+          "fullName": "Champlain, Township of",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "http://www.champlain.ca/en/index.aspx",
+          "id": "champlain-township",
+          "population2021": 8665,
+          "csdName": "Champlain",
+          "csdDguid": "2021A00053502010"
+        },
+        {
+          "name": "Clarence-Rockland",
+          "fullName": "Clarence-Rockland, City of",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "http://www.clarence-rockland.com/",
+          "id": "clarence-rockland-city",
+          "population2021": 26505,
+          "csdName": "Clarence-Rockland",
+          "csdDguid": "2021A00053502036"
+        },
+        {
+          "name": "East Hawkesbury",
+          "fullName": "East Hawkesbury, Township of",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "http://www.easthawkesbury.ca/",
+          "id": "east-hawkesbury-township",
+          "population2021": 3418,
+          "csdName": "East Hawkesbury",
+          "csdDguid": "2021A00053502001"
+        },
+        {
+          "name": "Hawkesbury",
+          "fullName": "Hawkesbury, Town of",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "http://www.hawkesbury.ca/en/",
+          "id": "hawkesbury-town",
+          "population2021": 10194,
+          "csdName": "Hawkesbury",
+          "csdDguid": "2021A00053502008"
+        },
+        {
+          "name": "Russell",
+          "fullName": "Russell, Township of",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "http://www.russell.ca/",
+          "id": "russell-township",
+          "population2021": 19598,
+          "csdName": "Russell",
+          "csdDguid": "2021A00053502048"
+        },
+        {
+          "name": "The Nation Municipality",
+          "fullName": "The Nation Municipality",
+          "type": "Lower Tier",
+          "area": "Prescott and Russell",
+          "officialUrl": "http://www.nationmun.ca/",
+          "id": "the-nation-municipality-municipality",
+          "population2021": 13350,
+          "csdName": "The Nation / La Nation",
+          "csdDguid": "2021A00053502025"
+        }
+      ],
+      "population2021": 95639,
+      "excludedSingleTier": [],
+      "rank": 13
+    },
+    {
+      "name": "Renfrew",
+      "fullName": "Renfrew, County of",
+      "type": "Upper Tier",
+      "area": "Renfrew",
+      "officialUrl": "http://www.countyofrenfrew.on.ca/",
+      "id": "renfrew-county",
+      "members": [
+        {
+          "name": "Admaston/Bromley",
+          "fullName": "Admaston/Bromley, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.admastonbromley.com/",
+          "id": "admaston-bromley-township",
+          "population2021": 2995,
+          "csdName": "Admaston/Bromley",
+          "csdDguid": "2021A00053547043"
+        },
+        {
+          "name": "Arnprior",
+          "fullName": "Arnprior, Town of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.arnprior.ca/",
+          "id": "arnprior-town",
+          "population2021": 9629,
+          "csdName": "Arnprior",
+          "csdDguid": "2021A00053547002"
+        },
+        {
+          "name": "Bonnechere Valley",
+          "fullName": "Bonnechere Valley, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.bonnecherevalleytwp.com/",
+          "id": "bonnechere-valley-township",
+          "population2021": 3898,
+          "csdName": "Bonnechere Valley",
+          "csdDguid": "2021A00053547035"
+        },
+        {
+          "name": "Brudenell, Lyndoch and Raglan",
+          "fullName": "Brudenell, Lyndoch and Raglan, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.blrtownship.ca/",
+          "id": "brudenell-lyndoch-and-raglan-township",
+          "population2021": 1552,
+          "csdName": "Brudenell, Lyndoch and Raglan",
+          "csdDguid": "2021A00053547020"
+        },
+        {
+          "name": "Deep River",
+          "fullName": "Deep River, Town of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.deepriver.ca/",
+          "id": "deep-river-town",
+          "population2021": 4175,
+          "csdName": "Deep River",
+          "csdDguid": "2021A00053547096"
+        },
+        {
+          "name": "Greater Madawaska",
+          "fullName": "Greater Madawaska, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.greatermadawaska.com/",
+          "id": "greater-madawaska-township",
+          "population2021": 2864,
+          "csdName": "Greater Madawaska",
+          "csdDguid": "2021A00053547008"
+        },
+        {
+          "name": "Head, Clara and Maria",
+          "fullName": "Head, Clara and Maria, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://townshipsofheadclaramaria.ca/",
+          "id": "head-clara-and-maria-township",
+          "population2021": 267,
+          "csdName": "Head, Clara and Maria",
+          "csdDguid": "2021A00053547098"
+        },
+        {
+          "name": "Horton",
+          "fullName": "Horton, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.hortontownship.ca/",
+          "id": "horton-township",
+          "population2021": 3182,
+          "csdName": "Horton",
+          "csdDguid": "2021A00053547046"
+        },
+        {
+          "name": "Killaloe, Hagarty and Richards",
+          "fullName": "Killaloe, Hagarty and Richards, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.killaloe-hagarty-richards.ca/",
+          "id": "killaloe-hagarty-and-richards-township",
+          "population2021": 2410,
+          "csdName": "Killaloe, Hagarty and Richards",
+          "csdDguid": "2021A00053547033"
+        },
+        {
+          "name": "Laurentian Hills",
+          "fullName": "Laurentian Hills, Town of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.laurentianhills.ca/",
+          "id": "laurentian-hills-town",
+          "population2021": 2885,
+          "csdName": "Laurentian Hills",
+          "csdDguid": "2021A00053547090"
+        },
+        {
+          "name": "Laurentian Valley",
+          "fullName": "Laurentian Valley, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.laurentianvalleytwsp.on.ca/",
+          "id": "laurentian-valley-township",
+          "population2021": 9450,
+          "csdName": "Laurentian Valley",
+          "csdDguid": "2021A00053547075"
+        },
+        {
+          "name": "Madawaska Valley",
+          "fullName": "Madawaska Valley, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.madawaskavalley.ca/",
+          "id": "madawaska-valley-township",
+          "population2021": 3927,
+          "csdName": "Madawaska Valley",
+          "csdDguid": "2021A00053547030"
+        },
+        {
+          "name": "McNab/Braeside",
+          "fullName": "McNab/Braeside, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://mcnabbraeside.com/",
+          "id": "mcnab-braeside-township",
+          "population2021": 7591,
+          "csdName": "McNab/Braeside",
+          "csdDguid": "2021A00053547003"
+        },
+        {
+          "name": "North Algona Wilberforce",
+          "fullName": "North Algona Wilberforce, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.nalgonawil.com/",
+          "id": "north-algona-wilberforce-township",
+          "population2021": 3111,
+          "csdName": "North Algona Wilberforce",
+          "csdDguid": "2021A00053547070"
+        },
+        {
+          "name": "Petawawa",
+          "fullName": "Petawawa, Town of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.petawawa.ca/",
+          "id": "petawawa-town",
+          "population2021": 18160,
+          "csdName": "Petawawa",
+          "csdDguid": "2021A00053547076"
+        },
+        {
+          "name": "Renfrew",
+          "fullName": "Renfrew, Town of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.renfrewontario.com/",
+          "id": "renfrew-town",
+          "population2021": 8190,
+          "csdName": "Renfrew",
+          "csdDguid": "2021A00053547048"
+        },
+        {
+          "name": "Whitewater Region",
+          "fullName": "Whitewater Region, Township of",
+          "type": "Lower Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.whitewaterregion.ca/",
+          "id": "whitewater-region-township",
+          "population2021": 7225,
+          "csdName": "Whitewater Region",
+          "csdDguid": "2021A00053547056"
+        }
+      ],
+      "population2021": 91511,
+      "excludedSingleTier": [
+        {
+          "name": "Pembroke",
+          "fullName": "Pembroke, City of",
+          "type": "Single Tier",
+          "area": "Renfrew",
+          "officialUrl": "http://www.pembrokeontario.com/",
+          "id": "pembroke-city"
+        }
+      ],
+      "rank": 14
+    },
+    {
+      "name": "Northumberland",
+      "fullName": "Northumberland, County of",
+      "type": "Upper Tier",
+      "area": "Northumberland",
+      "officialUrl": "http://northumberland.ca/",
+      "id": "northumberland-county",
+      "members": [
+        {
+          "name": "Alnwick/Haldimand",
+          "fullName": "Alnwick/Haldimand, Township of",
+          "type": "Lower Tier",
+          "area": "Northumberland",
+          "officialUrl": "http://www.alnwickhaldimand.ca/",
+          "id": "alnwick-haldimand-township",
+          "population2021": 7473,
+          "csdName": "Alnwick/Haldimand",
+          "csdDguid": "2021A00053514024"
+        },
+        {
+          "name": "Brighton",
+          "fullName": "Brighton, Municipality of",
+          "type": "Lower Tier",
+          "area": "Northumberland",
+          "officialUrl": "http://www.brighton.ca/",
+          "id": "brighton-municipality",
+          "population2021": 12108,
+          "csdName": "Brighton",
+          "csdDguid": "2021A00053514004"
+        },
+        {
+          "name": "Cobourg",
+          "fullName": "Cobourg, Town of",
+          "type": "Lower Tier",
+          "area": "Northumberland",
+          "officialUrl": "http://www.cobourg.ca/",
+          "id": "cobourg-town",
+          "population2021": 20519,
+          "csdName": "Cobourg",
+          "csdDguid": "2021A00053514021"
+        },
+        {
+          "name": "Cramahe",
+          "fullName": "Cramahe, Township of",
+          "type": "Lower Tier",
+          "area": "Northumberland",
+          "officialUrl": "http://www.visitcramahe.ca/",
+          "id": "cramahe-township",
+          "population2021": 6509,
+          "csdName": "Cramahe",
+          "csdDguid": "2021A00053514014"
+        },
+        {
+          "name": "Hamilton",
+          "fullName": "Hamilton, Township of",
+          "type": "Lower Tier",
+          "area": "Northumberland",
+          "officialUrl": "http://www.hamiltontownship.ca/",
+          "id": "hamilton-township",
+          "population2021": 11059,
+          "csdName": "Hamilton",
+          "csdDguid": "2021A00053514019"
+        },
+        {
+          "name": "Port Hope",
+          "fullName": "Port Hope, Municipality of",
+          "type": "Lower Tier",
+          "area": "Northumberland",
+          "officialUrl": "http://www.porthope.ca/",
+          "id": "port-hope-municipality",
+          "population2021": 17294,
+          "csdName": "Port Hope",
+          "csdDguid": "2021A00053514020"
+        },
+        {
+          "name": "Trent Hills",
+          "fullName": "Trent Hills, Municipality of",
+          "type": "Lower Tier",
+          "area": "Northumberland",
+          "officialUrl": "http://www.trenthills.ca/",
+          "id": "trent-hills-municipality",
+          "population2021": 13861,
+          "csdName": "Trent Hills",
+          "csdDguid": "2021A00053514045"
+        }
+      ],
+      "population2021": 88823,
+      "excludedSingleTier": [],
+      "rank": 15
+    },
+    {
+      "name": "Middlesex",
+      "fullName": "Middlesex, County of",
+      "type": "Upper Tier",
+      "area": "Middlesex",
+      "officialUrl": "http://www.middlesex.ca/",
+      "id": "middlesex-county",
+      "members": [
+        {
+          "name": "Adelaide-Metcalfe",
+          "fullName": "Adelaide-Metcalfe, Township of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "https://adelaidemetcalfe.on.ca/",
+          "id": "adelaide-metcalfe-township",
+          "population2021": 3011,
+          "csdName": "Adelaide-Metcalfe",
+          "csdDguid": "2021A00053539047"
+        },
+        {
+          "name": "Lucan Biddulph",
+          "fullName": "Lucan Biddulph, Township of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.lucanbiddulph.on.ca/",
+          "id": "lucan-biddulph-township",
+          "population2021": 5680,
+          "csdName": "Lucan Biddulph",
+          "csdDguid": "2021A00053539060"
+        },
+        {
+          "name": "Middlesex Centre",
+          "fullName": "Middlesex Centre, Municipality of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.middlesexcentre.on.ca/",
+          "id": "middlesex-centre-municipality",
+          "population2021": 18928,
+          "csdName": "Middlesex Centre",
+          "csdDguid": "2021A00053539033"
+        },
+        {
+          "name": "Newbury",
+          "fullName": "Newbury, Village of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.newbury.ca/",
+          "id": "newbury-village",
+          "population2021": 440,
+          "csdName": "Newbury",
+          "csdDguid": "2021A00053539002"
+        },
+        {
+          "name": "North Middlesex",
+          "fullName": "North Middlesex, Municipality of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.northmiddlesex.on.ca/",
+          "id": "north-middlesex-municipality",
+          "population2021": 6307,
+          "csdName": "North Middlesex",
+          "csdDguid": "2021A00053539041"
+        },
+        {
+          "name": "Southwest Middlesex",
+          "fullName": "Southwest Middlesex, Municipality of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.southwestmiddlesex.ca/",
+          "id": "southwest-middlesex-municipality",
+          "population2021": 5893,
+          "csdName": "Southwest Middlesex",
+          "csdDguid": "2021A00053539005"
+        },
+        {
+          "name": "Strathroy-Caradoc",
+          "fullName": "Strathroy-Caradoc, Municipality of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.strathroy-caradoc.ca/",
+          "id": "strathroy-caradoc-municipality",
+          "population2021": 23871,
+          "csdName": "Strathroy-Caradoc",
+          "csdDguid": "2021A00053539015"
+        },
+        {
+          "name": "Thames Centre",
+          "fullName": "Thames Centre, Municipality of",
+          "type": "Lower Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.thamescentre.on.ca/",
+          "id": "thames-centre-municipality",
+          "population2021": 13980,
+          "csdName": "Thames Centre",
+          "csdDguid": "2021A00053539027"
+        }
+      ],
+      "population2021": 78110,
+      "excludedSingleTier": [
+        {
+          "name": "London",
+          "fullName": "London, City of",
+          "type": "Single Tier",
+          "area": "Middlesex",
+          "officialUrl": "http://www.london.ca/",
+          "id": "london-city"
+        }
+      ],
+      "rank": 16
+    },
+    {
+      "name": "Leeds and Grenville",
+      "fullName": "Leeds and Grenville, United Counties of",
+      "type": "Upper Tier",
+      "area": "Leeds and Grenville",
+      "officialUrl": "https://www.leedsgrenville.com/en/index.aspx",
+      "id": "leeds-grenville-counties",
+      "members": [
+        {
+          "name": "Athens",
+          "fullName": "Athens, Township of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.athenstownship.ca/",
+          "id": "athens-township",
+          "population2021": 3042,
+          "csdName": "Athens",
+          "csdDguid": "2021A00053507042"
+        },
+        {
+          "name": "Augusta",
+          "fullName": "Augusta, Township of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.augusta.ca/",
+          "id": "augusta-township",
+          "population2021": 7386,
+          "csdName": "Augusta",
+          "csdDguid": "2021A00053507006"
+        },
+        {
+          "name": "Edwardsburgh/Cardinal",
+          "fullName": "Edwardsburgh/Cardinal, Township of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.edwardsburghcardinal.ca/",
+          "id": "edwardsburgh-cardinal-township",
+          "population2021": 7505,
+          "csdName": "Edwardsburgh/Cardinal",
+          "csdDguid": "2021A00053507004"
+        },
+        {
+          "name": "Elizabethtown-Kitley",
+          "fullName": "Elizabethtown-Kitley, Township of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.elizabethtown-kitley.on.ca/",
+          "id": "elizabethtown-kitley-township",
+          "population2021": 9545,
+          "csdName": "Elizabethtown-Kitley",
+          "csdDguid": "2021A00053507014"
+        },
+        {
+          "name": "Front of Yonge",
+          "fullName": "Front of Yonge, Township of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "https://mallorytown.ca/",
+          "id": "front-of-yonge-township",
+          "population2021": 2595,
+          "csdName": "Front of Yonge",
+          "csdDguid": "2021A00053507017"
+        },
+        {
+          "name": "Leeds and the Thousand Islands",
+          "fullName": "Leeds and the Thousand Islands, Township of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "https://www.leeds1000islands.ca/",
+          "id": "leeds-and-the-thousand-islands-township",
+          "population2021": 9804,
+          "csdName": "Leeds and the Thousand Islands",
+          "csdDguid": "2021A00053507021"
+        },
+        {
+          "name": "Merrickville-Wolford",
+          "fullName": "Merrickville-Wolford, Village of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.merrickville-wolford.ca/",
+          "id": "merrickville-wolford-village",
+          "population2021": 3135,
+          "csdName": "Merrickville-Wolford",
+          "csdDguid": "2021A00053507052"
+        },
+        {
+          "name": "North Grenville",
+          "fullName": "North Grenville, Municipality of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.northgrenville.ca/",
+          "id": "north-grenville-municipality",
+          "population2021": 17964,
+          "csdName": "North Grenville",
+          "csdDguid": "2021A00053507065"
+        },
+        {
+          "name": "Rideau Lakes",
+          "fullName": "Rideau Lakes, Township of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.twprideaulakes.on.ca/",
+          "id": "rideau-lakes-township",
+          "population2021": 10883,
+          "csdName": "Rideau Lakes",
+          "csdDguid": "2021A00053507040"
+        },
+        {
+          "name": "Westport",
+          "fullName": "Westport, Village of",
+          "type": "Lower Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.village.westport.on.ca/",
+          "id": "westport-village",
+          "population2021": 634,
+          "csdName": "Westport",
+          "csdDguid": "2021A00053507033"
+        }
+      ],
+      "population2021": 72493,
+      "excludedSingleTier": [
+        {
+          "name": "Brockville",
+          "fullName": "Brockville, City of",
+          "type": "Single Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.brockville.com/",
+          "id": "brockville-city"
+        },
+        {
+          "name": "Gananoque",
+          "fullName": "Gananoque, Town of",
+          "type": "Single Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.gananoque.ca/",
+          "id": "gananoque-town"
+        },
+        {
+          "name": "Prescott",
+          "fullName": "Prescott, Town of",
+          "type": "Single Tier",
+          "area": "Leeds and Grenville",
+          "officialUrl": "http://www.prescott.ca/",
+          "id": "prescott-town"
+        }
+      ],
+      "rank": 17
+    },
+    {
+      "name": "Bruce",
+      "fullName": "Bruce, County of",
+      "type": "Upper Tier",
+      "area": "Bruce",
+      "officialUrl": "http://www.brucecounty.on.ca/",
+      "id": "bruce-county",
+      "members": [
+        {
+          "name": "Arran-Elderslie",
+          "fullName": "Arran-Elderslie, Municipality of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "http://www.arran-elderslie.com/",
+          "id": "arran-elderslie-municipality",
+          "population2021": 6913,
+          "csdName": "Arran-Elderslie",
+          "csdDguid": "2021A00053541043"
+        },
+        {
+          "name": "Brockton",
+          "fullName": "Brockton, Municipality of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "http://www.brockton.ca/",
+          "id": "brockton-municipality",
+          "population2021": 9784,
+          "csdName": "Brockton",
+          "csdDguid": "2021A00053541032"
+        },
+        {
+          "name": "Huron-Kinloss",
+          "fullName": "Huron-Kinloss, Township of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "http://www.huronkinloss.com/",
+          "id": "huron-kinloss-township",
+          "population2021": 7723,
+          "csdName": "Huron-Kinloss",
+          "csdDguid": "2021A00053541015"
+        },
+        {
+          "name": "Kincardine",
+          "fullName": "Kincardine, Municipality of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "https://www.kincardine.ca/en/index.aspx",
+          "id": "kincardine-municipality",
+          "population2021": 12268,
+          "csdName": "Kincardine",
+          "csdDguid": "2021A00053541024"
+        },
+        {
+          "name": "Northern Bruce Peninsula",
+          "fullName": "Northern Bruce Peninsula, Municipality of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "http://www.northbrucepeninsula.ca/",
+          "id": "northern-bruce-peninsula-municipality",
+          "population2021": 4404,
+          "csdName": "Northern Bruce Peninsula",
+          "csdDguid": "2021A00053541069"
+        },
+        {
+          "name": "Saugeen Shores",
+          "fullName": "Saugeen Shores, Town of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "http://www.saugeenshores.ca/",
+          "id": "saugeen-shores-town",
+          "population2021": 15908,
+          "csdName": "Saugeen Shores",
+          "csdDguid": "2021A00053541045"
+        },
+        {
+          "name": "South Bruce",
+          "fullName": "South Bruce, Municipality of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "http://www.town.southbruce.on.ca/",
+          "id": "south-bruce-municipality",
+          "population2021": 5880,
+          "csdName": "South Bruce",
+          "csdDguid": "2021A00053541004"
+        },
+        {
+          "name": "South Bruce Peninsula",
+          "fullName": "South Bruce Peninsula, Town of",
+          "type": "Lower Tier",
+          "area": "Bruce",
+          "officialUrl": "http://www.southbrucepeninsula.com/",
+          "id": "south-bruce-peninsula-town",
+          "population2021": 9137,
+          "csdName": "South Bruce Peninsula",
+          "csdDguid": "2021A00053541055"
+        }
+      ],
+      "population2021": 72017,
+      "excludedSingleTier": [],
+      "rank": 18
+    },
+    {
+      "name": "Stormont, Dundas and Glengarry",
+      "fullName": "Stormont, Dundas and Glengarry, United Counties of",
+      "type": "Upper Tier",
+      "area": "Stormont, Dundas and Glengarry",
+      "officialUrl": "http://www.sdg.on.ca/",
+      "id": "stormont-dundas-glengarry-counties",
+      "members": [
+        {
+          "name": "North Dundas",
+          "fullName": "North Dundas, Township of",
+          "type": "Lower Tier",
+          "area": "Stormont, Dundas and Glengarry",
+          "officialUrl": "http://www.northdundas.com/",
+          "id": "north-dundas-township",
+          "population2021": 11304,
+          "csdName": "North Dundas",
+          "csdDguid": "2021A00053501030"
+        },
+        {
+          "name": "North Glengarry",
+          "fullName": "North Glengarry, Township of",
+          "type": "Lower Tier",
+          "area": "Stormont, Dundas and Glengarry",
+          "officialUrl": "http://www.northglengarry.ca/",
+          "id": "north-glengarry-township",
+          "population2021": 10144,
+          "csdName": "North Glengarry",
+          "csdDguid": "2021A00053501050"
+        },
+        {
+          "name": "North Stormont",
+          "fullName": "North Stormont, Township of",
+          "type": "Lower Tier",
+          "area": "Stormont, Dundas and Glengarry",
+          "officialUrl": "http://www.northstormont.ca/",
+          "id": "north-stormont-township",
+          "population2021": 7400,
+          "csdName": "North Stormont",
+          "csdDguid": "2021A00053501042"
+        },
+        {
+          "name": "South Dundas",
+          "fullName": "South Dundas, Municipality of",
+          "type": "Lower Tier",
+          "area": "Stormont, Dundas and Glengarry",
+          "officialUrl": "http://www.southdundas.com/",
+          "id": "south-dundas-municipality",
+          "population2021": 11044,
+          "csdName": "South Dundas",
+          "csdDguid": "2021A00053501020"
+        },
+        {
+          "name": "South Glengarry",
+          "fullName": "South Glengarry, Township of",
+          "type": "Lower Tier",
+          "area": "Stormont, Dundas and Glengarry",
+          "officialUrl": "http://southglengarry.com/",
+          "id": "south-glengarry-township",
+          "population2021": 13330,
+          "csdName": "South Glengarry",
+          "csdDguid": "2021A00053501005"
+        },
+        {
+          "name": "South Stormont",
+          "fullName": "South Stormont, Township of",
+          "type": "Lower Tier",
+          "area": "Stormont, Dundas and Glengarry",
+          "officialUrl": "http://southstormont.ca/",
+          "id": "south-stormont-township",
+          "population2021": 13570,
+          "csdName": "South Stormont",
+          "csdDguid": "2021A00053501011"
+        }
+      ],
+      "population2021": 66792,
+      "excludedSingleTier": [
+        {
+          "name": "Cornwall",
+          "fullName": "Cornwall, City of",
+          "type": "Single Tier",
+          "area": "Stormont, Dundas and Glengarry",
+          "officialUrl": "http://www.cornwall.ca/",
+          "id": "cornwall-city"
+        }
+      ],
+      "rank": 19
+    },
+    {
+      "name": "Lanark",
+      "fullName": "Lanark, County of",
+      "type": "Upper Tier",
+      "area": "Lanark",
+      "officialUrl": "https://www.lanarkcounty.ca/en/index.aspx",
+      "id": "lanark-county",
+      "members": [
+        {
+          "name": "Beckwith",
+          "fullName": "Beckwith, Township of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.twp.beckwith.on.ca/",
+          "id": "beckwith-township",
+          "population2021": 9021,
+          "csdName": "Beckwith",
+          "csdDguid": "2021A00053509024"
+        },
+        {
+          "name": "Carleton Place",
+          "fullName": "Carleton Place, Town of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.carletonplace.ca/",
+          "id": "carleton-place-town",
+          "population2021": 12517,
+          "csdName": "Carleton Place",
+          "csdDguid": "2021A00053509028"
+        },
+        {
+          "name": "Drummond/North Elmsley",
+          "fullName": "Drummond/North Elmsley, Township of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "https://www.dnetownship.ca/",
+          "id": "drummond-north-elmsley-township",
+          "population2021": 8183,
+          "csdName": "Drummond/North Elmsley",
+          "csdDguid": "2021A00053509010"
+        },
+        {
+          "name": "Lanark Highlands",
+          "fullName": "Lanark Highlands, Township of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.lanarkhighlands.ca/",
+          "id": "lanark-highlands-township",
+          "population2021": 5737,
+          "csdName": "Lanark Highlands",
+          "csdDguid": "2021A00053509039"
+        },
+        {
+          "name": "Mississippi Mills",
+          "fullName": "Mississippi Mills, Municipality of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.mississippimills.ca/",
+          "id": "mississippi-mills-municipality",
+          "population2021": 14740,
+          "csdName": "Mississippi Mills",
+          "csdDguid": "2021A00053509030"
+        },
+        {
+          "name": "Montague",
+          "fullName": "Montague, Township of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.township.montague.on.ca/",
+          "id": "montague-township",
+          "population2021": 3914,
+          "csdName": "Montague",
+          "csdDguid": "2021A00053509001"
+        },
+        {
+          "name": "Perth",
+          "fullName": "Perth, Town of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.perth.ca/en/index.aspx",
+          "id": "perth-town",
+          "population2021": 6469,
+          "csdName": "Perth",
+          "csdDguid": "2021A00053509021"
+        },
+        {
+          "name": "Tay Valley",
+          "fullName": "Tay Valley, Township of",
+          "type": "Lower Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.tayvalleytwp.ca/",
+          "id": "tay-valley-township",
+          "population2021": 5925,
+          "csdName": "Tay Valley",
+          "csdDguid": "2021A00053509015"
+        }
+      ],
+      "population2021": 66506,
+      "excludedSingleTier": [
+        {
+          "name": "Smiths Falls",
+          "fullName": "Smiths Falls, Town of",
+          "type": "Single Tier",
+          "area": "Lanark",
+          "officialUrl": "http://www.smithsfalls.ca/",
+          "id": "smiths-falls-town"
+        }
+      ],
+      "rank": 20
+    },
+    {
+      "name": "Muskoka",
+      "fullName": "Muskoka, District Municipality of",
+      "type": "Upper Tier",
+      "area": "Muskoka",
+      "officialUrl": "http://www.muskoka.on.ca/",
+      "id": "muskoka-district",
+      "members": [
+        {
+          "name": "Bracebridge",
+          "fullName": "Bracebridge, Town of",
+          "type": "Lower Tier",
+          "area": "Muskoka",
+          "officialUrl": "http://www.bracebridge.ca/",
+          "id": "bracebridge-town",
+          "population2021": 17305,
+          "csdName": "Bracebridge",
+          "csdDguid": "2021A00053544018"
+        },
+        {
+          "name": "Georgian Bay",
+          "fullName": "Georgian Bay, Township of",
+          "type": "Lower Tier",
+          "area": "Muskoka",
+          "officialUrl": "http://www.gbtownship.ca/",
+          "id": "georgian-bay-township",
+          "population2021": 3441,
+          "csdName": "Georgian Bay",
+          "csdDguid": "2021A00053544065"
+        },
+        {
+          "name": "Gravenhurst",
+          "fullName": "Gravenhurst, Town of",
+          "type": "Lower Tier",
+          "area": "Muskoka",
+          "officialUrl": "http://www.gravenhurst.ca/",
+          "id": "gravenhurst-town",
+          "population2021": 13157,
+          "csdName": "Gravenhurst",
+          "csdDguid": "2021A00053544002"
+        },
+        {
+          "name": "Huntsville",
+          "fullName": "Huntsville, Town of",
+          "type": "Lower Tier",
+          "area": "Muskoka",
+          "officialUrl": "https://www.huntsville.ca/en/index.aspx",
+          "id": "huntsville-town",
+          "population2021": 21147,
+          "csdName": "Huntsville",
+          "csdDguid": "2021A00053544042"
+        },
+        {
+          "name": "Lake of Bays",
+          "fullName": "Lake of Bays, Township of",
+          "type": "Lower Tier",
+          "area": "Muskoka",
+          "officialUrl": "http://www.lakeofbays.on.ca/",
+          "id": "lake-of-bays-township",
+          "population2021": 3759,
+          "csdName": "Lake of Bays",
+          "csdDguid": "2021A00053544027"
+        },
+        {
+          "name": "Muskoka Lakes",
+          "fullName": "Muskoka Lakes, Township of",
+          "type": "Lower Tier",
+          "area": "Muskoka",
+          "officialUrl": "http://www.muskokalakes.ca/",
+          "id": "muskoka-lakes-township",
+          "population2021": 7652,
+          "csdName": "Muskoka Lakes",
+          "csdDguid": "2021A00053544053"
+        }
+      ],
+      "population2021": 66461,
+      "excludedSingleTier": [],
+      "rank": 21
+    },
+    {
+      "name": "Dufferin",
+      "fullName": "Dufferin, County of",
+      "type": "Upper Tier",
+      "area": "Dufferin",
+      "officialUrl": "https://www.dufferincounty.ca/",
+      "id": "dufferin-county",
+      "members": [
+        {
+          "name": "Amaranth",
+          "fullName": "Amaranth, Township of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "http://www.amaranth.ca/en/index.aspx",
+          "id": "amaranth-township",
+          "population2021": 4327,
+          "csdName": "Amaranth",
+          "csdDguid": "2021A00053522008"
+        },
+        {
+          "name": "East Garafraxa",
+          "fullName": "East Garafraxa, Township of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "https://www.eastgarafraxa.ca/en/index.aspx",
+          "id": "east-garafraxa-township",
+          "population2021": 2794,
+          "csdName": "East Garafraxa",
+          "csdDguid": "2021A00053522001"
+        },
+        {
+          "name": "Grand Valley",
+          "fullName": "Grand Valley, Town of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "http://www.eastluthergrandvalley.ca/",
+          "id": "grand-valley-town",
+          "population2021": 3851,
+          "csdName": "Grand Valley",
+          "csdDguid": "2021A00053522010"
+        },
+        {
+          "name": "Melancthon",
+          "fullName": "Melancthon, Township of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "http://melancthontownship.ca/",
+          "id": "melancthon-township",
+          "population2021": 3132,
+          "csdName": "Melancthon",
+          "csdDguid": "2021A00053522019"
+        },
+        {
+          "name": "Mono",
+          "fullName": "Mono, Town of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "http://www.townofmono.com/",
+          "id": "mono-town",
+          "population2021": 9421,
+          "csdName": "Mono",
+          "csdDguid": "2021A00053522012"
+        },
+        {
+          "name": "Mulmur",
+          "fullName": "Mulmur, Township of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "http://www.mulmurtownship.ca./",
+          "id": "mulmur-township",
+          "population2021": 3571,
+          "csdName": "Mulmur",
+          "csdDguid": "2021A00053522016"
+        },
+        {
+          "name": "Orangeville",
+          "fullName": "Orangeville, Town of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "http://www.orangeville.ca/",
+          "id": "orangeville-town",
+          "population2021": 30167,
+          "csdName": "Orangeville",
+          "csdDguid": "2021A00053522014"
+        },
+        {
+          "name": "Shelburne",
+          "fullName": "Shelburne, Town of",
+          "type": "Lower Tier",
+          "area": "Dufferin",
+          "officialUrl": "https://www.shelburne.ca/en/index.aspx/",
+          "id": "shelburne-town",
+          "population2021": 8994,
+          "csdName": "Shelburne",
+          "csdDguid": "2021A00053522021"
+        }
+      ],
+      "population2021": 66257,
+      "excludedSingleTier": [],
+      "rank": 22
+    },
+    {
+      "name": "Peterborough",
+      "fullName": "Peterborough, County of",
+      "type": "Upper Tier",
+      "area": "Peterborough",
+      "officialUrl": "http://www.ptbocounty.ca/en/index.aspx",
+      "id": "peterborough-county",
+      "members": [
+        {
+          "name": "Asphodel-Norwood",
+          "fullName": "Asphodel-Norwood, Township of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "https://www.antownship.ca/en/index.aspx",
+          "id": "asphodel-norwood-township",
+          "population2021": 4658,
+          "csdName": "Asphodel-Norwood",
+          "csdDguid": "2021A00053515003"
+        },
+        {
+          "name": "Cavan Monaghan",
+          "fullName": "Cavan Monaghan, Township of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.cavanmonaghan.net/siteengine/activepage.asp",
+          "id": "cavan-monaghan-township",
+          "population2021": 10016,
+          "csdName": "Cavan Monaghan",
+          "csdDguid": "2021A00053515013"
+        },
+        {
+          "name": "Douro-Dummer",
+          "fullName": "Douro-Dummer, Township of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.dourodummer.on.ca/",
+          "id": "douro-dummer-township",
+          "population2021": 7632,
+          "csdName": "Douro-Dummer",
+          "csdDguid": "2021A00053515023"
+        },
+        {
+          "name": "Havelock-Belmont-Methuen",
+          "fullName": "Havelock-Belmont-Methuen, Township of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.hbmtwp.ca/",
+          "id": "havelock-belmont-methuen-township",
+          "population2021": 5083,
+          "csdName": "Havelock-Belmont-Methuen",
+          "csdDguid": "2021A00053515030"
+        },
+        {
+          "name": "North Kawartha",
+          "fullName": "North Kawartha, Township of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.northkawartha.on.ca/",
+          "id": "north-kawartha-township",
+          "population2021": 2877,
+          "csdName": "North Kawartha",
+          "csdDguid": "2021A00053515037"
+        },
+        {
+          "name": "Otonabee-South Monaghan",
+          "fullName": "Otonabee-South Monaghan, Township of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.osmtownship.ca/",
+          "id": "otonabee-south-monaghan-township",
+          "population2021": 7087,
+          "csdName": "Otonabee-South Monaghan",
+          "csdDguid": "2021A00053515005"
+        },
+        {
+          "name": "Selwyn",
+          "fullName": "Selwyn, Township of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.selwyntownship.ca/en/index.asp",
+          "id": "selwyn-township",
+          "population2021": 18653,
+          "csdName": "Selwyn",
+          "csdDguid": "2021A00053515015"
+        },
+        {
+          "name": "Trent Lakes",
+          "fullName": "Trent Lakes, Municipality of",
+          "type": "Lower Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.trentlakes.ca/",
+          "id": "trent-lakes-municipality",
+          "population2021": 6439,
+          "csdName": "Trent Lakes",
+          "csdDguid": "2021A00053515044"
+        }
+      ],
+      "population2021": 62445,
+      "excludedSingleTier": [
+        {
+          "name": "Peterborough",
+          "fullName": "Peterborough, City of",
+          "type": "Single Tier",
+          "area": "Peterborough",
+          "officialUrl": "http://www.peterborough.ca/",
+          "id": "peterborough-city"
+        }
+      ],
+      "rank": 23
+    },
+    {
+      "name": "Huron",
+      "fullName": "Huron, County of",
+      "type": "Upper Tier",
+      "area": "Huron",
+      "officialUrl": "http://www.huroncounty.ca/",
+      "id": "huron-county",
+      "members": [
+        {
+          "name": "Ashfield-Colborne-Wawanosh",
+          "fullName": "Ashfield-Colborne-Wawanosh, Township of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "http://www.acwtownship.ca/",
+          "id": "ashfield-colborne-wawanosh-township",
+          "population2021": 5884,
+          "csdName": "Ashfield-Colborne-Wawanosh",
+          "csdDguid": "2021A00053540063"
+        },
+        {
+          "name": "Bluewater",
+          "fullName": "Bluewater, Municipality of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "https://www.municipalityofbluewater.ca/",
+          "id": "bluewater-municipality",
+          "population2021": 7540,
+          "csdName": "Bluewater",
+          "csdDguid": "2021A00053540010"
+        },
+        {
+          "name": "Central Huron",
+          "fullName": "Central Huron, Municipality of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "http://www.centralhuron.com/",
+          "id": "central-huron-municipality",
+          "population2021": 7799,
+          "csdName": "Central Huron",
+          "csdDguid": "2021A00053540025"
+        },
+        {
+          "name": "Goderich",
+          "fullName": "Goderich, Town of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "http://www.goderich.ca/",
+          "id": "goderich-town",
+          "population2021": 7881,
+          "csdName": "Goderich",
+          "csdDguid": "2021A00053540028"
+        },
+        {
+          "name": "Howick",
+          "fullName": "Howick, Township of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "https://howick.ca/",
+          "id": "howick-township",
+          "population2021": 4045,
+          "csdName": "Howick",
+          "csdDguid": "2021A00053540046"
+        },
+        {
+          "name": "Huron East",
+          "fullName": "Huron East, Municipality of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "http://www.huroneast.com/",
+          "id": "huron-east-municipality",
+          "population2021": 9512,
+          "csdName": "Huron East",
+          "csdDguid": "2021A00053540040"
+        },
+        {
+          "name": "Morris-Turnberry",
+          "fullName": "Morris-Turnberry, Municipality of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "https://morristurnberry.ca/",
+          "id": "morris-turnberry-municipality",
+          "population2021": 3590,
+          "csdName": "Morris-Turnberry",
+          "csdDguid": "2021A00053540050"
+        },
+        {
+          "name": "North Huron",
+          "fullName": "North Huron, Township of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "http://www.northhuron.ca/",
+          "id": "north-huron-township",
+          "population2021": 5052,
+          "csdName": "North Huron",
+          "csdDguid": "2021A00053540055"
+        },
+        {
+          "name": "South Huron",
+          "fullName": "South Huron, Municipality of",
+          "type": "Lower Tier",
+          "area": "Huron",
+          "officialUrl": "http://www.southhuron.ca/",
+          "id": "south-huron-municipality",
+          "population2021": 10063,
+          "csdName": "South Huron",
+          "csdDguid": "2021A00053540005"
+        }
+      ],
+      "population2021": 61366,
+      "excludedSingleTier": [],
+      "rank": 24
+    },
+    {
+      "name": "Elgin",
+      "fullName": "Elgin, County of",
+      "type": "Upper Tier",
+      "area": "Elgin",
+      "officialUrl": "www.elgincounty.ca",
+      "id": "elgin-county",
+      "members": [
+        {
+          "name": "Aylmer",
+          "fullName": "Aylmer, Town of",
+          "type": "Lower Tier",
+          "area": "Elgin",
+          "officialUrl": "http://www.aylmer.ca/",
+          "id": "aylmer-town",
+          "population2021": 7699,
+          "csdName": "Aylmer",
+          "csdDguid": "2021A00053534011"
+        },
+        {
+          "name": "Bayham",
+          "fullName": "Bayham, Municipality of",
+          "type": "Lower Tier",
+          "area": "Elgin",
+          "officialUrl": "http://www.bayham.on.ca/siteengine/activepage.asp",
+          "id": "bayham-municipality",
+          "population2021": 7096,
+          "csdName": "Bayham",
+          "csdDguid": "2021A00053534005"
+        },
+        {
+          "name": "Central Elgin",
+          "fullName": "Central Elgin, Municipality of",
+          "type": "Lower Tier",
+          "area": "Elgin",
+          "officialUrl": "https://www.centralelgin.org/en/index.aspx",
+          "id": "central-elgin-municipality",
+          "population2021": 13746,
+          "csdName": "Central Elgin",
+          "csdDguid": "2021A00053534020"
+        },
+        {
+          "name": "Dutton/Dunwich",
+          "fullName": "Dutton/Dunwich, Municipality of",
+          "type": "Lower Tier",
+          "area": "Elgin",
+          "officialUrl": "http://www.duttondunwich.on.ca/",
+          "id": "dutton-dunwich-municipality",
+          "population2021": 4152,
+          "csdName": "Dutton/Dunwich",
+          "csdDguid": "2021A00053534030"
+        },
+        {
+          "name": "Malahide",
+          "fullName": "Malahide, Township of",
+          "type": "Lower Tier",
+          "area": "Elgin",
+          "officialUrl": "http://www.malahide.ca/",
+          "id": "malahide-township",
+          "population2021": 9308,
+          "csdName": "Malahide",
+          "csdDguid": "2021A00053534010"
+        },
+        {
+          "name": "Southwold",
+          "fullName": "Southwold, Township of",
+          "type": "Lower Tier",
+          "area": "Elgin",
+          "officialUrl": "http://www.twp.southwold.on.ca/",
+          "id": "southwold-township",
+          "population2021": 4851,
+          "csdName": "Southwold",
+          "csdDguid": "2021A00053534024"
+        },
+        {
+          "name": "West Elgin",
+          "fullName": "West Elgin, Municipality of",
+          "type": "Lower Tier",
+          "area": "Elgin",
+          "officialUrl": "http://www.westelgin.net/",
+          "id": "west-elgin-municipality",
+          "population2021": 5060,
+          "csdName": "West Elgin",
+          "csdDguid": "2021A00053534042"
+        }
+      ],
+      "population2021": 51912,
+      "excludedSingleTier": [
+        {
+          "name": "St. Thomas",
+          "fullName": "St. Thomas, City of",
+          "type": "Single Tier",
+          "area": "Elgin",
+          "officialUrl": "https://www.stthomas.ca/",
+          "id": "st-thomas-city"
+        }
+      ],
+      "rank": 25
+    },
+    {
+      "name": "Lennox and Addington",
+      "fullName": "Lennox and Addington, County of",
+      "type": "Upper Tier",
+      "area": "Lennox and Addington",
+      "officialUrl": "http://www.lennox-addington.on.ca/",
+      "id": "lennox-and-addington-county",
+      "members": [
+        {
+          "name": "Addington Highlands",
+          "fullName": "Addington Highlands, Township of",
+          "type": "Lower Tier",
+          "area": "Lennox and Addington",
+          "officialUrl": "http://www.addingtonhighlands.ca/",
+          "id": "addington-highlands-township",
+          "population2021": 2534,
+          "csdName": "Addington Highlands",
+          "csdDguid": "2021A00053511035"
+        },
+        {
+          "name": "Greater Napanee",
+          "fullName": "Greater Napanee, Town of",
+          "type": "Lower Tier",
+          "area": "Lennox and Addington",
+          "officialUrl": "https://www.greaternapanee.com/en/index.aspx",
+          "id": "greater-napanee-town",
+          "population2021": 16879,
+          "csdName": "Greater Napanee",
+          "csdDguid": "2021A00053511015"
+        },
+        {
+          "name": "Loyalist",
+          "fullName": "Loyalist, Township of",
+          "type": "Lower Tier",
+          "area": "Lennox and Addington",
+          "officialUrl": "http://www.loyalist.ca/",
+          "id": "loyalist-township",
+          "population2021": 17943,
+          "csdName": "Loyalist",
+          "csdDguid": "2021A00053511005"
+        },
+        {
+          "name": "Stone Mills",
+          "fullName": "Stone Mills, Township of",
+          "type": "Lower Tier",
+          "area": "Lennox and Addington",
+          "officialUrl": "http://www.stonemills.com/",
+          "id": "stone-mills-township",
+          "population2021": 7826,
+          "csdName": "Stone Mills",
+          "csdDguid": "2021A00053511030"
+        }
+      ],
+      "population2021": 45182,
+      "excludedSingleTier": [],
+      "rank": 26
+    },
+    {
+      "name": "Hastings",
+      "fullName": "Hastings, County of",
+      "type": "Upper Tier",
+      "area": "Hastings",
+      "officialUrl": "http://www.hastingscounty.com/",
+      "id": "hastings-county",
+      "members": [
+        {
+          "name": "Bancroft",
+          "fullName": "Bancroft, Town of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.bancroft.ca/",
+          "id": "bancroft-town",
+          "population2021": 4065,
+          "csdName": "Bancroft",
+          "csdDguid": "2021A00053512061"
+        },
+        {
+          "name": "Carlow/Mayo",
+          "fullName": "Carlow/Mayo, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.carlowmayo.ca/",
+          "id": "carlow-mayo-township",
+          "population2021": 953,
+          "csdName": "Carlow/Mayo",
+          "csdDguid": "2021A00053512065"
+        },
+        {
+          "name": "Centre Hastings",
+          "fullName": "Centre Hastings, Municipality of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.centrehastings.com/",
+          "id": "centre-hastings-municipality",
+          "population2021": 4801,
+          "csdName": "Centre Hastings",
+          "csdDguid": "2021A00053512026"
+        },
+        {
+          "name": "Deseronto",
+          "fullName": "Deseronto, Town of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.deseronto.ca/",
+          "id": "deseronto-town",
+          "population2021": 1747,
+          "csdName": "Deseronto",
+          "csdDguid": "2021A00053512002"
+        },
+        {
+          "name": "Faraday",
+          "fullName": "Faraday, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.faraday.ca/",
+          "id": "faraday-township",
+          "population2021": 1612,
+          "csdName": "Faraday",
+          "csdDguid": "2021A00053512058"
+        },
+        {
+          "name": "Hastings Highlands",
+          "fullName": "Hastings Highlands, Municipality of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.hastingshighlands.ca/",
+          "id": "hastings-highlands-municipality",
+          "population2021": 4385,
+          "csdName": "Hastings Highlands",
+          "csdDguid": "2021A00053512076"
+        },
+        {
+          "name": "Limerick",
+          "fullName": "Limerick, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.township.limerick.on.ca/",
+          "id": "limerick-township",
+          "population2021": 436,
+          "csdName": "Limerick",
+          "csdDguid": "2021A00053512051"
+        },
+        {
+          "name": "Madoc",
+          "fullName": "Madoc, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.madoc.ca/",
+          "id": "madoc-township",
+          "population2021": 2233,
+          "csdName": "Madoc",
+          "csdDguid": "2021A00053512036"
+        },
+        {
+          "name": "Marmora and Lake",
+          "fullName": "Marmora and Lake, Municipality of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.marmoraandlake.ca/",
+          "id": "marmora-and-lake-municipality",
+          "population2021": 4267,
+          "csdName": "Marmora and Lake",
+          "csdDguid": "2021A00053512046"
+        },
+        {
+          "name": "Stirling-Rawdon",
+          "fullName": "Stirling-Rawdon, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.stirling-rawdon.com/",
+          "id": "stirling-rawdon-township",
+          "population2021": 5015,
+          "csdName": "Stirling-Rawdon",
+          "csdDguid": "2021A00053512020"
+        },
+        {
+          "name": "Tudor and Cashel",
+          "fullName": "Tudor and Cashel, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.tudorandcashel.com/",
+          "id": "tudor-and-cashel-township",
+          "population2021": 740,
+          "csdName": "Tudor and Cashel",
+          "csdDguid": "2021A00053512048"
+        },
+        {
+          "name": "Tweed",
+          "fullName": "Tweed, Municipality of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.tweed.ca/",
+          "id": "tweed-municipality",
+          "population2021": 6067,
+          "csdName": "Tweed",
+          "csdDguid": "2021A00053512030"
+        },
+        {
+          "name": "Tyendinaga",
+          "fullName": "Tyendinaga, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.tyendinagatownship.com/",
+          "id": "tyendinaga-township",
+          "population2021": 4538,
+          "csdName": "Tyendinaga",
+          "csdDguid": "2021A00053512001"
+        },
+        {
+          "name": "Wollaston",
+          "fullName": "Wollaston, Township of",
+          "type": "Lower Tier",
+          "area": "Hastings",
+          "officialUrl": "https://wollaston.ca/",
+          "id": "wollaston-township",
+          "population2021": 721,
+          "csdName": "Wollaston",
+          "csdDguid": "2021A00053512054"
+        }
+      ],
+      "population2021": 41580,
+      "excludedSingleTier": [
+        {
+          "name": "Belleville",
+          "fullName": "Belleville, City of",
+          "type": "Single Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.belleville.ca/",
+          "id": "belleville-city"
+        },
+        {
+          "name": "Quinte West",
+          "fullName": "Quinte West, City of",
+          "type": "Single Tier",
+          "area": "Hastings",
+          "officialUrl": "http://www.quintewest.ca/",
+          "id": "quinte-west-city"
+        }
+      ],
+      "rank": 27
+    },
+    {
+      "name": "Perth",
+      "fullName": "Perth, County of",
+      "type": "Upper Tier",
+      "area": "Perth",
+      "officialUrl": "http://www.perthcounty.ca/",
+      "id": "perth-county",
+      "members": [
+        {
+          "name": "North Perth",
+          "fullName": "North Perth, Municipality of",
+          "type": "Lower Tier",
+          "area": "Perth",
+          "officialUrl": "http://www.northperth.ca/",
+          "id": "north-perth-municipality",
+          "population2021": 15538,
+          "csdName": "North Perth",
+          "csdDguid": "2021A00053531040"
+        },
+        {
+          "name": "Perth East",
+          "fullName": "Perth East, Township of",
+          "type": "Lower Tier",
+          "area": "Perth",
+          "officialUrl": "https://www.pertheast.ca/en/index.aspx",
+          "id": "perth-east-township",
+          "population2021": 12595,
+          "csdName": "Perth East",
+          "csdDguid": "2021A00053531030"
+        },
+        {
+          "name": "Perth South",
+          "fullName": "Perth South, Township of",
+          "type": "Lower Tier",
+          "area": "Perth",
+          "officialUrl": "http://www.perthsouth.ca/",
+          "id": "perth-south-township",
+          "population2021": 3776,
+          "csdName": "Perth South",
+          "csdDguid": "2021A00053531013"
+        },
+        {
+          "name": "West Perth",
+          "fullName": "West Perth, Municipality of",
+          "type": "Lower Tier",
+          "area": "Perth",
+          "officialUrl": "https://www.westperth.com/en/index.aspx",
+          "id": "west-perth-municipality",
+          "population2021": 9038,
+          "csdName": "West Perth",
+          "csdDguid": "2021A00053531025"
+        }
+      ],
+      "population2021": 40947,
+      "excludedSingleTier": [
+        {
+          "name": "St. Marys",
+          "fullName": "St. Marys, Town of",
+          "type": "Single Tier",
+          "area": "Perth",
+          "officialUrl": "http://www.townofstmarys.com/",
+          "id": "st-marys-town"
+        },
+        {
+          "name": "Stratford",
+          "fullName": "Stratford, City of",
+          "type": "Single Tier",
+          "area": "Perth",
+          "officialUrl": "https://www.stratford.ca/en/index.aspx",
+          "id": "stratford-city"
+        }
+      ],
+      "rank": 28
+    },
+    {
+      "name": "Frontenac",
+      "fullName": "Frontenac, County of",
+      "type": "Upper Tier",
+      "area": "Frontenac",
+      "officialUrl": "https://frontenacislands.ca/",
+      "id": "frontenac-county",
+      "members": [
+        {
+          "name": "Central Frontenac",
+          "fullName": "Central Frontenac, Township of",
+          "type": "Lower Tier",
+          "area": "Frontenac",
+          "officialUrl": "http://www.centralfrontenac.com/",
+          "id": "central-frontenac-township",
+          "population2021": 4892,
+          "csdName": "Central Frontenac",
+          "csdDguid": "2021A00053510035"
+        },
+        {
+          "name": "Frontenac Islands",
+          "fullName": "Frontenac Islands, Township of",
+          "type": "Lower Tier",
+          "area": "Frontenac",
+          "officialUrl": "http://municipality.frontenacislands.on.ca/",
+          "id": "frontenac-islands-township",
+          "population2021": 1930,
+          "csdName": "Frontenac Islands",
+          "csdDguid": "2021A00053510005"
+        },
+        {
+          "name": "North Frontenac",
+          "fullName": "North Frontenac, Township of",
+          "type": "Lower Tier",
+          "area": "Frontenac",
+          "officialUrl": "http://www.northfrontenac.ca/",
+          "id": "north-frontenac-township",
+          "population2021": 2285,
+          "csdName": "North Frontenac",
+          "csdDguid": "2021A00053510045"
+        },
+        {
+          "name": "South Frontenac",
+          "fullName": "South Frontenac, Township of",
+          "type": "Lower Tier",
+          "area": "Frontenac",
+          "officialUrl": "http://www.township.southfrontenac.on.ca/",
+          "id": "south-frontenac-township",
+          "population2021": 20188,
+          "csdName": "South Frontenac",
+          "csdDguid": "2021A00053510020"
+        }
+      ],
+      "population2021": 29295,
+      "excludedSingleTier": [
+        {
+          "name": "Kingston",
+          "fullName": "Kingston, City of",
+          "type": "Single Tier",
+          "area": "Frontenac",
+          "officialUrl": "http://www.cityofkingston.ca/",
+          "id": "kingston-city"
+        }
+      ],
+      "rank": 29
+    },
+    {
+      "name": "Haliburton",
+      "fullName": "Haliburton, County of",
+      "type": "Upper Tier",
+      "area": "Haliburton",
+      "officialUrl": "http://haliburtoncounty.ca/",
+      "id": "haliburton-county",
+      "members": [
+        {
+          "name": "Algonquin Highlands",
+          "fullName": "Algonquin Highlands, Township of",
+          "type": "Lower Tier",
+          "area": "Haliburton",
+          "officialUrl": "http://www.algonquinhighlands.ca/",
+          "id": "algonquin-highlands-township",
+          "population2021": 2588,
+          "csdName": "Algonquin Highlands",
+          "csdDguid": "2021A00053546018"
+        },
+        {
+          "name": "Dysart et al",
+          "fullName": "Dysart et al, Municipality of",
+          "type": "Lower Tier",
+          "area": "Haliburton",
+          "officialUrl": "http://www.dysartetal.ca/",
+          "id": "dysart-et-al-municipality",
+          "population2021": 7182,
+          "csdName": "Dysart et al",
+          "csdDguid": "2021A00053546024"
+        },
+        {
+          "name": "Highlands East",
+          "fullName": "Highlands East, Municipality of",
+          "type": "Lower Tier",
+          "area": "Haliburton",
+          "officialUrl": "http://www.highlandseast.ca/",
+          "id": "highlands-east-municipality",
+          "population2021": 3830,
+          "csdName": "Highlands East",
+          "csdDguid": "2021A00053546005"
+        },
+        {
+          "name": "Minden Hills",
+          "fullName": "Minden Hills, Township of",
+          "type": "Lower Tier",
+          "area": "Haliburton",
+          "officialUrl": "http://www.mindenhills.ca/",
+          "id": "minden-hills-township",
+          "population2021": 6971,
+          "csdName": "Minden Hills",
+          "csdDguid": "2021A00053546015"
+        }
+      ],
+      "population2021": 20571,
+      "excludedSingleTier": [],
+      "rank": 30
+    }
+  ]
+}

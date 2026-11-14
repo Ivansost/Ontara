@@ -1,0 +1,398 @@
+{
+  "$defs": {
+    "IncidentLocation": {
+      "additionalProperties": false,
+      "properties": {
+        "municipalityId": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Municipalityid",
+          "type": "string"
+        },
+        "upperTierId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uppertierid"
+        },
+        "incidentAddress": {
+          "maxLength": 500,
+          "minLength": 3,
+          "title": "Incidentaddress",
+          "type": "string"
+        },
+        "fixtureId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fixtureid"
+        },
+        "confirmed": {
+          "default": false,
+          "title": "Confirmed",
+          "type": "boolean"
+        },
+        "reporterMunicipalityId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reportermunicipalityid"
+        },
+        "latitude": {
+          "anyOf": [
+            {
+              "maximum": 90,
+              "minimum": -90,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latitude"
+        },
+        "longitude": {
+          "anyOf": [
+            {
+              "maximum": 180,
+              "minimum": -180,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Longitude"
+        }
+      },
+      "required": [
+        "municipalityId",
+        "incidentAddress"
+      ],
+      "title": "IncidentLocation",
+      "type": "object"
+    },
+    "Question": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "select",
+            "text",
+            "textarea",
+            "date"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/QuestionOption"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "minLength": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minlength"
+        },
+        "maxLength": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxlength"
+        },
+        "visibleWhen": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VisibilityCondition"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "label",
+        "required"
+      ],
+      "title": "Question",
+      "type": "object"
+    },
+    "QuestionOption": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "urgentHandoff": {
+          "default": false,
+          "title": "Urgenthandoff",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "value",
+        "label"
+      ],
+      "title": "QuestionOption",
+      "type": "object"
+    },
+    "Reporter": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "anyOf": [
+            {
+              "maxLength": 150,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "email": {
+          "anyOf": [
+            {
+              "maxLength": 254,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Email"
+        },
+        "contactConsent": {
+          "default": false,
+          "title": "Contactconsent",
+          "type": "boolean"
+        }
+      },
+      "title": "Reporter",
+      "type": "object"
+    },
+    "VisibilityCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "questionId": {
+          "title": "Questionid",
+          "type": "string"
+        },
+        "equals": {
+          "title": "Equals"
+        }
+      },
+      "required": [
+        "questionId",
+        "equals"
+      ],
+      "title": "VisibilityCondition",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "integer"
+    },
+    "issueId": {
+      "title": "Issueid",
+      "type": "string"
+    },
+    "location": {
+      "$ref": "#/$defs/IncidentLocation"
+    },
+    "answers": {
+      "additionalProperties": true,
+      "title": "Answers",
+      "type": "object"
+    },
+    "reporter": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Reporter"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "stage": {
+      "title": "Stage",
+      "type": "string"
+    },
+    "route": {
+      "additionalProperties": true,
+      "title": "Route",
+      "type": "object"
+    },
+    "pendingQuestions": {
+      "items": {
+        "$ref": "#/$defs/Question"
+      },
+      "title": "Pendingquestions",
+      "type": "array"
+    },
+    "approvedVersion": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Approvedversion"
+    },
+    "currentOperationId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Currentoperationid"
+    },
+    "receipt": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Receipt"
+    },
+    "createdAt": {
+      "format": "date-time",
+      "title": "Createdat",
+      "type": "string"
+    },
+    "updatedAt": {
+      "format": "date-time",
+      "title": "Updatedat",
+      "type": "string"
+    },
+    "cancelledAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cancelledat"
+    },
+    "runId": {
+      "title": "Runid",
+      "type": "string"
+    },
+    "questionnaireVersion": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Questionnaireversion"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "issueId",
+    "location",
+    "answers",
+    "stage",
+    "route",
+    "createdAt",
+    "updatedAt",
+    "runId"
+  ],
+  "title": "CaseView",
+  "type": "object"
+}

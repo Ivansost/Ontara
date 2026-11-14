@@ -1,0 +1,158 @@
+{
+  "scope": "Authored factual summaries, normalized records, attributed Ontario OGL-derived geometry, source URLs/hashes, coverage and sanitized proof. No full third-party municipal HTML/PDF source snapshots.",
+  "status": "complete",
+  "files": [
+    {
+      "path": "data/municipal/.gitignore",
+      "bytes": 42
+    },
+    {
+      "path": "data/municipal/README.md",
+      "bytes": 6749
+    },
+    {
+      "path": "data/municipal/atlas_verification.json",
+      "bytes": 2962
+    },
+    {
+      "path": "data/municipal/boundary_atlas_verification.json",
+      "bytes": 2407
+    },
+    {
+      "path": "data/municipal/boundary_geometry_verification.json",
+      "bytes": 1977
+    },
+    {
+      "path": "data/municipal/boundary_summary.json",
+      "bytes": 73292
+    },
+    {
+      "path": "data/municipal/coverage_matrix.csv",
+      "bytes": 84632
+    },
+    {
+      "path": "data/municipal/coverage_matrix.json",
+      "bytes": 94627
+    },
+    {
+      "path": "data/municipal/coverage_matrix.md",
+      "bytes": 4801
+    },
+    {
+      "path": "data/municipal/halton-first-20261114.json",
+      "bytes": 16653
+    },
+    {
+      "path": "data/municipal/halton-first-20261114.result.json",
+      "bytes": 5833
+    },
+    {
+      "path": "data/municipal/population_ranking_2021.json",
+      "bytes": 106849
+    },
+    {
+      "path": "data/municipal/replay_verification.json",
+      "bytes": 364
+    },
+    {
+      "path": "data/municipal/roads-batch-01-20261114.json",
+      "bytes": 66970
+    },
+    {
+      "path": "data/municipal/roads-batch-01-20261114.result.json",
+      "bytes": 22678
+    },
+    {
+      "path": "data/municipal/roads-batch-02-20261114.json",
+      "bytes": 80540
+    },
+    {
+      "path": "data/municipal/roads-batch-02-20261114.result.json",
+      "bytes": 24247
+    },
+    {
+      "path": "data/municipal/roads-batch-03-20261114.json",
+      "bytes": 84749
+    },
+    {
+      "path": "data/municipal/roads-batch-03-20261114.result.json",
+      "bytes": 27516
+    },
+    {
+      "path": "data/municipal/roads-batch-04-20261114.json",
+      "bytes": 83655
+    },
+    {
+      "path": "data/municipal/roads-batch-04-20261114.result.json",
+      "bytes": 28892
+    },
+    {
+      "path": "data/municipal/roads-boundaries-20261114.json",
+      "bytes": 2747672
+    },
+    {
+      "path": "data/municipal/roads-boundaries-20261114.result.json",
+      "bytes": 6531
+    },
+    {
+      "path": "data/municipal/roads_authorities.json",
+      "bytes": 86823
+    },
+    {
+      "path": "scripts/municipal/.gitignore",
+      "bytes": 13
+    },
+    {
+      "path": "scripts/municipal/build_batches.py",
+      "bytes": 6393
+    },
+    {
+      "path": "scripts/municipal/build_boundaries.py",
+      "bytes": 10320
+    },
+    {
+      "path": "scripts/municipal/curation_helpers.py",
+      "bytes": 1529
+    },
+    {
+      "path": "scripts/municipal/export_coverage.py",
+      "bytes": 5073
+    },
+    {
+      "path": "scripts/municipal/rank_upper_tiers.py",
+      "bytes": 5113
+    },
+    {
+      "path": "scripts/municipal/review_sources.py",
+      "bytes": 1437
+    },
+    {
+      "path": "scripts/municipal/source_tools.py",
+      "bytes": 7616
+    },
+    {
+      "path": "scripts/municipal/verify_boundaries.py",
+      "bytes": 3527
+    },
+    {
+      "path": "scripts/municipal/verify_imports.py",
+      "bytes": 5909
+    }
+  ],
+  "totalBytesExcludingManifest": 3708391,
+  "exclusions": [
+    "data/municipal/source_cache/**",
+    "data/municipal/*.import.json",
+    "data/municipal/*.replay.json",
+    "scripts/municipal/__pycache__/**",
+    "Private ~/.config/ontara credentials are outside the repository"
+  ],
+  "pending": [],
+  "checks": {
+    "publicJsonPayloadScan": "passed",
+    "nativeCoreSearchGate": "20 upper tiers / 22 verified current procedure versions ready",
+    "freshProcessCoreAtlasAudit": "passed after boundary enrichment",
+    "freshProcessSupplementaryArtifactReads": "6 of 6 passed",
+    "exactBatchReplay": "replayed true; completed/search ready preserved"
+  }
+}

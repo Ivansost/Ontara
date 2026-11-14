@@ -1,0 +1,170 @@
+{
+  "id": "halton-first-20261114",
+  "contentHash": "c07836cbd025b6f78f9dcc13c45fe8c9cb31c283abc78986c4f9a1c52ac2365f",
+  "coverage": [
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sidewalk",
+      "status": "partial",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    }
+  ],
+  "gaps": [],
+  "municipalityIds": [
+    "halton-region",
+    "burlington-city",
+    "halton-hills-town",
+    "milton-town",
+    "oakville-town"
+  ],
+  "procedureIds": [
+    "halton-region-regional-road-problem-phone",
+    "halton-region-sidewalk-curb-responsibility-handoff"
+  ],
+  "schemaVersion": "1.0",
+  "searchStatus": "pending",
+  "sourceIds": [
+    "statcan-2021-csd-population",
+    "halton-safety",
+    "halton-roads",
+    "ontario-municipal-registry-2026"
+  ],
+  "startedAt": "2026-11-14 15:51:10.155000+00:00",
+  "status": "completed",
+  "completedAt": "2026-11-14 15:51:39.134000+00:00",
+  "counts": {
+    "municipalities": 5,
+    "sources": 4,
+    "procedures": 2,
+    "formSnapshots": 0,
+    "artifacts": 4
+  }
+}

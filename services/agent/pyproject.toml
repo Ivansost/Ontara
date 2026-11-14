@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ontara-agent"
+version = "0.1.0"
+description = "Bounded LangGraph reporting and recovery workflow"
+requires-python = ">=3.11"
+dependencies = [
+  "agent-engine-sdk-langgraph==0.11.14",
+  "agent-engine-runner-shared==0.11.14",
+  "langgraph==1.2.22",
+  "httpx==0.28.1",
+  "pydantic==2.14.3",
+  "langchain-google-genai==4.5.0",
+  "langchain-openai==1.8.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=9,<10", "pytest-asyncio>=1,<2"]
+fallback = ["langgraph-checkpoint-mongodb==0.5.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

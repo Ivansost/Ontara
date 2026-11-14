@@ -1,0 +1,756 @@
+{
+  "id": "roads-batch-03-20261114",
+  "contentHash": "82a40d8ad6459683f54f0e5bbc4e8d5652077c880a9eae8f736a67994fa4260f",
+  "coverage": [
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "grey-roads",
+        "grey-conditions",
+        "grey-issue-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "grey-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "grey-county-county-road-issues"
+      ],
+      "sourceIds": [
+        "grey-conditions",
+        "grey-issue-form",
+        "grey-roads"
+      ],
+      "notes": [
+        "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+        "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+        "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "wellington-concerns",
+        "wellington-safety"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-road-maintenance-form"
+      ],
+      "sourceIds": [
+        "wellington-concerns"
+      ],
+      "notes": [
+        "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+        "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+      ]
+    },
+    {
+      "authorityId": "wellington-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "wellington-county-county-speed-concern-form"
+      ],
+      "sourceIds": [
+        "wellington-safety"
+      ],
+      "notes": [
+        "This speed-concern route does not establish the procedure for every unsafe intersection or new traffic-control request.",
+        "No response/repair target or acknowledgement lookup is published."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "prescott-russell-counties",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "prescott-russell-counties-county-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "prescott-roads"
+      ],
+      "notes": [
+        "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+        "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "renfrew-roads",
+        "renfrew-concern-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "renfrew-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "renfrew-county-county-road-concern-form-handoff"
+      ],
+      "sourceIds": [
+        "renfrew-roads"
+      ],
+      "notes": [
+        "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+        "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "northumberland-roads",
+        "northumberland-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    },
+    {
+      "authorityId": "northumberland-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "northumberland-county-county-road-hotline-handoff"
+      ],
+      "sourceIds": [
+        "northumberland-report-form",
+        "northumberland-roads"
+      ],
+      "notes": [
+        "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+        "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+        "No fixed repair or follow-up target is stated."
+      ]
+    }
+  ],
+  "gaps": [],
+  "municipalityIds": [
+    "grey-county",
+    "chatsworth-township",
+    "georgian-bluffs-township",
+    "grey-highlands-municipality",
+    "hanover-town",
+    "meaford-municipality",
+    "owen-sound-city",
+    "southgate-township",
+    "the-blue-mountains-town",
+    "west-grey-municipality",
+    "wellington-county",
+    "centre-wellington-township",
+    "erin-town",
+    "guelph-eramosa-township",
+    "mapleton-township",
+    "minto-town",
+    "puslinch-township",
+    "wellington-north-township",
+    "prescott-russell-counties",
+    "alfred-and-plantagenet-township",
+    "casselman-municipality",
+    "champlain-township",
+    "clarence-rockland-city",
+    "east-hawkesbury-township",
+    "hawkesbury-town",
+    "russell-township",
+    "the-nation-municipality-municipality",
+    "renfrew-county",
+    "admaston-bromley-township",
+    "arnprior-town",
+    "bonnechere-valley-township",
+    "brudenell-lyndoch-and-raglan-township",
+    "deep-river-town",
+    "greater-madawaska-township",
+    "head-clara-and-maria-township",
+    "horton-township",
+    "killaloe-hagarty-and-richards-township",
+    "laurentian-hills-town",
+    "laurentian-valley-township",
+    "madawaska-valley-township",
+    "mcnab-braeside-township",
+    "north-algona-wilberforce-township",
+    "petawawa-town",
+    "renfrew-town",
+    "whitewater-region-township",
+    "northumberland-county",
+    "alnwick-haldimand-township",
+    "brighton-municipality",
+    "cobourg-town",
+    "cramahe-township",
+    "hamilton-township",
+    "port-hope-municipality",
+    "trent-hills-municipality"
+  ],
+  "procedureIds": [
+    "northumberland-county-county-road-hotline-handoff",
+    "wellington-county-county-road-maintenance-form",
+    "renfrew-county-county-road-concern-form-handoff",
+    "grey-county-county-road-issues",
+    "prescott-russell-counties-county-road-maintenance-handoff",
+    "wellington-county-county-speed-concern-form"
+  ],
+  "schemaVersion": "1.0",
+  "searchStatus": "pending",
+  "sourceIds": [
+    "northumberland-report-form",
+    "wellington-safety",
+    "grey-roads",
+    "renfrew-roads",
+    "northumberland-roads",
+    "prescott-roads",
+    "wellington-concerns",
+    "renfrew-concern-form",
+    "grey-conditions",
+    "grey-issue-form"
+  ],
+  "startedAt": "2026-11-14 15:56:53.091000+00:00",
+  "status": "completed",
+  "completedAt": "2026-11-14 15:57:47.088000+00:00",
+  "counts": {
+    "municipalities": 53,
+    "sources": 10,
+    "procedures": 6,
+    "formSnapshots": 4,
+    "artifacts": 9
+  }
+}

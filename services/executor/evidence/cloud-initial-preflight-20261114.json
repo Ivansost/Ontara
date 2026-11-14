@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-11-14T16:40:34.904788+00:00",
+  "executorServiceUrl": "https://ontara-executor-35iy.onrender.com",
+  "executorDeploymentId": "dep-dbs8s9afngtc73c2en1g",
+  "executorSourceCommit": "fd572d12",
+  "browserReadiness": {
+    "status": "ready",
+    "chromium": true,
+    "browserVersion": "159.0.8154.6",
+    "browserChannel": "pinned-chromium",
+    "maxActiveBrowserTasks": 1,
+    "runtimeMode": "fallback"
+  },
+  "caseStageBeforeApproval": "draft",
+  "approvedVersionBeforeApproval": null,
+  "held": true,
+  "nextCreateFaultArmed": true,
+  "authorityOutboxBeforeApproval": null,
+  "initialFormVersion": 1,
+  "followUpFormVersionBeforeRecovery": 1,
+  "initialFormSnapshotDigest": "71ce23b47be5a0a6905578cdef645440128e7ee42a8e1f2c9ccf98a7547a7976",
+  "followUpV1SnapshotDigest": "4b4f0eef0e3719704a4fa3d48efdf3ea5c20e108ddefd4d6ffc8bc2f0944acb9",
+  "localListeners": [
+    {
+      "port": 8001,
+      "listener": false
+    },
+    {
+      "port": 8003,
+      "listener": false
+    }
+  ],
+  "latencySeconds": 31.77,
+  "scope": "Read-only preflight; resident approval, dispatch, ticket writes, generation and mail not performed by this check.",
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof."
+}

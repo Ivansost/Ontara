@@ -1,0 +1,881 @@
+{
+  "startedAt": "2026-11-14T15:45:23.494Z",
+  "database": "ontara",
+  "model": "voyage-4-large",
+  "embeddingArraysSupplied": false,
+  "applicationEmbeddingApiCalls": 0,
+  "diagnosticOnly": true,
+  "documentation": [
+    "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/",
+    "https://www.mongodb.com/docs/vector-search/query/aggregation-stages/vector-search-stage/"
+  ],
+  "collections": {
+    "service_procedures": {
+      "insert": {
+        "database": "ontara",
+        "collection": "service_procedures",
+        "insertedCount": 5,
+        "insertedIds": [
+          "native-diagnostic-service_procedures-20261114",
+          "native-diagnostic-service_procedures-20261114-other-authority",
+          "native-diagnostic-service_procedures-20261114-stale",
+          "native-diagnostic-service_procedures-20261114-unverified",
+          "native-diagnostic-service_procedures-20261114-private"
+        ]
+      },
+      "indexCreate": {
+        "database": "ontara",
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "indexType": "vectorSearch"
+      },
+      "indexDefinition": {
+        "fields": [
+          {
+            "type": "autoEmbed",
+            "modality": "text",
+            "path": "retrievalText",
+            "model": "voyage-4-large"
+          },
+          {
+            "path": "authorityId",
+            "type": "filter"
+          },
+          {
+            "path": "issueIds",
+            "type": "filter"
+          },
+          {
+            "path": "categoryId",
+            "type": "filter"
+          },
+          {
+            "path": "visibility",
+            "type": "filter"
+          },
+          {
+            "path": "current",
+            "type": "filter"
+          },
+          {
+            "path": "verificationStatus",
+            "type": "filter"
+          },
+          {
+            "path": "validUntil",
+            "type": "filter"
+          },
+          {
+            "path": "sourceVersion",
+            "type": "filter"
+          },
+          {
+            "path": "knowledgeKind",
+            "type": "filter"
+          },
+          {
+            "path": "id",
+            "type": "filter"
+          }
+        ],
+        "type": "vectorSearch"
+      },
+      "primaryId": "native-diagnostic-service_procedures-20261114",
+      "v1": {
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal."
+              },
+              "exact": true,
+              "limit": 3,
+              "filter": {
+                "authorityId": "__native_diagnostic_only__",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "partial",
+                "sourceVersion": "native-probe-v1"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "verificationStatus": 1,
+              "current": 1,
+              "visibility": 1,
+              "knowledgeKind": 1,
+              "sourceVersion": 1,
+              "retrievalText": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "result": {
+          "documents": [
+            {
+              "id": "native-diagnostic-service_procedures-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v1",
+              "retrievalText": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal.",
+              "knowledgeKind": "diagnostic",
+              "score": 0.9339029788970947
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:46:04.262Z"
+      },
+      "future_v2_before_update": {
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement."
+              },
+              "exact": true,
+              "limit": 3,
+              "filter": {
+                "authorityId": "__native_diagnostic_only__",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "partial",
+                "sourceVersion": "native-probe-v1"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "verificationStatus": 1,
+              "current": 1,
+              "visibility": 1,
+              "knowledgeKind": 1,
+              "sourceVersion": 1,
+              "retrievalText": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "result": {
+          "documents": [
+            {
+              "id": "native-diagnostic-service_procedures-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v1",
+              "retrievalText": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal.",
+              "knowledgeKind": "diagnostic",
+              "score": 0.7257789373397827
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:46:04.262Z"
+      },
+      "controlledUpdate": {
+        "at": "2026-11-14T15:46:12.909Z",
+        "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement.",
+        "sourceVersion": "native-probe-v2",
+        "result": {
+          "database": "ontara",
+          "collection": "service_procedures",
+          "matchedCount": 1,
+          "modifiedCount": 1,
+          "upsertedCount": 0
+        }
+      },
+      "v2_after_update": {
+        "collection": "service_procedures",
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement."
+              },
+              "exact": true,
+              "limit": 3,
+              "filter": {
+                "authorityId": "__native_diagnostic_only__",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "partial",
+                "sourceVersion": "native-probe-v2"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "sourceVersion": 1,
+              "retrievalText": 1,
+              "knowledgeKind": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "result": {
+          "documents": [
+            {
+              "id": "native-diagnostic-service_procedures-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "sourceVersion": "native-probe-v2",
+              "retrievalText": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement.",
+              "knowledgeKind": "diagnostic",
+              "score": 0.9231612682342529
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:47:53.548Z"
+      },
+      "indexReadiness": {
+        "classicIndexes": [
+          {
+            "name": "_id_",
+            "key": {
+              "_id": 1
+            }
+          }
+        ],
+        "searchIndexes": [
+          {
+            "name": "service_procedures_autoembed_v1",
+            "type": "vectorSearch",
+            "status": "READY",
+            "queryable": true,
+            "latestDefinition": {
+              "fields": [
+                {
+                  "type": "autoEmbed",
+                  "path": "retrievalText",
+                  "model": "voyage-4-large",
+                  "modality": "text"
+                },
+                {
+                  "type": "filter",
+                  "path": "authorityId"
+                },
+                {
+                  "type": "filter",
+                  "path": "issueIds"
+                },
+                {
+                  "type": "filter",
+                  "path": "categoryId"
+                },
+                {
+                  "type": "filter",
+                  "path": "visibility"
+                },
+                {
+                  "type": "filter",
+                  "path": "current"
+                },
+                {
+                  "type": "filter",
+                  "path": "verificationStatus"
+                },
+                {
+                  "type": "filter",
+                  "path": "validUntil"
+                },
+                {
+                  "type": "filter",
+                  "path": "sourceVersion"
+                },
+                {
+                  "type": "filter",
+                  "path": "knowledgeKind"
+                },
+                {
+                  "type": "filter",
+                  "path": "id"
+                }
+              ]
+            }
+          }
+        ],
+        "classicIndexesCount": 1,
+        "searchIndexesCount": 1
+      },
+      "effectiveNodeSettings": [
+        {
+          "status": "READY",
+          "queryable": true,
+          "definitionVersion": {
+            "version": {
+              "$numberLong": "0"
+            },
+            "createdAt": {
+              "$date": "2026-11-14T15:42:09.000Z"
+            }
+          },
+          "autoEmbed": {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "numDimensions": 1024,
+            "similarity": "cosine",
+            "quantization": "scalar",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          "numPartitions": 1
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "definitionVersion": {
+            "version": {
+              "$numberLong": "0"
+            },
+            "createdAt": {
+              "$date": "2026-11-14T15:42:09.000Z"
+            }
+          },
+          "autoEmbed": {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "numDimensions": 1024,
+            "similarity": "cosine",
+            "quantization": "scalar",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          "numPartitions": 1
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "definitionVersion": {
+            "version": {
+              "$numberLong": "0"
+            },
+            "createdAt": {
+              "$date": "2026-11-14T15:42:09.000Z"
+            }
+          },
+          "autoEmbed": {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "numDimensions": 1024,
+            "similarity": "cosine",
+            "quantization": "scalar",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          "numPartitions": 1
+        }
+      ],
+      "generatedEmbeddingEvidence": {
+        "readOnly": true,
+        "sourceCollection": "service_procedures",
+        "systemDatabase": "__mdb_internal_search",
+        "observed": {
+          "documents": [
+            {
+              "_id": "native-diagnostic-service_procedures-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "sourceVersion": "native-probe-v2",
+              "knowledgeKind": "diagnostic",
+              "embeddingType": "binData",
+              "embeddingByteLength": 1026
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:48:45.164Z"
+      }
+    },
+    "procedural_lessons": {
+      "insert": {
+        "database": "ontara",
+        "collection": "procedural_lessons",
+        "insertedCount": 5,
+        "insertedIds": [
+          "native-diagnostic-procedural_lessons-20261114",
+          "native-diagnostic-procedural_lessons-20261114-other-authority",
+          "native-diagnostic-procedural_lessons-20261114-stale",
+          "native-diagnostic-procedural_lessons-20261114-unverified",
+          "native-diagnostic-procedural_lessons-20261114-private"
+        ]
+      },
+      "indexCreate": {
+        "database": "ontara",
+        "collection": "procedural_lessons",
+        "indexName": "procedural_lessons_autoembed_v1",
+        "indexType": "vectorSearch"
+      },
+      "indexDefinition": {
+        "fields": [
+          {
+            "type": "autoEmbed",
+            "modality": "text",
+            "path": "retrievalText",
+            "model": "voyage-4-large"
+          },
+          {
+            "path": "authorityId",
+            "type": "filter"
+          },
+          {
+            "path": "issueIds",
+            "type": "filter"
+          },
+          {
+            "path": "categoryId",
+            "type": "filter"
+          },
+          {
+            "path": "visibility",
+            "type": "filter"
+          },
+          {
+            "path": "current",
+            "type": "filter"
+          },
+          {
+            "path": "verificationStatus",
+            "type": "filter"
+          },
+          {
+            "path": "validUntil",
+            "type": "filter"
+          },
+          {
+            "path": "sourceVersion",
+            "type": "filter"
+          },
+          {
+            "path": "knowledgeKind",
+            "type": "filter"
+          },
+          {
+            "path": "id",
+            "type": "filter"
+          },
+          {
+            "path": "portalId",
+            "type": "filter"
+          },
+          {
+            "path": "workflowKind",
+            "type": "filter"
+          },
+          {
+            "path": "formFamily",
+            "type": "filter"
+          },
+          {
+            "path": "formVersions",
+            "type": "filter"
+          }
+        ],
+        "type": "vectorSearch"
+      },
+      "primaryId": "native-diagnostic-procedural_lessons-20261114",
+      "v1": {
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "procedural_lessons_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal."
+              },
+              "exact": true,
+              "limit": 3,
+              "filter": {
+                "authorityId": "__native_diagnostic_only__",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "partial",
+                "sourceVersion": "native-probe-v1"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "verificationStatus": 1,
+              "current": 1,
+              "visibility": 1,
+              "knowledgeKind": 1,
+              "sourceVersion": 1,
+              "retrievalText": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "result": {
+          "documents": [
+            {
+              "id": "native-diagnostic-procedural_lessons-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v1",
+              "retrievalText": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal.",
+              "knowledgeKind": "diagnostic",
+              "score": 0.9339029788970947
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:46:04.262Z"
+      },
+      "future_v2_before_update": {
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "procedural_lessons_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement."
+              },
+              "exact": true,
+              "limit": 3,
+              "filter": {
+                "authorityId": "__native_diagnostic_only__",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "partial",
+                "sourceVersion": "native-probe-v1"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "verificationStatus": 1,
+              "current": 1,
+              "visibility": 1,
+              "knowledgeKind": 1,
+              "sourceVersion": 1,
+              "retrievalText": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "result": {
+          "documents": [
+            {
+              "id": "native-diagnostic-procedural_lessons-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "visibility": "public",
+              "current": true,
+              "verificationStatus": "partial",
+              "sourceVersion": "native-probe-v1",
+              "retrievalText": "Synthetic native-index diagnostic only. A blue inspection flag at the test bridge marks a pothole observation. Record the road name and travel direction for a controlled receiving portal.",
+              "knowledgeKind": "diagnostic",
+              "score": 0.7257789373397827
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:46:04.262Z"
+      },
+      "controlledUpdate": {
+        "at": "2026-11-14T15:46:15.156Z",
+        "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement.",
+        "sourceVersion": "native-probe-v2",
+        "result": {
+          "database": "ontara",
+          "collection": "procedural_lessons",
+          "matchedCount": 1,
+          "modifiedCount": 1,
+          "upsertedCount": 0
+        }
+      },
+      "v2_after_update": {
+        "collection": "procedural_lessons",
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "procedural_lessons_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement."
+              },
+              "exact": true,
+              "limit": 3,
+              "filter": {
+                "authorityId": "__native_diagnostic_only__",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "partial",
+                "sourceVersion": "native-probe-v2"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "sourceVersion": 1,
+              "retrievalText": 1,
+              "knowledgeKind": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "result": {
+          "documents": [
+            {
+              "id": "native-diagnostic-procedural_lessons-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "sourceVersion": "native-probe-v2",
+              "retrievalText": "Synthetic native-index diagnostic only. The follow-up page split location into road or intersection, direction and position, and added a required nearest landmark. Ask the resident for the missing landmark, obtain approval, update the existing ticket, and verify its acknowledgement.",
+              "knowledgeKind": "diagnostic",
+              "score": 0.9233593940734863
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:47:54.924Z"
+      },
+      "indexReadiness": {
+        "classicIndexes": [
+          {
+            "name": "_id_",
+            "key": {
+              "_id": 1
+            }
+          }
+        ],
+        "searchIndexes": [
+          {
+            "name": "procedural_lessons_autoembed_v1",
+            "type": "vectorSearch",
+            "status": "READY",
+            "queryable": true,
+            "latestDefinition": {
+              "fields": [
+                {
+                  "type": "autoEmbed",
+                  "path": "retrievalText",
+                  "model": "voyage-4-large",
+                  "modality": "text"
+                },
+                {
+                  "type": "filter",
+                  "path": "authorityId"
+                },
+                {
+                  "type": "filter",
+                  "path": "issueIds"
+                },
+                {
+                  "type": "filter",
+                  "path": "categoryId"
+                },
+                {
+                  "type": "filter",
+                  "path": "visibility"
+                },
+                {
+                  "type": "filter",
+                  "path": "current"
+                },
+                {
+                  "type": "filter",
+                  "path": "verificationStatus"
+                },
+                {
+                  "type": "filter",
+                  "path": "validUntil"
+                },
+                {
+                  "type": "filter",
+                  "path": "sourceVersion"
+                },
+                {
+                  "type": "filter",
+                  "path": "knowledgeKind"
+                },
+                {
+                  "type": "filter",
+                  "path": "id"
+                },
+                {
+                  "type": "filter",
+                  "path": "portalId"
+                },
+                {
+                  "type": "filter",
+                  "path": "workflowKind"
+                },
+                {
+                  "type": "filter",
+                  "path": "formFamily"
+                },
+                {
+                  "type": "filter",
+                  "path": "formVersions"
+                }
+              ]
+            }
+          }
+        ],
+        "classicIndexesCount": 1,
+        "searchIndexesCount": 1
+      },
+      "effectiveNodeSettings": [
+        {
+          "status": "READY",
+          "queryable": true,
+          "definitionVersion": {
+            "version": {
+              "$numberLong": "0"
+            },
+            "createdAt": {
+              "$date": "2026-11-14T15:42:26.000Z"
+            }
+          },
+          "autoEmbed": {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "numDimensions": 1024,
+            "similarity": "cosine",
+            "quantization": "scalar",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          "numPartitions": 1
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "definitionVersion": {
+            "version": {
+              "$numberLong": "0"
+            },
+            "createdAt": {
+              "$date": "2026-11-14T15:42:26.000Z"
+            }
+          },
+          "autoEmbed": {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "numDimensions": 1024,
+            "similarity": "cosine",
+            "quantization": "scalar",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          "numPartitions": 1
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "definitionVersion": {
+            "version": {
+              "$numberLong": "0"
+            },
+            "createdAt": {
+              "$date": "2026-11-14T15:42:26.000Z"
+            }
+          },
+          "autoEmbed": {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "numDimensions": 1024,
+            "similarity": "cosine",
+            "quantization": "scalar",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          "numPartitions": 1
+        }
+      ],
+      "generatedEmbeddingEvidence": {
+        "readOnly": true,
+        "sourceCollection": "procedural_lessons",
+        "systemDatabase": "__mdb_internal_search",
+        "observed": {
+          "documents": [
+            {
+              "_id": "native-diagnostic-procedural_lessons-20261114",
+              "authorityId": "__native_diagnostic_only__",
+              "sourceVersion": "native-probe-v2",
+              "knowledgeKind": "diagnostic",
+              "embeddingType": "binData",
+              "embeddingByteLength": 1026
+            }
+          ],
+          "count": 1,
+          "appliedLimits": []
+        },
+        "checkedAt": "2026-11-14T15:48:47.864Z"
+      }
+    }
+  },
+  "completedAt": "2026-11-14T15:49:08.304Z",
+  "indexSettingsObservation": {
+    "reportedModel": "voyage-4-large",
+    "effectivePerNode": {
+      "numDimensions": 1024,
+      "quantization": "scalar",
+      "similarity": "cosine",
+      "numPartitions": 1
+    },
+    "reportedVia": "$listSearchIndexes.statusDetail.mainIndex.definition",
+    "applicationVectorsSupplied": false,
+    "internalGeneratedRecordsReadOnly": true
+  }
+}

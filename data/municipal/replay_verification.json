@@ -1,0 +1,14 @@
+{
+  "batchId": "roads-batch-01-20261114",
+  "status": "completed",
+  "replayed": true,
+  "searchStatus": "ready",
+  "counts": {
+    "municipalities": 36,
+    "sources": 13,
+    "procedures": 6,
+    "formSnapshots": 1,
+    "artifacts": 13
+  },
+  "meaning": "Exact same completed batch returned the existing run; no duplicate research records or readiness reset."
+}

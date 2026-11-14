@@ -1,0 +1,709 @@
+{
+  "id": "roads-batch-01-20261114",
+  "contentHash": "9c5ec08073e29468a6517220479f4f3e1d187fc2e9938860bd58b00210eba5c5",
+  "coverage": [
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sidewalk",
+      "status": "partial",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "peel-roads",
+        "peel-road-ownership"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "peel-roads",
+        "peel-road-ownership"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "durham-region-regional-pothole-sign-depot"
+      ],
+      "sourceIds": [
+        "durham-pothole",
+        "durham-roads",
+        "durham-sign"
+      ],
+      "notes": [
+        "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+        "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "durham-region-regional-pothole-sign-depot"
+      ],
+      "sourceIds": [
+        "durham-pothole",
+        "durham-roads",
+        "durham-sign"
+      ],
+      "notes": [
+        "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+        "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-debris-loose",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-debris-object",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "durham-region-regional-pothole-sign-depot"
+      ],
+      "sourceIds": [
+        "durham-pothole",
+        "durham-roads",
+        "durham-sign"
+      ],
+      "notes": [
+        "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+        "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "waterloo-region-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "waterloo-report-form",
+        "waterloo-roads"
+      ],
+      "notes": [
+        "The current report questionnaire, mandatory fields, CAPTCHA/account constraints and acknowledgement/tracking behavior were not observable in the fetched JavaScript form shell.",
+        "The service page labels its link email us but the actual destination is a web form; no report email address is inferred from the footer.",
+        "No repair deadline or report-specific follow-up route is stated."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "waterloo-region-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "waterloo-report-form",
+        "waterloo-roads"
+      ],
+      "notes": [
+        "The current report questionnaire, mandatory fields, CAPTCHA/account constraints and acknowledgement/tracking behavior were not observable in the fetched JavaScript form shell.",
+        "The service page labels its link email us but the actual destination is a web form; no report email address is inferred from the footer.",
+        "No repair deadline or report-specific follow-up route is stated."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-debris-loose",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-debris-object",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-sign",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    }
+  ],
+  "gaps": [],
+  "municipalityIds": [
+    "halton-region",
+    "burlington-city",
+    "halton-hills-town",
+    "milton-town",
+    "oakville-town",
+    "peel-region",
+    "brampton-city",
+    "caledon-town",
+    "mississauga-city",
+    "york-region",
+    "aurora-town",
+    "east-gwillimbury-town",
+    "georgina-town",
+    "king-township",
+    "markham-city",
+    "newmarket-town",
+    "richmond-hill-city",
+    "vaughan-city",
+    "whitchurch-stouffville-town",
+    "durham-region",
+    "ajax-town",
+    "brock-township",
+    "clarington-municipality",
+    "oshawa-city",
+    "pickering-city",
+    "scugog-township",
+    "uxbridge-township",
+    "whitby-town",
+    "waterloo-region",
+    "cambridge-city",
+    "kitchener-city",
+    "north-dumfries-township",
+    "waterloo-city",
+    "wellesley-township",
+    "wilmot-township",
+    "woolwich-township"
+  ],
+  "procedureIds": [
+    "peel-region-regional-road-maintenance",
+    "york-region-regional-road-maintenance",
+    "halton-region-sidewalk-curb-responsibility-handoff",
+    "halton-region-regional-road-problem-phone",
+    "durham-region-regional-pothole-sign-depot",
+    "waterloo-region-road-maintenance-handoff"
+  ],
+  "schemaVersion": "1.0",
+  "searchStatus": "pending",
+  "sourceIds": [
+    "halton-roads",
+    "halton-safety",
+    "york-maintenance",
+    "durham-pothole",
+    "durham-sign",
+    "ontario-municipal-registry-2026",
+    "waterloo-report-form",
+    "peel-roads",
+    "durham-roads",
+    "waterloo-roads",
+    "statcan-2021-csd-population",
+    "peel-road-ownership",
+    "york-roads"
+  ],
+  "startedAt": "2026-11-14 15:51:55.897000+00:00",
+  "status": "completed",
+  "completedAt": "2026-11-14 15:53:09.095000+00:00",
+  "counts": {
+    "municipalities": 36,
+    "sources": 13,
+    "procedures": 6,
+    "formSnapshots": 1,
+    "artifacts": 13
+  }
+}

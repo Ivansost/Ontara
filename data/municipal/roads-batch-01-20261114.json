@@ -1,0 +1,1836 @@
+{
+  "schemaVersion": "1.0",
+  "batchId": "roads-batch-01-20261114",
+  "municipalities": [
+    {
+      "id": "halton-region",
+      "name": "Halton, Regional Municipality of",
+      "type": "upper-tier",
+      "memberIds": [
+        "burlington-city",
+        "halton-hills-town",
+        "milton-town",
+        "oakville-town"
+      ],
+      "officialUrl": "http://www.halton.ca/",
+      "population": 596637,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 4,
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "burlington-city",
+      "name": "Burlington, City of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "https://www.burlington.ca/en/index.aspx",
+      "population": 186948,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "halton-hills-town",
+      "name": "Halton Hills, Town of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "http://www.haltonhills.ca/",
+      "population": 62951,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "milton-town",
+      "name": "Milton, Town of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "http://www.milton.ca/",
+      "population": 132979,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "oakville-town",
+      "name": "Oakville, Town of",
+      "type": "lower-tier",
+      "parentId": "halton-region",
+      "officialUrl": "http://www.oakville.ca/",
+      "population": 213759,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "peel-region",
+      "name": "Peel, Regional Municipality of",
+      "type": "upper-tier",
+      "memberIds": [
+        "brampton-city",
+        "caledon-town",
+        "mississauga-city"
+      ],
+      "officialUrl": "http://www.peelregion.ca/",
+      "population": 1451022,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 1,
+      "sourceIds": [
+        "peel-roads",
+        "peel-road-ownership"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "brampton-city",
+      "name": "Brampton, City of",
+      "type": "lower-tier",
+      "parentId": "peel-region",
+      "officialUrl": "http://www.brampton.ca/en/pages/welcome.aspx",
+      "population": 656480,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "caledon-town",
+      "name": "Caledon, Town of",
+      "type": "lower-tier",
+      "parentId": "peel-region",
+      "officialUrl": "http://www.town.caledon.on.ca/",
+      "population": 76581,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "mississauga-city",
+      "name": "Mississauga, City of",
+      "type": "lower-tier",
+      "parentId": "peel-region",
+      "officialUrl": "http://www.mississauga.ca/",
+      "population": 717961,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "york-region",
+      "name": "York, Regional Municipality of",
+      "type": "upper-tier",
+      "memberIds": [
+        "aurora-town",
+        "east-gwillimbury-town",
+        "georgina-town",
+        "king-township",
+        "markham-city",
+        "newmarket-town",
+        "richmond-hill-city",
+        "vaughan-city",
+        "whitchurch-stouffville-town"
+      ],
+      "officialUrl": "http://www.york.ca/",
+      "population": 1173103,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 2,
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "aurora-town",
+      "name": "Aurora, Town of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "https://www.aurora.ca/en/index.aspx",
+      "population": 62057,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "east-gwillimbury-town",
+      "name": "East Gwillimbury, Town of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.eastgwillimbury.ca/",
+      "population": 34637,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "georgina-town",
+      "name": "Georgina, Town of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.georgina.ca/",
+      "population": 47642,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "king-township",
+      "name": "King, Township of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.king.ca/",
+      "population": 27333,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "markham-city",
+      "name": "Markham, City of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.markham.ca/",
+      "population": 338503,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "newmarket-town",
+      "name": "Newmarket, Town of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.newmarket.ca/",
+      "population": 87942,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "richmond-hill-city",
+      "name": "Richmond Hill, City of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.richmondhill.ca/",
+      "population": 202022,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "vaughan-city",
+      "name": "Vaughan, City of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.city.vaughan.on.ca/",
+      "population": 323103,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "whitchurch-stouffville-town",
+      "name": "Whitchurch-Stouffville, Town of",
+      "type": "lower-tier",
+      "parentId": "york-region",
+      "officialUrl": "http://www.townofws.com/",
+      "population": 49864,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "durham-region",
+      "name": "Durham, Regional Municipality of",
+      "type": "upper-tier",
+      "memberIds": [
+        "ajax-town",
+        "brock-township",
+        "clarington-municipality",
+        "oshawa-city",
+        "pickering-city",
+        "scugog-township",
+        "uxbridge-township",
+        "whitby-town"
+      ],
+      "officialUrl": "http://www.durham.ca/",
+      "population": 696867,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 3,
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "ajax-town",
+      "name": "Ajax, Town of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "http://www.ajax.ca/en/",
+      "population": 126666,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "brock-township",
+      "name": "Brock, Township of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "http://townshipofbrock.ca/",
+      "population": 12567,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "clarington-municipality",
+      "name": "Clarington, Municipality of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "http://www.clarington.net/",
+      "population": 101427,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "oshawa-city",
+      "name": "Oshawa, City of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "https://www.oshawa.ca/en/index.aspx",
+      "population": 175383,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "pickering-city",
+      "name": "Pickering, City of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "https://www.pickering.ca/en/index.aspx",
+      "population": 99186,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "scugog-township",
+      "name": "Scugog, Township of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "https://www.scugog.ca/en/index.aspx",
+      "population": 21581,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "uxbridge-township",
+      "name": "Uxbridge, Township of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "http://www.town.uxbridge.on.ca/",
+      "population": 21556,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "whitby-town",
+      "name": "Whitby, Town of",
+      "type": "lower-tier",
+      "parentId": "durham-region",
+      "officialUrl": "http://www.whitby.ca/en/",
+      "population": 138501,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "waterloo-region",
+      "name": "Waterloo, Regional Municipality of",
+      "type": "upper-tier",
+      "memberIds": [
+        "cambridge-city",
+        "kitchener-city",
+        "north-dumfries-township",
+        "waterloo-city",
+        "wellesley-township",
+        "wilmot-township",
+        "woolwich-township"
+      ],
+      "officialUrl": "http://www.region.waterloo.on.ca/",
+      "population": 587165,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 5,
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "cambridge-city",
+      "name": "Cambridge, City of",
+      "type": "lower-tier",
+      "parentId": "waterloo-region",
+      "officialUrl": "http://www.cambridge.ca/",
+      "population": 138479,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "kitchener-city",
+      "name": "Kitchener, City of",
+      "type": "lower-tier",
+      "parentId": "waterloo-region",
+      "officialUrl": "http://www.kitchener.ca/",
+      "population": 256885,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "north-dumfries-township",
+      "name": "North Dumfries, Township of",
+      "type": "lower-tier",
+      "parentId": "waterloo-region",
+      "officialUrl": "http://www.northdumfries.ca/",
+      "population": 10619,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "waterloo-city",
+      "name": "Waterloo, City of",
+      "type": "lower-tier",
+      "parentId": "waterloo-region",
+      "officialUrl": "http://www.city.waterloo.on.ca/",
+      "population": 121436,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "wellesley-township",
+      "name": "Wellesley, Township of",
+      "type": "lower-tier",
+      "parentId": "waterloo-region",
+      "officialUrl": "https://www.wellesley.ca/en/index.aspx",
+      "population": 11318,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "wilmot-township",
+      "name": "Wilmot, Township of",
+      "type": "lower-tier",
+      "parentId": "waterloo-region",
+      "officialUrl": "http://www.wilmot.ca/",
+      "population": 21429,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "woolwich-township",
+      "name": "Woolwich, Township of",
+      "type": "lower-tier",
+      "parentId": "waterloo-region",
+      "officialUrl": "http://www.woolwich.ca/",
+      "population": 26999,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    }
+  ],
+  "procedures": [
+    {
+      "title": "Halton Region: published telephone handoff for a confirmed Regional-road problem",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "retrievalText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+      "responsibilityRules": [
+        "Confirm the incident road belongs to Halton's Regional network using the linked official map; residence in Halton alone does not prove ownership.",
+        "Local streets and many sidewalks generally belong to Burlington, Halton Hills, Milton or Oakville; verify the particular asset.",
+        "Provincial highways such as 401 and QEW belong to MTO; no private-road maintenance responsibility is established by these pages.",
+        "Police handle traffic-law enforcement; a request for engineering investigation is distinct from approval to install a sign."
+      ],
+      "steps": [
+        "Confirm incident location and Regional-road ownership using the official map.",
+        "For a Regional road problem, use the published telephone route: 311 or 1-866-442-5866.",
+        "For a local street, follow Halton's linked local municipality page instead."
+      ],
+      "contactPhone": "311 or +1-866-442-5866",
+      "constraints": [
+        "Research only. Live municipal submissions, emails and calls are not authorized by this import.",
+        "The official reporting page publishes a general telephone route; it does not specify a distinct intake form for each Roads leaf.",
+        "Automated demo execution remains on the separately allowlisted halton-roads-demo portal."
+      ],
+      "gaps": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "id": "halton-region-regional-road-problem-phone",
+      "authorityId": "halton-region",
+      "categoryId": "roads",
+      "sourceVersion": "8d2f6c64ed934f68",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:42:09.641995+00:00",
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "artifactIds": [
+        "halton-roads-ff72795c7085bfd0",
+        "halton-safety-4701417917565a14"
+      ]
+    },
+    {
+      "title": "Halton sidewalks and curbs: verify local responsibility and Regional exceptions",
+      "issueIds": [
+        "roads-sidewalk",
+        "roads-curb"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "retrievalText": "Halton's official Regional Roads page says Burlington, Halton Hills, Milton and Oakville generally manage local streets, sidewalks and related infrastructure. It explicitly says many sidewalks, not all sidewalks, are local, and also lists sidewalk assets in the Regional active-transportation network. A damaged sidewalk within Halton must therefore be routed by the particular asset and local municipality, not by the upper-tier name alone. Halton links its four local road-service pages. Curbs are not specifically allocated in the observed source. For unclear Regional assets use Halton's published 311 or 1-866-442-5866 handoff to establish responsibility. Required defect-report fields and a curb-specific channel remain unverified. This is research-only handoff guidance, not a tested live integration.",
+      "responsibilityRules": [
+        "Local municipalities are generally responsible for local streets, sidewalks and related infrastructure, with exceptions requiring verification.",
+        "Do not infer curb ownership or every sidewalk's maintainer from the Region label."
+      ],
+      "steps": [
+        "Identify the exact sidewalk or curb and local municipality.",
+        "Use the local-service links on Halton's Regional Roads page; ask the owner to confirm responsibility where uncertain."
+      ],
+      "constraints": [
+        "Do not automatically dispatch a real sidewalk or curb report based on this partial ownership evidence."
+      ],
+      "verificationStatus": "partial",
+      "researchStatus": "partial",
+      "coverage": {
+        "roads-sidewalk": "sourced_handoff",
+        "roads-curb": "unresolved_gap"
+      },
+      "gaps": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ],
+      "id": "halton-region-sidewalk-curb-responsibility-handoff",
+      "authorityId": "halton-region",
+      "categoryId": "roads",
+      "sourceVersion": "e028ca5d483ab7db",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:42:00.099655+00:00",
+      "artifactIds": [
+        "halton-roads-ff72795c7085bfd0"
+      ]
+    },
+    {
+      "title": "Peel: report Regional-road potholes, debris, damaged signs and curbs",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign"
+      ],
+      "sourceIds": [
+        "peel-roads",
+        "peel-road-ownership"
+      ],
+      "retrievalText": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence.",
+      "responsibilityRules": [
+        "Peel maintenance applies to the Regional-road network; verify road number/name and segment, not just municipality.",
+        "This source does not establish sidewalk responsibility or private-road maintenance."
+      ],
+      "steps": [
+        "Check the Regional roads list and exact incident segment.",
+        "Call 311 or 905-791-7800 option 4 for the listed maintenance concerns.",
+        "Use the published urgent after-hours service for urgent road issues; questions can use the same general phone contact."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff"
+      },
+      "gaps": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ],
+      "constraints": [
+        "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+      ],
+      "contactPhone": "311 or +1-905-791-7800 option 4",
+      "id": "peel-region-regional-road-maintenance",
+      "authorityId": "peel-region",
+      "categoryId": "roads",
+      "sourceVersion": "cbd83362f6f67e74",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:45:46.091084+00:00",
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "artifactIds": [
+        "peel-roads-6f5f99e4af1ea276",
+        "peel-road-ownership-b99f0d117e66d164"
+      ]
+    },
+    {
+      "title": "York: Regional-road condition, debris and sign reporting",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-sign"
+      ],
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "retrievalText": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested.",
+      "responsibilityRules": [
+        "Use this procedure only after confirming a Regional road and relevant asset.",
+        "York explicitly maintains road signs on Regional roads; local/provincial/private road responsibility must be established separately.",
+        "Do not treat an email-opening link as a verified form or automatic integration."
+      ],
+      "steps": [
+        "Confirm the Regional road/asset.",
+        "Use the published email or general Public Works phone for nonurgent condition/debris/sign concerns.",
+        "For urgent road-user safety matters after hours call 1-877-464-9675 ext. 75200."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-sign": "sourced_handoff"
+      },
+      "gaps": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ],
+      "constraints": [
+        "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+      ],
+      "contactPhone": "+1-877-464-9675 ext. 75000; after-hours urgent ext. 75200",
+      "contactEmail": "transportation@york.ca",
+      "id": "york-region-regional-road-maintenance",
+      "authorityId": "york-region",
+      "categoryId": "roads",
+      "sourceVersion": "f5e5ae824241d8ff",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:46:12.532558+00:00",
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "artifactIds": [
+        "york-roads-265f6346ba46e8c5",
+        "york-maintenance-ddd5a0bfb067afa3"
+      ]
+    },
+    {
+      "title": "Durham: Regional-road potholes and downed signs go to the appropriate Works depot",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-sign"
+      ],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "retrievalText": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot.",
+      "responsibilityRules": [
+        "Roads may belong to MTO, Durham or a local municipality.",
+        "Pothole procedure excludes residential, commercial and driveway entrances.",
+        "Signs must be on a Regional road; this is maintenance, not approval for a new sign."
+      ],
+      "steps": [
+        "Confirm the incident is on a Regional road.",
+        "Follow the official Works depot link on the pothole/sign issue page and select the appropriate depot.",
+        "Contact that depot; use Region general contact for assistance identifying it."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-sign": "sourced_handoff"
+      },
+      "gaps": [
+        "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+        "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+      ],
+      "constraints": [
+        "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+      ],
+      "contactPhone": "311 or +1-905-668-7711; toll-free +1-800-372-1102",
+      "id": "durham-region-regional-pothole-sign-depot",
+      "authorityId": "durham-region",
+      "categoryId": "roads",
+      "sourceVersion": "e78bdb56c741bfd1",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:46:12.532934+00:00",
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "artifactIds": [
+        "durham-roads-6e71cf0a799fe466",
+        "durham-pothole-c30c8e4b3026fede",
+        "durham-sign-5beb2e5469fbbded"
+      ]
+    },
+    {
+      "title": "Waterloo Region: published road-maintenance and pothole handoff",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement"
+      ],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "retrievalText": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region’s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources.",
+      "responsibilityRules": [
+        "Regional/local maintenance cooperation does not establish ownership for an arbitrary road.",
+        "Check the exact road/asset; provincial and private-road responsibility is not established by this maintenance page."
+      ],
+      "steps": [
+        "Confirm the incident road and responsible municipality.",
+        "Call 519-575-4400 or open the officially linked Verint complaint form.",
+        "Inspect the current form and required report fields before any future supported submission."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff"
+      },
+      "gaps": [
+        "The current report questionnaire, mandatory fields, CAPTCHA/account constraints and acknowledgement/tracking behavior were not observable in the fetched JavaScript form shell.",
+        "The service page labels its link email us but the actual destination is a web form; no report email address is inferred from the footer.",
+        "No repair deadline or report-specific follow-up route is stated."
+      ],
+      "constraints": [
+        "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+      ],
+      "contactPhone": "+1-519-575-4400",
+      "officialFormUrl": "https://waterloo.form.ca.empro.verintcloudservices.com/form/auto/hrc_generalcomplain",
+      "id": "waterloo-region-road-maintenance-handoff",
+      "authorityId": "waterloo-region",
+      "categoryId": "roads",
+      "sourceVersion": "49523825479fa125",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:45:46.091591+00:00",
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "artifactIds": [
+        "waterloo-roads-3919c47666b116c4",
+        "waterloo-report-form-0c6cd53192ca558e"
+      ],
+      "formSnapshotIds": [
+        "waterloo-maintenance-form-shell-20261114"
+      ]
+    }
+  ],
+  "formSnapshots": [
+    {
+      "id": "waterloo-maintenance-form-shell-20261114",
+      "fields": [],
+      "gaps": [
+        "Fetched initial JavaScript shell only; no incident-report fields observed. Resume-reference and saved-password fields are not the incident questionnaire. No form started or submitted."
+      ],
+      "authorityId": "waterloo-region",
+      "procedureId": "waterloo-region-road-maintenance-handoff",
+      "url": "https://waterloo.form.ca.empro.verintcloudservices.com/form/auto/hrc_generalcomplain",
+      "observedAt": "2026-11-14T15:45:46.091591+00:00",
+      "sourceVersion": "0c6cd53192ca558e",
+      "artifactIds": [
+        "waterloo-report-form-0c6cd53192ca558e"
+      ],
+      "sourceIds": [
+        "waterloo-report-form"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sidewalk",
+      "status": "partial",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [
+        "halton-region-sidewalk-curb-responsibility-handoff"
+      ],
+      "sourceIds": [
+        "halton-roads"
+      ],
+      "notes": [
+        "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+        "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "halton-region",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "halton-region-regional-road-problem-phone"
+      ],
+      "sourceIds": [
+        "halton-roads",
+        "halton-safety"
+      ],
+      "notes": [
+        "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+        "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "peel-roads",
+        "peel-road-ownership"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "peel-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "peel-road-ownership",
+        "peel-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "peel-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "peel-roads",
+        "peel-road-ownership"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "york-region-regional-road-maintenance"
+      ],
+      "sourceIds": [
+        "york-maintenance",
+        "york-roads"
+      ],
+      "notes": [
+        "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+      ]
+    },
+    {
+      "authorityId": "york-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "york-roads",
+        "york-maintenance"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "durham-region-regional-pothole-sign-depot"
+      ],
+      "sourceIds": [
+        "durham-pothole",
+        "durham-roads",
+        "durham-sign"
+      ],
+      "notes": [
+        "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+        "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "durham-region-regional-pothole-sign-depot"
+      ],
+      "sourceIds": [
+        "durham-pothole",
+        "durham-roads",
+        "durham-sign"
+      ],
+      "notes": [
+        "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+        "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-debris-loose",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-debris-object",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "durham-region-regional-pothole-sign-depot"
+      ],
+      "sourceIds": [
+        "durham-pothole",
+        "durham-roads",
+        "durham-sign"
+      ],
+      "notes": [
+        "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+        "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+      ]
+    },
+    {
+      "authorityId": "durham-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "durham-roads",
+        "durham-pothole",
+        "durham-sign"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "waterloo-region-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "waterloo-report-form",
+        "waterloo-roads"
+      ],
+      "notes": [
+        "The current report questionnaire, mandatory fields, CAPTCHA/account constraints and acknowledgement/tracking behavior were not observable in the fetched JavaScript form shell.",
+        "The service page labels its link email us but the actual destination is a web form; no report email address is inferred from the footer.",
+        "No repair deadline or report-specific follow-up route is stated."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "waterloo-region-road-maintenance-handoff"
+      ],
+      "sourceIds": [
+        "waterloo-report-form",
+        "waterloo-roads"
+      ],
+      "notes": [
+        "The current report questionnaire, mandatory fields, CAPTCHA/account constraints and acknowledgement/tracking behavior were not observable in the fetched JavaScript form shell.",
+        "The service page labels its link email us but the actual destination is a web form; no report email address is inferred from the footer.",
+        "No repair deadline or report-specific follow-up route is stated."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-debris-loose",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-debris-object",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-sign",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "waterloo-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "waterloo-roads",
+        "waterloo-report-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    }
+  ],
+  "gaps": [],
+  "sources": [
+    {
+      "id": "halton-roads",
+      "authorityId": "halton-region",
+      "url": "https://www.halton.ca/for-residents/regional-roads",
+      "title": "Halton - Regional Roads",
+      "retrievedAt": "2026-11-14T15:42:00.099655+00:00",
+      "verifiedAt": "2026-11-14T15:42:00.099655+00:00",
+      "contentHash": "2e26dc16221f8d1c8e077a07f5af2d353c4cb46941b4e3f63e06e24fd4be07ac",
+      "sourceVersion": "ff72795c7085bfd0",
+      "artifactIds": [
+        "halton-roads-ff72795c7085bfd0"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "halton-safety",
+      "authorityId": "halton-region",
+      "url": "https://www.halton.ca/for-residents/regional-roads/road-safety",
+      "title": "Halton - Road Safety",
+      "retrievedAt": "2026-11-14T15:42:09.641995+00:00",
+      "verifiedAt": "2026-11-14T15:42:09.641995+00:00",
+      "contentHash": "977691aa707ad57869d034f6d11c9497fe296f336b4da43c7173b9dc2c66e814",
+      "sourceVersion": "4701417917565a14",
+      "artifactIds": [
+        "halton-safety-4701417917565a14"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "peel-roads",
+      "authorityId": "peel-region",
+      "url": "https://peelregion.ca/services/road-issue",
+      "title": "Road issue - peelregion.ca",
+      "retrievedAt": "2026-11-14T15:45:01.675314+00:00",
+      "verifiedAt": "2026-11-14T15:45:01.675314+00:00",
+      "contentHash": "06e03bf0e8e6c9916f43db9225e6ad3137f99e281dc57488d37f48d97e33970e",
+      "sourceVersion": "6f5f99e4af1ea276",
+      "artifactIds": [
+        "peel-roads-6f5f99e4af1ea276"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "peel-road-ownership",
+      "authorityId": "peel-region",
+      "url": "https://peelregion.ca/transportation-roads/road-maintenance/peel-regional-roads",
+      "title": "Peel Regional Roads - peelregion.ca",
+      "retrievedAt": "2026-11-14T15:45:46.091084+00:00",
+      "verifiedAt": "2026-11-14T15:45:46.091084+00:00",
+      "contentHash": "92a25f5807b66dc4fda3f35a1e57a5a701eee686b7f993299070c49015249c03",
+      "sourceVersion": "b99f0d117e66d164",
+      "artifactIds": [
+        "peel-road-ownership-b99f0d117e66d164"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "york-roads",
+      "authorityId": "york-region",
+      "url": "https://www.york.ca/report-road-conditions",
+      "title": "Report Road Conditions | York Region",
+      "retrievedAt": "2026-11-14T15:45:01.674995+00:00",
+      "verifiedAt": "2026-11-14T15:45:01.674995+00:00",
+      "contentHash": "11d6c98aa1c289ee694336150e568218a958b7b273e85477b73e784d1db8dbd3",
+      "sourceVersion": "265f6346ba46e8c5",
+      "artifactIds": [
+        "york-roads-265f6346ba46e8c5"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "york-maintenance",
+      "authorityId": "york-region",
+      "url": "https://www.york.ca/transportation/roads/spring-and-summer-road-maintenance",
+      "title": "Spring and Summer Road Maintenance | York Region",
+      "retrievedAt": "2026-11-14T15:46:12.532558+00:00",
+      "verifiedAt": "2026-11-14T15:46:12.532558+00:00",
+      "contentHash": "b768b7fa6a2c183e0ab0a4e7d81e76948e824b337d969c2a58e5cfd4926eb4df",
+      "sourceVersion": "ddd5a0bfb067afa3",
+      "artifactIds": [
+        "york-maintenance-ddd5a0bfb067afa3"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "durham-roads",
+      "authorityId": "durham-region",
+      "url": "https://www.durham.ca/living-here/roads-and-traffic/regional-road-maintenance/",
+      "title": "Regional Road Maintenance | Region of Durham",
+      "retrievedAt": "2026-11-14T15:45:01.675397+00:00",
+      "verifiedAt": "2026-11-14T15:45:01.675397+00:00",
+      "contentHash": "00567260efb3b06a4905e6605778ed2a1e2ea832d8258ec9a32f94d3249bc3e9",
+      "sourceVersion": "6e71cf0a799fe466",
+      "artifactIds": [
+        "durham-roads-6e71cf0a799fe466"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "durham-pothole",
+      "authorityId": "durham-region",
+      "url": "https://www.durham.ca/regional-government/report-an-issue/pothole-issue/",
+      "title": "Pothole Issue | Region of Durham",
+      "retrievedAt": "2026-11-14T15:46:12.532934+00:00",
+      "verifiedAt": "2026-11-14T15:46:12.532934+00:00",
+      "contentHash": "976b2e3002caaad1a5a9837a4cfca6cb881b7714d88c35d7de0dc5edc449e139",
+      "sourceVersion": "c30c8e4b3026fede",
+      "artifactIds": [
+        "durham-pothole-c30c8e4b3026fede"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "durham-sign",
+      "authorityId": "durham-region",
+      "url": "https://www.durham.ca/regional-government/report-an-issue/downed-sign/",
+      "title": "Downed Sign | Region of Durham",
+      "retrievedAt": "2026-11-14T15:46:12.532891+00:00",
+      "verifiedAt": "2026-11-14T15:46:12.532891+00:00",
+      "contentHash": "4ad50b8caa9a37ed3a5544add2ea819e68e2a0693118a87c0aa5b09d262f0eed",
+      "sourceVersion": "5beb2e5469fbbded",
+      "artifactIds": [
+        "durham-sign-5beb2e5469fbbded"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "waterloo-roads",
+      "authorityId": "waterloo-region",
+      "url": "https://www.regionofwaterloo.ca/programs-and-services/roads-and-transportation/road-and-winter-maintenance/",
+      "title": "Road and Winter Maintenance | Region of Waterloo",
+      "retrievedAt": "2026-11-14T15:45:01.675469+00:00",
+      "verifiedAt": "2026-11-14T15:45:01.675469+00:00",
+      "contentHash": "7ce1b04522ac6551f9c0caddca90faf5b6ae116961f510da49040e5a81b72455",
+      "sourceVersion": "3919c47666b116c4",
+      "artifactIds": [
+        "waterloo-roads-3919c47666b116c4"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "waterloo-report-form",
+      "authorityId": "waterloo-region",
+      "url": "https://waterloo.form.ca.empro.verintcloudservices.com/form/auto/hrc_generalcomplain",
+      "title": "Forms",
+      "retrievedAt": "2026-11-14T15:45:46.091591+00:00",
+      "verifiedAt": "2026-11-14T15:45:46.091591+00:00",
+      "contentHash": "b356607344077bbdb5418bf01d6a8e4bed2fb89a5c6c7bbdd7bc78aec9694cf1",
+      "sourceVersion": "0c6cd53192ca558e",
+      "artifactIds": [
+        "waterloo-report-form-0c6cd53192ca558e"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "ontario-municipal-registry-2026",
+      "authorityId": "ontario",
+      "url": "https://data.ontario.ca/dataset/62e83cbc-0731-4d66-abdc-2f2b31bcd76c/resource/6783a586-6b05-4a73-9663-e60a6963c91e/download/municipalities_-_en_2026-0526.csv",
+      "title": "Ontario Ministry of Municipal Affairs and Housing: municipalities registry, June 2026",
+      "retrievedAt": "2026-11-14T15:42:59.884105+00:00",
+      "verifiedAt": "2026-11-14T15:42:59.884105+00:00",
+      "contentHash": "8cda6d0215ede06f2b0f834218b5c8a8666485da3c7996c893ba5f99e5680ca0",
+      "sourceVersion": "5370b4e1b3804d10",
+      "artifactIds": [
+        "ontario-municipal-registry-2026-5370b4e1b3804d10"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "statcan-2021-csd-population",
+      "authorityId": "ontario",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000401",
+      "title": "Statistics Canada table 98-10-0004-01: 2021 Population and dwelling counts, entire-table CSV",
+      "retrievedAt": "2026-11-14T15:43:30.409122+00:00",
+      "verifiedAt": "2026-11-14T15:43:30.409122+00:00",
+      "contentHash": "184dadc79608b07f13b30f19a76cd862339f61d53dba507416a8f23d791a41de",
+      "sourceVersion": "40631095c8601def",
+      "artifactIds": [
+        "statcan-2021-csd-population-40631095c8601def"
+      ],
+      "verificationStatus": "verified",
+      "gaps": []
+    }
+  ]
+}

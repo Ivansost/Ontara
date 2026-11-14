@@ -1,0 +1,87 @@
+{
+  "recordedAt": "2026-11-14T16:03:56.100146+00:00",
+  "qualification": "Local development integration only; cloud execution and Engine persistence require separate deployment qualification.",
+  "runtimeMode": "explicit local fallback test",
+  "browser": "isolated installed Chrome channel; pinned Linux Chromium is a separate deployment gate",
+  "storage": "Real event Atlas through app API and independent receiving portal",
+  "realProcessFault": {
+    "signal": "SIGKILL",
+    "exitCode": -9,
+    "killedProcessId": 12164,
+    "survivingSupervisorProcessId": 11849,
+    "recoveryProcessId": 13330,
+    "initialRecoveryContractFailure": {
+      "processId": 12203,
+      "reason": "Receiving receipt metadata was initially rejected by API schema; fixed, then same operation reconciled again without create."
+    }
+  },
+  "processStarts": [
+    {
+      "attemptId": "attempt-daa120cdf19641d08b0d0c13c1245aef",
+      "processId": 12164,
+      "processBirthId": "b3b6025edf1548f18c82a69bf3ec8add",
+      "jobAttempt": 1,
+      "runtimeMode": "fallback"
+    },
+    {
+      "attemptId": "attempt-2f3ba5fe9b2e4d68a1a4a135df0edd94",
+      "processId": 12203,
+      "processBirthId": "c218275cb027425c95b565f36436f686",
+      "jobAttempt": 2,
+      "runtimeMode": "fallback"
+    },
+    {
+      "attemptId": "attempt-8628ced61d17475da0b5e44aa42111ce",
+      "processId": 13330,
+      "processBirthId": "8f0cd853cedd4ed18243f90b89cd78da",
+      "jobAttempt": 3,
+      "runtimeMode": "fallback"
+    }
+  ],
+  "operations": [
+    {
+      "action": "create",
+      "state": "receipt_verified",
+      "receiptId": "RCP-A1CCA60628064000F50B7B33",
+      "ticketId": "RDS-0E668AE771AF",
+      "receiptFormVersion": 1,
+      "approvedReferenceAndDigestMatched": true
+    },
+    {
+      "action": "update",
+      "state": "receipt_verified",
+      "receiptId": "RCP-336CAC563C4CA73F08192204",
+      "ticketId": "RDS-0E668AE771AF",
+      "receiptFormVersion": 2,
+      "approvedReferenceAndDigestMatched": true
+    }
+  ],
+  "receivingCounts": {
+    "createRequestCount": 1,
+    "ticketCount": 1,
+    "lookupRequestCount": 3,
+    "updateRequestCount": 1,
+    "acceptedUpdateCount": 1
+  },
+  "calibration": {
+    "knowledgeKind": "seeded_demo",
+    "disclosure": "Developer supplied a generic external fieldName to approvedFactId mapping for the synthetic calibration; this was not runtime memory-guided adaptation.",
+    "lessonId": "roads-follow-up-v2-seeded-calibration-20261114",
+    "sourceVersion": "seeded-calibration-20261114-v1"
+  },
+  "generationGate": {
+    "provider": "google",
+    "model": "gemini-3.8-flash",
+    "metadata": "Authenticated model metadata read passed200",
+    "generation": "Two503high-demand failures and one504timeout; successful structured generation not established at this checkpoint."
+  },
+  "limitations": [
+    "This file is a sanitized supplemental evidence snapshot; authoritative case/operation/events/receipts remain in Atlas.",
+    "Receiver counts are presenter evidence only; execution acceptance used the actual receiving HTML lookup.",
+    "A verified reporting receipt does not mean the real-world problem was repaired."
+  ],
+  "metadataCorrectedAt": "2026-11-14T16:28:01.931025+00:00",
+  "attemptIdSource": "Authoritative Atlas execution event.data.attemptId read through the hosted case API.",
+  "privateProofRetained": true,
+  "publicEvidencePolicy": "Private case/run/operation/client-reference/payload-digest and receiving capability URLs are omitted. Exact-match checks were performed against owner-only proof."
+}

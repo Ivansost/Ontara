@@ -1,0 +1,160 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+# Four-service free deployment. The coordinator reviews and applies each sync.
+# Existing event Atlas remains the datastore; this Blueprint provisions no database.
+previews:
+  generation: "off"
+
+services:
+  - type: web
+    name: ontara-portals
+    runtime: docker
+    repo: https://github.com/Ivansost/Ontara
+    branch: main
+    region: oregon
+    plan: free
+    dockerfilePath: services/portals/Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: "off"
+    envVars:
+      - key: DEMO_PORTAL_MONGODB_URI
+        sync: false
+      - key: DEMO_PORTAL_ADMIN_TOKEN
+        sync: false
+      - key: DEMO_PORTAL_RECEIPT_SECRET
+        sync: false
+
+  - type: web
+    name: ontara-web
+    runtime: node
+    repo: https://github.com/Ivansost/Ontara
+    branch: main
+    region: oregon
+    plan: free
+    rootDir: apps/web
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    autoDeployTrigger: "off"
+    envVars:
+      - key: NODE_VERSION
+        value: "22.15.0"
+      - key: ONTARA_API_URL
+        fromService:
+          name: ontara-api
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+
+  - type: web
+    name: ontara-api
+    runtime: docker
+    repo: https://github.com/Ivansost/Ontara
+    branch: main
+    region: oregon
+    plan: free
+    dockerfilePath: services/api/Dockerfile
+    dockerContext: .
+    healthCheckPath: /readyz
+    autoDeployTrigger: "off"
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DATABASE
+        value: ontara
+      - key: ONTARA_INTERNAL_TOKEN
+        sync: false
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+      - key: ALLOWED_ORIGINS
+        fromService:
+          name: ontara-web
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: DEMO_PORTAL_BASE_URL
+        fromService:
+          name: ontara-portals
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: ONTARA_EXECUTOR_BASE_URL
+        fromService:
+          name: ontara-executor
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: ONTARA_MAIL_ENABLED
+        value: "true"
+      - key: AGENTMAIL_API_KEY
+        sync: false
+      - key: ONTARA_MAIL_INBOX_ID
+        sync: false
+      - key: ONTARA_MAIL_AUTHORITY_INBOX_ID
+        sync: false
+      - key: ONTARA_MAIL_RESIDENT_INBOX_ID
+        sync: false
+      - key: ONTARA_MAIL_ALLOWED_INBOX_IDS
+        sync: false
+      - key: ONTARA_MAIL_POLL_SECONDS
+        value: "8"
+      - key: ONTARA_MAIL_DAILY_SEND_BUDGET
+        value: "60"
+
+  - type: web
+    name: ontara-executor
+    runtime: docker
+    repo: https://github.com/Ivansost/Ontara
+    branch: main
+    region: oregon
+    plan: free
+    dockerfilePath: services/executor/Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: "off"
+    envVars:
+      - key: ONTARA_RUNTIME_MODE
+        value: fallback
+      - key: CHECKPOINT_DB_NAME
+        value: ontara
+      - key: MONGODB_URI
+        fromService:
+          name: ontara-api
+          type: web
+          envVarKey: MONGODB_URI
+      - key: ONTARA_INTERNAL_TOKEN
+        fromService:
+          name: ontara-api
+          type: web
+          envVarKey: ONTARA_INTERNAL_TOKEN
+      - key: BACKEND_BASE_URL
+        fromService:
+          name: ontara-api
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: EXECUTOR_BASE_URL
+        fromService:
+          name: ontara-executor
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: PORTALS_BASE_URL
+        fromService:
+          name: ontara-portals
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: ALLOWED_PORTAL_HOSTS
+        fromService:
+          name: ontara-portals
+          type: web
+          envVarKey: RENDER_EXTERNAL_HOSTNAME
+      - key: GENERATION_PROVIDER
+        value: google
+      - key: GENERATION_MODEL
+        value: gemini-3.5-flash-lite
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: ONTARA_ENABLE_DEMO_FAULTS
+        value: "1"
+      - key: ONTARA_LEASE_SECONDS
+        value: "15"
+
+# PORT is supplied by Render. Public URL references use Render's actual assigned
+# HTTPS origins, including suffixes. No private-network host is used on Free.
+# Existing portal secrets remain unchanged. Supply new private values only through
+# the coordinator's reviewed Blueprint plan and deployment configuration.

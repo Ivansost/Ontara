@@ -1,0 +1,43 @@
+{
+  "verifiedAt": "2026-11-14T16:51:13.277651+00:00",
+  "caseAlias": "Hosted Roads rehearsal",
+  "executionLocation": "Actual Render Free cloud child workflow",
+  "apiRestartSourceCommit": "6b273f04",
+  "initialReceiptId": "RCP-6E1B78C3E0193392E1FC800B",
+  "ticketId": "RDS-810FBCB61392",
+  "initialReceiptSurvivedApiRestart": true,
+  "formMutation": {
+    "fromVersion": 1,
+    "toVersion": 2,
+    "modifiedAt": "2026-11-14T16:50:49.539059Z",
+    "beforeSnapshotDigest": "4b4f0eef0e3719704a4fa3d48efdf3ea5c20e108ddefd4d6ffc8bc2f0944acb9",
+    "afterSnapshotDigest": "1208bf9cf6eae467328179bb3d87073fc32f2fb4b95cf6745765f4af63e5979e"
+  },
+  "withheldLessonIds": [
+    "roads-follow-up-v2-seeded-calibration-20261114"
+  ],
+  "diagnosticEventVisibility": "presenter",
+  "readOnlyInspectionResult": "needs_assistance",
+  "inspectionAttemptId": "attempt-3f4c0b4678cc4961abe5aead712f7408",
+  "nativeQuery": true,
+  "queryExecuted": true,
+  "queryModel": "voyage-4-large",
+  "indexName": "procedural_lessons_autoembed_v1",
+  "eligibleCandidateCount": 0,
+  "modelMappingReached": false,
+  "newAuthoredQuestionCount": 0,
+  "mailHeld": true,
+  "authorityOutboxAttempts": 0,
+  "authorityMailSent": false,
+  "receivingCounts": {
+    "createRequestCount": 1,
+    "ticketCount": 1,
+    "lookupRequestCount": 1,
+    "updateRequestCount": 0,
+    "acceptedUpdateCount": 0
+  },
+  "scope": "Actual post-recovery v1\u2192v2 change and native lesson-withheld cloud pause. No generation, authority mail release, portal update or resident update approval.",
+  "privateProofRetained": true,
+  "sameCaseAndReceivingRunVerified": true,
+  "publicEvidencePolicy": "Private case/run/operation and receiving lookup identifiers omitted; owner-only proof retained."
+}
