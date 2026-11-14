@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+# First deployment wave. The coordinator adds the remaining services after review.
+# Existing event Atlas remains the datastore; this Blueprint provisions no database.
+previews:
+  generation: "off"
+
+services:
+  - type: web
+    name: ontara-portals
+    runtime: docker
+    repo: https://github.com/Ivansost/Ontara
+    branch: main
+    region: oregon
+    plan: free
+    dockerfilePath: services/portals/Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: "off"
+    envVars:
+      - key: DEMO_PORTAL_MONGODB_URI
+        sync: false
+      - key: DEMO_PORTAL_ADMIN_TOKEN
+        sync: false
+      - key: DEMO_PORTAL_RECEIPT_SECRET
+        sync: false
+# PORT is supplied by Render. The app uses RENDER_EXTERNAL_URL for receipt URLs.
+# Supply the three private values during the coordinator's reviewed first apply.
