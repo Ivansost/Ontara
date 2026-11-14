@@ -1,10 +1,25 @@
 # Execution evidence
 
-Cloud readiness, initial recovery and changed-form/withheld files describe actual
-Render Free execution. Files named `local-*` and the generation probe describe
-development rehearsals; they do not claim hosted qualification. The final hosted
-follow-up proof is captured separately after the approved update and real mail
-loop finish.
+[The final hosted proof](cloud-final-hosted-proof-20261114.json) records the
+completed Roads journey: an actual killed child and fresh-process reconciliation,
+one receiving create and ticket, an API restart while mail remained held, a real
+follow-up form change, the withheld-lesson pause, native retrieval and Gemini
+mapping, renewed resident approval, one update to the same ticket, and three
+genuinely received controlled emails. The authorized duplicate exercise left
+receipts, messages and operation counts unchanged.
+
+[The Free-service wake-up evidence](cloud-free-idle-recovery-20261114.json)
+separates the observed queue and cold-start delay from execution time. The
+existing approved update waited 270.803 seconds for its worker lease and reached
+receiving acceptance 8.465 seconds after that lease. Warm authenticated browser
+readiness immediately before the demo and after a long idle or build gap.
+
+Cloud readiness, initial recovery and changed-form/withheld files preserve the
+earlier hosted barriers. Files named `local-*` and the generation probe describe
+development rehearsals; they do not claim hosted qualification. The hosted
+runtime uses the explicitly selected Free Render supervised-child fallback with
+one direct Atlas checkpointer. Agent Engine free/event entitlement remains
+unverified; no Engine resources were provisioned.
 
 Public summaries omit private case, run, operation, client-reference and payload
 digest lookup identifiers, receiving capability URLs, tokens and report values.
@@ -27,3 +42,6 @@ manual event-day browser calibration supplied genuine update-receipt evidence.
 Runtime changed-form execution requires native Atlas retrieval and a validated
 generation-model mapping. An acknowledgement proves reporting progress, not a
 physical repair.
+
+The [independent mail summary](../../../scripts/mail/evidence/cloud-mail-summary.json)
+records the API restart, genuine receiving/thread checks and duplicate comparison.
