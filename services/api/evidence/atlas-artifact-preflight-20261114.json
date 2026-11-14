@@ -1,0 +1,11 @@
+{
+  "scope": "Actual obtained Halton source artifact read through a separately started API process after importer upload",
+  "artifactId": "halton-roads-ff72795c7085bfd0",
+  "sourceId": "halton-roads",
+  "sourceVersion": "ff72795c7085bfd0",
+  "status": "ready",
+  "byteCount": 165450,
+  "sha256": "ff72795c7085bfd0561c6fa11efefcb43a3e302d5c065d9955007df90ab9351a",
+  "metadataHashMatches": true,
+  "ready": true
+}

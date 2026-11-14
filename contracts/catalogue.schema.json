@@ -1,0 +1,113 @@
+{
+  "$defs": {
+    "CatalogueNode": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "category",
+            "group",
+            "issue"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "available": {
+          "title": "Available",
+          "type": "boolean"
+        },
+        "disabledReason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabledreason"
+        },
+        "questionSchemaId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Questionschemaid"
+        },
+        "children": {
+          "items": {
+            "$ref": "#/$defs/CatalogueNode"
+          },
+          "title": "Children",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "slug",
+        "label",
+        "description",
+        "kind",
+        "available"
+      ],
+      "title": "CatalogueNode",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "categories": {
+      "items": {
+        "$ref": "#/$defs/CatalogueNode"
+      },
+      "title": "Categories",
+      "type": "array"
+    },
+    "demoLocations": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Demolocations",
+      "type": "array"
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "categories",
+    "demoLocations",
+    "disclaimer"
+  ],
+  "title": "CatalogueView",
+  "type": "object"
+}

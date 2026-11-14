@@ -1,0 +1,267 @@
+{
+  "recordedAt": "2026-11-14T16:15:42.589308+00:00",
+  "qualification": "Local actual Atlas + Playwright + native Voyage/Vector Search + Gemini + AgentMail integration. Hosted qualification remains separate.",
+  "caseId": "case_edf099cb47c54a4eaa56c17c5b5785ed",
+  "runId": "run_8d670bd74e6040aabfb94d724e1137ce",
+  "caseStage": "report_acknowledged",
+  "approvedVersion": 2,
+  "initialCrash": {
+    "taskId": "run-64b8e6b43c7c4e78944ed0638a3b50e6",
+    "status": "receipt_verified",
+    "jobId": "job_op_ba4bfd69594a16570cdd36a5a4a5eb30",
+    "caseId": "case_edf099cb47c54a4eaa56c17c5b5785ed",
+    "supervisorProcessId": 15028,
+    "startedAt": "2026-11-14T16:05:48.209710+00:00",
+    "attempts": [
+      {
+        "number": 1,
+        "processId": 15174,
+        "exitCode": -9,
+        "actualProcessCrash": true
+      },
+      {
+        "number": 2,
+        "processId": 15216,
+        "exitCode": 0,
+        "actualProcessCrash": false,
+        "status": "receipt_verified",
+        "operation_id": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+        "attempt_id": "attempt-e5cb7ba1ef7143258739ee763ed17e34",
+        "process_id": 15216
+      }
+    ]
+  },
+  "inspectionResults": [
+    {
+      "jobId": "inspection_4d87af29143ad79d806a102396668c5a",
+      "status": "needs_assistance",
+      "readOnly": true,
+      "sourceEventId": "rehearsal-withheld-of-received-fd9bf2fa9fe8344af14082dbb4244eee"
+    },
+    {
+      "jobId": "inspection_3101d7eed2f06462040d85d15a4ba34a",
+      "status": "needs_input",
+      "readOnly": true,
+      "sourceEventId": "received:fd9bf2fa9fe8344af14082dbb4244eee46d2aff2c160ae8823987dc2c31645be"
+    }
+  ],
+  "memory": [
+    {
+      "status": "assistance_required",
+      "candidateIds": [],
+      "nativeQuery": true,
+      "model": "voyage-4-large",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "queryText": "Adapt a changed municipal follow-up form while updating the existing ticket using only approved facts. The previous report stored a combined incident location. Current observed controls: Road or intersection (required) (text, required); Direction of travel (required) (select-one, required); Position on the road (required) (select-one, required); Nearest landmark (required) (text, required); Additional details (optional) (textarea, optional)",
+      "queryExecuted": true
+    },
+    {
+      "status": "ready",
+      "candidateIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ],
+      "nativeQuery": true,
+      "model": "voyage-4-large",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "queryText": "Adapt a changed municipal follow-up form while updating the existing ticket using only approved facts. The previous report stored a combined incident location. Current observed controls: Road or intersection (required) (text, required); Direction of travel (required) (select-one, required); Position on the road (required) (select-one, required); Nearest landmark (required) (text, required); Additional details (optional) (textarea, optional)",
+      "queryExecuted": true
+    },
+    {
+      "status": "ready",
+      "candidateIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ],
+      "nativeQuery": true,
+      "model": "voyage-4-large",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "queryText": "Adapt a changed municipal follow-up form while updating the existing ticket using only approved facts. The previous report stored a combined incident location. Current observed controls: Road or intersection (required) (text, required); Direction of travel (required) (select-one, required); Position on the road (required) (select-one, required); Nearest landmark (required) (text, required); Additional details (optional) (textarea, optional)",
+      "queryExecuted": true
+    }
+  ],
+  "modelMappings": [
+    {
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "usage": {
+        "input_tokens": 1134,
+        "output_tokens": 205,
+        "total_tokens": 1339,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "selectedLessonIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ],
+      "mappedFactIds": [
+        "location",
+        "travelDirection",
+        "roadPosition",
+        "description"
+      ],
+      "missingQuestionIds": [
+        "nearestLandmark"
+      ],
+      "formFingerprint": "0cc5d9e7e2a7488629bfb925a75c225762fb7125a1c6b20428d38585d78b1b66",
+      "proposal": {
+        "formFingerprint": "0cc5d9e7e2a7488629bfb925a75c225762fb7125a1c6b20428d38585d78b1b66",
+        "lessonIds": [
+          "roads-follow-up-v2-seeded-calibration-20261114"
+        ],
+        "mappings": [
+          {
+            "fieldName": "roadIntersection",
+            "factId": "location"
+          },
+          {
+            "fieldName": "travelDirection",
+            "factId": "travelDirection"
+          },
+          {
+            "fieldName": "roadPosition",
+            "factId": "roadPosition"
+          },
+          {
+            "fieldName": "additionalDetails",
+            "factId": "description"
+          }
+        ],
+        "missingFacts": [
+          {
+            "fieldName": "nearestLandmark",
+            "questionId": "nearestLandmark"
+          }
+        ],
+        "explanation": "Mapped observed fields to approved facts. Nearest landmark fact is missing so it is requested via authored questions."
+      }
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "usage": {
+        "input_tokens": 1154,
+        "output_tokens": 203,
+        "total_tokens": 1357,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "selectedLessonIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ],
+      "mappedFactIds": [
+        "location",
+        "travelDirection",
+        "roadPosition",
+        "nearestLandmark",
+        "description"
+      ],
+      "missingQuestionIds": [],
+      "formFingerprint": "0cc5d9e7e2a7488629bfb925a75c225762fb7125a1c6b20428d38585d78b1b66",
+      "proposal": {
+        "formFingerprint": "0cc5d9e7e2a7488629bfb925a75c225762fb7125a1c6b20428d38585d78b1b66",
+        "lessonIds": [
+          "roads-follow-up-v2-seeded-calibration-20261114"
+        ],
+        "mappings": [
+          {
+            "fieldName": "roadIntersection",
+            "factId": "location"
+          },
+          {
+            "fieldName": "travelDirection",
+            "factId": "travelDirection"
+          },
+          {
+            "fieldName": "roadPosition",
+            "factId": "roadPosition"
+          },
+          {
+            "fieldName": "nearestLandmark",
+            "factId": "nearestLandmark"
+          },
+          {
+            "fieldName": "additionalDetails",
+            "factId": "description"
+          }
+        ],
+        "missingFacts": [],
+        "explanation": "All required non-hidden fields are mapped directly to verified approved facts using seeded demo lesson knowledge."
+      }
+    }
+  ],
+  "processStarts": [
+    {
+      "processId": 15174,
+      "processBirthId": "394e1598f7394d979aabf202af6a163f",
+      "jobAttempt": 1,
+      "runtimeMode": "fallback",
+      "attemptId": null
+    },
+    {
+      "processId": 15216,
+      "processBirthId": "9282b609262e4d0cba3ab43b4d02b43f",
+      "jobAttempt": 2,
+      "runtimeMode": "fallback",
+      "attemptId": null
+    },
+    {
+      "processId": 16147,
+      "processBirthId": "e5d5422fb1f045e1a0f91759d925f2cb",
+      "jobAttempt": 1,
+      "runtimeMode": "fallback",
+      "attemptId": null
+    },
+    {
+      "processId": 16628,
+      "processBirthId": "64a644a0a6c84fb5b4d1b02a9c163cf2",
+      "jobAttempt": 1,
+      "runtimeMode": "fallback",
+      "attemptId": null
+    },
+    {
+      "processId": 17496,
+      "processBirthId": "e30c4726502a45a0b0ac31dfd163d93c",
+      "jobAttempt": 1,
+      "runtimeMode": "fallback",
+      "attemptId": null
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+      "action": "create",
+      "state": "receipt_verified",
+      "clientReference": "op_ba4bfd69594a16570cdd36a5a4a5eb30",
+      "payloadDigest": "54fcf88bd6b1681fb6d9a5509aef4f11b7526093c91a4c7ebbea83158df8eeef",
+      "ticketId": "RDS-A6F3F3D7E435",
+      "receiptId": "RCP-0AC703D61F91D5741524E3DA",
+      "formVersion": 1
+    },
+    {
+      "operationId": "op_615c33158b9efa696256724a86f9a161",
+      "action": "update",
+      "state": "receipt_verified",
+      "clientReference": "op_615c33158b9efa696256724a86f9a161",
+      "payloadDigest": "5365a062e3c7136a5914bf45777c24ae5659e5b5ad84bdb075c2b12afc7205c4",
+      "ticketId": "RDS-A6F3F3D7E435",
+      "receiptId": "RCP-1975CF64438CD905F9943233",
+      "formVersion": 2
+    }
+  ],
+  "sameTicket": true,
+  "receivingCounts": {
+    "createRequestCount": 1,
+    "ticketCount": 1,
+    "lookupRequestCount": 1,
+    "updateRequestCount": 1,
+    "acceptedUpdateCount": 1
+  },
+  "mailVerification": "Mail owner verified genuine controlled authority request, response and resident notification at receiving inboxes; six actual message copies retained in Atlas, each outbound attempt count one.",
+  "limits": [
+    "Acknowledgement proves a reporting action, not physical repair.",
+    "Manual seeded-demo calibration is a separate disclosed run; this run used native retrieved lesson plus model-derived mappings.",
+    "Update receipt was authoritative before a late child heartbeat/completion race; that process-status defect is being fixed before cloud release.",
+    "Receiver counters are presenter evidence only; the execution worker obtained acceptance through receiving HTML interfaces."
+  ]
+}

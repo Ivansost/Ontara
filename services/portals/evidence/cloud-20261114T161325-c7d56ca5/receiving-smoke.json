@@ -1,0 +1,147 @@
+{
+  "runId": "browser-smoke-20261114T161325-c7d56ca5",
+  "browserChannel": "chrome",
+  "agentProcessCrashTested": false,
+  "vectorMemoryTested": false,
+  "checks": {
+    "browserCreate": true,
+    "freshBrowserReceiptLookup": true,
+    "oneCreateRequestOneTicket": true,
+    "authenticatedPerRunMutation": true,
+    "requiredLandmarkSameTicketUpdate": true,
+    "updateReceiptLookup": true,
+    "separateGraffitiReceiver": true
+  },
+  "receipts": [
+    {
+      "ticketId": "RDS-A26744AD5DE6",
+      "receiptId": "RCP-6325A41BF9116518D1BE1CD0",
+      "runId": "browser-smoke-20261114T161325-c7d56ca5",
+      "portalId": "roads",
+      "clientReferenceSha256": "be5f4571bc0c6f4c4ae0b02e282c5a1b8eb704c705ab304f5c586fff186c7b3e",
+      "payloadDigest": "2923f704f19bfb3b61678518bcac5edfc744868d3db1062c3d92ef9005164d1d",
+      "formPayloadDigest": "a1cede864b2f4d58c953b33224621add97ffb171eac2d2644d14f9f56a51989f",
+      "action": "create",
+      "acceptedAt": "2026-11-14T16:13:29.324121Z",
+      "formVersion": 1,
+      "formSnapshotDigest": "71ce23b47be5a0a6905578cdef645440128e7ee42a8e1f2c9ccf98a7547a7976"
+    },
+    {
+      "ticketId": "RDS-A26744AD5DE6",
+      "receiptId": "RCP-2B435ECA99411C1BF1B09397",
+      "runId": "browser-smoke-20261114T161325-c7d56ca5",
+      "portalId": "roads",
+      "clientReferenceSha256": "a8a1c79ae8113c8f47e79e4dd45d32ff9635d5309b966b8feec75fc14c1d4dc0",
+      "payloadDigest": "ab9e3c01d2b32d50e7761f3d3dd49aca66f8988bec0585c1b151773104f166dc",
+      "formPayloadDigest": "dd5bee202c2599b78609aeafa366527c1cb0c402decea99d809e4a984f8cba54",
+      "action": "update",
+      "acceptedAt": "2026-11-14T16:13:31.894529Z",
+      "formVersion": 2,
+      "formSnapshotDigest": "1208bf9cf6eae467328179bb3d87073fc32f2fb4b95cf6745765f4af63e5979e"
+    },
+    {
+      "ticketId": "GRA-21690D91D288",
+      "receiptId": "RCP-B7DF3B54DC567D2318665042",
+      "runId": "browser-smoke-20261114T161325-c7d56ca5",
+      "portalId": "graffiti",
+      "clientReferenceSha256": "73acdc1287c461a8cbe6480af3fd79c03573a1721f28ba7331e6fc0814bd9832",
+      "payloadDigest": "02337a0c6b78d3796c36fe0b6e008dd90b48cf47182211eaa3160727a006bed0",
+      "formPayloadDigest": "b6c0b32135a6a30c141ca439f2f530f23388ce61ae0f6d254c3ba5ca1bc302bf",
+      "action": "create",
+      "acceptedAt": "2026-11-14T16:13:32.892682Z",
+      "formVersion": 1,
+      "formSnapshotDigest": "7012a5ddaabc7cca4a14d1ebd7fee18e936bb8f917b42d5ade63de813f192c02"
+    }
+  ],
+  "evidence": {
+    "runId": "browser-smoke-20261114T161325-c7d56ca5",
+    "portals": {
+      "roads": {
+        "createRequestCount": 1,
+        "ticketCount": 1,
+        "updateRequestCount": 1,
+        "acceptedUpdateCount": 1,
+        "lookupRequestCount": 2,
+        "tickets": [
+          {
+            "ticketId": "RDS-A26744AD5DE6",
+            "payloadDigest": "2923f704f19bfb3b61678518bcac5edfc744868d3db1062c3d92ef9005164d1d",
+            "version": 2,
+            "status": "Acknowledged \u2014 DEMO",
+            "createdAt": "2026-11-14T16:13:29.324121Z",
+            "clientReferenceSha256": "be5f4571bc0c6f4c4ae0b02e282c5a1b8eb704c705ab304f5c586fff186c7b3e"
+          }
+        ],
+        "formVersion": 2
+      },
+      "graffiti": {
+        "createRequestCount": 1,
+        "ticketCount": 1,
+        "updateRequestCount": 0,
+        "acceptedUpdateCount": 0,
+        "lookupRequestCount": 1,
+        "tickets": [
+          {
+            "ticketId": "GRA-21690D91D288",
+            "payloadDigest": "02337a0c6b78d3796c36fe0b6e008dd90b48cf47182211eaa3160727a006bed0",
+            "version": 1,
+            "status": "Acknowledged \u2014 DEMO",
+            "createdAt": "2026-11-14T16:13:32.892682Z",
+            "clientReferenceSha256": "73acdc1287c461a8cbe6480af3fd79c03573a1721f28ba7331e6fc0814bd9832"
+          }
+        ],
+        "formVersion": 1
+      }
+    },
+    "observedAt": "2026-11-14T16:15:13.690727Z",
+    "counterPurpose": "Presenter evidence only. Executors must obtain acceptance through the receiving interface."
+  },
+  "artifactType": "cloud-receiving-interface-verification",
+  "result": "passed",
+  "receivingSystemOrigin": "https://ontara-portals-35iy.onrender.com",
+  "browserExecutionLocation": "Local developer QA on Ivan Mac; isolated headless installed Chrome controlled by Playwright 1.65.2",
+  "receiverHosting": "Render Free Oregon; Atlas MongoDB receiving persistence",
+  "cloudDeployment": {
+    "id": "dep-dbs8gem7bikc73etgn20",
+    "metadataSource": "Coordinator-confirmed live deployment"
+  },
+  "verifiedAt": "2026-11-14T16:15:13.673775Z",
+  "health": {
+    "status": "ok",
+    "service": "ontara-portals",
+    "persistence": "mongodb",
+    "database": "ontara_demo",
+    "isDemo": true
+  },
+  "scope": {
+    "receivingFormsAndExactReceiptMatching": true,
+    "presenterCounterVerification": true,
+    "cloudAgentProcessCrash": false,
+    "cloudExecutorQualification": false,
+    "vectorMemory": false,
+    "realMunicipalityContact": false
+  },
+  "sanitization": {
+    "rawClientReferences": "Replaced with SHA-256 hashes",
+    "receiptSignatures": "Omitted",
+    "ticketCapabilitiesAndSignedUrls": "Omitted",
+    "residentData": "Synthetic fixture text only"
+  },
+  "screenshots": [
+    {
+      "file": "roads-initial-form.png",
+      "sha256": "5f663e363447c03c500b3f1489227a2f7368496706baea8cc8a7e8c5436f38e3"
+    },
+    {
+      "file": "roads-changed-form.png",
+      "sha256": "00c2f6730e65c1a81ac9db50e814ea5595c7f561c01c0a93161ef07f12a1c15e"
+    },
+    {
+      "file": "graffiti-receipt.png",
+      "sha256": "d902f1ebad7b711b04b3767d712855f68b74c7ba8485abeb384f1e6868c6c2da",
+      "displayRedactions": [
+        "Client reference text replaced in browser DOM before public screenshot; server receipt is unchanged and was matched first"
+      ]
+    }
+  ]
+}

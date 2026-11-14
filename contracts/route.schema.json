@@ -1,0 +1,49 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "supported": {
+      "title": "Supported",
+      "type": "boolean"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "route": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Route"
+    },
+    "missingAnswers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missinganswers",
+      "type": "array"
+    },
+    "urgentHandoff": {
+      "default": false,
+      "title": "Urgenthandoff",
+      "type": "boolean"
+    },
+    "demo": {
+      "default": true,
+      "title": "Demo",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "supported",
+    "reason"
+  ],
+  "title": "RouteDecision",
+  "type": "object"
+}

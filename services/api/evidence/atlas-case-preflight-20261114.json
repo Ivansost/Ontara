@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-11-14T15:58:54.238871+00:00",
+  "scope": "Real Atlas HTTP case ledger; no external portal write",
+  "checks": {
+    "nativeProcedureBeforeApproval": true,
+    "incidentOverridesResidence": true,
+    "crossSessionDenied": true,
+    "duplicateApprovalSameOperation": true,
+    "materialEditInvalidatesApproval": true,
+    "staleApprovalRejected": true,
+    "originalVersionPreserved": true,
+    "newVersionNewOperation": true,
+    "durableJobLease": true,
+    "cancelledLeaseRejected": true,
+    "inactiveServiceRejected": true,
+    "internalUnauthenticatedRejected": true
+  },
+  "nativeProcedure": {
+    "id": "halton-region-regional-road-problem-phone",
+    "sourceVersion": "8d2f6c64ed934f68",
+    "title": "Halton Region: published telephone handoff for a confirmed Regional-road problem",
+    "authorityId": "halton-region",
+    "verificationStatus": "verified",
+    "integrationStatus": "research_only",
+    "sourceRefs": [
+      {
+        "id": "halton-roads",
+        "sourceVersion": "ff72795c7085bfd0",
+        "title": "Halton - Regional Roads",
+        "url": "https://www.halton.ca/for-residents/regional-roads"
+      },
+      {
+        "id": "halton-safety",
+        "sourceVersion": "4701417917565a14",
+        "title": "Halton - Road Safety",
+        "url": "https://www.halton.ca/for-residents/regional-roads/road-safety"
+      }
+    ]
+  },
+  "nativeIndex": {
+    "indexName": "service_procedures_autoembed_v1",
+    "model": "voyage-4-large",
+    "queryText": "Published reporting instructions, responsibility and required facts for Pothole on a Halton regional road",
+    "nativeQuery": true,
+    "queryExecuted": true
+  },
+  "caseId": "case_1c1d7356a1624261ada7445ff3710e98",
+  "runId": "run_557ac2e199684953b75717b7c616af87",
+  "passed": true
+}
