@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { controlClient } from '../scripts/cloud-qa.mjs';
-import { assertCreateRecovery, assertChangedFormEvidence, receiptSummary, receivedMail } from '../scripts/cloud-qa/evidence.mjs';
+import { assertCreateRecovery, assertChangedFormEvidence, receiptSummary, receivedMail, duplicateMailSnapshot } from '../scripts/cloud-qa/evidence.mjs';
 
 function recoveryFixture() {
   const receipt = { ticketId: 'ticket_fixture', receiptId: 'receipt_fixture', clientReference: 'op_create_fixture', payloadDigest: 'digest_fixture', action: 'create', receiptSignature: 'private-capability-fixture', updateUrl: 'private-update-capability-fixture' };
@@ -80,4 +80,19 @@ test('internal process-side client reads native fetch status without exposing au
   assert.equal(requested.options.headers.authorization, 'Bearer non-secret-test-fixture');
   const failed = controlClient('https://api.invalid', 'non-secret-test-fixture', async () => new Response('{}', { status: 503 }));
   await assert.rejects(() => failed('/internal/v1/cases/case_fixture/evidence'), /Internal control request failed \(503\)/);
+});
+
+test('duplicate check requires one genuine inspection and exactly one send per purpose', () => {
+  const evidence = {
+    case: { stage: 'report_acknowledged', version: 2, approvedVersion: 2, receipt: { ticketId: 'ticket_fixture', action: 'update' } },
+    operations: [{ id: 'create_fixture', action: 'create', state: 'receipt_verified' }, { id: 'update_fixture', action: 'update', state: 'receipt_verified' }],
+    events: [{ id: 'diagnostic_fixture', kind: 'form_inspected', data: { sourceEventId: 'presenter_fixture' } }, { id: 'inspection_fixture', kind: 'form_inspected', data: { sourceEventId: 'received:fixture' } }],
+  };
+  const status = { messagesStored: 6, outbox: ['AUTHORITY_QUESTION', 'AUTHORITY_RESPONSE', 'RESIDENT_NOTIFICATION'].map((purpose, index) => ({ id: 'mail_fixture_' + index, purpose, operationId: index ? 'update_fixture' : 'create_fixture', attemptCount: 1, state: 'SENT', deliveryState: 'RECEIVED', receivingEvidence: { inboxId: 'inbox_fixture', providerMessageId: 'message_fixture_' + index, providerThreadId: 'thread_fixture', evidence: 'message_read_from_controlled_receiving_inbox' } })) };
+  assert.equal(duplicateMailSnapshot(evidence, status).inspectionIds.length, 1);
+  status.outbox[0].attemptCount = 2;
+  assert.throws(() => duplicateMailSnapshot(evidence, status), /another send/);
+  status.outbox[0].attemptCount = 1;
+  evidence.events.push({ id: 'duplicate_inspection', kind: 'form_inspected', data: { sourceEventId: 'received:second' } });
+  assert.throws(() => duplicateMailSnapshot(evidence, status), /one genuine authority-mail inspection/);
 });

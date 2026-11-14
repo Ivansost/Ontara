@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { chromium } from '@playwright/test';
 import { prepareDraftThroughUi, reopenDraftReview, approveReviewedReportThroughUi, answerAndApproveLandmarkThroughUi, cancelUnusedDraftThroughUi, readResidentJson } from './cloud-qa/ui.mjs';
-import { receiptSummary, assertCreateRecovery, assertChangedFormEvidence, receivedMail } from './cloud-qa/evidence.mjs';
+import { receiptSummary, assertCreateRecovery, assertChangedFormEvidence, receivedMail, duplicateMailSnapshot } from './cloud-qa/evidence.mjs';
 
 const sourceRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..');
 const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -316,6 +316,7 @@ async function collectGraffitiReceipt(run, flags, manifest, control, timeout, ex
     assert.equal(acknowledged.receipt.portalId, 'graffiti');
     const evidence = await control(`/internal/v1/cases/${manifest.graffiti.id}/evidence`);
     assert.equal(evidence.operations.filter(operation => operation.action === 'create').length, 1);
+    await session.page.getByRole('heading', { level: 1, name: 'Report acknowledged', exact: true }).waitFor();
     manifest.graffiti = caseSummary(acknowledged); await session.screenshot('graffiti-receipt'); await session.save(); await writePrivateJson(run.manifestPath, manifest);
     out('graffiti_complete', { run: run.runId, ...manifest.graffiti });
   } finally { if (!existingSession) await session.close(); }
@@ -336,6 +337,22 @@ async function cancelUnusedDraft(run, flags, manifest, control) {
     await session.screenshot('cancelled-unused-draft'); await session.save(); await writePrivateJson(run.manifestPath, manifest);
     out('unused_draft_cancellation_passed', { run: run.runId, ...manifest.cancelledDraft });
   } finally { await session.close(); }
+}
+
+async function checkDuplicateMail(run, manifest, control) {
+  assert.equal(manifest.phase, 'roads_complete', 'Only repeat existing work on this completed Roads case.');
+  const path = `/internal/v1/cases/${manifest.roads.id}`;
+  const statusPath = `/internal/v1/mail/status?case_id=${encodeURIComponent(manifest.roads.id)}`;
+  const before = duplicateMailSnapshot(await control(path + '/evidence'), await control(statusPath));
+  const released = await control(path + '/follow-up-hold', 'POST', { held: false });
+  assert.equal(released.held, false);
+  const result = await control('/internal/v1/mail/poll', 'POST');
+  const after = duplicateMailSnapshot(await control(path + '/evidence'), await control(statusPath));
+  assert.deepEqual(after, before, 'Repeating release and existing-mail catch-up must preserve all completed work.');
+  const numbers = value => Object.fromEntries(Object.entries(value || {}).filter(([, item]) => typeof item === 'number'));
+  manifest.duplicateMail = { releaseHeld: false, unchanged: true, version: after.version, attemptsPerPurpose: Object.fromEntries(after.outbox.map(item => [item.purpose, item.attemptCount])), messagesStored: after.messagesStored, genuineInspections: after.inspectionIds.length, updateOperations: 1, receiptReplay: numbers(result.receiptReplay), outbox: numbers(result.outbox), poll: numbers(result.poll), checkedAt: new Date().toISOString() };
+  await writePrivateJson(run.manifestPath, manifest);
+  out('duplicate_mail_passed', manifest.duplicateMail);
 }
 
 async function smoke(run, flags, manifest) {
@@ -382,7 +399,7 @@ async function assertMailHold(control, caseId) {
 export async function main(argv = process.argv.slice(2)) {
   const { action, flags } = options(argv);
   if (action === 'help') {
-    process.stdout.write('Ontara staged cloud UI QA\n\nprepare-roads --web HTTPS_ORIGIN --api HTTPS_ORIGIN [--run ID]\napprove-roads --run ID --recovery-ready\ncollect-roads --run ID\nfollow-up-roads --run ID --recovery-reviewed --landmark KNOWN_SYNTHETIC_FACT\ncollect-update --run ID\nsubmit-graffiti --run ID\ncollect-graffiti --run ID\ncancel-draft --run ID\nsmoke --run ID\ninspect --run ID\n\nPrivate state stays outside the repository. Internal credentials are read process-side from --private-env or ~/.config/ontara/cloud.env; no secrets enter the browser or traces. Read scripts/cloud-qa/RUNBOOK.md before an execution stage.\n');
+    process.stdout.write('Ontara staged cloud UI QA\n\nprepare-roads --web HTTPS_ORIGIN --api HTTPS_ORIGIN [--run ID]\napprove-roads --run ID --recovery-ready\ncollect-roads --run ID\nfollow-up-roads --run ID --recovery-reviewed --landmark KNOWN_SYNTHETIC_FACT\ncollect-update --run ID\nsubmit-graffiti --run ID\ncollect-graffiti --run ID\ncancel-draft --run ID\nduplicate-mail --run ID\nsmoke --run ID\ninspect --run ID\n\nPrivate state stays outside the repository. Internal credentials are read process-side from --private-env or ~/.config/ontara/cloud.env; no secrets enter the browser or traces. Read scripts/cloud-qa/RUNBOOK.md before an execution stage.\n');
     return;
   }
   const preparing = action === 'prepare-roads';
@@ -402,6 +419,7 @@ export async function main(argv = process.argv.slice(2)) {
   if (action === 'follow-up-roads') return followUpRoads(run, flags, manifest, control, timeout);
   if (action === 'collect-graffiti') return collectGraffitiReceipt(run, flags, manifest, control, timeout);
   if (action === 'cancel-draft') return cancelUnusedDraft(run, flags, manifest, control);
+  if (action === 'duplicate-mail') return checkDuplicateMail(run, manifest, control);
   if (action === 'submit-graffiti') return submitGraffiti(run, flags, manifest, control, timeout);
   if (action === 'inspect') {
     const evidence = await control(`/internal/v1/cases/${manifest.roads.id}/evidence`);

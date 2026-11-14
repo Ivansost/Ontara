@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-14T17:19:14.647Z",
+  "environment": "Hosted services; resident Google Chrome on the presentation Mac",
+  "sources": {
+    "web": "056c192d",
+    "apiAfterPersistenceRestart": "6b273f04",
+    "executor": "fd572d12"
+  },
+  "webOrigin": "https://ontara-web-35iy.onrender.com",
+  "apiOrigin": "https://ontara-api-35iy.onrender.com",
+  "scope": "Controlled synthetic Halton Roads pothole and Milton public-wall Graffiti only; acknowledgement does not establish an inspection or repair.",
+  "roads": {
+    "version": 2,
+    "stage": "report_acknowledged",
+    "approvedVersion": 2,
+    "initialReceipt": {
+      "ticketId": "RDS-810FBCB61392",
+      "receiptId": "RCP-6E1B78C3E0193392E1FC800B",
+      "portalId": "roads",
+      "action": "create",
+      "acceptedAt": "2026-11-14T16:45:13.882000+00:00",
+      "formVersion": 1
+    },
+    "updatedReceipt": {
+      "ticketId": "RDS-810FBCB61392",
+      "receiptId": "RCP-37AC5401835A65DA897BCBBB",
+      "portalId": "roads",
+      "action": "update",
+      "acceptedAt": "2026-11-14T17:14:10.280000Z",
+      "formVersion": 2
+    },
+    "sameTicket": true,
+    "createOperations": 1,
+    "updateOperations": 1,
+    "recovery": {
+      "killedProcessId": 110,
+      "exitCode": -9,
+      "recoveredProcessId": 150,
+      "distinctProcessBirths": true
+    },
+    "changedForm": {
+      "nativeQuery": true,
+      "queryExecuted": true,
+      "retrievalModel": "voyage-4-large",
+      "indexName": "procedural_lessons_autoembed_v1",
+      "missingQuestionIds": [
+        "nearestLandmark"
+      ],
+      "approvedMissingQuestionIds": [],
+      "approvedMappedFactIds": [
+        "location",
+        "travelDirection",
+        "roadPosition",
+        "nearestLandmark",
+        "description"
+      ],
+      "generationModel": "gemini-3.5-flash-lite",
+      "missingQuestionUsage": {
+        "input_tokens": 1129,
+        "output_tokens": 180,
+        "total_tokens": 1309,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "approvedMappingUsage": {
+        "input_tokens": 1149,
+        "output_tokens": 261,
+        "total_tokens": 1410,
+        "input_token_details": {
+          "cache_read": 0
+        }
+      },
+      "selectedLessonIds": [
+        "roads-follow-up-v2-seeded-calibration-20261114"
+      ]
+    },
+    "mail": [
+      {
+        "purpose": "AUTHORITY_QUESTION",
+        "state": "SENT",
+        "deliveryState": "RECEIVED",
+        "evidence": "message_read_from_controlled_receiving_inbox"
+      },
+      {
+        "purpose": "AUTHORITY_RESPONSE",
+        "state": "SENT",
+        "deliveryState": "RECEIVED",
+        "evidence": "message_read_from_controlled_receiving_inbox"
+      },
+      {
+        "purpose": "RESIDENT_NOTIFICATION",
+        "state": "SENT",
+        "deliveryState": "RECEIVED",
+        "evidence": "message_read_from_controlled_receiving_inbox"
+      }
+    ]
+  },
+  "graffiti": {
+    "version": 1,
+    "stage": "report_acknowledged",
+    "approvedVersion": 1,
+    "receipt": {
+      "ticketId": "GRA-3923ABAE3215",
+      "receiptId": "RCP-F69E59A4A539B7BC48B850F3",
+      "portalId": "graffiti",
+      "action": "create",
+      "acceptedAt": "2026-11-14T17:15:41.346000Z",
+      "formVersion": 1
+    },
+    "createOperations": 1,
+    "authoredQuestionsDistinctFromRoads": true
+  },
+  "cancellation": {
+    "stage": "cancelled",
+    "approvedVersion": null,
+    "operationCount": 0,
+    "subsequentApprovalStatus": 409
+  },
+  "mobileAndSession": {
+    "mobileWidths": [
+      390,
+      320
+    ],
+    "crossSessionDenied": true,
+    "writeOriginStatuses": [
+      403,
+      403,
+      422
+    ],
+    "session": {
+      "httpOnly": true,
+      "sameSite": "Lax",
+      "secure": true,
+      "path": "/"
+    }
+  },
+  "duplicateMail": {
+    "releaseHeld": false,
+    "unchanged": true,
+    "version": 2,
+    "attemptsPerPurpose": {
+      "AUTHORITY_QUESTION": 1,
+      "AUTHORITY_RESPONSE": 1,
+      "RESIDENT_NOTIFICATION": 1
+    },
+    "messagesStored": 6,
+    "genuineInspections": 1,
+    "updateOperations": 1,
+    "receiptReplay": {
+      "scheduled": 0,
+      "pending": 0
+    },
+    "outbox": {
+      "sent": 0,
+      "reconciled": 0,
+      "unknown": 0,
+      "failed": 0
+    },
+    "poll": {
+      "processed": 0,
+      "duplicate": 2,
+      "ignored": 0,
+      "unrelated": 0,
+      "pending": 0,
+      "needs_assistance": 0,
+      "errors": 0
+    },
+    "checkedAt": "2026-11-14T17:18:30.805Z"
+  },
+  "capture": {
+    "residentPageOnly": true,
+    "presenterEvidenceCollapsed": true,
+    "graffitiAcknowledgedHeadingConfirmedBeforeFinalStill": true,
+    "browserSessionAndReceivingCapabilitiesExcluded": true
+  },
+  "qualifiers": [
+    "The initial receipt, hold across API restart, actual same-run form change and separate withheld-memory comparison were independently observed by the execution and mail owners.",
+    "The completed UI cases were preserved; the cancellation case was a separate unused draft.",
+    "Public summaries deliberately omit case/run/operation references, payload digests, provider IDs, signed URLs, tokens and private browser state.",
+    "The nine-category presentation cleanup is a subsequent UI revision and is not claimed by this proof."
+  ]
+}

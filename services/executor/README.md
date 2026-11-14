@@ -109,6 +109,31 @@ process kill followed by fresh-process reconciliation. The crash unit fixture
 uses file-backed fake receiver/ledger data; actual Atlas, Playwright and hosted
 process evidence are separate integration gates.
 
+## Warm the hosted demo
+
+Before the live demo, and after any 15-minute idle or long build gap, use the
+execution environment's Python with its installed dependencies:
+
+```sh
+python services/executor/scripts/warm_cloud.py
+```
+
+The helper reads `~/.config/ontara/cloud.env` as data, checks the four verified
+HTTPS origins, and sends only `GET` requests to web `/api/health`, API `/readyz`,
+portal `/healthz` and authenticated executor `/internal/v1/readyz`. The executor
+check actually launches its pinned cloud Chromium. It creates no case or job and
+does not dispatch work, send mail, call generation or change configuration.
+Only readiness statuses are printed; credentials and response bodies stay private.
+
+The four checks run concurrently, retry transient failures within a shared
+six-minute deadline, and print each service as it becomes ready. Wait for the
+final `status: ready` and exit code 0 before continuing the existing case. Exit 1
+means a service is still unready; exit 2 means the private configuration needs
+correction. An alternate owner-only env file can be passed with `--private-env`;
+`--budget-seconds` can shorten the deadline. The observed hosted cold wake waited
+270.8 seconds before leasing the approved update, so allow the wake to finish
+without repeating resident approval.
+
 ## Seeded calibration
 
 `scripts/calibrate.py` is a standalone developer rehearsal, never an HTTP route
