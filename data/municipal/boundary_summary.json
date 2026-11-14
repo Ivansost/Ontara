@@ -1,0 +1,3582 @@
+{
+  "createdAt": "2026-11-14T16:12:02.094351+00:00",
+  "outSR": 4326,
+  "maxAllowableOffsetDegrees": 0.0001,
+  "sourceLicense": "Open Government Licence Ontario",
+  "upperTiers": 20,
+  "lowerTiers": 173,
+  "singleTiers": 14,
+  "gaps": [],
+  "unmatchedSourceParts": [],
+  "repairs": [
+    {
+      "municipalityId": "prescott-russell-counties",
+      "objectId": 545,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "bruce-county",
+      "objectId": 609,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "prescott-russell-counties",
+      "objectId": 657,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "grey-county",
+      "objectId": 785,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "simcoe-county",
+      "objectId": 2561,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "renfrew-county",
+      "objectId": 945,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "renfrew-county",
+      "objectId": 2881,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "renfrew-county",
+      "objectId": 993,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "leeds-grenville-counties",
+      "objectId": 1073,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "grey-county",
+      "objectId": 1089,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "northumberland-county",
+      "objectId": 1233,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "simcoe-county",
+      "objectId": 1969,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "york-region",
+      "objectId": 2017,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "simcoe-county",
+      "objectId": 2049,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "bruce-county",
+      "objectId": 1313,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "leeds-grenville-counties",
+      "objectId": 1425,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "grey-county",
+      "objectId": 1457,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "bruce-county",
+      "objectId": 49,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "middlesex-county",
+      "objectId": 129,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "leeds-grenville-counties",
+      "objectId": 353,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "the-blue-mountains-town",
+      "objectId": 65,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "alfred-and-plantagenet-township",
+      "objectId": 1009,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "severn-township",
+      "objectId": 2305,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "laurentian-valley-township",
+      "objectId": 2337,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "leeds-and-the-thousand-islands-township",
+      "objectId": 2353,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "hawkesbury-town",
+      "objectId": 2673,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "east-hawkesbury-township",
+      "objectId": 2849,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "clarence-rockland-city",
+      "objectId": 3121,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "south-bruce-peninsula-town",
+      "objectId": 3761,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "severn-township",
+      "objectId": 3889,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "alfred-and-plantagenet-township",
+      "objectId": 3489,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "whitewater-region-township",
+      "objectId": 4993,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "strathroy-caradoc-municipality",
+      "objectId": 5121,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "lambton-shores-municipality",
+      "objectId": 5377,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "toronto-city",
+      "objectId": 5809,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "the-blue-mountains-town",
+      "objectId": 6433,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "tay-township",
+      "objectId": 5841,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "brighton-municipality",
+      "objectId": 6049,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "northern-bruce-peninsula-municipality",
+      "objectId": 4017,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "south-bruce-peninsula-town",
+      "objectId": 6785,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "whitewater-region-township",
+      "objectId": 7265,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "leeds-and-the-thousand-islands-township",
+      "objectId": 7505,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "tay-township",
+      "objectId": 8017,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "leeds-and-the-thousand-islands-township",
+      "objectId": 8705,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "georgian-bluffs-township",
+      "objectId": 8737,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "clarence-rockland-city",
+      "objectId": 8785,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "northern-bruce-peninsula-municipality",
+      "objectId": 8817,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "toronto-city",
+      "objectId": 9121,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "hawkesbury-town",
+      "objectId": 9537,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "severn-township",
+      "objectId": 9585,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "laurentian-hills-town",
+      "objectId": 10577,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "northern-bruce-peninsula-municipality",
+      "objectId": 9649,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "tiny-township",
+      "objectId": 9697,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "laurentian-valley-township",
+      "objectId": 9953,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "georgian-bluffs-township",
+      "objectId": 8465,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "south-bruce-peninsula-town",
+      "objectId": 10849,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "sarnia-city",
+      "objectId": 13457,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    },
+    {
+      "municipalityId": "georgina-town",
+      "objectId": 11585,
+      "method": "Shapely buffer(0) to repair generalized source polygon"
+    }
+  ],
+  "records": {
+    "halton-region": {
+      "type": "upper-tier",
+      "parts": 2,
+      "bbox": [
+        -80.161142,
+        43.268013,
+        -79.461453,
+        43.73444
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 7513,
+      "sourceObjectIds": [
+        817,
+        1345
+      ]
+    },
+    "burlington-city": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.95929,
+        43.268013,
+        -79.630347,
+        43.476546
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6154,
+      "sourceObjectIds": [
+        2625,
+        8193
+      ]
+    },
+    "halton-hills-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.085783,
+        43.524586,
+        -79.787921,
+        43.73444
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 782,
+      "sourceObjectIds": [
+        1585
+      ]
+    },
+    "milton-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.161142,
+        43.417283,
+        -79.724822,
+        43.628956
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1927,
+      "sourceObjectIds": [
+        4529
+      ]
+    },
+    "oakville-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.810949,
+        43.30217,
+        -79.461453,
+        43.528255
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 787,
+      "sourceObjectIds": [
+        577,
+        4513
+      ]
+    },
+    "peel-region": {
+      "type": "upper-tier",
+      "parts": 2,
+      "bbox": [
+        -80.144186,
+        43.361099,
+        -79.417857,
+        43.989769
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5925,
+      "sourceObjectIds": [
+        449,
+        337
+      ]
+    },
+    "brampton-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.888873,
+        43.601818,
+        -79.630173,
+        43.848107
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1512,
+      "sourceObjectIds": [
+        8545
+      ]
+    },
+    "caledon-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.144186,
+        43.674889,
+        -79.694851,
+        43.989769
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1631,
+      "sourceObjectIds": [
+        9857
+      ]
+    },
+    "mississauga-city": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.810101,
+        43.361099,
+        -79.417857,
+        43.737034
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4616,
+      "sourceObjectIds": [
+        6753,
+        10769
+      ]
+    },
+    "york-region": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -79.775432,
+        43.749845,
+        -79.156136,
+        44.459644
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 17934,
+      "sourceObjectIds": [
+        1937,
+        2017,
+        2033
+      ]
+    },
+    "aurora-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.499366,
+        43.957128,
+        -79.393475,
+        44.035404
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 736,
+      "sourceObjectIds": [
+        5089
+      ]
+    },
+    "east-gwillimbury-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.53173,
+        44.063545,
+        -79.27612,
+        44.223309
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1232,
+      "sourceObjectIds": [
+        9153
+      ]
+    },
+    "georgina-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.519924,
+        44.181515,
+        -79.156136,
+        44.459644
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 10081,
+      "sourceObjectIds": [
+        11569,
+        11585,
+        11601
+      ]
+    },
+    "king-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.775432,
+        43.874441,
+        -79.477824,
+        44.150663
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5931,
+      "sourceObjectIds": [
+        9105
+      ]
+    },
+    "markham-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.428793,
+        43.798035,
+        -79.170274,
+        43.962578
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 962,
+      "sourceObjectIds": [
+        5217
+      ]
+    },
+    "newmarket-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.509843,
+        44.015922,
+        -79.412237,
+        44.083274
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 736,
+      "sourceObjectIds": [
+        4465
+      ]
+    },
+    "richmond-hill-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.485598,
+        43.82927,
+        -79.371496,
+        43.977548
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 840,
+      "sourceObjectIds": [
+        6897
+      ]
+    },
+    "vaughan-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.71075,
+        43.749845,
+        -79.420111,
+        43.924221
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1205,
+      "sourceObjectIds": [
+        3473
+      ]
+    },
+    "whitchurch-stouffville-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.421127,
+        43.922886,
+        -79.217439,
+        44.101287
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1402,
+      "sourceObjectIds": [
+        1105
+      ]
+    },
+    "durham-region": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -79.328019,
+        43.520903,
+        -78.323819,
+        44.516583
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 14371,
+      "sourceObjectIds": [
+        1921,
+        1953,
+        1985
+      ]
+    },
+    "ajax-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.088133,
+        43.548365,
+        -78.86024,
+        43.922405
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1226,
+      "sourceObjectIds": [
+        4369,
+        5153
+      ]
+    },
+    "brock-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.252018,
+        44.183294,
+        -78.952353,
+        44.516583
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 8727,
+      "sourceObjectIds": [
+        11649,
+        11665,
+        11681
+      ]
+    },
+    "clarington-municipality": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -78.87207,
+        43.628935,
+        -78.323819,
+        44.098807
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 991,
+      "sourceObjectIds": [
+        4481,
+        4721
+      ]
+    },
+    "oshawa-city": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -78.958578,
+        43.60097,
+        -78.696665,
+        44.047424
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1782,
+      "sourceObjectIds": [
+        4033,
+        7953
+      ]
+    },
+    "pickering-city": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.22015,
+        43.520903,
+        -78.924307,
+        44.010808
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3340,
+      "sourceObjectIds": [
+        2897,
+        5585
+      ]
+    },
+    "scugog-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.122494,
+        44.009263,
+        -78.70325,
+        44.225739
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2479,
+      "sourceObjectIds": [
+        10897
+      ]
+    },
+    "uxbridge-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.328019,
+        43.97092,
+        -79.047943,
+        44.263145
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 515,
+      "sourceObjectIds": [
+        5393
+      ]
+    },
+    "whitby-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.047287,
+        43.571074,
+        -78.775843,
+        44.028909
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 815,
+      "sourceObjectIds": [
+        1953,
+        9169
+      ]
+    },
+    "waterloo-region": {
+      "type": "upper-tier",
+      "parts": 1,
+      "bbox": [
+        -80.869026,
+        43.266727,
+        -80.18929,
+        43.689615
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1528,
+      "sourceObjectIds": [
+        881
+      ]
+    },
+    "cambridge-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.413801,
+        43.332535,
+        -80.251323,
+        43.474215
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3022,
+      "sourceObjectIds": [
+        8529
+      ]
+    },
+    "kitchener-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.573577,
+        43.353866,
+        -80.379055,
+        43.506835
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4865,
+      "sourceObjectIds": [
+        5009
+      ]
+    },
+    "north-dumfries-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.505954,
+        43.266727,
+        -80.18929,
+        43.397208
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1881,
+      "sourceObjectIds": [
+        7233
+      ]
+    },
+    "waterloo-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.626094,
+        43.432235,
+        -80.467365,
+        43.531219
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2542,
+      "sourceObjectIds": [
+        1697
+      ]
+    },
+    "wellesley-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.869026,
+        43.468088,
+        -80.608113,
+        43.648427
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 542,
+      "sourceObjectIds": [
+        3169
+      ]
+    },
+    "wilmot-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.795557,
+        43.310989,
+        -80.503602,
+        43.479659
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 689,
+      "sourceObjectIds": [
+        10641
+      ]
+    },
+    "woolwich-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.626161,
+        43.443611,
+        -80.307926,
+        43.689615
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3977,
+      "sourceObjectIds": [
+        10625
+      ]
+    },
+    "niagara-region": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -79.753964,
+        42.696255,
+        -78.90594,
+        43.451838
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 19845,
+      "sourceObjectIds": [
+        1169,
+        401,
+        433
+      ]
+    },
+    "fort-erie-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.122537,
+        42.759425,
+        -78.90594,
+        42.982652
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1976,
+      "sourceObjectIds": [
+        1601,
+        7729,
+        10129
+      ]
+    },
+    "grimsby-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.649623,
+        43.132555,
+        -79.511875,
+        43.342125
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 835,
+      "sourceObjectIds": [
+        193,
+        1937
+      ]
+    },
+    "lincoln-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.515835,
+        43.092246,
+        -79.310385,
+        43.411328
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2775,
+      "sourceObjectIds": [
+        4577,
+        5633
+      ]
+    },
+    "niagara-falls-city": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.177282,
+        42.959575,
+        -78.999667,
+        43.147931
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2321,
+      "sourceObjectIds": [
+        2801,
+        8577,
+        10081
+      ]
+    },
+    "niagara-on-the-lake-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.213719,
+        43.140411,
+        -79.04272,
+        43.451838
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1203,
+      "sourceObjectIds": [
+        4689,
+        5617
+      ]
+    },
+    "pelham-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.390185,
+        42.965664,
+        -79.26739,
+        43.108654
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2597,
+      "sourceObjectIds": [
+        4929
+      ]
+    },
+    "port-colborne-city": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.281344,
+        42.697805,
+        -79.115142,
+        42.959585
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2440,
+      "sourceObjectIds": [
+        3857,
+        9249,
+        10017
+      ]
+    },
+    "st-catharines-city": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.320933,
+        43.10667,
+        -79.177834,
+        43.4476
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3256,
+      "sourceObjectIds": [
+        929,
+        5601
+      ]
+    },
+    "thorold-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.287164,
+        43.026695,
+        -79.168584,
+        43.140604
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1923,
+      "sourceObjectIds": [
+        7313
+      ]
+    },
+    "wainfleet-township": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -79.583585,
+        42.696255,
+        -79.278964,
+        43.011442
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6779,
+      "sourceObjectIds": [
+        3569,
+        6209
+      ]
+    },
+    "welland-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.290817,
+        42.922957,
+        -79.16712,
+        43.042686
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2024,
+      "sourceObjectIds": [
+        10913
+      ]
+    },
+    "west-lincoln-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.753964,
+        42.983878,
+        -79.386261,
+        43.163112
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5570,
+      "sourceObjectIds": [
+        1313
+      ]
+    },
+    "simcoe-county": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -80.515944,
+        43.95142,
+        -79.081804,
+        44.941825
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 205679,
+      "sourceObjectIds": [
+        2561,
+        1969,
+        2049
+      ]
+    },
+    "adjala-tosorontio-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.037381,
+        43.95142,
+        -79.833631,
+        44.313504
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1708,
+      "sourceObjectIds": [
+        3745
+      ]
+    },
+    "bradford-west-gwillimbury-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.712893,
+        44.01294,
+        -79.514011,
+        44.208195
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 7387,
+      "sourceObjectIds": [
+        3601
+      ]
+    },
+    "clearview-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.281652,
+        44.253396,
+        -79.861855,
+        44.488784
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2615,
+      "sourceObjectIds": [
+        7025
+      ]
+    },
+    "collingwood-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -80.348624,
+        44.469987,
+        -80.140392,
+        44.765149
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 538,
+      "sourceObjectIds": [
+        4897,
+        7825,
+        8801
+      ]
+    },
+    "essa-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.909821,
+        44.162433,
+        -79.704308,
+        44.361226
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2614,
+      "sourceObjectIds": [
+        369
+      ]
+    },
+    "innisfil-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.727952,
+        44.165032,
+        -79.510947,
+        44.40598
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 14095,
+      "sourceObjectIds": [
+        11521
+      ]
+    },
+    "midland-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.950582,
+        44.701502,
+        -79.811071,
+        44.802974
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1947,
+      "sourceObjectIds": [
+        1713,
+        6529,
+        9313
+      ]
+    },
+    "new-tecumseth-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.891263,
+        43.97705,
+        -79.670167,
+        44.185523
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1752,
+      "sourceObjectIds": [
+        8881
+      ]
+    },
+    "oro-medonte-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.799484,
+        44.202548,
+        -79.163598,
+        44.774879
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 69277,
+      "sourceObjectIds": [
+        8753,
+        11617,
+        12481
+      ]
+    },
+    "penetanguishene-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.959873,
+        44.752503,
+        -79.842047,
+        44.829956
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5388,
+      "sourceObjectIds": [
+        1441,
+        4209,
+        8449
+      ]
+    },
+    "ramara-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.371956,
+        44.470981,
+        -79.081804,
+        44.794666
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 37086,
+      "sourceObjectIds": [
+        11553
+      ]
+    },
+    "severn-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.723207,
+        44.612043,
+        -79.292941,
+        44.897098
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 85747,
+      "sourceObjectIds": [
+        2305,
+        3889,
+        9585
+      ]
+    },
+    "springwater-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -79.985182,
+        44.338515,
+        -79.643267,
+        44.648412
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3814,
+      "sourceObjectIds": [
+        12513
+      ]
+    },
+    "tay-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -79.881181,
+        44.632905,
+        -79.665323,
+        44.800352
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 9517,
+      "sourceObjectIds": [
+        5841,
+        8017,
+        9041
+      ]
+    },
+    "tiny-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -80.515944,
+        44.531562,
+        -79.825793,
+        44.941825
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 34987,
+      "sourceObjectIds": [
+        4849,
+        9601,
+        9697
+      ]
+    },
+    "wasaga-beach-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -80.176934,
+        44.452015,
+        -79.964848,
+        44.622938
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2364,
+      "sourceObjectIds": [
+        2385,
+        5489,
+        4065
+      ]
+    },
+    "essex-county": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -83.149685,
+        41.676617,
+        -82.429902,
+        42.398014
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 35740,
+      "sourceObjectIds": [
+        1217,
+        1473,
+        65
+      ]
+    },
+    "amherstburg-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -83.149685,
+        41.836226,
+        -82.967359,
+        42.191446
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 13738,
+      "sourceObjectIds": [
+        4625,
+        5473,
+        10353
+      ]
+    },
+    "essex-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -83.011846,
+        41.755109,
+        -82.801846,
+        42.184537
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 866,
+      "sourceObjectIds": [
+        4673,
+        10929
+      ]
+    },
+    "kingsville-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -82.842644,
+        41.676945,
+        -82.600232,
+        42.177249
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 8852,
+      "sourceObjectIds": [
+        5297,
+        6913,
+        10961
+      ]
+    },
+    "lasalle-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -83.133946,
+        42.164097,
+        -82.996947,
+        42.255937
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2468,
+      "sourceObjectIds": [
+        2961,
+        7057,
+        9793
+      ]
+    },
+    "lakeshore-municipality": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -82.877407,
+        42.165373,
+        -82.429902,
+        42.398014
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4298,
+      "sourceObjectIds": [
+        1857,
+        5665
+      ]
+    },
+    "leamington-municipality": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -82.673754,
+        41.676617,
+        -82.457845,
+        42.171679
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2646,
+      "sourceObjectIds": [
+        4961,
+        5361,
+        10369
+      ]
+    },
+    "tecumseh-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -83.000581,
+        42.179736,
+        -82.840844,
+        42.367419
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1554,
+      "sourceObjectIds": [
+        3105,
+        7937
+      ]
+    },
+    "lambton-county": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -82.51051,
+        42.624567,
+        -81.743162,
+        43.489377
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 35359,
+      "sourceObjectIds": [
+        465,
+        497,
+        241
+      ]
+    },
+    "brooke-alvinston-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -82.005964,
+        42.756586,
+        -81.788944,
+        42.931356
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 394,
+      "sourceObjectIds": [
+        9681
+      ]
+    },
+    "dawn-euphemia-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -82.245181,
+        42.624567,
+        -81.835153,
+        42.762175
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1264,
+      "sourceObjectIds": [
+        1825
+      ]
+    },
+    "enniskillen-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -82.240115,
+        42.756586,
+        -82.004529,
+        42.932605
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1855,
+      "sourceObjectIds": [
+        10273
+      ]
+    },
+    "lambton-shores-municipality": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -82.337766,
+        43.065752,
+        -81.743162,
+        43.489377
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 16479,
+      "sourceObjectIds": [
+        5377,
+        8049
+      ]
+    },
+    "oil-springs-village": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -82.13503,
+        42.77118,
+        -82.096651,
+        42.796187
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 238,
+      "sourceObjectIds": [
+        2993
+      ]
+    },
+    "petrolia-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -82.165283,
+        42.858866,
+        -82.116008,
+        42.900298
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1455,
+      "sourceObjectIds": [
+        1569
+      ]
+    },
+    "plympton-wyoming-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -82.233715,
+        42.928817,
+        -82.001,
+        43.143188
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 663,
+      "sourceObjectIds": [
+        1537,
+        4705
+      ]
+    },
+    "point-edward-village": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -82.424595,
+        42.985644,
+        -82.394551,
+        43.002606
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 753,
+      "sourceObjectIds": [
+        13489,
+        13553
+      ]
+    },
+    "sarnia-city": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -82.460027,
+        42.911722,
+        -82.226317,
+        43.162794
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 7539,
+      "sourceObjectIds": [
+        8625,
+        13457,
+        13521
+      ]
+    },
+    "st-clair-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -82.51051,
+        42.626751,
+        -82.234121,
+        42.92341
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1804,
+      "sourceObjectIds": [
+        401,
+        2513,
+        2865
+      ]
+    },
+    "warwick-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -82.005964,
+        42.930339,
+        -81.788859,
+        43.097852
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 543,
+      "sourceObjectIds": [
+        3521
+      ]
+    },
+    "oxford-county": {
+      "type": "upper-tier",
+      "parts": 1,
+      "bbox": [
+        -81.132253,
+        42.82396,
+        -80.436542,
+        43.353358
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4039,
+      "sourceObjectIds": [
+        769
+      ]
+    },
+    "blandford-blenheim-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.740184,
+        43.144543,
+        -80.436542,
+        43.348106
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6053,
+      "sourceObjectIds": [
+        5041
+      ]
+    },
+    "east-zorra-tavistock-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.901046,
+        43.110246,
+        -80.687949,
+        43.353358
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 7277,
+      "sourceObjectIds": [
+        10321
+      ]
+    },
+    "ingersoll-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.914555,
+        43.00487,
+        -80.847537,
+        43.052677
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1327,
+      "sourceObjectIds": [
+        5569
+      ]
+    },
+    "norwich-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.753712,
+        42.855147,
+        -80.505392,
+        43.15164
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1410,
+      "sourceObjectIds": [
+        12961
+      ]
+    },
+    "south-west-oxford-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.947329,
+        42.829583,
+        -80.705046,
+        43.117797
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6860,
+      "sourceObjectIds": [
+        3617
+      ]
+    },
+    "tillsonburg-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.76183,
+        42.82396,
+        -80.700578,
+        42.889109
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 785,
+      "sourceObjectIds": [
+        3249
+      ]
+    },
+    "woodstock-city": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.790215,
+        43.094332,
+        -80.656179,
+        43.177784
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1731,
+      "sourceObjectIds": [
+        13105
+      ]
+    },
+    "zorra-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.132253,
+        42.985699,
+        -80.805698,
+        43.301107
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 7278,
+      "sourceObjectIds": [
+        10417
+      ]
+    },
+    "grey-county": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -81.14036,
+        43.967874,
+        -80.229106,
+        44.97332
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 15707,
+      "sourceObjectIds": [
+        785,
+        1089,
+        1457
+      ]
+    },
+    "chatsworth-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.10596,
+        44.288382,
+        -80.661788,
+        44.496246
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 586,
+      "sourceObjectIds": [
+        3409
+      ]
+    },
+    "georgian-bluffs-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -81.14036,
+        44.452945,
+        -80.814686,
+        44.881072
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2998,
+      "sourceObjectIds": [
+        8337,
+        8737,
+        8465
+      ]
+    },
+    "grey-highlands-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.703285,
+        44.171044,
+        -80.229106,
+        44.537408
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1309,
+      "sourceObjectIds": [
+        9777
+      ]
+    },
+    "hanover-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.041261,
+        44.133723,
+        -80.993551,
+        44.173513
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 666,
+      "sourceObjectIds": [
+        6065
+      ]
+    },
+    "meaford-municipality": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -80.925732,
+        44.474563,
+        -80.502099,
+        44.881072
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4689,
+      "sourceObjectIds": [
+        1233,
+        593,
+        7473
+      ]
+    },
+    "owen-sound-city": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -80.963725,
+        44.540908,
+        -80.891861,
+        44.609549
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1810,
+      "sourceObjectIds": [
+        961,
+        10241
+      ]
+    },
+    "southgate-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.813716,
+        43.981384,
+        -80.360904,
+        44.217738
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1461,
+      "sourceObjectIds": [
+        10465
+      ]
+    },
+    "the-blue-mountains-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -80.599949,
+        44.372774,
+        -80.266398,
+        44.97332
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2049,
+      "sourceObjectIds": [
+        65,
+        6433
+      ]
+    },
+    "west-grey-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.069428,
+        43.967874,
+        -80.623699,
+        44.342414
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2025,
+      "sourceObjectIds": [
+        9025
+      ]
+    },
+    "wellington-county": {
+      "type": "upper-tier",
+      "parts": 1,
+      "bbox": [
+        -80.991562,
+        43.386974,
+        -79.969044,
+        44.025987
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5531,
+      "sourceObjectIds": [
+        801
+      ]
+    },
+    "centre-wellington-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.557529,
+        43.583088,
+        -80.22301,
+        43.857744
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1385,
+      "sourceObjectIds": [
+        7713
+      ]
+    },
+    "erin-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.261222,
+        43.629105,
+        -79.969044,
+        43.861551
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 316,
+      "sourceObjectIds": [
+        2609
+      ]
+    },
+    "guelph-eramosa-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.410042,
+        43.468721,
+        -80.085569,
+        43.72537
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3684,
+      "sourceObjectIds": [
+        4945
+      ]
+    },
+    "mapleton-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.873605,
+        43.588985,
+        -80.449419,
+        43.845477
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 836,
+      "sourceObjectIds": [
+        10193
+      ]
+    },
+    "minto-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.991562,
+        43.822118,
+        -80.741806,
+        44.004323
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 892,
+      "sourceObjectIds": [
+        4449
+      ]
+    },
+    "puslinch-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.302755,
+        43.386974,
+        -80.033853,
+        43.567691
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1064,
+      "sourceObjectIds": [
+        4193
+      ]
+    },
+    "wellington-north-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -80.771315,
+        43.783637,
+        -80.387919,
+        44.025987
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1341,
+      "sourceObjectIds": [
+        1265
+      ]
+    },
+    "prescott-russell-counties": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -75.426024,
+        45.182105,
+        -74.380909,
+        45.645423
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 35643,
+      "sourceObjectIds": [
+        545,
+        657,
+        3217
+      ]
+    },
+    "alfred-and-plantagenet-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -75.1639,
+        45.44199,
+        -74.780143,
+        45.6454
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 11730,
+      "sourceObjectIds": [
+        1009,
+        3489,
+        5777
+      ]
+    },
+    "casselman-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -75.110606,
+        45.296087,
+        -75.066903,
+        45.329887
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 468,
+      "sourceObjectIds": [
+        12833
+      ]
+    },
+    "champlain-township": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -74.823599,
+        45.442442,
+        -74.561494,
+        45.638491
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3579,
+      "sourceObjectIds": [
+        1489,
+        9441
+      ]
+    },
+    "clarence-rockland-city": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -75.341499,
+        45.364455,
+        -75.079542,
+        45.587512
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4693,
+      "sourceObjectIds": [
+        3121,
+        3905,
+        8785
+      ]
+    },
+    "east-hawkesbury-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -74.614432,
+        45.393426,
+        -74.380909,
+        45.605363
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5942,
+      "sourceObjectIds": [
+        2849,
+        4225,
+        13185
+      ]
+    },
+    "hawkesbury-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -74.641001,
+        45.589324,
+        -74.577877,
+        45.635163
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 912,
+      "sourceObjectIds": [
+        2673,
+        3649,
+        9537
+      ]
+    },
+    "russell-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -75.426024,
+        45.182105,
+        -75.201156,
+        45.356139
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 516,
+      "sourceObjectIds": [
+        6673
+      ]
+    },
+    "the-nation-municipality-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -75.269258,
+        45.221687,
+        -74.692054,
+        45.547233
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1664,
+      "sourceObjectIds": [
+        13153
+      ]
+    },
+    "renfrew-county": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -78.413128,
+        45.098849,
+        -76.299997,
+        46.2942
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 210898,
+      "sourceObjectIds": [
+        945,
+        2881,
+        993
+      ]
+    },
+    "admaston-bromley-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -77.047259,
+        45.30798,
+        -76.662935,
+        45.687603
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1223,
+      "sourceObjectIds": [
+        9281
+      ]
+    },
+    "arnprior-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -76.387263,
+        45.4022,
+        -76.299997,
+        45.46599
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1162,
+      "sourceObjectIds": [
+        2689,
+        5105,
+        10161
+      ]
+    },
+    "bonnechere-valley-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -77.392364,
+        45.332535,
+        -76.906384,
+        45.581089
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 7807,
+      "sourceObjectIds": [
+        6833
+      ]
+    },
+    "brudenell-lyndoch-and-raglan-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -77.635538,
+        45.144049,
+        -77.213336,
+        45.50949
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 912,
+      "sourceObjectIds": [
+        3361
+      ]
+    },
+    "deep-river-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -77.528176,
+        46.013356,
+        -77.331872,
+        46.129868
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2190,
+      "sourceObjectIds": [
+        497,
+        8145,
+        8913
+      ]
+    },
+    "greater-madawaska-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -77.264429,
+        45.098849,
+        -76.50609,
+        45.436068
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5691,
+      "sourceObjectIds": [
+        4609
+      ]
+    },
+    "head-clara-and-maria-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -78.413128,
+        46.060324,
+        -77.692876,
+        46.2942
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4722,
+      "sourceObjectIds": [
+        1137,
+        6305,
+        12801
+      ]
+    },
+    "horton-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -76.7797,
+        45.419752,
+        -76.497601,
+        45.593502
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4652,
+      "sourceObjectIds": [
+        753,
+        3633,
+        5169
+      ]
+    },
+    "killaloe-hagarty-and-richards-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -77.671581,
+        45.469341,
+        -77.361292,
+        45.764313
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 665,
+      "sourceObjectIds": [
+        12865
+      ]
+    },
+    "laurentian-hills-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -77.737724,
+        45.771305,
+        -77.27601,
+        46.199081
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 10700,
+      "sourceObjectIds": [
+        8129,
+        10577,
+        13089
+      ]
+    },
+    "laurentian-valley-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -77.501811,
+        45.637881,
+        -76.973074,
+        45.859511
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 22481,
+      "sourceObjectIds": [
+        2337,
+        9953,
+        13057
+      ]
+    },
+    "madawaska-valley-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -77.910129,
+        45.315397,
+        -77.467843,
+        45.717796
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 940,
+      "sourceObjectIds": [
+        13025
+      ]
+    },
+    "mcnab-braeside-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -76.642345,
+        45.309989,
+        -76.339569,
+        45.516247
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2375,
+      "sourceObjectIds": [
+        5329,
+        6449,
+        6129
+      ]
+    },
+    "north-algona-wilberforce-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -77.454545,
+        45.498476,
+        -76.971311,
+        45.718493
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5093,
+      "sourceObjectIds": [
+        10385
+      ]
+    },
+    "petawawa-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -77.42295,
+        45.80953,
+        -77.160363,
+        45.983147
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2587,
+      "sourceObjectIds": [
+        1889,
+        7121,
+        7553
+      ]
+    },
+    "renfrew-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.715291,
+        45.451446,
+        -76.633037,
+        45.493804
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1506,
+      "sourceObjectIds": [
+        8689
+      ]
+    },
+    "whitewater-region-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -77.051919,
+        45.528125,
+        -76.669795,
+        45.898154
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 98535,
+      "sourceObjectIds": [
+        1777,
+        4993,
+        7265
+      ]
+    },
+    "northumberland-county": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -78.508657,
+        43.631135,
+        -76.582232,
+        44.436594
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 23300,
+      "sourceObjectIds": [
+        1233,
+        3537,
+        193
+      ]
+    },
+    "alnwick-haldimand-township": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -78.178445,
+        43.631496,
+        -77.739814,
+        44.272173
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6538,
+      "sourceObjectIds": [
+        545,
+        4385
+      ]
+    },
+    "brighton-municipality": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -77.851284,
+        43.631135,
+        -76.582232,
+        44.236551
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2250,
+      "sourceObjectIds": [
+        5409,
+        6049,
+        7297
+      ]
+    },
+    "cobourg-town": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -78.21519,
+        43.631815,
+        -77.976078,
+        43.996662
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 712,
+      "sourceObjectIds": [
+        7393,
+        9217
+      ]
+    },
+    "cramahe-township": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -77.974028,
+        43.631197,
+        -77.619882,
+        44.177806
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 861,
+      "sourceObjectIds": [
+        5137,
+        7665
+      ]
+    },
+    "hamilton-township": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -78.34658,
+        43.631787,
+        -77.928392,
+        44.171325
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2164,
+      "sourceObjectIds": [
+        1057,
+        2097
+      ]
+    },
+    "port-hope-municipality": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -78.508657,
+        43.631414,
+        -78.1123,
+        44.119927
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 633,
+      "sourceObjectIds": [
+        2433,
+        3073,
+        8177
+      ]
+    },
+    "trent-hills-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -78.030548,
+        44.147984,
+        -77.639021,
+        44.436594
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6468,
+      "sourceObjectIds": [
+        13441
+      ]
+    },
+    "middlesex-county": {
+      "type": "upper-tier",
+      "parts": 1,
+      "bbox": [
+        -81.835541,
+        42.60742,
+        -80.898738,
+        43.293052
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 89852,
+      "sourceObjectIds": [
+        129
+      ]
+    },
+    "adelaide-metcalfe-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.795639,
+        42.785589,
+        -81.555057,
+        43.065863
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1509,
+      "sourceObjectIds": [
+        5505
+      ]
+    },
+    "lucan-biddulph-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.46891,
+        43.143112,
+        -81.224447,
+        43.293052
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 341,
+      "sourceObjectIds": [
+        9345
+      ]
+    },
+    "middlesex-centre-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.594616,
+        42.790325,
+        -81.178566,
+        43.198038
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 9840,
+      "sourceObjectIds": [
+        7281
+      ]
+    },
+    "newbury-village": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.810543,
+        42.675401,
+        -81.787464,
+        42.693121
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 294,
+      "sourceObjectIds": [
+        3985
+      ]
+    },
+    "north-middlesex-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.824391,
+        43.033877,
+        -81.440134,
+        43.270669
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5964,
+      "sourceObjectIds": [
+        7809
+      ]
+    },
+    "southwest-middlesex-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.835541,
+        42.60742,
+        -81.472378,
+        42.877836
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 10213,
+      "sourceObjectIds": [
+        2065
+      ]
+    },
+    "strathroy-caradoc-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.681589,
+        42.757751,
+        -81.3876,
+        43.00496
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 70951,
+      "sourceObjectIds": [
+        5121
+      ]
+    },
+    "thames-centre-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.242417,
+        42.885241,
+        -80.898738,
+        43.231452
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4431,
+      "sourceObjectIds": [
+        449
+      ]
+    },
+    "leeds-grenville-counties": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -76.522153,
+        44.280567,
+        -75.358553,
+        45.125825
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 244728,
+      "sourceObjectIds": [
+        1073,
+        1425,
+        353
+      ]
+    },
+    "athens-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.032985,
+        44.52515,
+        -75.851285,
+        44.700076
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 587,
+      "sourceObjectIds": [
+        5905
+      ]
+    },
+    "augusta-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -75.785415,
+        44.609341,
+        -75.518108,
+        44.876239
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1014,
+      "sourceObjectIds": [
+        1393,
+        7441,
+        9825
+      ]
+    },
+    "edwardsburgh-cardinal-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -75.647141,
+        44.709634,
+        -75.358553,
+        44.956464
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4064,
+      "sourceObjectIds": [
+        2465,
+        4913,
+        4081
+      ]
+    },
+    "elizabethtown-kitley-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -76.109931,
+        44.503613,
+        -75.636004,
+        44.862302
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 24930,
+      "sourceObjectIds": [
+        1153,
+        5281,
+        7185
+      ]
+    },
+    "front-of-yonge-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -75.966045,
+        44.409352,
+        -75.777407,
+        44.59663
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3416,
+      "sourceObjectIds": [
+        17,
+        737,
+        3377
+      ]
+    },
+    "leeds-and-the-thousand-islands-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -76.255645,
+        44.280567,
+        -75.852264,
+        44.638582
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 12373,
+      "sourceObjectIds": [
+        2353,
+        7505,
+        8705
+      ]
+    },
+    "merrickville-wolford-village": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.004445,
+        44.758848,
+        -75.695798,
+        44.96807
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2550,
+      "sourceObjectIds": [
+        7345
+      ]
+    },
+    "north-grenville-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -75.819793,
+        44.84565,
+        -75.485743,
+        45.125825
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2855,
+      "sourceObjectIds": [
+        8849
+      ]
+    },
+    "rideau-lakes-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.522153,
+        44.49107,
+        -75.970412,
+        44.900347
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5011,
+      "sourceObjectIds": [
+        5057
+      ]
+    },
+    "westport-village": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.41354,
+        44.66262,
+        -76.387112,
+        44.685172
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1324,
+      "sourceObjectIds": [
+        1969
+      ]
+    },
+    "bruce-county": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -82.881802,
+        43.907989,
+        -80.549999,
+        45.504493
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 278757,
+      "sourceObjectIds": [
+        609,
+        1313,
+        49
+      ]
+    },
+    "arran-elderslie-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.338378,
+        44.25912,
+        -81.069428,
+        44.544936
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1631,
+      "sourceObjectIds": [
+        10449
+      ]
+    },
+    "brockton-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.430738,
+        44.067971,
+        -81.023358,
+        44.322155
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2301,
+      "sourceObjectIds": [
+        4417
+      ]
+    },
+    "huron-kinloss-township": {
+      "type": "lower-tier",
+      "parts": 2,
+      "bbox": [
+        -82.309987,
+        43.907989,
+        -81.368185,
+        44.417581
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2276,
+      "sourceObjectIds": [
+        3921,
+        5953
+      ]
+    },
+    "kincardine-municipality": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -82.352083,
+        44.088976,
+        -81.295786,
+        44.656161
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 469,
+      "sourceObjectIds": [
+        5761,
+        7457,
+        10481
+      ]
+    },
+    "northern-bruce-peninsula-municipality": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -82.881802,
+        44.603447,
+        -80.81918,
+        45.504493
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 157846,
+      "sourceObjectIds": [
+        4017,
+        8817,
+        9649
+      ]
+    },
+    "saugeen-shores-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -82.145207,
+        44.315346,
+        -81.283486,
+        44.71527
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6182,
+      "sourceObjectIds": [
+        7617,
+        8209,
+        10881
+      ]
+    },
+    "south-bruce-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -81.407399,
+        43.927429,
+        -80.989223,
+        44.124372
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 564,
+      "sourceObjectIds": [
+        721
+      ]
+    },
+    "south-bruce-peninsula-town": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -81.913237,
+        44.498816,
+        -80.549999,
+        45.154702
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 118863,
+      "sourceObjectIds": [
+        3761,
+        6785,
+        10849
+      ]
+    },
+    "stormont-dundas-glengarry-counties": {
+      "type": "upper-tier",
+      "parts": 3,
+      "bbox": [
+        -75.595127,
+        44.797904,
+        -74.32011,
+        45.509108
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 51912,
+      "sourceObjectIds": [
+        3201,
+        97,
+        3233
+      ]
+    },
+    "north-dundas-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -75.595127,
+        44.956332,
+        -75.156637,
+        45.218241
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1156,
+      "sourceObjectIds": [
+        7969
+      ]
+    },
+    "north-glengarry-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -74.916659,
+        45.18861,
+        -74.438529,
+        45.509108
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1135,
+      "sourceObjectIds": [
+        13137
+      ]
+    },
+    "north-stormont-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -75.258982,
+        45.087004,
+        -74.786761,
+        45.34323
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1081,
+      "sourceObjectIds": [
+        13217
+      ]
+    },
+    "south-dundas-municipality": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -75.485926,
+        44.797904,
+        -75.043706,
+        45.086971
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 4691,
+      "sourceObjectIds": [
+        1873,
+        4497,
+        9393
+      ]
+    },
+    "south-glengarry-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -74.787276,
+        45.018789,
+        -74.32011,
+        45.356177
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 10289,
+      "sourceObjectIds": [
+        2481,
+        13121,
+        13169
+      ]
+    },
+    "south-stormont-township": {
+      "type": "lower-tier",
+      "parts": 3,
+      "bbox": [
+        -75.156723,
+        44.941223,
+        -74.708417,
+        45.187997
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 24343,
+      "sourceObjectIds": [
+        6097,
+        13201,
+        8113
+      ]
+    },
+    "lanark-county": {
+      "type": "upper-tier",
+      "parts": 1,
+      "bbox": [
+        -76.769084,
+        44.702905,
+        -75.815974,
+        45.409404
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6927,
+      "sourceObjectIds": [
+        593
+      ]
+    },
+    "beckwith-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.223128,
+        44.983094,
+        -75.940809,
+        45.191604
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2228,
+      "sourceObjectIds": [
+        113
+      ]
+    },
+    "carleton-place-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.169869,
+        45.121897,
+        -76.107238,
+        45.156631
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1904,
+      "sourceObjectIds": [
+        5441
+      ]
+    },
+    "drummond-north-elmsley-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.383425,
+        44.813991,
+        -76.028778,
+        45.094928
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3452,
+      "sourceObjectIds": [
+        10689
+      ]
+    },
+    "lanark-highlands-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.769084,
+        44.857909,
+        -76.227752,
+        45.311819
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1553,
+      "sourceObjectIds": [
+        10177
+      ]
+    },
+    "mississippi-mills-municipality": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.50381,
+        45.091939,
+        -76.075067,
+        45.409404
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1431,
+      "sourceObjectIds": [
+        10609
+      ]
+    },
+    "montague-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.106747,
+        44.868376,
+        -75.815974,
+        45.072351
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3023,
+      "sourceObjectIds": [
+        1473
+      ]
+    },
+    "perth-town": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.281666,
+        44.88078,
+        -76.224721,
+        44.924242
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1661,
+      "sourceObjectIds": [
+        5825
+      ]
+    },
+    "tay-valley-township": {
+      "type": "lower-tier",
+      "parts": 1,
+      "bbox": [
+        -76.608716,
+        44.702905,
+        -76.188411,
+        44.995955
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2524,
+      "sourceObjectIds": [
+        2977
+      ]
+    },
+    "barrie-city": {
+      "type": "single-tier",
+      "parts": 1,
+      "bbox": [
+        -79.758518,
+        44.29369,
+        -79.58591,
+        44.450024
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 6452,
+      "sourceObjectIds": [
+        12497
+      ]
+    },
+    "brockville-city": {
+      "type": "single-tier",
+      "parts": 3,
+      "bbox": [
+        -75.735783,
+        44.565826,
+        -75.660268,
+        44.634742
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 11129,
+      "sourceObjectIds": [
+        4145,
+        8641,
+        9425
+      ]
+    },
+    "cornwall-city": {
+      "type": "single-tier",
+      "parts": 3,
+      "bbox": [
+        -74.848917,
+        44.989662,
+        -74.654214,
+        45.085439
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 7952,
+      "sourceObjectIds": [
+        1281,
+        6241,
+        7201
+      ]
+    },
+    "gananoque-town": {
+      "type": "single-tier",
+      "parts": 1,
+      "bbox": [
+        -76.18574,
+        44.316287,
+        -76.145128,
+        44.347106
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2750,
+      "sourceObjectIds": [
+        9569
+      ]
+    },
+    "guelph-city": {
+      "type": "single-tier",
+      "parts": 1,
+      "bbox": [
+        -80.326913,
+        43.47383,
+        -80.153505,
+        43.594362
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2867,
+      "sourceObjectIds": [
+        10737
+      ]
+    },
+    "hamilton-city": {
+      "type": "single-tier",
+      "parts": 2,
+      "bbox": [
+        -80.248579,
+        43.050515,
+        -79.582136,
+        43.470707
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6870,
+      "sourceObjectIds": [
+        5745,
+        9057
+      ]
+    },
+    "london-city": {
+      "type": "single-tier",
+      "parts": 1,
+      "bbox": [
+        -81.390637,
+        42.824524,
+        -81.107082,
+        43.073055
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 3735,
+      "sourceObjectIds": [
+        6945
+      ]
+    },
+    "orillia-city": {
+      "type": "single-tier",
+      "parts": 2,
+      "bbox": [
+        -79.475654,
+        44.567221,
+        -79.369914,
+        44.647751
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 10871,
+      "sourceObjectIds": [
+        1297,
+        6225
+      ]
+    },
+    "pelee-township": {
+      "type": "single-tier",
+      "parts": 1,
+      "bbox": [
+        -82.691739,
+        41.724425,
+        -82.620419,
+        41.832053
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 6740,
+      "sourceObjectIds": [
+        3729
+      ]
+    },
+    "pembroke-city": {
+      "type": "single-tier",
+      "parts": 3,
+      "bbox": [
+        -77.159771,
+        45.784477,
+        -77.077276,
+        45.848969
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 2217,
+      "sourceObjectIds": [
+        2321,
+        3873,
+        4097
+      ]
+    },
+    "prescott-town": {
+      "type": "single-tier",
+      "parts": 2,
+      "bbox": [
+        -75.536665,
+        44.69608,
+        -75.496299,
+        44.733809
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 366,
+      "sourceObjectIds": [
+        3057,
+        4881
+      ]
+    },
+    "smiths-falls-town": {
+      "type": "single-tier",
+      "parts": 1,
+      "bbox": [
+        -76.038016,
+        44.877129,
+        -75.969881,
+        44.91422
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 1653,
+      "sourceObjectIds": [
+        4353
+      ]
+    },
+    "toronto-city": {
+      "type": "single-tier",
+      "parts": 3,
+      "bbox": [
+        -79.639305,
+        43.376436,
+        -79.00344,
+        43.855456
+      ],
+      "geometryType": "Polygon",
+      "coordinateBytes": 5205,
+      "sourceObjectIds": [
+        5809,
+        8833,
+        9121
+      ]
+    },
+    "windsor-city": {
+      "type": "single-tier",
+      "parts": 3,
+      "bbox": [
+        -83.114857,
+        42.234166,
+        -82.891141,
+        42.356782
+      ],
+      "geometryType": "MultiPolygon",
+      "coordinateBytes": 9015,
+      "sourceObjectIds": [
+        6705,
+        9233,
+        9665
+      ]
+    }
+  },
+  "sources": [
+    "ontario-boundary-catalogue",
+    "lio-boundary-layer-13",
+    "lio-boundary-layer-14",
+    "lio-selected-upper-boundaries",
+    "lio-selected-lower-single-boundaries",
+    "middlesex-road-map"
+  ]
+}

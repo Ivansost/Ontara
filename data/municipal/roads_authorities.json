@@ -1,0 +1,1698 @@
+[
+  {
+    "authorityId": "halton-region",
+    "sources": [
+      {
+        "id": "halton-roads",
+        "url": "https://www.halton.ca/for-residents/regional-roads"
+      },
+      {
+        "id": "halton-safety",
+        "url": "https://www.halton.ca/for-residents/regional-roads/road-safety"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "regional-road-problem-phone",
+        "title": "Halton Region: published telephone handoff for a confirmed Regional-road problem",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "halton-roads",
+          "halton-safety"
+        ],
+        "retrievalText": "Halton Region maintains its Regional Road network connecting Burlington, Halton Hills, Milton and Oakville. For a problem on a confirmed Regional road, the official reporting route is telephone 311 or 1-866-442-5866. This is a general published road-problem handoff, not a verified automated submission integration. Check the linked Regional-road map and asset responsibility first. Local streets and many sidewalks are handled by the local municipality; provincial highways such as Highway 401 and the QEW are managed by MTO. Halton road-safety engineering includes roads and intersections; traffic-law enforcement belongs to police. Issue-specific mandatory fields, acceptance receipts and response targets are not published on these pages. Do not promise a repair or a new traffic control. No live municipal report has been submitted by Ontara.",
+        "responsibilityRules": [
+          "Confirm the incident road belongs to Halton's Regional network using the linked official map; residence in Halton alone does not prove ownership.",
+          "Local streets and many sidewalks generally belong to Burlington, Halton Hills, Milton or Oakville; verify the particular asset.",
+          "Provincial highways such as 401 and QEW belong to MTO; no private-road maintenance responsibility is established by these pages.",
+          "Police handle traffic-law enforcement; a request for engineering investigation is distinct from approval to install a sign."
+        ],
+        "steps": [
+          "Confirm incident location and Regional-road ownership using the official map.",
+          "For a Regional road problem, use the published telephone route: 311 or 1-866-442-5866.",
+          "For a local street, follow Halton's linked local municipality page instead."
+        ],
+        "contactPhone": "311 or +1-866-442-5866",
+        "constraints": [
+          "Research only. Live municipal submissions, emails and calls are not authorized by this import.",
+          "The official reporting page publishes a general telephone route; it does not specify a distinct intake form for each Roads leaf.",
+          "Automated demo execution remains on the separately allowlisted halton-roads-demo portal."
+        ],
+        "gaps": [
+          "Issue-specific required facts, receipt/tracking behavior and response targets are not stated on the observed reporting page.",
+          "An after-hours or immediate-hazard procedure was not established from these two sources; do not imply routine intake is suitable for immediate danger."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        }
+      },
+      {
+        "key": "sidewalk-curb-responsibility-handoff",
+        "title": "Halton sidewalks and curbs: verify local responsibility and Regional exceptions",
+        "issueIds": [
+          "roads-sidewalk",
+          "roads-curb"
+        ],
+        "sourceIds": [
+          "halton-roads"
+        ],
+        "retrievalText": "Halton's official Regional Roads page says Burlington, Halton Hills, Milton and Oakville generally manage local streets, sidewalks and related infrastructure. It explicitly says many sidewalks, not all sidewalks, are local, and also lists sidewalk assets in the Regional active-transportation network. A damaged sidewalk within Halton must therefore be routed by the particular asset and local municipality, not by the upper-tier name alone. Halton links its four local road-service pages. Curbs are not specifically allocated in the observed source. For unclear Regional assets use Halton's published 311 or 1-866-442-5866 handoff to establish responsibility. Required defect-report fields and a curb-specific channel remain unverified. This is research-only handoff guidance, not a tested live integration.",
+        "responsibilityRules": [
+          "Local municipalities are generally responsible for local streets, sidewalks and related infrastructure, with exceptions requiring verification.",
+          "Do not infer curb ownership or every sidewalk's maintainer from the Region label."
+        ],
+        "steps": [
+          "Identify the exact sidewalk or curb and local municipality.",
+          "Use the local-service links on Halton's Regional Roads page; ask the owner to confirm responsibility where uncertain."
+        ],
+        "constraints": [
+          "Do not automatically dispatch a real sidewalk or curb report based on this partial ownership evidence."
+        ],
+        "verificationStatus": "partial",
+        "researchStatus": "partial",
+        "coverage": {
+          "roads-sidewalk": "sourced_handoff",
+          "roads-curb": "unresolved_gap"
+        },
+        "gaps": [
+          "Specific sidewalk ownership exceptions and all curb responsibility were not established from this general source.",
+          "Local intake form fields, contacts and response targets require the appropriate local service procedure."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "peel-region",
+    "sources": [
+      {
+        "id": "peel-roads",
+        "url": "https://peelregion.ca/services/road-issue"
+      },
+      {
+        "id": "peel-road-ownership",
+        "url": "https://peelregion.ca/transportation-roads/road-maintenance/peel-regional-roads"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "regional-road-maintenance",
+        "title": "Peel: report Regional-road potholes, debris, damaged signs and curbs",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign"
+        ],
+        "sourceIds": [
+          "peel-roads",
+          "peel-road-ownership"
+        ],
+        "retrievalText": "Peel Region publishes telephone 311 or 905-791-7800 option 4 to report Regional-road maintenance issues, specifically potholes, debris and knocked-down signs. Maintenance also includes curb and gutter repair, crack sealing and larger pavement repairs. Check the official named/numbered Regional Roads list before selecting Peel. Anyone may report and there is no fee. Customer Contact Centre hours are Monday to Friday 8 a.m. to 5 p.m.; urgent after-hours service is available 24 hours every day. Questions and follow-up information use 311 or 905-791-7800. No online intake form, required facts, repair deadline or verified live integration is established by this procedure. Sidewalk ownership and new traffic-safety investigations need separate evidence.",
+        "responsibilityRules": [
+          "Peel maintenance applies to the Regional-road network; verify road number/name and segment, not just municipality.",
+          "This source does not establish sidewalk responsibility or private-road maintenance."
+        ],
+        "steps": [
+          "Check the Regional roads list and exact incident segment.",
+          "Call 311 or 905-791-7800 option 4 for the listed maintenance concerns.",
+          "Use the published urgent after-hours service for urgent road issues; questions can use the same general phone contact."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff"
+        },
+        "gaps": [
+          "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+        ],
+        "constraints": [
+          "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+        ],
+        "contactPhone": "311 or +1-905-791-7800 option 4"
+      }
+    ]
+  },
+  {
+    "authorityId": "york-region",
+    "sources": [
+      {
+        "id": "york-roads",
+        "url": "https://www.york.ca/report-road-conditions"
+      },
+      {
+        "id": "york-maintenance",
+        "url": "https://www.york.ca/transportation/roads/spring-and-summer-road-maintenance"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "regional-road-maintenance",
+        "title": "York: Regional-road condition, debris and sign reporting",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-sign"
+        ],
+        "sourceIds": [
+          "york-roads",
+          "york-maintenance"
+        ],
+        "retrievalText": "York Region operates and maintains Regional roads. Official pages direct poor road conditions, potholes, mud, gravel, debris and broken road signs to York Public Works. The Report a Problem link on the conditions page is an obfuscated email link, decoded from the published data-mail-to value as transportation@york.ca; it is not evidence of a separate web form. General phone is 1-877-464-9675 extension 75000. Published hours are Monday-Friday 7 a.m.-7 p.m. and weekends/holidays 8:30 a.m.-4:30 p.m. Urgent matters affecting road-user safety after hours, including spills, signal outages or road emergencies, use extension 75200. York maintains road signs on Regional roads. Developers/contractors must keep Regional roads near their sites free of mud and debris. Required report fields and acknowledgements were not specified; live submission is untested.",
+        "responsibilityRules": [
+          "Use this procedure only after confirming a Regional road and relevant asset.",
+          "York explicitly maintains road signs on Regional roads; local/provincial/private road responsibility must be established separately.",
+          "Do not treat an email-opening link as a verified form or automatic integration."
+        ],
+        "steps": [
+          "Confirm the Regional road/asset.",
+          "Use the published email or general Public Works phone for nonurgent condition/debris/sign concerns.",
+          "For urgent road-user safety matters after hours call 1-877-464-9675 ext. 75200."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-sign": "sourced_handoff"
+        },
+        "gaps": [
+          "The published route does not enumerate mandatory issue-report fields, acknowledgement/tracking behavior or a specific repair deadline."
+        ],
+        "constraints": [
+          "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+        ],
+        "contactPhone": "+1-877-464-9675 ext. 75000; after-hours urgent ext. 75200",
+        "contactEmail": "transportation@york.ca"
+      }
+    ]
+  },
+  {
+    "authorityId": "durham-region",
+    "sources": [
+      {
+        "id": "durham-roads",
+        "url": "https://www.durham.ca/living-here/roads-and-traffic/regional-road-maintenance/"
+      },
+      {
+        "id": "durham-pothole",
+        "url": "https://www.durham.ca/regional-government/report-an-issue/pothole-issue/"
+      },
+      {
+        "id": "durham-sign",
+        "url": "https://www.durham.ca/regional-government/report-an-issue/downed-sign/"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "regional-pothole-sign-depot",
+        "title": "Durham: Regional-road potholes and downed signs go to the appropriate Works depot",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-sign"
+        ],
+        "sourceIds": [
+          "durham-roads",
+          "durham-pothole",
+          "durham-sign"
+        ],
+        "retrievalText": "Durham identifies three road maintainers: Province of Ontario, Durham Region and the local municipality. Durham maintains Regional roads year-round and directs Regional-road potholes and downed/damaged signs to the local Region of Durham Works Department depot linked from its official issue pages. It investigates pothole complaints and repairs as soon as possible, without a fixed deadline stated. Durham explicitly excludes pothole repair on residential, commercial or driveway entrances. Regional maintenance includes pavement/shoulder repairs and bridge maintenance; this does not prove ownership of every sidewalk. Check the exact Regional road and linked depot for a contact. General Region phone 311, 905-668-7711 or 1-800-372-1102 is an assistance route, not a substitute for checking the appropriate depot. Required report facts, tracking and urgent intake instructions remain unverified in this snapshot.",
+        "responsibilityRules": [
+          "Roads may belong to MTO, Durham or a local municipality.",
+          "Pothole procedure excludes residential, commercial and driveway entrances.",
+          "Signs must be on a Regional road; this is maintenance, not approval for a new sign."
+        ],
+        "steps": [
+          "Confirm the incident is on a Regional road.",
+          "Follow the official Works depot link on the pothole/sign issue page and select the appropriate depot.",
+          "Contact that depot; use Region general contact for assistance identifying it."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-sign": "sourced_handoff"
+        },
+        "gaps": [
+          "Appropriate depot phone/after-hours details are being captured separately; do not invent a depot or assume the general number is direct dispatch.",
+          "Mandatory report facts, acknowledgement/tracking behavior and specific repair deadlines are not published on the observed issue pages."
+        ],
+        "constraints": [
+          "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+        ],
+        "contactPhone": "311 or +1-905-668-7711; toll-free +1-800-372-1102"
+      }
+    ]
+  },
+  {
+    "authorityId": "waterloo-region",
+    "sources": [
+      {
+        "id": "waterloo-roads",
+        "url": "https://www.regionofwaterloo.ca/programs-and-services/roads-and-transportation/road-and-winter-maintenance/"
+      },
+      {
+        "id": "waterloo-report-form",
+        "url": "https://waterloo.form.ca.empro.verintcloudservices.com/form/auto/hrc_generalcomplain"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "road-maintenance-handoff",
+        "title": "Waterloo Region: published road-maintenance and pothole handoff",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement"
+        ],
+        "sourceIds": [
+          "waterloo-roads",
+          "waterloo-report-form"
+        ],
+        "retrievalText": "Waterloo Region publishes a road maintenance contact for issues such as potholes: 519-575-4400 and an email us link that actually opens the Region’s Verint general-complaint web form. The Region and seven local municipalities cooperate: city crews sometimes work on Regional roads and Regional teams sometimes service city streets. A crew seen at an asset is not proof of its legal owner. Use a verified road owner/segment before routing. The linked form is JavaScript dependent: the fetched initial HTML contains start/resume controls and saved-form reference/password fields, not the report questionnaire. Those resume controls must not be represented as mandatory report fields. No submission, receipt or live automation test was performed. Sidewalk/curb ownership and separate sign/safety procedures remain unresolved by these sources.",
+        "responsibilityRules": [
+          "Regional/local maintenance cooperation does not establish ownership for an arbitrary road.",
+          "Check the exact road/asset; provincial and private-road responsibility is not established by this maintenance page."
+        ],
+        "steps": [
+          "Confirm the incident road and responsible municipality.",
+          "Call 519-575-4400 or open the officially linked Verint complaint form.",
+          "Inspect the current form and required report fields before any future supported submission."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff"
+        },
+        "gaps": [
+          "The current report questionnaire, mandatory fields, CAPTCHA/account constraints and acknowledgement/tracking behavior were not observable in the fetched JavaScript form shell.",
+          "The service page labels its link email us but the actual destination is a web form; no report email address is inferred from the footer.",
+          "No repair deadline or report-specific follow-up route is stated."
+        ],
+        "constraints": [
+          "Research only; importing a live contact or form does not authorize contacting it. Demo execution destinations are configured separately."
+        ],
+        "contactPhone": "+1-519-575-4400",
+        "officialFormUrl": "https://waterloo.form.ca.empro.verintcloudservices.com/form/auto/hrc_generalcomplain"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "waterloo-maintenance-form-shell-20261114",
+        "procedureKey": "road-maintenance-handoff",
+        "sourceId": "waterloo-report-form",
+        "fields": [],
+        "gaps": [
+          "Fetched initial JavaScript shell only; no incident-report fields observed. Resume-reference and saved-password fields are not the incident questionnaire. No form started or submitted."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "niagara-region",
+    "sources": [
+      {
+        "id": "niagara-roads",
+        "url": "https://www.niagararegion.ca/roads-and-transportation/report-a-problem/"
+      },
+      {
+        "id": "niagara-pothole-form",
+        "url": "https://forms.niagararegion.ca/Roads-and-transportation/Report-a-pothole"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "regional-pothole",
+        "title": "Niagara Region: Regional-road pothole form and phone handoff",
+        "issueIds": [
+          "roads-pothole"
+        ],
+        "sourceIds": [
+          "niagara-roads",
+          "niagara-pothole-form"
+        ],
+        "retrievalText": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted.",
+        "responsibilityRules": [
+          "Confirm the defect is on a Niagara Regional road; local streets go to the relevant local municipality.",
+          "This procedure covers potholes; do not reuse the damage-claim form or a traffic-signal phone number for other defects without verification."
+        ],
+        "steps": [
+          "Confirm exact incident road and local municipality.",
+          "Use the officially linked pothole form or call 905-980-6000 ext.3690.",
+          "Provide the actual known location/position/size; do not invent measurements."
+        ],
+        "requiredFacts": [
+          "Observed form fields: City/town; location details (closest intersection, address, landmark); position and size. These are observed labels, not an assertion all are mandatory."
+        ],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "verified_procedure"
+        },
+        "gaps": [
+          "The captured field labels have no visible required markers; validation behavior and any conditional contact fields have not been tested.",
+          "No report confirmation, receipt/tracking lookup, follow-up target or fixed repair deadline was verified."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-905-980-6000 ext. 3690",
+        "officialFormUrl": "https://forms.niagararegion.ca/Roads-and-transportation/Report-a-pothole"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "niagara-pothole-form-20261114",
+        "procedureKey": "regional-pothole",
+        "sourceId": "niagara-pothole-form",
+        "fields": [
+          {
+            "id": "Q_d2ecd460-c19c-4f53-8ada-b3b8013b9ffe_0",
+            "label": "City / town",
+            "type": "select",
+            "required": false,
+            "options": [
+              "Fort Erie",
+              "Grimsby",
+              "Lincoln",
+              "Niagara-on-the-Lake",
+              "Niagara Falls",
+              "Pelham",
+              "Port Colborne",
+              "St. Catharines",
+              "Thorold",
+              "Wainfleet",
+              "Welland",
+              "West Lincoln"
+            ]
+          },
+          {
+            "id": "Q_8665a859-91d0-449d-9423-b3b8013be497_0",
+            "label": "Location details (closest intersection, address, landmark)",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "Q_64b5142e-f139-4d84-ae50-b3b8013cf439_0",
+            "label": "Position and size (size, depth, near curb, centre of road)",
+            "type": "textarea",
+            "required": false
+          },
+          {
+            "id": "Q_003e9c62-2e1c-4bc2-85b0-b3b8013e6a16_0",
+            "label": "You can contact me for more information",
+            "type": "checkbox",
+            "required": false,
+            "options": [
+              "Yes"
+            ]
+          }
+        ],
+        "gaps": [
+          "Required false records that no required marker was observed, not proof of server acceptance. Conditional follow-up fields were not exercised. Hidden verification/token values redacted in stored snapshot."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "simcoe-county",
+    "sources": [
+      {
+        "id": "simcoe-roads",
+        "url": "https://simcoe.ca/residents/trs/"
+      },
+      {
+        "id": "simcoe-maintenance",
+        "url": "https://simcoe.ca/residents/trs/maintenance/"
+      },
+      {
+        "id": "simcoe-resident-portal",
+        "url": "https://service.simcoe.ca/s/topic/0TOJQ0000004o6H4AQ/roads-maintenance-construction"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-maintenance",
+        "title": "Simcoe County: County-road maintenance portal and contact handoff",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "simcoe-roads",
+          "simcoe-maintenance",
+          "simcoe-resident-portal"
+        ],
+        "retrievalText": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources.",
+        "responsibilityRules": [
+          "Use only for a verified County road/asset; municipal roads require their local municipality.",
+          "A road-safety concern is a request to assess; technical warrants and authority decisions control any change."
+        ],
+        "steps": [
+          "Confirm the County road and asset.",
+          "Open the officially linked maintenance/construction Resident Portal or use published customer service to obtain the appropriate handoff.",
+          "Inspect current fields and ownership before a future supported report."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+          "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-705-735-6901 or +1-800-263-3199",
+        "officialFormUrl": "https://service.simcoe.ca/s/topic/0TOJQ0000004o6H4AQ/roads-maintenance-construction"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "simcoe-roads-portal-shell-20261114",
+        "procedureKey": "county-maintenance",
+        "sourceId": "simcoe-resident-portal",
+        "fields": [],
+        "gaps": [
+          "JavaScript shell only. No report questionnaire observed or submitted."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "essex-county",
+    "sources": [
+      {
+        "id": "essex-roads",
+        "url": "https://www.countyofessex.ca/resident-services/county-roads/"
+      },
+      {
+        "id": "essex-report",
+        "url": "https://www.countyofessex.ca/resident-services/report-a-problem/"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-issue",
+        "title": "Essex County: road-problem portal and 24-hour line",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "essex-roads",
+          "essex-report"
+        ],
+        "retrievalText": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified.",
+        "responsibilityRules": [
+          "Confirm the exact County-owned road/asset using the official road list; neither an Essex address nor Windsor proximity establishes County jurisdiction.",
+          "Local roads and provincial highways require the listed responsible authority."
+        ],
+        "steps": [
+          "Open the reporting portal linked from the official County page.",
+          "Use guest mode or an account; select County of Essex and create a new service request.",
+          "Provide the published contact, location, type and description steps; review summary and agreement before any future authorized submission."
+        ],
+        "requiredFacts": [
+          "Published steps request contact details, address/map or No address, request type and brief description; attachment is optional; final review and I Agree are described."
+        ],
+        "followUpInstructions": [
+          "The official page states a logged-in account permits status tracking; guest tracking/receipts are not established."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+          "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-519-326-8691 (24 hours)",
+        "officialFormUrl": "https://citywideportal.com/?client=County%20of%20Essex"
+      }
+    ]
+  },
+  {
+    "authorityId": "lambton-county",
+    "sources": [
+      {
+        "id": "lambton-roads-current",
+        "url": "https://www.lambtoncounty.ca/resident-services/roads/"
+      },
+      {
+        "id": "lambton-contacts",
+        "url": "https://www.lambtoncounty.ca/contacts-directory/"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "public-works-owner-handoff",
+        "title": "Lambton County: Public Works handoff to verify County-road maintenance responsibility",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "lambton-roads-current",
+          "lambton-contacts"
+        ],
+        "retrievalText": "Lambton County’s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source.",
+        "responsibilityRules": [
+          "Confirm the road is part of Lambton County’s network; do not infer responsibility for local, provincial or private roads from the county name.",
+          "The published Public Works contact is a verification handoff; issue-specific accepted-report procedures remain unverified."
+        ],
+        "steps": [
+          "Confirm the incident segment/asset.",
+          "Contact Public Works using the official directory to establish jurisdiction and current reporting requirements.",
+          "Pause automatic dispatch until a supported procedure and resident approval exist."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+          "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-519-845-0801; toll-free +1-866-324-6912"
+      }
+    ]
+  },
+  {
+    "authorityId": "oxford-county",
+    "sources": [
+      {
+        "id": "oxford-roads",
+        "url": "https://www.oxfordcounty.ca/services-for-you/roads/"
+      },
+      {
+        "id": "oxford-report-potholes",
+        "url": "https://www.oxfordcounty.ca/news/posts/report-potholes-on-oxford-county-roads-online-at-service-oxford/"
+      },
+      {
+        "id": "oxford-pothole-portal",
+        "url": "https://service.oxfordcounty.ca/s/article/Report-a-pothole-on-a-County-road"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-pothole-cracks",
+        "title": "Oxford County: publish street, lane and approximate pothole size through Service Oxford",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement"
+        ],
+        "sourceIds": [
+          "oxford-roads",
+          "oxford-report-potholes",
+          "oxford-pothole-portal"
+        ],
+        "retrievalText": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted.",
+        "responsibilityRules": [
+          "The procedure is specifically for cracks and potholes on Oxford County roads.",
+          "Confirm exact ownership; do not treat all streets within Oxford as County roads."
+        ],
+        "steps": [
+          "Use the pothole link on the official Roads page to open Service Oxford.",
+          "Supply the actual street name, lane and approximate size requested by the official notice.",
+          "Choose whether to request an update; inspect current form and review before future authorized submission."
+        ],
+        "requiredFacts": [
+          "Street name",
+          "Which lane (e.g. northbound/southbound)",
+          "Approximate size (e.g. small/medium/large)"
+        ],
+        "followUpInstructions": [
+          "The public notice says residents may choose to receive an update from Public Works; no response target or tracking lookup is promised."
+        ],
+        "coverage": {
+          "roads-pothole": "verified_procedure",
+          "roads-pavement": "verified_procedure"
+        },
+        "gaps": [
+          "Current portal questionnaire, mandatory validation, authentication/CAPTCHA and receipt/tracking behavior were not observed in the JavaScript shell.",
+          "The cited maintenance standards depend on conditions; no universal repair deadline is established."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "officialFormUrl": "https://service.oxfordcounty.ca/s/article/Report-a-pothole-on-a-County-road"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "oxford-pothole-portal-shell-20261114",
+        "procedureKey": "county-pothole-cracks",
+        "sourceId": "oxford-pothole-portal",
+        "fields": [],
+        "gaps": [
+          "JavaScript shell only. Published required report facts come from the separate official notice, not invented portal fields."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "grey-county",
+    "sources": [
+      {
+        "id": "grey-roads",
+        "url": "https://www.grey.ca/roads"
+      },
+      {
+        "id": "grey-conditions",
+        "url": "https://www.grey.ca/resident-services/county-roads/road-conditions-closures-cameras"
+      },
+      {
+        "id": "grey-issue-form",
+        "url": "https://form.foreaction.cloud/submit/grey-county"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-issues",
+        "title": "Grey County: road-issue form, urgent phone and ownership handoffs",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "grey-roads",
+          "grey-conditions",
+          "grey-issue-form"
+        ],
+        "retrievalText": "Grey County’s official road pages publish 519-376-7337 for urgent County-road issues and an online issue form for nonurgent reports. The County Roads page also publishes roads@grey.ca for County-road questions and a pothole reporting route. County roads are numbered Grey Road 1, Grey Road 2, etc.; use the official GIS map for the exact segment. Local roads, concessions, sideroads and in-town streets are maintained by the relevant member municipality. Private roads belong to their owners or associations. Provincial-highway issues are directed to 1-866-222-2640. The road-conditions information hotline 1-866-266-7569 is distinct from reporting a defect. The linked ForeAction form returned only a JavaScript shell, so field requirements/receipts are unobserved. This is a general County-road concern handoff; ownership of any curb/sidewalk or a requested safety intervention must still be verified.",
+        "responsibilityRules": [
+          "Verify the road and asset using Grey GIS; the County name or road appearance alone is insufficient.",
+          "Provincial, local and private roads have different owners; the reporting phone is not the road-conditions hotline."
+        ],
+        "steps": [
+          "Use the official map and ownership guidance to identify the asset.",
+          "Call 519-376-7337 for urgent County-road issues; otherwise use the linked issue form or published departmental question contact.",
+          "For a non-County road follow the official provincial/local/private handoff."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The ForeAction response is a JavaScript shell; current report fields, login/CAPTCHA, acknowledgement/tracking and follow-up targets are unverified.",
+          "Curb and sidewalk ownership must be checked; the broad road-issue handoff does not prove the County maintains every adjoining asset.",
+          "The County Roads page quotes maintenance thresholds as of March2019; no current universal repair deadline is asserted."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-519-376-7337 (urgent County-road issues)",
+        "contactEmail": "roads@grey.ca",
+        "officialFormUrl": "https://form.foreaction.cloud/submit/grey-county"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "grey-road-form-shell-20261114",
+        "procedureKey": "county-road-issues",
+        "sourceId": "grey-issue-form",
+        "fields": [],
+        "gaps": [
+          "JavaScript shell only; no incident questionnaire or acceptance test."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "wellington-county",
+    "sources": [
+      {
+        "id": "wellington-concerns",
+        "url": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-road-concerns"
+      },
+      {
+        "id": "wellington-safety",
+        "url": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-speed-concerns"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-maintenance-form",
+        "title": "Wellington County: County-road maintenance form with observed required fields",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign"
+        ],
+        "sourceIds": [
+          "wellington-concerns"
+        ],
+        "retrievalText": "Wellington’s official Report Road Concerns form accepts potholes, damaged signs, drainage and other maintenance issues only on County-maintained roadways. Check its linked County-road map. Local township/town roads go to the respective municipality; provincial-highway road issues go to MTO at 1-800-265-6072. The observed required form fields are full name, phone, email, issue type, road/location, nearest address/fire number or crossroad, and description. Issue-type choices include Road Requires Repair, Traffic Sign Issue and Other; do not invent a more specific dropdown option. Reports are reviewed during business hours and residents will not receive a direct response unless clarification is required. This is not an urgent dispatch channel, a guaranteed repair, or proof of a submitted report. Curb/sidewalk ownership remains asset-specific.",
+        "responsibilityRules": [
+          "Only County-maintained roadways are considered; verify the map and asset.",
+          "The broad maintenance form does not establish County ownership of every curb or sidewalk."
+        ],
+        "steps": [
+          "Verify the County-maintained road.",
+          "Complete the observed contact, type, road/location, nearest address/crossroad and description fields using actual facts.",
+          "Review and approve before any future supported submission."
+        ],
+        "requiredFacts": [
+          "Full Name",
+          "Phone Number",
+          "Email Address",
+          "Issue type",
+          "Road/Location of Issue",
+          "Nearest address (fire number) or crossroad",
+          "Description of Issue"
+        ],
+        "followUpInstructions": [
+          "Reviewed during business hours; the page states no direct response unless clarification is needed."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff"
+        },
+        "gaps": [
+          "No exact repair deadline, acknowledgement lookup or urgent channel is stated on this form.",
+          "Other-type detail and any conditional behavior were not exercised; no submission occurred."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "officialFormUrl": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-road-concerns"
+      },
+      {
+        "key": "county-speed-concern-form",
+        "title": "Wellington County: speed-related safety concern, separate from individual enforcement",
+        "issueIds": [
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "wellington-safety"
+        ],
+        "retrievalText": "Wellington County’s Report Speed Concerns form is for speed concerns on County roads. It may not receive a direct response and does not direct OPP enforcement or action. Individual vehicle issues belong to OPP. Local township/town-road speed concerns go to that municipality; provincial-highway speed concerns go to OPP 1-888-310-1122. The form states that if a road is not in its dropdown it is not County-maintained. Observed required fields are name, email, municipality, road, from street, to street and more details. This covers speed-related safety investigations only; another unsafe-intersection request needs responsibility/procedure confirmation. Reporting a concern does not authorize a new stop sign or guarantee an intervention.",
+        "responsibilityRules": [
+          "Limit to speed concerns on a County-maintained road listed in the form.",
+          "Individual vehicle enforcement is OPP responsibility; the form does not direct police action."
+        ],
+        "steps": [
+          "Check the County-road dropdown/map.",
+          "Use the required contact, municipality, road, from/to street and details fields.",
+          "Use the separate published local/provincial handoff where applicable."
+        ],
+        "requiredFacts": [
+          "Full Name",
+          "Email Address",
+          "Muncipality",
+          "County road of concern",
+          "From Street",
+          "To Street",
+          "More Details"
+        ],
+        "followUpInstructions": [
+          "The official page warns submissions may not receive a direct response."
+        ],
+        "coverage": {
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "This speed-concern route does not establish the procedure for every unsafe intersection or new traffic-control request.",
+          "No response/repair target or acknowledgement lookup is published."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "officialFormUrl": "https://www.wellington.ca/programmes-services/roads-construction/road-safety-initiatives/report-speed-concerns"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "wellington-road-maintenance-form-20261114",
+        "procedureKey": "county-road-maintenance-form",
+        "sourceId": "wellington-concerns",
+        "fields": [
+          {
+            "id": "edit-full-name",
+            "label": "Full Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-phone-number",
+            "label": "Phone Number",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-email-address",
+            "label": "Email Address",
+            "type": "email",
+            "required": true
+          },
+          {
+            "id": "edit-select-the-type-of-road-issue-you-wish-to-report-select",
+            "label": "Select the type of road issue you wish to report",
+            "type": "select",
+            "required": true
+          },
+          {
+            "id": "edit-road-location-of-issue",
+            "label": "Road/Location of Issue",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-nearest-address-fire-number-or-crossroad-to-issue-location",
+            "label": "Nearest address (fire number) or crossroad to issue location",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-description-of-issue",
+            "label": "Description of Issue",
+            "type": "textarea",
+            "required": true
+          }
+        ],
+        "gaps": [
+          "Conditional Other details were not exercised. Hidden values redacted; no form submitted."
+        ]
+      },
+      {
+        "id": "wellington-speed-form-20261114",
+        "procedureKey": "county-speed-concern-form",
+        "sourceId": "wellington-safety",
+        "fields": [
+          {
+            "id": "edit-full-name",
+            "label": "Full Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-email-address",
+            "label": "Email Address",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-muncipality",
+            "label": "Muncipality",
+            "type": "select",
+            "required": true
+          },
+          {
+            "id": "edit-please-select-the-road-of-concern-select",
+            "label": "Please select the road of concern",
+            "type": "select",
+            "required": true
+          },
+          {
+            "id": "edit-from-street",
+            "label": "From Street",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-to-street",
+            "label": "To Street",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "edit-more-details",
+            "label": "More Details",
+            "type": "textarea",
+            "required": true
+          }
+        ],
+        "gaps": [
+          "Dropdown labels preserve the source spelling. No form submitted."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "prescott-russell-counties",
+    "sources": [
+      {
+        "id": "prescott-roads",
+        "url": "https://www.en.prescott-russell.on.ca/stay/public_works/road_maintenance"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-maintenance-handoff",
+        "title": "Prescott and Russell: Public Works road-maintenance reporting contact",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "prescott-roads"
+        ],
+        "retrievalText": "The United Counties of Prescott and Russell Road Maintenance page explicitly publishes an issue-reporting contact: 613-675-4661, toll-free 1-800-667-6307 or TravauxPublics@prescott-russell.on.ca. The email is decoded from the official page’s Cloudflare-protected public link, not guessed. Public Works repairs/maintains road surfaces, shoulders, roadsides, bridges, culverts, surface drains and ditches. Confirm the exact County road and asset before using this general road-maintenance handoff. The page says snow removal on sidewalks/paved shoulders where a County road becomes a town Main Street belongs to the local municipality; that snow-clearing rule does not establish responsibility for a damaged sidewalk or curb. No issue-specific required facts, urgent hours, receipt/tracking or repair targets were published in the observed page.",
+        "responsibilityRules": [
+          "Use for the verified County road/asset; local/provincial/private responsibility is not established by a location label.",
+          "The local sidewalk/shoulder exception is expressly about snow removal and must not be generalized to structural defects."
+        ],
+        "steps": [
+          "Verify road and asset responsibility.",
+          "Use the published Road Maintenance phone or email to report an issue or confirm the required process.",
+          "Pause if the incident is a sidewalk, curb or unverified asset."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The page does not enumerate the eight issue leaves individually; this is a general maintenance handoff.",
+          "Damaged sidewalk/curb ownership, mandatory intake facts, urgent/after-hours channel, receipt/tracking and response targets remain unverified."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-613-675-4661; toll-free +1-800-667-6307",
+        "contactEmail": "TravauxPublics@prescott-russell.on.ca"
+      }
+    ]
+  },
+  {
+    "authorityId": "renfrew-county",
+    "sources": [
+      {
+        "id": "renfrew-roads",
+        "url": "https://www.countyofrenfrew.on.ca/living-here/roads/"
+      },
+      {
+        "id": "renfrew-concern-form",
+        "url": "https://forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern",
+        "allowUnavailable": true,
+        "title": "Renfrew published concern form: HTTP403 content unavailable"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-concern-form-handoff",
+        "title": "Renfrew County: official County-road concern form link, fields unavailable",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "renfrew-roads"
+        ],
+        "retrievalText": "Renfrew County’s official Roads page states the County maintains approximately 816 kilometres of roads and 251 bridges/culverts and directly links Report a concern. That official link points to forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern. The research GET of the form returned HTTP403, so no questionnaire, required fields, authentication/CAPTCHA behavior or receipt was obtained. This is a sourced handoff to the published general road-concern route, not an automated integration or proof that every listed issue/adjacent asset is County-owned. Verify the County road/asset; local, provincial, private and sidewalk responsibilities remain separate. The general County contact is 613-735-2081; it is not established here as an urgent road-dispatch number.",
+        "responsibilityRules": [
+          "Confirm exact County-road and asset responsibility before using the concern link.",
+          "The official Roads page supplies the link; the form itself could not be inspected."
+        ],
+        "steps": [
+          "Verify the road/asset.",
+          "Open the concern link from the official Roads page; obtain assistance if access is blocked.",
+          "Do not infer hidden fields or claim a submission/receipt from the blocked request."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The published form returned HTTP403. Actual form bytes/fields were not obtained; no successful form snapshot is claimed.",
+          "Specific sidewalk/curb responsibility, mandatory report facts, urgent/after-hours route, tracking and repair targets remain unverified."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-613-735-2081 (general County contact)",
+        "officialFormUrl": "https://forms.countyofrenfrew.on.ca/Public-Site/Report-a-Concern"
+      }
+    ]
+  },
+  {
+    "authorityId": "northumberland-county",
+    "sources": [
+      {
+        "id": "northumberland-roads",
+        "url": "https://northumberland.ca/services/roads-and-bridges/"
+      },
+      {
+        "id": "northumberland-report-form",
+        "url": "https://reportaproblem.paperform.co/"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-hotline-handoff",
+        "title": "Northumberland County: Roads Hotline and linked problem form",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "northumberland-roads",
+          "northumberland-report-form"
+        ],
+        "retrievalText": "Northumberland County’s Roads and Bridges page says it maintains County roads/bridges and performs sweeping, engineering and maintenance. It explicitly does not look after municipal roadways: contact the local municipality for those. The page publishes Roads Hotline contacts 905-372-3329, toll-free 1-800-354-7050, and after-hours toll-free 1-866-856-3251. It also links a Paperform Report a problem route. The fetched form page only exposed its title, so report fields and acknowledgement behavior were not observed. This is a general County-road concern/jurisdiction handoff; confirm the particular road and asset before selecting it. Sidewalk and curb ownership and any safety intervention are not established merely by county location. No live report, email or call was made.",
+        "responsibilityRules": [
+          "Only County roads/bridges are within the published maintenance scope; municipal roads go to the local municipality.",
+          "Confirm every sidewalk, curb, private or provincial asset separately."
+        ],
+        "steps": [
+          "Identify the road and relevant asset.",
+          "Use the official Roads Hotline or linked Report a problem form for the appropriate County concern.",
+          "Use the published after-hours toll-free line when an after-hours County-road handoff is required."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The Paperform response exposed no incident questionnaire; mandatory fields, CAPTCHA/account constraints, confirmation and tracking remain unverified.",
+          "The page does not enumerate all eight Roads leaves or prove curb/sidewalk ownership; use the general handoff to verify.",
+          "No fixed repair or follow-up target is stated."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-905-372-3329; +1-800-354-7050; after-hours +1-866-856-3251",
+        "officialFormUrl": "https://reportaproblem.paperform.co/"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "northumberland-problem-form-shell-20261114",
+        "procedureKey": "county-road-hotline-handoff",
+        "sourceId": "northumberland-report-form",
+        "fields": [],
+        "gaps": [
+          "Fetched page title only; incident fields were not observable. No report submitted."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "middlesex-county",
+    "sources": [
+      {
+        "id": "middlesex-roads",
+        "url": "https://www.middlesex.ca/departments/roads"
+      },
+      {
+        "id": "middlesex-faqs",
+        "url": "https://www.middlesex.ca/departments/roads/faqs"
+      },
+      {
+        "id": "middlesex-request-form",
+        "url": "https://www.middlesex.ca/request-service"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-maintenance",
+        "title": "Middlesex County: Primary Operations Centre and Citizen Request Portal",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "middlesex-roads",
+          "middlesex-faqs",
+          "middlesex-request-form"
+        ],
+        "retrievalText": "Middlesex County’s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance.",
+        "responsibilityRules": [
+          "Verify the numbered County road/asset using the official road map; local, provincial and private assets must not be assumed County-owned.",
+          "The published Primary Operations Centre covers road maintenance/hazard conditions; individual asset jurisdiction and report type still need confirmation."
+        ],
+        "steps": [
+          "Confirm road number, segment and owner.",
+          "Call519-471-2020 or open the officially linked Citizen Request Portal.",
+          "Provide the actual location; inspect any current questionnaire before a future supported report."
+        ],
+        "requiredFacts": [
+          "Location is expressly requested in the FAQs for the listed maintenance concerns. A complete pothole/curb/sign questionnaire is not published in these sources."
+        ],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+          "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-519-471-2020",
+        "officialFormUrl": "https://www.middlesex.ca/request-service"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "middlesex-request-form-shell-20261114",
+        "procedureKey": "county-road-maintenance",
+        "sourceId": "middlesex-request-form",
+        "fields": [],
+        "gaps": [
+          "Outer page title only; no incident questionnaire or acceptance test."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "leeds-grenville-counties",
+    "sources": [
+      {
+        "id": "leeds-roads",
+        "url": "https://www.leedsgrenville.com/roads-public-works/roads-and-bridges/"
+      },
+      {
+        "id": "leeds-concern-portal",
+        "url": "https://citywideportal.com/?client=United%20Counties%20of%20Leeds%20and%20Grenville"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-concern",
+        "title": "Leeds and Grenville: County-road concern portal, Roads contact and after-hours line",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "leeds-roads",
+          "leeds-concern-portal"
+        ],
+        "retrievalText": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified.",
+        "responsibilityRules": [
+          "Confirm the exact County-maintained road and asset.",
+          "A former provincial route may now be County-owned, so route by current owner rather than historic highway name.",
+          "Brockville,Gananoque andPrescott are separate single-tier municipalities; the Counties label does not establish their road ownership."
+        ],
+        "steps": [
+          "Use the official Roads and Bridges page to verify scope and open the concern portal.",
+          "Use the Roads departmental email/phone for the appropriate maintenance handoff.",
+          "For an after-hours road emergency use the separately published extension2601."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+          "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+          "No repair or follow-up target is stated."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-613-342-3840 ext.2425; after-hours +1-613-342-3840 or +1-800-267-8146 ext.2601",
+        "contactEmail": "roads@uclg.on.ca",
+        "officialFormUrl": "https://citywideportal.com/?client=United%20Counties%20of%20Leeds%20and%20Grenville"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "leeds-road-portal-shell-20261114",
+        "procedureKey": "county-road-concern",
+        "sourceId": "leeds-concern-portal",
+        "fields": [],
+        "gaps": [
+          "JavaScript shell only; no incident form or submission observed."
+        ]
+      }
+    ]
+  },
+  {
+    "authorityId": "bruce-county",
+    "sources": [
+      {
+        "id": "bruce-roads",
+        "url": "https://www.brucecounty.on.ca/services/transportation-and-environmental-services/road-construction-and-maintenance"
+      },
+      {
+        "id": "bruce-concerns",
+        "url": "https://www.brucecounty.on.ca/tell-us-your-concerns"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "transportation-road-service",
+        "title": "Bruce County: designated road-service email and telephone",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "bruce-roads",
+          "bruce-concerns"
+        ],
+        "retrievalText": "Bruce County’s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page’s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department’s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made.",
+        "responsibilityRules": [
+          "Use the designated Transportation service-request route for a confirmed County road/asset.",
+          "Generic complaints and compensation claims are distinct from reporting a road defect.",
+          "Sidewalk and curb responsibility need asset confirmation."
+        ],
+        "steps": [
+          "Confirm County-road/asset responsibility.",
+          "Send the approved future request through the published Transportation email or phone handoff when a supported integration exists.",
+          "If following up on dissatisfaction, consult the separate official formal-complaint instructions."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [
+          "The official page offers a separate formal-complaint process if dissatisfied with the response; no road-repair or response deadline is promised."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+          "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+          "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-519-881-2400",
+        "contactEmail": "transportationinfo@brucecounty.on.ca"
+      }
+    ]
+  },
+  {
+    "authorityId": "stormont-dundas-glengarry-counties",
+    "sources": [
+      {
+        "id": "sdg-roads",
+        "url": "https://www.sdgcounties.ca/services/transportation"
+      },
+      {
+        "id": "sdg-concerns",
+        "url": "https://www.sdgcounties.ca/government-bylaws/our-council-committees/report-concern"
+      },
+      {
+        "id": "sdg-contacts",
+        "url": "https://www.sdgcounties.ca/contact-us"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-transportation-feedback-handoff",
+        "title": "SDG Counties: County-road responsibility and published nonanonymous feedback handoff",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign",
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "sdg-roads",
+          "sdg-concerns",
+          "sdg-contacts"
+        ],
+        "retrievalText": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier.",
+        "responsibilityRules": [
+          "Verify the road and particular asset belong to the Counties network, not the province, a local municipality, a private owner or separate Cornwall.",
+          "The Clerk feedback route is general, not a verified urgent road-dispatch or issue-specific intake."
+        ],
+        "steps": [
+          "Confirm County-road responsibility with Transportation assistance if uncertain.",
+          "If using the published feedback process, provide the named nonanonymous contact facts to the Clerk through an accepted listed method.",
+          "Keep acknowledgement distinct from an authority performing a repair."
+        ],
+        "requiredFacts": [
+          "Name",
+          "Date",
+          "Email",
+          "Address",
+          "Phone number"
+        ],
+        "followUpInstructions": [
+          "The published general feedback process states the Clerk will acknowledge receipt and set out the action to be taken. No time target is stated."
+        ],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff",
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+          "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+          "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-613-932-1515 ext.1208 (Transportation assistance); feedback ext.203",
+        "contactEmail": "info@sdgcounties.ca"
+      }
+    ]
+  },
+  {
+    "authorityId": "lanark-county",
+    "sources": [
+      {
+        "id": "lanark-roads",
+        "url": "https://www.lanarkcounty.ca/government/roads-trails-transit/"
+      },
+      {
+        "id": "lanark-speed-form",
+        "url": "https://www.lanarkcounty.ca/request-for-speed-management-measures/"
+      }
+    ],
+    "procedures": [
+      {
+        "key": "county-road-concern",
+        "title": "Lanark County: Roads email and 24-hour road-emergency phone",
+        "issueIds": [
+          "roads-pothole",
+          "roads-pavement",
+          "roads-debris-loose",
+          "roads-debris-object",
+          "roads-curb",
+          "roads-sign"
+        ],
+        "sourceIds": [
+          "lanark-roads"
+        ],
+        "retrievalText": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent.",
+        "responsibilityRules": [
+          "Confirm the County road/asset before using Public Works.",
+          "Do not reuse permit requirements, fees or permit-processing deadlines for ordinary road-defect reporting."
+        ],
+        "steps": [
+          "Confirm the County road and incident location.",
+          "Use the published Roads email for the appropriate concern.",
+          "For a road emergency call613-267-1353 and follow the prompts."
+        ],
+        "requiredFacts": [],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-pothole": "sourced_handoff",
+          "roads-pavement": "sourced_handoff",
+          "roads-debris-loose": "sourced_handoff",
+          "roads-debris-object": "sourced_handoff",
+          "roads-curb": "sourced_handoff",
+          "roads-sign": "sourced_handoff"
+        },
+        "gaps": [
+          "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+          "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "contactPhone": "+1-613-267-1353 (24-hour road emergencies)",
+        "contactEmail": "roads@lanarkcounty.ca"
+      },
+      {
+        "key": "speed-management-request",
+        "title": "Lanark County: speed-management request form with observed requirements",
+        "issueIds": [
+          "roads-safety"
+        ],
+        "sourceIds": [
+          "lanark-roads",
+          "lanark-speed-form"
+        ],
+        "retrievalText": "Lanark County’s Roads page links a Request for Speed Management Measures form. The observed required fields ask where the measures are requested with road name/limits, the requester’s relationship to the street, time of day speeding is an issue, other traffic concerns, name,email,phone,date and preferred contact method. Optional Other explanations and additional comments are present. The page says JavaScript is needed to complete the form; hidden time/antispam values are redacted from the stored snapshot. This is a request for County assessment, not approval for a sign or immediate enforcement. Other unsafe-intersection or non-County issues require responsibility/procedure confirmation. No form was submitted, and no acknowledgement or repair target is established.",
+        "responsibilityRules": [
+          "Use for a speed-management assessment on an appropriately confirmed County roadway.",
+          "A resident request does not approve a traffic-control change or direct police enforcement."
+        ],
+        "steps": [
+          "Confirm the relevant County road and limits.",
+          "Provide the observed required questions and contact details using true resident facts.",
+          "Review/approve before a future supported submission; use Public Works if scope is unclear."
+        ],
+        "requiredFacts": [
+          "Road name and limits/location",
+          "Relationship to the street",
+          "Time of day speeding occurs",
+          "Other traffic concerns",
+          "Name",
+          "Email",
+          "Phone",
+          "Date",
+          "Preferred method of contact"
+        ],
+        "followUpInstructions": [],
+        "coverage": {
+          "roads-safety": "sourced_handoff"
+        },
+        "gaps": [
+          "The form requires JavaScript; dynamic behavior, anti-spam acceptance and any further server validation were not tested.",
+          "This speed-management route does not establish every unsafe-intersection or sign-installation procedure. No receipt, response deadline or approved intervention is claimed."
+        ],
+        "verificationStatus": "verified",
+        "researchStatus": "verified",
+        "constraints": [
+          "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+        ],
+        "officialFormUrl": "https://www.lanarkcounty.ca/request-for-speed-management-measures/"
+      }
+    ],
+    "formSnapshots": [
+      {
+        "id": "lanark-speed-management-form-20261114",
+        "procedureKey": "speed-management-request",
+        "sourceId": "lanark-speed-form",
+        "fields": [
+          {
+            "id": "wpforms-2325-field_1",
+            "label": "Where are you requesting speed management measures for (be as specific as possible with road name and limits)?",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_2",
+            "label": "Which of the following applies to you (select at least one)?",
+            "type": "radio",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_4",
+            "label": "Is there a specific time of day when speeding is an issue?",
+            "type": "radio",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_6",
+            "label": "Are there any other traffic issues concerning you about the street in question?",
+            "type": "radio",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_8",
+            "label": "Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_9",
+            "label": "Email",
+            "type": "email",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_10",
+            "label": "Phone",
+            "type": "tel",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_11",
+            "label": "Date",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "wpforms-2325-field_13",
+            "label": "Preferred Method of Contact",
+            "type": "select",
+            "required": true
+          }
+        ],
+        "gaps": [
+          "Field group IDs identify the observed question groups; individual radio inputs have option suffixes. Conditional Other inputs and optional comments omitted from required list. Hidden antispam/time values redacted. No form submitted."
+        ]
+      }
+    ]
+  }
+]
