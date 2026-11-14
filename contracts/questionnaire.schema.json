@@ -1,0 +1,148 @@
+{
+  "$defs": {
+    "Question": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "select",
+            "text",
+            "textarea",
+            "date"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/QuestionOption"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "minLength": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minlength"
+        },
+        "maxLength": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxlength"
+        },
+        "visibleWhen": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VisibilityCondition"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "label",
+        "required"
+      ],
+      "title": "Question",
+      "type": "object"
+    },
+    "QuestionOption": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "label"
+      ],
+      "title": "QuestionOption",
+      "type": "object"
+    },
+    "VisibilityCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "questionId": {
+          "title": "Questionid",
+          "type": "string"
+        },
+        "equals": {
+          "title": "Equals"
+        }
+      },
+      "required": [
+        "questionId",
+        "equals"
+      ],
+      "title": "VisibilityCondition",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "issueId": {
+      "title": "Issueid",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "questions": {
+      "items": {
+        "$ref": "#/$defs/Question"
+      },
+      "title": "Questions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "issueId",
+    "version",
+    "questions"
+  ],
+  "title": "Questionnaire",
+  "type": "object"
+}

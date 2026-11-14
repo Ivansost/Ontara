@@ -1,0 +1,1490 @@
+{
+  "version": "2026-11-14.1",
+  "issues": {
+    "roads-pothole": {
+      "issueId": "roads-pothole",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "roadPosition",
+          "type": "select",
+          "label": "Where on the road?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "In travel lane",
+              "label": "In travel lane"
+            },
+            {
+              "value": "On shoulder",
+              "label": "On shoulder"
+            },
+            {
+              "value": "At curb",
+              "label": "At curb"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "travelDirection",
+          "type": "select",
+          "label": "Which direction or side?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Northbound",
+              "label": "Northbound"
+            },
+            {
+              "value": "Southbound",
+              "label": "Southbound"
+            },
+            {
+              "value": "Eastbound",
+              "label": "Eastbound"
+            },
+            {
+              "value": "Westbound",
+              "label": "Westbound"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "roads-pavement": {
+      "issueId": "roads-pavement",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "roadPosition",
+          "type": "select",
+          "label": "Where on the road?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "In travel lane",
+              "label": "In travel lane"
+            },
+            {
+              "value": "On shoulder",
+              "label": "On shoulder"
+            },
+            {
+              "value": "At curb",
+              "label": "At curb"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "travelDirection",
+          "type": "select",
+          "label": "Which direction or side?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Northbound",
+              "label": "Northbound"
+            },
+            {
+              "value": "Southbound",
+              "label": "Southbound"
+            },
+            {
+              "value": "Eastbound",
+              "label": "Eastbound"
+            },
+            {
+              "value": "Westbound",
+              "label": "Westbound"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "roads-debris-loose": {
+      "issueId": "roads-debris-loose",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "roadPosition",
+          "type": "select",
+          "label": "Where on the road?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "In travel lane",
+              "label": "In travel lane"
+            },
+            {
+              "value": "On shoulder",
+              "label": "On shoulder"
+            },
+            {
+              "value": "At curb",
+              "label": "At curb"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "travelDirection",
+          "type": "select",
+          "label": "Which direction or side?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Northbound",
+              "label": "Northbound"
+            },
+            {
+              "value": "Southbound",
+              "label": "Southbound"
+            },
+            {
+              "value": "Eastbound",
+              "label": "Eastbound"
+            },
+            {
+              "value": "Westbound",
+              "label": "Westbound"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "roads-debris-object": {
+      "issueId": "roads-debris-object",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "roadPosition",
+          "type": "select",
+          "label": "Where on the road?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "In travel lane",
+              "label": "In travel lane"
+            },
+            {
+              "value": "On shoulder",
+              "label": "On shoulder"
+            },
+            {
+              "value": "At curb",
+              "label": "At curb"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "travelDirection",
+          "type": "select",
+          "label": "Which direction or side?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Northbound",
+              "label": "Northbound"
+            },
+            {
+              "value": "Southbound",
+              "label": "Southbound"
+            },
+            {
+              "value": "Eastbound",
+              "label": "Eastbound"
+            },
+            {
+              "value": "Westbound",
+              "label": "Westbound"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "roads-sidewalk": {
+      "issueId": "roads-sidewalk",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "sidewalkPosition",
+          "type": "select",
+          "label": "Where is the sidewalk defect?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Along the sidewalk",
+              "label": "Along the sidewalk"
+            },
+            {
+              "value": "At a crossing",
+              "label": "At a crossing"
+            },
+            {
+              "value": "At a driveway",
+              "label": "At a driveway"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "roads-curb": {
+      "issueId": "roads-curb",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "curbPosition",
+          "type": "select",
+          "label": "Where is the damaged curb?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Along the road edge",
+              "label": "Along the road edge"
+            },
+            {
+              "value": "At a crossing",
+              "label": "At a crossing"
+            },
+            {
+              "value": "At a driveway",
+              "label": "At a driveway"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "roads-sign": {
+      "issueId": "roads-sign",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "signType",
+          "type": "select",
+          "label": "Which sign is affected?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Stop sign",
+              "label": "Stop sign"
+            },
+            {
+              "value": "Yield sign",
+              "label": "Yield sign"
+            },
+            {
+              "value": "Street name",
+              "label": "Street name"
+            },
+            {
+              "value": "Other",
+              "label": "Other"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "roadPosition",
+          "type": "select",
+          "label": "Where on the road?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "In travel lane",
+              "label": "In travel lane"
+            },
+            {
+              "value": "On shoulder",
+              "label": "On shoulder"
+            },
+            {
+              "value": "At curb",
+              "label": "At curb"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "travelDirection",
+          "type": "select",
+          "label": "Which direction or side?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Northbound",
+              "label": "Northbound"
+            },
+            {
+              "value": "Southbound",
+              "label": "Southbound"
+            },
+            {
+              "value": "Eastbound",
+              "label": "Eastbound"
+            },
+            {
+              "value": "Westbound",
+              "label": "Westbound"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "roads-safety": {
+      "issueId": "roads-safety",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "safetyConcern",
+          "type": "select",
+          "label": "What concerns you?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Crossing visibility",
+              "label": "Crossing visibility"
+            },
+            {
+              "value": "Vehicle speed",
+              "label": "Vehicle speed"
+            },
+            {
+              "value": "Intersection layout",
+              "label": "Intersection layout"
+            },
+            {
+              "value": "Other",
+              "label": "Other"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "graffiti-wall": {
+      "issueId": "graffiti-wall",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "surfaceType",
+          "type": "select",
+          "label": "Which surface is affected?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Public wall",
+              "label": "Public wall"
+            },
+            {
+              "value": "Underpass",
+              "label": "Underpass"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "offensiveContent",
+          "type": "select",
+          "label": "Does it contain offensive content?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "graffiti-building": {
+      "issueId": "graffiti-building",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "surfaceType",
+          "type": "select",
+          "label": "Which surface is affected?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Public building",
+              "label": "Public building"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "offensiveContent",
+          "type": "select",
+          "label": "Does it contain offensive content?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "graffiti-bench-bin": {
+      "issueId": "graffiti-bench-bin",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "surfaceType",
+          "type": "select",
+          "label": "Which surface is affected?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Bench",
+              "label": "Bench"
+            },
+            {
+              "value": "Public bin",
+              "label": "Public bin"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "offensiveContent",
+          "type": "select",
+          "label": "Does it contain offensive content?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "graffiti-shelter": {
+      "issueId": "graffiti-shelter",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "surfaceType",
+          "type": "select",
+          "label": "Which surface is affected?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Shelter",
+              "label": "Shelter"
+            },
+            {
+              "value": "Other fixture",
+              "label": "Other fixture"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "offensiveContent",
+          "type": "select",
+          "label": "Does it contain offensive content?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "graffiti-private-wall": {
+      "issueId": "graffiti-private-wall",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "surfaceType",
+          "type": "select",
+          "label": "Which surface is affected?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Private building",
+              "label": "Private building"
+            },
+            {
+              "value": "Private wall",
+              "label": "Private wall"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "offensiveContent",
+          "type": "select",
+          "label": "Does it contain offensive content?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "ownershipRelationship",
+          "type": "select",
+          "label": "What is your relationship to the property?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Owner",
+              "label": "Owner"
+            },
+            {
+              "value": "Tenant",
+              "label": "Tenant"
+            },
+            {
+              "value": "Neither",
+              "label": "Neither"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    },
+    "graffiti-fence": {
+      "issueId": "graffiti-fence",
+      "version": "2026-11-14.1",
+      "questions": [
+        {
+          "id": "immediateDanger",
+          "type": "select",
+          "label": "Is there an immediate danger?",
+          "required": true,
+          "description": "Stay clear of traffic. Immediate danger needs urgent assistance, rather than an ordinary report.",
+          "options": [
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ]
+        },
+        {
+          "id": "surfaceType",
+          "type": "select",
+          "label": "Which surface is affected?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Fence",
+              "label": "Fence"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "offensiveContent",
+          "type": "select",
+          "label": "Does it contain offensive content?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "No",
+              "label": "No"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "observedAt",
+          "type": "date",
+          "label": "When did you notice it?",
+          "required": false,
+          "description": "Leave blank if you are not sure.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "What did you notice?",
+          "required": true,
+          "minLength": 10,
+          "maxLength": 2000,
+          "description": "Describe what you observed. Do not enter traffic or measure the damage.",
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        },
+        {
+          "id": "ownershipRelationship",
+          "type": "select",
+          "label": "What is your relationship to the property?",
+          "required": true,
+          "description": "",
+          "options": [
+            {
+              "value": "Owner",
+              "label": "Owner"
+            },
+            {
+              "value": "Tenant",
+              "label": "Tenant"
+            },
+            {
+              "value": "Neither",
+              "label": "Neither"
+            },
+            {
+              "value": "Not sure",
+              "label": "Not sure"
+            }
+          ],
+          "visibleWhen": {
+            "questionId": "immediateDanger",
+            "equals": "No"
+          }
+        }
+      ]
+    }
+  },
+  "followUp": {
+    "nearestLandmark": {
+      "id": "nearestLandmark",
+      "type": "text",
+      "label": "What is the nearest landmark?",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 300,
+      "description": "The receiving demo portal now needs this detail. Enter only something you know."
+    }
+  }
+}

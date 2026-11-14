@@ -1,0 +1,736 @@
+{
+  "$defs": {
+    "ArtifactUpload": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "filename": {
+          "title": "Filename",
+          "type": "string"
+        },
+        "mimeType": {
+          "title": "Mimetype",
+          "type": "string"
+        },
+        "contentBase64": {
+          "title": "Contentbase64",
+          "type": "string"
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "case"
+          ],
+          "title": "Visibility",
+          "type": "string"
+        },
+        "caseId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Caseid"
+        },
+        "sourceId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourceid"
+        },
+        "sourceVersion": {
+          "title": "Sourceversion",
+          "type": "string"
+        },
+        "authorityId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Authorityid"
+        },
+        "operationId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operationid"
+        },
+        "runId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Runid"
+        },
+        "expectedSha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expectedsha256"
+        }
+      },
+      "required": [
+        "id",
+        "filename",
+        "mimeType",
+        "contentBase64",
+        "visibility",
+        "sourceVersion"
+      ],
+      "title": "ArtifactUpload",
+      "type": "object"
+    },
+    "FormField": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "type": {
+          "default": "text",
+          "title": "Type",
+          "type": "string"
+        },
+        "required": {
+          "default": false,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "title": "FormField",
+      "type": "object"
+    },
+    "FormSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "authorityId": {
+          "title": "Authorityid",
+          "type": "string"
+        },
+        "procedureId": {
+          "title": "Procedureid",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "observedAt": {
+          "format": "date-time",
+          "title": "Observedat",
+          "type": "string"
+        },
+        "sourceVersion": {
+          "title": "Sourceversion",
+          "type": "string"
+        },
+        "fields": {
+          "items": {
+            "$ref": "#/$defs/FormField"
+          },
+          "title": "Fields",
+          "type": "array"
+        },
+        "artifactIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Artifactids",
+          "type": "array"
+        },
+        "sourceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Sourceids",
+          "type": "array"
+        },
+        "gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gaps",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "authorityId",
+        "procedureId",
+        "url",
+        "observedAt",
+        "sourceVersion"
+      ],
+      "title": "FormSnapshot",
+      "type": "object"
+    },
+    "Municipality": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "upper-tier",
+            "lower-tier",
+            "single-tier"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "parentId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parentid"
+        },
+        "memberIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Memberids",
+          "type": "array"
+        },
+        "officialUrl": {
+          "title": "Officialurl",
+          "type": "string"
+        },
+        "population": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Population"
+        },
+        "populationYear": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Populationyear"
+        },
+        "populationSourceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Populationsourceids",
+          "type": "array"
+        },
+        "selectionRank": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Selectionrank"
+        },
+        "sourceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Sourceids",
+          "type": "array"
+        },
+        "sourceVersion": {
+          "default": "1",
+          "title": "Sourceversion",
+          "type": "string"
+        },
+        "boundary": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Boundary"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "type",
+        "officialUrl"
+      ],
+      "title": "Municipality",
+      "type": "object"
+    },
+    "ServiceProcedure": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "authorityId": {
+          "title": "Authorityid",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "categoryId": {
+          "default": "roads",
+          "enum": [
+            "roads",
+            "graffiti"
+          ],
+          "title": "Categoryid",
+          "type": "string"
+        },
+        "issueIds": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Issueids",
+          "type": "array"
+        },
+        "sourceIds": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Sourceids",
+          "type": "array"
+        },
+        "sourceVersion": {
+          "title": "Sourceversion",
+          "type": "string"
+        },
+        "retrievalText": {
+          "minLength": 20,
+          "title": "Retrievaltext",
+          "type": "string"
+        },
+        "responsibilityRules": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Responsibilityrules",
+          "type": "array"
+        },
+        "requiredFacts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Requiredfacts",
+          "type": "array"
+        },
+        "steps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Steps",
+          "type": "array"
+        },
+        "constraints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Constraints",
+          "type": "array"
+        },
+        "followUpInstructions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Followupinstructions",
+          "type": "array"
+        },
+        "officialFormUrl": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Officialformurl"
+        },
+        "contactEmail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Contactemail"
+        },
+        "contactPhone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Contactphone"
+        },
+        "formSnapshotIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Formsnapshotids",
+          "type": "array"
+        },
+        "artifactIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Artifactids",
+          "type": "array"
+        },
+        "coverage": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Coverage",
+          "type": "object"
+        },
+        "gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gaps",
+          "type": "array"
+        },
+        "visibility": {
+          "const": "public",
+          "default": "public",
+          "title": "Visibility",
+          "type": "string"
+        },
+        "verificationStatus": {
+          "default": "verified",
+          "enum": [
+            "verified",
+            "partial"
+          ],
+          "title": "Verificationstatus",
+          "type": "string"
+        },
+        "current": {
+          "default": true,
+          "title": "Current",
+          "type": "boolean"
+        },
+        "researchStatus": {
+          "default": "verified",
+          "enum": [
+            "verified",
+            "partial"
+          ],
+          "title": "Researchstatus",
+          "type": "string"
+        },
+        "searchStatus": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "ready",
+            "failed"
+          ],
+          "title": "Searchstatus",
+          "type": "string"
+        },
+        "integrationStatus": {
+          "default": "research_only",
+          "enum": [
+            "research_only",
+            "demo_tested"
+          ],
+          "title": "Integrationstatus",
+          "type": "string"
+        },
+        "verifiedAt": {
+          "format": "date-time",
+          "title": "Verifiedat",
+          "type": "string"
+        },
+        "validUntil": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validuntil"
+        }
+      },
+      "required": [
+        "id",
+        "authorityId",
+        "title",
+        "issueIds",
+        "sourceIds",
+        "sourceVersion",
+        "retrievalText",
+        "verifiedAt"
+      ],
+      "title": "ServiceProcedure",
+      "type": "object"
+    },
+    "SourceReference": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "authorityId": {
+          "title": "Authorityid",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "retrievedAt": {
+          "format": "date-time",
+          "title": "Retrievedat",
+          "type": "string"
+        },
+        "verifiedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verifiedat"
+        },
+        "extractedText": {
+          "default": "",
+          "title": "Extractedtext",
+          "type": "string"
+        },
+        "contentHash": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Contenthash"
+        },
+        "sourceVersion": {
+          "default": "1",
+          "title": "Sourceversion",
+          "type": "string"
+        },
+        "artifactIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Artifactids",
+          "type": "array"
+        },
+        "gaps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gaps",
+          "type": "array"
+        },
+        "verificationStatus": {
+          "default": "verified",
+          "enum": [
+            "verified",
+            "partial",
+            "unavailable"
+          ],
+          "title": "Verificationstatus",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "authorityId",
+        "url",
+        "title",
+        "retrievedAt"
+      ],
+      "title": "SourceReference",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "batchId": {
+      "title": "Batchid",
+      "type": "string"
+    },
+    "municipalities": {
+      "items": {
+        "$ref": "#/$defs/Municipality"
+      },
+      "title": "Municipalities",
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceReference"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "procedures": {
+      "items": {
+        "$ref": "#/$defs/ServiceProcedure"
+      },
+      "title": "Procedures",
+      "type": "array"
+    },
+    "formSnapshots": {
+      "items": {
+        "$ref": "#/$defs/FormSnapshot"
+      },
+      "title": "Formsnapshots",
+      "type": "array"
+    },
+    "artifacts": {
+      "items": {
+        "$ref": "#/$defs/ArtifactUpload"
+      },
+      "title": "Artifacts",
+      "type": "array"
+    },
+    "coverage": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Coverage",
+      "type": "array"
+    },
+    "gaps": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Gaps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "batchId"
+  ],
+  "title": "ResearchBatch",
+  "type": "object"
+}
