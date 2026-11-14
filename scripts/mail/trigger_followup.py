@@ -51,12 +51,24 @@ def verify_existing_case(client: httpx.Client, case_id: str) -> None:
         raise ValueError("The saved operation does not have a matching verified receipt; no email was triggered")
 
 
+def verify_draft_for_hold(client: httpx.Client, case_id: str) -> None:
+    case = request_json(client, "GET", f"/internal/v1/cases/{case_id}")
+    route = case.get("route") or {}
+    if (route.get("demo") is not True or route.get("id") != "halton-roads-demo"
+            or case.get("cancelledAt") or case.get("stage") != "draft"
+            or case.get("approvedVersion") is not None or case.get("currentOperationId") or case.get("receipt")):
+        raise ValueError("Presenter hold requires an existing unapproved controlled Roads draft")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api-url", required=True)
     parser.add_argument("--case-id", required=True)
     parser.add_argument("--runtime-env", default="/Users/ivan/.config/ontara/runtime.env")
     parser.add_argument("--wait-seconds", type=int, default=35)
+    controls = parser.add_mutually_exclusive_group()
+    controls.add_argument("--hold", action="store_true", help="Set the private case hold while draft, before UI approval")
+    controls.add_argument("--release-hold", action="store_true", help="Release only after the saved initial receipt and same-run portal v2 confirmation")
     args = parser.parse_args()
     origin = validate_origin(args.api_url)
     if not re.fullmatch(r"case_[a-f0-9]{32}", args.case_id):
@@ -66,7 +78,26 @@ def main() -> None:
     if not token:
         raise SystemExit("ONTARA_INTERNAL_TOKEN must be provided privately; it is never accepted on the command line")
     with httpx.Client(base_url=origin, headers={"Authorization": "Bearer " + token}, timeout=30, follow_redirects=False) as client:
+        if args.hold:
+            verify_draft_for_hold(client, args.case_id)
+            request_json(client, "POST", f"/internal/v1/cases/{args.case_id}/follow-up-hold", json={"held": True})
+            status = request_json(client, "GET", f"/internal/v1/cases/{args.case_id}/follow-up-hold")
+            if status.get("held") is not True:
+                raise SystemExit("The durable presenter mail hold was not confirmed; do not approve this demo case yet")
+            print(json.dumps({"caseId": args.case_id, "held": True, "nextCreateFaultArmed": status.get("nextCreateFaultArmed"),
+                              "authorityOutbox": status.get("authorityOutbox")}))
+            return
         verify_existing_case(client, args.case_id)
+        if args.release_hold:
+            # The API fetches the configured same-run portal schema itself. This
+            # helper never supplies arbitrary URLs or claimed mutation evidence.
+            released = request_json(client, "POST", f"/internal/v1/cases/{args.case_id}/follow-up-hold", json={"held": False})
+            if released.get("held") is not False:
+                raise SystemExit("The case mail hold remains active; no send was requested")
+        else:
+            status = request_json(client, "GET", f"/internal/v1/cases/{args.case_id}/follow-up-hold")
+            if status.get("held") is True:
+                raise SystemExit("Authority mail is durably held. Change the same run to v2, then use --release-hold after receipt verification.")
         deadline = time.monotonic() + min(50, max(1, args.wait_seconds))
         while True:
             # This invokes only the server's durable mail replay/send/poll loop. It neither

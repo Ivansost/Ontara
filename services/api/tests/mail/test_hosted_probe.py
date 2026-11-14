@@ -61,3 +61,17 @@ def test_saved_matching_verified_receipt_passes_without_creating_anything():
                       transport=httpx.MockTransport(handle)) as client:
         probe.verify_existing_case(client, "case_test")
     assert calls == ["GET", "GET"]
+
+
+@pytest.mark.parametrize("change", [{"stage": "report_acknowledged"}, {"approvedVersion": 1},
+                                    {"receipt": {"ticketId": "SYNTHETIC"}}, {"currentOperationId": "op_test"},
+                                    {"cancelledAt": "2026-11-14T12:00:00Z"}])
+def test_presenter_hold_helper_refuses_already_approved_or_used_case(change):
+    def handle(request):
+        assert request.method == "GET"
+        return httpx.Response(200, json={"route": {"demo": True, "id": "halton-roads-demo"},
+                                        "stage": "draft", "approvedVersion": None, "receipt": None,
+                                        "currentOperationId": None, **change})
+    with httpx.Client(base_url="https://demo.onrender.com", transport=httpx.MockTransport(handle)) as client:
+        with pytest.raises(ValueError, match="unapproved"):
+            probe.verify_draft_for_hold(client, "case_test")
