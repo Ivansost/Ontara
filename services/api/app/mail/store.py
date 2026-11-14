@@ -47,6 +47,11 @@ class MongoMailStore:
     def get(self, outbox_id: str) -> dict[str, Any] | None:
         return self.outbox.find_one({"_id": outbox_id, "kind": "email"})
 
+    def freeze_sent_time(self, outbox_id: str, when: datetime, evidence: str) -> None:
+        """First verified SENT observation anchors a scripted timer permanently."""
+        self.outbox.update_one({"_id": outbox_id, "kind": "email", "sentAt": {"$exists": False}},
+            {"$set": {"sentAt": when, "sentEvidence": evidence}})
+
     def by_token(self, token: str) -> dict[str, Any] | None:
         return self.outbox.find_one({"kind": "email", "correlationToken": token})
 
@@ -128,10 +133,13 @@ class MongoMailStore:
                       "lastError": "worker_stopped_during_send"}, "$unset": {"leaseOwner": "", "leaseUntil": ""}},
         ).modified_count
 
-    def due(self, now: datetime, limit: int = 10) -> list[dict[str, Any]]:
-        return list(self.outbox.find({"kind": "email", "state": {"$in": ["QUEUED", "OUTCOME_UNKNOWN"]},
+    def due(self, now: datetime, limit: int = 10, *, purposes: set[str] | None = None) -> list[dict[str, Any]]:
+        query = {"kind": "email", "state": {"$in": ["QUEUED", "OUTCOME_UNKNOWN"]},
                                      "nextAttemptAt": {"$lte": now},
-                                     "$or": [{"leaseUntil": {"$exists": False}}, {"leaseUntil": {"$lte": now}}]})
+                                     "$or": [{"leaseUntil": {"$exists": False}}, {"leaseUntil": {"$lte": now}}]}
+        if purposes is not None:
+            query["purpose"] = {"$in": sorted(purposes)}
+        return list(self.outbox.find(query)
                     .sort("createdAt", 1).limit(limit))
 
     def claim(self, outbox_id: str, expected_state: str, owner: str, lease_seconds: int) -> dict[str, Any] | None:
@@ -234,6 +242,7 @@ class MongoMailStore:
         records = list(self.outbox.find(query, {"_id": 0, "id": 1, "caseId": 1, "operationId": 1,
                         "purpose": 1, "state": 1, "deliveryState": 1, "providerMessageId": 1,
                         "providerThreadId": 1, "receivingEvidence": 1, "lastError": 1, "updatedAt": 1,
-                        "holdReason": 1, "attemptCount": 1}).limit(100))
+                        "holdReason": 1, "attemptCount": 1, "sentAt": 1, "sentEvidence": 1,
+                        "createdAt": 1, "nextAttemptAt": 1, "receivedAt": 1, "scriptedDemo": 1, "scriptedDueAt": 1}).limit(100))
         return {"provider": "agentmail", "controlledDemo": True, "outbox": records,
                 "messagesStored": self.messages.count_documents({"caseId": case_id} if case_id else {})}

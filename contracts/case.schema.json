@@ -104,7 +104,9 @@
             "RESIDENT_REPORT_FILED",
             "RESIDENT_INFORMATION_NEEDED",
             "RESIDENT_NOTIFICATION",
-            "RESIDENT_NEEDS_ASSISTANCE"
+            "RESIDENT_NEEDS_ASSISTANCE",
+            "RESIDENT_SCRIPTED_SUBMITTED",
+            "RESIDENT_SCRIPTED_RESOLVED"
           ],
           "title": "Purpose",
           "type": "string"
@@ -385,6 +387,11 @@
       },
       "title": "Notificationprogress",
       "type": "array"
+    },
+    "scriptedEmailDemo": {
+      "default": false,
+      "title": "Scriptedemaildemo",
+      "type": "boolean"
     },
     "stage": {
       "title": "Stage",
