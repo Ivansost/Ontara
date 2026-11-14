@@ -496,6 +496,8 @@ def create_app(settings: Settings | None = None, store: Store | None = None) -> 
                     raise HTTPException(503, "Mail transport is not ready")
                 return getattr(target, name)
         app.include_router(build_router(MailProxy()), dependencies=internal_auth)
+    from .voice import register_voice
+    register_voice(app)
     return app
 
 

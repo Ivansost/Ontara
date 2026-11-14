@@ -1,0 +1,114 @@
+# Ontara browser voice
+
+Voice fills in the active report's existing authored questions. The resident
+stops voice, checks the written report and named recipient, and uses the existing
+versioned approval controls. There is no voice approval or submission tool.
+Inactive categories never mount voice or call its API.
+
+## Configuration
+
+Set these **only on the API service**, through its private environment:
+
+- `ELEVENLABS_API_KEY`
+- `ELEVENLABS_AGENT_ID`
+- `ONTARA_VOICE_ENABLED=true`
+
+The web service needs no ElevenLabs secret. It forwards authenticated resident
+requests through the existing same-origin API proxy. The API issues a provider
+single-use signed URL with a reserved conversation ID. The SDK receives that
+capability, never the workspace key. The intake buffer expires after ten minutes;
+the configured provider conversation has a separate 180-second duration limit.
+
+The project uses `@elevenlabs/react` 1.22.1 (client SDK 1.36.1). The Next webpack
+configuration resolves LiveKit's official CommonJS distribution because this
+project's existing Next/Babel pipeline rejects two ESM named imports. Astryx,
+StyleX, React, Next and the existing Babel configuration remain in place.
+
+The private ElevenLabs agent uses its **managed** `gemini-3.5-flash-lite` option,
+not a custom LLM or a Google API key. Its English voice uses `eleven_flash_v2`.
+It requires authentication, disables audio recording, retains provider transcripts
+for seven days, limits a conversation to three minutes, and caps concurrency at
+two and conversations at twelve per day. The API also limits a browser owner to
+three issued sessions per UTC day and stops issuing sessions below 1,500 remaining
+credits. No paid upgrade, phone number or telephone integration is configured.
+
+Run `provision.py` with a private environment or `--env-file` to create/recheck
+the named Ontara agent. `--update` explicitly reapplies the checked configuration.
+It reuses an existing named agent and does not print credentials or signed URLs.
+Do not place a credential-bearing env file in the repository.
+
+## Consent, validation and storage
+
+The microphone is requested only after the resident checks the voice consent
+control and presses **Start voice**. Permission denial keeps the form usable.
+Cancel, Stop, route exit and connection errors release the input; generation
+fencing prevents an old permission request, SDK connection or tool response from
+changing a newer attempt. Manual form edits stop the active voice input.
+
+Only three client tools exist: `get_intake_state`, `record_answer` and
+`skip_question`. The API accepts only the current visible authored question,
+valid option values and the existing date/length validation. Required answers
+cannot be skipped. Immediate danger stops normal intake. Model assertions grant
+no authority. Voice cannot create an operation, approve, submit, contact an
+authority or change a recipient.
+
+`voice_sessions` stores the private consented intake buffer, canonical answers,
+questionnaire version, fixed incident/recipient, reserved provider ID and status.
+It never stores the signed capability. Normal web save creates/updates the case;
+an owner-checked bind links voice history to that exact issue/location and case
+version, without changing case content or approval. Material web edits continue
+to invalidate approval through the existing API.
+
+Only an actual provider conversation response can create a `call_records` entry.
+The API fetches the transcript itself for its reserved conversation ID, verifies
+the agent/conversation match, and retains role/message/timing fields in Atlas.
+Client-provided transcript or arbitrary conversation IDs are not accepted.
+Recording is disabled and its reference is null; no audio is invented or fetched.
+History reads require the same private case owner. Private voice history never
+enters `service_procedures`, `procedural_lessons` or shared vector memory.
+
+Foreground transcript requests have bounded deadlines and do not block ordinary
+reporting indefinitely. A small API lifecycle reader reconciles pending reserved
+IDs after browser exit or API restart (at most three checks per tick, with a
+lease and twenty-four checks per record). It only reads provider transcripts;
+it cannot start a conversation, approve a report or dispatch a job. Atlas records
+are retained through judging; this integration adds no automatic deletion.
+
+## Verification
+
+The requested `npx -y @elevenlabs/cli@latest onboard init` completed with the
+privately supplied environment key. Authenticated account, subscription, model,
+Agents and workspace-settings reads passed; private-agent creation, update and
+single-use signed-session issuance also passed. The account initially reported
+Free, 0 of 10,000 credits used. This does not establish Creator coupon redemption
+or an exhaustive API-key scope inventory. Recheck the current balance after tests.
+
+The controlled `text_smoke.mjs` uses real ElevenLabs model/tool responses and the
+actual Atlas-backed case API. It answers the canonical questions, skips the
+optional date, receives the named-recipient review, saves one synthetic unapproved
+draft and links the actual provider transcript. It verifies fresh-session history
+denial and no approved version/operation/submission. It uses no microphone and
+produces no audio. Sanitized counts/booleans are in `evidence/`; full receiving IDs
+and credentials stay outside Git. Text success does **not** establish audio or
+microphone success.
+
+For a loopback-only integration test, run `dev_api.py` using the existing API
+environment. It explicitly disables mail and dispatch, listens on port 8027,
+and accepts the local web preview on port 3027. Then run:
+
+```sh
+node scripts/voice/text_smoke.mjs
+```
+
+`services/api/tests/test_voice.py` covers question/branch guards, urgent handoff,
+replay/limits, owner privacy, expiry, exact case linking, provider authenticity,
+recording/capability checks, and transcript catch-up after restart. The frontend
+`voice-intake.spec.ts` uses intercepted APIs and synthetic permission outcomes to
+check consent, denied/pending microphone fallback, inactive isolation, retained
+manual approval, and bounded transcript work. No browser test may use the user's
+real microphone without their browser permission.
+
+Official references: [onboarding/authentication](https://elevenlabs.io/docs/api-reference/authentication),
+[React SDK](https://elevenlabs.io/docs/eleven-agents/libraries/react),
+[private sessions](https://elevenlabs.io/docs/api-reference/conversations/get-signed-url),
+[privacy](https://elevenlabs.io/docs/eleven-agents/customization/privacy).

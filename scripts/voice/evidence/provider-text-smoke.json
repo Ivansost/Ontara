@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-11-14T17:43:26.596Z",
+  "status": "passed",
+  "testMode": "provider_text_only",
+  "microphoneUsed": false,
+  "audioProduced": false,
+  "audioRecording": false,
+  "managedModel": "gemini-3.5-flash-lite",
+  "authoredAnswerIds": [
+    "immediateDanger",
+    "roadPosition",
+    "travelDirection",
+    "description"
+  ],
+  "providerToolCalls": [
+    "get_intake_state",
+    "record_answer",
+    "record_answer",
+    "record_answer",
+    "skip_question",
+    "record_answer"
+  ],
+  "providerEventCounts": {
+    "conversation_initiation_metadata": 1,
+    "agent_chat_response_part": 40,
+    "agent_response": 6,
+    "client_tool_call": 6,
+    "ping": 5
+  },
+  "reviewSpoken": true,
+  "atlasTranscriptSaved": true,
+  "transcriptTurns": 11,
+  "sameCaseLink": true,
+  "crossSessionHistoryDenied": true,
+  "approvedVersion": null,
+  "operationCreated": false,
+  "actualSubmission": false
+}
