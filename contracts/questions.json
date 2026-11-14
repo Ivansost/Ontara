@@ -1,9 +1,9 @@
 {
-  "version": "2026-11-14.1",
+  "version": "2026-11-14.2",
   "issues": {
     "roads-pothole": {
       "issueId": "roads-pothole",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -14,15 +14,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -35,19 +38,23 @@
           "options": [
             {
               "value": "In travel lane",
-              "label": "In travel lane"
+              "label": "In travel lane",
+              "urgentHandoff": false
             },
             {
               "value": "On shoulder",
-              "label": "On shoulder"
+              "label": "On shoulder",
+              "urgentHandoff": false
             },
             {
               "value": "At curb",
-              "label": "At curb"
+              "label": "At curb",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -64,23 +71,28 @@
           "options": [
             {
               "value": "Northbound",
-              "label": "Northbound"
+              "label": "Northbound",
+              "urgentHandoff": false
             },
             {
               "value": "Southbound",
-              "label": "Southbound"
+              "label": "Southbound",
+              "urgentHandoff": false
             },
             {
               "value": "Eastbound",
-              "label": "Eastbound"
+              "label": "Eastbound",
+              "urgentHandoff": false
             },
             {
               "value": "Westbound",
-              "label": "Westbound"
+              "label": "Westbound",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -116,7 +128,7 @@
     },
     "roads-pavement": {
       "issueId": "roads-pavement",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -127,15 +139,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -148,19 +163,23 @@
           "options": [
             {
               "value": "In travel lane",
-              "label": "In travel lane"
+              "label": "In travel lane",
+              "urgentHandoff": false
             },
             {
               "value": "On shoulder",
-              "label": "On shoulder"
+              "label": "On shoulder",
+              "urgentHandoff": false
             },
             {
               "value": "At curb",
-              "label": "At curb"
+              "label": "At curb",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -177,23 +196,28 @@
           "options": [
             {
               "value": "Northbound",
-              "label": "Northbound"
+              "label": "Northbound",
+              "urgentHandoff": false
             },
             {
               "value": "Southbound",
-              "label": "Southbound"
+              "label": "Southbound",
+              "urgentHandoff": false
             },
             {
               "value": "Eastbound",
-              "label": "Eastbound"
+              "label": "Eastbound",
+              "urgentHandoff": false
             },
             {
               "value": "Westbound",
-              "label": "Westbound"
+              "label": "Westbound",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -229,7 +253,7 @@
     },
     "roads-debris-loose": {
       "issueId": "roads-debris-loose",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -240,15 +264,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -261,19 +288,23 @@
           "options": [
             {
               "value": "In travel lane",
-              "label": "In travel lane"
+              "label": "In travel lane",
+              "urgentHandoff": false
             },
             {
               "value": "On shoulder",
-              "label": "On shoulder"
+              "label": "On shoulder",
+              "urgentHandoff": false
             },
             {
               "value": "At curb",
-              "label": "At curb"
+              "label": "At curb",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -290,23 +321,28 @@
           "options": [
             {
               "value": "Northbound",
-              "label": "Northbound"
+              "label": "Northbound",
+              "urgentHandoff": false
             },
             {
               "value": "Southbound",
-              "label": "Southbound"
+              "label": "Southbound",
+              "urgentHandoff": false
             },
             {
               "value": "Eastbound",
-              "label": "Eastbound"
+              "label": "Eastbound",
+              "urgentHandoff": false
             },
             {
               "value": "Westbound",
-              "label": "Westbound"
+              "label": "Westbound",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -342,7 +378,7 @@
     },
     "roads-debris-object": {
       "issueId": "roads-debris-object",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -353,15 +389,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -374,19 +413,23 @@
           "options": [
             {
               "value": "In travel lane",
-              "label": "In travel lane"
+              "label": "In travel lane",
+              "urgentHandoff": false
             },
             {
               "value": "On shoulder",
-              "label": "On shoulder"
+              "label": "On shoulder",
+              "urgentHandoff": false
             },
             {
               "value": "At curb",
-              "label": "At curb"
+              "label": "At curb",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -403,23 +446,28 @@
           "options": [
             {
               "value": "Northbound",
-              "label": "Northbound"
+              "label": "Northbound",
+              "urgentHandoff": false
             },
             {
               "value": "Southbound",
-              "label": "Southbound"
+              "label": "Southbound",
+              "urgentHandoff": false
             },
             {
               "value": "Eastbound",
-              "label": "Eastbound"
+              "label": "Eastbound",
+              "urgentHandoff": false
             },
             {
               "value": "Westbound",
-              "label": "Westbound"
+              "label": "Westbound",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -455,7 +503,7 @@
     },
     "roads-sidewalk": {
       "issueId": "roads-sidewalk",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -466,15 +514,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -487,19 +538,23 @@
           "options": [
             {
               "value": "Along the sidewalk",
-              "label": "Along the sidewalk"
+              "label": "Along the sidewalk",
+              "urgentHandoff": false
             },
             {
               "value": "At a crossing",
-              "label": "At a crossing"
+              "label": "At a crossing",
+              "urgentHandoff": false
             },
             {
               "value": "At a driveway",
-              "label": "At a driveway"
+              "label": "At a driveway",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -535,7 +590,7 @@
     },
     "roads-curb": {
       "issueId": "roads-curb",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -546,15 +601,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -567,19 +625,23 @@
           "options": [
             {
               "value": "Along the road edge",
-              "label": "Along the road edge"
+              "label": "Along the road edge",
+              "urgentHandoff": false
             },
             {
               "value": "At a crossing",
-              "label": "At a crossing"
+              "label": "At a crossing",
+              "urgentHandoff": false
             },
             {
               "value": "At a driveway",
-              "label": "At a driveway"
+              "label": "At a driveway",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -615,7 +677,7 @@
     },
     "roads-sign": {
       "issueId": "roads-sign",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -626,15 +688,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -647,23 +712,28 @@
           "options": [
             {
               "value": "Stop sign",
-              "label": "Stop sign"
+              "label": "Stop sign",
+              "urgentHandoff": true
             },
             {
               "value": "Yield sign",
-              "label": "Yield sign"
+              "label": "Yield sign",
+              "urgentHandoff": true
             },
             {
               "value": "Street name",
-              "label": "Street name"
+              "label": "Street name",
+              "urgentHandoff": false
             },
             {
               "value": "Other",
-              "label": "Other"
+              "label": "Other",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -680,19 +750,23 @@
           "options": [
             {
               "value": "In travel lane",
-              "label": "In travel lane"
+              "label": "In travel lane",
+              "urgentHandoff": false
             },
             {
               "value": "On shoulder",
-              "label": "On shoulder"
+              "label": "On shoulder",
+              "urgentHandoff": false
             },
             {
               "value": "At curb",
-              "label": "At curb"
+              "label": "At curb",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -709,23 +783,28 @@
           "options": [
             {
               "value": "Northbound",
-              "label": "Northbound"
+              "label": "Northbound",
+              "urgentHandoff": false
             },
             {
               "value": "Southbound",
-              "label": "Southbound"
+              "label": "Southbound",
+              "urgentHandoff": false
             },
             {
               "value": "Eastbound",
-              "label": "Eastbound"
+              "label": "Eastbound",
+              "urgentHandoff": false
             },
             {
               "value": "Westbound",
-              "label": "Westbound"
+              "label": "Westbound",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -761,7 +840,7 @@
     },
     "roads-safety": {
       "issueId": "roads-safety",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -772,15 +851,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -793,23 +875,28 @@
           "options": [
             {
               "value": "Crossing visibility",
-              "label": "Crossing visibility"
+              "label": "Crossing visibility",
+              "urgentHandoff": false
             },
             {
               "value": "Vehicle speed",
-              "label": "Vehicle speed"
+              "label": "Vehicle speed",
+              "urgentHandoff": false
             },
             {
               "value": "Intersection layout",
-              "label": "Intersection layout"
+              "label": "Intersection layout",
+              "urgentHandoff": false
             },
             {
               "value": "Other",
-              "label": "Other"
+              "label": "Other",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -845,7 +932,7 @@
     },
     "graffiti-wall": {
       "issueId": "graffiti-wall",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -856,15 +943,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -877,11 +967,13 @@
           "options": [
             {
               "value": "Public wall",
-              "label": "Public wall"
+              "label": "Public wall",
+              "urgentHandoff": false
             },
             {
               "value": "Underpass",
-              "label": "Underpass"
+              "label": "Underpass",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -898,15 +990,18 @@
           "options": [
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": false
             },
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -942,7 +1037,7 @@
     },
     "graffiti-building": {
       "issueId": "graffiti-building",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -953,15 +1048,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -974,7 +1072,8 @@
           "options": [
             {
               "value": "Public building",
-              "label": "Public building"
+              "label": "Public building",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -991,15 +1090,18 @@
           "options": [
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": false
             },
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1035,7 +1137,7 @@
     },
     "graffiti-bench-bin": {
       "issueId": "graffiti-bench-bin",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -1046,15 +1148,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -1067,11 +1172,13 @@
           "options": [
             {
               "value": "Bench",
-              "label": "Bench"
+              "label": "Bench",
+              "urgentHandoff": false
             },
             {
               "value": "Public bin",
-              "label": "Public bin"
+              "label": "Public bin",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1088,15 +1195,18 @@
           "options": [
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": false
             },
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1132,7 +1242,7 @@
     },
     "graffiti-shelter": {
       "issueId": "graffiti-shelter",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -1143,15 +1253,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -1164,11 +1277,13 @@
           "options": [
             {
               "value": "Shelter",
-              "label": "Shelter"
+              "label": "Shelter",
+              "urgentHandoff": false
             },
             {
               "value": "Other fixture",
-              "label": "Other fixture"
+              "label": "Other fixture",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1185,15 +1300,18 @@
           "options": [
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": false
             },
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1229,7 +1347,7 @@
     },
     "graffiti-private-wall": {
       "issueId": "graffiti-private-wall",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -1240,15 +1358,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -1261,11 +1382,13 @@
           "options": [
             {
               "value": "Private building",
-              "label": "Private building"
+              "label": "Private building",
+              "urgentHandoff": false
             },
             {
               "value": "Private wall",
-              "label": "Private wall"
+              "label": "Private wall",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1282,15 +1405,18 @@
           "options": [
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": false
             },
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1331,19 +1457,23 @@
           "options": [
             {
               "value": "Owner",
-              "label": "Owner"
+              "label": "Owner",
+              "urgentHandoff": false
             },
             {
               "value": "Tenant",
-              "label": "Tenant"
+              "label": "Tenant",
+              "urgentHandoff": false
             },
             {
               "value": "Neither",
-              "label": "Neither"
+              "label": "Neither",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1355,7 +1485,7 @@
     },
     "graffiti-fence": {
       "issueId": "graffiti-fence",
-      "version": "2026-11-14.1",
+      "version": "2026-11-14.2",
       "questions": [
         {
           "id": "immediateDanger",
@@ -1366,15 +1496,18 @@
           "options": [
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": true
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": true
             }
           ]
         },
@@ -1387,7 +1520,8 @@
           "options": [
             {
               "value": "Fence",
-              "label": "Fence"
+              "label": "Fence",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1404,15 +1538,18 @@
           "options": [
             {
               "value": "Yes",
-              "label": "Yes"
+              "label": "Yes",
+              "urgentHandoff": false
             },
             {
               "value": "No",
-              "label": "No"
+              "label": "No",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {
@@ -1453,19 +1590,23 @@
           "options": [
             {
               "value": "Owner",
-              "label": "Owner"
+              "label": "Owner",
+              "urgentHandoff": false
             },
             {
               "value": "Tenant",
-              "label": "Tenant"
+              "label": "Tenant",
+              "urgentHandoff": false
             },
             {
               "value": "Neither",
-              "label": "Neither"
+              "label": "Neither",
+              "urgentHandoff": false
             },
             {
               "value": "Not sure",
-              "label": "Not sure"
+              "label": "Not sure",
+              "urgentHandoff": false
             }
           ],
           "visibleWhen": {

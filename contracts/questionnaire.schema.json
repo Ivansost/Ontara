@@ -92,6 +92,11 @@
         "label": {
           "title": "Label",
           "type": "string"
+        },
+        "urgentHandoff": {
+          "default": false,
+          "title": "Urgenthandoff",
+          "type": "boolean"
         }
       },
       "required": [

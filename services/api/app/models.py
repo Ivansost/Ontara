@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from typing import Any, Literal
+from urllib.parse import urlsplit
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from pydantic.alias_generators import to_camel
@@ -91,6 +92,7 @@ class OperationTransition(LeaseGuard):
 
 
 class Receipt(Contract):
+    schema_version: Literal[1] = 1
     ticket_id: str
     receipt_id: str
     run_id: str
@@ -106,6 +108,10 @@ class Receipt(Contract):
     form_payload_digest: str | None = None
     form_version: int | None = None
     receipt_signature: str | None = None
+    authority_id: str | None = None
+    route_id: str | None = None
+    form_snapshot_digest: str | None = None
+    is_demo: Literal[True] = True
 
 
 class ReceiptRecord(LeaseGuard):
@@ -133,6 +139,14 @@ class FollowUpRequest(Contract):
     operation_id: str | None = None
 
 
+class FollowUpInspectionRequest(Contract):
+    source_event_id: str
+    reason: str = Field(min_length=1, max_length=2000)
+    external_ticket_id: str
+    operation_id: str
+    withhold_lesson_ids: list[str] = Field(default_factory=list, max_length=100)
+
+
 class Municipality(Contract):
     id: str
     name: str
@@ -148,6 +162,11 @@ class Municipality(Contract):
     source_version: str = "1"
     boundary: dict[str, Any] | None = None
 
+    @field_validator("official_url")
+    @classmethod
+    def official_url_is_web(cls, value: str) -> str:
+        return web_url(value)
+
 
 class SourceReference(Contract):
     id: str
@@ -162,6 +181,11 @@ class SourceReference(Contract):
     artifact_ids: list[str] = Field(default_factory=list)
     gaps: list[str] = Field(default_factory=list)
     verification_status: Literal["verified", "partial", "unavailable"] = "verified"
+
+    @field_validator("url")
+    @classmethod
+    def source_url_is_web(cls, value: str) -> str:
+        return web_url(value)
 
 
 class FormField(Contract):
@@ -215,6 +239,11 @@ class ServiceProcedure(Contract):
     verified_at: datetime
     valid_until: datetime | None = None
 
+    @field_validator("official_form_url")
+    @classmethod
+    def form_url_is_web(cls, value: str | None) -> str | None:
+        return web_url(value) if value else value
+
 
 class ArtifactUpload(Contract):
     id: str
@@ -265,6 +294,7 @@ class VisibilityCondition(Contract):
 class QuestionOption(Contract):
     value: str
     label: str
+    urgent_handoff: bool = False
 
 
 class Question(Contract):
@@ -330,6 +360,7 @@ class CaseView(Contract):
     updated_at: datetime
     cancelled_at: datetime | None = None
     run_id: str
+    questionnaire_version: str | None = None
 
 
 class TimelineView(Contract):
@@ -339,3 +370,10 @@ class TimelineView(Contract):
 class Coordinates(Contract):
     latitude: float = Field(ge=-90, le=90)
     longitude: float = Field(ge=-180, le=180)
+
+
+def web_url(value: str) -> str:
+    parsed = urlsplit(value)
+    if parsed.scheme not in {"http", "https"} or not parsed.hostname or parsed.username or parsed.password:
+        raise ValueError("A public HTTP(S) URL without embedded credentials is required")
+    return value
