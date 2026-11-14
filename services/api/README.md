@@ -64,7 +64,13 @@ authored missing-fact question. Email never grants write approval. Resident answ
 require another explicit approval before an update operation can exist. Inspection
 results never mutate the already-verified create operation.
 
-If `ONTARA_AGENT_DISPATCH_URL` is set, a restartable notifier scans durable queued jobs
+Set `ONTARA_EXECUTOR_BASE_URL` to the executor's HTTPS origin to derive the dispatch
+endpoint `/internal/v1/run`. This can reference Render's `RENDER_EXTERNAL_URL` across
+services. A nonblank `ONTARA_AGENT_DISPATCH_URL` overrides the derived endpoint. Local
+HTTP origins are accepted for development; blank settings keep dispatch disabled and
+relative or malformed URLs are rejected.
+
+When dispatch is configured, a restartable notifier scans durable queued jobs
 and sends `{caseId,jobId}` with internal authentication. Notifications are retryable;
 the Atlas lease controls execution. Leave this unset until the selected cloud runtime
 has been verified. No in-memory job queue or Redis is required.
