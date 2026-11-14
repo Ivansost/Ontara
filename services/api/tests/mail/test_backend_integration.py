@@ -11,16 +11,26 @@ from app.storage import Store
 from .test_mail import Provider, env
 
 
-def test_real_backend_schedules_one_read_only_inspection_without_question(env):
+def test_real_backend_schedules_one_read_only_inspection_without_question(env, monkeypatch):
     settings = env[-1]
     db = mongomock.MongoClient(tz_aware=True).ontara
     store = Store(db, transactions=False)
     store.ensure_indexes()
     cases = CaseService(store, Settings())
+    # This test verifies mail/ledger ordering, not Atlas native retrieval. Mongomock
+    # has no search-index/text-query implementation; the production native gate stays intact.
+    monkeypatch.setattr(cases, "_knowledge", lambda issue_id, authority_id: {
+        "status": "ready", "evidence": {"testFixture": True, "nativeQuery": False},
+        "selected": {"id": "test-fixture-halton-roads", "authorityId": authority_id,
+                     "sourceVersion": "test-fixture-1", "verificationStatus": "verified",
+                     "integrationStatus": "demo_tested", "title": "Test fixture only",
+                     "sourceRefs": [{"id": "test-fixture-source", "sourceVersion": "test-fixture-1",
+                                     "title": "Test fixture only", "url": "https://example.invalid/test-fixture"}]},
+    })
     case = cases.create_case("synthetic-test-session", CaseCreate(
         issueId="roads-pothole",
         location={"municipalityId": "milton-town", "upperTierId": "halton-region",
-                  "fixtureId": "halton-regional-road", "incidentAddress": "Synthetic test regional road", "confirmed": True},
+                  "fixtureId": "halton-regional-road", "incidentAddress": "Regional Road 25 at Louis St. Laurent Avenue, Milton", "confirmed": True},
         answers={"immediateDanger": "No", "roadPosition": "In travel lane", "travelDirection": "Northbound",
                  "description": "A synthetic pothole for a test."},
     ))
