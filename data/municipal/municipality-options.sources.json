@@ -1,0 +1,43 @@
+{
+  "source": {
+    "datasetUrl": "https://data.ontario.ca/en/dataset/municipalities",
+    "resourceUrl": "https://data.ontario.ca/dataset/62e83cbc-0731-4d66-abdc-2f2b31bcd76c/resource/6783a586-6b05-4a73-9663-e60a6963c91e/download/municipalities_-_en_2026-0526.csv",
+    "verifiedAt": "2026-11-14T19:13:04Z",
+    "sha256": "5370b4e1b3804d10059c67513db9ea59d61bba964096f8e5b35f4a8afd973196"
+  },
+  "publisher": "Ontario Ministry of Municipal Affairs and Housing",
+  "datasetId": "62e83cbc-0731-4d66-abdc-2f2b31bcd76c",
+  "resourceId": "6783a586-6b05-4a73-9663-e60a6963c91e",
+  "resourceEdition": "2026-05-26 (date in published filename)",
+  "metadataUrl": "https://data.ontario.ca/api/3/action/package_show?id=municipalities",
+  "metadataModified": "2026-06-03T14:30:02.953189",
+  "resourceLastModified": "2026-06-03T14:29:12.658364",
+  "sourceByteLength": 56886,
+  "sourceColumns": [
+    "Municipality",
+    "Municipal status",
+    "Geographic area"
+  ],
+  "license": {
+    "name": "Open Government Licence – Ontario",
+    "url": "https://www.ontario.ca/page/open-government-licence-ontario",
+    "attribution": "Contains information licensed under the Open Government Licence – Ontario."
+  },
+  "directory": {
+    "path": "contracts/municipalities.json",
+    "sha256": "36d90d1ab6724e7947bfd53fc37bb1ee0f90197b6801ee1da5616301ba5fec00",
+    "counts": {
+      "total": 444,
+      "lowerTier": 241,
+      "singleTier": 173,
+      "upperTier": 30
+    },
+    "preservedImportedIds": 207
+  },
+  "scope": "Location selection metadata only. No procedure, integration, boundary, geocoding or live-intake coverage is established by inclusion.",
+  "exclusions": [
+    "Only the 444 municipal corporations present in the official registry are directory options.",
+    "Northern geographic districts are not added as upper-tier municipal corporations.",
+    "Unorganized territories, First Nations reserves, neighbourhoods and other communities absent from this municipality registry remain available through the existing manual-location fallback."
+  ]
+}

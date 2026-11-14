@@ -1,0 +1,6230 @@
+{
+  "version": 1,
+  "source": {
+    "datasetUrl": "https://data.ontario.ca/en/dataset/municipalities",
+    "resourceUrl": "https://data.ontario.ca/dataset/62e83cbc-0731-4d66-abdc-2f2b31bcd76c/resource/6783a586-6b05-4a73-9663-e60a6963c91e/download/municipalities_-_en_2026-0526.csv",
+    "verifiedAt": "2026-11-14T19:13:04Z",
+    "sha256": "5370b4e1b3804d10059c67513db9ea59d61bba964096f8e5b35f4a8afd973196"
+  },
+  "counts": {
+    "total": 444,
+    "lowerTier": 241,
+    "singleTier": 173,
+    "upperTier": 30
+  },
+  "options": [
+    {
+      "id": "addington-highlands-township",
+      "label": "Addington Highlands, Lennox and Addington County",
+      "name": "Addington Highlands",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lennox-and-addington-county",
+      "upperTierName": "Lennox and Addington County",
+      "geographicArea": "Lennox and Addington",
+      "aliases": [
+        "Addington Highlands, Township of",
+        "Township of Addington Highlands"
+      ]
+    },
+    {
+      "id": "adelaide-metcalfe-township",
+      "label": "Adelaide-Metcalfe, Middlesex County",
+      "name": "Adelaide-Metcalfe",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Adelaide-Metcalfe, Township of",
+        "Township of Adelaide-Metcalfe"
+      ]
+    },
+    {
+      "id": "adjala-tosorontio-township",
+      "label": "Adjala-Tosorontio, Simcoe County",
+      "name": "Adjala-Tosorontio",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Adjala-Tosorontio, Township of",
+        "Township of Adjala-Tosorontio"
+      ]
+    },
+    {
+      "id": "admaston-bromley-township",
+      "label": "Admaston/Bromley, Renfrew County",
+      "name": "Admaston/Bromley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Admaston/Bromley, Township of",
+        "Township of Admaston/Bromley"
+      ]
+    },
+    {
+      "id": "ajax-town",
+      "label": "Ajax, Durham Region",
+      "name": "Ajax",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Ajax, Town of",
+        "Town of Ajax"
+      ]
+    },
+    {
+      "id": "alberton-township",
+      "label": "Alberton",
+      "name": "Alberton",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Alberton, Township of",
+        "Township of Alberton"
+      ]
+    },
+    {
+      "id": "alfred-and-plantagenet-township",
+      "label": "Alfred and Plantagenet, United Counties of Prescott and Russell",
+      "name": "Alfred and Plantagenet",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "Alfred and Plantagenet, Township of",
+        "Township of Alfred and Plantagenet"
+      ]
+    },
+    {
+      "id": "algonquin-highlands-township",
+      "label": "Algonquin Highlands, Haliburton County",
+      "name": "Algonquin Highlands",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "haliburton-county",
+      "upperTierName": "Haliburton County",
+      "geographicArea": "Haliburton",
+      "aliases": [
+        "Algonquin Highlands, Township of",
+        "Township of Algonquin Highlands"
+      ]
+    },
+    {
+      "id": "alnwick-haldimand-township",
+      "label": "Alnwick/Haldimand, Northumberland County",
+      "name": "Alnwick/Haldimand",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "northumberland-county",
+      "upperTierName": "Northumberland County",
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Alnwick/Haldimand, Township of",
+        "Township of Alnwick/Haldimand"
+      ]
+    },
+    {
+      "id": "amaranth-township",
+      "label": "Amaranth, Dufferin County",
+      "name": "Amaranth",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Amaranth, Township of",
+        "Township of Amaranth"
+      ]
+    },
+    {
+      "id": "amherstburg-town",
+      "label": "Amherstburg, Essex County",
+      "name": "Amherstburg",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "essex-county",
+      "upperTierName": "Essex County",
+      "geographicArea": "Essex",
+      "aliases": [
+        "Amherstburg, Town of",
+        "Town of Amherstburg"
+      ]
+    },
+    {
+      "id": "armour-township",
+      "label": "Armour",
+      "name": "Armour",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Armour, Township of",
+        "Township of Armour"
+      ]
+    },
+    {
+      "id": "armstrong-township",
+      "label": "Armstrong",
+      "name": "Armstrong",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Armstrong, Township of",
+        "Township of Armstrong"
+      ]
+    },
+    {
+      "id": "arnprior-town",
+      "label": "Arnprior, Renfrew County",
+      "name": "Arnprior",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Arnprior, Town of",
+        "Town of Arnprior"
+      ]
+    },
+    {
+      "id": "arran-elderslie-municipality",
+      "label": "Arran-Elderslie, Bruce County",
+      "name": "Arran-Elderslie",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "Arran-Elderslie, Municipality of",
+        "Municipality of Arran-Elderslie"
+      ]
+    },
+    {
+      "id": "ashfield-colborne-wawanosh-township",
+      "label": "Ashfield-Colborne-Wawanosh, Huron County",
+      "name": "Ashfield-Colborne-Wawanosh",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "Ashfield-Colborne-Wawanosh, Township of",
+        "Township of Ashfield-Colborne-Wawanosh"
+      ]
+    },
+    {
+      "id": "asphodel-norwood-township",
+      "label": "Asphodel-Norwood, Peterborough County",
+      "name": "Asphodel-Norwood",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Asphodel-Norwood, Township of",
+        "Township of Asphodel-Norwood"
+      ]
+    },
+    {
+      "id": "assiginack-township",
+      "label": "Assiginack",
+      "name": "Assiginack",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Assiginack, Township of",
+        "Township of Assiginack"
+      ]
+    },
+    {
+      "id": "athens-township",
+      "label": "Athens, United Counties of Leeds and Grenville",
+      "name": "Athens",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Athens, Township of",
+        "Township of Athens"
+      ]
+    },
+    {
+      "id": "atikokan-town",
+      "label": "Atikokan",
+      "name": "Atikokan",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Atikokan, Town of",
+        "Town of Atikokan"
+      ]
+    },
+    {
+      "id": "augusta-township",
+      "label": "Augusta, United Counties of Leeds and Grenville",
+      "name": "Augusta",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Augusta, Township of",
+        "Township of Augusta"
+      ]
+    },
+    {
+      "id": "aurora-town",
+      "label": "Aurora, York Region",
+      "name": "Aurora",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "Aurora, Town of",
+        "Town of Aurora"
+      ]
+    },
+    {
+      "id": "aylmer-town",
+      "label": "Aylmer, Elgin County",
+      "name": "Aylmer",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "elgin-county",
+      "upperTierName": "Elgin County",
+      "geographicArea": "Elgin",
+      "aliases": [
+        "Aylmer, Town of",
+        "Town of Aylmer"
+      ]
+    },
+    {
+      "id": "baldwin-township",
+      "label": "Baldwin",
+      "name": "Baldwin",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Baldwin, Township of",
+        "Township of Baldwin"
+      ]
+    },
+    {
+      "id": "bancroft-town",
+      "label": "Bancroft, Hastings County",
+      "name": "Bancroft",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Bancroft, Town of",
+        "Town of Bancroft"
+      ]
+    },
+    {
+      "id": "barrie-city",
+      "label": "Barrie",
+      "name": "Barrie",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Barrie, City of",
+        "City of Barrie"
+      ]
+    },
+    {
+      "id": "bayham-municipality",
+      "label": "Bayham, Elgin County",
+      "name": "Bayham",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "elgin-county",
+      "upperTierName": "Elgin County",
+      "geographicArea": "Elgin",
+      "aliases": [
+        "Bayham, Municipality of",
+        "Municipality of Bayham"
+      ]
+    },
+    {
+      "id": "beckwith-township",
+      "label": "Beckwith, Lanark County",
+      "name": "Beckwith",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Beckwith, Township of",
+        "Township of Beckwith"
+      ]
+    },
+    {
+      "id": "belleville-city",
+      "label": "Belleville",
+      "name": "Belleville",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Belleville, City of",
+        "City of Belleville"
+      ]
+    },
+    {
+      "id": "billings-township",
+      "label": "Billings",
+      "name": "Billings",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Billings, Township of",
+        "Township of Billings"
+      ]
+    },
+    {
+      "id": "black-river-matheson-township",
+      "label": "Black River-Matheson",
+      "name": "Black River-Matheson",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Black River-Matheson, Township of",
+        "Township of Black River-Matheson"
+      ]
+    },
+    {
+      "id": "blandford-blenheim-township",
+      "label": "Blandford-Blenheim, Oxford County",
+      "name": "Blandford-Blenheim",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "Blandford-Blenheim, Township of",
+        "Township of Blandford-Blenheim"
+      ]
+    },
+    {
+      "id": "blind-river-town",
+      "label": "Blind River",
+      "name": "Blind River",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Blind River, Town of",
+        "Town of Blind River"
+      ]
+    },
+    {
+      "id": "bluewater-municipality",
+      "label": "Bluewater, Huron County",
+      "name": "Bluewater",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "Bluewater, Municipality of",
+        "Municipality of Bluewater"
+      ]
+    },
+    {
+      "id": "bonfield-township",
+      "label": "Bonfield",
+      "name": "Bonfield",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "Bonfield, Township of",
+        "Township of Bonfield"
+      ]
+    },
+    {
+      "id": "bonnechere-valley-township",
+      "label": "Bonnechere Valley, Renfrew County",
+      "name": "Bonnechere Valley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Bonnechere Valley, Township of",
+        "Township of Bonnechere Valley"
+      ]
+    },
+    {
+      "id": "bracebridge-town",
+      "label": "Bracebridge, Muskoka District Municipality",
+      "name": "Bracebridge",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "muskoka-district",
+      "upperTierName": "Muskoka District Municipality",
+      "geographicArea": "Muskoka",
+      "aliases": [
+        "Bracebridge, Town of",
+        "Town of Bracebridge"
+      ]
+    },
+    {
+      "id": "bradford-west-gwillimbury-town",
+      "label": "Bradford West Gwillimbury, Simcoe County",
+      "name": "Bradford West Gwillimbury",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Bradford West Gwillimbury, Town of",
+        "Town of Bradford West Gwillimbury"
+      ]
+    },
+    {
+      "id": "brampton-city",
+      "label": "Brampton, Peel Region",
+      "name": "Brampton",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "peel-region",
+      "upperTierName": "Peel Region",
+      "geographicArea": "Peel",
+      "aliases": [
+        "Brampton, City of",
+        "City of Brampton"
+      ]
+    },
+    {
+      "id": "brant-county",
+      "label": "Brant County",
+      "name": "Brant",
+      "tier": "single",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Brant",
+      "aliases": [
+        "Brant, County of",
+        "County of Brant"
+      ]
+    },
+    {
+      "id": "brantford-city",
+      "label": "Brantford",
+      "name": "Brantford",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Brant",
+      "aliases": [
+        "Brantford, City of",
+        "City of Brantford"
+      ]
+    },
+    {
+      "id": "brethour-township",
+      "label": "Brethour",
+      "name": "Brethour",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Brethour, Township of",
+        "Township of Brethour"
+      ]
+    },
+    {
+      "id": "brighton-municipality",
+      "label": "Brighton, Northumberland County",
+      "name": "Brighton",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "northumberland-county",
+      "upperTierName": "Northumberland County",
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Brighton, Municipality of",
+        "Municipality of Brighton"
+      ]
+    },
+    {
+      "id": "brock-township",
+      "label": "Brock, Durham Region",
+      "name": "Brock",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Brock, Township of",
+        "Township of Brock"
+      ]
+    },
+    {
+      "id": "brockton-municipality",
+      "label": "Brockton, Bruce County",
+      "name": "Brockton",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "Brockton, Municipality of",
+        "Municipality of Brockton"
+      ]
+    },
+    {
+      "id": "brockville-city",
+      "label": "Brockville",
+      "name": "Brockville",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Brockville, City of",
+        "City of Brockville"
+      ]
+    },
+    {
+      "id": "brooke-alvinston-municipality",
+      "label": "Brooke-Alvinston, Lambton County",
+      "name": "Brooke-Alvinston",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Brooke-Alvinston, Municipality of",
+        "Municipality of Brooke-Alvinston"
+      ]
+    },
+    {
+      "id": "bruce-county",
+      "label": "Bruce County",
+      "name": "Bruce",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Bruce",
+      "aliases": [
+        "Bruce, County of",
+        "County of Bruce"
+      ]
+    },
+    {
+      "id": "bruce-mines-town",
+      "label": "Bruce Mines",
+      "name": "Bruce Mines",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Bruce Mines, Town of",
+        "Town of Bruce Mines"
+      ]
+    },
+    {
+      "id": "brudenell-lyndoch-and-raglan-township",
+      "label": "Brudenell, Lyndoch and Raglan, Renfrew County",
+      "name": "Brudenell, Lyndoch and Raglan",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Brudenell, Lyndoch and Raglan, Township of",
+        "Township of Brudenell, Lyndoch and Raglan"
+      ]
+    },
+    {
+      "id": "burks-falls-village",
+      "label": "Burk’s Falls",
+      "name": "Burk’s Falls",
+      "tier": "single",
+      "type": "village",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Burk’s Falls, Village of",
+        "Village of Burk’s Falls"
+      ]
+    },
+    {
+      "id": "burlington-city",
+      "label": "Burlington, Halton Region",
+      "name": "Burlington",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "halton-region",
+      "upperTierName": "Halton Region",
+      "geographicArea": "Halton",
+      "aliases": [
+        "Burlington, City of",
+        "City of Burlington"
+      ]
+    },
+    {
+      "id": "burpee-and-mills-township",
+      "label": "Burpee and Mills",
+      "name": "Burpee and Mills",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Burpee and Mills, Township of",
+        "Township of Burpee and Mills"
+      ]
+    },
+    {
+      "id": "caledon-town",
+      "label": "Caledon, Peel Region",
+      "name": "Caledon",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "peel-region",
+      "upperTierName": "Peel Region",
+      "geographicArea": "Peel",
+      "aliases": [
+        "Caledon, Town of",
+        "Town of Caledon"
+      ]
+    },
+    {
+      "id": "callander-municipality",
+      "label": "Callander",
+      "name": "Callander",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Callander, Municipality of",
+        "Municipality of Callander"
+      ]
+    },
+    {
+      "id": "calvin-municipality",
+      "label": "Calvin",
+      "name": "Calvin",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "Calvin, Municipality of",
+        "Municipality of Calvin"
+      ]
+    },
+    {
+      "id": "cambridge-city",
+      "label": "Cambridge, Waterloo Region",
+      "name": "Cambridge",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "waterloo-region",
+      "upperTierName": "Waterloo Region",
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "Cambridge, City of",
+        "City of Cambridge"
+      ]
+    },
+    {
+      "id": "carleton-place-town",
+      "label": "Carleton Place, Lanark County",
+      "name": "Carleton Place",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Carleton Place, Town of",
+        "Town of Carleton Place"
+      ]
+    },
+    {
+      "id": "carling-township",
+      "label": "Carling",
+      "name": "Carling",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Carling, Township of",
+        "Township of Carling"
+      ]
+    },
+    {
+      "id": "carlow-mayo-township",
+      "label": "Carlow/Mayo, Hastings County",
+      "name": "Carlow/Mayo",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Carlow/Mayo, Township of",
+        "Township of Carlow/Mayo"
+      ]
+    },
+    {
+      "id": "casey-township",
+      "label": "Casey",
+      "name": "Casey",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Casey, Township of",
+        "Township of Casey"
+      ]
+    },
+    {
+      "id": "casselman-municipality",
+      "label": "Casselman, United Counties of Prescott and Russell",
+      "name": "Casselman",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "Casselman, Municipality of",
+        "Municipality of Casselman"
+      ]
+    },
+    {
+      "id": "cavan-monaghan-township",
+      "label": "Cavan Monaghan, Peterborough County",
+      "name": "Cavan Monaghan",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Cavan Monaghan, Township of",
+        "Township of Cavan Monaghan"
+      ]
+    },
+    {
+      "id": "central-elgin-municipality",
+      "label": "Central Elgin, Elgin County",
+      "name": "Central Elgin",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "elgin-county",
+      "upperTierName": "Elgin County",
+      "geographicArea": "Elgin",
+      "aliases": [
+        "Central Elgin, Municipality of",
+        "Municipality of Central Elgin"
+      ]
+    },
+    {
+      "id": "central-frontenac-township",
+      "label": "Central Frontenac, Frontenac County",
+      "name": "Central Frontenac",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "frontenac-county",
+      "upperTierName": "Frontenac County",
+      "geographicArea": "Frontenac",
+      "aliases": [
+        "Central Frontenac, Township of",
+        "Township of Central Frontenac"
+      ]
+    },
+    {
+      "id": "central-huron-municipality",
+      "label": "Central Huron, Huron County",
+      "name": "Central Huron",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "Central Huron, Municipality of",
+        "Municipality of Central Huron"
+      ]
+    },
+    {
+      "id": "central-manitoulin-municipality",
+      "label": "Central Manitoulin",
+      "name": "Central Manitoulin",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Central Manitoulin, Municipality of",
+        "Municipality of Central Manitoulin"
+      ]
+    },
+    {
+      "id": "centre-hastings-municipality",
+      "label": "Centre Hastings, Hastings County",
+      "name": "Centre Hastings",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Centre Hastings, Municipality of",
+        "Municipality of Centre Hastings"
+      ]
+    },
+    {
+      "id": "centre-wellington-township",
+      "label": "Centre Wellington, Wellington County",
+      "name": "Centre Wellington",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "wellington-county",
+      "upperTierName": "Wellington County",
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Centre Wellington, Township of",
+        "Township of Centre Wellington"
+      ]
+    },
+    {
+      "id": "chamberlain-township",
+      "label": "Chamberlain",
+      "name": "Chamberlain",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Chamberlain, Township of",
+        "Township of Chamberlain"
+      ]
+    },
+    {
+      "id": "champlain-township",
+      "label": "Champlain, United Counties of Prescott and Russell",
+      "name": "Champlain",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "Champlain, Township of",
+        "Township of Champlain"
+      ]
+    },
+    {
+      "id": "chapleau-township",
+      "label": "Chapleau",
+      "name": "Chapleau",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Chapleau, Township of",
+        "Township of Chapleau"
+      ]
+    },
+    {
+      "id": "chapple-township",
+      "label": "Chapple",
+      "name": "Chapple",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Chapple, Township of",
+        "Township of Chapple"
+      ]
+    },
+    {
+      "id": "charlton-and-dack-municipality",
+      "label": "Charlton and Dack",
+      "name": "Charlton and Dack",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Charlton and Dack, Municipality of",
+        "Municipality of Charlton and Dack"
+      ]
+    },
+    {
+      "id": "chatham-kent-municipality",
+      "label": "Chatham-Kent",
+      "name": "Chatham-Kent",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Chatham-Kent",
+      "aliases": [
+        "Chatham-Kent, Municipality of",
+        "Municipality of Chatham-Kent"
+      ]
+    },
+    {
+      "id": "chatsworth-township",
+      "label": "Chatsworth, Grey County",
+      "name": "Chatsworth",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "Chatsworth, Township of",
+        "Township of Chatsworth"
+      ]
+    },
+    {
+      "id": "chisholm-township",
+      "label": "Chisholm",
+      "name": "Chisholm",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "Chisholm, Township of",
+        "Township of Chisholm"
+      ]
+    },
+    {
+      "id": "clarence-rockland-city",
+      "label": "Clarence-Rockland, United Counties of Prescott and Russell",
+      "name": "Clarence-Rockland",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "Clarence-Rockland, City of",
+        "City of Clarence-Rockland"
+      ]
+    },
+    {
+      "id": "clarington-municipality",
+      "label": "Clarington, Durham Region",
+      "name": "Clarington",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Clarington, Municipality of",
+        "Municipality of Clarington"
+      ]
+    },
+    {
+      "id": "clearview-township",
+      "label": "Clearview, Simcoe County",
+      "name": "Clearview",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Clearview, Township of",
+        "Township of Clearview"
+      ]
+    },
+    {
+      "id": "cobalt-town",
+      "label": "Cobalt",
+      "name": "Cobalt",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Cobalt, Town of",
+        "Town of Cobalt"
+      ]
+    },
+    {
+      "id": "cobourg-town",
+      "label": "Cobourg, Northumberland County",
+      "name": "Cobourg",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "northumberland-county",
+      "upperTierName": "Northumberland County",
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Cobourg, Town of",
+        "Town of Cobourg"
+      ]
+    },
+    {
+      "id": "cochrane-town",
+      "label": "Cochrane",
+      "name": "Cochrane",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Cochrane, Town of",
+        "Town of Cochrane"
+      ]
+    },
+    {
+      "id": "cockburn-island-township",
+      "label": "Cockburn Island",
+      "name": "Cockburn Island",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Cockburn Island, Township of",
+        "Township of Cockburn Island"
+      ]
+    },
+    {
+      "id": "coleman-township",
+      "label": "Coleman",
+      "name": "Coleman",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Coleman, Township of",
+        "Township of Coleman"
+      ]
+    },
+    {
+      "id": "collingwood-town",
+      "label": "Collingwood, Simcoe County",
+      "name": "Collingwood",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Collingwood, Town of",
+        "Town of Collingwood"
+      ]
+    },
+    {
+      "id": "conmee-township",
+      "label": "Conmee",
+      "name": "Conmee",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Conmee, Township of",
+        "Township of Conmee"
+      ]
+    },
+    {
+      "id": "cornwall-city",
+      "label": "Cornwall",
+      "name": "Cornwall",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "Cornwall, City of",
+        "City of Cornwall"
+      ]
+    },
+    {
+      "id": "cramahe-township",
+      "label": "Cramahe, Northumberland County",
+      "name": "Cramahe",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "northumberland-county",
+      "upperTierName": "Northumberland County",
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Cramahe, Township of",
+        "Township of Cramahe"
+      ]
+    },
+    {
+      "id": "dawn-euphemia-township",
+      "label": "Dawn-Euphemia, Lambton County",
+      "name": "Dawn-Euphemia",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Dawn-Euphemia, Township of",
+        "Township of Dawn-Euphemia"
+      ]
+    },
+    {
+      "id": "dawson-township",
+      "label": "Dawson",
+      "name": "Dawson",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Dawson, Township of",
+        "Township of Dawson"
+      ]
+    },
+    {
+      "id": "deep-river-town",
+      "label": "Deep River, Renfrew County",
+      "name": "Deep River",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Deep River, Town of",
+        "Town of Deep River"
+      ]
+    },
+    {
+      "id": "deseronto-town",
+      "label": "Deseronto, Hastings County",
+      "name": "Deseronto",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Deseronto, Town of",
+        "Town of Deseronto"
+      ]
+    },
+    {
+      "id": "dorion-township",
+      "label": "Dorion",
+      "name": "Dorion",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Dorion, Township of",
+        "Township of Dorion"
+      ]
+    },
+    {
+      "id": "douro-dummer-township",
+      "label": "Douro-Dummer, Peterborough County",
+      "name": "Douro-Dummer",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Douro-Dummer, Township of",
+        "Township of Douro-Dummer"
+      ]
+    },
+    {
+      "id": "drummond-north-elmsley-township",
+      "label": "Drummond/North Elmsley, Lanark County",
+      "name": "Drummond/North Elmsley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Drummond/North Elmsley, Township of",
+        "Township of Drummond/North Elmsley"
+      ]
+    },
+    {
+      "id": "dryden-city",
+      "label": "Dryden",
+      "name": "Dryden",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Dryden, City of",
+        "City of Dryden"
+      ]
+    },
+    {
+      "id": "dubreuilville-township",
+      "label": "Dubreuilville",
+      "name": "Dubreuilville",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Dubreuilville, Township of",
+        "Township of Dubreuilville"
+      ]
+    },
+    {
+      "id": "dufferin-county",
+      "label": "Dufferin County",
+      "name": "Dufferin",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Dufferin, County of",
+        "County of Dufferin"
+      ]
+    },
+    {
+      "id": "durham-region",
+      "label": "Durham Region",
+      "name": "Durham",
+      "tier": "upper",
+      "type": "regional-municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Durham",
+      "aliases": [
+        "Durham, Regional Municipality of",
+        "Regional Municipality of Durham"
+      ]
+    },
+    {
+      "id": "dutton-dunwich-municipality",
+      "label": "Dutton/Dunwich, Elgin County",
+      "name": "Dutton/Dunwich",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "elgin-county",
+      "upperTierName": "Elgin County",
+      "geographicArea": "Elgin",
+      "aliases": [
+        "Dutton/Dunwich, Municipality of",
+        "Municipality of Dutton/Dunwich"
+      ]
+    },
+    {
+      "id": "dysart-et-al-municipality",
+      "label": "Dysart et al, Haliburton County",
+      "name": "Dysart et al",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "haliburton-county",
+      "upperTierName": "Haliburton County",
+      "geographicArea": "Haliburton",
+      "aliases": [
+        "Dysart et al, Municipality of",
+        "Municipality of Dysart et al"
+      ]
+    },
+    {
+      "id": "ear-falls-township",
+      "label": "Ear Falls",
+      "name": "Ear Falls",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Ear Falls, Township of",
+        "Township of Ear Falls"
+      ]
+    },
+    {
+      "id": "east-ferris-municipality",
+      "label": "East Ferris",
+      "name": "East Ferris",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "East Ferris, Municipality of",
+        "Municipality of East Ferris"
+      ]
+    },
+    {
+      "id": "east-garafraxa-township",
+      "label": "East Garafraxa, Dufferin County",
+      "name": "East Garafraxa",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "East Garafraxa, Township of",
+        "Township of East Garafraxa"
+      ]
+    },
+    {
+      "id": "east-gwillimbury-town",
+      "label": "East Gwillimbury, York Region",
+      "name": "East Gwillimbury",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "East Gwillimbury, Town of",
+        "Town of East Gwillimbury"
+      ]
+    },
+    {
+      "id": "east-hawkesbury-township",
+      "label": "East Hawkesbury, United Counties of Prescott and Russell",
+      "name": "East Hawkesbury",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "East Hawkesbury, Township of",
+        "Township of East Hawkesbury"
+      ]
+    },
+    {
+      "id": "east-zorra-tavistock-township",
+      "label": "East Zorra-Tavistock, Oxford County",
+      "name": "East Zorra-Tavistock",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "East Zorra-Tavistock, Township of",
+        "Township of East Zorra-Tavistock"
+      ]
+    },
+    {
+      "id": "edwardsburgh-cardinal-township",
+      "label": "Edwardsburgh/Cardinal, United Counties of Leeds and Grenville",
+      "name": "Edwardsburgh/Cardinal",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Edwardsburgh/Cardinal, Township of",
+        "Township of Edwardsburgh/Cardinal"
+      ]
+    },
+    {
+      "id": "elgin-county",
+      "label": "Elgin County",
+      "name": "Elgin",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Elgin",
+      "aliases": [
+        "Elgin, County of",
+        "County of Elgin"
+      ]
+    },
+    {
+      "id": "elizabethtown-kitley-township",
+      "label": "Elizabethtown-Kitley, United Counties of Leeds and Grenville",
+      "name": "Elizabethtown-Kitley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Elizabethtown-Kitley, Township of",
+        "Township of Elizabethtown-Kitley"
+      ]
+    },
+    {
+      "id": "elliot-lake-city",
+      "label": "Elliot Lake",
+      "name": "Elliot Lake",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Elliot Lake, City of",
+        "City of Elliot Lake"
+      ]
+    },
+    {
+      "id": "emo-township",
+      "label": "Emo",
+      "name": "Emo",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Emo, Township of",
+        "Township of Emo"
+      ]
+    },
+    {
+      "id": "englehart-town",
+      "label": "Englehart",
+      "name": "Englehart",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Englehart, Town of",
+        "Town of Englehart"
+      ]
+    },
+    {
+      "id": "enniskillen-township",
+      "label": "Enniskillen, Lambton County",
+      "name": "Enniskillen",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Enniskillen, Township of",
+        "Township of Enniskillen"
+      ]
+    },
+    {
+      "id": "erin-town",
+      "label": "Erin, Wellington County",
+      "name": "Erin",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "wellington-county",
+      "upperTierName": "Wellington County",
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Erin, Town of",
+        "Town of Erin"
+      ]
+    },
+    {
+      "id": "espanola-town",
+      "label": "Espanola",
+      "name": "Espanola",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Espanola, Town of",
+        "Town of Espanola"
+      ]
+    },
+    {
+      "id": "essa-township",
+      "label": "Essa, Simcoe County",
+      "name": "Essa",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Essa, Township of",
+        "Township of Essa"
+      ]
+    },
+    {
+      "id": "essex-county",
+      "label": "Essex County",
+      "name": "Essex",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Essex",
+      "aliases": [
+        "Essex, County of",
+        "County of Essex"
+      ]
+    },
+    {
+      "id": "essex-town",
+      "label": "Essex, Essex County",
+      "name": "Essex",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "essex-county",
+      "upperTierName": "Essex County",
+      "geographicArea": "Essex",
+      "aliases": [
+        "Essex, Town of",
+        "Town of Essex"
+      ]
+    },
+    {
+      "id": "evanturel-township",
+      "label": "Evanturel",
+      "name": "Evanturel",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Evanturel, Township of",
+        "Township of Evanturel"
+      ]
+    },
+    {
+      "id": "faraday-township",
+      "label": "Faraday, Hastings County",
+      "name": "Faraday",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Faraday, Township of",
+        "Township of Faraday"
+      ]
+    },
+    {
+      "id": "fauquier-strickland-township",
+      "label": "Fauquier-Strickland",
+      "name": "Fauquier-Strickland",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Fauquier-Strickland, Township of",
+        "Township of Fauquier-Strickland"
+      ]
+    },
+    {
+      "id": "fort-erie-town",
+      "label": "Fort Erie, Niagara Region",
+      "name": "Fort Erie",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Fort Erie, Town of",
+        "Town of Fort Erie"
+      ]
+    },
+    {
+      "id": "fort-frances-town",
+      "label": "Fort Frances",
+      "name": "Fort Frances",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Fort Frances, Town of",
+        "Town of Fort Frances"
+      ]
+    },
+    {
+      "id": "french-river-municipality",
+      "label": "French River",
+      "name": "French River",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "French River, Municipality of",
+        "Municipality of French River"
+      ]
+    },
+    {
+      "id": "front-of-yonge-township",
+      "label": "Front of Yonge, United Counties of Leeds and Grenville",
+      "name": "Front of Yonge",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Front of Yonge, Township of",
+        "Township of Front of Yonge"
+      ]
+    },
+    {
+      "id": "frontenac-county",
+      "label": "Frontenac County",
+      "name": "Frontenac",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Frontenac",
+      "aliases": [
+        "Frontenac, County of",
+        "County of Frontenac"
+      ]
+    },
+    {
+      "id": "frontenac-islands-township",
+      "label": "Frontenac Islands, Frontenac County",
+      "name": "Frontenac Islands",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "frontenac-county",
+      "upperTierName": "Frontenac County",
+      "geographicArea": "Frontenac",
+      "aliases": [
+        "Frontenac Islands, Township of",
+        "Township of Frontenac Islands"
+      ]
+    },
+    {
+      "id": "gananoque-town",
+      "label": "Gananoque",
+      "name": "Gananoque",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Gananoque, Town of",
+        "Town of Gananoque"
+      ]
+    },
+    {
+      "id": "gauthier-township",
+      "label": "Gauthier",
+      "name": "Gauthier",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Gauthier, Township of",
+        "Township of Gauthier"
+      ]
+    },
+    {
+      "id": "georgian-bay-township",
+      "label": "Georgian Bay, Muskoka District Municipality",
+      "name": "Georgian Bay",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "muskoka-district",
+      "upperTierName": "Muskoka District Municipality",
+      "geographicArea": "Muskoka",
+      "aliases": [
+        "Georgian Bay, Township of",
+        "Township of Georgian Bay"
+      ]
+    },
+    {
+      "id": "georgian-bluffs-township",
+      "label": "Georgian Bluffs, Grey County",
+      "name": "Georgian Bluffs",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "Georgian Bluffs, Township of",
+        "Township of Georgian Bluffs"
+      ]
+    },
+    {
+      "id": "georgina-town",
+      "label": "Georgina, York Region",
+      "name": "Georgina",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "Georgina, Town of",
+        "Town of Georgina"
+      ]
+    },
+    {
+      "id": "gillies-township",
+      "label": "Gillies",
+      "name": "Gillies",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Gillies, Township of",
+        "Township of Gillies"
+      ]
+    },
+    {
+      "id": "goderich-town",
+      "label": "Goderich, Huron County",
+      "name": "Goderich",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "Goderich, Town of",
+        "Town of Goderich"
+      ]
+    },
+    {
+      "id": "gordon-barrie-island-municipality",
+      "label": "Gordon/Barrie Island",
+      "name": "Gordon/Barrie Island",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Gordon/Barrie Island, Municipality of",
+        "Municipality of Gordon/Barrie Island"
+      ]
+    },
+    {
+      "id": "gore-bay-town",
+      "label": "Gore Bay",
+      "name": "Gore Bay",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Gore Bay, Town of",
+        "Town of Gore Bay"
+      ]
+    },
+    {
+      "id": "grand-valley-town",
+      "label": "Grand Valley, Dufferin County",
+      "name": "Grand Valley",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Grand Valley, Town of",
+        "Town of Grand Valley"
+      ]
+    },
+    {
+      "id": "gravenhurst-town",
+      "label": "Gravenhurst, Muskoka District Municipality",
+      "name": "Gravenhurst",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "muskoka-district",
+      "upperTierName": "Muskoka District Municipality",
+      "geographicArea": "Muskoka",
+      "aliases": [
+        "Gravenhurst, Town of",
+        "Town of Gravenhurst"
+      ]
+    },
+    {
+      "id": "greater-madawaska-township",
+      "label": "Greater Madawaska, Renfrew County",
+      "name": "Greater Madawaska",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Greater Madawaska, Township of",
+        "Township of Greater Madawaska"
+      ]
+    },
+    {
+      "id": "greater-napanee-town",
+      "label": "Greater Napanee, Lennox and Addington County",
+      "name": "Greater Napanee",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "lennox-and-addington-county",
+      "upperTierName": "Lennox and Addington County",
+      "geographicArea": "Lennox and Addington",
+      "aliases": [
+        "Greater Napanee, Town of",
+        "Town of Greater Napanee"
+      ]
+    },
+    {
+      "id": "greater-sudbury-city",
+      "label": "Greater Sudbury",
+      "name": "Greater Sudbury",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Greater Sudbury, City of",
+        "City of Greater Sudbury"
+      ]
+    },
+    {
+      "id": "greenstone-municipality",
+      "label": "Greenstone",
+      "name": "Greenstone",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Greenstone, Municipality of",
+        "Municipality of Greenstone"
+      ]
+    },
+    {
+      "id": "grey-county",
+      "label": "Grey County",
+      "name": "Grey",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Grey",
+      "aliases": [
+        "Grey, County of",
+        "County of Grey"
+      ]
+    },
+    {
+      "id": "grey-highlands-municipality",
+      "label": "Grey Highlands, Grey County",
+      "name": "Grey Highlands",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "Grey Highlands, Municipality of",
+        "Municipality of Grey Highlands"
+      ]
+    },
+    {
+      "id": "grimsby-town",
+      "label": "Grimsby, Niagara Region",
+      "name": "Grimsby",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Grimsby, Town of",
+        "Town of Grimsby"
+      ]
+    },
+    {
+      "id": "guelph-city",
+      "label": "Guelph",
+      "name": "Guelph",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Guelph, City of",
+        "City of Guelph"
+      ]
+    },
+    {
+      "id": "guelph-eramosa-township",
+      "label": "Guelph/Eramosa, Wellington County",
+      "name": "Guelph/Eramosa",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "wellington-county",
+      "upperTierName": "Wellington County",
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Guelph/Eramosa, Township of",
+        "Township of Guelph/Eramosa"
+      ]
+    },
+    {
+      "id": "haldimand-county",
+      "label": "Haldimand County",
+      "name": "Haldimand County",
+      "tier": "single",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Haldimand",
+      "aliases": [
+        "Haldimand County"
+      ]
+    },
+    {
+      "id": "haliburton-county",
+      "label": "Haliburton County",
+      "name": "Haliburton",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Haliburton",
+      "aliases": [
+        "Haliburton, County of",
+        "County of Haliburton"
+      ]
+    },
+    {
+      "id": "halton-hills-town",
+      "label": "Halton Hills, Halton Region",
+      "name": "Halton Hills",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "halton-region",
+      "upperTierName": "Halton Region",
+      "geographicArea": "Halton",
+      "aliases": [
+        "Halton Hills, Town of",
+        "Town of Halton Hills"
+      ]
+    },
+    {
+      "id": "halton-region",
+      "label": "Halton Region",
+      "name": "Halton",
+      "tier": "upper",
+      "type": "regional-municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Halton",
+      "aliases": [
+        "Halton, Regional Municipality of",
+        "Regional Municipality of Halton"
+      ]
+    },
+    {
+      "id": "hamilton-city",
+      "label": "Hamilton",
+      "name": "Hamilton",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Hamilton",
+      "aliases": [
+        "Hamilton, City of",
+        "City of Hamilton"
+      ]
+    },
+    {
+      "id": "hamilton-township",
+      "label": "Hamilton, Northumberland County",
+      "name": "Hamilton",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "northumberland-county",
+      "upperTierName": "Northumberland County",
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Hamilton, Township of",
+        "Township of Hamilton"
+      ]
+    },
+    {
+      "id": "hanover-town",
+      "label": "Hanover, Grey County",
+      "name": "Hanover",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "Hanover, Town of",
+        "Town of Hanover"
+      ]
+    },
+    {
+      "id": "harley-township",
+      "label": "Harley",
+      "name": "Harley",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Harley, Township of",
+        "Township of Harley"
+      ]
+    },
+    {
+      "id": "harris-township",
+      "label": "Harris",
+      "name": "Harris",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Harris, Township of",
+        "Township of Harris"
+      ]
+    },
+    {
+      "id": "hastings-county",
+      "label": "Hastings County",
+      "name": "Hastings",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Hastings, County of",
+        "County of Hastings"
+      ]
+    },
+    {
+      "id": "hastings-highlands-municipality",
+      "label": "Hastings Highlands, Hastings County",
+      "name": "Hastings Highlands",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Hastings Highlands, Municipality of",
+        "Municipality of Hastings Highlands"
+      ]
+    },
+    {
+      "id": "havelock-belmont-methuen-township",
+      "label": "Havelock-Belmont-Methuen, Peterborough County",
+      "name": "Havelock-Belmont-Methuen",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Havelock-Belmont-Methuen, Township of",
+        "Township of Havelock-Belmont-Methuen"
+      ]
+    },
+    {
+      "id": "hawkesbury-town",
+      "label": "Hawkesbury, United Counties of Prescott and Russell",
+      "name": "Hawkesbury",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "Hawkesbury, Town of",
+        "Town of Hawkesbury"
+      ]
+    },
+    {
+      "id": "head-clara-and-maria-township",
+      "label": "Head, Clara and Maria, Renfrew County",
+      "name": "Head, Clara and Maria",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Head, Clara and Maria, Township of",
+        "Township of Head, Clara and Maria"
+      ]
+    },
+    {
+      "id": "hearst-town",
+      "label": "Hearst",
+      "name": "Hearst",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Hearst, Town of",
+        "Town of Hearst"
+      ]
+    },
+    {
+      "id": "highlands-east-municipality",
+      "label": "Highlands East, Haliburton County",
+      "name": "Highlands East",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "haliburton-county",
+      "upperTierName": "Haliburton County",
+      "geographicArea": "Haliburton",
+      "aliases": [
+        "Highlands East, Municipality of",
+        "Municipality of Highlands East"
+      ]
+    },
+    {
+      "id": "hilliard-township",
+      "label": "Hilliard",
+      "name": "Hilliard",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Hilliard, Township of",
+        "Township of Hilliard"
+      ]
+    },
+    {
+      "id": "hilton-township",
+      "label": "Hilton",
+      "name": "Hilton",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Hilton, Township of",
+        "Township of Hilton"
+      ]
+    },
+    {
+      "id": "hilton-beach-village",
+      "label": "Hilton Beach",
+      "name": "Hilton Beach",
+      "tier": "single",
+      "type": "village",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Hilton Beach, Village of",
+        "Village of Hilton Beach"
+      ]
+    },
+    {
+      "id": "hornepayne-township",
+      "label": "Hornepayne",
+      "name": "Hornepayne",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Hornepayne, Township of",
+        "Township of Hornepayne"
+      ]
+    },
+    {
+      "id": "horton-township",
+      "label": "Horton, Renfrew County",
+      "name": "Horton",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Horton, Township of",
+        "Township of Horton"
+      ]
+    },
+    {
+      "id": "howick-township",
+      "label": "Howick, Huron County",
+      "name": "Howick",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "Howick, Township of",
+        "Township of Howick"
+      ]
+    },
+    {
+      "id": "hudson-township",
+      "label": "Hudson",
+      "name": "Hudson",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Hudson, Township of",
+        "Township of Hudson"
+      ]
+    },
+    {
+      "id": "huntsville-town",
+      "label": "Huntsville, Muskoka District Municipality",
+      "name": "Huntsville",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "muskoka-district",
+      "upperTierName": "Muskoka District Municipality",
+      "geographicArea": "Muskoka",
+      "aliases": [
+        "Huntsville, Town of",
+        "Town of Huntsville"
+      ]
+    },
+    {
+      "id": "huron-county",
+      "label": "Huron County",
+      "name": "Huron",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Huron",
+      "aliases": [
+        "Huron, County of",
+        "County of Huron"
+      ]
+    },
+    {
+      "id": "huron-east-municipality",
+      "label": "Huron East, Huron County",
+      "name": "Huron East",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "Huron East, Municipality of",
+        "Municipality of Huron East"
+      ]
+    },
+    {
+      "id": "huron-shores-municipality",
+      "label": "Huron Shores",
+      "name": "Huron Shores",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Huron Shores, Municipality of",
+        "Municipality of Huron Shores"
+      ]
+    },
+    {
+      "id": "huron-kinloss-township",
+      "label": "Huron-Kinloss, Bruce County",
+      "name": "Huron-Kinloss",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "Huron-Kinloss, Township of",
+        "Township of Huron-Kinloss"
+      ]
+    },
+    {
+      "id": "ignace-township",
+      "label": "Ignace",
+      "name": "Ignace",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Ignace, Township of",
+        "Township of Ignace"
+      ]
+    },
+    {
+      "id": "ingersoll-town",
+      "label": "Ingersoll, Oxford County",
+      "name": "Ingersoll",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "Ingersoll, Town of",
+        "Town of Ingersoll"
+      ]
+    },
+    {
+      "id": "innisfil-town",
+      "label": "Innisfil, Simcoe County",
+      "name": "Innisfil",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Innisfil, Town of",
+        "Town of Innisfil"
+      ]
+    },
+    {
+      "id": "iroquois-falls-town",
+      "label": "Iroquois Falls",
+      "name": "Iroquois Falls",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Iroquois Falls, Town of",
+        "Town of Iroquois Falls"
+      ]
+    },
+    {
+      "id": "james-township",
+      "label": "James",
+      "name": "James",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "James, Township of",
+        "Township of James"
+      ]
+    },
+    {
+      "id": "jocelyn-township",
+      "label": "Jocelyn",
+      "name": "Jocelyn",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Jocelyn, Township of",
+        "Township of Jocelyn"
+      ]
+    },
+    {
+      "id": "johnson-township",
+      "label": "Johnson",
+      "name": "Johnson",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Johnson, Township of",
+        "Township of Johnson"
+      ]
+    },
+    {
+      "id": "joly-township",
+      "label": "Joly",
+      "name": "Joly",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Joly, Township of",
+        "Township of Joly"
+      ]
+    },
+    {
+      "id": "kapuskasing-town",
+      "label": "Kapuskasing",
+      "name": "Kapuskasing",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Kapuskasing, Town of",
+        "Town of Kapuskasing"
+      ]
+    },
+    {
+      "id": "kawartha-lakes-city",
+      "label": "Kawartha Lakes",
+      "name": "Kawartha Lakes",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kawartha Lakes",
+      "aliases": [
+        "Kawartha Lakes, City of",
+        "City of Kawartha Lakes"
+      ]
+    },
+    {
+      "id": "kearney-town",
+      "label": "Kearney",
+      "name": "Kearney",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Kearney, Town of",
+        "Town of Kearney"
+      ]
+    },
+    {
+      "id": "kenora-city",
+      "label": "Kenora",
+      "name": "Kenora",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Kenora, City of",
+        "City of Kenora"
+      ]
+    },
+    {
+      "id": "kerns-township",
+      "label": "Kerns",
+      "name": "Kerns",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Kerns, Township of",
+        "Township of Kerns"
+      ]
+    },
+    {
+      "id": "killaloe-hagarty-and-richards-township",
+      "label": "Killaloe, Hagarty and Richards, Renfrew County",
+      "name": "Killaloe, Hagarty and Richards",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Killaloe, Hagarty and Richards, Township of",
+        "Township of Killaloe, Hagarty and Richards"
+      ]
+    },
+    {
+      "id": "killarney-municipality",
+      "label": "Killarney",
+      "name": "Killarney",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Killarney, Municipality of",
+        "Municipality of Killarney"
+      ]
+    },
+    {
+      "id": "kincardine-municipality",
+      "label": "Kincardine, Bruce County",
+      "name": "Kincardine",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "Kincardine, Municipality of",
+        "Municipality of Kincardine"
+      ]
+    },
+    {
+      "id": "king-township",
+      "label": "King, York Region",
+      "name": "King",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "King, Township of",
+        "Township of King"
+      ]
+    },
+    {
+      "id": "kingston-city",
+      "label": "Kingston",
+      "name": "Kingston",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Frontenac",
+      "aliases": [
+        "Kingston, City of",
+        "City of Kingston"
+      ]
+    },
+    {
+      "id": "kingsville-town",
+      "label": "Kingsville, Essex County",
+      "name": "Kingsville",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "essex-county",
+      "upperTierName": "Essex County",
+      "geographicArea": "Essex",
+      "aliases": [
+        "Kingsville, Town of",
+        "Town of Kingsville"
+      ]
+    },
+    {
+      "id": "kirkland-lake-town",
+      "label": "Kirkland Lake",
+      "name": "Kirkland Lake",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Kirkland Lake, Town of",
+        "Town of Kirkland Lake"
+      ]
+    },
+    {
+      "id": "kitchener-city",
+      "label": "Kitchener, Waterloo Region",
+      "name": "Kitchener",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "waterloo-region",
+      "upperTierName": "Waterloo Region",
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "Kitchener, City of",
+        "City of Kitchener"
+      ]
+    },
+    {
+      "id": "la-vallee-township",
+      "label": "La Vallee",
+      "name": "La Vallee",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "La Vallee, Township of",
+        "Township of La Vallee"
+      ]
+    },
+    {
+      "id": "laird-township",
+      "label": "Laird",
+      "name": "Laird",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Laird, Township of",
+        "Township of Laird"
+      ]
+    },
+    {
+      "id": "lake-of-bays-township",
+      "label": "Lake of Bays, Muskoka District Municipality",
+      "name": "Lake of Bays",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "muskoka-district",
+      "upperTierName": "Muskoka District Municipality",
+      "geographicArea": "Muskoka",
+      "aliases": [
+        "Lake of Bays, Township of",
+        "Township of Lake of Bays"
+      ]
+    },
+    {
+      "id": "lake-of-the-woods-township",
+      "label": "Lake of the Woods",
+      "name": "Lake of the Woods",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Lake of the Woods, Township of",
+        "Township of Lake of the Woods"
+      ]
+    },
+    {
+      "id": "lakeshore-municipality",
+      "label": "Lakeshore, Essex County",
+      "name": "Lakeshore",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "essex-county",
+      "upperTierName": "Essex County",
+      "geographicArea": "Essex",
+      "aliases": [
+        "Lakeshore, Municipality of",
+        "Municipality of Lakeshore"
+      ]
+    },
+    {
+      "id": "lambton-county",
+      "label": "Lambton County",
+      "name": "Lambton",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Lambton, County of",
+        "County of Lambton"
+      ]
+    },
+    {
+      "id": "lambton-shores-municipality",
+      "label": "Lambton Shores, Lambton County",
+      "name": "Lambton Shores",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Lambton Shores, Municipality of",
+        "Municipality of Lambton Shores"
+      ]
+    },
+    {
+      "id": "lanark-county",
+      "label": "Lanark County",
+      "name": "Lanark",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Lanark, County of",
+        "County of Lanark"
+      ]
+    },
+    {
+      "id": "lanark-highlands-township",
+      "label": "Lanark Highlands, Lanark County",
+      "name": "Lanark Highlands",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Lanark Highlands, Township of",
+        "Township of Lanark Highlands"
+      ]
+    },
+    {
+      "id": "larder-lake-township",
+      "label": "Larder Lake",
+      "name": "Larder Lake",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Larder Lake, Township of",
+        "Township of Larder Lake"
+      ]
+    },
+    {
+      "id": "lasalle-town",
+      "label": "LaSalle, Essex County",
+      "name": "LaSalle",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "essex-county",
+      "upperTierName": "Essex County",
+      "geographicArea": "Essex",
+      "aliases": [
+        "LaSalle, Town of",
+        "Town of LaSalle"
+      ]
+    },
+    {
+      "id": "latchford-town",
+      "label": "Latchford",
+      "name": "Latchford",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Latchford, Town of",
+        "Town of Latchford"
+      ]
+    },
+    {
+      "id": "laurentian-hills-town",
+      "label": "Laurentian Hills, Renfrew County",
+      "name": "Laurentian Hills",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Laurentian Hills, Town of",
+        "Town of Laurentian Hills"
+      ]
+    },
+    {
+      "id": "laurentian-valley-township",
+      "label": "Laurentian Valley, Renfrew County",
+      "name": "Laurentian Valley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Laurentian Valley, Township of",
+        "Township of Laurentian Valley"
+      ]
+    },
+    {
+      "id": "leamington-municipality",
+      "label": "Leamington, Essex County",
+      "name": "Leamington",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "essex-county",
+      "upperTierName": "Essex County",
+      "geographicArea": "Essex",
+      "aliases": [
+        "Leamington, Municipality of",
+        "Municipality of Leamington"
+      ]
+    },
+    {
+      "id": "leeds-and-the-thousand-islands-township",
+      "label": "Leeds and the Thousand Islands, United Counties of Leeds and Grenville",
+      "name": "Leeds and the Thousand Islands",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Leeds and the Thousand Islands, Township of",
+        "Township of Leeds and the Thousand Islands"
+      ]
+    },
+    {
+      "id": "lennox-and-addington-county",
+      "label": "Lennox and Addington County",
+      "name": "Lennox and Addington",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Lennox and Addington",
+      "aliases": [
+        "Lennox and Addington, County of",
+        "County of Lennox and Addington"
+      ]
+    },
+    {
+      "id": "limerick-township",
+      "label": "Limerick, Hastings County",
+      "name": "Limerick",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Limerick, Township of",
+        "Township of Limerick"
+      ]
+    },
+    {
+      "id": "lincoln-town",
+      "label": "Lincoln, Niagara Region",
+      "name": "Lincoln",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Lincoln, Town of",
+        "Town of Lincoln"
+      ]
+    },
+    {
+      "id": "london-city",
+      "label": "London",
+      "name": "London",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "London, City of",
+        "City of London"
+      ]
+    },
+    {
+      "id": "loyalist-township",
+      "label": "Loyalist, Lennox and Addington County",
+      "name": "Loyalist",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lennox-and-addington-county",
+      "upperTierName": "Lennox and Addington County",
+      "geographicArea": "Lennox and Addington",
+      "aliases": [
+        "Loyalist, Township of",
+        "Township of Loyalist"
+      ]
+    },
+    {
+      "id": "lucan-biddulph-township",
+      "label": "Lucan Biddulph, Middlesex County",
+      "name": "Lucan Biddulph",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Lucan Biddulph, Township of",
+        "Township of Lucan Biddulph"
+      ]
+    },
+    {
+      "id": "macdonald-meredith-and-aberdeen-additional-township",
+      "label": "Macdonald, Meredith and Aberdeen Additional",
+      "name": "Macdonald, Meredith and Aberdeen Additional",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Macdonald, Meredith and Aberdeen Additional, Township of",
+        "Township of Macdonald, Meredith and Aberdeen Additional"
+      ]
+    },
+    {
+      "id": "machar-township",
+      "label": "Machar",
+      "name": "Machar",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Machar, Township of",
+        "Township of Machar"
+      ]
+    },
+    {
+      "id": "machin-township",
+      "label": "Machin",
+      "name": "Machin",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Machin, Township of",
+        "Township of Machin"
+      ]
+    },
+    {
+      "id": "madawaska-valley-township",
+      "label": "Madawaska Valley, Renfrew County",
+      "name": "Madawaska Valley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Madawaska Valley, Township of",
+        "Township of Madawaska Valley"
+      ]
+    },
+    {
+      "id": "madoc-township",
+      "label": "Madoc, Hastings County",
+      "name": "Madoc",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Madoc, Township of",
+        "Township of Madoc"
+      ]
+    },
+    {
+      "id": "magnetawan-municipality",
+      "label": "Magnetawan",
+      "name": "Magnetawan",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Magnetawan, Municipality of",
+        "Municipality of Magnetawan"
+      ]
+    },
+    {
+      "id": "malahide-township",
+      "label": "Malahide, Elgin County",
+      "name": "Malahide",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "elgin-county",
+      "upperTierName": "Elgin County",
+      "geographicArea": "Elgin",
+      "aliases": [
+        "Malahide, Township of",
+        "Township of Malahide"
+      ]
+    },
+    {
+      "id": "manitouwadge-township",
+      "label": "Manitouwadge",
+      "name": "Manitouwadge",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Manitouwadge, Township of",
+        "Township of Manitouwadge"
+      ]
+    },
+    {
+      "id": "mapleton-township",
+      "label": "Mapleton, Wellington County",
+      "name": "Mapleton",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "wellington-county",
+      "upperTierName": "Wellington County",
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Mapleton, Township of",
+        "Township of Mapleton"
+      ]
+    },
+    {
+      "id": "marathon-town",
+      "label": "Marathon",
+      "name": "Marathon",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Marathon, Town of",
+        "Town of Marathon"
+      ]
+    },
+    {
+      "id": "markham-city",
+      "label": "Markham, York Region",
+      "name": "Markham",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "Markham, City of",
+        "City of Markham"
+      ]
+    },
+    {
+      "id": "markstay-warren-municipality",
+      "label": "Markstay-Warren",
+      "name": "Markstay-Warren",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Markstay-Warren, Municipality of",
+        "Municipality of Markstay-Warren"
+      ]
+    },
+    {
+      "id": "marmora-and-lake-municipality",
+      "label": "Marmora and Lake, Hastings County",
+      "name": "Marmora and Lake",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Marmora and Lake, Municipality of",
+        "Municipality of Marmora and Lake"
+      ]
+    },
+    {
+      "id": "matachewan-township",
+      "label": "Matachewan",
+      "name": "Matachewan",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Matachewan, Township of",
+        "Township of Matachewan"
+      ]
+    },
+    {
+      "id": "mattawa-town",
+      "label": "Mattawa",
+      "name": "Mattawa",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "Mattawa, Town of",
+        "Town of Mattawa"
+      ]
+    },
+    {
+      "id": "mattawan-municipality",
+      "label": "Mattawan",
+      "name": "Mattawan",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "Mattawan, Municipality of",
+        "Municipality of Mattawan"
+      ]
+    },
+    {
+      "id": "mattice-val-ca-ta-township",
+      "label": "Mattice-Val CÃ´tÃ©",
+      "name": "Mattice-Val CÃ´tÃ©",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Mattice-Val CÃ´tÃ©, Township of",
+        "Township of Mattice-Val CÃ´tÃ©"
+      ]
+    },
+    {
+      "id": "mcdougall-township",
+      "label": "McDougall",
+      "name": "McDougall",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "McDougall, Township of",
+        "Township of McDougall"
+      ]
+    },
+    {
+      "id": "mcgarry-township",
+      "label": "McGarry",
+      "name": "McGarry",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "McGarry, Township of",
+        "Township of McGarry"
+      ]
+    },
+    {
+      "id": "mckellar-township",
+      "label": "McKellar",
+      "name": "McKellar",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "McKellar, Township of",
+        "Township of McKellar"
+      ]
+    },
+    {
+      "id": "mcmurrich-monteith-township",
+      "label": "McMurrich/Monteith",
+      "name": "McMurrich/Monteith",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "McMurrich/Monteith, Township of",
+        "Township of McMurrich/Monteith"
+      ]
+    },
+    {
+      "id": "mcnab-braeside-township",
+      "label": "McNab/Braeside, Renfrew County",
+      "name": "McNab/Braeside",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "McNab/Braeside, Township of",
+        "Township of McNab/Braeside"
+      ]
+    },
+    {
+      "id": "meaford-municipality",
+      "label": "Meaford, Grey County",
+      "name": "Meaford",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "Meaford, Municipality of",
+        "Municipality of Meaford"
+      ]
+    },
+    {
+      "id": "melancthon-township",
+      "label": "Melancthon, Dufferin County",
+      "name": "Melancthon",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Melancthon, Township of",
+        "Township of Melancthon"
+      ]
+    },
+    {
+      "id": "merrickville-wolford-village",
+      "label": "Merrickville-Wolford, United Counties of Leeds and Grenville",
+      "name": "Merrickville-Wolford",
+      "tier": "lower",
+      "type": "village",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Merrickville-Wolford, Village of",
+        "Village of Merrickville-Wolford"
+      ]
+    },
+    {
+      "id": "middlesex-centre-municipality",
+      "label": "Middlesex Centre, Middlesex County",
+      "name": "Middlesex Centre",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Middlesex Centre, Municipality of",
+        "Municipality of Middlesex Centre"
+      ]
+    },
+    {
+      "id": "middlesex-county",
+      "label": "Middlesex County",
+      "name": "Middlesex",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Middlesex, County of",
+        "County of Middlesex"
+      ]
+    },
+    {
+      "id": "midland-town",
+      "label": "Midland, Simcoe County",
+      "name": "Midland",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Midland, Town of",
+        "Town of Midland"
+      ]
+    },
+    {
+      "id": "milton-town",
+      "label": "Milton, Halton Region",
+      "name": "Milton",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "halton-region",
+      "upperTierName": "Halton Region",
+      "geographicArea": "Halton",
+      "aliases": [
+        "Milton, Town of",
+        "Town of Milton"
+      ]
+    },
+    {
+      "id": "minden-hills-township",
+      "label": "Minden Hills, Haliburton County",
+      "name": "Minden Hills",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "haliburton-county",
+      "upperTierName": "Haliburton County",
+      "geographicArea": "Haliburton",
+      "aliases": [
+        "Minden Hills, Township of",
+        "Township of Minden Hills"
+      ]
+    },
+    {
+      "id": "minto-town",
+      "label": "Minto, Wellington County",
+      "name": "Minto",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "wellington-county",
+      "upperTierName": "Wellington County",
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Minto, Town of",
+        "Town of Minto"
+      ]
+    },
+    {
+      "id": "mississauga-city",
+      "label": "Mississauga, Peel Region",
+      "name": "Mississauga",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "peel-region",
+      "upperTierName": "Peel Region",
+      "geographicArea": "Peel",
+      "aliases": [
+        "Mississauga, City of",
+        "City of Mississauga"
+      ]
+    },
+    {
+      "id": "mississippi-mills-municipality",
+      "label": "Mississippi Mills, Lanark County",
+      "name": "Mississippi Mills",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Mississippi Mills, Municipality of",
+        "Municipality of Mississippi Mills"
+      ]
+    },
+    {
+      "id": "mono-town",
+      "label": "Mono, Dufferin County",
+      "name": "Mono",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Mono, Town of",
+        "Town of Mono"
+      ]
+    },
+    {
+      "id": "montague-township",
+      "label": "Montague, Lanark County",
+      "name": "Montague",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Montague, Township of",
+        "Township of Montague"
+      ]
+    },
+    {
+      "id": "moonbeam-township",
+      "label": "Moonbeam",
+      "name": "Moonbeam",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Moonbeam, Township of",
+        "Township of Moonbeam"
+      ]
+    },
+    {
+      "id": "moosonee-town",
+      "label": "Moosonee",
+      "name": "Moosonee",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Moosonee, Town of",
+        "Town of Moosonee"
+      ]
+    },
+    {
+      "id": "morley-township",
+      "label": "Morley",
+      "name": "Morley",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Morley, Township of",
+        "Township of Morley"
+      ]
+    },
+    {
+      "id": "morris-turnberry-municipality",
+      "label": "Morris-Turnberry, Huron County",
+      "name": "Morris-Turnberry",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "Morris-Turnberry, Municipality of",
+        "Municipality of Morris-Turnberry"
+      ]
+    },
+    {
+      "id": "mulmur-township",
+      "label": "Mulmur, Dufferin County",
+      "name": "Mulmur",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Mulmur, Township of",
+        "Township of Mulmur"
+      ]
+    },
+    {
+      "id": "muskoka-district",
+      "label": "Muskoka District Municipality",
+      "name": "Muskoka",
+      "tier": "upper",
+      "type": "district-municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Muskoka",
+      "aliases": [
+        "Muskoka, District Municipality of",
+        "District Municipality of Muskoka"
+      ]
+    },
+    {
+      "id": "muskoka-lakes-township",
+      "label": "Muskoka Lakes, Muskoka District Municipality",
+      "name": "Muskoka Lakes",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "muskoka-district",
+      "upperTierName": "Muskoka District Municipality",
+      "geographicArea": "Muskoka",
+      "aliases": [
+        "Muskoka Lakes, Township of",
+        "Township of Muskoka Lakes"
+      ]
+    },
+    {
+      "id": "nairn-and-hyman-township",
+      "label": "Nairn and Hyman",
+      "name": "Nairn and Hyman",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Nairn and Hyman, Township of",
+        "Township of Nairn and Hyman"
+      ]
+    },
+    {
+      "id": "neebing-municipality",
+      "label": "Neebing",
+      "name": "Neebing",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Neebing, Municipality of",
+        "Municipality of Neebing"
+      ]
+    },
+    {
+      "id": "new-tecumseth-town",
+      "label": "New Tecumseth, Simcoe County",
+      "name": "New Tecumseth",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "New Tecumseth, Town of",
+        "Town of New Tecumseth"
+      ]
+    },
+    {
+      "id": "newbury-village",
+      "label": "Newbury, Middlesex County",
+      "name": "Newbury",
+      "tier": "lower",
+      "type": "village",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Newbury, Village of",
+        "Village of Newbury"
+      ]
+    },
+    {
+      "id": "newmarket-town",
+      "label": "Newmarket, York Region",
+      "name": "Newmarket",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "Newmarket, Town of",
+        "Town of Newmarket"
+      ]
+    },
+    {
+      "id": "niagara-falls-city",
+      "label": "Niagara Falls, Niagara Region",
+      "name": "Niagara Falls",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Niagara Falls, City of",
+        "City of Niagara Falls"
+      ]
+    },
+    {
+      "id": "niagara-region",
+      "label": "Niagara Region",
+      "name": "Niagara",
+      "tier": "upper",
+      "type": "regional-municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Niagara, Regional Municipality of",
+        "Regional Municipality of Niagara"
+      ]
+    },
+    {
+      "id": "niagara-on-the-lake-town",
+      "label": "Niagara-on-the-Lake, Niagara Region",
+      "name": "Niagara-on-the-Lake",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Niagara-on-the-Lake, Town of",
+        "Town of Niagara-on-the-Lake"
+      ]
+    },
+    {
+      "id": "nipigon-township",
+      "label": "Nipigon",
+      "name": "Nipigon",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Nipigon, Township of",
+        "Township of Nipigon"
+      ]
+    },
+    {
+      "id": "nipissing-township",
+      "label": "Nipissing",
+      "name": "Nipissing",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Nipissing, Township of",
+        "Township of Nipissing"
+      ]
+    },
+    {
+      "id": "norfolk-county",
+      "label": "Norfolk County",
+      "name": "Norfolk County",
+      "tier": "single",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Norfolk",
+      "aliases": [
+        "Norfolk County"
+      ]
+    },
+    {
+      "id": "north-algona-wilberforce-township",
+      "label": "North Algona Wilberforce, Renfrew County",
+      "name": "North Algona Wilberforce",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "North Algona Wilberforce, Township of",
+        "Township of North Algona Wilberforce"
+      ]
+    },
+    {
+      "id": "north-bay-city",
+      "label": "North Bay",
+      "name": "North Bay",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "North Bay, City of",
+        "City of North Bay"
+      ]
+    },
+    {
+      "id": "north-dumfries-township",
+      "label": "North Dumfries, Waterloo Region",
+      "name": "North Dumfries",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "waterloo-region",
+      "upperTierName": "Waterloo Region",
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "North Dumfries, Township of",
+        "Township of North Dumfries"
+      ]
+    },
+    {
+      "id": "north-dundas-township",
+      "label": "North Dundas, United Counties of Stormont, Dundas and Glengarry",
+      "name": "North Dundas",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "stormont-dundas-glengarry-counties",
+      "upperTierName": "United Counties of Stormont, Dundas and Glengarry",
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "North Dundas, Township of",
+        "Township of North Dundas"
+      ]
+    },
+    {
+      "id": "north-frontenac-township",
+      "label": "North Frontenac, Frontenac County",
+      "name": "North Frontenac",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "frontenac-county",
+      "upperTierName": "Frontenac County",
+      "geographicArea": "Frontenac",
+      "aliases": [
+        "North Frontenac, Township of",
+        "Township of North Frontenac"
+      ]
+    },
+    {
+      "id": "north-glengarry-township",
+      "label": "North Glengarry, United Counties of Stormont, Dundas and Glengarry",
+      "name": "North Glengarry",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "stormont-dundas-glengarry-counties",
+      "upperTierName": "United Counties of Stormont, Dundas and Glengarry",
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "North Glengarry, Township of",
+        "Township of North Glengarry"
+      ]
+    },
+    {
+      "id": "north-grenville-municipality",
+      "label": "North Grenville, United Counties of Leeds and Grenville",
+      "name": "North Grenville",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "North Grenville, Municipality of",
+        "Municipality of North Grenville"
+      ]
+    },
+    {
+      "id": "north-huron-township",
+      "label": "North Huron, Huron County",
+      "name": "North Huron",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "North Huron, Township of",
+        "Township of North Huron"
+      ]
+    },
+    {
+      "id": "north-kawartha-township",
+      "label": "North Kawartha, Peterborough County",
+      "name": "North Kawartha",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "North Kawartha, Township of",
+        "Township of North Kawartha"
+      ]
+    },
+    {
+      "id": "north-middlesex-municipality",
+      "label": "North Middlesex, Middlesex County",
+      "name": "North Middlesex",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "North Middlesex, Municipality of",
+        "Municipality of North Middlesex"
+      ]
+    },
+    {
+      "id": "north-perth-municipality",
+      "label": "North Perth, Perth County",
+      "name": "North Perth",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "perth-county",
+      "upperTierName": "Perth County",
+      "geographicArea": "Perth",
+      "aliases": [
+        "North Perth, Municipality of",
+        "Municipality of North Perth"
+      ]
+    },
+    {
+      "id": "north-stormont-township",
+      "label": "North Stormont, United Counties of Stormont, Dundas and Glengarry",
+      "name": "North Stormont",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "stormont-dundas-glengarry-counties",
+      "upperTierName": "United Counties of Stormont, Dundas and Glengarry",
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "North Stormont, Township of",
+        "Township of North Stormont"
+      ]
+    },
+    {
+      "id": "northeastern-manitoulin-and-the-islands-town",
+      "label": "Northeastern Manitoulin and The Islands",
+      "name": "Northeastern Manitoulin and The Islands",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Northeastern Manitoulin and The Islands, Town of",
+        "Town of Northeastern Manitoulin and The Islands"
+      ]
+    },
+    {
+      "id": "northern-bruce-peninsula-municipality",
+      "label": "Northern Bruce Peninsula, Bruce County",
+      "name": "Northern Bruce Peninsula",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "Northern Bruce Peninsula, Municipality of",
+        "Municipality of Northern Bruce Peninsula"
+      ]
+    },
+    {
+      "id": "northumberland-county",
+      "label": "Northumberland County",
+      "name": "Northumberland",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Northumberland, County of",
+        "County of Northumberland"
+      ]
+    },
+    {
+      "id": "norwich-township",
+      "label": "Norwich, Oxford County",
+      "name": "Norwich",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "Norwich, Township of",
+        "Township of Norwich"
+      ]
+    },
+    {
+      "id": "oakville-town",
+      "label": "Oakville, Halton Region",
+      "name": "Oakville",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "halton-region",
+      "upperTierName": "Halton Region",
+      "geographicArea": "Halton",
+      "aliases": [
+        "Oakville, Town of",
+        "Town of Oakville"
+      ]
+    },
+    {
+      "id": "oconnor-township",
+      "label": "O’Connor",
+      "name": "O’Connor",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "O’Connor, Township of",
+        "Township of O’Connor"
+      ]
+    },
+    {
+      "id": "oil-springs-village",
+      "label": "Oil Springs, Lambton County",
+      "name": "Oil Springs",
+      "tier": "lower",
+      "type": "village",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Oil Springs, Village of",
+        "Village of Oil Springs"
+      ]
+    },
+    {
+      "id": "oliver-paipoonge-municipality",
+      "label": "Oliver Paipoonge",
+      "name": "Oliver Paipoonge",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Oliver Paipoonge, Municipality of",
+        "Municipality of Oliver Paipoonge"
+      ]
+    },
+    {
+      "id": "opasatika-township",
+      "label": "Opasatika",
+      "name": "Opasatika",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Opasatika, Township of",
+        "Township of Opasatika"
+      ]
+    },
+    {
+      "id": "orangeville-town",
+      "label": "Orangeville, Dufferin County",
+      "name": "Orangeville",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Orangeville, Town of",
+        "Town of Orangeville"
+      ]
+    },
+    {
+      "id": "orillia-city",
+      "label": "Orillia",
+      "name": "Orillia",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Orillia, City of",
+        "City of Orillia"
+      ]
+    },
+    {
+      "id": "oro-medonte-township",
+      "label": "Oro-Medonte, Simcoe County",
+      "name": "Oro-Medonte",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Oro-Medonte, Township of",
+        "Township of Oro-Medonte"
+      ]
+    },
+    {
+      "id": "oshawa-city",
+      "label": "Oshawa, Durham Region",
+      "name": "Oshawa",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Oshawa, City of",
+        "City of Oshawa"
+      ]
+    },
+    {
+      "id": "otonabee-south-monaghan-township",
+      "label": "Otonabee-South Monaghan, Peterborough County",
+      "name": "Otonabee-South Monaghan",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Otonabee-South Monaghan, Township of",
+        "Township of Otonabee-South Monaghan"
+      ]
+    },
+    {
+      "id": "ottawa-city",
+      "label": "Ottawa",
+      "name": "Ottawa",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Ottawa",
+      "aliases": [
+        "Ottawa, City of",
+        "City of Ottawa"
+      ]
+    },
+    {
+      "id": "owen-sound-city",
+      "label": "Owen Sound, Grey County",
+      "name": "Owen Sound",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "Owen Sound, City of",
+        "City of Owen Sound"
+      ]
+    },
+    {
+      "id": "oxford-county",
+      "label": "Oxford County",
+      "name": "Oxford",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Oxford",
+      "aliases": [
+        "Oxford, County of",
+        "County of Oxford"
+      ]
+    },
+    {
+      "id": "papineau-cameron-township",
+      "label": "Papineau-Cameron",
+      "name": "Papineau-Cameron",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "Papineau-Cameron, Township of",
+        "Township of Papineau-Cameron"
+      ]
+    },
+    {
+      "id": "parry-sound-town",
+      "label": "Parry Sound",
+      "name": "Parry Sound",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Parry Sound, Town of",
+        "Town of Parry Sound"
+      ]
+    },
+    {
+      "id": "peel-region",
+      "label": "Peel Region",
+      "name": "Peel",
+      "tier": "upper",
+      "type": "regional-municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Peel",
+      "aliases": [
+        "Peel, Regional Municipality of",
+        "Regional Municipality of Peel"
+      ]
+    },
+    {
+      "id": "pelee-township",
+      "label": "Pelee",
+      "name": "Pelee",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Essex",
+      "aliases": [
+        "Pelee, Township of",
+        "Township of Pelee"
+      ]
+    },
+    {
+      "id": "pelham-town",
+      "label": "Pelham, Niagara Region",
+      "name": "Pelham",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Pelham, Town of",
+        "Town of Pelham"
+      ]
+    },
+    {
+      "id": "pembroke-city",
+      "label": "Pembroke",
+      "name": "Pembroke",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Pembroke, City of",
+        "City of Pembroke"
+      ]
+    },
+    {
+      "id": "penetanguishene-town",
+      "label": "Penetanguishene, Simcoe County",
+      "name": "Penetanguishene",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Penetanguishene, Town of",
+        "Town of Penetanguishene"
+      ]
+    },
+    {
+      "id": "perry-township",
+      "label": "Perry",
+      "name": "Perry",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Perry, Township of",
+        "Township of Perry"
+      ]
+    },
+    {
+      "id": "perth-county",
+      "label": "Perth County",
+      "name": "Perth",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Perth",
+      "aliases": [
+        "Perth, County of",
+        "County of Perth"
+      ]
+    },
+    {
+      "id": "perth-east-township",
+      "label": "Perth East, Perth County",
+      "name": "Perth East",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "perth-county",
+      "upperTierName": "Perth County",
+      "geographicArea": "Perth",
+      "aliases": [
+        "Perth East, Township of",
+        "Township of Perth East"
+      ]
+    },
+    {
+      "id": "perth-south-township",
+      "label": "Perth South, Perth County",
+      "name": "Perth South",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "perth-county",
+      "upperTierName": "Perth County",
+      "geographicArea": "Perth",
+      "aliases": [
+        "Perth South, Township of",
+        "Township of Perth South"
+      ]
+    },
+    {
+      "id": "perth-town",
+      "label": "Perth, Lanark County",
+      "name": "Perth",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Perth, Town of",
+        "Town of Perth"
+      ]
+    },
+    {
+      "id": "petawawa-town",
+      "label": "Petawawa, Renfrew County",
+      "name": "Petawawa",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Petawawa, Town of",
+        "Town of Petawawa"
+      ]
+    },
+    {
+      "id": "peterborough-city",
+      "label": "Peterborough",
+      "name": "Peterborough",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Peterborough, City of",
+        "City of Peterborough"
+      ]
+    },
+    {
+      "id": "peterborough-county",
+      "label": "Peterborough County",
+      "name": "Peterborough",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Peterborough, County of",
+        "County of Peterborough"
+      ]
+    },
+    {
+      "id": "petrolia-town",
+      "label": "Petrolia, Lambton County",
+      "name": "Petrolia",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Petrolia, Town of",
+        "Town of Petrolia"
+      ]
+    },
+    {
+      "id": "pickering-city",
+      "label": "Pickering, Durham Region",
+      "name": "Pickering",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Pickering, City of",
+        "City of Pickering"
+      ]
+    },
+    {
+      "id": "pickle-lake-township",
+      "label": "Pickle Lake",
+      "name": "Pickle Lake",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Pickle Lake, Township of",
+        "Township of Pickle Lake"
+      ]
+    },
+    {
+      "id": "plummer-additional-township",
+      "label": "Plummer Additional",
+      "name": "Plummer Additional",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Plummer Additional, Township of",
+        "Township of Plummer Additional"
+      ]
+    },
+    {
+      "id": "plympton-wyoming-town",
+      "label": "Plympton-Wyoming, Lambton County",
+      "name": "Plympton-Wyoming",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Plympton-Wyoming, Town of",
+        "Town of Plympton-Wyoming"
+      ]
+    },
+    {
+      "id": "point-edward-village",
+      "label": "Point Edward, Lambton County",
+      "name": "Point Edward",
+      "tier": "lower",
+      "type": "village",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Point Edward, Village of",
+        "Village of Point Edward"
+      ]
+    },
+    {
+      "id": "port-colborne-city",
+      "label": "Port Colborne, Niagara Region",
+      "name": "Port Colborne",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Port Colborne, City of",
+        "City of Port Colborne"
+      ]
+    },
+    {
+      "id": "port-hope-municipality",
+      "label": "Port Hope, Northumberland County",
+      "name": "Port Hope",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "northumberland-county",
+      "upperTierName": "Northumberland County",
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Port Hope, Municipality of",
+        "Municipality of Port Hope"
+      ]
+    },
+    {
+      "id": "powassan-municipality",
+      "label": "Powassan",
+      "name": "Powassan",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Powassan, Municipality of",
+        "Municipality of Powassan"
+      ]
+    },
+    {
+      "id": "prescott-town",
+      "label": "Prescott",
+      "name": "Prescott",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Prescott, Town of",
+        "Town of Prescott"
+      ]
+    },
+    {
+      "id": "prince-township",
+      "label": "Prince",
+      "name": "Prince",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Prince, Township of",
+        "Township of Prince"
+      ]
+    },
+    {
+      "id": "prince-edward-county",
+      "label": "Prince Edward County",
+      "name": "Prince Edward",
+      "tier": "single",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Prince Edward",
+      "aliases": [
+        "Prince Edward, County of",
+        "County of Prince Edward"
+      ]
+    },
+    {
+      "id": "puslinch-township",
+      "label": "Puslinch, Wellington County",
+      "name": "Puslinch",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "wellington-county",
+      "upperTierName": "Wellington County",
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Puslinch, Township of",
+        "Township of Puslinch"
+      ]
+    },
+    {
+      "id": "quinte-west-city",
+      "label": "Quinte West",
+      "name": "Quinte West",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Quinte West, City of",
+        "City of Quinte West"
+      ]
+    },
+    {
+      "id": "rainy-river-town",
+      "label": "Rainy River",
+      "name": "Rainy River",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Rainy River",
+      "aliases": [
+        "Rainy River, Town of",
+        "Town of Rainy River"
+      ]
+    },
+    {
+      "id": "ramara-township",
+      "label": "Ramara, Simcoe County",
+      "name": "Ramara",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Ramara, Township of",
+        "Township of Ramara"
+      ]
+    },
+    {
+      "id": "red-lake-municipality",
+      "label": "Red Lake",
+      "name": "Red Lake",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Red Lake, Municipality of",
+        "Municipality of Red Lake"
+      ]
+    },
+    {
+      "id": "red-rock-township",
+      "label": "Red Rock",
+      "name": "Red Rock",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Red Rock, Township of",
+        "Township of Red Rock"
+      ]
+    },
+    {
+      "id": "renfrew-county",
+      "label": "Renfrew County",
+      "name": "Renfrew",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Renfrew, County of",
+        "County of Renfrew"
+      ]
+    },
+    {
+      "id": "renfrew-town",
+      "label": "Renfrew, Renfrew County",
+      "name": "Renfrew",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Renfrew, Town of",
+        "Town of Renfrew"
+      ]
+    },
+    {
+      "id": "richmond-hill-city",
+      "label": "Richmond Hill, York Region",
+      "name": "Richmond Hill",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "Richmond Hill, City of",
+        "City of Richmond Hill"
+      ]
+    },
+    {
+      "id": "rideau-lakes-township",
+      "label": "Rideau Lakes, United Counties of Leeds and Grenville",
+      "name": "Rideau Lakes",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Rideau Lakes, Township of",
+        "Township of Rideau Lakes"
+      ]
+    },
+    {
+      "id": "russell-township",
+      "label": "Russell, United Counties of Prescott and Russell",
+      "name": "Russell",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "Russell, Township of",
+        "Township of Russell"
+      ]
+    },
+    {
+      "id": "ryerson-township",
+      "label": "Ryerson",
+      "name": "Ryerson",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Ryerson, Township of",
+        "Township of Ryerson"
+      ]
+    },
+    {
+      "id": "sables-spanish-rivers-township",
+      "label": "Sables-Spanish Rivers",
+      "name": "Sables-Spanish Rivers",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "Sables-Spanish Rivers, Township of",
+        "Township of Sables-Spanish Rivers"
+      ]
+    },
+    {
+      "id": "sarnia-city",
+      "label": "Sarnia, Lambton County",
+      "name": "Sarnia",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Sarnia, City of",
+        "City of Sarnia"
+      ]
+    },
+    {
+      "id": "saugeen-shores-town",
+      "label": "Saugeen Shores, Bruce County",
+      "name": "Saugeen Shores",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "Saugeen Shores, Town of",
+        "Town of Saugeen Shores"
+      ]
+    },
+    {
+      "id": "sault-ste-marie-city",
+      "label": "Sault Ste. Marie",
+      "name": "Sault Ste. Marie",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Sault Ste. Marie, City of",
+        "City of Sault Ste. Marie"
+      ]
+    },
+    {
+      "id": "schreiber-township",
+      "label": "Schreiber",
+      "name": "Schreiber",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Schreiber, Township of",
+        "Township of Schreiber"
+      ]
+    },
+    {
+      "id": "scugog-township",
+      "label": "Scugog, Durham Region",
+      "name": "Scugog",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Scugog, Township of",
+        "Township of Scugog"
+      ]
+    },
+    {
+      "id": "seguin-township",
+      "label": "Seguin",
+      "name": "Seguin",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Seguin, Township of",
+        "Township of Seguin"
+      ]
+    },
+    {
+      "id": "selwyn-township",
+      "label": "Selwyn, Peterborough County",
+      "name": "Selwyn",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Selwyn, Township of",
+        "Township of Selwyn"
+      ]
+    },
+    {
+      "id": "severn-township",
+      "label": "Severn, Simcoe County",
+      "name": "Severn",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Severn, Township of",
+        "Township of Severn"
+      ]
+    },
+    {
+      "id": "shelburne-town",
+      "label": "Shelburne, Dufferin County",
+      "name": "Shelburne",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "dufferin-county",
+      "upperTierName": "Dufferin County",
+      "geographicArea": "Dufferin",
+      "aliases": [
+        "Shelburne, Town of",
+        "Town of Shelburne"
+      ]
+    },
+    {
+      "id": "shuniah-municipality",
+      "label": "Shuniah",
+      "name": "Shuniah",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Shuniah, Municipality of",
+        "Municipality of Shuniah"
+      ]
+    },
+    {
+      "id": "simcoe-county",
+      "label": "Simcoe County",
+      "name": "Simcoe",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Simcoe, County of",
+        "County of Simcoe"
+      ]
+    },
+    {
+      "id": "sioux-lookout-municipality",
+      "label": "Sioux Lookout",
+      "name": "Sioux Lookout",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Sioux Lookout, Municipality of",
+        "Municipality of Sioux Lookout"
+      ]
+    },
+    {
+      "id": "sioux-narrows-nestor-falls-township",
+      "label": "Sioux Narrows-Nestor Falls",
+      "name": "Sioux Narrows-Nestor Falls",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Kenora",
+      "aliases": [
+        "Sioux Narrows-Nestor Falls, Township of",
+        "Township of Sioux Narrows-Nestor Falls"
+      ]
+    },
+    {
+      "id": "smiths-falls-town",
+      "label": "Smiths Falls",
+      "name": "Smiths Falls",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Smiths Falls, Town of",
+        "Town of Smiths Falls"
+      ]
+    },
+    {
+      "id": "smooth-rock-falls-town",
+      "label": "Smooth Rock Falls",
+      "name": "Smooth Rock Falls",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Smooth Rock Falls, Town of",
+        "Town of Smooth Rock Falls"
+      ]
+    },
+    {
+      "id": "south-algonquin-township",
+      "label": "South Algonquin",
+      "name": "South Algonquin",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "South Algonquin, Township of",
+        "Township of South Algonquin"
+      ]
+    },
+    {
+      "id": "south-bruce-peninsula-town",
+      "label": "South Bruce Peninsula, Bruce County",
+      "name": "South Bruce Peninsula",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "South Bruce Peninsula, Town of",
+        "Town of South Bruce Peninsula"
+      ]
+    },
+    {
+      "id": "south-bruce-municipality",
+      "label": "South Bruce, Bruce County",
+      "name": "South Bruce",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "bruce-county",
+      "upperTierName": "Bruce County",
+      "geographicArea": "Bruce",
+      "aliases": [
+        "South Bruce, Municipality of",
+        "Municipality of South Bruce"
+      ]
+    },
+    {
+      "id": "south-dundas-municipality",
+      "label": "South Dundas, United Counties of Stormont, Dundas and Glengarry",
+      "name": "South Dundas",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "stormont-dundas-glengarry-counties",
+      "upperTierName": "United Counties of Stormont, Dundas and Glengarry",
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "South Dundas, Municipality of",
+        "Municipality of South Dundas"
+      ]
+    },
+    {
+      "id": "south-frontenac-township",
+      "label": "South Frontenac, Frontenac County",
+      "name": "South Frontenac",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "frontenac-county",
+      "upperTierName": "Frontenac County",
+      "geographicArea": "Frontenac",
+      "aliases": [
+        "South Frontenac, Township of",
+        "Township of South Frontenac"
+      ]
+    },
+    {
+      "id": "south-glengarry-township",
+      "label": "South Glengarry, United Counties of Stormont, Dundas and Glengarry",
+      "name": "South Glengarry",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "stormont-dundas-glengarry-counties",
+      "upperTierName": "United Counties of Stormont, Dundas and Glengarry",
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "South Glengarry, Township of",
+        "Township of South Glengarry"
+      ]
+    },
+    {
+      "id": "south-huron-municipality",
+      "label": "South Huron, Huron County",
+      "name": "South Huron",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "huron-county",
+      "upperTierName": "Huron County",
+      "geographicArea": "Huron",
+      "aliases": [
+        "South Huron, Municipality of",
+        "Municipality of South Huron"
+      ]
+    },
+    {
+      "id": "south-river-village",
+      "label": "South River",
+      "name": "South River",
+      "tier": "single",
+      "type": "village",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "South River, Village of",
+        "Village of South River"
+      ]
+    },
+    {
+      "id": "south-stormont-township",
+      "label": "South Stormont, United Counties of Stormont, Dundas and Glengarry",
+      "name": "South Stormont",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "stormont-dundas-glengarry-counties",
+      "upperTierName": "United Counties of Stormont, Dundas and Glengarry",
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "South Stormont, Township of",
+        "Township of South Stormont"
+      ]
+    },
+    {
+      "id": "south-west-oxford-township",
+      "label": "South-West Oxford, Oxford County",
+      "name": "South-West Oxford",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "South-West Oxford, Township of",
+        "Township of South-West Oxford"
+      ]
+    },
+    {
+      "id": "southgate-township",
+      "label": "Southgate, Grey County",
+      "name": "Southgate",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "Southgate, Township of",
+        "Township of Southgate"
+      ]
+    },
+    {
+      "id": "southwest-middlesex-municipality",
+      "label": "Southwest Middlesex, Middlesex County",
+      "name": "Southwest Middlesex",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Southwest Middlesex, Municipality of",
+        "Municipality of Southwest Middlesex"
+      ]
+    },
+    {
+      "id": "southwold-township",
+      "label": "Southwold, Elgin County",
+      "name": "Southwold",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "elgin-county",
+      "upperTierName": "Elgin County",
+      "geographicArea": "Elgin",
+      "aliases": [
+        "Southwold, Township of",
+        "Township of Southwold"
+      ]
+    },
+    {
+      "id": "spanish-town",
+      "label": "Spanish",
+      "name": "Spanish",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Spanish, Town of",
+        "Town of Spanish"
+      ]
+    },
+    {
+      "id": "springwater-township",
+      "label": "Springwater, Simcoe County",
+      "name": "Springwater",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Springwater, Township of",
+        "Township of Springwater"
+      ]
+    },
+    {
+      "id": "st-catharines-city",
+      "label": "St. Catharines, Niagara Region",
+      "name": "St. Catharines",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "St. Catharines, City of",
+        "City of St. Catharines"
+      ]
+    },
+    {
+      "id": "st-clair-township",
+      "label": "St. Clair, Lambton County",
+      "name": "St. Clair",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "St. Clair, Township of",
+        "Township of St. Clair"
+      ]
+    },
+    {
+      "id": "st-joseph-township",
+      "label": "St. Joseph",
+      "name": "St. Joseph",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "St. Joseph, Township of",
+        "Township of St. Joseph"
+      ]
+    },
+    {
+      "id": "st-marys-town",
+      "label": "St. Marys",
+      "name": "St. Marys",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Perth",
+      "aliases": [
+        "St. Marys, Town of",
+        "Town of St. Marys"
+      ]
+    },
+    {
+      "id": "st-thomas-city",
+      "label": "St. Thomas",
+      "name": "St. Thomas",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Elgin",
+      "aliases": [
+        "St. Thomas, City of",
+        "City of St. Thomas"
+      ]
+    },
+    {
+      "id": "st-charles-municipality",
+      "label": "St.-Charles",
+      "name": "St.-Charles",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Sudbury",
+      "aliases": [
+        "St.-Charles, Municipality of",
+        "Municipality of St.-Charles"
+      ]
+    },
+    {
+      "id": "stirling-rawdon-township",
+      "label": "Stirling-Rawdon, Hastings County",
+      "name": "Stirling-Rawdon",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Stirling-Rawdon, Township of",
+        "Township of Stirling-Rawdon"
+      ]
+    },
+    {
+      "id": "stone-mills-township",
+      "label": "Stone Mills, Lennox and Addington County",
+      "name": "Stone Mills",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lennox-and-addington-county",
+      "upperTierName": "Lennox and Addington County",
+      "geographicArea": "Lennox and Addington",
+      "aliases": [
+        "Stone Mills, Township of",
+        "Township of Stone Mills"
+      ]
+    },
+    {
+      "id": "stratford-city",
+      "label": "Stratford",
+      "name": "Stratford",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Perth",
+      "aliases": [
+        "Stratford, City of",
+        "City of Stratford"
+      ]
+    },
+    {
+      "id": "strathroy-caradoc-municipality",
+      "label": "Strathroy-Caradoc, Middlesex County",
+      "name": "Strathroy-Caradoc",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Strathroy-Caradoc, Municipality of",
+        "Municipality of Strathroy-Caradoc"
+      ]
+    },
+    {
+      "id": "strong-township",
+      "label": "Strong",
+      "name": "Strong",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Strong, Township of",
+        "Township of Strong"
+      ]
+    },
+    {
+      "id": "sundridge-village",
+      "label": "Sundridge",
+      "name": "Sundridge",
+      "tier": "single",
+      "type": "village",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Sundridge, Village of",
+        "Village of Sundridge"
+      ]
+    },
+    {
+      "id": "tarbutt-township",
+      "label": "Tarbutt",
+      "name": "Tarbutt",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Tarbutt, Township of",
+        "Township of Tarbutt"
+      ]
+    },
+    {
+      "id": "tay-valley-township",
+      "label": "Tay Valley, Lanark County",
+      "name": "Tay Valley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lanark-county",
+      "upperTierName": "Lanark County",
+      "geographicArea": "Lanark",
+      "aliases": [
+        "Tay Valley, Township of",
+        "Township of Tay Valley"
+      ]
+    },
+    {
+      "id": "tay-township",
+      "label": "Tay, Simcoe County",
+      "name": "Tay",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Tay, Township of",
+        "Township of Tay"
+      ]
+    },
+    {
+      "id": "tecumseh-town",
+      "label": "Tecumseh, Essex County",
+      "name": "Tecumseh",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "essex-county",
+      "upperTierName": "Essex County",
+      "geographicArea": "Essex",
+      "aliases": [
+        "Tecumseh, Town of",
+        "Town of Tecumseh"
+      ]
+    },
+    {
+      "id": "tehkummah-township",
+      "label": "Tehkummah",
+      "name": "Tehkummah",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Manitoulin",
+      "aliases": [
+        "Tehkummah, Township of",
+        "Township of Tehkummah"
+      ]
+    },
+    {
+      "id": "temagami-municipality",
+      "label": "Temagami",
+      "name": "Temagami",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "Temagami, Municipality of",
+        "Municipality of Temagami"
+      ]
+    },
+    {
+      "id": "temiskaming-shores-city",
+      "label": "Temiskaming Shores",
+      "name": "Temiskaming Shores",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Temiskaming Shores, City of",
+        "City of Temiskaming Shores"
+      ]
+    },
+    {
+      "id": "terrace-bay-township",
+      "label": "Terrace Bay",
+      "name": "Terrace Bay",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Terrace Bay, Township of",
+        "Township of Terrace Bay"
+      ]
+    },
+    {
+      "id": "thames-centre-municipality",
+      "label": "Thames Centre, Middlesex County",
+      "name": "Thames Centre",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "middlesex-county",
+      "upperTierName": "Middlesex County",
+      "geographicArea": "Middlesex",
+      "aliases": [
+        "Thames Centre, Municipality of",
+        "Municipality of Thames Centre"
+      ]
+    },
+    {
+      "id": "the-archipelago-township",
+      "label": "The Archipelago",
+      "name": "The Archipelago",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "The Archipelago, Township of",
+        "Township of The Archipelago"
+      ]
+    },
+    {
+      "id": "the-blue-mountains-town",
+      "label": "The Blue Mountains, Grey County",
+      "name": "The Blue Mountains",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "The Blue Mountains, Town of",
+        "Town of The Blue Mountains"
+      ]
+    },
+    {
+      "id": "the-nation-municipality-municipality",
+      "label": "The Nation Municipality, United Counties of Prescott and Russell",
+      "name": "The Nation Municipality",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "prescott-russell-counties",
+      "upperTierName": "United Counties of Prescott and Russell",
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "The Nation Municipality"
+      ]
+    },
+    {
+      "id": "the-north-shore-township",
+      "label": "The North Shore",
+      "name": "The North Shore",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "The North Shore, Township of",
+        "Township of The North Shore"
+      ]
+    },
+    {
+      "id": "thessalon-town",
+      "label": "Thessalon",
+      "name": "Thessalon",
+      "tier": "single",
+      "type": "town",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Thessalon, Town of",
+        "Town of Thessalon"
+      ]
+    },
+    {
+      "id": "thornloe-village",
+      "label": "Thornloe",
+      "name": "Thornloe",
+      "tier": "single",
+      "type": "village",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Timiskaming",
+      "aliases": [
+        "Thornloe, Village of",
+        "Village of Thornloe"
+      ]
+    },
+    {
+      "id": "thorold-city",
+      "label": "Thorold, Niagara Region",
+      "name": "Thorold",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Thorold, City of",
+        "City of Thorold"
+      ]
+    },
+    {
+      "id": "thunder-bay-city",
+      "label": "Thunder Bay",
+      "name": "Thunder Bay",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Thunder Bay",
+      "aliases": [
+        "Thunder Bay, City of",
+        "City of Thunder Bay"
+      ]
+    },
+    {
+      "id": "tillsonburg-town",
+      "label": "Tillsonburg, Oxford County",
+      "name": "Tillsonburg",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "Tillsonburg, Town of",
+        "Town of Tillsonburg"
+      ]
+    },
+    {
+      "id": "timmins-city",
+      "label": "Timmins",
+      "name": "Timmins",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Timmins, City of",
+        "City of Timmins"
+      ]
+    },
+    {
+      "id": "tiny-township",
+      "label": "Tiny, Simcoe County",
+      "name": "Tiny",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Tiny, Township of",
+        "Township of Tiny"
+      ]
+    },
+    {
+      "id": "toronto-city",
+      "label": "Toronto",
+      "name": "Toronto",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Toronto",
+      "aliases": [
+        "Toronto, City of",
+        "City of Toronto"
+      ]
+    },
+    {
+      "id": "trent-hills-municipality",
+      "label": "Trent Hills, Northumberland County",
+      "name": "Trent Hills",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "northumberland-county",
+      "upperTierName": "Northumberland County",
+      "geographicArea": "Northumberland",
+      "aliases": [
+        "Trent Hills, Municipality of",
+        "Municipality of Trent Hills"
+      ]
+    },
+    {
+      "id": "trent-lakes-municipality",
+      "label": "Trent Lakes, Peterborough County",
+      "name": "Trent Lakes",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "peterborough-county",
+      "upperTierName": "Peterborough County",
+      "geographicArea": "Peterborough",
+      "aliases": [
+        "Trent Lakes, Municipality of",
+        "Municipality of Trent Lakes"
+      ]
+    },
+    {
+      "id": "tudor-and-cashel-township",
+      "label": "Tudor and Cashel, Hastings County",
+      "name": "Tudor and Cashel",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Tudor and Cashel, Township of",
+        "Township of Tudor and Cashel"
+      ]
+    },
+    {
+      "id": "tweed-municipality",
+      "label": "Tweed, Hastings County",
+      "name": "Tweed",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Tweed, Municipality of",
+        "Municipality of Tweed"
+      ]
+    },
+    {
+      "id": "tyendinaga-township",
+      "label": "Tyendinaga, Hastings County",
+      "name": "Tyendinaga",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Tyendinaga, Township of",
+        "Township of Tyendinaga"
+      ]
+    },
+    {
+      "id": "leeds-grenville-counties",
+      "label": "United Counties of Leeds and Grenville",
+      "name": "Leeds and Grenville",
+      "tier": "upper",
+      "type": "united-counties",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Leeds and Grenville, United Counties of",
+        "United Counties of Leeds and Grenville"
+      ]
+    },
+    {
+      "id": "prescott-russell-counties",
+      "label": "United Counties of Prescott and Russell",
+      "name": "Prescott and Russell",
+      "tier": "upper",
+      "type": "united-counties",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Prescott and Russell",
+      "aliases": [
+        "Prescott and Russell, United Counties of",
+        "United Counties of Prescott and Russell"
+      ]
+    },
+    {
+      "id": "stormont-dundas-glengarry-counties",
+      "label": "United Counties of Stormont, Dundas and Glengarry",
+      "name": "Stormont, Dundas and Glengarry",
+      "tier": "upper",
+      "type": "united-counties",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Stormont, Dundas and Glengarry",
+      "aliases": [
+        "Stormont, Dundas and Glengarry, United Counties of",
+        "United Counties of Stormont, Dundas and Glengarry"
+      ]
+    },
+    {
+      "id": "uxbridge-township",
+      "label": "Uxbridge, Durham Region",
+      "name": "Uxbridge",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Uxbridge, Township of",
+        "Township of Uxbridge"
+      ]
+    },
+    {
+      "id": "val-rita-harty-township",
+      "label": "Val Rita-Harty",
+      "name": "Val Rita-Harty",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Cochrane",
+      "aliases": [
+        "Val Rita-Harty, Township of",
+        "Township of Val Rita-Harty"
+      ]
+    },
+    {
+      "id": "vaughan-city",
+      "label": "Vaughan, York Region",
+      "name": "Vaughan",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "Vaughan, City of",
+        "City of Vaughan"
+      ]
+    },
+    {
+      "id": "wainfleet-township",
+      "label": "Wainfleet, Niagara Region",
+      "name": "Wainfleet",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Wainfleet, Township of",
+        "Township of Wainfleet"
+      ]
+    },
+    {
+      "id": "warwick-township",
+      "label": "Warwick, Lambton County",
+      "name": "Warwick",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "lambton-county",
+      "upperTierName": "Lambton County",
+      "geographicArea": "Lambton",
+      "aliases": [
+        "Warwick, Township of",
+        "Township of Warwick"
+      ]
+    },
+    {
+      "id": "wasaga-beach-town",
+      "label": "Wasaga Beach, Simcoe County",
+      "name": "Wasaga Beach",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "simcoe-county",
+      "upperTierName": "Simcoe County",
+      "geographicArea": "Simcoe",
+      "aliases": [
+        "Wasaga Beach, Town of",
+        "Town of Wasaga Beach"
+      ]
+    },
+    {
+      "id": "waterloo-region",
+      "label": "Waterloo Region",
+      "name": "Waterloo",
+      "tier": "upper",
+      "type": "regional-municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "Waterloo, Regional Municipality of",
+        "Regional Municipality of Waterloo"
+      ]
+    },
+    {
+      "id": "waterloo-city",
+      "label": "Waterloo, Waterloo Region",
+      "name": "Waterloo",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "waterloo-region",
+      "upperTierName": "Waterloo Region",
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "Waterloo, City of",
+        "City of Waterloo"
+      ]
+    },
+    {
+      "id": "wawa-municipality",
+      "label": "Wawa",
+      "name": "Wawa",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "Wawa, Municipality of",
+        "Municipality of Wawa"
+      ]
+    },
+    {
+      "id": "welland-city",
+      "label": "Welland, Niagara Region",
+      "name": "Welland",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "Welland, City of",
+        "City of Welland"
+      ]
+    },
+    {
+      "id": "wellesley-township",
+      "label": "Wellesley, Waterloo Region",
+      "name": "Wellesley",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "waterloo-region",
+      "upperTierName": "Waterloo Region",
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "Wellesley, Township of",
+        "Township of Wellesley"
+      ]
+    },
+    {
+      "id": "wellington-county",
+      "label": "Wellington County",
+      "name": "Wellington",
+      "tier": "upper",
+      "type": "county",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Wellington, County of",
+        "County of Wellington"
+      ]
+    },
+    {
+      "id": "wellington-north-township",
+      "label": "Wellington North, Wellington County",
+      "name": "Wellington North",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "wellington-county",
+      "upperTierName": "Wellington County",
+      "geographicArea": "Wellington",
+      "aliases": [
+        "Wellington North, Township of",
+        "Township of Wellington North"
+      ]
+    },
+    {
+      "id": "west-elgin-municipality",
+      "label": "West Elgin, Elgin County",
+      "name": "West Elgin",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "elgin-county",
+      "upperTierName": "Elgin County",
+      "geographicArea": "Elgin",
+      "aliases": [
+        "West Elgin, Municipality of",
+        "Municipality of West Elgin"
+      ]
+    },
+    {
+      "id": "west-grey-municipality",
+      "label": "West Grey, Grey County",
+      "name": "West Grey",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "grey-county",
+      "upperTierName": "Grey County",
+      "geographicArea": "Grey",
+      "aliases": [
+        "West Grey, Municipality of",
+        "Municipality of West Grey"
+      ]
+    },
+    {
+      "id": "west-lincoln-township",
+      "label": "West Lincoln, Niagara Region",
+      "name": "West Lincoln",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "niagara-region",
+      "upperTierName": "Niagara Region",
+      "geographicArea": "Niagara",
+      "aliases": [
+        "West Lincoln, Township of",
+        "Township of West Lincoln"
+      ]
+    },
+    {
+      "id": "west-nipissing-municipality",
+      "label": "West Nipissing",
+      "name": "West Nipissing",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Nipissing",
+      "aliases": [
+        "West Nipissing, Municipality of",
+        "Municipality of West Nipissing"
+      ]
+    },
+    {
+      "id": "west-perth-municipality",
+      "label": "West Perth, Perth County",
+      "name": "West Perth",
+      "tier": "lower",
+      "type": "municipality",
+      "upperTierId": "perth-county",
+      "upperTierName": "Perth County",
+      "geographicArea": "Perth",
+      "aliases": [
+        "West Perth, Municipality of",
+        "Municipality of West Perth"
+      ]
+    },
+    {
+      "id": "westport-village",
+      "label": "Westport, United Counties of Leeds and Grenville",
+      "name": "Westport",
+      "tier": "lower",
+      "type": "village",
+      "upperTierId": "leeds-grenville-counties",
+      "upperTierName": "United Counties of Leeds and Grenville",
+      "geographicArea": "Leeds and Grenville",
+      "aliases": [
+        "Westport, Village of",
+        "Village of Westport"
+      ]
+    },
+    {
+      "id": "whitby-town",
+      "label": "Whitby, Durham Region",
+      "name": "Whitby",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "durham-region",
+      "upperTierName": "Durham Region",
+      "geographicArea": "Durham",
+      "aliases": [
+        "Whitby, Town of",
+        "Town of Whitby"
+      ]
+    },
+    {
+      "id": "whitchurch-stouffville-town",
+      "label": "Whitchurch-Stouffville, York Region",
+      "name": "Whitchurch-Stouffville",
+      "tier": "lower",
+      "type": "town",
+      "upperTierId": "york-region",
+      "upperTierName": "York Region",
+      "geographicArea": "York",
+      "aliases": [
+        "Whitchurch-Stouffville, Town of",
+        "Town of Whitchurch-Stouffville"
+      ]
+    },
+    {
+      "id": "white-river-township",
+      "label": "White River",
+      "name": "White River",
+      "tier": "single",
+      "type": "township",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Algoma",
+      "aliases": [
+        "White River, Township of",
+        "Township of White River"
+      ]
+    },
+    {
+      "id": "whitestone-municipality",
+      "label": "Whitestone",
+      "name": "Whitestone",
+      "tier": "single",
+      "type": "municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Parry Sound",
+      "aliases": [
+        "Whitestone, Municipality of",
+        "Municipality of Whitestone"
+      ]
+    },
+    {
+      "id": "whitewater-region-township",
+      "label": "Whitewater Region, Renfrew County",
+      "name": "Whitewater Region",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "renfrew-county",
+      "upperTierName": "Renfrew County",
+      "geographicArea": "Renfrew",
+      "aliases": [
+        "Whitewater Region, Township of",
+        "Township of Whitewater Region"
+      ]
+    },
+    {
+      "id": "wilmot-township",
+      "label": "Wilmot, Waterloo Region",
+      "name": "Wilmot",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "waterloo-region",
+      "upperTierName": "Waterloo Region",
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "Wilmot, Township of",
+        "Township of Wilmot"
+      ]
+    },
+    {
+      "id": "windsor-city",
+      "label": "Windsor",
+      "name": "Windsor",
+      "tier": "single",
+      "type": "city",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "Essex",
+      "aliases": [
+        "Windsor, City of",
+        "City of Windsor"
+      ]
+    },
+    {
+      "id": "wollaston-township",
+      "label": "Wollaston, Hastings County",
+      "name": "Wollaston",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "hastings-county",
+      "upperTierName": "Hastings County",
+      "geographicArea": "Hastings",
+      "aliases": [
+        "Wollaston, Township of",
+        "Township of Wollaston"
+      ]
+    },
+    {
+      "id": "woodstock-city",
+      "label": "Woodstock, Oxford County",
+      "name": "Woodstock",
+      "tier": "lower",
+      "type": "city",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "Woodstock, City of",
+        "City of Woodstock"
+      ]
+    },
+    {
+      "id": "woolwich-township",
+      "label": "Woolwich, Waterloo Region",
+      "name": "Woolwich",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "waterloo-region",
+      "upperTierName": "Waterloo Region",
+      "geographicArea": "Waterloo",
+      "aliases": [
+        "Woolwich, Township of",
+        "Township of Woolwich"
+      ]
+    },
+    {
+      "id": "york-region",
+      "label": "York Region",
+      "name": "York",
+      "tier": "upper",
+      "type": "regional-municipality",
+      "upperTierId": null,
+      "upperTierName": null,
+      "geographicArea": "York",
+      "aliases": [
+        "York, Regional Municipality of",
+        "Regional Municipality of York"
+      ]
+    },
+    {
+      "id": "zorra-township",
+      "label": "Zorra, Oxford County",
+      "name": "Zorra",
+      "tier": "lower",
+      "type": "township",
+      "upperTierId": "oxford-county",
+      "upperTierName": "Oxford County",
+      "geographicArea": "Oxford",
+      "aliases": [
+        "Zorra, Township of",
+        "Township of Zorra"
+      ]
+    }
+  ]
+}
