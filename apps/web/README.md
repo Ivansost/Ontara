@@ -1,6 +1,6 @@
 # Ontara web
 
-The resident web journey uses Next.js App Router, React 19, real Astryx components and the official Neutral theme. It renders the backend-owned catalogue and question bank; generated copies live in `src/generated` and API types come from the backend OpenAPI schema.
+The resident web journey uses Next.js App Router, React 19, real Astryx components and the official Neutral theme. Residents complete reports with written form controls. It renders the backend-owned catalogue and question bank; generated copies live in `src/generated` and API types come from the backend OpenAPI schema.
 
 ## Run locally
 
@@ -28,7 +28,7 @@ npm run astryx -- doctor --built .
 
 The sync command also accepts a source directory: `npm run sync-contracts -- /absolute/path/to/contracts`. It requires the backend-owned `catalogue.json`, `questions.json` and `openapi.json`.
 
-Browser tests use an installed Google Chrome. `navigation.spec.ts` exercises every inactive leaf without API requests or intake. `reporting.spec.ts` uses explicit browser-contract fixtures to check editing, fresh approval and same-case follow-up; these tests do not establish a live mailbox, execution worker or portal integration. A separate live browser smoke must verify those services after integration. To test the actual proxy and API origin checks without creating a case, run `ONTARA_LIVE_API_TESTS=1 npm run test:ui -- tests/proxy.spec.ts`. These tests disable request traces and assert cookie flags without logging cookie values. Set `ONTARA_TEST_BASE_URL` to the public HTTPS web origin to run the same checks after deployment; no local server is started in that mode.
+Browser tests use an installed Google Chrome. `navigation.spec.ts` exercises every inactive preview without API requests or data collection. `reporting.spec.ts` uses explicit browser-contract fixtures to check editing, fresh approval and same-case follow-up. `typed-intake.spec.ts` checks typed Roads and Graffiti review/resume flows and verifies no voice requests, microphone access or provider connections. These fixtures do not establish a live mailbox, execution worker or portal integration. A separate live browser smoke must verify those services after integration. To test the actual proxy and API origin checks without creating a case, run `ONTARA_LIVE_API_TESTS=1 npm run test:ui -- tests/proxy.spec.ts`. These tests disable request traces and assert cookie flags without logging cookie values. Set `ONTARA_TEST_BASE_URL` to the public HTTPS web origin to run the same checks after deployment; no local server is started in that mode.
 
 ## Render Free web service
 
@@ -50,4 +50,4 @@ The coordinated Blueprint resolves `ONTARA_API_URL` from the API service's `REND
 
 Astryx core, Neutral and CLI are pinned to the same release. CSS reset, component production styles, theme production styles are imported once; the exact Neutral Figtree font family is self-hosted with Fontsource; app-specific responsive layout is compiled through StyleX's Babel/PostCSS integration. The frame derives from Astryx's documentation, form-wizard, detail-page and shell-top-nav templates. The generated Astryx instructions remain in `AGENTS.md`. The unchanged Figtree font license is available in `public/licenses/figtree.txt`.
 
-Nine categories have dedicated nested routes. Seven inactive categories stop before intake and create no drafts. Active routes confirm the incident location, render authored conditional questions, review the named recipient and obtain explicit version approval. The private case view presents receipts, timeline, focused follow-up with separate approval, cancellation and expandable recorded presenter evidence. All receiving portals are labelled DEMO; acknowledgement never means a repair.
+Nine categories have dedicated nested routes. Seven inactive categories show empty disabled form previews and create no drafts. Active routes confirm the incident location, render authored conditional questions, review the named recipient and obtain explicit version approval. The private case view presents receipts, timeline, focused follow-up with separate approval, cancellation and expandable recorded presenter evidence. All receiving portals are labelled DEMO; acknowledgement never means a repair.

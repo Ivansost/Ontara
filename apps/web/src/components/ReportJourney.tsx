@@ -29,8 +29,6 @@ import { useReporting, emptyDraft, type Draft, type IncidentLocation } from './R
 import { CatalogueBreadcrumbs } from './CatalogueBreadcrumbs';
 import { QuestionField } from './QuestionField';
 import { PageState } from './PageState';
-import { VoiceIntake } from './voice/VoiceIntake';
-import { linkVoiceHistory } from './voice/linkVoiceHistory';
 
 const STEPS = [{ id: 'location', label: 'Location' }, { id: 'details', label: 'Details' }, { id: 'review', label: 'Review' }];
 const errorText = (error: unknown) => error instanceof Error ? error.message : 'We could not complete that step. Please try again.';
@@ -53,8 +51,6 @@ export default function ReportJourney({ issue, trail, step = 'location' }: { iss
   const [reviewLoading, setReviewLoading] = useState(false);
   const [approved, setApproved] = useState(false);
   const [locating, setLocating] = useState(false);
-  const [voiceActive, setVoiceActive] = useState(false);
-  const [voiceHistoryPending, setVoiceHistoryPending] = useState(false);
   const [locationMessage, setLocationMessage] = useState('');
   const headingRef = useRef<HTMLHeadingElement>(null);
   const requestGuard = useRef(false);
@@ -133,7 +129,6 @@ export default function ReportJourney({ issue, trail, step = 'location' }: { iss
 
   async function next() {
     if (!draft || requestGuard.current) return;
-    if (voiceActive) { setError('Stop voice before continuing so you can check the entered answers.'); return; }
     setError(''); setDecision(null);
     if (step === 'location') {
       const found = validateLocation(); setErrors(found);
@@ -166,7 +161,6 @@ export default function ReportJourney({ issue, trail, step = 'location' }: { iss
           : await api<CaseView>('/v1/cases', { method: 'POST', body: { ...data, issueId: issue.id } });
         update({ caseId: saved.id, caseVersion: saved.version, savedFingerprint: draftFingerprint(draft) });
         setReviewCase(saved);
-        setVoiceHistoryPending(!await linkVoiceHistory(draft.voiceSessionIds, saved.id, saved.version));
         goTo(2);
       } catch (problem) { setError(errorText(problem)); }
       finally { requestGuard.current = false; setBusy(false); }
@@ -207,7 +201,6 @@ export default function ReportJourney({ issue, trail, step = 'location' }: { iss
       content={<LayoutContent><VStack gap={5}>
         {error ? <Banner status="error" title="We couldn’t complete this step" description={error} /> : null}
         {decision && (!decision.supported || decision.urgentHandoff) ? <Banner status={decision.urgentHandoff ? 'warning' : 'info'} title={decision.urgentHandoff ? 'Use an urgent service' : 'This location needs a different route'} description={decision.reason} /> : null}
-        {voiceHistoryPending ? <Banner status="info" title="Voice transcript is still being saved" description="Your report draft is saved. The private voice transcript is pending; you can check the written answers before approving." /> : null}
 
         {step === 'location' ? <VStack gap={5}>
           <VStack gap={1}><Heading level={2}>Where is the problem?</Heading><Text color="secondary">Use the incident location, even if you live somewhere else.</Text></VStack>
@@ -229,10 +222,6 @@ export default function ReportJourney({ issue, trail, step = 'location' }: { iss
 
         {step === 'details' ? <VStack gap={5}>
           <VStack gap={1}><Heading level={2}>Tell us what you noticed</Heading><Text color="secondary">Only report what you know. Use “not sure” where it is available.</Text></VStack>
-          <VoiceIntake issueId={issue.id} location={draft.location} answers={draft.answers}
-            onAnswersChange={answers => { update({ answers }); setDecision(null); }}
-            onSessionStarted={id => setDraft(current => current?.issueId === issue.id ? { ...current, voiceSessionIds: [...new Set([...(current.voiceSessionIds || []), id])] } : current)}
-            onActiveChange={setVoiceActive} />
           <FormLayout defaultOptionality="optional">
             {displayQuestions.map(question => <QuestionField key={question.id} question={question} value={draft.answers[question.id]} onChange={value => updateAnswer(question.id, value)} error={errors[question.id]} />)}
           </FormLayout>
@@ -270,7 +259,7 @@ export default function ReportJourney({ issue, trail, step = 'location' }: { iss
       footer={<LayoutFooter><HStack gap={3} vAlign="center" wrap="wrap">
         <StackItem size="fill"><Button label="Back" variant="secondary" onClick={() => activeStep > 0 ? goTo(activeStep - 1) : router.push('/report/' + trail.slice(0, -1).map(node => node.slug).join('/'))} icon={<Icon icon="chevronLeft" />} /></StackItem>
         <Text type="supporting">{activeStep + 1} of {STEPS.length}</Text>
-        <Button label={step === 'review' ? 'Approve and send report' : step === 'details' ? 'Review report' : 'Continue'} variant="primary" onClick={next} isLoading={busy} isDisabled={voiceActive || (step === 'details' && Boolean(urgent)) || (step === 'review' && (!reviewCase || isDirty || reviewLoading))} />
+        <Button label={step === 'review' ? 'Approve and send report' : step === 'details' ? 'Review report' : 'Continue'} variant="primary" onClick={next} isLoading={busy} isDisabled={(step === 'details' && Boolean(urgent)) || (step === 'review' && (!reviewCase || isDirty || reviewLoading))} />
       </HStack></LayoutFooter>}
     />
   );
