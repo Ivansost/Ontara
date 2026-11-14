@@ -92,6 +92,59 @@
       "title": "IncidentLocation",
       "type": "object"
     },
+    "NotificationProgress": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "purpose": {
+          "enum": [
+            "RESIDENT_REPORT_FILED",
+            "RESIDENT_INFORMATION_NEEDED",
+            "RESIDENT_NOTIFICATION",
+            "RESIDENT_NEEDS_ASSISTANCE"
+          ],
+          "title": "Purpose",
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "QUEUED",
+            "SENDING",
+            "SENT",
+            "OUTCOME_UNKNOWN",
+            "NEEDS_ASSISTANCE",
+            "CANCELLED"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "deliveryState": {
+          "default": "UNVERIFIED",
+          "enum": [
+            "UNVERIFIED",
+            "RECEIVED"
+          ],
+          "title": "Deliverystate",
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "title": "Updatedat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "purpose",
+        "state",
+        "updatedAt"
+      ],
+      "title": "NotificationProgress",
+      "type": "object"
+    },
     "Question": {
       "additionalProperties": false,
       "properties": {
@@ -236,6 +289,28 @@
       "title": "Reporter",
       "type": "object"
     },
+    "ResidentNotifications": {
+      "additionalProperties": false,
+      "properties": {
+        "email": {
+          "maxLength": 254,
+          "minLength": 3,
+          "title": "Email",
+          "type": "string"
+        },
+        "consent": {
+          "const": true,
+          "title": "Consent",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "email",
+        "consent"
+      ],
+      "title": "ResidentNotifications",
+      "type": "object"
+    },
     "VisibilityCondition": {
       "additionalProperties": false,
       "properties": {
@@ -287,6 +362,29 @@
         }
       ],
       "default": null
+    },
+    "notifications": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ResidentNotifications"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "notificationSettingsLocked": {
+      "default": false,
+      "title": "Notificationsettingslocked",
+      "type": "boolean"
+    },
+    "notificationProgress": {
+      "items": {
+        "$ref": "#/$defs/NotificationProgress"
+      },
+      "title": "Notificationprogress",
+      "type": "array"
     },
     "stage": {
       "title": "Stage",

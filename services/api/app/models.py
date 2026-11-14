@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from typing import Any, Literal
 from urllib.parse import urlsplit
@@ -36,6 +37,47 @@ class Reporter(Contract):
         return value
 
 
+def notification_email(value: str) -> str:
+    """Accept one plain mailbox, never a display name, header or recipient list."""
+    if not isinstance(value, str) or len(value) > 254 or value != value.strip() or not value.isascii():
+        raise ValueError("Enter one valid email address for updates")
+    local, separator, domain = value.rpartition("@")
+    if (not separator or not 1 <= len(local) <= 64 or not re.fullmatch(r"[A-Za-z0-9!#$%&'*+/=?^_`{|}~.-]+", local)
+            or local.startswith(".") or local.endswith(".") or ".." in local):
+        raise ValueError("Enter one valid email address for updates")
+    labels = domain.split(".")
+    if len(labels) < 2 or any(not re.fullmatch(r"[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?", label) for label in labels):
+        raise ValueError("Enter one valid email address for updates")
+    if not re.fullmatch(r"[A-Za-z]{2,63}|xn--[A-Za-z0-9-]{2,59}", labels[-1]):
+        raise ValueError("Enter one valid email address for updates")
+    return f"{local}@{domain.lower()}"
+
+
+class ResidentNotifications(Contract):
+    email: str = Field(min_length=3, max_length=254)
+    consent: Literal[True]
+
+    @field_validator("email")
+    @classmethod
+    def single_email(cls, value: str) -> str:
+        return notification_email(value)
+
+    @field_validator("consent", mode="before")
+    @classmethod
+    def explicit_consent(cls, value: Any) -> bool:
+        if value is not True:
+            raise ValueError("Email updates require explicit consent")
+        return value
+
+
+class NotificationProgress(Contract):
+    id: str
+    purpose: Literal["RESIDENT_REPORT_FILED", "RESIDENT_INFORMATION_NEEDED", "RESIDENT_NOTIFICATION", "RESIDENT_NEEDS_ASSISTANCE"]
+    state: Literal["QUEUED", "SENDING", "SENT", "OUTCOME_UNKNOWN", "NEEDS_ASSISTANCE", "CANCELLED"]
+    delivery_state: Literal["UNVERIFIED", "RECEIVED"] = "UNVERIFIED"
+    updated_at: datetime
+
+
 class RoutePreview(Contract):
     issue_id: str
     location: IncidentLocation
@@ -44,6 +86,7 @@ class RoutePreview(Contract):
 
 class CaseCreate(RoutePreview):
     reporter: Reporter | None = None
+    notifications: ResidentNotifications | None = None
 
 
 class CasePatch(Contract):
@@ -51,6 +94,7 @@ class CasePatch(Contract):
     location: IncidentLocation | None = None
     answers: dict[str, Any] | None = None
     reporter: Reporter | None = None
+    notifications: ResidentNotifications | None = None
 
 
 class ApprovalRequest(Contract):
@@ -350,6 +394,9 @@ class CaseView(Contract):
     location: IncidentLocation
     answers: dict[str, Any]
     reporter: Reporter | None = None
+    notifications: ResidentNotifications | None = None
+    notification_settings_locked: bool = False
+    notification_progress: list[NotificationProgress] = Field(default_factory=list)
     stage: str
     route: dict[str, Any]
     pending_questions: list[Question] = Field(default_factory=list)

@@ -7,6 +7,9 @@ from dataclasses import dataclass, field
 from email.utils import parseaddr
 from pathlib import Path
 from typing import Mapping
+from urllib.parse import urlsplit
+
+from ..models import notification_email
 
 
 def read_env_file(path: str | Path) -> dict[str, str]:
@@ -38,6 +41,7 @@ class MailSettings:
     max_attachment_bytes: int = 8 * 1024 * 1024
     daily_send_budget: int = 60
     catchup_overlap_seconds: int = 300
+    web_base_url: str = "http://localhost:3000"
 
     @classmethod
     def from_env(cls, values: Mapping[str, str] | None = None) -> MailSettings:
@@ -55,6 +59,7 @@ class MailSettings:
             ),
             poll_seconds=max(3, int(values.get("ONTARA_MAIL_POLL_SECONDS", "8"))),
             daily_send_budget=min(90, max(1, int(values.get("ONTARA_MAIL_DAILY_SEND_BUDGET", "60")))),
+            web_base_url=values.get("ONTARA_WEB_BASE_URL") or values.get("ALLOWED_ORIGINS", "http://localhost:3000").split(",")[0].strip(),
         )
         settings.validate()
         return settings
@@ -69,12 +74,24 @@ class MailSettings:
             raise ValueError("Mail allowlist must contain exactly the three controlled role inboxes")
         if any(address(value) != value or not value.endswith("@agentmail.to") for value in roles):
             raise ValueError("This demo only supports explicit controlled agentmail.to inboxes")
+        parsed = urlsplit(self.web_base_url)
+        if (not parsed.hostname or parsed.username or parsed.password or parsed.path not in {"", "/"}
+                or parsed.query or parsed.fragment or any(char.isspace() for char in self.web_base_url)
+                or not (parsed.scheme == "https" or parsed.scheme == "http" and parsed.hostname in {"localhost", "127.0.0.1", "::1"})):
+            raise ValueError("ONTARA_WEB_BASE_URL must be an HTTPS app origin or local development origin")
 
     def require_participants(self, sender: str, recipients: list[str]) -> None:
         if sender not in self.allowed_inbox_ids or not recipients:
             raise ValueError("Unconfigured mail sender or recipient")
         if any(recipient not in self.allowed_inbox_ids for recipient in recipients):
             raise ValueError("Sending outside controlled demo inboxes is forbidden")
+
+    def require_resident_participants(self, sender: str, recipients: list[str], approved_email: str) -> None:
+        """Only a receipt/event-authorized resident purpose may use a case address."""
+        expected = notification_email(approved_email)
+        if (sender != self.ontara_inbox_id or recipients != [expected]
+                or address(expected) in {self.ontara_inbox_id, self.authority_inbox_id}):
+            raise ValueError("Resident notification participants do not match this approved case")
 
     @property
     def role_inboxes(self) -> tuple[str, str, str]:

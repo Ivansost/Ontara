@@ -1683,6 +1683,284 @@
           }
         }
       }
+    },
+    "/v1/voice/availability": {
+      "get": {
+        "tags": [
+          "Browser voice"
+        ],
+        "summary": "Availability",
+        "operationId": "availability_v1_voice_availability_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/sessions": {
+      "post": {
+        "tags": [
+          "Browser voice"
+        ],
+        "summary": "Start",
+        "operationId": "start_v1_voice_sessions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceStart"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/sessions/{session_id}": {
+      "get": {
+        "tags": [
+          "Browser voice"
+        ],
+        "summary": "Read",
+        "operationId": "read_v1_voice_sessions__session_id__get",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/sessions/{session_id}/answers": {
+      "post": {
+        "tags": [
+          "Browser voice"
+        ],
+        "summary": "Answer",
+        "operationId": "answer_v1_voice_sessions__session_id__answers_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceAnswer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/sessions/{session_id}/bind": {
+      "post": {
+        "tags": [
+          "Browser voice"
+        ],
+        "summary": "Bind",
+        "operationId": "bind_v1_voice_sessions__session_id__bind_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceBind"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/sessions/{session_id}/finish": {
+      "post": {
+        "tags": [
+          "Browser voice"
+        ],
+        "summary": "Finish",
+        "operationId": "finish_v1_voice_sessions__session_id__finish_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/cases/{case_id}/history": {
+      "get": {
+        "tags": [
+          "Browser voice"
+        ],
+        "summary": "History",
+        "operationId": "history_v1_voice_cases__case_id__history_get",
+        "parameters": [
+          {
+            "name": "case_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Case Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1910,6 +2188,16 @@
                 "type": "null"
               }
             ]
+          },
+          "notifications": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResidentNotifications"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "additionalProperties": false,
@@ -2027,6 +2315,16 @@
                 "type": "null"
               }
             ]
+          },
+          "notifications": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResidentNotifications"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "additionalProperties": false,
@@ -2067,6 +2365,28 @@
                 "type": "null"
               }
             ]
+          },
+          "notifications": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResidentNotifications"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "notificationSettingsLocked": {
+            "type": "boolean",
+            "title": "Notificationsettingslocked",
+            "default": false
+          },
+          "notificationProgress": {
+            "items": {
+              "$ref": "#/components/schemas/NotificationProgress"
+            },
+            "type": "array",
+            "title": "Notificationprogress"
           },
           "stage": {
             "type": "string",
@@ -3036,6 +3356,59 @@
         ],
         "title": "Municipality"
       },
+      "NotificationProgress": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "RESIDENT_REPORT_FILED",
+              "RESIDENT_INFORMATION_NEEDED",
+              "RESIDENT_NOTIFICATION",
+              "RESIDENT_NEEDS_ASSISTANCE"
+            ],
+            "title": "Purpose"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "QUEUED",
+              "SENDING",
+              "SENT",
+              "OUTCOME_UNKNOWN",
+              "NEEDS_ASSISTANCE",
+              "CANCELLED"
+            ],
+            "title": "State"
+          },
+          "deliveryState": {
+            "type": "string",
+            "enum": [
+              "UNVERIFIED",
+              "RECEIVED"
+            ],
+            "title": "Deliverystate",
+            "default": "UNVERIFIED"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updatedat"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "purpose",
+          "state",
+          "updatedAt"
+        ],
+        "title": "NotificationProgress"
+      },
       "OperationTransition": {
         "properties": {
           "workerId": {
@@ -3559,6 +3932,28 @@
           "batchId"
         ],
         "title": "ResearchBatch"
+      },
+      "ResidentNotifications": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "maxLength": 254,
+            "minLength": 3,
+            "title": "Email"
+          },
+          "consent": {
+            "type": "boolean",
+            "const": true,
+            "title": "Consent"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "email",
+          "consent"
+        ],
+        "title": "ResidentNotifications"
       },
       "RetrievalRequest": {
         "properties": {
@@ -4098,6 +4493,116 @@
           "equals"
         ],
         "title": "VisibilityCondition"
+      },
+      "VoiceAnswer": {
+        "properties": {
+          "expectedRevision": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Expectedrevision"
+          },
+          "questionId": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Questionid"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expectedRevision",
+          "questionId"
+        ],
+        "title": "VoiceAnswer"
+      },
+      "VoiceBind": {
+        "properties": {
+          "caseId": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Caseid"
+          },
+          "caseVersion": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Caseversion"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "caseId",
+          "caseVersion"
+        ],
+        "title": "VoiceBind"
+      },
+      "VoiceStart": {
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 12,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Requestid"
+          },
+          "issueId": {
+            "type": "string",
+            "title": "Issueid"
+          },
+          "location": {
+            "$ref": "#/components/schemas/IncidentLocation"
+          },
+          "answers": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Answers"
+          },
+          "voiceConsent": {
+            "type": "boolean",
+            "const": true,
+            "title": "Voiceconsent"
+          },
+          "consentVersion": {
+            "type": "string",
+            "const": "2026-11-14.1",
+            "title": "Consentversion"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "voice",
+              "text"
+            ],
+            "title": "Mode",
+            "default": "voice"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "requestId",
+          "issueId",
+          "location",
+          "voiceConsent",
+          "consentVersion"
+        ],
+        "title": "VoiceStart"
       }
     }
   }
