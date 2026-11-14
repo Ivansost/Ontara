@@ -13,9 +13,14 @@ ticket/receipt IDs. Full owner-only proof is retained outside Git.
 
 Earlier revisions of two local synthetic rehearsal artifacts included receiving
 lookup tuples. Those cases contained no real resident contacts, and their app
-automation is cancelled. Cancellation does not revoke historical receiving
-capabilities. This was test-only exposure; no Git history rewrite was performed.
-Current hosted lookup identifiers remain private.
+automation is cancelled. Cancellation alone does not revoke receiving
+capabilities. The portal owner subsequently rotated only those two retired
+mutable ticket tokens using guarded updates and verified that the old ticket and
+update-form URLs return 404. Immutable receipts, counters and form snapshots were
+preserved; the active hosted ticket was unchanged. The
+[sanitized portal maintenance proof](../../portals/evidence/retired-fixture-maintenance-20261114.json)
+records that mitigation. Historical receipt metadata remains disclosed; no Git
+history rewrite was performed. Current hosted lookup identifiers remain private.
 
 The procedural lesson is explicitly labelled `seeded_demo`: a separate, approved
 manual event-day browser calibration supplied genuine update-receipt evidence.
