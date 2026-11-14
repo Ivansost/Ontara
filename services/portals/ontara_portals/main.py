@@ -5,13 +5,13 @@ from html import escape
 import json
 from pathlib import Path
 import secrets
-from typing import Annotated
+from typing import Annotated, Literal
 from urllib.parse import urlencode
 
 from fastapi import Body, Depends, FastAPI, Header, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import HTMLResponse, JSONResponse, Response
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, ValidationError, model_validator
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 from pymongo.write_concern import WriteConcern
@@ -49,6 +49,22 @@ class VersionControl(BaseModel):
     model_config = ConfigDict(extra="forbid")
     version: int = Field(ge=1, le=2)
     expectedVersion: int = Field(ge=1, le=2)
+
+
+class ResolutionControl(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+    resolutionId: StableId
+    expectedTicketVersion: int = Field(ge=1)
+    status: Literal["resolved"] = "resolved"
+    isDemo: StrictBool = True
+    simulated: StrictBool = True
+    physicalRepairVerified: StrictBool = False
+
+    @model_validator(mode="after")
+    def only_simulated_completion(self):
+        if not self.isDemo or not self.simulated or self.physicalRepairVerified:
+            raise ValueError("Only simulated demo resolution with physicalRepairVerified false is permitted")
+        return self
 
 
 def create_app(settings: Settings | None = None, store: MongoStore | None = None) -> FastAPI:
@@ -167,6 +183,20 @@ def create_app(settings: Settings | None = None, store: MongoStore | None = None
             except ValidationError:
                 raise HTTPException(422, "Invalid submission envelope") from None
             envelope = {**submission.model_dump(exclude={"values", "accessToken"}), "portalId": portal_id}
+            if action == "update":
+                bound = db.ticket(submission.runId, portal_id, ticket_id, submission.accessToken)
+                if "resolution" in bound:
+                    existing = db.lookup(submission.runId, portal_id, submission.clientReference)
+                    if existing is None:
+                        raise Conflict("Ticket is resolved in the demo; new updates are not accepted")
+                    try:
+                        replay_values = validate_values(portal_id, action, submission.formVersion, submission.values)
+                    except ValueError as exc:
+                        raise HTTPException(422, str(exc)) from None
+                    replay_digest = canonical_digest({"portalId": portal_id, "action": action, "formVersion": submission.formVersion, "values": replay_values})
+                    _, receipt, _ = db.check_existing(existing, submission.payloadDigest, replay_digest, action, ticket_id)
+                    db.finish_request(request_id, "deduplicated", receipt["receiptId"])
+                    return receipt, True
             current = db.form_version(submission.runId, portal_id, action)
             if submission.formVersion != current:
                 raise HTTPException(409, f"Form changed. Inspect the current form version {current} before continuing this unfinished action.")
@@ -263,6 +293,8 @@ def create_app(settings: Settings | None = None, store: MongoStore | None = None
             ticket = receiver().ticket(runId, portal_id, ticket_id, accessToken)
         except NotFound as exc:
             raise HTTPException(404, str(exc)) from None
+        if "resolution" in ticket:
+            raise HTTPException(409, "Ticket is resolved in the demo; new updates are not accepted")
         envelope = envelope_for_form(runId, clientReference, payloadDigest, portal_id, "update")
         version = receiver().form_version(runId, portal_id, "update")
         return form_html(portal_id, "update", version, envelope, ticket_id, accessToken, ticket["currentValues"] if version == 1 else None)
@@ -296,6 +328,26 @@ def create_app(settings: Settings | None = None, store: MongoStore | None = None
     def api_update(portal_id: str, ticket_id: str, data: Annotated[dict, Body()]):
         receipt, duplicate = submit(portal_id, "update", data, ticket_id)
         return JSONResponse({**receipt, "deduplicated": duplicate}, status_code=200 if duplicate else 201)
+
+    @app.get("/v1/portals/{portal_id}/tickets/{ticket_id}/status")
+    def receiving_ticket_status(portal_id: str, ticket_id: str, runId: StableId, accessToken: str):
+        portal_check(portal_id)
+        if portal_id != "roads":
+            raise HTTPException(422, "Simulated resolution is limited to the Roads demo")
+        try:
+            return receiver().ticket_status(runId, portal_id, ticket_id, accessToken)
+        except (NotFound, Conflict) as exc:
+            raise HTTPException(404 if isinstance(exc, NotFound) else 409, str(exc)) from None
+
+    @app.post("/internal/v1/runs/{run_id}/portals/{portal_id}/tickets/{ticket_id}/resolution", dependencies=[Depends(admin)])
+    def mark_demo_resolution(run_id: StableId, portal_id: str, ticket_id: str, control: ResolutionControl):
+        portal_check(portal_id)
+        if portal_id != "roads":
+            raise HTTPException(422, "Simulated resolution is limited to the Roads demo")
+        try:
+            return receiver().resolve_ticket(run_id, portal_id, ticket_id, control.resolutionId, control.expectedTicketVersion)
+        except (NotFound, Conflict) as exc:
+            raise HTTPException(404 if isinstance(exc, NotFound) else 409, str(exc)) from None
 
     @app.post("/internal/v1/runs", dependencies=[Depends(admin)])
     def create_run(control: RunControl):

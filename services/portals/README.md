@@ -158,6 +158,10 @@ to the executor or public web bundle.
   `createRequestCount`, `ticketCount`, `updateRequestCount`,
   `acceptedUpdateCount`, `lookupRequestCount`, current form version and safe
   ticket summaries. It excludes resident/contact fields and access capabilities.
+- Roads tickets can receive one presenter-authenticated simulated completion.
+  [The resolution contract](RESOLUTION.md) defines the scoped mutation, private
+  capability-protected status read, immutable replay and terminal update rules.
+  It records **Resolved in demo**, with physical repair explicitly unverified.
 
 Every validly identified incoming POST is a request attempt, including rejected
 payloads and deduplicated attempts. A malformed envelope without valid run/reference
