@@ -146,6 +146,13 @@ def test_lesson_withheld_changes_ready_path_to_policy_pause():
     assert withheld["evidence"]["rejected"][0]["reason"] == "withheld_for_policy_comparison"
 
 
+def test_portal_integer_form_version_matches_string_lesson_contract():
+    db, _ = database(lesson(), collection_name="procedural_lessons")
+    result = retrieve_lessons(db, "changed follow-up", "halton-region", "roads-pothole", portal_id="roads", form_family="roads-follow-up", form_version=2)
+    assert result["status"] == "ready"
+    assert result["evidence"]["pipeline"][0]["$vectorSearch"]["filter"]["$and"][0]["formVersions"] == "2"
+
+
 @pytest.mark.parametrize("change", [{"formVersions": ["1"]}, {"portalId": "graffiti"}, {"knowledgeKind": "diagnostic"}, {"evidenceRefs": []}])
 def test_unusable_lesson_is_rejected(change):
     db, _ = database(lesson(**change), collection_name="procedural_lessons")
