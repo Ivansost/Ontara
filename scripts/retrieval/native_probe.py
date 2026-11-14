@@ -49,6 +49,8 @@ def wait_for(db: Any, collection: str, record_id: str, version: str, query: str,
     attempts = 0
     while monotonic() < deadline:
         state = inspect_native_index(db, collection)
+        if state["status"] != "MISSING" and not state["configurationMatches"]:
+            return {"status": "assistance_required", "reason": "Native index configuration mismatch", "index": state, "attempts": attempts}
         if state["status"] in {"FAILED", "STALE"}:
             return {"status": "assistance_required", "index": state, "attempts": attempts}
         if state["queryable"] and state["status"] == "READY":
@@ -95,17 +97,19 @@ def run_probe(db: Any, timeout: int) -> dict:
         if result["v1"]["status"] != "ready":
             continue
         result["v2BeforeUpdate"] = search(db, collection, TEXT_V2, version1)
+        result["scopeExclusionsPassed"] = [row.get("id") for row in result["v1"]["records"]] == [record_id]
         updated = db[collection].update_one({"_id": record_id, "sourceVersion": version1, "knowledgeKind": "diagnostic"}, {"$set": {"retrievalText": TEXT_V2, "sourceVersion": version2}})
         result["controlledUpdate"] = {"at": timestamp(), "matched": updated.matched_count, "modified": updated.modified_count, "sourceVersion": version2, "retrievalText": TEXT_V2}
         result["v2AfterUpdate"] = wait_for(db, collection, record_id, version2, TEXT_V2, timeout)
         if result["v2AfterUpdate"]["status"] == "ready":
             result["oldVersionAfterUpdate"] = search(db, collection, TEXT_V1, version1)
+            result["currentVersionOnlyPassed"] = not result["oldVersionAfterUpdate"]["records"] and [row.get("id") for row in result["v2AfterUpdate"]["records"]] == [record_id]
             try:
                 result["generatedEmbeddingEvidence"] = generated_summary(db, collection, record_id)
             except PyMongoError as exc:
                 result["generatedEmbeddingEvidence"] = {"available": False, "readOnly": True, "errorType": type(exc).__name__, "errorCode": getattr(exc, "code", None)}
     evidence["completedAt"] = timestamp()
-    evidence["status"] = "ready" if all(r.get("v2AfterUpdate", {}).get("status") == "ready" for r in evidence["collections"].values()) else "pending"
+    evidence["status"] = "ready" if all(r.get("v2AfterUpdate", {}).get("status") == "ready" and r.get("scopeExclusionsPassed") and r.get("currentVersionOnlyPassed") for r in evidence["collections"].values()) else "pending"
     return evidence
 
 
@@ -129,7 +133,13 @@ def main() -> int:
             client.admin.command("ping")
             if args.ensure_indexes:
                 ensure_native_indexes(db)
-            result = run_probe(db, args.timeout) if args.run_probe else {"indexes": {name: inspect_native_index(db, name) for name in INDEX_NAMES}}
+            if args.run_probe:
+                result = run_probe(db, args.timeout)
+            else:
+                indexes = {name: inspect_native_index(db, name) for name in INDEX_NAMES}
+                ready = all(item["status"] == "READY" and item["queryable"] and item["configurationMatches"] for item in indexes.values())
+                failed = any(item["status"] in {"FAILED", "STALE", "DELETING"} or (item["status"] != "MISSING" and not item["configurationMatches"]) for item in indexes.values())
+                result = {"status": "ready" if ready else "assistance_required" if failed else "pending", "indexes": indexes}
     except (PyMongoError, ValueError) as exc:
         result = {"status": "assistance_required", "errorType": type(exc).__name__, "errorCode": getattr(exc, "code", None)}
     if args.output:

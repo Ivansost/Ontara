@@ -1,0 +1,470 @@
+{
+  "checkedAt": "2026-11-14T16:04:38.985856+00:00",
+  "scope": "Published Roads knowledge for twenty upper-tier municipalities; automatic actions remain limited to labelled controlled demo portals.",
+  "nativePath": "Atlas Automated Embedding voyage-4-large with exact $vectorSearch query.text",
+  "applicationEmbeddingApiCalls": 0,
+  "rerankingEnabled": false,
+  "authorityIds": [
+    "bruce-county",
+    "durham-region",
+    "essex-county",
+    "grey-county",
+    "halton-region",
+    "lambton-county",
+    "lanark-county",
+    "leeds-grenville-counties",
+    "middlesex-county",
+    "niagara-region",
+    "northumberland-county",
+    "oxford-county",
+    "peel-region",
+    "prescott-russell-counties",
+    "renfrew-county",
+    "simcoe-county",
+    "stormont-dundas-glengarry-counties",
+    "waterloo-region",
+    "wellington-county",
+    "york-region"
+  ],
+  "batches": [
+    {
+      "batchId": "roads-batch-01-20261114",
+      "status": "ready",
+      "counts": {
+        "authoritiesChecked": 5,
+        "proceduresChecked": 5,
+        "searchableRecords": 5,
+        "excludedRecords": 1
+      }
+    },
+    {
+      "batchId": "roads-batch-02-20261114",
+      "status": "ready",
+      "counts": {
+        "authoritiesChecked": 5,
+        "proceduresChecked": 5,
+        "searchableRecords": 5,
+        "excludedRecords": 0
+      }
+    },
+    {
+      "batchId": "roads-batch-03-20261114",
+      "status": "ready",
+      "counts": {
+        "authoritiesChecked": 5,
+        "proceduresChecked": 6,
+        "searchableRecords": 6,
+        "excludedRecords": 0
+      }
+    },
+    {
+      "batchId": "roads-batch-04-20261114",
+      "status": "ready",
+      "counts": {
+        "authoritiesChecked": 5,
+        "proceduresChecked": 6,
+        "searchableRecords": 6,
+        "excludedRecords": 0
+      }
+    }
+  ],
+  "counts": {
+    "upperTierAuthorities": 20,
+    "sourceBackedVerifiedProcedures": 22,
+    "recordsWithCurrentNativeSearchProof": 22,
+    "partialProceduresExcluded": 1,
+    "coverageCellsRecorded": 160
+  },
+  "coverageStatuses": {
+    "verified": 114,
+    "partial": 1,
+    "gap": 45
+  },
+  "procedures": [
+    {
+      "id": "bruce-county-transportation-road-service",
+      "authorityId": "bruce-county",
+      "sourceVersion": "234e63dbd397887a",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "durham-region-regional-pothole-sign-depot",
+      "authorityId": "durham-region",
+      "sourceVersion": "e78bdb56c741bfd1",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "essex-county-county-road-issue",
+      "authorityId": "essex-county",
+      "sourceVersion": "9af571c763ac1464",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "grey-county-county-road-issues",
+      "authorityId": "grey-county",
+      "sourceVersion": "a28bf0a2ef4b21d2",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "halton-region-regional-road-problem-phone",
+      "authorityId": "halton-region",
+      "sourceVersion": "8d2f6c64ed934f68",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "lambton-county-public-works-owner-handoff",
+      "authorityId": "lambton-county",
+      "sourceVersion": "9efad03c5bd7fd4a",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "lanark-county-county-road-concern",
+      "authorityId": "lanark-county",
+      "sourceVersion": "7a57665ae47b0bf5",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "lanark-county-speed-management-request",
+      "authorityId": "lanark-county",
+      "sourceVersion": "3a002e9751a4e75e",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "leeds-grenville-counties-county-road-concern",
+      "authorityId": "leeds-grenville-counties",
+      "sourceVersion": "87476dc42018bf8c",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "middlesex-county-county-road-maintenance",
+      "authorityId": "middlesex-county",
+      "sourceVersion": "0b47fff1d2914ac9",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "niagara-region-regional-pothole",
+      "authorityId": "niagara-region",
+      "sourceVersion": "28d87281a682dc94",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "northumberland-county-county-road-hotline-handoff",
+      "authorityId": "northumberland-county",
+      "sourceVersion": "f622d4fa94a86575",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "oxford-county-county-pothole-cracks",
+      "authorityId": "oxford-county",
+      "sourceVersion": "f28c713a38377a2f",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "peel-region-regional-road-maintenance",
+      "authorityId": "peel-region",
+      "sourceVersion": "cbd83362f6f67e74",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "prescott-russell-counties-county-road-maintenance-handoff",
+      "authorityId": "prescott-russell-counties",
+      "sourceVersion": "3eec6b3819201c12",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "renfrew-county-county-road-concern-form-handoff",
+      "authorityId": "renfrew-county",
+      "sourceVersion": "477f33c293aee594",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "simcoe-county-county-maintenance",
+      "authorityId": "simcoe-county",
+      "sourceVersion": "70cdab2523193f59",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "sourceVersion": "f9a4c0160fdb0a2a",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "waterloo-region-road-maintenance-handoff",
+      "authorityId": "waterloo-region",
+      "sourceVersion": "49523825479fa125",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "wellington-county-county-road-maintenance-form",
+      "authorityId": "wellington-county",
+      "sourceVersion": "dfd92905b2ed9d2c",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "wellington-county-county-speed-concern-form",
+      "authorityId": "wellington-county",
+      "sourceVersion": "56c686f8cae9c48c",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    },
+    {
+      "id": "york-region-regional-road-maintenance",
+      "authorityId": "york-region",
+      "sourceVersion": "f5e5ae824241d8ff",
+      "searchStatus": "ready",
+      "integrationStatus": "research_only"
+    }
+  ],
+  "indexes": {
+    "service_procedures": {
+      "indexName": "service_procedures_autoembed_v1",
+      "type": "vectorSearch",
+      "status": "READY",
+      "queryable": true,
+      "configurationMatches": true,
+      "definitionVersion": {
+        "version": 0,
+        "createdAt": "2026-11-14 15:42:09.421000"
+      },
+      "definition": {
+        "fields": [
+          {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          {
+            "type": "filter",
+            "path": "authorityId"
+          },
+          {
+            "type": "filter",
+            "path": "issueIds"
+          },
+          {
+            "type": "filter",
+            "path": "categoryId"
+          },
+          {
+            "type": "filter",
+            "path": "visibility"
+          },
+          {
+            "type": "filter",
+            "path": "current"
+          },
+          {
+            "type": "filter",
+            "path": "verificationStatus"
+          },
+          {
+            "type": "filter",
+            "path": "validUntil"
+          },
+          {
+            "type": "filter",
+            "path": "sourceVersion"
+          },
+          {
+            "type": "filter",
+            "path": "knowledgeKind"
+          },
+          {
+            "type": "filter",
+            "path": "id"
+          }
+        ]
+      },
+      "model": "voyage-4-large",
+      "reportedSettings": {},
+      "effectiveNodeSettings": [
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        }
+      ],
+      "documentedDefaults": {
+        "numDimensions": 1024,
+        "quantization": "scalar",
+        "indexingMethod": "hnsw"
+      },
+      "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+    },
+    "procedural_lessons": {
+      "indexName": "procedural_lessons_autoembed_v1",
+      "type": "vectorSearch",
+      "status": "READY",
+      "queryable": true,
+      "configurationMatches": true,
+      "definitionVersion": {
+        "version": 0,
+        "createdAt": "2026-11-14 15:42:26.602000"
+      },
+      "definition": {
+        "fields": [
+          {
+            "type": "autoEmbed",
+            "path": "retrievalText",
+            "model": "voyage-4-large",
+            "modality": "text"
+          },
+          {
+            "type": "filter",
+            "path": "authorityId"
+          },
+          {
+            "type": "filter",
+            "path": "issueIds"
+          },
+          {
+            "type": "filter",
+            "path": "categoryId"
+          },
+          {
+            "type": "filter",
+            "path": "visibility"
+          },
+          {
+            "type": "filter",
+            "path": "current"
+          },
+          {
+            "type": "filter",
+            "path": "verificationStatus"
+          },
+          {
+            "type": "filter",
+            "path": "validUntil"
+          },
+          {
+            "type": "filter",
+            "path": "sourceVersion"
+          },
+          {
+            "type": "filter",
+            "path": "knowledgeKind"
+          },
+          {
+            "type": "filter",
+            "path": "id"
+          },
+          {
+            "type": "filter",
+            "path": "portalId"
+          },
+          {
+            "type": "filter",
+            "path": "workflowKind"
+          },
+          {
+            "type": "filter",
+            "path": "formFamily"
+          },
+          {
+            "type": "filter",
+            "path": "formVersions"
+          }
+        ]
+      },
+      "model": "voyage-4-large",
+      "reportedSettings": {},
+      "effectiveNodeSettings": [
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        },
+        {
+          "status": "READY",
+          "queryable": true,
+          "settings": {
+            "model": "voyage-4-large",
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "similarity": "cosine"
+          }
+        }
+      ],
+      "documentedDefaults": {
+        "numDimensions": 1024,
+        "quantization": "scalar",
+        "indexingMethod": "hnsw"
+      },
+      "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+    }
+  },
+  "recoveryLesson": {
+    "id": "roads-follow-up-v2-seeded-calibration-20261114",
+    "sourceVersion": "seeded-calibration-20261114-v1",
+    "knowledgeKind": "seeded_demo",
+    "verificationStatus": "verified",
+    "searchStatus": "ready",
+    "evidenceRefs": [
+      "op_b627d33c08f6b30dcb8d16921d479e43"
+    ],
+    "disclosure": "Verified actual update from explicitly labelled manual developer calibration; subsequent runtime adaptation is proven separately."
+  }
+}

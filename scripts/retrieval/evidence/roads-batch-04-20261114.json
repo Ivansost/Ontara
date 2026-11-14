@@ -1,0 +1,2930 @@
+{
+  "batchId": "roads-batch-04-20261114",
+  "checkedAt": "2026-11-14T16:03:49.322502+00:00",
+  "procedures": [
+    {
+      "status": "ready",
+      "id": "middlesex-county-county-road-maintenance",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "0b47fff1d2914ac9",
+        "retrievalTextHash": "281c983de24dac11e62e88075a987ff86310673704ac1222d00dc745f77a010f",
+        "verifiedAt": "2026-11-14 16:03:51.940611+00:00",
+        "queryText": "Middlesex County\u2019s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Middlesex County\u2019s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "middlesex-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "middlesex-county-county-road-maintenance",
+                "sourceVersion": "0b47fff1d2914ac9"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8747865557670593
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "leeds-grenville-counties-county-road-concern",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "87476dc42018bf8c",
+        "retrievalTextHash": "e4ba546224053c22af52212a86ca92dd4bdf5a4dcab2d1a0f4eadaaeb9997121",
+        "verifiedAt": "2026-11-14 16:03:56.499293+00:00",
+        "queryText": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "leeds-grenville-counties",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "leeds-grenville-counties-county-road-concern",
+                "sourceVersion": "87476dc42018bf8c"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8738975524902344
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "bruce-county-transportation-road-service",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "234e63dbd397887a",
+        "retrievalTextHash": "f4b3d53be5739d797d70143bb16ba5ec1f541a0641b801c57251b06971191293",
+        "verifiedAt": "2026-11-14 16:03:58.876104+00:00",
+        "queryText": "Bruce County\u2019s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page\u2019s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department\u2019s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Bruce County\u2019s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page\u2019s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department\u2019s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "bruce-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "bruce-county-transportation-road-service",
+                "sourceVersion": "234e63dbd397887a"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.880768358707428
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "f9a4c0160fdb0a2a",
+        "retrievalTextHash": "b737cfcd248af1539a944b26231bdda0fae0327b29e3cc3b63adc33de33e7b99",
+        "verifiedAt": "2026-11-14 16:04:02.061655+00:00",
+        "queryText": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "stormont-dundas-glengarry-counties",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+                "sourceVersion": "f9a4c0160fdb0a2a"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8930425643920898
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "lanark-county-county-road-concern",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "7a57665ae47b0bf5",
+        "retrievalTextHash": "e807cf562bf310a55e8e3e946f432a740e1a050e3c59478011b35076c60a2533",
+        "verifiedAt": "2026-11-14 16:04:04.646110+00:00",
+        "queryText": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "lanark-county",
+                "issueIds": "roads-pothole",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "lanark-county-county-road-concern",
+                "sourceVersion": "7a57665ae47b0bf5"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.8789927959442139
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    },
+    {
+      "status": "ready",
+      "id": "lanark-county-speed-management-request",
+      "evidence": {
+        "nativeQuery": true,
+        "model": "voyage-4-large",
+        "indexName": "service_procedures_autoembed_v1",
+        "sourceVersion": "3a002e9751a4e75e",
+        "retrievalTextHash": "d6b188f2ae8d0715e4f85f2fe02fc00f0db3e588d1365650b87a1e759bbc485f",
+        "verifiedAt": "2026-11-14 16:04:07.064318+00:00",
+        "queryText": "Lanark County\u2019s Roads page links a Request for Speed Management Measures form. The observed required fields ask where the measures are requested with road name/limits, the requester\u2019s relationship to the street, time of day speeding is an issue, other traffic concerns, name,email,phone,date and preferred contact method. Optional Other explanations and additional comments are present. The page says JavaScript is needed to complete the form; hidden time/antispam values are redacted from the stored snapshot. This is a request for County assessment, not approval for a sign or immediate enforcement. Other unsafe-intersection or non-County issues require responsibility/procedure confirmation. No form was submitted, and no acknowledgement or repair target is established.",
+        "queryTruncated": false,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Lanark County\u2019s Roads page links a Request for Speed Management Measures form. The observed required fields ask where the measures are requested with road name/limits, the requester\u2019s relationship to the street, time of day speeding is an issue, other traffic concerns, name,email,phone,date and preferred contact method. Optional Other explanations and additional comments are present. The page says JavaScript is needed to complete the form; hidden time/antispam values are redacted from the stored snapshot. This is a request for County assessment, not approval for a sign or immediate enforcement. Other unsafe-intersection or non-County issues require responsibility/procedure confirmation. No form was submitted, and no acknowledgement or repair target is established."
+              },
+              "exact": true,
+              "limit": 1,
+              "filter": {
+                "authorityId": "lanark-county",
+                "issueIds": "roads-safety",
+                "categoryId": "roads",
+                "visibility": "public",
+                "current": true,
+                "verificationStatus": "verified",
+                "id": "lanark-county-speed-management-request",
+                "sourceVersion": "3a002e9751a4e75e"
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "score": 0.9009991884231567
+      },
+      "index": {
+        "indexName": "service_procedures_autoembed_v1",
+        "type": "vectorSearch",
+        "status": "READY",
+        "queryable": true,
+        "configurationMatches": true,
+        "definitionVersion": {
+          "version": 0,
+          "createdAt": "2026-11-14 15:42:09.421000"
+        },
+        "definition": {
+          "fields": [
+            {
+              "type": "autoEmbed",
+              "path": "retrievalText",
+              "model": "voyage-4-large",
+              "modality": "text"
+            },
+            {
+              "type": "filter",
+              "path": "authorityId"
+            },
+            {
+              "type": "filter",
+              "path": "issueIds"
+            },
+            {
+              "type": "filter",
+              "path": "categoryId"
+            },
+            {
+              "type": "filter",
+              "path": "visibility"
+            },
+            {
+              "type": "filter",
+              "path": "current"
+            },
+            {
+              "type": "filter",
+              "path": "verificationStatus"
+            },
+            {
+              "type": "filter",
+              "path": "validUntil"
+            },
+            {
+              "type": "filter",
+              "path": "sourceVersion"
+            },
+            {
+              "type": "filter",
+              "path": "knowledgeKind"
+            },
+            {
+              "type": "filter",
+              "path": "id"
+            }
+          ]
+        },
+        "model": "voyage-4-large",
+        "reportedSettings": {},
+        "effectiveNodeSettings": [
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          },
+          {
+            "status": "READY",
+            "queryable": true,
+            "settings": {
+              "model": "voyage-4-large",
+              "numDimensions": 1024,
+              "quantization": "scalar",
+              "similarity": "cosine"
+            }
+          }
+        ],
+        "documentedDefaults": {
+          "numDimensions": 1024,
+          "quantization": "scalar",
+          "indexingMethod": "hnsw"
+        },
+        "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+      }
+    }
+  ],
+  "authorities": [
+    {
+      "authorityId": "middlesex-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "middlesex-county-county-road-maintenance",
+          "authorityId": "middlesex-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Middlesex County: Primary Operations Centre and Citizen Request Portal",
+          "retrievalText": "Middlesex County\u2019s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance.",
+          "sourceVersion": "0b47fff1d2914ac9",
+          "sourceIds": [
+            "middlesex-roads",
+            "middlesex-faqs",
+            "middlesex-request-form"
+          ],
+          "responsibilityRules": [
+            "Verify the numbered County road/asset using the official road map; local, provincial and private assets must not be assumed County-owned.",
+            "The published Primary Operations Centre covers road maintenance/hazard conditions; individual asset jurisdiction and report type still need confirmation."
+          ],
+          "requiredFacts": [
+            "Location is expressly requested in the FAQs for the listed maintenance concerns. A complete pothole/curb/sign questionnaire is not published in these sources."
+          ],
+          "steps": [
+            "Confirm road number, segment and owner.",
+            "Call519-471-2020 or open the officially linked Citizen Request Portal.",
+            "Provide the actual location; inspect any current questionnaire before a future supported report."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://www.middlesex.ca/request-service",
+          "contactEmail": null,
+          "contactPhone": "+1-519-471-2020",
+          "formSnapshotIds": [
+            "middlesex-request-form-shell-20261114"
+          ],
+          "artifactIds": [
+            "middlesex-roads-28e9a5d828a32c62",
+            "middlesex-faqs-a629146100eb91e6",
+            "middlesex-request-form-f14c6b052ac732ca"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The request-service response did not expose the incident questionnaire, mandatory flags, CAPTCHA/account requirements, receipts or tracking.",
+            "Specific sidewalk/curb ownership and fixed repair/follow-up targets are unverified."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:58:14.044000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "0b47fff1d2914ac9",
+            "retrievalTextHash": "281c983de24dac11e62e88075a987ff86310673704ac1222d00dc745f77a010f",
+            "verifiedAt": "2026-11-14 16:03:51.940000+00:00",
+            "queryText": "Middlesex County\u2019s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Middlesex County\u2019s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "middlesex-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "middlesex-county-county-road-maintenance",
+                    "sourceVersion": "0b47fff1d2914ac9"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8747865557670593
+          },
+          "score": 0.8747865557670593,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Middlesex County\u2019s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Middlesex County\u2019s Roads Department maintains its County road network. Maintenance concerns, including hazardous road conditions, are directed to the Primary Operations Centre at 519-471-2020 or the Citizen Request Portal linked from its official Roads page. County roads are numbered 1-81; the published ownership table directs local roads to the local municipal office and Ontario Highway4/Richmond Street,401 and402 to MTO. For the listed provincial highways it publishes 519-873-4372 or519-873-3639. The FAQs ask callers to provide the location for their listed maintenance problems. Fire, police and ambulance emergencies use911; this is distinct from routine maintenance. The current request-service page exposes only its title in fetched text, so questionnaire/receipt details are unknown. Sidewalk and particular curb ownership require verification; a general County-road handoff is not province-wide acceptance."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "middlesex-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "middlesex-county-county-road-maintenance",
+                        "sourceVersion": "0b47fff1d2914ac9"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T16:03:52.093069+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "middlesex-county-county-road-maintenance",
+            "sourceVersion": "0b47fff1d2914ac9"
+          }
+        ],
+        "returnedIds": [
+          "middlesex-county-county-road-maintenance"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "middlesex-county-county-road-maintenance"
+        ],
+        "elapsedMs": 2822
+      }
+    },
+    {
+      "authorityId": "leeds-grenville-counties",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "leeds-grenville-counties-county-road-concern",
+          "authorityId": "leeds-grenville-counties",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Leeds and Grenville: County-road concern portal, Roads contact and after-hours line",
+          "retrievalText": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified.",
+          "sourceVersion": "87476dc42018bf8c",
+          "sourceIds": [
+            "leeds-roads",
+            "leeds-concern-portal"
+          ],
+          "responsibilityRules": [
+            "Confirm the exact County-maintained road and asset.",
+            "A former provincial route may now be County-owned, so route by current owner rather than historic highway name.",
+            "Brockville,Gananoque andPrescott are separate single-tier municipalities; the Counties label does not establish their road ownership."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Use the official Roads and Bridges page to verify scope and open the concern portal.",
+            "Use the Roads departmental email/phone for the appropriate maintenance handoff.",
+            "For an after-hours road emergency use the separately published extension2601."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": "https://citywideportal.com/?client=United%20Counties%20of%20Leeds%20and%20Grenville",
+          "contactEmail": "roads@uclg.on.ca",
+          "contactPhone": "+1-613-342-3840 ext.2425; after-hours +1-613-342-3840 or +1-800-267-8146 ext.2601",
+          "formSnapshotIds": [
+            "leeds-road-portal-shell-20261114"
+          ],
+          "artifactIds": [
+            "leeds-roads-0c78ede9cf1f1f11",
+            "leeds-concern-portal-379329f433a08d42"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The Citywide response is a JavaScript shell; required report fields, guest/login/CAPTCHA behavior, receipt and tracking are unverified.",
+            "The general road-concern route does not establish sidewalk/curb ownership or a guaranteed safety intervention.",
+            "No repair or follow-up target is stated."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:58:14.044000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "87476dc42018bf8c",
+            "retrievalTextHash": "e4ba546224053c22af52212a86ca92dd4bdf5a4dcab2d1a0f4eadaaeb9997121",
+            "verifiedAt": "2026-11-14 16:03:56.499000+00:00",
+            "queryText": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "leeds-grenville-counties",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "leeds-grenville-counties-county-road-concern",
+                    "sourceVersion": "87476dc42018bf8c"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8738975524902344
+          },
+          "score": 0.8738975524902344,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "The United Counties of Leeds and Grenville Roads and Bridges page publishes a Report a County Road Concern route for maintenance issues, alongside roads@uclg.on.ca and613-342-3840 extension2425. Its after-hours emergency contact is613-342-3840 or1-800-267-8146 extension2601. The official road concern link is an Outlook SafeLinks wrapper whose destination is Citywide Portal with client United Counties of Leeds and Grenville; that destination was decoded from the published link and fetched, not invented. The portal returned only a JavaScript shell. County Roads maintenance/rebuilding, pavement marking and signage are within the published department scope. Verify the particular County road/asset; separated single-tier towns, local, provincial, private and sidewalk ownership cannot be inferred from the Counties name. No required form facts, receipt or repair target was verified."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "leeds-grenville-counties",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "leeds-grenville-counties-county-road-concern",
+                        "sourceVersion": "87476dc42018bf8c"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T16:03:56.635724+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "leeds-grenville-counties-county-road-concern",
+            "sourceVersion": "87476dc42018bf8c"
+          }
+        ],
+        "returnedIds": [
+          "leeds-grenville-counties-county-road-concern"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "leeds-grenville-counties-county-road-concern"
+        ],
+        "elapsedMs": 1420
+      }
+    },
+    {
+      "authorityId": "bruce-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "bruce-county-transportation-road-service",
+          "authorityId": "bruce-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "Bruce County: designated road-service email and telephone",
+          "retrievalText": "Bruce County\u2019s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page\u2019s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department\u2019s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made.",
+          "sourceVersion": "234e63dbd397887a",
+          "sourceIds": [
+            "bruce-roads",
+            "bruce-concerns"
+          ],
+          "responsibilityRules": [
+            "Use the designated Transportation service-request route for a confirmed County road/asset.",
+            "Generic complaints and compensation claims are distinct from reporting a road defect.",
+            "Sidewalk and curb responsibility need asset confirmation."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm County-road/asset responsibility.",
+            "Send the approved future request through the published Transportation email or phone handoff when a supported integration exists.",
+            "If following up on dissatisfaction, consult the separate official formal-complaint instructions."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [
+            "The official page offers a separate formal-complaint process if dissatisfied with the response; no road-repair or response deadline is promised."
+          ],
+          "officialFormUrl": null,
+          "contactEmail": "transportationinfo@brucecounty.on.ca",
+          "contactPhone": "+1-519-881-2400",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "bruce-roads-f20687f9b8a73e00",
+            "bruce-concerns-f784e96ff41f5462"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "No issue-specific complete mandatory facts, urgent/after-hours service route, acceptance receipt or tracking is established in these snapshots.",
+            "The generic feedback form includes reCAPTCHA; it is not assumed to be the designated road-service intake.",
+            "Local/provincial/private road and sidewalk/curb ownership remain asset-specific."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:50:41.300000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "234e63dbd397887a",
+            "retrievalTextHash": "f4b3d53be5739d797d70143bb16ba5ec1f541a0641b801c57251b06971191293",
+            "verifiedAt": "2026-11-14 16:03:58.876000+00:00",
+            "queryText": "Bruce County\u2019s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page\u2019s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department\u2019s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Bruce County\u2019s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page\u2019s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department\u2019s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "bruce-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "bruce-county-transportation-road-service",
+                    "sourceVersion": "234e63dbd397887a"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.880768358707428
+          },
+          "score": 0.880768358707428,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Bruce County\u2019s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page\u2019s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department\u2019s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Bruce County\u2019s Tell Us Your Concerns page specifically directs service requests related to roads, winter maintenance, signs or other Transportation and Environmental Services issues to transportationinfo@brucecounty.on.ca or519-881-2400. This designated service-request route is separate from the page\u2019s generic feedback/complaint form. The Road Construction and Maintenance page confirms the department\u2019s County-road work. Verify the road/asset is maintained by Bruce County; the sources do not allocate every local, provincial, private, sidewalk or curb asset to it. General inquiries require contact information so staff can respond, but no complete incident-specific mandatory email field list, urgent hours, receipt lookup or repair target is stated. If dissatisfied with a response, the source publishes a formal complaint route; this does not guarantee an issue was repaired. No live authority contact was made."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "bruce-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "bruce-county-transportation-road-service",
+                        "sourceVersion": "234e63dbd397887a"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T16:03:59.004897+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "bruce-county-transportation-road-service",
+            "sourceVersion": "234e63dbd397887a"
+          }
+        ],
+        "returnedIds": [
+          "bruce-county-transportation-road-service"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "bruce-county-transportation-road-service"
+        ],
+        "elapsedMs": 2029
+      }
+    },
+    {
+      "authorityId": "stormont-dundas-glengarry-counties",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+          "authorityId": "stormont-dundas-glengarry-counties",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign",
+            "roads-safety"
+          ],
+          "categoryId": "roads",
+          "title": "SDG Counties: County-road responsibility and published nonanonymous feedback handoff",
+          "retrievalText": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier.",
+          "sourceVersion": "f9a4c0160fdb0a2a",
+          "sourceIds": [
+            "sdg-roads",
+            "sdg-concerns",
+            "sdg-contacts"
+          ],
+          "responsibilityRules": [
+            "Verify the road and particular asset belong to the Counties network, not the province, a local municipality, a private owner or separate Cornwall.",
+            "The Clerk feedback route is general, not a verified urgent road-dispatch or issue-specific intake."
+          ],
+          "requiredFacts": [
+            "Name",
+            "Date",
+            "Email",
+            "Address",
+            "Phone number"
+          ],
+          "steps": [
+            "Confirm County-road responsibility with Transportation assistance if uncertain.",
+            "If using the published feedback process, provide the named nonanonymous contact facts to the Clerk through an accepted listed method.",
+            "Keep acknowledgement distinct from an authority performing a repair."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [
+            "The published general feedback process states the Clerk will acknowledge receipt and set out the action to be taken. No time target is stated."
+          ],
+          "officialFormUrl": null,
+          "contactEmail": "info@sdgcounties.ca",
+          "contactPhone": "+1-613-932-1515 ext.1208 (Transportation assistance); feedback ext.203",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "sdg-roads-424b31d91c6407ea",
+            "sdg-concerns-d783e97976ec43ae",
+            "sdg-contacts-bb7fc93b06ebe37a"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff",
+            "roads-safety": "sourced_handoff"
+          },
+          "gaps": [
+            "The source is a general feedback process; acceptance of a specific road-defect report, urgency/after-hours handling and exact incident fields require confirmation.",
+            "The same page lists ext.1203 for questions about the process and ext.203 for the Clerk recipient; those contexts are retained rather than silently choosing one.",
+            "Sidewalk/curb ownership, an issue-specific form, receipt lookup and repair targets are unverified."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:58:14.044000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "f9a4c0160fdb0a2a",
+            "retrievalTextHash": "b737cfcd248af1539a944b26231bdda0fae0327b29e3cc3b63adc33de33e7b99",
+            "verifiedAt": "2026-11-14 16:04:02.061000+00:00",
+            "queryText": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "stormont-dundas-glengarry-counties",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+                    "sourceVersion": "f9a4c0160fdb0a2a"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8930425643920898
+          },
+          "score": 0.8930425643920898,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "SDG Transportation Services maintains the Counties road network connecting provincial highways and local roads. The official Contacts page publishes Transportation Director phone613-932-1515 extension1208 for departmental assistance; this is not established as urgent dispatch. The official Report a Concern process is a general feedback/complaint handoff to the Clerk, info@sdgcounties.ca, phone613-932-1515 extension203. It does not accept anonymous concerns: name,date,email,address and phone must be provided. The Clerk acknowledges receipt and sets out the action to be taken; no deadline or repair outcome is guaranteed. Use departmental assistance to confirm that an incident/asset belongs to the Counties before choosing this general process. This is not an issue-specific online form or a tested municipal integration; Cornwall is separate single-tier."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "stormont-dundas-glengarry-counties",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+                        "sourceVersion": "f9a4c0160fdb0a2a"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T16:04:02.256310+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff",
+            "sourceVersion": "f9a4c0160fdb0a2a"
+          }
+        ],
+        "returnedIds": [
+          "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "stormont-dundas-glengarry-counties-county-transportation-feedback-handoff"
+        ],
+        "elapsedMs": 1715
+      }
+    },
+    {
+      "authorityId": "lanark-county",
+      "status": "ready",
+      "reason": "Eligible native search candidates require structured validation before execution",
+      "candidates": [
+        {
+          "id": "lanark-county-county-road-concern",
+          "authorityId": "lanark-county",
+          "issueIds": [
+            "roads-pothole",
+            "roads-pavement",
+            "roads-debris-loose",
+            "roads-debris-object",
+            "roads-curb",
+            "roads-sign"
+          ],
+          "categoryId": "roads",
+          "title": "Lanark County: Roads email and 24-hour road-emergency phone",
+          "retrievalText": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent.",
+          "sourceVersion": "7a57665ae47b0bf5",
+          "sourceIds": [
+            "lanark-roads"
+          ],
+          "responsibilityRules": [
+            "Confirm the County road/asset before using Public Works.",
+            "Do not reuse permit requirements, fees or permit-processing deadlines for ordinary road-defect reporting."
+          ],
+          "requiredFacts": [],
+          "steps": [
+            "Confirm the County road and incident location.",
+            "Use the published Roads email for the appropriate concern.",
+            "For a road emergency call613-267-1353 and follow the prompts."
+          ],
+          "constraints": [
+            "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+          ],
+          "followUpInstructions": [],
+          "officialFormUrl": null,
+          "contactEmail": "roads@lanarkcounty.ca",
+          "contactPhone": "+1-613-267-1353 (24-hour road emergencies)",
+          "formSnapshotIds": [],
+          "artifactIds": [
+            "lanark-roads-5563cb8a2c9fd46f"
+          ],
+          "coverage": {
+            "roads-pothole": "sourced_handoff",
+            "roads-pavement": "sourced_handoff",
+            "roads-debris-loose": "sourced_handoff",
+            "roads-debris-object": "sourced_handoff",
+            "roads-curb": "sourced_handoff",
+            "roads-sign": "sourced_handoff"
+          },
+          "gaps": [
+            "Mandatory incident facts, report receipts, tracking and repair/follow-up targets are not published in the observed concern section.",
+            "Curb/sidewalk ownership and any local/provincial/private asset require confirmation."
+          ],
+          "visibility": "public",
+          "current": true,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-11-14 15:48:19.441000+00:00",
+          "validUntil": null,
+          "researchStatus": "verified",
+          "searchStatus": "ready",
+          "integrationStatus": "research_only",
+          "searchVerification": {
+            "nativeQuery": true,
+            "model": "voyage-4-large",
+            "indexName": "service_procedures_autoembed_v1",
+            "sourceVersion": "7a57665ae47b0bf5",
+            "retrievalTextHash": "e807cf562bf310a55e8e3e946f432a740e1a050e3c59478011b35076c60a2533",
+            "verifiedAt": "2026-11-14 16:04:04.646000+00:00",
+            "queryText": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent.",
+            "queryTruncated": false,
+            "pipeline": [
+              {
+                "$vectorSearch": {
+                  "index": "service_procedures_autoembed_v1",
+                  "path": "retrievalText",
+                  "query": {
+                    "text": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent."
+                  },
+                  "exact": true,
+                  "limit": 1,
+                  "filter": {
+                    "authorityId": "lanark-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified",
+                    "id": "lanark-county-county-road-concern",
+                    "sourceVersion": "7a57665ae47b0bf5"
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "id": 1,
+                  "authorityId": 1,
+                  "issueIds": 1,
+                  "categoryId": 1,
+                  "title": 1,
+                  "retrievalText": 1,
+                  "sourceVersion": 1,
+                  "sourceIds": 1,
+                  "responsibilityRules": 1,
+                  "requiredFacts": 1,
+                  "steps": 1,
+                  "constraints": 1,
+                  "followUpInstructions": 1,
+                  "officialFormUrl": 1,
+                  "contactEmail": 1,
+                  "contactPhone": 1,
+                  "formSnapshotIds": 1,
+                  "artifactIds": 1,
+                  "coverage": 1,
+                  "gaps": 1,
+                  "visibility": 1,
+                  "current": 1,
+                  "verificationStatus": 1,
+                  "verifiedAt": 1,
+                  "validUntil": 1,
+                  "researchStatus": 1,
+                  "searchStatus": 1,
+                  "integrationStatus": 1,
+                  "portalId": 1,
+                  "workflowKind": 1,
+                  "formFamily": 1,
+                  "formVersions": 1,
+                  "problem": 1,
+                  "procedure": 1,
+                  "evidenceRefs": 1,
+                  "knowledgeKind": 1,
+                  "searchVerification": 1,
+                  "score": {
+                    "$meta": "vectorSearchScore"
+                  }
+                }
+              }
+            ],
+            "score": 0.8789927959442139
+          },
+          "score": 0.8789927959442139,
+          "verified": true
+        }
+      ],
+      "evidence": {
+        "collection": "service_procedures",
+        "indexName": "service_procedures_autoembed_v1",
+        "model": "voyage-4-large",
+        "queryText": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent.",
+        "nativeQuery": true,
+        "queryExecuted": true,
+        "pipeline": [
+          {
+            "$vectorSearch": {
+              "index": "service_procedures_autoembed_v1",
+              "path": "retrievalText",
+              "query": {
+                "text": "Lanark County Public Works builds, operates, maintains and repairs its County road network and bridges/culverts. Its official Report a Concern section directs concerns related to roadways, ditches,trails and forestry to roads@lanarkcounty.ca. Road emergencies use the24-hour phone613-267-1353 and follow the prompts. This is a published general County-road reporting handoff. Confirm the exact County road and asset: provincial highways, local roads, private property and sidewalk/curb responsibilities must not be assumed from the county name. The broad page also includes permits with processing times; those permit timelines do not apply to defect reports and are excluded from this procedure. Incident-specific mandatory facts, acknowledgement/tracking and repair deadlines are not stated. No live report was sent."
+              },
+              "exact": true,
+              "limit": 10,
+              "filter": {
+                "$and": [
+                  {
+                    "authorityId": "lanark-county",
+                    "issueIds": "roads-pothole",
+                    "categoryId": "roads",
+                    "visibility": "public",
+                    "current": true,
+                    "verificationStatus": "verified"
+                  },
+                  {
+                    "$or": [
+                      {
+                        "id": "lanark-county-county-road-concern",
+                        "sourceVersion": "7a57665ae47b0bf5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$project": {
+              "_id": 0,
+              "id": 1,
+              "authorityId": 1,
+              "issueIds": 1,
+              "categoryId": 1,
+              "title": 1,
+              "retrievalText": 1,
+              "sourceVersion": 1,
+              "sourceIds": 1,
+              "responsibilityRules": 1,
+              "requiredFacts": 1,
+              "steps": 1,
+              "constraints": 1,
+              "followUpInstructions": 1,
+              "officialFormUrl": 1,
+              "contactEmail": 1,
+              "contactPhone": 1,
+              "formSnapshotIds": 1,
+              "artifactIds": 1,
+              "coverage": 1,
+              "gaps": 1,
+              "visibility": 1,
+              "current": 1,
+              "verificationStatus": 1,
+              "verifiedAt": 1,
+              "validUntil": 1,
+              "researchStatus": 1,
+              "searchStatus": 1,
+              "integrationStatus": 1,
+              "portalId": 1,
+              "workflowKind": 1,
+              "formFamily": 1,
+              "formVersions": 1,
+              "problem": 1,
+              "procedure": 1,
+              "evidenceRefs": 1,
+              "knowledgeKind": 1,
+              "searchVerification": 1,
+              "score": {
+                "$meta": "vectorSearchScore"
+              }
+            }
+          }
+        ],
+        "reranking": {
+          "ran": false,
+          "reason": "Optional reranking not enabled"
+        },
+        "checkedAt": "2026-11-14T16:04:04.816010+00:00",
+        "index": {
+          "indexName": "service_procedures_autoembed_v1",
+          "type": "vectorSearch",
+          "status": "READY",
+          "queryable": true,
+          "configurationMatches": true,
+          "definitionVersion": {
+            "version": 0,
+            "createdAt": "2026-11-14 15:42:09.421000"
+          },
+          "definition": {
+            "fields": [
+              {
+                "type": "autoEmbed",
+                "path": "retrievalText",
+                "model": "voyage-4-large",
+                "modality": "text"
+              },
+              {
+                "type": "filter",
+                "path": "authorityId"
+              },
+              {
+                "type": "filter",
+                "path": "issueIds"
+              },
+              {
+                "type": "filter",
+                "path": "categoryId"
+              },
+              {
+                "type": "filter",
+                "path": "visibility"
+              },
+              {
+                "type": "filter",
+                "path": "current"
+              },
+              {
+                "type": "filter",
+                "path": "verificationStatus"
+              },
+              {
+                "type": "filter",
+                "path": "validUntil"
+              },
+              {
+                "type": "filter",
+                "path": "sourceVersion"
+              },
+              {
+                "type": "filter",
+                "path": "knowledgeKind"
+              },
+              {
+                "type": "filter",
+                "path": "id"
+              }
+            ]
+          },
+          "model": "voyage-4-large",
+          "reportedSettings": {},
+          "effectiveNodeSettings": [
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            },
+            {
+              "status": "READY",
+              "queryable": true,
+              "settings": {
+                "model": "voyage-4-large",
+                "numDimensions": 1024,
+                "quantization": "scalar",
+                "similarity": "cosine"
+              }
+            }
+          ],
+          "documentedDefaults": {
+            "numDimensions": 1024,
+            "quantization": "scalar",
+            "indexingMethod": "hnsw"
+          },
+          "documentation": "https://www.mongodb.com/docs/vector-search/indexes/vector-search-type/"
+        },
+        "scopedVersions": [
+          {
+            "id": "lanark-county-county-road-concern",
+            "sourceVersion": "7a57665ae47b0bf5"
+          }
+        ],
+        "returnedIds": [
+          "lanark-county-county-road-concern"
+        ],
+        "rejected": [],
+        "selectedIds": [
+          "lanark-county-county-road-concern"
+        ],
+        "elapsedMs": 1655
+      }
+    }
+  ],
+  "counts": {
+    "authoritiesChecked": 5,
+    "proceduresChecked": 6,
+    "searchableRecords": 6,
+    "excludedRecords": 0
+  },
+  "status": "ready"
+}
