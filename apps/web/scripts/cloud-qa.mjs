@@ -359,7 +359,7 @@ async function smoke(run, flags, manifest) {
   const session = await browserSession(run, flags, true);
   try {
     await session.page.goto(manifest.webOrigin + '/report');
-    assert.equal(await session.page.getByRole('heading', { level: 2 }).count(), 9);
+    assert.equal(await session.page.locator('.astryx-clickable-card').count(), 9);
     const widths = [];
     for (const width of [390, 320]) {
       await session.page.setViewportSize({ width, height: 844 });
