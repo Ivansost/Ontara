@@ -28,7 +28,7 @@ Required server configuration:
 | --- | --- |
 | `DEMO_PORTAL_MONGODB_URI` | Receiving database login; data always uses database `ontara_demo` |
 | `DEMO_PORTAL_ADMIN_TOKEN` | At least 32 random characters; presenter-only bearer secret |
-| `PORTALS_PUBLIC_BASE_URL` | Deployed HTTPS origin; local default `http://127.0.0.1:8002` |
+| `PORTALS_PUBLIC_BASE_URL` | Optional HTTPS origin override; otherwise Render's `RENDER_EXTERNAL_URL`, then local `http://127.0.0.1:8002` |
 | `DEMO_PORTAL_RECEIPT_SECRET` | Optional separate HMAC key; defaults to presenter secret with signing-purpose separation |
 | `PORT` | HTTP port; default 8002, Render provides its own value |
 
@@ -51,6 +51,13 @@ is required. One Uvicorn process and a ten-connection MongoDB pool fit a small
 receiving service; actual hosted memory/cold-start behavior still needs deployment
 qualification. Uvicorn access logs are disabled because ticket URLs contain
 capabilities.
+
+The root `render.yaml` starts with this one free Oregon web service, automatic
+deploys disabled, and three `sync: false` private values. It does not hardcode a
+guessed public hostname or localhost into cloud configuration. The application
+uses Render's documented `RENDER_EXTERNAL_URL` once deployed, including any suffix
+Render assigns. `sync: false` prompts only during initial Blueprint creation;
+later secret changes are supplied explicitly to the existing service.
 
 ## Browser contract
 
@@ -176,6 +183,28 @@ same-ticket updates and their independent receipts, capability access, per-run
 authenticated version changes, required v2 landmark, receiver restart, separate
 Graffiti routing, snapshot storage, and secret redaction. Unit tests use mongomock;
 actual Atlas/browser/cloud evidence is a separate integration gate.
+
+For a running independent receiver, install `requirements-browser.txt`, install
+Chromium using `python -m playwright install chromium`, and run:
+
+```sh
+python tests/browser_smoke.py --base-url http://127.0.0.1:8002 --artifacts-dir /tmp/ontara-portal-browser-proof
+```
+
+This uses real labelled HTML forms, fresh-browser receipt reconciliation, a
+presenter-authenticated version change scoped to a fresh synthetic run, required
+landmark validation, a same-ticket update, the separate Graffiti form, and
+presenter counters. It does not test a killed agent process or Vector Search;
+those remain separate execution gates. The generated report excludes capability
+URLs. No run is reset or deleted.
+
+After externally restarting the receiver process, run the script with
+`--verify-existing-report /tmp/ontara-portal-browser-proof/browser-smoke.json` to
+reopen those exact receipts in a new browser. This mode creates no new report or
+update and checks that write counters and the changed form version survived.
+For local development QA only, `--browser-channel chrome` uses an isolated
+installed Chrome when the pinned Chromium download is unavailable. This does not
+change the cloud executor's required bundled browser or prove its deployment.
 
 Framework behavior follows current primary documentation:
 [FastAPI forms](https://fastapi.tiangolo.com/tutorial/request-forms/),

@@ -22,7 +22,7 @@ class Settings:
         uri = os.environ.get("DEMO_PORTAL_MONGODB_URI") or private.get("DEMO_PORTAL_MONGODB_URI") or ""
         admin_token = os.environ.get("DEMO_PORTAL_ADMIN_TOKEN", "")
         secret = os.environ.get("DEMO_PORTAL_RECEIPT_SECRET") or admin_token
-        base = os.environ.get("PORTALS_PUBLIC_BASE_URL", "http://127.0.0.1:8002").rstrip("/")
+        base = (os.environ.get("PORTALS_PUBLIC_BASE_URL") or os.environ.get("RENDER_EXTERNAL_URL") or "http://127.0.0.1:8002").rstrip("/")
         parts = urlsplit(base)
         if not uri:
             raise RuntimeError("DEMO_PORTAL_MONGODB_URI is required; credential values are never logged")
