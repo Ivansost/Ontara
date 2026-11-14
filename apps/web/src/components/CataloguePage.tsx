@@ -29,8 +29,12 @@ const styles = stylex.create({
   homeGrid: { gridTemplateColumns: { default: 'repeat(3, minmax(0, 1fr))', '@media (max-width: 960px)': 'repeat(2, minmax(0, 1fr))' } },
   choice: { minWidth: 0, height: '100%' },
   homeChoice: {
-    aspectRatio: '1 / 1',
-    height: 'auto',
+    aspectRatio: { default: 'auto', '@media (max-width: 960px)': '1 / 1' },
+    height: {
+      default: `calc(${spacingVars['--spacing-10']} * 5)`,
+      '@media (min-width: 961px) and (max-height: 850px)': `calc(${spacingVars['--spacing-10']} * 4 + ${spacingVars['--spacing-5']})`,
+      '@media (max-width: 960px)': 'auto',
+    },
     paddingInline: { default: `calc(${spacingVars['--spacing-6']} - ${borderVars['--border-width']})`, '@media (max-width: 640px)': spacingVars['--spacing-3'] },
     paddingBlock: { default: `calc(${spacingVars['--spacing-6']} - ${borderVars['--border-width']})`, '@media (max-width: 640px)': spacingVars['--spacing-3'] },
   },
