@@ -19,7 +19,7 @@ export type RouteRecord = {
 export type RouteDecision = Omit<Required<components['schemas']['RouteDecision']>, 'route'> & { route: RouteRecord | null };
 export type NotificationSettings = components['schemas']['ResidentNotifications'];
 export type NotificationProgress = Required<components['schemas']['NotificationProgress']>;
-export type CaseView = Omit<Required<components['schemas']['CaseView']>, 'location' | 'answers' | 'reporter' | 'route' | 'notifications' | 'notificationProgress' | 'notificationSettingsLocked'> & {
+export type CaseView = Omit<Required<components['schemas']['CaseView']>, 'location' | 'answers' | 'reporter' | 'route' | 'notifications' | 'notificationProgress' | 'notificationSettingsLocked' | 'scriptedEmailDemo'> & {
   location: IncidentLocation;
   answers: Answers;
   reporter: Reporter | null;
@@ -28,6 +28,7 @@ export type CaseView = Omit<Required<components['schemas']['CaseView']>, 'locati
   notifications?: NotificationSettings | null;
   notificationProgress?: NotificationProgress[];
   notificationSettingsLocked?: boolean;
+  scriptedEmailDemo?: boolean;
 };
 export type TimelineEvent = { id: string; caseId: string; kind: string; message: string; createdAt: string; visibility: 'resident' | 'presenter'; data: Record<string, unknown>; operationId?: string | null };
 export type TimelineView = { events: TimelineEvent[] };

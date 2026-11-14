@@ -948,6 +948,11 @@ export interface components {
             notificationSettingsLocked: boolean;
             /** Notificationprogress */
             notificationProgress?: components["schemas"]["NotificationProgress"][];
+            /**
+             * Scriptedemaildemo
+             * @default false
+             */
+            scriptedEmailDemo: boolean;
             /** Stage */
             stage: string;
             /** Route */
@@ -1296,7 +1301,7 @@ export interface components {
              * Purpose
              * @enum {string}
              */
-            purpose: "RESIDENT_REPORT_FILED" | "RESIDENT_INFORMATION_NEEDED" | "RESIDENT_NOTIFICATION" | "RESIDENT_NEEDS_ASSISTANCE";
+            purpose: "RESIDENT_REPORT_FILED" | "RESIDENT_INFORMATION_NEEDED" | "RESIDENT_NOTIFICATION" | "RESIDENT_NEEDS_ASSISTANCE" | "RESIDENT_SCRIPTED_SUBMITTED" | "RESIDENT_SCRIPTED_RESOLVED";
             /**
              * State
              * @enum {string}
