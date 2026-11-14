@@ -54,4 +54,11 @@ def lookup_html(portal_id: str) -> str:
 def ticket_html(ticket: dict, update_url: str) -> str:
     fields = "".join(f'<dt>{escape(key)}</dt><dd>{escape(value)}</dd>' for key, value in ticket["currentValues"].items() if value)
     receipt_lines = "".join(f'<li>{escape(receipt["action"])} — {escape(receipt["receiptId"])} — {escape(receipt["acceptedAt"])}</li>' for receipt in ticket["receipts"])
-    return page(PORTALS[ticket["portalId"]]["title"], f'<h1>{escape(PORTALS[ticket["portalId"]]["title"])}</h1><h2>Ticket {escape(ticket["ticketId"])}</h2><p>{escape(ticket["status"])}</p><dl>{fields}</dl><h2>Accepted actions</h2><ol>{receipt_lines}</ol><a href="{escape(update_url, quote=True)}">Provide more information for this ticket</a>')
+    resolution = ticket.get("resolution")
+    if resolution:
+        status = '<h2>Resolved in demo</h2><p>The simulated demo authority marked this report complete. Physical repair has not been verified.</p>'
+        next_action = f'<h2>Simulated completion record</h2><p>Reference <code>{escape(resolution["resolutionId"])}</code><br>Recorded at {escape(resolution["resolvedAt"])}</p>'
+    else:
+        status = f'<p>{escape(ticket["status"])}</p>'
+        next_action = f'<a href="{escape(update_url, quote=True)}">Provide more information for this ticket</a>'
+    return page(PORTALS[ticket["portalId"]]["title"], f'<h1>{escape(PORTALS[ticket["portalId"]]["title"])}</h1><h2>Ticket {escape(ticket["ticketId"])}</h2>{status}<dl>{fields}</dl><h2>Accepted actions</h2><ol>{receipt_lines}</ol>{next_action}')
