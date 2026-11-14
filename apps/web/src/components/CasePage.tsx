@@ -197,7 +197,7 @@ export default function CasePage({ caseId }: { caseId: string }) {
     content={<LayoutContent padding={4}><VStack gap={6}>
       {error || pollError ? <Banner status="error" title="This step needs attention" description={error || pollError} endContent={<Button label="Check again" onClick={() => void load()} size="sm" />} /> : null}
       {receipt ? <Banner status="success" title="Receipt verified" description="The demo portal received this reporting step. Inspection or repair has not been verified." /> : null}
-      <NotificationStatus notifications={caseData.notifications} progress={caseData.notificationProgress || []} />
+      <NotificationStatus notifications={caseData.notifications} progress={caseData.notificationProgress || []} scriptedEmailDemo={caseData.scriptedEmailDemo} />
 
       {!cancelled && caseData.pendingQuestions.length > 0 ? <VStack gap={4}>
         <Heading level={2}>One more detail</Heading>
