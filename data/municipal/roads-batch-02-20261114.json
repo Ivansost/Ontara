@@ -1,0 +1,2314 @@
+{
+  "schemaVersion": "1.0",
+  "batchId": "roads-batch-02-20261114",
+  "municipalities": [
+    {
+      "id": "niagara-region",
+      "name": "Niagara, Regional Municipality of",
+      "type": "upper-tier",
+      "memberIds": [
+        "fort-erie-town",
+        "grimsby-town",
+        "lincoln-town",
+        "niagara-falls-city",
+        "niagara-on-the-lake-town",
+        "pelham-town",
+        "port-colborne-city",
+        "st-catharines-city",
+        "thorold-city",
+        "wainfleet-township",
+        "welland-city",
+        "west-lincoln-township"
+      ],
+      "officialUrl": "http://www.niagararegion.ca/",
+      "population": 477941,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 6,
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "fort-erie-town",
+      "name": "Fort Erie, Town of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "https://www.forterie.ca/",
+      "population": 32901,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "grimsby-town",
+      "name": "Grimsby, Town of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.town.grimsby.on.ca/",
+      "population": 28883,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lincoln-town",
+      "name": "Lincoln, Town of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.lincoln.ca/",
+      "population": 25719,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "niagara-falls-city",
+      "name": "Niagara Falls, City of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.niagarafalls.ca/",
+      "population": 94415,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "niagara-on-the-lake-town",
+      "name": "Niagara-on-the-Lake, Town of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.notl.org/",
+      "population": 19088,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "pelham-town",
+      "name": "Pelham, Town of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.pelham.ca/",
+      "population": 18192,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "port-colborne-city",
+      "name": "Port Colborne, City of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.portcolborne.ca/",
+      "population": 20033,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "st-catharines-city",
+      "name": "St. Catharines, City of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.stcatharines.ca/",
+      "population": 136803,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "thorold-city",
+      "name": "Thorold, City of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.thorold.com/",
+      "population": 23816,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "wainfleet-township",
+      "name": "Wainfleet, Township of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.wainfleet.ca/",
+      "population": 6887,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "welland-city",
+      "name": "Welland, City of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.welland.ca/",
+      "population": 55750,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "west-lincoln-township",
+      "name": "West Lincoln, Township of",
+      "type": "lower-tier",
+      "parentId": "niagara-region",
+      "officialUrl": "http://www.westlincoln.ca/",
+      "population": 15454,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "simcoe-county",
+      "name": "Simcoe, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "adjala-tosorontio-township",
+        "bradford-west-gwillimbury-town",
+        "clearview-township",
+        "collingwood-town",
+        "essa-township",
+        "innisfil-town",
+        "midland-town",
+        "new-tecumseth-town",
+        "oro-medonte-township",
+        "penetanguishene-town",
+        "ramara-township",
+        "severn-township",
+        "springwater-township",
+        "tay-township",
+        "tiny-township",
+        "wasaga-beach-town"
+      ],
+      "officialUrl": "http://www.simcoe.ca/",
+      "population": 350222,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 7,
+      "sourceIds": [
+        "simcoe-roads",
+        "simcoe-maintenance",
+        "simcoe-resident-portal"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "adjala-tosorontio-township",
+      "name": "Adjala-Tosorontio, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "https://www.adjtos.ca/en/index.aspx",
+      "population": 10989,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "bradford-west-gwillimbury-town",
+      "name": "Bradford West Gwillimbury, Town of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "https://www.townofbwg.com/",
+      "population": 42880,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "clearview-township",
+      "name": "Clearview, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.clearview.ca/",
+      "population": 14814,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "collingwood-town",
+      "name": "Collingwood, Town of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.collingwood.ca/",
+      "population": 24811,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "essa-township",
+      "name": "Essa, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.essatownship.on.ca/",
+      "population": 22970,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "innisfil-town",
+      "name": "Innisfil, Town of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "https://innisfil.ca/",
+      "population": 43326,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "midland-town",
+      "name": "Midland, Town of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.midland.ca/",
+      "population": 17817,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "new-tecumseth-town",
+      "name": "New Tecumseth, Town of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.town.newtecumseth.on.ca/",
+      "population": 43948,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "oro-medonte-township",
+      "name": "Oro-Medonte, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.oro-medonte.ca/",
+      "population": 23017,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "penetanguishene-town",
+      "name": "Penetanguishene, Town of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.penetanguishene.ca/",
+      "population": 10077,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "ramara-township",
+      "name": "Ramara, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.ramara.ca/",
+      "population": 10377,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "severn-township",
+      "name": "Severn, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.townshipofsevern.com/",
+      "population": 14576,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "springwater-township",
+      "name": "Springwater, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.springwater.ca/",
+      "population": 21701,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "tay-township",
+      "name": "Tay, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.tay.ca/",
+      "population": 11091,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "tiny-township",
+      "name": "Tiny, Township of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "https://www.tiny.ca/",
+      "population": 12966,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "wasaga-beach-town",
+      "name": "Wasaga Beach, Town of",
+      "type": "lower-tier",
+      "parentId": "simcoe-county",
+      "officialUrl": "http://www.wasagabeach.com/",
+      "population": 24862,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "essex-county",
+      "name": "Essex, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "amherstburg-town",
+        "essex-town",
+        "kingsville-town",
+        "lasalle-town",
+        "lakeshore-municipality",
+        "leamington-municipality",
+        "tecumseh-town"
+      ],
+      "officialUrl": "https://www.countyofessex.ca/en/index.aspx",
+      "population": 192970,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 8,
+      "sourceIds": [
+        "essex-roads",
+        "essex-report"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "amherstburg-town",
+      "name": "Amherstburg, Town of",
+      "type": "lower-tier",
+      "parentId": "essex-county",
+      "officialUrl": "http://www.amherstburg.ca/",
+      "population": 23524,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "essex-town",
+      "name": "Essex, Town of",
+      "type": "lower-tier",
+      "parentId": "essex-county",
+      "officialUrl": "http://www.townofessex.on.ca/",
+      "population": 21216,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "kingsville-town",
+      "name": "Kingsville, Town of",
+      "type": "lower-tier",
+      "parentId": "essex-county",
+      "officialUrl": "https://www.kingsville.ca/en/index.aspx",
+      "population": 22119,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lasalle-town",
+      "name": "LaSalle, Town of",
+      "type": "lower-tier",
+      "parentId": "essex-county",
+      "officialUrl": "http://www.town.lasalle.on.ca/",
+      "population": 32721,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lakeshore-municipality",
+      "name": "Lakeshore, Municipality of",
+      "type": "lower-tier",
+      "parentId": "essex-county",
+      "officialUrl": "http://www.townoflakeshore.on.ca/",
+      "population": 40410,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "leamington-municipality",
+      "name": "Leamington, Municipality of",
+      "type": "lower-tier",
+      "parentId": "essex-county",
+      "officialUrl": "http://www.leamington.ca/",
+      "population": 29680,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "tecumseh-town",
+      "name": "Tecumseh, Town of",
+      "type": "lower-tier",
+      "parentId": "essex-county",
+      "officialUrl": "http://www.tecumseh.ca/",
+      "population": 23300,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lambton-county",
+      "name": "Lambton, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "brooke-alvinston-municipality",
+        "dawn-euphemia-township",
+        "enniskillen-township",
+        "lambton-shores-municipality",
+        "oil-springs-village",
+        "petrolia-town",
+        "plympton-wyoming-town",
+        "point-edward-village",
+        "sarnia-city",
+        "st-clair-township",
+        "warwick-township"
+      ],
+      "officialUrl": "http://www.lambtononline.ca/",
+      "population": 126273,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 9,
+      "sourceIds": [
+        "lambton-roads-current",
+        "lambton-contacts"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "brooke-alvinston-municipality",
+      "name": "Brooke-Alvinston, Municipality of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://brookealvinston.com/home/",
+      "population": 2359,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "dawn-euphemia-township",
+      "name": "Dawn-Euphemia, Township of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "https://dawneuphemia.ca/",
+      "population": 1968,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "enniskillen-township",
+      "name": "Enniskillen, Township of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://www.enniskillen.ca/",
+      "population": 2825,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "lambton-shores-municipality",
+      "name": "Lambton Shores, Municipality of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://www.lambtonshores.ca/",
+      "population": 11876,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "oil-springs-village",
+      "name": "Oil Springs, Village of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://www.oilsprings.ca/",
+      "population": 647,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "petrolia-town",
+      "name": "Petrolia, Town of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://town.petrolia.on.ca/",
+      "population": 6013,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "plympton-wyoming-town",
+      "name": "Plympton-Wyoming, Town of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://plympton-wyoming.com/",
+      "population": 8308,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "point-edward-village",
+      "name": "Point Edward, Village of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://www.villageofpointedward.com/",
+      "population": 1930,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "sarnia-city",
+      "name": "Sarnia, City of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://www.sarnia.ca/",
+      "population": 72047,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "st-clair-township",
+      "name": "St. Clair, Township of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://www.twp.stclair.on.ca/",
+      "population": 14659,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "warwick-township",
+      "name": "Warwick, Township of",
+      "type": "lower-tier",
+      "parentId": "lambton-county",
+      "officialUrl": "http://www.warwicktownship.ca/",
+      "population": 3641,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "oxford-county",
+      "name": "Oxford, County of",
+      "type": "upper-tier",
+      "memberIds": [
+        "blandford-blenheim-township",
+        "east-zorra-tavistock-township",
+        "ingersoll-town",
+        "norwich-township",
+        "south-west-oxford-township",
+        "tillsonburg-town",
+        "woodstock-city",
+        "zorra-township"
+      ],
+      "officialUrl": "http://www.oxfordcounty.ca/",
+      "population": 121781,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "selectionRank": 10,
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "sourceVersion": "2021-members-2026-registry-v1"
+    },
+    {
+      "id": "blandford-blenheim-township",
+      "name": "Blandford-Blenheim, Township of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "http://www.blandfordblenheim.ca/",
+      "population": 7565,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "east-zorra-tavistock-township",
+      "name": "East Zorra-Tavistock, Township of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "https://www.ezt.ca/en/index.aspx",
+      "population": 7841,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "ingersoll-town",
+      "name": "Ingersoll, Town of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "http://www.ingersoll.ca/",
+      "population": 13693,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "norwich-township",
+      "name": "Norwich, Township of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "http://www.twp.norwich.on.ca/",
+      "population": 11151,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "south-west-oxford-township",
+      "name": "South-West Oxford, Township of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "http://www.swox.org/",
+      "population": 7583,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "tillsonburg-town",
+      "name": "Tillsonburg, Town of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "http://www.town.tillsonburg.on.ca/",
+      "population": 18615,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "woodstock-city",
+      "name": "Woodstock, City of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "https://www.cityofwoodstock.ca/en/index.aspx",
+      "population": 46705,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    },
+    {
+      "id": "zorra-township",
+      "name": "Zorra, Township of",
+      "type": "lower-tier",
+      "parentId": "oxford-county",
+      "officialUrl": "http://www.zorra.on.ca/",
+      "population": 8628,
+      "populationYear": 2021,
+      "populationSourceIds": [
+        "ontario-municipal-registry-2026",
+        "statcan-2021-csd-population"
+      ],
+      "sourceIds": [
+        "ontario-municipal-registry-2026"
+      ],
+      "sourceVersion": "2021-csd-v1"
+    }
+  ],
+  "procedures": [
+    {
+      "title": "Niagara Region: Regional-road pothole form and phone handoff",
+      "issueIds": [
+        "roads-pothole"
+      ],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "retrievalText": "Niagara Region accepts pothole reports about Regional roads through its linked official Report a pothole form or telephone 905-980-6000 extension 3690. For city/town streets contact the local municipality. The observed form asks for City/town, location details such as intersection/address/landmark, pothole position and size, and an optional contact-permission checkbox. No mandatory marker was observed beside those fields in the captured HTML; additional conditional contact fields were not exercised. The source says winter fixes may be temporary and longer-term work waits for warmer weather. It gives no pothole repair deadline or receipt lookup. Niagara traffic-signal outages have a separate number, 905-984-3690; that is not proof of a damaged road-sign or new-intersection-control procedure. No live report was submitted.",
+      "responsibilityRules": [
+        "Confirm the defect is on a Niagara Regional road; local streets go to the relevant local municipality.",
+        "This procedure covers potholes; do not reuse the damage-claim form or a traffic-signal phone number for other defects without verification."
+      ],
+      "steps": [
+        "Confirm exact incident road and local municipality.",
+        "Use the officially linked pothole form or call 905-980-6000 ext.3690.",
+        "Provide the actual known location/position/size; do not invent measurements."
+      ],
+      "requiredFacts": [
+        "Observed form fields: City/town; location details (closest intersection, address, landmark); position and size. These are observed labels, not an assertion all are mandatory."
+      ],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "verified_procedure"
+      },
+      "gaps": [
+        "The captured field labels have no visible required markers; validation behavior and any conditional contact fields have not been tested.",
+        "No report confirmation, receipt/tracking lookup, follow-up target or fixed repair deadline was verified."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-905-980-6000 ext. 3690",
+      "officialFormUrl": "https://forms.niagararegion.ca/Roads-and-transportation/Report-a-pothole",
+      "id": "niagara-region-regional-pothole",
+      "authorityId": "niagara-region",
+      "categoryId": "roads",
+      "sourceVersion": "28d87281a682dc94",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:55.829082+00:00",
+      "artifactIds": [
+        "niagara-roads-b6f0fce7e5dfca98",
+        "niagara-pothole-form-f2b0369cb025d181"
+      ],
+      "formSnapshotIds": [
+        "niagara-pothole-form-20261114"
+      ]
+    },
+    {
+      "title": "Simcoe County: County-road maintenance portal and contact handoff",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "simcoe-roads",
+        "simcoe-maintenance",
+        "simcoe-resident-portal"
+      ],
+      "retrievalText": "Simcoe County Transportation and Engineering operates its County road and bridge system. The official Transportation page links the Resident Portal specifically for road maintenance and construction tickets. Published maintenance includes pavement repairs/patching, road sweeping, shoulder work, curb/gutter repair and sign maintenance. Customer Service is 705-735-6901 or 1-800-263-3199. The maintenance page explains that traffic-control requests require technical assessment: public requests may initiate a traffic-signal investigation, but installation depends on vehicle/pedestrian/collision/geometric data and warrants. A new stop sign or speed limit is not automatically approved by a resident report. The fetched Salesforce portal is a JavaScript shell, so report fields, login/guest constraints and receipts are not verified. Sidewalk responsibility is not established by these sources.",
+      "responsibilityRules": [
+        "Use only for a verified County road/asset; municipal roads require their local municipality.",
+        "A road-safety concern is a request to assess; technical warrants and authority decisions control any change."
+      ],
+      "steps": [
+        "Confirm the County road and asset.",
+        "Open the officially linked maintenance/construction Resident Portal or use published customer service to obtain the appropriate handoff.",
+        "Inspect current fields and ownership before a future supported report."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-705-735-6901 or +1-800-263-3199",
+      "officialFormUrl": "https://service.simcoe.ca/s/topic/0TOJQ0000004o6H4AQ/roads-maintenance-construction",
+      "id": "simcoe-county-county-maintenance",
+      "authorityId": "simcoe-county",
+      "categoryId": "roads",
+      "sourceVersion": "70cdab2523193f59",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:55.829168+00:00",
+      "artifactIds": [
+        "simcoe-roads-f747f90095c03cf3",
+        "simcoe-maintenance-24c67354eb41a882",
+        "simcoe-resident-portal-2f7acba8742ca1da"
+      ],
+      "formSnapshotIds": [
+        "simcoe-roads-portal-shell-20261114"
+      ]
+    },
+    {
+      "title": "Essex County: road-problem portal and 24-hour line",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-curb",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "essex-roads",
+        "essex-report"
+      ],
+      "retrievalText": "Essex County publishes a 24-hour road-problem line at 519-326-8691 and an officially linked Citywide Report a Problem portal for its road network. The County owns most arterial roads; local municipalities maintain local roads, while Ontario maintains Highways 3, 77 and 401. Its County Roads page lists roads by number/name/location. Maintenance includes patching, sweeping, signs, drainage and traffic lights. The reporting instructions allow Continue as Guest; creating an account enables request-status tracking. Published steps are select County of Essex, Submit a Service Requests Online, New Request, contact details, address/map or No address, request type and brief description, optional file, Final Summary and I Agree before submission. These published instructions are not proof the live portal was automated or a receipt obtained. Specific sidewalk responsibility remains unverified.",
+      "responsibilityRules": [
+        "Confirm the exact County-owned road/asset using the official road list; neither an Essex address nor Windsor proximity establishes County jurisdiction.",
+        "Local roads and provincial highways require the listed responsible authority."
+      ],
+      "steps": [
+        "Open the reporting portal linked from the official County page.",
+        "Use guest mode or an account; select County of Essex and create a new service request.",
+        "Provide the published contact, location, type and description steps; review summary and agreement before any future authorized submission."
+      ],
+      "requiredFacts": [
+        "Published steps request contact details, address/map or No address, request type and brief description; attachment is optional; final review and I Agree are described."
+      ],
+      "followUpInstructions": [
+        "The official page states a logged-in account permits status tracking; guest tracking/receipts are not established."
+      ],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-curb": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-519-326-8691 (24 hours)",
+      "officialFormUrl": "https://citywideportal.com/?client=County%20of%20Essex",
+      "id": "essex-county-county-road-issue",
+      "authorityId": "essex-county",
+      "categoryId": "roads",
+      "sourceVersion": "9af571c763ac1464",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:55.829283+00:00",
+      "artifactIds": [
+        "essex-roads-5b5d12dfa7189e26",
+        "essex-report-5c3f9d7a9b0f2745"
+      ]
+    },
+    {
+      "title": "Lambton County: Public Works handoff to verify County-road maintenance responsibility",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement",
+        "roads-debris-loose",
+        "roads-debris-object",
+        "roads-sign",
+        "roads-safety"
+      ],
+      "sourceIds": [
+        "lambton-roads-current",
+        "lambton-contacts"
+      ],
+      "retrievalText": "Lambton County’s current official Roads page identifies Public Works as maintainer of the County Road Network, including nearly 650 kilometres of roads and over 190 bridges/major culverts. The current official Contacts Directory publishes Public Works telephone 519-845-0801 and toll-free 1-866-324-6912. This is a sourced departmental handoff to identify responsibility and obtain the appropriate reporting process, not proof that a specific issue submission channel, online form or automated integration is accepted. Road construction/paving and preventative road maintenance are described. The source does not allocate every local, provincial, private, sidewalk or curb asset to the County. Mandatory facts, urgent dispatch, receipts, tracking and repair targets are unresolved. The former lambtononline.ca roads.aspx URL redirects to a 404; use the current lambtoncounty.ca source.",
+      "responsibilityRules": [
+        "Confirm the road is part of Lambton County’s network; do not infer responsibility for local, provincial or private roads from the county name.",
+        "The published Public Works contact is a verification handoff; issue-specific accepted-report procedures remain unverified."
+      ],
+      "steps": [
+        "Confirm the incident segment/asset.",
+        "Contact Public Works using the official directory to establish jurisdiction and current reporting requirements.",
+        "Pause automatic dispatch until a supported procedure and resident approval exist."
+      ],
+      "requiredFacts": [],
+      "followUpInstructions": [],
+      "coverage": {
+        "roads-pothole": "sourced_handoff",
+        "roads-pavement": "sourced_handoff",
+        "roads-debris-loose": "sourced_handoff",
+        "roads-debris-object": "sourced_handoff",
+        "roads-sign": "sourced_handoff",
+        "roads-safety": "sourced_handoff"
+      },
+      "gaps": [
+        "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+        "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "contactPhone": "+1-519-845-0801; toll-free +1-866-324-6912",
+      "id": "lambton-county-public-works-owner-handoff",
+      "authorityId": "lambton-county",
+      "categoryId": "roads",
+      "sourceVersion": "9efad03c5bd7fd4a",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:50:41.300273+00:00",
+      "artifactIds": [
+        "lambton-roads-current-ae362477eb0e2d02",
+        "lambton-contacts-36ec7b584c6a252f"
+      ]
+    },
+    {
+      "title": "Oxford County: publish street, lane and approximate pothole size through Service Oxford",
+      "issueIds": [
+        "roads-pothole",
+        "roads-pavement"
+      ],
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "retrievalText": "Oxford County directs cracks and potholes on County roads to Service Oxford. Its official public notice says all pothole reports should include street name, which lane (for example northbound/southbound), and approximate size such as small/medium/large. The online route permits map location, additional details, an optional photo and choosing to receive an update from Public Works. The current Roads page links the Service Oxford pothole article. The fetched Salesforce article is a JavaScript shell, so current form fields, authentication/CAPTCHA constraints and actual receipts were not observed. Published references to provincial maintenance timelines do not establish a single repair deadline for every report. Verify County-road responsibility; local roads and other asset classes need separate routing. No live report was submitted.",
+      "responsibilityRules": [
+        "The procedure is specifically for cracks and potholes on Oxford County roads.",
+        "Confirm exact ownership; do not treat all streets within Oxford as County roads."
+      ],
+      "steps": [
+        "Use the pothole link on the official Roads page to open Service Oxford.",
+        "Supply the actual street name, lane and approximate size requested by the official notice.",
+        "Choose whether to request an update; inspect current form and review before future authorized submission."
+      ],
+      "requiredFacts": [
+        "Street name",
+        "Which lane (e.g. northbound/southbound)",
+        "Approximate size (e.g. small/medium/large)"
+      ],
+      "followUpInstructions": [
+        "The public notice says residents may choose to receive an update from Public Works; no response target or tracking lookup is promised."
+      ],
+      "coverage": {
+        "roads-pothole": "verified_procedure",
+        "roads-pavement": "verified_procedure"
+      },
+      "gaps": [
+        "Current portal questionnaire, mandatory validation, authentication/CAPTCHA and receipt/tracking behavior were not observed in the JavaScript shell.",
+        "The cited maintenance standards depend on conditions; no universal repair deadline is established."
+      ],
+      "verificationStatus": "verified",
+      "researchStatus": "verified",
+      "constraints": [
+        "Research only. Source links and contacts are not allowlisted demo execution destinations. No live municipality was contacted or form submitted."
+      ],
+      "officialFormUrl": "https://service.oxfordcounty.ca/s/article/Report-a-pothole-on-a-County-road",
+      "id": "oxford-county-county-pothole-cracks",
+      "authorityId": "oxford-county",
+      "categoryId": "roads",
+      "sourceVersion": "f28c713a38377a2f",
+      "visibility": "public",
+      "current": true,
+      "integrationStatus": "research_only",
+      "searchStatus": "pending",
+      "verifiedAt": "2026-11-14T15:48:55.828926+00:00",
+      "artifactIds": [
+        "oxford-roads-6c93102f285c436f",
+        "oxford-report-potholes-2f5876ae7fa4670d",
+        "oxford-pothole-portal-f0b2c67d6199f0b2"
+      ],
+      "formSnapshotIds": [
+        "oxford-pothole-portal-shell-20261114"
+      ]
+    }
+  ],
+  "formSnapshots": [
+    {
+      "id": "niagara-pothole-form-20261114",
+      "fields": [
+        {
+          "id": "Q_d2ecd460-c19c-4f53-8ada-b3b8013b9ffe_0",
+          "label": "City / town",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Fort Erie",
+            "Grimsby",
+            "Lincoln",
+            "Niagara-on-the-Lake",
+            "Niagara Falls",
+            "Pelham",
+            "Port Colborne",
+            "St. Catharines",
+            "Thorold",
+            "Wainfleet",
+            "Welland",
+            "West Lincoln"
+          ]
+        },
+        {
+          "id": "Q_8665a859-91d0-449d-9423-b3b8013be497_0",
+          "label": "Location details (closest intersection, address, landmark)",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "Q_64b5142e-f139-4d84-ae50-b3b8013cf439_0",
+          "label": "Position and size (size, depth, near curb, centre of road)",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "Q_003e9c62-2e1c-4bc2-85b0-b3b8013e6a16_0",
+          "label": "You can contact me for more information",
+          "type": "checkbox",
+          "required": false,
+          "options": [
+            "Yes"
+          ]
+        }
+      ],
+      "gaps": [
+        "Required false records that no required marker was observed, not proof of server acceptance. Conditional follow-up fields were not exercised. Hidden verification/token values redacted in stored snapshot."
+      ],
+      "authorityId": "niagara-region",
+      "procedureId": "niagara-region-regional-pothole",
+      "url": "https://forms.niagararegion.ca/Roads-and-transportation/Report-a-pothole",
+      "observedAt": "2026-11-14T15:48:55.829082+00:00",
+      "sourceVersion": "f2b0369cb025d181",
+      "artifactIds": [
+        "niagara-pothole-form-f2b0369cb025d181"
+      ],
+      "sourceIds": [
+        "niagara-pothole-form"
+      ]
+    },
+    {
+      "id": "simcoe-roads-portal-shell-20261114",
+      "fields": [],
+      "gaps": [
+        "JavaScript shell only. No report questionnaire observed or submitted."
+      ],
+      "authorityId": "simcoe-county",
+      "procedureId": "simcoe-county-county-maintenance",
+      "url": "https://service.simcoe.ca/s/topic/0TOJQ0000004o6H4AQ/roads-maintenance-construction",
+      "observedAt": "2026-11-14T15:48:55.829168+00:00",
+      "sourceVersion": "2f7acba8742ca1da",
+      "artifactIds": [
+        "simcoe-resident-portal-2f7acba8742ca1da"
+      ],
+      "sourceIds": [
+        "simcoe-resident-portal"
+      ]
+    },
+    {
+      "id": "oxford-pothole-portal-shell-20261114",
+      "fields": [],
+      "gaps": [
+        "JavaScript shell only. Published required report facts come from the separate official notice, not invented portal fields."
+      ],
+      "authorityId": "oxford-county",
+      "procedureId": "oxford-county-county-pothole-cracks",
+      "url": "https://service.oxfordcounty.ca/s/article/Report-a-pothole-on-a-County-road",
+      "observedAt": "2026-11-14T15:48:55.828926+00:00",
+      "sourceVersion": "f0b2c67d6199f0b2",
+      "artifactIds": [
+        "oxford-pothole-portal-f0b2c67d6199f0b2"
+      ],
+      "sourceIds": [
+        "oxford-pothole-portal"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "verified_procedure",
+      "procedureIds": [
+        "niagara-region-regional-pothole"
+      ],
+      "sourceIds": [
+        "niagara-pothole-form",
+        "niagara-roads"
+      ],
+      "notes": [
+        "The captured field labels have no visible required markers; validation behavior and any conditional contact fields have not been tested.",
+        "No report confirmation, receipt/tracking lookup, follow-up target or fixed repair deadline was verified."
+      ]
+    },
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-pavement",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-debris-loose",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-debris-object",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-sign",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "niagara-region",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "niagara-roads",
+        "niagara-pothole-form"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "simcoe-county-county-maintenance"
+      ],
+      "sourceIds": [
+        "simcoe-maintenance",
+        "simcoe-resident-portal",
+        "simcoe-roads"
+      ],
+      "notes": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "simcoe-county-county-maintenance"
+      ],
+      "sourceIds": [
+        "simcoe-maintenance",
+        "simcoe-resident-portal",
+        "simcoe-roads"
+      ],
+      "notes": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "simcoe-county-county-maintenance"
+      ],
+      "sourceIds": [
+        "simcoe-maintenance",
+        "simcoe-resident-portal",
+        "simcoe-roads"
+      ],
+      "notes": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "simcoe-county-county-maintenance"
+      ],
+      "sourceIds": [
+        "simcoe-maintenance",
+        "simcoe-resident-portal",
+        "simcoe-roads"
+      ],
+      "notes": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "simcoe-roads",
+        "simcoe-maintenance",
+        "simcoe-resident-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "simcoe-county-county-maintenance"
+      ],
+      "sourceIds": [
+        "simcoe-maintenance",
+        "simcoe-resident-portal",
+        "simcoe-roads"
+      ],
+      "notes": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "simcoe-county-county-maintenance"
+      ],
+      "sourceIds": [
+        "simcoe-maintenance",
+        "simcoe-resident-portal",
+        "simcoe-roads"
+      ],
+      "notes": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "simcoe-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "simcoe-county-county-maintenance"
+      ],
+      "sourceIds": [
+        "simcoe-maintenance",
+        "simcoe-resident-portal",
+        "simcoe-roads"
+      ],
+      "notes": [
+        "The portal response is a JavaScript shell; mandatory report fields, login/CAPTCHA constraints, confirmation and tracking were not observed.",
+        "Specific immediate-hazard dispatch and follow-up targets remain unverified."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "essex-county-county-road-issue"
+      ],
+      "sourceIds": [
+        "essex-report",
+        "essex-roads"
+      ],
+      "notes": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "essex-county-county-road-issue"
+      ],
+      "sourceIds": [
+        "essex-report",
+        "essex-roads"
+      ],
+      "notes": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "essex-county-county-road-issue"
+      ],
+      "sourceIds": [
+        "essex-report",
+        "essex-roads"
+      ],
+      "notes": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "essex-county-county-road-issue"
+      ],
+      "sourceIds": [
+        "essex-report",
+        "essex-roads"
+      ],
+      "notes": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "essex-roads",
+        "essex-report"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-curb",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "essex-county-county-road-issue"
+      ],
+      "sourceIds": [
+        "essex-report",
+        "essex-roads"
+      ],
+      "notes": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "essex-county-county-road-issue"
+      ],
+      "sourceIds": [
+        "essex-report",
+        "essex-roads"
+      ],
+      "notes": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ]
+    },
+    {
+      "authorityId": "essex-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "essex-county-county-road-issue"
+      ],
+      "sourceIds": [
+        "essex-report",
+        "essex-roads"
+      ],
+      "notes": [
+        "Live portal fields, mandatory flags, request-type options, CAPTCHA and actual receipt behavior were not inspected in this snapshot.",
+        "The general roadways/traffic handoff is published; curb-specific ownership and any safety-intervention approval require confirmation."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lambton-county-public-works-owner-handoff"
+      ],
+      "sourceIds": [
+        "lambton-contacts",
+        "lambton-roads-current"
+      ],
+      "notes": [
+        "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+        "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lambton-county-public-works-owner-handoff"
+      ],
+      "sourceIds": [
+        "lambton-contacts",
+        "lambton-roads-current"
+      ],
+      "notes": [
+        "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+        "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-debris-loose",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lambton-county-public-works-owner-handoff"
+      ],
+      "sourceIds": [
+        "lambton-contacts",
+        "lambton-roads-current"
+      ],
+      "notes": [
+        "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+        "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-debris-object",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lambton-county-public-works-owner-handoff"
+      ],
+      "sourceIds": [
+        "lambton-contacts",
+        "lambton-roads-current"
+      ],
+      "notes": [
+        "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+        "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "lambton-roads-current",
+        "lambton-contacts"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "lambton-roads-current",
+        "lambton-contacts"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-sign",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lambton-county-public-works-owner-handoff"
+      ],
+      "sourceIds": [
+        "lambton-contacts",
+        "lambton-roads-current"
+      ],
+      "notes": [
+        "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+        "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+      ]
+    },
+    {
+      "authorityId": "lambton-county",
+      "issueId": "roads-safety",
+      "status": "verified",
+      "coverageKind": "sourced_handoff",
+      "procedureIds": [
+        "lambton-county-public-works-owner-handoff"
+      ],
+      "sourceIds": [
+        "lambton-contacts",
+        "lambton-roads-current"
+      ],
+      "notes": [
+        "No issue-specific form, designated report email, mandatory report facts, after-hours road-emergency procedure or receipt/tracking behavior was established.",
+        "Sidewalk and curb ownership are unresolved. The prior legacy Roads URL returned HTTP404."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-pothole",
+      "status": "verified",
+      "coverageKind": "verified_procedure",
+      "procedureIds": [
+        "oxford-county-county-pothole-cracks"
+      ],
+      "sourceIds": [
+        "oxford-pothole-portal",
+        "oxford-report-potholes",
+        "oxford-roads"
+      ],
+      "notes": [
+        "Current portal questionnaire, mandatory validation, authentication/CAPTCHA and receipt/tracking behavior were not observed in the JavaScript shell.",
+        "The cited maintenance standards depend on conditions; no universal repair deadline is established."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-pavement",
+      "status": "verified",
+      "coverageKind": "verified_procedure",
+      "procedureIds": [
+        "oxford-county-county-pothole-cracks"
+      ],
+      "sourceIds": [
+        "oxford-pothole-portal",
+        "oxford-report-potholes",
+        "oxford-roads"
+      ],
+      "notes": [
+        "Current portal questionnaire, mandatory validation, authentication/CAPTCHA and receipt/tracking behavior were not observed in the JavaScript shell.",
+        "The cited maintenance standards depend on conditions; no universal repair deadline is established."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-debris-loose",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-debris-object",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-sidewalk",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-curb",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-sign",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    },
+    {
+      "authorityId": "oxford-county",
+      "issueId": "roads-safety",
+      "status": "gap",
+      "coverageKind": "unresolved_gap",
+      "procedureIds": [],
+      "sourceIds": [
+        "oxford-roads",
+        "oxford-report-potholes",
+        "oxford-pothole-portal"
+      ],
+      "notes": [
+        "No verified issue-specific procedure or responsibility handoff established from this batch. Do not infer jurisdiction or dispatch."
+      ]
+    }
+  ],
+  "gaps": [],
+  "sources": [
+    {
+      "id": "niagara-roads",
+      "authorityId": "niagara-region",
+      "url": "https://www.niagararegion.ca/roads-and-transportation/report-a-problem/",
+      "title": "Report a problem | Niagara Region",
+      "retrievedAt": "2026-11-14T15:45:46.091541+00:00",
+      "verifiedAt": "2026-11-14T15:45:46.091541+00:00",
+      "contentHash": "2a1c2a2c2c0607319e55754b247f352a265eb96034018707cbd0cd00fef1b9a2",
+      "sourceVersion": "b6f0fce7e5dfca98",
+      "artifactIds": [
+        "niagara-roads-b6f0fce7e5dfca98"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "niagara-pothole-form",
+      "authorityId": "niagara-region",
+      "url": "https://forms.niagararegion.ca/Roads-and-transportation/Report-a-pothole",
+      "title": "Report a pothole - Niagara Region",
+      "retrievedAt": "2026-11-14T15:48:55.829082+00:00",
+      "verifiedAt": "2026-11-14T15:48:55.829082+00:00",
+      "contentHash": "1c53f187598d9fe307b652d48351094080fdbf812b6ba53dd7711baab192d0e5",
+      "sourceVersion": "f2b0369cb025d181",
+      "artifactIds": [
+        "niagara-pothole-form-f2b0369cb025d181"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "simcoe-roads",
+      "authorityId": "simcoe-county",
+      "url": "https://simcoe.ca/residents/trs/",
+      "title": "Transportation and Engineering - Simcoe County",
+      "retrievedAt": "2026-11-14T15:45:46.091660+00:00",
+      "verifiedAt": "2026-11-14T15:45:46.091660+00:00",
+      "contentHash": "5b284821c8739cbf2279080d381ad64c56510d839cf2cb184e452fa06b0ce1a5",
+      "sourceVersion": "f747f90095c03cf3",
+      "artifactIds": [
+        "simcoe-roads-f747f90095c03cf3"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "simcoe-maintenance",
+      "authorityId": "simcoe-county",
+      "url": "https://simcoe.ca/residents/trs/maintenance/",
+      "title": "Maintenance Operations - Simcoe County",
+      "retrievedAt": "2026-11-14T15:46:12.533146+00:00",
+      "verifiedAt": "2026-11-14T15:46:12.533146+00:00",
+      "contentHash": "2172e132e37ef1154ec67b82088c4d4aac37ff9b14d3129cbaeea1cf6f9de15c",
+      "sourceVersion": "24c67354eb41a882",
+      "artifactIds": [
+        "simcoe-maintenance-24c67354eb41a882"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "simcoe-resident-portal",
+      "authorityId": "simcoe-county",
+      "url": "https://service.simcoe.ca/s/topic/0TOJQ0000004o6H4AQ/roads-maintenance-construction",
+      "title": "County of Simcoe Resident Portal",
+      "retrievedAt": "2026-11-14T15:48:55.829168+00:00",
+      "verifiedAt": "2026-11-14T15:48:55.829168+00:00",
+      "contentHash": "8a6ef8112293e26373bee9632215d808bb19e9a6794559618f0b90683b852831",
+      "sourceVersion": "2f7acba8742ca1da",
+      "artifactIds": [
+        "simcoe-resident-portal-2f7acba8742ca1da"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "essex-roads",
+      "authorityId": "essex-county",
+      "url": "https://www.countyofessex.ca/resident-services/county-roads/",
+      "title": "County Roads | County of Essex",
+      "retrievedAt": "2026-11-14T15:46:12.533111+00:00",
+      "verifiedAt": "2026-11-14T15:46:12.533111+00:00",
+      "contentHash": "4e6dce27ae799c57523a2630f53a6a746c912693d3b05685f17f0f5b152df9b1",
+      "sourceVersion": "5b5d12dfa7189e26",
+      "artifactIds": [
+        "essex-roads-5b5d12dfa7189e26"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "essex-report",
+      "authorityId": "essex-county",
+      "url": "https://www.countyofessex.ca/resident-services/report-a-problem/",
+      "title": "Report a Problem | County of Essex",
+      "retrievedAt": "2026-11-14T15:48:55.829283+00:00",
+      "verifiedAt": "2026-11-14T15:48:55.829283+00:00",
+      "contentHash": "dd772c7f86e3f37a71ee450bf5cefd5092db238fd4d9142a46a762bcdfac16ef",
+      "sourceVersion": "5c3f9d7a9b0f2745",
+      "artifactIds": [
+        "essex-report-5c3f9d7a9b0f2745"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "lambton-roads-current",
+      "authorityId": "lambton-county",
+      "url": "https://www.lambtoncounty.ca/resident-services/roads/",
+      "title": "Roads | County of Lambton",
+      "retrievedAt": "2026-11-14T15:48:55.828582+00:00",
+      "verifiedAt": "2026-11-14T15:48:55.828582+00:00",
+      "contentHash": "01fd3a72e961d94f505f43466be1c49f8d6c0e714cc9b9fd0c0846c33179ef0f",
+      "sourceVersion": "ae362477eb0e2d02",
+      "artifactIds": [
+        "lambton-roads-current-ae362477eb0e2d02"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "lambton-contacts",
+      "authorityId": "lambton-county",
+      "url": "https://www.lambtoncounty.ca/contacts-directory/",
+      "title": "Contacts Directory | County of Lambton",
+      "retrievedAt": "2026-11-14T15:50:41.300273+00:00",
+      "verifiedAt": "2026-11-14T15:50:41.300273+00:00",
+      "contentHash": "966325b2e31ce058d4da9311288ea66b328b6040865fe9ae90bf1340a7c9971e",
+      "sourceVersion": "36ec7b584c6a252f",
+      "artifactIds": [
+        "lambton-contacts-36ec7b584c6a252f"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "oxford-roads",
+      "authorityId": "oxford-county",
+      "url": "https://www.oxfordcounty.ca/services-for-you/roads/",
+      "title": "Roads - Oxford County",
+      "retrievedAt": "2026-11-14T15:48:17.254035+00:00",
+      "verifiedAt": "2026-11-14T15:48:17.254035+00:00",
+      "contentHash": "252e48e78a59a2dae71bfe8e5a2bd303e4f07013db887d16ee25f4cf17f842a2",
+      "sourceVersion": "6c93102f285c436f",
+      "artifactIds": [
+        "oxford-roads-6c93102f285c436f"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "oxford-report-potholes",
+      "authorityId": "oxford-county",
+      "url": "https://www.oxfordcounty.ca/news/posts/report-potholes-on-oxford-county-roads-online-at-service-oxford/",
+      "title": "Report potholes on Oxford County Roads online at Service Oxford - Oxford County",
+      "retrievedAt": "2026-11-14T15:48:55.828850+00:00",
+      "verifiedAt": "2026-11-14T15:48:55.828850+00:00",
+      "contentHash": "00ba18c562278b799373e0045dab97c37e9035c94e8c612766a6eee3de4bffe5",
+      "sourceVersion": "2f5876ae7fa4670d",
+      "artifactIds": [
+        "oxford-report-potholes-2f5876ae7fa4670d"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "oxford-pothole-portal",
+      "authorityId": "oxford-county",
+      "url": "https://service.oxfordcounty.ca/s/article/Report-a-pothole-on-a-County-road",
+      "title": "Oxford County - Customer Service",
+      "retrievedAt": "2026-11-14T15:48:55.828926+00:00",
+      "verifiedAt": "2026-11-14T15:48:55.828926+00:00",
+      "contentHash": "27b4be53974ed67d653c8673a6198a38bd629f631b034a9d53c78d9588644901",
+      "sourceVersion": "f0b2c67d6199f0b2",
+      "artifactIds": [
+        "oxford-pothole-portal-f0b2c67d6199f0b2"
+      ],
+      "gaps": [],
+      "verificationStatus": "verified"
+    }
+  ]
+}

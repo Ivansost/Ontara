@@ -1,0 +1,109 @@
+{
+  "verifiedAt": "2026-11-14T16:21:43.540250+00:00",
+  "status": "passed",
+  "scope": "Four Roads-only municipal research batches; read-only checks of expected IDs, not a claim of live municipal integration.",
+  "counts": {
+    "upperTiers": 20,
+    "supportingLowerTiers": 173,
+    "procedures": 23,
+    "verifiedSearchableProcedures": 22,
+    "partialProcedures": 1,
+    "sourceReferences": 47,
+    "unavailableSources": 1,
+    "readyArtifacts": 46,
+    "formSnapshots": 11,
+    "coverageCells": 160,
+    "coverageKinds": {
+      "sourced_handoff": 112,
+      "unresolved_gap": 45,
+      "verified_procedure": 3
+    }
+  },
+  "batches": [
+    {
+      "batchId": "roads-batch-01-20261114",
+      "status": "completed",
+      "searchStatus": "ready",
+      "authorities": 5,
+      "counts": {
+        "municipalities": 36,
+        "sources": 13,
+        "procedures": 6,
+        "formSnapshots": 1,
+        "artifacts": 13
+      }
+    },
+    {
+      "batchId": "roads-batch-02-20261114",
+      "status": "completed",
+      "searchStatus": "ready",
+      "authorities": 5,
+      "counts": {
+        "municipalities": 59,
+        "sources": 12,
+        "procedures": 5,
+        "formSnapshots": 3,
+        "artifacts": 12
+      }
+    },
+    {
+      "batchId": "roads-batch-03-20261114",
+      "status": "completed",
+      "searchStatus": "ready",
+      "authorities": 5,
+      "counts": {
+        "municipalities": 53,
+        "sources": 10,
+        "procedures": 6,
+        "formSnapshots": 4,
+        "artifacts": 9
+      }
+    },
+    {
+      "batchId": "roads-batch-04-20261114",
+      "status": "completed",
+      "searchStatus": "ready",
+      "authorities": 5,
+      "counts": {
+        "municipalities": 45,
+        "sources": 12,
+        "procedures": 6,
+        "formSnapshots": 3,
+        "artifacts": 12
+      }
+    }
+  ],
+  "freshProcessArtifactReads": [
+    {
+      "artifactId": "halton-roads-ff72795c7085bfd0",
+      "byteCount": 165450,
+      "sha256": "ff72795c7085bfd0561c6fa11efefcb43a3e302d5c065d9955007df90ab9351a",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "niagara-roads-b6f0fce7e5dfca98",
+      "byteCount": 83849,
+      "sha256": "b6f0fce7e5dfca989ae4f3f68b3414307f360a216db0e31f1c0673e3f7909f92",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "grey-roads-9963fc96ac6463d0",
+      "byteCount": 117317,
+      "sha256": "9963fc96ac6463d0400f35279554002de3d74c902fbb967002cab781ec14718e",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "middlesex-roads-28e9a5d828a32c62",
+      "byteCount": 137647,
+      "sha256": "28e9a5d828a32c623436ac5a1b224b6ba1f369440f5a28d6896ca67a238badef",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "statcan-2021-csd-population-40631095c8601def",
+      "byteCount": 734476,
+      "sha256": "40631095c8601defe1ea69b421adb15d7ce953dc6bc6021d8b0b56e12d23c272",
+      "freshProcessRead": "passed"
+    }
+  ],
+  "errors": []
+}

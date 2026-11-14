@@ -1,0 +1,71 @@
+{
+  "verifiedAt": "2026-11-14T16:23:43.194792+00:00",
+  "status": "passed",
+  "batchId": "roads-boundaries-20261114",
+  "counts": {
+    "upperTiers": 20,
+    "lowerTiers": 173,
+    "singleTiers": 14,
+    "sources": 6,
+    "freshProcessArtifactReads": 6
+  },
+  "importRun": {
+    "id": "roads-boundaries-20261114",
+    "status": "completed",
+    "counts": {
+      "municipalities": 207,
+      "sources": 6,
+      "procedures": 0,
+      "formSnapshots": 0,
+      "artifacts": 6
+    }
+  },
+  "allSingleTierParentsNull": true,
+  "searchGate": "Not applicable: supplementary geometry/source run writes zero service procedures; four core search-ready runs remain authoritative.",
+  "runtimeResolverClaimed": false,
+  "artifactReads": [
+    {
+      "artifactId": "ontario-boundary-catalogue-20261114T161150Z-4660066f08d2e29b",
+      "mimeType": "application/json",
+      "byteCount": 5798,
+      "sha256": "4660066f08d2e29bb4ef6b5a6e0450837e4b92436b921b2346577b8bab46f3a2",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "lio-boundary-layer-13-20261114T161014Z-9b2c6c37c1fca5ed",
+      "mimeType": "text/plain",
+      "byteCount": 6860,
+      "sha256": "9b2c6c37c1fca5ed90841952544e008bb944bf685debb56354a5fdfa9193c1be",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "lio-boundary-layer-14-20261114T161015Z-e9baa63f16159a04",
+      "mimeType": "text/plain",
+      "byteCount": 7361,
+      "sha256": "e9baa63f16159a047e5e2b409adb3062cf57c7f6846f8fc7b4f737fd642c43f3",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "lio-selected-upper-boundaries-20261114T161155Z-ecf6703938346f67",
+      "mimeType": "application/geo+json",
+      "byteCount": 2925074,
+      "sha256": "ecf6703938346f677420a0b3922ffd4c9102cda4028a563c6c0544aea166ada5",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "lio-selected-lower-single-boundaries-20261114T161200Z-91414fb79bd4949c",
+      "mimeType": "application/geo+json",
+      "byteCount": 3545388,
+      "sha256": "91414fb79bd4949c4e1a30668eb4e420ff54495b64b5e0ec9150f1117d474ec9",
+      "freshProcessRead": "passed"
+    },
+    {
+      "artifactId": "middlesex-road-map-8e801f0baf0476a8",
+      "mimeType": "application/pdf",
+      "byteCount": 4257693,
+      "sha256": "8e801f0baf0476a851f8d56a90e369cfb3932ffea99971e87c4d4e415b4db5b0",
+      "freshProcessRead": "passed"
+    }
+  ],
+  "errors": []
+}
