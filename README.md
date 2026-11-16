@@ -148,3 +148,5 @@ The event-built work includes the authored catalogue and question bank, Astryx r
 The implementation uses existing React/Next.js, Astryx, FastAPI, PyMongo, LangGraph, Playwright and provider libraries. MongoDB Atlas and Voyage supply database and retrieval services; Gemini supplies structured generation; AgentMail supplies real email transport. These libraries and services are dependencies, not original team code. The interface's [Figtree licence](apps/web/public/licenses/figtree.txt) is retained with its font assets.
 
 Prepare an accessible demo, a one-minute video with functioning audio and video, and a concise project description for Ivan and Faaris to review. They approve the deliverables and submit manually through Cerebral Valley. Their package includes the public repository, demo, video, description, both team members and Track 3 selection. Submission access and a submission receipt are not prerequisites for preparing this review package. The event deadline is November 14 at 5:00 PM Toronto time.
+
+Built by Faaris and Ivan.
